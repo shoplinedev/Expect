@@ -2,13 +2,19 @@
   <div class="swiper-wrapper">
     {{#each banners}}
       <div class="swiper-slide">
-        <img data-srcset={{this}} class="lozad" alt="">
+        {{#if @index '===' 0 }}
+          <img srcset={{this}}>
+        {{ else }}
+          <img srcset={{this}} class="lozad">
+        {{/if}}
       </div>
     {{/each}}
   </div>
 
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
+  <div class="container">
+    <div class="swiper-button-prev">{{ include 'snippets/icon_arrow_left_circle' }}</div>
+    <div class="swiper-button-next">{{ include 'snippets/icon_arrow_right_circle' }}</div>
 
-  <div class="swiper-pagination"></div>
+    <div class="swiper-pagination"></div>
+  </div>
 </div>
