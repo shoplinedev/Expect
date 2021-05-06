@@ -1,0 +1,14 @@
+{
+  "name": "test-theme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "",
+  "license": "ISC",
+  "scripts": {
+    "serve": "sl-theme serve",
+    "zip": "sl-theme zip"
+  },
+  "devDependencies": {
+    "@yy/sl-theme-cli": "latest"
+  }
+}
