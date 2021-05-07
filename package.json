@@ -5,7 +5,7 @@
   "repository": "",
   "license": "ISC",
   "scripts": {
-    "serve": "sl-theme serve",
+    "serve": "sl-theme serve --open",
     "zip": "sl-theme zip"
   },
   "devDependencies": {
