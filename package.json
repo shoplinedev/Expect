@@ -8,6 +8,6 @@
     "zip": "sl-theme zip"
   },
   "devDependencies": {
-    "@yy/sl-theme-cli": "latest"
+    "@yy/sl-theme-cli": "{{ cliVersion }}"
   }
 }
