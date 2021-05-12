@@ -1,11 +1,10 @@
 {
-  "name": "test-theme",
+  "name": "{{ name }}",
+  "description": "{{ description }}",
   "version": "1.0.0",
-  "main": "index.js",
-  "repository": "",
   "license": "ISC",
   "scripts": {
-    "serve": "sl-theme serve --open",
+    "serve": "sl-theme serve",
     "zip": "sl-theme zip"
   },
   "devDependencies": {
