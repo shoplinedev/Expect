@@ -1,27 +1,16 @@
-# 测试模板主题
+# Shopline Theme : {{ name }}
 
-## 安装
+## 安装依赖
 ```sh
-yarn global add @yy/sl-theme-cli
-# or
-npm install -g @yy/sl-theme-cli
-```
-
-## 创建初始化模板
-```sh
-sl-theme init <name>
-```
-
-## 本地开发
-```sh
-cd 创建的目录
-```
-```sh
-# 安装依赖
 yarn
 ```
+or
 ```sh
-# 启动服务
+npm install
+```
+
+## 启动服务
+```sh
 yarn serve
 ```
 
