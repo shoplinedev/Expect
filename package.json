@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "license": "ISC",
   "scripts": {
-    "serve": "sl-theme serve",
-    "zip": "sl-theme zip"
+    "serve": "sl-cli-service serve",
+    "zip": "sl zip"
   },
   "devDependencies": {
-    "@yy/sl-theme-cli": "{{ cliVersion }}"
+    "@yy/sl-cli-service": "{{ cliVersion }}"
   }
 }
