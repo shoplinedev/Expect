@@ -5,10 +5,14 @@
       <hr class="hr--small">
     </div>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 product-list">
-      {{#each products }}
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 product-list">
+      {{#each props.items.list }}
         {{ include 'snippets/product_item' item=this }}
       {{/each}}
+    </div>
+
+    <div class="more-button">
+      <div>{{ props.moreButtonText }}</div>
     </div>
   </div>
 </div>

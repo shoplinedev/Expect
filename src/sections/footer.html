@@ -1,13 +1,38 @@
 <footer class="footer">
   <div class="container">
-    <div class="row row-cols-md-4">
-      {{#each footer  }}
-        <ul class="col">
-          {{#each list }}
-            <li>{{ text }}</li>
-          {{/each}}
-        </ul>
+    <div class="row row-cols-12 row-cols-md-{{ length Footer2.componentList }} component">
+      {{#each Footer2.componentList }}
+        {{#if componentType '===' 'textDescription'  }}
+          {{ section 'textDescription' data=this }}
+        {{/if}}
+
+        {{#if componentType '===' 'social'  }}
+          {{ section 'social' data=this }}
+        {{/if}}
+
+        {{#if componentType '===' 'navigation'  }}
+          {{ section 'navigation' data=this }}
+        {{/if}}
       {{/each}}
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="row row-cols-12 row-cols-md-2">
+      <div class="copyright">
+        Copyright © 2021 大爷. All rights reserved. Powered by SHOPLINE
+      </div>
+      <div class="pay-channel">
+        {{#each Footer2.payChannelList}}
+          {{#if show}}
+            {{#if (isMatch type "visa*") }}
+            <img class="lozad" data-src="{{ assets_url (append type '.png') }}">
+            {{else}}
+            <img class="lozad" data-src="{{ assets_url (append type '.svg') }}">
+            {{/if}}
+          {{/if}}
+        {{/each}}
+      </div>
     </div>
   </div>
 </footer>

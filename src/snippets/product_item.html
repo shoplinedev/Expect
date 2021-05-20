@@ -1,11 +1,17 @@
 <a class="product-item" href="{{ item.href }}" class="col">
   <div class="image-wrapper">
-    <img class="lozad" data-src="{{ item.url }}" alt="">
+    <img class="lozad" data-src="{{ item.image }}">
+    <span class="discount">99%优惠</span>
   </div>
 
   <div class="product-content">
-    <span class="product-title">{{ item.title }}</span>
-    <span class="long-dash">—</span>
-    <span>{{ item.price }}</span>
+    <div class="product-title">{{ item.title }}</div>
+
+    <span class="tag">满折</span>
+
+    <div class="price">
+      <em>{{ item.productMinPrice }}</em>
+      <span class="origin-price">{{ item.originPrice }}</span>
+    </div>
   </div>
 </a>

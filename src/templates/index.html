@@ -1,19 +1,22 @@
-{{ include 'sections/nav' }}
 
-<div id="page-index">
-{{ include 'sections/header' }}
+{{ section 'header' data=navigation.Header }}
+{{#each home }}
 
-{{ include 'sections/slider' }}
-{{ include 'sections/featured_content' }}
-{{ include 'sections/featured_products' products=products1 title='Summer Collection' }}
-{{ include 'sections/featured_products' products=products2 title='Beach Feeling'}}
+  {{#if type '===' 'Swiper'  }}
+    {{ section 'Swiper' id=id props=props }}
+  {{/if}}
 
-{{ include 'sections/collection_1' }}
-{{ include 'sections/collection_2' }}
+  {{#if type '===' 'Text'  }}
+    {{ section 'Text' id=id props=props }}
+  {{/if}}
 
-{{ include 'sections/newsletter' }}
+  {{#if type '===' 'ProductCategories'  }}
+    {{ section 'ProductCategories' id=id props=props }}
+  {{/if}}
 
-<hr class="hr--large">
+  {{#if type '===' 'Products'  }}
+    {{ section 'Products' id=id props=props }}
+  {{/if}}
 
-{{ include 'sections/footer' }}
-</div>
+{{/each}}
+{{ section 'footer' Footer1=navigation.Footer1 Footer2=navigation.Footer2 }}

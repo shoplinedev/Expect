@@ -13,6 +13,11 @@
  */
  !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).SwiperPluginPagination=t()}(this,function(){"use strict";function p(t,e){void 0===e&&(e=[]),Array.isArray(e)||(e=[e]),e.forEach(function(e){return!t.classList.contains(e)&&t.classList.add(e)})}return function(c,u){var e=Boolean(u.pagination),d=Object.assign({clickable:!1,bulletClass:"swiper-pagination-bullet",bulletActiveClass:"swiper-pagination-bullet-active"},u.pagination),f={$pageList:[],$pagination:null};e&&(c.on("after-init",function(){var e=d.bulletClass,t=d.bulletActiveClass,n=c.env.element.$list,i="string"==typeof d.el?document.body.querySelector(d.el):d.el,a=[],o=document.createDocumentFragment(),l=n.length-Math.ceil(u.slidesPerView)+1;u.excludeElements.push(i),f.$pagination=i,f.$pageList=a;for(var s=0;s<l;s++){var r=document.createElement("div");p(r,s===c.state.index?[e,t]:e),a.push(r),o.appendChild(r)}i.appendChild(o),d.clickable&&i.addEventListener("click",function(e){c.slideTo(a.indexOf(e.target)),e.stopPropagation()})}),c.on("after-destroy",function(){e&&(f.$pagination.innerHTML="",f.$pageList=[],f.$pagination=null)}),c.on("after-slide",function(i){var a=d.bulletActiveClass;f.$pageList&&f.$pageList.forEach(function(e,t){var n;t===i?p(e,a):(n=e,void 0===(e=a)&&(e=[]),Array.isArray(e)||(e=[e]),e.forEach(function(e){return n.classList.contains(e)&&n.classList.remove(e)}))})}))}});
 
+ /**
+  * tiny-swiper-autoPlay
+  */
+ !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).SwiperPluginAutoPlay=t()}(this,function(){"use strict";function c(e,t,n,i){e.addEventListener(t,n,i)}function r(e,t,n){e.removeEventListener(t,n)}var l="after-init",m="before-slide",f="after-slide",p="after-destroy";return function(i,e){var o,t,n,u;function a(){var t=i.state,n=i.env;o.stopOnLastSlide&&t.index>=n.limitation.maxIndex||u.pause||u.timeoutId||(u.timeoutId=setTimeout(function(){var e=o.reverseDirection?t.index-1:t.index+1,e=e>n.limitation.maxIndex?n.limitation.minIndex:e<n.limitation.minIndex?n.limitation.maxIndex:e;i.slideTo(e),u.timeoutId=void 0},o.delay))}function d(){clearTimeout(u.timeoutId),u.pause=!0,u.timeoutId=void 0}function s(){u.pause=!1,a()}Boolean(e.autoplay)&&(e=(o=Object.assign({delay:3e3,disableOnInteraction:!0,reverseDirection:!1,stopOnLastSlide:!1,waitForTransition:!0},e.autoplay)).waitForTransition?f:m,t=i.env.touchable,n=i.env.element.$el,u={pause:!1,timeoutId:void 0},i.on(e,a),i.on(l,function(){t?(c(n,"touchstart",d),c(n,"touchend",s),c(n,"touchcancel",s)):(c(n,"mousedown",d),c(document,"mouseup",s))}),i.on(p,function(){t?(r(n,"touchstart",d),r(n,"touchend",s),r(n,"touchcancel",s)):(r(n,"mousedown",d),r(document,"mouseup",s))}))}});
+
 
  /*! lozad.js - v1.16.0 - 2020-09-06
 * https://github.com/ApoorvSaxena/lozad.js
@@ -29,8 +34,14 @@ u=-1===u.indexOf("url(")?"url("+u+")":u,1===d.length?t.style.backgroundImage=u:t
 /**
  * theme
  */
+ const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+ observer.observe();
 
-const swiper = new Swiper('.swiper-container', {
+var $swiper = document.querySelector('#swiper-1')
+var duration = JSON.parse($swiper.dataset.duration)
+
+var swiper = new Swiper('.swiper-container', {
+  speed: 1000,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -44,29 +55,30 @@ const swiper = new Swiper('.swiper-container', {
     bulletActiveClass: "is-active"
   },
 
-  plugins: [ SwiperPluginNavigation, SwiperPluginPagination ]
+  autoplay: {
+    delay: duration * 1000
+  },
+
+  autoHeight: true,
+
+  plugins: [ SwiperPluginNavigation, SwiperPluginPagination, SwiperPluginAutoPlay ]
 });
 
 window.addEventListener('resize', () => {
   swiper.updateSize()
-}, { passive: true })
-
-const nav = document.querySelector('#nav')
-const menu = document.querySelector('#menu')
-const pageIndex = document.querySelector('#page-index')
-
-let toggle = false
-menu.addEventListener('click', function() {
-  if (toggle) {
-    pageIndex.classList.remove('nav-open')
-    nav.classList.remove('open')
-    toggle = false
-  } else {
-    pageIndex.classList.add('nav-open')
-    nav.classList.add('open')
-    toggle = true
-  }
 })
 
-const observer = lozad(); // lazy loads elements with default selector as '.lozad'
-observer.observe();
+var $menu = document.querySelector('#menu')
+var $slideNav = document.querySelector('#slide-nav')
+var $slideNavClose = document.querySelector('#icon-close')
+$menu.addEventListener('click', () => {
+  $slideNav.classList.add('open')
+})
+
+$slideNavClose.addEventListener('click', () => {
+  $slideNav.classList.remove('open')
+})
+
+var $richText = document.querySelector('#rich-text')
+
+$richText.innerHTML = $richText.innerText

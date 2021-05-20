@@ -1,0 +1,24 @@
+<div class="section-swiper">
+  <div class="swiper-container" id="swiper-1" data-duration={{ props.duration }}>
+    <div class="swiper-wrapper">
+      {{#each props.items}}
+        <div class="swiper-slide">
+
+          {{#if @index '===' 0 }}
+            <img src={{ image.url }} alt={{ image.alt }}>
+          {{ else }}
+            <img class="lozad" data-src={{ image.url }} data-alt={{ image.alt }}>
+          {{/if}}
+
+          <div class="button" style="background-color: {{buttonColor}}; color: {{ buttonTextColor }}">{{ buttonText }}</div>
+        </div>
+      {{/each}}
+    </div>
+    <div class="container">
+      <div class="swiper-button-prev">{{ include 'snippets/icon_arrow_left_circle' }}</div>
+      <div class="swiper-button-next">{{ include 'snippets/icon_arrow_right_circle' }}</div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container section-product-categories">
+  <h2>{{ props.title }}</h2>
+  <div class="scroll-container">
+    <div class="row">
+      {{#each props.items}}
+        {{#if @index '<=' 2}}
+        <div class="col col-md-4 col-lg-4 product-categories-item">
+          <a href="">
+            <div class="product-categories-cover" style="padding-bottom:100%;">
+              <img class="lozad" data-src="{{sortation.sortationCoverImg}}" alt="">
+            </div>
+            <div class="product-categories-title">{{ sortation.title}}</div>
+          </a>
+        </div>
+        {{else}}
+        <div class="col col-md-6 col-lg-6 product-categories-item">
+          <a href="">
+            <div class="product-categories-cover" style="padding-bottom:100%;">
+              <img class="lozad" data-src="{{sortation.sortationCoverImg}}" alt="">
+            </div>
+            <div class="product-categories-title">{{ sortation.title}}</div>
+          </a>
+        </div>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+  <div class="more-button">
+    <div>{{ props.moreButtonText }}</div>
+  </div>
+</div>
