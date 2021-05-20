@@ -5,7 +5,7 @@
   "license": "ISC",
   "scripts": {
     "serve": "sl-cli-service serve",
-    "zip": "sl zip"
+    "zip": "sl-cli-service zip"
   },
   "devDependencies": {
     "@yy/sl-cli-service": "{{ cliVersion }}"
