@@ -25,10 +25,29 @@
       <div class="pay-channel">
         {{#each Footer2.payChannelList}}
           {{#if show}}
-            {{#if (isMatch type "visa*") }}
-            <img class="lozad" data-src="{{ assets_url (append type '.png') }}">
-            {{else}}
-            <img class="lozad" data-src="{{ assets_url (append type '.svg') }}">
+            {{#if type '===' 'visa' }}
+            <img class="lozad" data-src="{{ assets_url 'visa.png' }}">
+            {{/if}}
+            {{#if type '===' 'visa-electron' }}
+            <img class="lozad" data-src="{{ assets_url 'visa-electron.png' }}">
+            {{/if}}
+            {{#if type '===' 'paypal' }}
+            <img class="lozad" data-src="{{ assets_url 'paypal.svg' }}">
+            {{/if}}
+            {{#if type '===' 'union-pay' }}
+            <img class="lozad" data-src="{{ assets_url 'union-pay.svg' }}">
+            {{/if}}
+            {{#if type '===' 'master-card' }}
+            <img class="lozad" data-src="{{ assets_url 'master-card.svg' }}">
+            {{/if}}
+            {{#if type '===' 'master-card2' }}
+            <img class="lozad" data-src="{{ assets_url 'master-card2.svg' }}">
+            {{/if}}
+            {{#if type '===' 'jcb' }}
+            <img class="lozad" data-src="{{ assets_url 'jcb.svg' }}">
+            {{/if}}
+            {{#if type '===' 'discover' }}
+            <img class="lozad" data-src="{{ assets_url 'discover.svg' }}">
             {{/if}}
           {{/if}}
         {{/each}}

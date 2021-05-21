@@ -38,47 +38,59 @@ u=-1===u.indexOf("url(")?"url("+u+")":u,1===d.length?t.style.backgroundImage=u:t
  observer.observe();
 
 var $swiper = document.querySelector('#swiper-1')
-var duration = JSON.parse($swiper.dataset.duration)
 
-var swiper = new Swiper('.swiper-container', {
-  speed: 1000,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-    disabledClass: 'swiper-button-disabled',
-  },
+if ($swiper) {
+  var duration = JSON.parse($swiper.dataset.duration)
 
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-    bulletClass: "swiper-pagination__item",
-    bulletActiveClass: "is-active"
-  },
+  var swiper = new Swiper('.swiper-container', {
+    speed: 1000,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+      disabledClass: 'swiper-button-disabled',
+    },
 
-  autoplay: {
-    delay: duration * 1000
-  },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      bulletClass: "swiper-pagination__item",
+      bulletActiveClass: "is-active"
+    },
 
-  autoHeight: true,
+    autoplay: {
+      delay: duration * 1000
+    },
 
-  plugins: [ SwiperPluginNavigation, SwiperPluginPagination, SwiperPluginAutoPlay ]
-});
+    autoHeight: true,
 
-window.addEventListener('resize', () => {
-  swiper.updateSize()
-})
+    plugins: [ SwiperPluginNavigation, SwiperPluginPagination, SwiperPluginAutoPlay ]
+  });
+
+  window.addEventListener('resize', () => {
+    swiper.updateSize()
+  })
+
+}
 
 var $menu = document.querySelector('#menu')
-var $slideNav = document.querySelector('#slide-nav')
-var $slideNavClose = document.querySelector('#icon-close')
-$menu.addEventListener('click', () => {
-  $slideNav.classList.add('open')
-})
 
-$slideNavClose.addEventListener('click', () => {
-  $slideNav.classList.remove('open')
-})
+  if ($menu) {
+  var $slideNav = document.querySelector('#slide-nav')
+  var $slideNavClose = document.querySelector('#icon-close')
+  $menu.addEventListener('click', () => {
+    $slideNav.classList.add('open')
+  })
+
+  $slideNavClose.addEventListener('click', () => {
+    $slideNav.classList.remove('open')
+  })
+
+}
 
 var $richText = document.querySelector('#rich-text')
 
-$richText.innerHTML = $richText.innerText
+if ($richText) {
+
+  $richText.innerHTML = $richText.innerText
+
+}
