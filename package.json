@@ -5,7 +5,8 @@
   "license": "ISC",
   "scripts": {
     "serve": "sl-cli-service serve",
-    "zip": "sl-cli-service zip"
+    "zip": "sl-cli-service zip",
+    "build": "NODE_ENV=production sl-cli-service build"
   },
   "devDependencies": {
     "@yy/sl-cli-service": "{{ cliVersion }}"
