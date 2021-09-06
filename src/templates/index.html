@@ -1,20 +1,3 @@
+<div>首页1</div>
 
-{{#each home }}
-
-  {{#if type '===' 'Swiper'  }}
-    {{ section 'Swiper' id=id props=props }}
-  {{/if}}
-
-  {{#if type '===' 'Text'  }}
-    {{ section 'Text' id=id props=props }}
-  {{/if}}
-
-  {{#if type '===' 'ProductCategories'  }}
-    {{ section 'ProductCategories' id=id props=props }}
-  {{/if}}
-
-  {{#if type '===' 'Products'  }}
-    {{ section 'Products' id=id props=props }}
-  {{/if}}
-
-{{/each}}
+<div>{{ t 'general.index.message' }}</div>

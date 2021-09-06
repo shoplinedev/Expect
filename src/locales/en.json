@@ -1,0 +1,10 @@
+{
+  "general": {
+    "index": {
+      "message": "test index"
+    },
+    "404": {
+      "title": "Not found"
+    }
+  }
+}
