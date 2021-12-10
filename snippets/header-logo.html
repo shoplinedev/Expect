@@ -1,0 +1,158 @@
+{{assign 'has_logo' false}}
+{{assign 'rootUrl' '/'}}
+
+
+{{#with this as |global|}}
+	{{#forIn section.blocks}}
+		{{#if type '===' 'logo'}}
+
+      {{assign 'has_logo_image' false}}
+      {{#if (boolean this.settings.logo '&&' this.settings.logo.url)}}
+        {{assign 'has_logo_image' true}}
+      {{/if}}
+
+			{{#with global}}
+				{{assign 'has_logo' true}}
+			{{/with}}
+
+			{{assign 'header_logo_size' this.settings.desktop_logo_width}}
+			{{assign 'header_logo_size_mobile' this.settings.mobile_logo_width }}
+      {{!-- 如果没有 logo 图片的时候，店铺名称的宽度不跟随 logo 宽度 --}}
+      {{#unless has_logo_image}}
+        {{assign 'header_logo_size' '400' }}
+        {{assign 'header_logo_size_mobile' '200' }}
+      {{/unless}}
+
+      {{#style}}
+        .header__item--logo,
+        .header__layout--left-center .header__item--buttons {
+          -webkit-box-flex: 0 0 auto;
+          -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+          max-width: {{ header_logo_size_mobile }}px;
+        }
+
+        @media only screen and (min-width: 750px) {
+          .header__item--logo {
+            -webkit-box-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            max-width: {{ header_logo_size }}px;
+          }
+
+          .header__layout--left-center .header__item--logo,
+          .header__layout--left-center .header__item--buttons {
+            -webkit-box-flex: 0 1 {{ header_logo_size }}px;
+            -ms-flex: 0 1 {{ header_logo_size }}px;
+            flex: 0 1 {{ header_logo_size }}px;
+            max-width: {{ header_logo_size }}px;
+          }
+        }
+
+        .header__logo a {
+          width: {{ header_logo_size_mobile }}px;
+        }
+        .header--is-light .header_-logo .header__logo--inverted {
+          width: {{ header_logo_size_mobile }}px;
+        }
+        .header__layout--left-center .header__item--buttons {
+          width: {{ header_logo_size_mobile }}px;
+        }
+        @media only screen and (min-width: 750px){
+          .header__logo a {
+            width: {{ header_logo_size }}px;
+          }
+          .header--is-light .header_-logo .header__logo--inverted {
+            width: {{ header_logo_size }}px;
+          }
+          .header__layout--left-center .header__item--buttons {
+            width: {{ header_logo_size }}px;
+          }
+        }
+      {{/style}}
+
+			{{#if global.template '===' 'index'}}
+				<h1 class="header__logo title-font" itemscope itemtype="http://schema.org/Organization">
+			{{/if}}
+			{{#if global.template '!==' 'index'}}
+				<div class="header__logo title-font" itemscope itemtype="http://schema.org/Organization">
+			{{/if}}
+
+			{{#if has_logo_image}}
+        {{assign 'header_logo_scale' this.settings.logo.scale}}
+        {{assign 'header_logo_height' (divide header_logo_size header_logo_scale)}}
+        {{assign 'header_logo_height_mobile' (divide header_logo_size_mobile header_logo_scale)}}
+					<span class="visually-hidden notranslate">{{ global.storeInfo.name }}</span>
+				<a class="header__logo--link {{#if (boolean this.settings.logo-inverted '&&' this.settings.logo-inverted.url)}}has-logo--inverted{{/if}}" href="{{global.rootUrl}}">
+					<img class="d-none d-md-block" 
+            style="height: {{header_logo_height}}px;" 
+            src="{{img_url this.settings.logo.url width=header_logo_size }}"
+						srcset="{{img_url this.settings.logo.url width=header_logo_size }} 1x, {{ img_url this.settings.logo.url width=header_logo_size scale=2}} 2x"
+						alt="{{fallbackText this.settings.logo.alt global.storeInfo.name }}" itemprop="logo">
+					<img class="d-block d-md-none"
+            style="height: {{header_logo_height_mobile}}px;" 
+            src="{{img_url this.settings.logo.url width=header_logo_size_mobile }}"
+						srcset="{{img_url this.settings.logo.url width=header_logo_size_mobile }} 1x, {{img_url this.settings.logo.url width=header_logo_size_mobile scale=2 }} 2x"
+						alt="{{this.settings.logo.alt}}">
+				</a>
+						{{#if (boolean this.settings.logo-inverted '&&' this.settings.logo-inverted.url)}}
+              {{!--透明页头logo--}}
+              {{assign 'header_logo_inverted_scale' this.settings.logo-inverted.scale}}
+              {{assign 'header_logo_inverted_height' (divide header_logo_size header_logo_inverted_scale)}}
+              {{assign 'header_logo_inverted_height_mobile' (divide header_logo_size_mobile header_logo_inverted_scale)}}						
+              <a class="header__logo--link logo--inverted" href="{{global.rootUrl}}">
+								<img class="d-none d-md-block" 
+                  style="height: {{header_logo_inverted_height}}px;"
+                  src="{{img_url this.settings.logo-inverted.url width=header_logo_size }}"
+									srcset="{{img_url this.settings.logo-inverted.url width=header_logo_size}} 1x, {{img_url this.settings.logo-inverted.url width=header_logo_size scale=2}} 2x"
+									alt="{{fallbackText this.settings.logo.alt global.storeInfo.name }}" itemprop="logo">
+								<img class="d-block d-md-none" 
+                  style="height: {{header_logo_inverted_height_mobile}}px;"
+                  src="{{img_url this.settings.logo-inverted.url width=header_logo_size_mobile }}"
+									srcset="{{img_url this.settings.logo-inverted.url width=header_logo_size_mobile}} 1x, {{img_url this.settings.logo-inverted.url width=header_logo_size_mobile scale=2}} 2x"
+									alt="{{this.settings.logo.alt}}">
+							</a>
+						{{/if}}
+			{{/if}}
+
+			{{#unless has_logo_image}}
+				<a href="{{ global.rootUrl }}" itemprop="url" class="notranslate">{{ global.storeInfo.name }}</a>
+			{{/unless}}
+
+			{{#if global.template '!==' 'index'}}
+				</h1>
+			{{/if}}
+			{{#if global.template '!==' 'index'}}
+				</div>
+			{{/if}}
+		{{/if}}
+	{{/forIn}}
+{{/with}}
+
+{{#unless has_logo}}
+	{{#style}}
+		.header__item--logo {
+			max-width: 60%
+		}
+	{{/style}}
+
+	{{#if template '===' 'index'}}
+		<h1 class="header__logo title-font" itemscope itemtype="http://schema.org/Organization">
+	{{/if}}
+
+	{{#if template '!==' 'index'}}
+		<div class="header__logo title-font" itemscope itemtype="http://schema.org/Organization">
+	{{/if}}
+
+	<a href="{{ rootUrl }}" itemprop="url">
+		{{ storeInfo.name }}
+	</a>
+
+	{{#if template '!==' 'index'}}
+		</h1>
+	{{/if}}
+
+	{{#if template '!==' 'index'}}
+		</div>
+	{{/if}}
+{{/unless}}

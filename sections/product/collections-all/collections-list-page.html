@@ -1,0 +1,123 @@
+
+{{assign 'collection_order_ids' (product_blocks_order_translate section 'blocks' 'block_order')}}
+{{assign 'collections-filter-all'  (JSONparse '[]')}}
+{{array_map 'collections-all' sortations_page.data 'sortation' }}
+
+{{#each collections-all}}
+  {{assign 'productList' (get 'productList' (itemAt ../sortations_page.data @index))}}
+{{/each}}
+
+{{#if section.settings.display_type '===' 'designated'}}
+  {{#each collection_order_ids}}
+    {{#if (isTruthy (get settings.category_id ../all_collections )) }}
+      {{array-push ../collections-filter-all (get settings.category_id ../all_collections)}}
+    {{/if}}
+  {{/each}}
+{{/if}}
+
+<div class="collection-list-main container g-4 g-md-6">
+  {{#if section.settings.show_title}}
+    <h1 class="collection-list-header title4">{{t 'collection.all.h1Title'}}</h1>
+  {{/if}}
+  {{snippet 'product/commons/collection-item-list' colNum=section.settings.col collectionData=(cond (is section.settings.display_type 'all') collections-all collections-filter-all)}}
+</div>
+
+{{#if (default ../request.uri.query.page_num sortations_page.pageNum)}} {{!-- 分类数量为零时，pageNum 为 null --}}
+  {{#with sortations_page}}
+    {{snippet
+      'product/commons/pagination-slim'
+      current=(default ../request.uri.query.page_num pageNum)
+      enableNext=hasNext
+      pageSize=(default ../request.uri.query.page_size pageSize)
+      hidden=(or (boolean ../section.settings.display_type '!=' 'all') (and (is pageNum 1) (isFalsey hasNext)))
+    }}
+  {{/with}}
+{{/if}}
+
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "分类列表",
+    "en": "Collections list"
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "display_type",
+      "label": {
+        "zh-hans-cn": "选择展示",
+        "en": "Choose to display"
+      },
+      "options": [
+        {
+          "value": "all",
+          "label": {
+            "zh-hans-cn": "全部商品分类",
+            "en": "All product collections"
+          }
+        },
+        {
+          "value": "designated",
+          "label": {
+            "zh-hans-cn": "指定商品分类",
+            "en": "Assign a product collection"
+          }
+        }
+      ],
+      "default": "all"
+    },
+    {
+      "type": "switch",
+      "id": "show_title",
+      "label": {
+        "zh-hans-cn": "展示页面标题",
+        "en": "Display the page title"
+      },
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "col",
+      "label": {
+        "zh-hans-cn": "列数",
+        "en": "Number of columns"
+      },
+      "min": 2,
+      "max": 5,
+      "unit": "列",
+      "default": 5
+    }
+  ],
+  "block_info": {
+    "zh-hans-cn": "设置中展示指定商品分类时选择才生效",
+    "en": "Selected option will be effective only when you choose to display assigned product collections in Setting"
+  },
+  "blocks": [
+    {
+      "type": "collection",
+      "icon": "productCategories",
+      "name": {
+        "zh-hans-cn": "分类",
+        "en": "Collection"
+      },
+      "settings": [
+        {
+          "type": "collection_picker",
+          "id": "category_id",
+          "label": {
+            "zh-hans-cn": "商品分类",
+            "en": "Collection list"
+          }
+        }
+      ]
+    }
+  ],
+  "default": {
+    "settings": {
+      "display_type": "all",
+      "show_title": true,
+      "col": 5
+    }
+  }
+}
+{{/schema}}

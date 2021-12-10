@@ -1,0 +1,67 @@
+<div class="footer__paychannel">
+    {{ snippet 'footer-block-header' }}
+
+    <div class="footer__paychannel-container">
+      {{#with this.settings.pay_channel_list as |payments| }}
+        {{#inArray payments 'visa'}}
+        <div class="footer__paychannel-item">
+          {{ snippet 'icons/icon_payment_visa' }}
+        </div>
+        {{/inArray}}
+
+        {{#inArray payments 'master-card'}}
+        <div class="footer__paychannel-item">
+          {{ snippet 'icons/icon_payment_masterCard' }}
+        </div>
+        {{/inArray}}
+
+        {{#inArray payments 'master-card2'}}
+        <div class="footer__paychannel-item">
+          {{ snippet 'icons/icon_payment_maestro' }}
+        </div>
+        {{/inArray}}
+
+        {{#inArray payments 'visa-electron'}}
+        <div class="footer__paychannel-item">
+          {{ snippet 'icons/icon_payment_visaElectron' }}
+        </div>
+        {{/inArray}}
+
+        {{#inArray payments 'jcb'}}
+        <div class="footer__paychannel-item">
+          {{ snippet 'icons/icon_payment_jcb' }}
+        </div>
+        {{/inArray}}
+
+        {{#inArray payments 'american-express'}}
+        <div class="footer__paychannel-item">
+          <img class="lozad" data-src='{{ assets_url 'images/payment-icon/american-express.png'}}' alt="" />
+        </div>
+        {{/inArray}}
+
+        {{#inArray payments 'diners-club'}}
+        <div class="footer__paychannel-item">
+          {{ snippet 'icons/icon_payment_dinersClub' }}
+        </div>
+        {{/inArray}}
+
+        {{#inArray payments 'discover'}}
+        <div class="footer__paychannel-item">
+          <img class="lozad" data-src='{{ assets_url 'images/payment-icon/discover.png'}}' alt="" />
+        </div>
+        {{/inArray}}
+
+        {{#inArray payments 'paypal'}}
+        <div class="footer__paychannel-item">
+          {{ snippet 'icons/icon_payment_paypal' }}
+        </div>
+        {{/inArray}}
+
+        {{#inArray payments 'union-pay'}}
+        <div class="footer__paychannel-item">
+          {{ snippet 'icons/icon_payment_unionPayInternational' }}
+        </div>
+        {{/inArray}}
+      {{/with}}
+    </div>
+</div>

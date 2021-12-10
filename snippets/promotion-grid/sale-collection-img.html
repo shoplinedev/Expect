@@ -1,0 +1,17 @@
+{{assign 'prefix' 'stage_promotion_grid--sc'}}
+{{#if (isTruthy imageSrc)}}
+{{ assign 'img_ratio' (get 'ratio' (img_size  imageSrc)) }}
+{{/if}}
+{{#if (isFalsey img_ratio)}}
+  {{assign 'img_ratio' 100}}
+{{/if}}
+<div class="{{imgWrapperClass}}"  style="padding-bottom: {{img_ratio}}%">
+    {{#if (isTruthy imageSrc)}}
+    {{!-- 空图兜底 --}}
+    <img class="lozad" data-src="{{imageSrc}}"
+        data-srcset="{{imageSrcSet}}"
+        alt="" />
+    {{else}}
+    <div class="{{prefix}}-right-placeholder-image"></div>
+    {{/if}}
+</div>

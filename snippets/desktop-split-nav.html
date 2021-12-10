@@ -1,0 +1,22 @@
+{{assign 'half_length' (divide (length main_menu.nodeTree) 2)}}
+
+{{assign 'left_limit' (floor half_length)}}
+{{assign 'right_limit' (round half_length)}}
+
+{{#if (length main_menu.nodeTree) '==' 1}}
+	{{assign 'left_limit' 1}}
+	{{assign 'right_limit' 0}}
+{{/if}}
+
+
+<div class="desktop-split-nav">
+	<div class="header-item--split-left d-none d-md-flex">
+		{{ snippet 'desktop-site-nav'  main_menu=main_menu force_limit=left_limit dropdown_alignment=dropdown_alignment}}
+	</div>
+	<div class="desktop-split-nav__logo header__item--logo">
+		{{ snippet 'header-logo' }}
+	</div>
+	<div class="header-item--split-right d-none d-md-flex">
+		{{ snippet 'desktop-site-nav'  main_menu=main_menu force_limit=right_limit offset=left_limit dropdown_alignment=dropdown_alignment}}
+	</div>
+</div>

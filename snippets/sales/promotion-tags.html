@@ -1,0 +1,49 @@
+{{#if scene "pdp"}}
+  {{!-- 商品详情 --}}
+  {{ assign "class" "pdp"}}
+{{else}}
+  {{!-- 活动页 --}}
+  {{ assign "class" "activity"}}
+{{/if}}
+<div class="sales__promotionTags {{class}}">
+  {{!-- 未展开默认展示2个 --}}
+  <div class="sales__promotionTags-packUp">
+    {{#each benefitConditions}}
+      {{#if @index "<" 2}}
+        {{ snippet 'sales/promotion-tag' benefitCondition=this benefitType=../benefitType }}
+      {{/if}}
+    {{/each}}
+  </div>
+
+  {{!-- 活动页展示布局 --}}
+  {{#if scene '!==' "pdp"}}
+    {{#each benefitConditions}}
+      <span class="sales__promotionTags-item">
+        {{ snippet 'sales/promotion-tag' benefitCondition=this benefitType=../benefitType }}
+      </span>
+    {{/each}}
+  {{/if}}
+
+  {{!-- 商品详情页展示布局 --}}
+  <div class="sales__promotionTags-switch">
+    {{#if benefitConditions.length ">" 2}}
+      {{!-- 是否展示展开更多按钮 --}}
+      <i class="sales__promotionTags-switchIcon __sl-track_click" data-track-event_name="click_component" data-track-custom_component="view_more">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 3.5L6 8.5L11 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+      </i>
+
+      {{#if scene "pdp"}}
+        {{!-- 点击按钮弹窗展示所有的优惠信息 --}}
+        <div class="sales__promotionTags-items">
+          {{#each benefitConditions}}
+            <div class="sales__promotionTags-item">
+              {{ snippet 'sales/promotion-tag' benefitCondition=this benefitType=../benefitType }}
+            </div>
+          {{/each}}
+        </div>
+      {{/if}}
+    {{/if}}
+  </div>
+</div>

@@ -1,0 +1,77 @@
+{{assign 'show_announcement'  false }}
+{{assign 'show_announcement_pc'  false }}
+{{assign 'show_announcement_mobile'  false }}
+{{assign 'announcement_block_count' 0}}
+
+{{#with this as |global|}}
+	{{#forIn section.blocks}}
+		{{#if type '===' 'announcement'}}
+			{{#with global}}
+				{{assign 'announcement_block_count' (plus announcement_block_count 1)}}
+				{{assign 'show_announcement' true}}
+      {{/with}}
+
+      {{#if (isTruthy settings.link_text)}}
+        {{#with global}}
+          {{assign 'show_announcement_pc' true}}
+          {{assign 'show_announcement_mobile' true}}
+        {{/with}}
+      {{/if}}
+
+      {{#if (isTruthy settings.link_text_mobile)}}
+        {{#with global}}
+          {{assign 'show_announcement_mobile' true}}
+        {{/with}}
+      {{/if}}
+
+		{{/if}}
+	{{/forIn}}
+{{/with}}
+
+{{assign 'show_announcement_pc_class'  '' }}
+{{#unless show_announcement_pc}}
+  {{assign 'show_announcement_pc_class' 'd-md-none'}}
+{{/unless}}
+
+{{assign 'show_announcement_mobile_class'  '' }}
+{{#unless show_announcement_mobile}}
+  {{assign 'show_announcement_mobile_class' 'd-none'}}
+{{/unless}}
+
+
+{{#if show_announcement}}
+	<div class="stage-announcement-bar {{show_announcement_pc_class}} {{show_announcement_mobile_class}}">
+		<div class="container g-4 g-md-6">
+			<div id="AnnouncementSlider">
+				<div class="stage-announcement-slider" data-compact="false" data-block-count="{{announcement_block_count}}">
+					{{assign 'slide_index' 0 }}
+					{{#with this as |global|}}
+						{{#forIn section.blocks}}
+							{{#if type '===' 'announcement'}}
+								<div id="AnnouncementSlide-{{ this.id }}" class="announcement-slider__slide swiper-slide">
+									{{#if (isTruthy this.settings.link)}}
+										{{assign 'linkItem' (useLink this.settings.link)}}
+										<a class="announcement-link" {{{linkItem.hrefAttr}}}>
+									{{/if}}
+									{{#if (isTruthy this.settings.link_text)}}
+										<span class="announcement-link-text body5 d-none d-md-inline-block">{{ this.settings.link_text }}</span>
+									{{/if}}
+									{{#or this.settings.link_text_mobile this.settings.link_text}}
+										{{#if this.settings.link_text_mobile}}
+											<span class="announcement-link-text body5 d-inline d-md-none">{{ this.settings.link_text_mobile }}</span>
+										{{else}}
+											<span class="announcement-link-text body5 d-inline d-md-none">{{ this.settings.link_text }}</span>
+										{{/if}}
+									{{/or}}
+									{{#if (isTruthy this.settings.link)}}
+										</a>
+									{{/if}}
+								</div>
+							{{/if}}
+						{{/forIn}}
+					{{/with}}
+				</div>
+			</div>
+		</div>
+	</div>
+{{/if}}

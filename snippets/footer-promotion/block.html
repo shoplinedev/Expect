@@ -1,0 +1,27 @@
+{{#with item}}
+    {{assign 'linkObj' (useLink url ../query)}}
+    {{assign 'showImg' (boolean show_img)}}
+    {{assign 'imgRatio' ../ratio}}
+    {{assign 'hasImgRatio' (boolean (isTruthy imgRatio '!==' '0') '&&' (isTruthy imgRatio) )}}
+    <div class="footer__promotion-block color-scheme-{{color_scheme }} {{#if showImg}}footer__promotion-hasimg{{/if}} {{#if hasImgRatio }}footer__promotion-ratio{{/if}}">
+        {{ snippet 'texture' color_scheme=color_scheme width="200" }}
+        {{#if showImg}}
+            <a {{{linkObj.hrefAttr}}}  style="{{#if hasImgRatio}}padding-top: {{imgRatio}}{{/if}}" class="footer__promotion-imgwrap">
+                {{#if image_url.url}}
+                    <img class="footer__promotion-img lozad" data-src="{{image_url.url}}" alt="{{image_url.alt}}">
+                {{else}}
+                    {{ snippet 'icons/icon_image' class="footer__promotion-img" }}
+                {{/if}}
+            </a>
+        {{/if}}
+        <div class="title5 footer__promotion-title">{{title}}</div>
+        {{#if text}}
+            <div class="body3 footer__promotion-text sl-richtext">{{{text}}}</div>
+        {{/if}}
+        {{#if btn_title}}
+            <a {{{linkObj.hrefAttr}}} class="btn btn-extra body4 footer__promotion-btn">
+                {{btn_title}}
+            </a>
+        {{/if}}
+    </div>
+{{/with}}

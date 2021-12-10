@@ -1,0 +1,379 @@
+---
+collection_products:
+  limit: 2
+---
+
+{{assign 'prefix' 'stage_promotion_grid'}}
+{{assign 'id' (append prefix '_' section.id)}}
+{{assign 'style_id' (append '#' prefix '_' section.id)}}
+
+{{ assign 'blocks' (product_blocks_order_translate section 'blocks' 'block_order')}}
+<section id="{{id}}" >
+  <div class="stage_promotion_grid {{#if (isFalsey section.settings.enable_full_screen)}}container g-4 g-md-6 {{/if}}">
+    <div class="{{prefix}}--container">
+      {{#if blocks}}
+      {{#each blocks}}
+        {{#if (boolean type '==' 'banner')}}
+          {{!-- banner --}}
+          {{snippet 'promotion-grid/banner' settings=settings}}
+        {{else}}
+          {{!-- sale collection  --}}
+            {{snippet 'promotion-grid/sale-collection' settings=settings sectionSetting=../section.settings}}
+        {{/if}}
+      {{/each}}
+    {{/if}}
+    </div>
+  </div>
+</section>
+
+<style>
+  {{style_id}} {
+    margin-top: {{#if (isTruthy section.settings.enable_top_space)}}60px{{else}}0{{/if}};
+    margin-bottom: {{#if (isTruthy section.settings.enable_bottom_space)}}60px{{else}}0{{/if}};
+  }
+  {{style_id}} .stage_promotion_grid {
+    {{!-- 将第一个上margin和最后一个下margin 抵消掉 --}}
+    margin-top: -{{divide section.settings.gap 2}}px;
+    margin-bottom: -{{divide section.settings.gap 2}}px;
+  }
+  {{style_id}} .stage_promotion_grid--container {
+  {{#if (isTruthy section.settings.enable_full_screen)}}
+    margin: 0 {{divide section.settings.gap 2}}px;
+  {{else}}
+  {{!-- 不是全屏时, 得用负margin拉回来，否则受item的间距影响 --}}
+    margin: 0 -{{divide section.settings.gap 2}}px;
+  {{/if}}
+  }
+
+  {{!-- 为了当时活动分类在左右都是50%时中间间隔能生效，给每个item都加上了margin和padding来处理间隔 --}}
+  {{style_id}} .stage_promotion_grid--block-box {
+    margin: {{divide section.settings.gap 2}}px  0px;
+    padding: 0 {{divide section.settings.gap 2}}px;
+  }
+ 
+  @media only screen and (max-width: 750px){
+    {{style_id}} {
+      margin-top: {{#if (isTruthy section.settings.enable_top_space)}}40px{{else}}0{{/if}};
+      margin-bottom: {{#if (isTruthy section.settings.enable_bottom_space)}}40px{{else}}0{{/if}};
+    }
+    {{style_id}} .stage_promotion_grid {
+      margin-top: -{{divide section.settings.gap 4}}px;
+      margin-bottom: -{{divide section.settings.gap 4}}px;
+    }
+    {{style_id}} .stage_promotion_grid--container {
+      padding: 0 {{#if (isTruthy section.settings.enable_full_screen)}}{{divide section.settings.gap 4}}px{{/if}};
+      margin: 0;
+    }
+    {{style_id}} .stage_promotion_grid--block-box {
+      margin: {{divide section.settings.gap 4}}px 0px;
+      padding: 0 {{#if (isTruthy section.settings.enable_full_screen)}}{{divide section.settings.gap 4}}px{{/if}};
+    }
+  }
+</style>
+
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "活动推广",
+    "en": "Promotion grid"
+  },
+  "class": "stage_promotion_grid_section",
+  "settings": [
+    {
+      "type": "switch",
+      "id": "enable_full_screen",
+      "label": {
+        "zh-hans-cn": "启用宽屏展示",
+        "en": "Enable the widescreen display"
+      },
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": {
+        "zh-hans-cn": "间隔",
+        "en": "Interval"
+      },
+      "default": 20,
+      "max": 40,
+      "min": 0,
+      "unit": "px"
+    },
+    {
+      "type": "switch",
+      "id": "enable_top_space",
+      "label": {
+        "zh-hans-cn": "增加顶部间距",
+        "en": "Add space on the top"
+      },
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "enable_bottom_space",
+      "label": {
+        "zh-hans-cn": "增加底部间距",
+        "en": "Add space at the bottom"
+      },
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": {
+        "zh-hans-cn": "横幅",
+        "en": "Banner"
+      },
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "zh-hans-cn": "标题",
+            "en": "Title"
+          },
+          "default": "Banner promotion"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": {
+            "zh-hans-cn": "正文",
+            "en": "Main text"
+          },
+          "default": "Add the details of your promotion in smaller text"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": {
+            "zh-hans-cn": "按钮文案",
+            "en": "Button text"
+          },
+          "default": "Shop now"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": {
+            "zh-hans-cn": "跳转链接",
+            "en": "Jump link"
+          }
+        },
+        {
+          "type": "image_picker",
+          "id": "image_url",
+          "label": {
+            "zh-hans-cn": "图片",
+            "en": "Image"
+          }
+        },
+        {
+          "type": "select",
+          "id": "color_scheme",
+          "label": {
+            "zh-hans-cn": "颜色风格",
+            "en": "Color scheme"
+          },
+          "options": [
+            {
+              "value": "none",
+              "label": {
+                "zh-hans-cn": "无",
+                "en": "None"
+              }
+            },
+            {
+              "value": "1",
+              "label": {
+                "zh-hans-cn": "风格1",
+                "en": "Style 1"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "zh-hans-cn": "风格2",
+                "en": "Style 2"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "zh-hans-cn": "风格3",
+                "en": "Style 3"
+              }
+            }
+          ],
+          "default": "1"
+        }
+      ]
+    },
+    {
+      "type": "sale_collection",
+      "name": {
+        "zh-hans-cn": "分类",
+        "en": "Sale Collection"
+      },
+      "icon": "productCategories",
+      "settings": [
+        {
+          "type": "collection_picker",
+          "id": "product_categories",
+          "label": {
+            "zh-hans-cn": "商品分类",
+            "en": "Collection list"
+          }
+        },
+        {
+          "type": "text",
+          "id": "top_content",
+          "label": {
+            "zh-hans-cn": "顶部文案",
+            "en": "Texts on the top"
+          },
+          "default": "Up to"
+        },
+        {
+          "type": "text",
+          "id": "middle_content",
+          "label": {
+            "zh-hans-cn": "中部文案",
+            "en": "Texts in the middle"
+          },
+          "default": "50% off"
+        },
+        {
+          "type": "text",
+          "id": "bottom_content",
+          "label": {
+            "zh-hans-cn": "底部文案",
+            "en": "Texts at the bottom"
+          },
+          "default": "Select products"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": {
+            "zh-hans-cn": "宽度",
+            "en": "Width"
+          },
+          "options": [
+            {
+              "value": "50%",
+              "label": {
+                "zh-hans-cn": "50%",
+                "en": "50%"
+              }
+            },
+            {
+              "value": "100%",
+              "label": {
+                "zh-hans-cn": "100%",
+                "en": "100%"
+              }
+            }
+          ],
+          "default": "50%"
+        },
+        {
+          "type": "select",
+          "id": "color_scheme",
+          "label": {
+            "zh-hans-cn": "颜色风格",
+            "en": "Color scheme"
+          },
+          "options": [
+            {
+              "value": "none",
+              "label": {
+                "zh-hans-cn": "无",
+                "en": "None"
+              }
+            },
+            {
+              "value": "1",
+              "label": {
+                "zh-hans-cn": "风格1",
+                "en": "Style 1"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "zh-hans-cn": "风格2",
+                "en": "Style 2"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "zh-hans-cn": "风格3",
+                "en": "Style 3"
+              }
+            }
+          ],
+          "default": "1"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 15,
+  "presets": [
+    {
+      "name": {
+        "zh-hans-cn": "活动推广",
+        "en": "Promotion grid"
+      },
+      "category": {
+        "zh-hans-cn": "内容展示",
+        "en": "Content display"
+      },
+      "settings": {
+        "enable_full_screen": false,
+        "gap": 20,
+        "enable_top_space": false,
+        "enable_bottom_space": false
+      },
+      "blocks": [
+        {
+          "type": "banner",
+          "settings": {
+            "color_scheme": 1,
+            "title": "Banner promotion",
+            "content": "add the details of your promotion in smaller text",
+            "btn_text": "Shop  now",
+            "link": null,
+            "image_url": null
+          }
+        },
+        {
+          "type": "sale_collection",
+          "settings": {
+            "color_scheme": "1",
+            "product_categories": "",
+            "top_content": "UP to",
+            "middle_content": "50% off",
+            "bottom_content": "Select products",
+            "width": "50%"
+          }
+        },
+        {
+          "type": "sale_collection",
+          "settings": {
+            "color_scheme": "1",
+            "product_categories": "",
+            "top_content": "UP to",
+            "middle_content": "50% off",
+            "bottom_content": "Select products",
+            "width": "50%"
+          }
+        }
+      ]
+    }
+  ]
+}
+{{/schema}}

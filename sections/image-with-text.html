@@ -1,0 +1,169 @@
+{{assign 'settings' section.settings}}
+{{assign 'image' section.settings.image}}
+{{assign 'linkObj' (useLink settings.jump_link ../query)}}
+{{assign 'position' settings.text_position}}
+
+{{#if settings.show_divider}}
+<div class="section--divider">
+{{/if}}
+  <div class="image-with-text image-with-text__position-{{position}} container g-4 g-md-6">
+      <a {{{linkObj.hrefAttr}}} class="image-with-text__imgwrap {{#if (isFalsey image.url)}}image-with-text__noimg{{/if}}">
+          {{#if image.url}}
+              <img style="width: {{settings.image_width}}px" class="image-with-text__img lozad" data-src="{{image.url}}" alt="{{image.alt}}">
+          {{else}}
+              {{assign 'styleP' (append "width:" settings.image_width "px;height:auto" )}}
+              {{ snippet 'icons/icon_image' styleParam=styleP  class="image-with-text__img" }}
+          {{/if}}
+      </a>
+      <div class="image-with-text__block">
+          <div class="image-with-text__subTitle body3 ls-30p">{{settings.sub_title}}</div>
+          {{#if settings.title}}
+              <div class="image-with-text__title title3">{{settings.title}}</div>
+          {{/if}}
+          {{#if settings.text}}
+              <div class="body3 sl-richtext">{{{settings.text}}}</div>
+          {{/if}}
+          {{#if settings.button_text}}
+              <a {{{linkObj.hrefAttr}}} class="image-with-text__btn btn btn-primary">
+                  {{settings.button_text}}
+              </a>
+          {{/if}}
+      </div>
+  </div>
+{{#if settings.show_divider}}
+</div>
+{{/if}}
+
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "图文模块",
+    "en": "Image with text"
+  },
+  "class": "index-section--gap",
+  "settings": [
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": {
+        "zh-hans-cn": "添加图片",
+        "en": "Image"
+      }
+    },
+    {
+      "id": "image_width",
+      "type": "range",
+      "label": {
+        "zh-hans-cn": "图片宽度",
+        "en": "Image width"
+      },
+      "min": 100,
+      "max": 500,
+      "step": 10,
+      "unit": "px",
+      "default": 500
+    },
+    {
+      "id": "sub_title",
+      "type": "text",
+      "label": {
+        "zh-hans-cn": "副标题",
+        "en": "Subtitle"
+      },
+      "default": "Improved"
+    },
+    {
+      "id": "title",
+      "type": "text",
+      "label": {
+        "zh-hans-cn": "标题",
+        "en": "Title"
+      },
+      "default":"Image with text"
+    },
+    {
+      "id": "text",
+      "type": "richtext",
+      "label": {
+        "zh-hans-cn": "文本",
+        "en": "Texts"
+      },
+      "default":"Pair large text with a full-width image to draw attention to an important detail of your brand or product line."
+    },
+    {
+      "id": "button_text",
+      "type": "text",
+      "label": {
+        "zh-hans-cn": "按钮文案",
+        "en": "Button text"
+      },
+      "default": "Optional button"
+    },
+    {
+      "id": "jump_link",
+      "type": "url",
+      "label": {
+        "zh-hans-cn": "跳转链接",
+        "en": "Jump link"
+      }
+    },
+    {
+      "id": "text_position",
+      "type": "select",
+      "label": {
+        "zh-hans-cn": "文本位置",
+        "en": "Text position"
+      },
+      "options" : [
+        {
+          "value": "left",
+          "label": {
+            "en": "Image on right",
+            "zh-hans-cn": "左文右图"
+          }
+        },
+        {
+          "value": "right",
+          "label": {
+            "en": "Image on left",
+            "zh-hans-cn": "左图右文"
+          }
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "id": "show_divider",
+      "type": "switch",
+      "label": {
+        "zh-hans-cn": "展示模块分割线",
+        "en": "Show section divider"
+      },
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "zh-hans-cn": "图文模块",
+        "en": "Image with text"
+      },
+      "category": {
+        "zh-hans-cn": "内容展示",
+        "en": "Content display"
+      },
+      "settings": {
+        "image": {},
+        "image_width": 500,
+        "sub_title": "Improved",
+        "title": "Image with text",
+        "text":"Pair large text with a full-width image to draw attention to an important detail of your brand or product line.",
+        "button_text": "Optional button",
+        "jump_link": "",
+        "text_position": "right",
+        "show_divider": false
+      }
+    }
+  ]
+}
+{{/schema}}

@@ -1,10 +1,1355 @@
 {
-  "general": {
-    "index": {
-      "message": "test index"
+  "sales": {
+    "promotion": {
+      "tags": {
+        "benefit1": {
+          "threshold0": "Buy {{threshold}} save {{save}}",
+          "threshold1": "Buy {{threshold}} Get {{save}} OFF"
+        },
+        "benefit2": {
+          "threshold0": "Buy {{threshold}} save {{save}}",
+          "threshold1": "Buy {{threshold}} GET {{save}} OFF"
+        },
+        "benefit11": {
+          "threshold1": {
+            "normal": "Buy {{threshold}} items, enjoy {{save}} OFF on one of the items!",
+            "free": "Buy {{threshold}} items, enjoy free on one of the items!"
+          }
+        }
+      },
+      "reminder": {
+        "benefit1": {
+          "threshold0": {
+            "step1": "Buy {{threshold}} more to save {{willSave}}",
+            "step2": "Save {{saved}} already! {{br}}Buy {{threshold}} more to save {{willSave}}",
+            "step3": "Congratulations! You've saved {{saved}}!"
+          },
+          "threshold1": {
+            "step1": "Buy {{threshold}} more to save {{willSave}}",
+            "step2": "Save {{saved}} already! {{br}}Buy {{threshold}} more to save {{willSave}}",
+            "step3": "Congratulations! You've saved {{saved}}！"
+          }
+        },
+        "benefit2": {
+          "threshold0": {
+            "step1": "Buy {{threshold}} more to get {{willSave}} OFF",
+            "step2": "Save {{saved}} already! {{br}}Buy {{threshold}} more to get {{willSave}} OFF",
+            "step3": "Congratulations! You've saved {{saved}}!"
+          },
+          "threshold1": {
+            "step1": "Buy {{threshold}} more to get {{willSave}} OFF",
+            "step2": "Save {{saved}} already! {{br}}Buy {{threshold}} more to get {{willSave}} OFF",
+            "step3": "Congratulations! You've saved {{saved}}!"
+          }
+        },
+        "benefit11": {
+          "threshold1": {
+            "step1": {
+              "normal": "Buy {{threshold}} more items, enjoy {{willSave}} OFF on one of the items!",
+              "nextFree": "Buy {{threshold}} more items, enjoy free on one of the items!"
+            },
+            "step2": {
+              "normal": "Congratulations! {{saved}} Saved, {{br}}Buy {{threshold}} more items, enjoy {{willSave}} OFF on one of the items!",
+              "free": "Congratulations! enjoy free on one of the items!",
+              "nextFree": "Congratulations! {{saved}} Saved, {{br}}Buy {{threshold}} more items, enjoy free on one of the items!"
+            },
+            "step3": {
+              "normal": "Congratulations! enjoy {{saved}} OFF on one of the items!",
+              "free": "Congratulations! enjoy free on one of the items!"
+            }
+          }
+        }
+      }
     },
-    "404": {
-      "title": "Not found"
+    "bundle": {
+      "title": "Frequently bought together",
+      "saveTip": "Save {{amount}} for buying together"
+    },
+    "selected-count-activity-product": "{{selectCount}} event products selected",
+    "customer-purchase-limit": "Purchase limit {{count}} per person",
+    "flash-sale-tips": "Purchase limit: {{count}} quantity",
+    "flash-sale-text": "FLASH SALE",
+    "hot-sale": "Hot sale!",
+    "sold": "{{count}} sold"
+  },
+  "header": {
+    "searchItems": "Search for products",
+    "searchInputPlaceholder": "Type here and tap search",
+    "navItemAll": "All",
+    "search": "Search",
+    "cart": "Cart",
+    "center": "Center",
+    "login": "Login",
+    "logout": "Logout",
+    "noCurrencyFallback": "No relevant currency was found"
+  },
+  "common": {
+    "title": "Title",
+    "category": "Category",
+    "outOfStock": "Out of stock",
+    "subTotal": "Subtotal",
+    "descountPrice": "Sale Price",
+    "total": "Total",
+    "soldOut": "Sold Out",
+    "settleMent": "Buy now",
+    "selectProduct": "Select product",
+    "hasSelected": "Has selected",
+    "pieces": "Pieces",
+    "discount": "Discount",
+    "piece": "piece",
+    "remove": "Remove",
+    "cancel": "Cancel",
+    "tips": "Reminder",
+    "checkout": "Check out",
+    "finish": "Complete",
+    "username": "Name",
+    "mobile-phone": "Mobile phone number",
+    "tel-phone": "Phone number",
+    "meno": "Remarks",
+    "package": "Package",
+    "login": "Log in",
+    "email": "Email",
+    "email2": "Mail",
+    "order": "Orders",
+    "remain": "Remaining",
+    "operation": "Operate",
+    "bank-name": "Bank name",
+    "bank-card-number": "Bank card number",
+    "bank-Account": "Bank account",
+    "bank-Account2": "Bank account",
+    "close": "Close",
+    "audit": "Review",
+    "tax": "Taxes and fees",
+    "mobile": "Phone number",
+    "address": "Address",
+    "logistics": "Shipping",
+    "backout": "Undo",
+    "confirm": "OK",
+    "upload": "Upload",
+    "error-stack": "Wrong stack",
+    "amount": "Quantity",
+    "stock-limit": "Only {{stock}} left",
+    "back-to-user-center": "Back to User Center",
+    "member-login": "Member sign-in",
+    "contact-information": "Contact information",
+    "back-to-cart": "Return to cart",
+    "recommend": "Recommended",
+    "free-shipping": "Free shipping",
+    "apply": "Apply",
+    "anonymous": "Anonymous",
+    "logistics-and-payment": "Delivery and payment",
+    "payment": "Payment",
+    "payment-2": "Pay Now",
+    "modify": "Change",
+    "cardholder-name": "Cardholder's name",
+    "use-address": "Used Address",
+    "default-address": "Default address",
+    "use-new-address": "Use new address",
+    "sign-out": "Log out",
+    "enter-username": "Please enter username",
+    "enter-email": "Please enter your email address",
+    "enter-mobile-phone": "Please enter mobile phone number",
+    "order-evaluation": "Order review",
+    "submit-evaluation": "Submit review",
+    "anonymous-evaluation": "Anonymous Review",
+    "discountOff": "Discount",
+    "discountDesc": "Sales Description",
+    "freightDesc": "Shipping fee description",
+    "taxDesc": "Taxes and fees description",
+    "returnMoney": "Refund",
+    "returnProgress": "Return progress",
+    "returnInfo": "Return info",
+    "rollback": "Withdraw",
+    "applyDate": "Request Date",
+    "evaluation": "Review",
+    "upload-image": "Upload an image",
+    "page": "page",
+    "day": "day",
+    "days": "days",
+    "buy-now": "Buy now",
+    "ok": "OK",
+    "continue": "Continue",
+    "contactUs": "REQUEST A QUOTE",
+    "productError": "No product data found. Please try again later",
+    "home": "Home"
+  },
+  "modal": {
+    "iKnow": "I got it",
+    "goCart": "Go to cart",
+    "exceedCartTitle": "Sorry! The number of products in the cart exceeds the limit.",
+    "exceedCartContent": "You can add this product to your cart by first buying or removing other products from your cart"
+  },
+  "footer": {
+    "followus": "FOLLOW US",
+    "subscribeBarPlaceholder": "E-mail Address",
+    "subscribeSuccess": "Subscribe success",
+    "subscribeError": "Subscribe fail",
+    "subscribeRegExpError": "Email invalid",
+    "copyright": "All Rights Reserved."
+  },
+  "productList": {
+    "gategoryMenu": {
+      "catalog": "CATALOG",
+      "menuitem": "All products"
+    },
+    "filterMenu": {
+      "filter": "Filter",
+      "price": "Price"
+    },
+    "container": {
+      "empty": {
+        "desc": "No product in this category",
+        "title": "Sorry, this product is currently out of stock.",
+        "description": "If need, can contact businessman to consult"
+      },
+      "sort": {
+        "text1": "All products",
+        "text2": "Sort by",
+        "recommend": "Recommended",
+        "sales": "Top sellers",
+        "option1": "Sold Date (new to old)",
+        "option2": "Sold Date (old to new)",
+        "option3": "Price (high to low)",
+        "option4": "Price (low to high)",
+        "newest": "New arrival",
+        "priceLowToHigh": "Price low to high",
+        "priceHighToLow": "Price high to low"
+      },
+      "network": {
+        "message": "No product data found. Please try again later"
+      },
+      "tradePopup": {
+        "error1": "{{stock}} pieces left. Please reselect quantity",
+        "error2": "Only {{saleMax}} pieces can be purchased. Please reselect quantity!",
+        "error3": "Please select quantity!",
+        "error4": "Please select all options of this product",
+        "error5": "The product is sold out",
+        "error6": "The product is removed from shelves",
+        "addToCart": "Add to cart"
+      },
+      "listItem": {
+        "sold": {
+          "out": "SOLD OUT"
+        },
+        "off": "- {{value}}%",
+        "addToCart": "Add to cart",
+        "toDetail": "View details"
+      },
+      "show": "Show",
+      "viewAs": "View as",
+      "from": "From {{price}} "
+    }
+  },
+  "productSearch": {
+    "serachTitle": {
+      "text1": "No related results found"
+    },
+    "search": {
+      "backHome": "Back to the home page",
+      "resultsFoundFor": "{{count}} results found for \"{{keyword}}\"",
+      "results": "{{count}} Results",
+      "noRelatedResultFound": "No related results found",
+      "searchNoResults": "Your search for \"{{keyword}}\" did not yield any results"
+    },
+    "empty": {
+      "title1": "We recommend to check if there are typing mistakes,",
+      "title2": "and search again with concise keywords"
+    },
+    "sortName": "Sort by:",
+    "container": {
+      "sort": {
+        "option1": "On-shelves time (new to old)",
+        "option2": "On-shelves time (old to new)",
+        "option3": "Price (high to low)",
+        "option4": "Price (low to high)"
+      }
+    }
+  },
+  "collection": {
+    "all": {
+      "title": "All Collections",
+      "h1Title": "Collections"
+    }
+  },
+  "productDetail": {
+    "goToAmazon": "Buy in the Amazon",
+    "goOutsideOfAmazon": "Go shopping outside of Amazon",
+    "goOtherChannels": "Other purchase channels",
+    "toAmazon": "Amazon",
+    "goToRakuten": "LOTTE",
+    "goToYahoo": "Yahoo",
+    "goToAmazonByLink": "Buy in the Amazon",
+    "goToRakutenByLink": "Buy in the LOTTE",
+    "goToYahooByLink": "Buy in the Yahoo",
+    "recentlyViewedProducts": "Recently Viewed Products",
+    "tabs": {
+      "description": "Description",
+      "shippingPayment": "Shipping & payment",
+      "comments": "Reviews"
+    },
+    "recommendTitle": "You may also like",
+    "commentsTitle": "reviews",
+    "network": {
+      "message2": "Failed to retrieve product info. Please try again later"
+    },
+    "thumbSwiper": {
+      "image": {
+        "alt": "Product thumbnail"
+      },
+      "share": {
+        "text": "Share to"
+      }
+    },
+    "tabPanel": {
+      "desc": "No description yet",
+      "descFs": "Failed to retrieve data. Please try again later",
+      "ship": {
+        "sh": {
+          "text1": "Method"
+        },
+        "text2": "No shipping method yet"
+      },
+      "pay": {
+        "text1": "Payment method",
+        "text2": "No payment method yet",
+        "text3": "No logistics payment info yet"
+      },
+      "comments": {
+        "empty": "No product review yet",
+        "error": "Failed to retrieve product review. Please try again later"
+      }
+    },
+    "no-product-introduction": "No product introduction yet",
+    "no-logistics-and-payment-information": "No logistics and payment methods info yet",
+    "addCart": "ADD",
+    "default-placeholder": "Please select {{attrName}}",
+    "inquiry": {
+      "inquiryTitle": "Product enquiry",
+      "inquiryTips1": "Please leave us a message and we will get back to you as soon as possible",
+      "email": "Email",
+      "message": "Your message",
+      "inquiryTips2": "You can give us more of your information so that we can provide you with more appropriate services",
+      "optional": "Optional",
+      "name": "Name",
+      "mobile": "Phone number",
+      "region": "Country/Region",
+      "cancel": "Cancel",
+      "submit": "Submit",
+      "emailEmptyErr": "Please enter your email address",
+      "messageEmptyErr": "Please enter your message",
+      "emailFormatErr": "Please enter a valid email address",
+      "messageLengthErr": "The maximum length of your message should be no more than 1500 words",
+      "submitSuccess": "Submitted successfully",
+      "submitFailed": "Submission failed, please try again"
+    },
+    "previewLinkToast": "Operation for the link preview is not supported",
+    "morePaymentOptions": "more payment options",
+    "activityToast": {
+      "product-limit": "Purchase limited to {{stock}} promotional product",
+      "price-limit": "Max Qty allowed for this limited product is {{num}}",
+      "title-limit": "Below products exceed the purchasing limit"
+    },
+    "bulkDiscount": {
+      "title": "Buy More Save More!"
+    }
+  },
+  "trade": {
+    "contact": "Contact",
+    "can-not-submit-order": "Cannot submit order",
+    "sorry-rechoose-longtips": "Sorry, the product you selected is invalid to purchase. Please re-select",
+    "product-amount": "Subtotal",
+    "will-discount": "Discount",
+    "some-discount-limit-to-pay-and-delivery": "Some of the discounts are only available to a certain logistics method/payment method",
+    "total": "Total",
+    "go-on-shopping": "Continue shopping",
+    "man-piece-share": "Enjoy for {{count}} pieces or more",
+    "man-money-share": "Enjoy for the purchase amount of {{money}} or more",
+    "man-piece-reduce": "Rebate for {{count}} pieces or more",
+    "man-money-reduce": "Rebate for the purchase amount of {{money}} or more",
+    "invalid-product": "INACTIVE LIST",
+    "delete-invalid-product": "Remove all",
+    "remove-product": "Remove product",
+    "sure-remove-this-product": "Are you sure you want to remove the product?",
+    "order-created-but-data-fail": "The order is created, but there is data return error...",
+    "agree-user-terms-first": "Please agree to the Terms of User first",
+    "recieve-address-unavailable-rechoose": "No available delivery method to the recipient's address. Please return to re-select",
+    "please-fill-meno": "Please fill in remarks",
+    "please-choose-delivery-way": "Please select a delivery method",
+    "please-choose-pay-way": "Please select a payment method",
+    "bad-userinfo-or-in-blocklist": "User info error or the user is blocked",
+    "bad-userinfo": "User info error",
+    "fail-get-product-back-cart": "Failed to retrieve the checked product info. Please return to cart and re-submit",
+    "fill-info": "Information",
+    "back-prev-step": "Return to information",
+    "back-prev-step2": "Return to shipping",
+    "next-step": "Continue",
+    "next-step-shipment": "Continue to shipping",
+    "next-step-payment": "Continue to payment",
+    "submit-order": "Complete Order",
+    "i-agree-website": "I agree to the website's",
+    "service-terms": "Terms of Service",
+    "and": "and",
+    "private-policy": "Privacy Policy",
+    "fast-checkout": "Express Checkout",
+    "or-fill-info": "OR",
+    "not-support-paypal": "The seller doesn't support PayPal",
+    "service-fee": "Service fee",
+    "pay-way": "Payment",
+    "pay-way-logo-and-more": "and more",
+    "jump-to-pay-longtips": "After clicking “Complete order”, you will be redirected to {{- payChannel}} to complete your purchase securely.",
+    "reciever-info": "Shipping address",
+    "reciever-to": "Ship to",
+    "use-customer-info": "Use customer info",
+    "please-input-field": "Please enter {{field}}",
+    "reciever-name": "Recipient`s last name",
+    "reciever-fullname": "Recipient's full name",
+    "field-can-not-longer-than": "{{field}} can't exceed {{length}} characters in length",
+    "can-not-empty": "Can't be empty",
+    "must-fill": "Required",
+    "must-choose": "Required to select",
+    "must-select": "Required option",
+    "must-agree-policy": "You must agree to the return policy to continue!",
+    "optional-fill": "Optional",
+    "other-info": "Other info",
+    "need-choose-delivery-way": "A delivery method is required for all temperature layers",
+    "your-delivery-need-choose-store": "Shop info is required for all delivery methods",
+    "supermarket-self-pick": "Self pick-up in store",
+    "delivery-to-home": "Home delivery",
+    "other-delivery": "Other delivery methods",
+    "delivery-way": "Delivery method",
+    "please-choose-area": "Please select an area",
+    "please-choose-store": "Please select a shop",
+    "please-input-legal-passport-id-card": "Please enter a valid ID/passport",
+    "passport-id-card-placeholder": "ID card/passport number (Optional)",
+    "passport-id-card-tip": "Please enter the recipient’s real ID or passport number to ensure smooth customs declaration and delivery",
+    "product-offline": "The product is removed from shelves",
+    "stock-not-enough": "Insufficient product",
+    "over-limit-number": "Exceeded the product limit",
+    "product-package": "Package",
+    "product-fee": "Subtotal",
+    "product-tax": "Commodity tax",
+    "delivery-tax": "Freight tax",
+    "next-step-calc": "Calculated at next step",
+    "delivery-fee": "Shipping",
+    "pay-fee": "Payment charges",
+    "summary": "Total",
+    "use-member-account-can": "Already have an account ?",
+    "i-want-recieve-discount-info": "Keep me up to date on news and exclusive offers",
+    "order-detail-query-fail": "Order details query error",
+    "your-order-created": "your order has been placed",
+    "your-order-not-pay": "You haven't completed payment for your order",
+    "go-pay": "Pay now",
+    "now-can-not-comment": "Can't review now!",
+    "order-detail": "Order details",
+    "order-info": "Order info",
+    "order-status": "Order status",
+    "create-order-time": "Order-placing time",
+    "comment-product": "Product review",
+    "give-stars": "Rating",
+    "at-least-comment-one-before-submit": "Please try to rate at least one item before submitting",
+    "leave-your-words": "Tell us your thoughts and share them with other buyers!",
+    "is-paying": "Paying",
+    "you-are-paying-wait-result": "Your payment request is submitted. Payment result from {{- payChannel}} is pending",
+    "need-pay": "Need to pay",
+    "after-sale-order": "After-sale order",
+    "see-refund-progress": "View return progress",
+    "has-number-products": "{{number}} products left",
+    "order-meno": "Order remarks",
+    "comment-order": "Review the order",
+    "apply-refund": "Apply for return",
+    "cancel-order": "Cancel the order",
+    "product-preview": "Product preview",
+    "see-detail": "View details",
+    "start-refund": "Initiate a return",
+    "buy-number-greater-then-stock": "Quantity must be greater than 1 and less than the inventory quantity!",
+    "can-refund-number": "Returnable quantity",
+    "choose-refund-reason": "Please select a reason for return",
+    "please-fill-80charact-refund-reason": "Please fill in your return reason within 80 characters",
+    "please-fill-refund-reason": "Please fill in your reason for return",
+    "choose-refund-product": "Select the product to be returned",
+    "refund-reason-less-60": "Return reason shall not exceed 60 characters!",
+    "refund-number": "Quantity of returned products",
+    "sub-total": "Subtotal",
+    "refund-amount": "Refund amount",
+    "refund-amount-bigger-zero": "Refund amount must be greater than 0",
+    "refund-amount-can-over": "Refundable amount can't exceed the maximum refundable amount",
+    "max-refund": "Maximum refundable amount",
+    "confirm-refund": "Confirm the return",
+    "refund-policy": "Return policy",
+    "fill-refund-info": "Fill in the return information",
+    "refund-way": "Return method",
+    "refund-type": "Return type",
+    "please-choose-refund-type": "Select the return type",
+    "refund-express": "Logistics for return",
+    "please-choose-refund-express": "Please select a logistics mode for return!",
+    "refund-person": "Returned by",
+    "pick-address": "Collection address",
+    "refund-account": "Refund account",
+    "please-choose-refund-account": "Please select the refund account!",
+    "your-refund-order-created": "Your return order has been placed",
+    "confirm-email-send-to-you": "Confirmation letter has been sent to your email",
+    "refunding": "Refunding",
+    "user-cancel-apply": "The user withdrew the request",
+    "audit-refuse": "Not approved",
+    "refund-order-stataus": "Return order status",
+    "refund-order-number": "Return order number",
+    "apply-time": "Request time",
+    "number-refund-product": "<italic>{{number}} </italic> products for return",
+    "refund-reason": "Reason for return",
+    "refund-way-intro": "Introduction to the return method",
+    "fill-logistics": "Fill in logistics info",
+    "backout-apply": "Withdraw request",
+    "backout-refund-apply": "Withdraw return request",
+    "your-apply-auditing-sure-backout": "Your return request is under review. Withdraw request?",
+    "see-origin-order": "View original order",
+    "refund-logistics-info": "Return logistics info",
+    "express-company": "Logistics company",
+    "please-fill-express-company": "Please fill in a logistics company",
+    "please-fill-express-bills-sn": "Please fill in a logistics express number",
+    "express-bills-sn": "Logistics express number",
+    "express-bill-pic": "Logistics express image",
+    "optional-support-jpg": "Optional. Supports JPG/PNG",
+    "pic-upload-fail": "Failed to upload the image {{name}}",
+    "shopping-gold-trade-off": "Shopping subsidy reduction",
+    "coupon-code-offer": "Coupon",
+    "product-sold-out": "Product is sold out",
+    "sorry-limit-re-choose": "Sorry! You can only purchase {{promotionRemainStock}} pieces per order. Please re-select your quantity",
+    "sorry-product-not-available-re-reorder": "Sorry! Some of the products you purchase have been removed from shelves and are invalid. Please check and re-confirm it before resubmitting",
+    "product-remain-please-re-choose": "{{stock}} pieces product remaining. Please re-select the quantity",
+    "coupon-code": "Coupon Code",
+    "shop-list": "Cart ({{count}} )",
+    "add-to-cart-fail": "Sorry! Failed to add to cart. Please try again!",
+    "go-login": "Go to sign in",
+    "complete-payment": "Complete payment",
+    "shopping-money-deduction": "Shopping subsidy reduction",
+    "use-shopping-deduction": "Approximate reduction of {{num}} usable shopping subsidy",
+    "can-get": "Available",
+    "shopping-money": "Shopping subsidy",
+    "next-time-use-shopping-money": "Estimated reduction for next shop",
+    "delivery-address-abnormal": "Recipient's address error",
+    "billing-address-abnormal": "Billing address error",
+    "billing-address": {
+      "title": "Billing address",
+      "desc": "Select the address that matches your card or payment method.",
+      "option-same": "Same as shipping address",
+      "option-another": "Use a different billing address",
+      "input-email": "The payment method you choose also needs to provide an email address to send billing information"
+    },
+    "ship-to": "Deliver to",
+    "self-mention": "Self-Pickup",
+    "logistics-package": "Shipping method",
+    "shopping-list": "Your Cart",
+    "item": "ITEM",
+    "quantity": "QUANTITY",
+    "total-num": "TOTAL",
+    "no-pay-way": "Unavailable Payment Method",
+    "refund-detail": "Refund Details",
+    "only-refund": "Refund only",
+    "return-and-refund": "Return and refund",
+    "come-way-return": "Refund to the original payment account",
+    "others": "Other",
+    "not-as-expected": "Product under expectations",
+    "damage": "Product damaged during delivery",
+    "sku-not-match": "Product dimensions/specifications different from description",
+    "wrong-product": "Wrong product",
+    "other-reason": "Other reasons",
+    "get-the-order": "Pick an add-on item",
+    "free": "Free",
+    "sku-changed-title": "There are {{num}} product changes, whether to continue Check out",
+    "sorry-all-sku-unusable": "Sorry, all items are invalid, order cannot be submitted",
+    "off-shelf": "INVALID",
+    "sold-out": "SOLD OUT",
+    "has-removed": "INVALID",
+    "btn-back-to-cart": "BACK TO CART",
+    "btn-continue": "CONTINE",
+    "btn-confirm": "CONFIRM",
+    "cart-title": "CART",
+    "none-product-title": "Sorry, all products are no longer valid and the order cannot be submitted.",
+    "footer-all-rights-reserved": "Copyright © {{year}} {{name}}. All rights reserved.",
+    "please-pay-within": "please pay within",
+    "return-to-selection-goods": "Selection of Returned goods",
+    "return-apply-fail-SKU": "The number of goods requested exceeds the limit",
+    "empty-cart-title": "Your cart is currently empty.",
+    "empty-continue-btn": "Continue shopping",
+    "slpayment": {
+      "cardNumber": {
+        "placeholder": "Credit Card Number",
+        "errorTips": "Please enter the correct card number",
+        "tips": "All transactions are secure and encrypted"
+      },
+      "expiryDate": {
+        "errorTips": "Please enter the correct time"
+      },
+      "cvv": {
+        "placeholder": "CVV",
+        "errorTips": "Required*",
+        "tips": "Generally located behind the card"
+      },
+      "footer": "You are using SHOPLINE Payments to checkout now. By completing the payment, you agree to the",
+      "service": "Terms of Service of SHOPLINE Payments.",
+      "cardholdername": "Cardholder name",
+      "cardHolderNamePlaceHolder": "Cardholder name",
+      "cardHolderNameErrorTips": "Required*"
+    },
+    "find-store": "Select the store",
+    "choose-store": "Change the store",
+    "return-apply-fail-min-amount": "Only for refunds, refund amount must be greater than 0 CNY",
+    "return-apply-fail-max-amount": "Refundable amount cannot exceed the maximum refundable amount",
+    "enter-a-tip-on-more-than": "Enter a tip no more than {{amount}}",
+    "payment-security-description": "All transactions are secure and encrypted.",
+    "pay-failed-err-code": {
+      "default": "Due to some reasons your payment can't be processed.Please try again or use other payment methods.",
+      "buyer-account-abnormal": "Due to some issues with your account,the payment can't be processed.Please try again or use other payment methods.",
+      "wrong-password": "Due to incorrect password your payment can't be processed.Please try again or use other payment methods.",
+      "overpayment": "The order amount exceeds the purchasing limit, your payment cannot be processed. Please select a different card or payment method to try again.",
+      "insufficient-balance": "Insufficient balance, your payment cannot be processed. Please select a different card or payment method to try again.",
+      "invalid-card-number": "Invalid card number, your payment cannot be processed. Please select a different card or payment method to try again.",
+      "card-expired": "The card is expired, your payment cannot be processed. Please select a different card or payment method to try again.",
+      "change-card": "Your payment cannot be processed now, Please select a different card or payment method to try again.",
+      "user-cancel": "Payment canceled. Please try again if you need to continue.",
+      "3d-overtime": "3DS authentication failed, please try again.",
+      "pin-over-times": "Maximum password attempts exceeded, your payment cannot be processed. Please select a different payment method and try again."
+    },
+    "coupon-tip": "This coupon code cannot be used in conjunction with other promotional or discount offers.",
+    "coupon": "Coupon",
+    "coupon-mutra-discount": "This coupon code cannot be used in conjunction with other promotional or discount offers.",
+    "product-removed": "Product has been deleted",
+    "activity-product-limit ": "You can buy at most X product(s) with the discounts at the same time",
+    "sku-limit-title": "Below products exceed the purchasing limit, please change the quantity",
+    "activity-title-limit ": "Below products exceed the purchasing limit, still proceed to checkout?",
+    "activity-price-limit": "You can only buy X piece(s) of this product with the discounts",
+    "policy": {
+      "refund-policy": "Refund policy",
+      "privacy-policy": "Privacy Policy"
+    },
+    "tip": {
+      "add-tip": "Add tip"
+    },
+    "point-discount-desc": "You can use {{deductMemberPointNum}} points to save {{deductMemberPointAmount}}",
+    "point-discount-remark": "Cost {{value}} Points",
+    "point-discount": "Points discount",
+    "free-shipping": "freeshipping",
+    "pod-link": "Click to view",
+    "pod-pic": "Custom preview"
+  },
+  "payments-name": {
+    "Paypal": "Paypal",
+    "COD": "Cash on delivery",
+    "third-part": "Credit Card"
+  },
+  "paypal": {
+    "error-expired": "The product has expired",
+    "error-sold-out": "Insufficient product inventory",
+    "error-product-limit": "The product limit has been exceeded",
+    "error-network-error": "Network Error",
+    "error-shop-not-exit": "The shop does not exist",
+    "error-login-limit": "Please log in to your account before placing an order"
+  },
+  "tips": {
+    "more-than-0-int": "Please enter a number greater than 0",
+    "bind-change-mobile-phone-number": "Connect/Change a mobile phone number",
+    "bind-change-email": "Connect/Change an email",
+    "verification-code-has-been-sent-to-your-account": "Verification code has been sent to your account",
+    "change-binding-after-verification": "You can connect/change {{value}} after verification",
+    "set-new-password": "Reset password",
+    "forget-password": "Forgot password",
+    "update-password": "Change password",
+    "reset-password": "You're resetting password for account {{account}}",
+    "verify-account-to-reset-password": "Please verify your account and reset password",
+    "password-can-be-changed-after-verification": "You can change password after verification",
+    "login": "SIGN IN",
+    "register": "Sign up",
+    "or-use-the-following-method-to-log-in": "Or sign in with the following methods",
+    "i-agree-with-the-shop": "I agree to the",
+    "and": "and",
+    "user-agreement": "Terms of User of the store",
+    "please-read-and-agree-to-the-user-agreement-first": "Please read and agree to the user agreement first",
+    "no-order-information-please-confirm": "Failed to retrieve order info. Please make sure that the order number is correct",
+    "no-order-number-please-confirm": "Failed to retrieve order number. Please make sure that the order number is correct",
+    "error-obtaining-support-logistics-country": "An error occurred when retrieving countries supporting logistics",
+    "please-complete-the-payment-method-content": "Please complete the payment method",
+    "order-creation-exception": "Failed to place order",
+    "bind-success": "Connected",
+    "update-success": "Changed",
+    "pay-params-error": "Failed to retrieve payment parameters, please try again",
+    "change-heart": "Changed my mind",
+    "price-more-expensive": "Lower price found elsewhere",
+    "repeat-buy": "Buy again",
+    "sale-too-slow": "Shipping delays",
+    "change-item": "I want to change the item(s) purchased",
+    "incorrect-delivery-or-payment-information": "Wrong delivery or payment info",
+    "other-reason": "Other reasons",
+    "select-cancel-reason": "Please select the reason for cancelation",
+    "fill-cancel-reason": "Please fill in the reason for order cancelation",
+    "sure-cancel-order": "Are you sure you want to cancel this order?",
+    "cancel-reason-feedback": "Please tell us the reason for your cancelation so that we can do better in the future. You will be refunded after your order is successfully canceled. We're looking forward to your next visit to our store!",
+    "cancel-apply-sent": "Cancelation request sent",
+    "cancel-order-fail": "Order cancelation failed, please try again",
+    "cancel-success-notice": "You will receive an email notification after your order is successfully canceled, thank you!",
+    "fail-contact": "If your cancelation request was unsuccessful, please contact us by referring to the Seller/Buyer Order Correspondence section below.",
+    "max-upload-img": "Sorry! You've reached the maximum number {{maxNum}} of images upload portal supports!",
+    "img-name-too-long": "The input image name is too long",
+    "img-size-too-large": "Sorry! The image file's size exceeds the limit!",
+    "get-checkout-detail-fail": "Checkout details retrieval error",
+    "product-abnormal-back-to-cart": "Product status error, please go back to cart and try again",
+    "get-checkout-config-fail": "Checkout configuration retrieval error",
+    "country-address-fail": "Sellers based in the country of the entered address are not responsible for delivery fee payments. Please make a manual selection",
+    "paypal-country-fail": "The country in which this PayPal account is based is not included in the list of countries for delivery fee payments. Please make a manual selection",
+    "need-phone-number-to-deliver": "In case we need to contact you about your order",
+    "enter-tel-number": "Please enter phone number",
+    "enter-email": "Please enter email address",
+    "no-logistics-available": "No available delivery method",
+    "logistics-no-pre-selection": "Delivery pre-selection not available",
+    "logistics-pre-selection": "Delivery pre-selection available",
+    "address-no-logistics": "There are no available delivery methods for the current address",
+    "enter-address-first": "Please enter address first",
+    "expand-order-summary": "Show order summary",
+    "put-up-order-summary": "Hide order summary",
+    "select-return-product-first": "Please first select the product to be returned",
+    "enter-bank-name": "Please enter bank name!",
+    "enter-bank-card-number": "Please enter bank card number!",
+    "enter-name": "Please enter name!",
+    "max-upload-image": "You can upload a maximum of {{max}} images",
+    "upload-image-fail": "Failed to upload the image {{name}}",
+    "image-size-less-than": "Images should be smaller than {{max}} MB",
+    "sku-change-tips": "Product status changes detected, please reconfirm your shipping/payment method"
+  },
+  "validate": {
+    "coupon-code-cannot-exceed-25-length": "Coupon code cannot exceed 25 characters.",
+    "discount-code-error": "Enter a valid discount code",
+    "discount-code-user-invalid": "{{discountCode}} discount code isn’t valid for the items in your cart",
+    "mutual-excluded-by-time-limited": "A discount has been applied to this order. You can’t add another discount.",
+    "enter-correct-email": "Please enter an email address with valid format",
+    "enter-correct-phone-number": "Please enter a mobile phone number with valid format",
+    "phone-number-less-than-100": "Mobile phone number can't exceed 100 characters in length",
+    "shipping_plan_unavailable": "{{discountCode}} coupon is valid for the shipping method"
+  },
+  "subscription": {
+    "subscript-via-line-facebook": "Subscribe to order notification via LINE or Facebook",
+    "not-subscript-via-line-facebook": "Can't subscribe to order notification via LINE or Facebook"
+  },
+  "comment": {
+    "enter-comment": "Write product review",
+    "customer-comment": "Customer reviews",
+    "comment-count": "{{total}} reviews",
+    "read-more-comments": "View more",
+    "rate-score": "{{score}} rating",
+    "text": "Reviews",
+    "total": "{{total}} reviews",
+    "bad": "Very poor",
+    "worse": "Poor",
+    "general": "Fair",
+    "good": "Good",
+    "best": "Excellent",
+    "shipping-information": "Shipping information",
+    "all-reviews": "See all reviews",
+    "leave-a-review": "Leave a review",
+    "no-login-msg": "Customers who have bought this product can leave the review, please sign in first",
+    "sign-in": "Sign in",
+    "no-bought-msg": "Sorry, you haven’t bought this product before, so you cannot leave the review",
+    "ratings": "Ratings",
+    "experience-about": "Please enter your review about this product",
+    "add-img": "Add an image",
+    "more-images": "You can add at most {{total}} images",
+    "write-review": "Write a review",
+    "thanks-msg": "Thanks for your review",
+    "network-err-msg": "Due to the system error your review cannot be processed, please try again",
+    "only-image": "Only supports for uploading the .jpg .jpeg .png .bmp file",
+    "image-only-2m": "Maximum image size is {{size}} MB",
+    "about-product": "Please enter at least a word",
+    "no-comment-title-tip": "No comments yet",
+    "no-comment-first-tip": "post the first comment now!",
+    "on-img-upload-tip": "Uploading, please submit later",
+    "mobile-submit": "Submit"
+  },
+  "order": {
+    "refund-methods": {
+      "self": "Send back by myself",
+      "merchant": "Pick up by seller"
+    },
+    "refund-type": {
+      "origin": "Refund to the original payment account",
+      "other": "Others"
+    },
+    "after-sale-type": {
+      "refund": "Refund",
+      "return-and-refund": "Return and refund"
+    },
+    "after-order-status": {
+      "processing": "Processing",
+      "confirmed": "Confirmed",
+      "cancelled": "Canceled",
+      "customer-canceled": "Customer canceled",
+      "customer-rejected": "Customer rejected",
+      "merchant-cancellation": "Seller canceled",
+      "completed": "Completed",
+      "delivery-progress": "Confirmed"
+    },
+    "order-status": {
+      "processing": "Processing",
+      "confirmed": "Confirmed",
+      "cancelled": "Canceled",
+      "customer-canceled": "Customer canceled",
+      "merchant-cancellation": "Seller canceled",
+      "completed": "Completed"
+    },
+    "pay-status": {
+      "unpaid": "Unpaid",
+      "paying": "Paying",
+      "partial-payment": "Partly paid",
+      "already-paid": "Paid",
+      "failed": "Payment failed",
+      "timed-out": "Payment timed out",
+      "refunding": "Refunding",
+      "refunded": "Refunded",
+      "refund-failed": "Failed to refund",
+      "partial-refund": "Partly refunded",
+      "abolished": "Voided"
+    },
+    "delivery-statusType": {
+      "stocking": "Preparing the products",
+      "delivery-partial": "Partial shipment",
+      "cancelled": "Canceled",
+      "cancel-delivery": "Cancel shipment",
+      "shipping": "Delivering",
+      "shipped": "Delivered",
+      "arrived": "Arrived",
+      "picked-up": "Received",
+      "problem": "Issues like problem shipment and lost orders require manual support",
+      "delivery-return": "Returned"
+    },
+    "oms-status": {
+      "executing": "Executing",
+      "prepare-pick": "Ready for pickup",
+      "shipped": "Shipped",
+      "arrived": "Arrived",
+      "returning": "Being returned",
+      "returned": "Returned",
+      "problem": "Problem shipment",
+      "cancelled": "Cancel shipment",
+      "picked": "Signed for"
+    },
+    "order-list": {
+      "empty-title": "img",
+      "empty-tip": "There is currently no order record, go shopping",
+      "no-more": "No more info",
+      "load-more": "Pull up to load more",
+      "pay-now": "Pay Now",
+      "track": "Track",
+      "item-total": "{{transPackages}} item in total",
+      "item-total-plural": "{{transPackages}} items in total",
+      "package-item": "Package {{num}}（{{item}} items）",
+      "package-more": "and {{num}} more",
+      "sub-order": "sub-orders"
+    },
+    "breadcrumb": {
+      "title": "Order",
+      "order": "Order",
+      "order-detail": "Order details"
+    },
+    "detail": {
+      "packages": {
+        "title": "Information",
+        "sub-title": "Package Tracking",
+        "payment-info": {
+          "method": "Method of payment",
+          "status": "Payment status",
+          "address": "Billing address",
+          "detail": "Detail"
+        },
+        "payment-title": "Payment",
+        "subscriptions-title": "Subscriptions",
+        "order-note-title": "Order remark",
+        "shippings": {
+          "method": "Delivery method",
+          "fee": "Delivery fee",
+          "status": "Delivery status"
+        },
+        "amount": {
+          "subtotal": "Item subtotal",
+          "tax": "Commodity tax",
+          "express": "The freight",
+          "express-surcharge": "Freight tax",
+          "channel-surcharge": "Payment commission",
+          "discount-amount-name": "Seller extra discount",
+          "tip": "Tip",
+          "preferential": "preferential",
+          "discount": "Coupon code discount",
+          "deduct-voucher": "Voucher amount",
+          "total": "Total"
+        },
+        "order-num": "Package ({{num}})",
+        "unshipped-order-num": "Processing ({{num}} items)",
+        "logistics": {
+          "no-data": "No logistics information at present",
+          "detail": "Details",
+          "tab-title": "Package {{index}}",
+          "blank-trace": "Please track your package by clikcing the link below:",
+          "no-data2": "No delivery information yet, please check later."
+        },
+        "send-to-Messenger": "Send to Messenger",
+        "send-to-Line": "Send to Line",
+        "payment-deal": {
+          "name": "Payment provider",
+          "amount": "Amount",
+          "deal-id": "Transaction reference number",
+          "create-time": "Created",
+          "update-time": "Updated",
+          "status": "Status",
+          "title": "Payment Detail"
+        },
+        "status": {
+          "pedding": {
+            "title": "Preparing for shipment",
+            "desc": "We are currently preparing these items for shipment."
+          },
+          "success": {
+            "desc": "We’ve accepted your order, and we’re getting it ready. Come back to this page for updates on your shipment status."
+          }
+        },
+        "contact-us-title": "Contact us",
+        "contact-us": "Need help? Please contact us:{{email}}"
+      },
+      "order-status": {
+        "cancel": {
+          "title": "Your order has been canceled",
+          "desc": "Your order was canceled on {{cancelTime}}. Contact us if you have any questions."
+        },
+        "success": {
+          "title": "Your order is confirmed",
+          "desc": "Order information has been sent to {{buyerContact}}, please check."
+        },
+        "pedding": {
+          "title": "Payment in process...",
+          "desc": "Your payment request has been submitted and you are waiting for {{- payChannelDesc}} to return the payment result"
+        },
+        "redirect": {
+          "title": "Redirecting to payment result...",
+          "desc": "If you're not automatically redirected, refresh this page."
+        },
+        "pay": {
+          "title": "Pending Payment",
+          "go-pay": "<common>PAY </common><amount>{{orderAmount}}</amount>"
+        },
+        "button": {
+          "refresh": "Refresh"
+        }
+      },
+      "order-info": {
+        "processing": "Processing",
+        "confirmed": "Confirmed",
+        "finished": "Finished",
+        "canceled": "Canceled"
+      },
+      "cancel-btn": "CANCEL THE ORDER",
+      "communication": {
+        "title": "Orders for communication"
+      },
+      "coms": {
+        "operationLog": {
+          "PayDealLog": {
+            "title": "已通过 {payName} 处理了 {amount} 的付款",
+            "payName": "Payment Provider",
+            "amount": "Amount",
+            "dealId": "Payment serial number",
+            "createTime": "Payment start time",
+            "updateTime": "Return result time",
+            "status": "Status"
+          }
+        }
+      }
+    },
+    "seq-no": "No. {{id}}",
+    "order-at": "Ordered at:",
+    "customer-info": "Customer information",
+    "help-tips": "Need help? Please contact us: {{email}}",
+    "order-date": "Order date"
+  },
+  "promotion": {
+    "full-reduction": "Rebates Promotion",
+    "full-reduction-benefit": "Rebates Promotion",
+    "full-discount": "Discounts Promotion",
+    "full-discount-benefit": "Discounts Promotion",
+    "free-shipping": "Free shipping",
+    "flash-sale": "Flash Sale",
+    "member-price": "Member price",
+    "all-product": "All products",
+    "permanent": "Permanent",
+    "all-user": "All users",
+    "all-vip": "All members",
+    "level-vip": "Lv.{{level}} member",
+    "label-vip": "{{label}} member",
+    "other-customer": "Customer (users who haven't placed an order)",
+    "activity-scope": "Event Scope",
+    "activity-benefit": "Event offers",
+    "activity-introduction": "Event introduction",
+    "terms-and-conditions": "Terms and Conditions",
+    "selected-count-activity-product": "{{selectCount}} event products selected",
+    "price-unit": "USD",
+    "piece-unit": "Piece",
+    "discount-benefit": "{{discount}} off",
+    "full-amount": "<0>{{value}}</0> or more",
+    "full-piece": "{{value}} pieces or more",
+    "reduce": "Discount <0>{{value}}</0>",
+    "reduce1": "Discount {{value}}",
+    "reduce-again": "<0>{{value}}</0> extra discount",
+    "get-discount-1": "enjoy {{value}} off",
+    "get-discount-2": "enjoy {{value}}% offer",
+    "flash-sale-limit": "Purchase limit {{value}} per person",
+    "buy-again": "Purchase <0>{{value}}</0> more",
+    "buy-again-piece": "Purchase {{value}} more pieces",
+    "still-lacking": "<0>{{value}}</0> needed",
+    "discounted": "You've saved <0>{{value}}</0>",
+    "coupon": "Coupon",
+    "select-sku": "Choose product specifications",
+    "select-combo": "Choose package",
+    "more-combo": "More packages",
+    "item-num": "Item {{value}}",
+    "only-one-sku": "The current product has only one specification",
+    "select-product": "Shop goods",
+    "bundle": {
+      "title": "Bundled goods",
+      "desc": "Add these to the shopping cart for <italic>{{value}}</italic> off"
+    },
+    "whole-full-piece-discount": "Buy <italic>{{condition}}</italic> Get <italic>{{content}}</italic>% OFF",
+    "whole-full-amount-discount": "Buy <italic>{{condition}}</italic> Get <italic>{{content}}</italic>% OFF",
+    "whole-full-piece-reduce": "Buy <italic>{{condition}}</italic> save <italic>{{content}}</italic>",
+    "whole-full-amount-reduce": "Buy <italic>{{condition}}</italic> save <italic>{{content}}</italic>",
+    "price-price-step1": "<children>Buy </children><more>{{morePrice}}</more><children> more to save</children> <more>{{totalPrice}}</more>",
+    "price-price-step2": "<children>Save</children> <normal>{{price}}</normal> <children>already!</children><white /> <children>Buy</children> <more>{{morePrice}}</more> <children>more to save</children> <more>{{totalPrice}}</more>",
+    "price-price-step3": "<children>Congratulations! You've saved</children> <normal>{{price}}</normal> <children>!</children>",
+    "price-piece-step1": "<children>Buy </children><more>{{morePrice}}</more> <children>more to save </children><more>{{totalPrice}}</more>",
+    "price-piece-step2": "<children>Save</children> <normal>{{price}}</normal> <children>already!</children><white /> <children>Buy</children> <more>{{morePrice}}</more> <children>more to save </children><more>{{totalPrice}}</more>",
+    "price-piece-step3": "<children>Congratulations! You've saved </children><normal>{{price}}</normal> <children>!</children>",
+    "percent-price-step1": "<children>Buy </children><more>{{price}}</more><children> more to get </children><more>{{percent}}</more><children> OFF</children>",
+    "percent-price-step2": "<children>Save </children><normal>{{percent}}</normal><children> already!</children><white /><children> Buy </children><more>{{price}}</more><children> more to get </children><more>{{morePercent}}</more><children> OFF</children>",
+    "percent-price-step3": "<children>Congratulations! You've saved </children><normal>{{percent}}</normal><children> !</children>",
+    "percent-piece-step1": "<children>Buy </children><more>{{price}}</more><children> more to get </children><more>{{percent}}</more><children> OFF</children>",
+    "percent-piece-step2": "<children>Save </children><normal>{{percent}}</normal><children> already!</children><white /><children> Buy </children><more>{{price}}</more><children> more to get </children><more>{{morePercent}}</more><children> OFF</children>",
+    "percent-piece-step3": "<children>Congratulations! You've saved </children><normal>{{percent}}</normal><children> !</children>"
+  },
+  "labelInput": {
+    "email-error": "Please enter email address with valid format",
+    "phone-error": "Please enter mobile phone number with valid format",
+    "contact-error": "Please enter email address/mobile phone number with valid format",
+    "phone-error-tips": "Please fill in the recipient's real name to ensure the smooth receipt"
+  },
+  "userCenter": {
+    "personal-info": "Personal Information",
+    "orders": "Orders",
+    "refunds": "Refunds",
+    "sign-out": "Sign Out",
+    "edit": "Edit",
+    "cancel": "CANCEL",
+    "save": "SAVE",
+    "account": {
+      "account-subscription-email": "Send to email",
+      "account-subscription-phone": "Send to mobile phone",
+      "account-subscription-messenger": "Send to messenger",
+      "account-subscription-line": "Send to Line App",
+      "reset-password-error": "Please bind email or mobile phone first",
+      "account-info": "Account Information",
+      "member-level": "Membership level",
+      "memberLevelCom": {
+        "defaultLevel": "General member",
+        "expire": "The {{time}} due",
+        "upgradeText1": "With a single purchase of <italic>{{money}}</italic>, you can upgrade to {{nextLevelName}}",
+        "upgradeText0": "Upgrade to {{nextLevelName}} after spending <italic>{{money}}</italic>",
+        "upgradeSuccessText": "Congratulations, you have successfully upgraded to",
+        "modalTitle": "Description of Class interests",
+        "tableTitleGrade": "Membership grade",
+        "tableTitleInterest": "Members interests",
+        "discountInterest": "Off for shopping"
+      },
+      "general-member": "General member",
+      "username": "Username",
+      "username-message": "Please input your username!",
+      "username-placeholder": "Please input your username",
+      "email": "E-mail",
+      "bind": "Binding",
+      "modify-email": "Modify Email",
+      "phone": "Mobile Phone",
+      "modify-phone": "Modify Phone",
+      "password": "Password",
+      "change-password": "Change the password",
+      "subscription-notification": "Subscription Notification",
+      "unsubscribed": "Unsubscribed",
+      "account-binding": "Account Binding"
+    },
+    "address": {
+      "delete-address": "Delete Address",
+      "address": "Address",
+      "no-data": "Currently, there is no delivery address",
+      "add": "Add New Address",
+      "full-tip": "5 addresses have been saved and cannot be added at the moment",
+      "default": "Default",
+      "ok": "Ok"
+    },
+    "subscription": {
+      "title": "Subscription",
+      "line": "LINE",
+      "phone": "Mobile Phone",
+      "email": "E-mail",
+      "messenger": "Messenger",
+      "not-sub": "Not subscribed",
+      "subed": "Subscribed",
+      "unsub": {
+        "title": "Unsubscribe",
+        "content": "Once unsubscribed, you would not recieve latest promotion any longer.",
+        "ok-text": "Unsubscribe"
+      },
+      "modal": {
+        "eamil-title": "Subscribe E-mail promotion",
+        "ok-text": "SUBSCRIBE",
+        "cancel-text": "UNSUBSCRIBE",
+        "phone-title": "Subscribe phone promotion",
+        "save": "SAVE"
+      }
+    },
+    "personal": {
+      "gender-male": "Male",
+      "gender-female": "Female",
+      "gender-secret": "Keep secret",
+      "personal-information": "Personal Information",
+      "birthday-date": "Birthday Date",
+      "date": "Date",
+      "select-date": "Select Date",
+      "select-date-ok": "Ok",
+      "select-date-placeholder": "Select",
+      "select-date-cancel": "cancel",
+      "gender": "Gender",
+      "unknown": "Unknown"
+    },
+    "editAddress": {
+      "country-message": "Please select your country!",
+      "province-message": "Please select your province!",
+      "city-message": "Please select your city!",
+      "district-message": "Please select your district!",
+      "postcode-message": "Less than 32 characters!",
+      "address1-message": "Less than 512 characters!",
+      "address2-message": "Less than 512 characters!",
+      "edit": "EDIT SHIPPING ADDRESS",
+      "contact-message": "Please input your contactName!",
+      "lastName-message": "Please input your last name!",
+      "phone-message": "Please input your mobile phone!",
+      "default": "Set as the default address",
+      "name-placeholder": "Name",
+      "firstName-placeholder": "First Name (optional)",
+      "lastName-placeholder": "Last Name",
+      "phone-label": "Phone"
+    },
+    "message": {
+      "message": "Message",
+      "send": "Send",
+      "inputPlaceholder": "Is there anything you want to leave a message for?"
+    },
+    "point": {
+      "title": "Shopping gold",
+      "empty-mainText": "You haven't got the shopping money yet",
+      "empty-btn-link": "How to obtain and use shopping money?",
+      "mainview-dedection": "The current maximum credit is <italic>{{money}}</italic>",
+      "mainview-link": "Understand the rules",
+      "mainview-save": "You have saved <italic>{{historyTotalUsedDeduction}}</italic> by using {{historyTotalUsedScore}} shopping fees",
+      "modal-title": "Store credit instruction",
+      "ok-btn": "OK",
+      "unuseHistoryScore": "You haven't used your shopping money to save money",
+      "date": "{{day}}, {{month}} {{date}}, {{year}}",
+      "day0": "Sunday",
+      "day1": "Monday",
+      "day2": "Tuesday",
+      "day3": "Wednesday",
+      "day4": "Thursday",
+      "day5": "Friday",
+      "day6": "Saturday",
+      "month1": "Jan",
+      "month2": "Feb",
+      "month3": "Mar",
+      "month4": "Apr",
+      "month5": "May",
+      "month6": "Jun",
+      "month7": "Jul",
+      "month8": "Aug",
+      "month9": "Sep",
+      "month10": "Oct",
+      "month11": "Nov",
+      "month12": "Dec",
+      "actionTypeDesc": {
+        "addPoint": "add point",
+        "deductPoint": "deduct point",
+        "expirePoint": "expire point",
+        "freezePoint": "freeze point",
+        "releaseFreezePoint": "release freeze point",
+        "deductFreezePoint": "deduct freeze point",
+        "reverseAddPoint": "reverse add point",
+        "reverseDeductPoint": "reverse deduct point"
+      }
+    },
+    "pointList": {
+      "empty": "Currently, there is no point records",
+      "breadcrumb1": "Information",
+      "breadcrumb2": "Purchase price",
+      "total": "Reviews ({{total}})",
+      "loading": "Loading...",
+      "loaded": "Loaded",
+      "empty2": "No more records",
+      "order": "View order:"
+    },
+    "buy-record-entry": "Purchased products"
+  },
+  "cart": {
+    "render-empty-status": "Your Cart",
+    "render-add-items": "Your cart is currently empty.",
+    "go-shopping": "Continue shopping",
+    "login-description": "Already a member? Login can be more convenient to manage the order!",
+    "login-membership": "Free membership",
+    "checkout-error": "There is at least one unavailable product in the shopping cart. Please adjust the cart items to checkout.",
+    "get": "Get",
+    "shopping-money": "discount, Taxes and shipping will be calculated in the next step",
+    "shopping-fees": "shopping fees",
+    "shopping-money-step": "Taxes and shipping calculated at checkout",
+    "view-shopping-cart": "View Shopping Cart",
+    "most-100-sku": "Add up to 100 items",
+    "most-buy-999": "You can add at most 999 pieces to the shopping cart",
+    "stock-limit": "{{stock}} pieces in stock",
+    "active-stock-limit-2 ": "You can only buy {{stock}} piece(s) of this product with the discounts",
+    "active-stock-limit-1 ": "You can buy at most {{stock}} product(s) with the discounts at the same time",
+    "activity-product-limit": "You can buy at most {{stock}} product(s) with the discounts at the same time",
+    "activity-price-limit": "You can only buy {{num}} piece(s) of this product with the discounts",
+    "activity-title-limit": "Below products exceed the purchasing limit, still proceed to checkout?",
+    "activity-product-limit ": "You can buy at most {{stock}} product(s) with the discounts at the same time",
+    "activity-title-limit ": "Below products exceed the purchasing limit, still proceed to checkout?",
+    "active-stock-limit-2": "You can only buy {{stock}} piece(s) of this product with the discounts",
+    "active-stock-limit-1": "You can buy at most {{stock}} product(s) with the discounts at the same time",
+    "view-link": "Click to view",
+    "view-pic": "Custom preview",
+    "not-participation-offers": "Non-participating discount",
+    "active-stock-limit": "Only {{stock}}pieces left with this discount price"
+  },
+  "widget": {
+    "order": {
+      "pending-order": "Pending order"
+    }
+  },
+  "user": {
+    "account": "ACCOUNT",
+    "email": "Email address",
+    "phone": "Mobile phone number",
+    "username": "Email address/mobile phone number",
+    "password": "Password",
+    "repeatPassword": "Re-enter password",
+    "primevalPassword": "Current password",
+    "code": "Verification code",
+    "signUp": "SIGN UP",
+    "signIn": "SIGN IN",
+    "confirm": "OK",
+    "emailError": "Please enter an email address with valid format and less than 50 characters",
+    "phoneError": "Please enter a mobile phone number with valid format",
+    "codeError": "Please enter the verification code",
+    "passwordError": "Please set a password with a minimum length of 8 characters and a maximum length of 20 characters. Passwords must include at least one uppercase character, one lowercase character and one number",
+    "repeatPasswordError": "The passwords you entered do not match",
+    "repeatPasswordEmptyError": "Please enter the password again",
+    "primevalPasswordError": "Please enter your current password",
+    "send": "Send",
+    "resend": "Re-send",
+    "sendError": "Please send verification code first",
+    "noData": "No data available",
+    "passwordEmptyError": "Please enter password",
+    "passwordMemberError": "Please set a password with a minimum length of 6 characters and a maximum length of 18 characters.",
+    "emailEmptyError": "Please enter email address",
+    "phoneEmptyError": "Please enter mobile phone number",
+    "usernameEmptyError": "Please enter email address or mobile phone number",
+    "primevalNewPasswordError": "Your new password can't be the same as your current password",
+    "udbResponse": {
+      "err-1": "Parameters empty",
+      "err-4": "Parameters invalid",
+      "err-5": "Illegal operation",
+      "err-13": "Session expired",
+      "err-999": "System error",
+      "err1001": "Password error",
+      "err1002": "User not exist",
+      "err1003": "Account was temporarily locked",
+      "err1004": "Don't try so frequently",
+      "err1005": "Code expired",
+      "err1006": "Code error",
+      "err1007": "Too many times of verification, please get another code",
+      "err1008": "The thirdId or channel has not been configured",
+      "err1009": "Third party validation failed",
+      "err1010": "Send code failed",
+      "err2001": "The mobile has been registered",
+      "err2002": "The email has been registered",
+      "err2003": "Don't try so frequently",
+      "err2004": "Code expired",
+      "err2005": "Code error",
+      "err2006": "Too many times of verification, please get another code",
+      "err2007": "Send code failed",
+      "err3001": "Cookie invalid",
+      "err3002": "Illegal operation",
+      "err3003": "Don't try so frequently",
+      "err3004": "Code expired",
+      "err3005": "Code error",
+      "err3006": "Too many times of verification, please get another code",
+      "err3007": "The mobile doesn't exist",
+      "err3008": "The email doesn't exist",
+      "err3009": "The mobile has been bound by other accounts",
+      "err3010": "The email has been bound by other accounts",
+      "err3014": "Send code failed",
+      "udbResponse": "Account was temporarily locked"
+    }
+  },
+  "address": {
+    "dropdown": {
+      "default-placeholder": "Please select",
+      "no-item-tips": "No data available",
+      "no-search-result": "No match found"
+    },
+    "mobile-errorMessage": "Please enter a valid phone number",
+    "mobile-errorMessage-country-code": "Please do not enter area code"
+  },
+  "oneShop": {
+    "noComment": "There aren’t any comments yet",
+    "productCommentTitle": "Product Reviews（{{n}}）",
+    "priceStart": "Down to {{n}}",
+    "discountByAmount": "{{n}}% discounts over {{amount}}",
+    "discountByNum": "{{n}}% discounts for {{num}} pieces",
+    "cutByAmount": "{{n}} off over {{amount}}",
+    "cutByNum": "{{n}} off for {{num}} pieces",
+    "buyPop": "{{name}} purchased this product {{minutes}} minutes ago",
+    "buyNow": "Buy now",
+    "productDetail": "Product details",
+    "selectedProductSoldOut": "Insufficient inventory for selected product",
+    "currentProductSoldOut": "Insufficient inventory for current product",
+    "productNoSelect": "Please select the product specification",
+    "orderAgain": "Please try to place the order again",
+    "productFailure": "The product you select is invalid,please select again",
+    "comboSelectFailure": "The combo pack you select is invalid,please select again",
+    "comboFailure": "Invalid combo pack",
+    "soleOutSelectAgain": "Insufficient inventory for current product,please select again",
+    "freeShipping": "Free shipping",
+    "noProductDesc": "No product descriptions now",
+    "TCTD0108": "The shipping method does not exist,please select again",
+    "TCTD0118": "The payment method doses not exist,please select again",
+    "TCTD0121": "The marketing campaign has been changed,please select again",
+    "TCTD0112": "The product you select is invalid,please select again",
+    "defaultErrorCodeMsg": "Network abnormal,please refresh the page and try again later",
+    "comment": "Leave a message (optional)",
+    "country": "Country",
+    "submit": "Submit",
+    "overLength": "The input length exceeds the limit, please adjust your content and try again",
+    "optional": "optional",
+    "bracket": " ({{content}})"
+  },
+  "blogList": {
+    "container": {
+      "empty": {
+        "title": "Blog",
+        "desc": "There are no blog posts in this blog."
+      },
+      "readBtnText": "Read More"
+    }
+  },
+  "blog": {
+    "container": {
+      "backTo": "Back to {{collectionTitle}}."
     }
   }
 }

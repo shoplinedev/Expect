@@ -1,3 +1,1585 @@
 [
-
+  {
+    "name": "Expect",
+    "theme_name": "Expect",
+    "theme_version": "1.0.0",
+    "theme_author": "Shopline",
+    "theme_documentation_url": "",
+    "theme_support_url": "",
+    "theme_cover_img": "https://img.myshopline.com/image/shopline/f6e2e82eb18d427bbcf2616f147a26ed.png",
+    "theme_home_pc_preview_img": "https://img.myshopline.com/image/shopline/f6e2e82eb18d427bbcf2616f147a26ed.png",
+    "theme_home_mobile_preview_img": "https://img.myshopline.com/image/shopline/2f776e76132d4a9fa21239f1cf57460f.png",
+    "theme_pdp_pc_preview_img": "https://img.myshopline.com/image/shopline/5c27451b4a4c4af0805627a44e272e9a.png",
+    "theme_pdp_mobile_preview_img": "https://img.myshopline.com/image/shopline/8f41e2efdd3c472aa6c0e6f0e88104e6.png"
+  },
+  {
+    "name": {
+      "en": "Colors",
+      "zh-hans-cn": "颜色"
+    },
+    "settings": [
+      {
+        "type": "group_header",
+        "label": {
+          "en": "Basics",
+          "zh-hans-cn": "基础"
+        }
+      },
+      {
+        "id": "color_page_background",
+        "type": "color_picker",
+        "label": {
+          "en": "Background",
+          "zh-hans-cn": "背景"
+        },
+        "default": "#FFFFFF"
+      },
+      {
+        "id": "color_text",
+        "type": "color_picker",
+        "label": {
+          "en": "Texts",
+          "zh-hans-cn": "文字"
+        },
+        "default": "#000000"
+      },
+      {
+        "id": "color_sale",
+        "type": "color_picker",
+        "label": {
+          "en": "Selling price",
+          "zh-hans-cn": "售价"
+        },
+        "default": "#c20000"
+      },
+      {
+        "id": "color_discount",
+        "type": "color_picker",
+        "label": {
+          "en": "Discount amount",
+          "zh-hans-cn": "优惠金额"
+        },
+        "default": "#1c1d1d"
+      },
+      {
+        "id": "color_entry_line",
+        "type": "color_picker",
+        "label": {
+          "en": "Lines and borders",
+          "zh-hans-cn": "线条与边框"
+        },
+        "default": "#e8e8e1"
+      },
+      {
+        "id": "color_btn_background",
+        "type": "color_picker",
+        "label": {
+          "en": "Button background",
+          "zh-hans-cn": "按钮背景"
+        },
+        "default": "#111111"
+      },
+      {
+        "id": "color_btn_text",
+        "type": "color_picker",
+        "label": {
+          "en": "Button texts",
+          "zh-hans-cn": "按钮文字"
+        },
+        "default": "#ffffff"
+      },
+      {
+        "id": "color_tag_background",
+        "type": "color_picker",
+        "label": {
+          "en": "Discount tag",
+          "zh-hans-cn": "折扣标签"
+        },
+        "default": "#1c1d1d"
+      },
+      {
+        "id": "color_tag_text",
+        "type": "color_picker",
+        "label": {
+          "en": "Texts for discount tag",
+          "zh-hans-cn": "折扣标签文字"
+        },
+        "default": "#ffffff"
+      },
+      {
+        "id": "color_cart_dot",
+        "type": "color_picker",
+        "label": {
+          "en": "Shopping cart prompt points",
+          "zh-hans-cn": "购物车提示点"
+        },
+        "default": "#ff4f33"
+      },
+      {
+        "id": "color_cart_dot_text",
+        "type": "color_picker",
+        "label": {
+          "en": "Shopping cart prompt text",
+          "zh-hans-cn": "购物车提示文字"
+        },
+        "default": "#ffffff"
+      },
+      {
+        "id": "color_image_background",
+        "type": "color_picker",
+        "label": {
+          "en": "Image background",
+          "zh-hans-cn": "图片背景"
+        },
+        "default": "#ffffff"
+      },
+      {
+        "id": "color_section_background",
+        "type": "color_picker",
+        "label": {
+          "en": "Image loading background",
+          "zh-hans-cn": "图片加载背景"
+        },
+        "default": "#0f0f0f"
+      },
+      {
+        "id": "color_mask",
+        "type": "color_picker",
+        "label": {
+          "en": "Pop-up window matte background",
+          "zh-hans-cn": "弹窗遮罩背景"
+        },
+        "default": "#737373"
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "en": "Header",
+          "zh-hans-cn": "页头"
+        }
+      },
+      {
+        "id": "color_header_background",
+        "type": "color_picker",
+        "label": {
+          "en": "Background color",
+          "zh-hans-cn": "背景颜色"
+        },
+        "default": "#ffffff"
+      },
+      {
+        "id": "color_header_text",
+        "type": "color_picker",
+        "label": {
+          "en": "Text color",
+          "zh-hans-cn": "文字颜色"
+        },
+        "default": "#000000"
+      },
+      {
+        "id": "color_header_announcement_bar",
+        "type": "color_picker",
+        "label": {
+          "en": "Notice board background",
+          "zh-hans-cn": "公告栏背景"
+        },
+        "default": "#0f0f0f"
+      },
+      {
+        "id": "color_header_announcement_bar_text",
+        "type": "color_picker",
+        "label": {
+          "en": "Notice board text",
+          "zh-hans-cn": "公告栏文字"
+        },
+        "default": "#ffffff"
+      },
+      {
+        "id": "color_header_search",
+        "type": "color_picker",
+        "label": {
+          "en": "*搜索输入框颜色*",
+          "zh-hans-cn": "搜索输入框颜色"
+        },
+        "default": "#ffffff"
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "en": "Footer",
+          "zh-hans-cn": "页脚"
+        }
+      },
+      {
+        "id": "color_footer_background",
+        "type": "color_picker",
+        "label": {
+          "en": "Background color",
+          "zh-hans-cn": "背景颜色"
+        },
+        "default": "#f1eef5"
+      },
+      {
+        "id": "color_footer_border",
+        "type": "color_picker",
+        "label": {
+          "en": "*边框与线条*",
+          "zh-hans-cn": "边框与线条"
+        },
+        "default": "#e8e1e1"
+      },
+      {
+        "id": "color_footer_text",
+        "type": "color_picker",
+        "label": {
+          "en": "Text color",
+          "zh-hans-cn": "文字颜色"
+        },
+        "default": "#66a091"
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "en": "*颜色风格1*",
+          "zh-hans-cn": "颜色风格1"
+        }
+      },
+      {
+        "id": "color_scheme_1_bg",
+        "type": "color_picker",
+        "label": {
+          "en": "*背景颜色*",
+          "zh-hans-cn": "背景颜色"
+        },
+        "default": "#ffffff"
+      },
+      {
+        "id": "color_scheme_1_text",
+        "type": "color_picker",
+        "label": {
+          "en": "*文字颜色*",
+          "zh-hans-cn": "文字颜色"
+        },
+        "default": "#000000"
+      },
+      {
+        "id": "color_scheme_1_texture",
+        "type": "select",
+        "label": {
+          "en": "*纹理*",
+          "zh-hans-cn": "纹理"
+        },
+        "options": [
+          {
+            "value": "none",
+            "label": {
+              "en": "None",
+              "zh-hans-cn": "无"
+            }
+          },
+          {
+            "value": "paper",
+            "label": {
+              "en": "Paper",
+              "zh-hans-cn": "纸张"
+            }
+          },
+          {
+            "value": "swirl",
+            "label": {
+              "en": "Swirl",
+              "zh-hans-cn": "漩涡"
+            }
+          },
+          {
+            "value": "marble",
+            "label": {
+              "en": "Marble",
+              "zh-hans-cn": "大理石"
+            }
+          },
+          {
+            "value": "darken",
+            "label": {
+              "en": "Darken",
+              "zh-hans-cn": "变暗"
+            }
+          }
+        ],
+        "default": "marble"
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "en": "*颜色风格2*",
+          "zh-hans-cn": "颜色风格2"
+        }
+      },
+      {
+        "id": "color_scheme_2_bg",
+        "type": "color_picker",
+        "label": {
+          "en": "*背景颜色*",
+          "zh-hans-cn": "背景颜色"
+        },
+        "default": "#acc6c3"
+      },
+      {
+        "id": "color_scheme_2_text",
+        "type": "color_picker",
+        "label": {
+          "en": "*文字颜色*",
+          "zh-hans-cn": "文字颜色"
+        },
+        "default": "#812f2b"
+      },
+      {
+        "id": "color_scheme_2_texture",
+        "type": "select",
+        "label": {
+          "en": "*纹理*",
+          "zh-hans-cn": "纹理"
+        },
+        "options": [
+          {
+            "value": "none",
+            "label": {
+              "en": "None",
+              "zh-hans-cn": "无"
+            }
+          },
+          {
+            "value": "paper",
+            "label": {
+              "en": "Paper",
+              "zh-hans-cn": "纸张"
+            }
+          },
+          {
+            "value": "swirl",
+            "label": {
+              "en": "Swirl",
+              "zh-hans-cn": "漩涡"
+            }
+          },
+          {
+            "value": "marble",
+            "label": {
+              "en": "Marble",
+              "zh-hans-cn": "大理石"
+            }
+          },
+          {
+            "value": "darken",
+            "label": {
+              "en": "Darken",
+              "zh-hans-cn": "变暗"
+            }
+          }
+        ],
+        "default": "swirl"
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "en": "*颜色风格3*",
+          "zh-hans-cn": "颜色风格3"
+        }
+      },
+      {
+        "id": "color_scheme_3_bg",
+        "type": "color_picker",
+        "label": {
+          "en": "*背景颜色*",
+          "zh-hans-cn": "背景颜色"
+        },
+        "default": "#f2f2ef"
+      },
+      {
+        "id": "color_scheme_3_text",
+        "type": "color_picker",
+        "label": {
+          "en": "*文字颜色*",
+          "zh-hans-cn": "文字颜色"
+        },
+        "default": "#000000"
+      },
+      {
+        "id": "color_scheme_3_texture",
+        "type": "select",
+        "label": {
+          "en": "*纹理*",
+          "zh-hans-cn": "纹理"
+        },
+        "options": [
+          {
+            "value": "none",
+            "label": {
+              "en": "None",
+              "zh-hans-cn": "无"
+            }
+          },
+          {
+            "value": "paper",
+            "label": {
+              "en": "Paper",
+              "zh-hans-cn": "纸张"
+            }
+          },
+          {
+            "value": "swirl",
+            "label": {
+              "en": "Swirl",
+              "zh-hans-cn": "漩涡"
+            }
+          },
+          {
+            "value": "marble",
+            "label": {
+              "en": "Marble",
+              "zh-hans-cn": "大理石"
+            }
+          },
+          {
+            "value": "darken",
+            "label": {
+              "en": "Darken",
+              "zh-hans-cn": "变暗"
+            }
+          }
+        ],
+        "default": "darken"
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Typography",
+      "zh-hans-cn": "字体"
+    },
+    "settings": [
+      {
+        "type": "group_header",
+        "label": {
+          "en": "Title",
+          "zh-hans-cn": "标题"
+        }
+      },
+      {
+        "id": "type_title_font",
+        "type": "font_picker",
+        "label": {
+          "en": "Font",
+          "zh-hans-cn": "字体"
+        },
+        "default": "Libre Baskerville"
+      },
+      {
+        "id": "type_title_letter_spacing",
+        "type": "range",
+        "label": {
+          "en": "Font-spacing",
+          "zh-hans-cn": "字体间距"
+        },
+        "default": "0",
+        "min": -75,
+        "max": 250,
+        "step": 25,
+        "unit": "%"
+      },
+      {
+        "id": "type_title_size",
+        "type": "range",
+        "label": {
+          "en": "Font size",
+          "zh-hans-cn": "字体大小"
+        },
+        "default": "36",
+        "min": 22,
+        "max": 60,
+        "unit": "px"
+      },
+      {
+        "id": "type_title_line_height",
+        "type": "range",
+        "label": {
+          "en": "Font line height",
+          "zh-hans-cn": "字体行高"
+        },
+        "default": "1.2",
+        "min": 0.8,
+        "max": 2,
+        "step": 0.1
+      },
+      {
+        "id": "type_title_uppercase",
+        "type": "switch",
+        "label": {
+          "en": "All Caps for texts",
+          "zh-hans-cn": "文字全部大写"
+        },
+        "default": true
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "en": "Main text",
+          "zh-hans-cn": "正文"
+        }
+      },
+      {
+        "id": "type_body_font",
+        "type": "font_picker",
+        "label": {
+          "en": "Font",
+          "zh-hans-cn": "字体"
+        },
+        "default": "Poppins"
+      },
+      {
+        "id": "type_body_letter_spacing",
+        "type": "range",
+        "label": {
+          "en": "Font-spacing",
+          "zh-hans-cn": "字体间距"
+        },
+        "default": "25",
+        "min": -75,
+        "max": 250,
+        "step": 25,
+        "unit": "%"
+      },
+      {
+        "id": "type_body_size",
+        "type": "range",
+        "label": {
+          "en": "Font size",
+          "zh-hans-cn": "字体大小"
+        },
+        "default": "16",
+        "min": 12,
+        "max": 20,
+        "unit": "px"
+      },
+      {
+        "id": "type_body_line_height",
+        "type": "range",
+        "label": {
+          "en": "Font line height",
+          "zh-hans-cn": "字体行高"
+        },
+        "default": "1.6",
+        "min": 1,
+        "max": 2,
+        "step": 0.1
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "en": "Other",
+          "zh-hans-cn": "其他"
+        }
+      },
+      {
+        "id": "type_navigation_font",
+        "type": "select",
+        "label": {
+          "en": "Header font",
+          "zh-hans-cn": "页头字体"
+        },
+        "options": [
+          {
+            "value": "title",
+            "label": {
+              "en": "Same as the title",
+              "zh-hans-cn": "与标题相同"
+            }
+          },
+          {
+            "value": "body",
+            "label": {
+              "en": "Same as the main text",
+              "zh-hans-cn": "与正文相同"
+            }
+          }
+        ],
+        "default": "title"
+      },
+      {
+        "id": "type_navigation_size",
+        "type": "range",
+        "label": {
+          "en": "Header font size",
+          "zh-hans-cn": "页头字体大小"
+        },
+        "default": "13",
+        "min": 12,
+        "max": 40,
+        "unit": "px"
+      },
+      {
+        "id": "type_navigation_uppercase",
+        "type": "switch",
+        "label": {
+          "en": "Header font in capital",
+          "zh-hans-cn": "页头字体大写"
+        },
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Design",
+      "zh-hans-cn": "设计"
+    },
+    "settings": [
+      {
+        "type": "group_header",
+        "label": {
+          "en": "*基础*",
+          "zh-hans-cn": "基础"
+        }
+      },
+      {
+        "id": "edges",
+        "type": "select",
+        "label": {
+          "en": "Edges ",
+          "zh-hans-cn": "边缘"
+        },
+        "options": [
+          {
+            "value": "square",
+            "label": {
+              "en": "Right angle",
+              "zh-hans-cn": "直角"
+            }
+          },
+          {
+            "value": "rounded",
+            "label": {
+              "en": "rounded corner",
+              "zh-hans-cn": "圆角"
+            }
+          }
+        ],
+        "default": "square"
+      },
+      {
+        "id": "button_style",
+        "type": "select",
+        "label": {
+          "en": "Button style",
+          "zh-hans-cn": "按钮风格"
+        },
+        "options": [
+          {
+            "value": "square",
+            "label": {
+              "en": "Right angle",
+              "zh-hans-cn": "直角"
+            }
+          },
+          {
+            "value": "radius",
+            "label": {
+              "en": "Small rounded corner",
+              "zh-hans-cn": "小圆角"
+            }
+          },
+          {
+            "value": "rounded",
+            "label": {
+              "en": "Full round",
+              "zh-hans-cn": "全圆角"
+            }
+          }
+        ],
+        "default": "square"
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "en": "Products",
+          "zh-hans-cn": "商品"
+        }
+      },
+      {
+        "id": "superscript_decimals",
+        "type": "switch",
+        "label": {
+          "en": "*售价小数位缩小展示*",
+          "zh-hans-cn": "售价小数位缩小展示"
+        },
+        "default": true
+      },
+      {
+        "id": "product_grid_image_margin",
+        "type": "range",
+        "label": {
+          "en": "*商品图留白*",
+          "zh-hans-cn": "商品图留白"
+        },
+        "default": 10,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "%"
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "en": "Collections",
+          "zh-hans-cn": "商品分类"
+        }
+      },
+      {
+        "id": "collection_grid_shape",
+        "type": "select",
+        "label": {
+          "en": "*分类图片形状*",
+          "zh-hans-cn": "分类图片形状"
+        },
+        "options": [
+          {
+            "value": "circle",
+            "label": {
+              "en": "Circle",
+              "zh-hans-cn": "圆形"
+            }
+          },
+          {
+            "value": "square",
+            "label": {
+              "en": "Square",
+              "zh-hans-cn": "方形"
+            }
+          },
+          {
+            "value": "landscape",
+            "label": {
+              "en": "Landscape",
+              "zh-hans-cn": "横向(4:3)"
+            }
+          },
+          {
+            "value": "portrait",
+            "label": {
+              "en": "Portrait",
+              "zh-hans-cn": "纵向(2:3)"
+            }
+          }
+        ],
+        "default": "circle"
+      },
+      {
+        "id": "collection_grid_image",
+        "type": "select",
+        "label": {
+          "en": "*分类图片*",
+          "zh-hans-cn": "分类图片"
+        },
+        "options": [
+          {
+            "value": "collection",
+            "label": {
+              "en": "Collection Image",
+              "zh-hans-cn": "使用分类封面图"
+            }
+          },
+          {
+            "value": "product",
+            "label": {
+              "en": "First Product",
+              "zh-hans-cn": "使用分类下首个商品图"
+            }
+          }
+        ],
+        "default": "collection"
+      },
+      {
+        "id": "collection_grid_image_margin",
+        "type": "range",
+        "label": {
+          "en": "*分类图片留白*",
+          "zh-hans-cn": "分类图片留白"
+        },
+        "default": 10,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "%"
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Products",
+      "zh-hans-cn": "商品"
+    },
+    "settings": [
+      {
+        "id": "product_discount",
+        "type": "switch",
+        "label": {
+          "en": "Display the discount",
+          "zh-hans-cn": "展示优惠"
+        },
+        "default": true
+      },
+      {
+        "id": "product_discount_style",
+        "type": "select",
+        "label": {
+          "en": "Discount style",
+          "zh-hans-cn": "优惠样式"
+        },
+        "options": [
+          {
+            "value": "number",
+            "label": {
+              "en": "Display the discount amount",
+              "zh-hans-cn": "显示优惠金额"
+            }
+          },
+          {
+            "value": "ratio",
+            "label": {
+              "en": "Display the discount ratio",
+              "zh-hans-cn": "显示优惠比例"
+            }
+          }
+        ],
+        "default": "number"
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "en": "Product list",
+          "zh-hans-cn": "商品列表"
+        }
+      },
+      {
+        "id": "product_add_to_cart",
+        "type": "switch",
+        "label": {
+          "en": "*支持快速加购*",
+          "zh-hans-cn": "支持快速加购"
+        },
+        "default": false
+      },
+      {
+        "id": "product_quick_view",
+        "type": "switch",
+        "label": {
+          "en": "Supports for Quick View",
+          "zh-hans-cn": "支持快速查看"
+        },
+        "default": false
+      },
+      {
+        "id": "product_image_ratio",
+        "type": "select",
+        "label": {
+          "en": "Product image scale",
+          "zh-hans-cn": "商品图比例"
+        },
+        "options": [
+          {
+            "value": "0",
+            "label": {
+              "en": "Original scale",
+              "zh-hans-cn": "原始比例"
+            }
+          },
+          {
+            "value": "100",
+            "label": "1:1"
+          },
+          {
+            "value": "75",
+            "label": "4:3"
+          },
+          {
+            "value": "150",
+            "label": "2:3"
+          }
+        ],
+        "default": "0"
+      },
+      {
+        "id": "product_fill_type",
+        "type": "select",
+        "label": {
+          "en": "Product image filling style",
+          "zh-hans-cn": "商品图填充方式"
+        },
+        "options": [
+          {
+            "value": "contain",
+            "label": {
+              "en": "Adjust",
+              "zh-hans-cn": "适应"
+            }
+          },
+          {
+            "value": "cover",
+            "label": {
+              "en": "Fill",
+              "zh-hans-cn": "填充"
+            }
+          }
+        ],
+        "default": "contain"
+      },
+      {
+        "id": "product_hover_show_next",
+        "type": "switch",
+        "label": {
+          "en": "Display next product image when mouse hovers over the screen",
+          "zh-hans-cn": "鼠标悬停时显示下一张商品图"
+        },
+        "default": false
+      },
+      {
+        "id": "product_title_show_type",
+        "type": "select",
+        "label": {
+          "en": "Display rule for product title",
+          "zh-hans-cn": "商品标题展示规则"
+        },
+        "options": [
+          {
+            "value": "full_display",
+            "label": {
+              "en": "Full display",
+              "zh-hans-cn": "完整展示"
+            }
+          },
+          {
+            "value": "display_up_to_1_rows",
+            "label": {
+              "en": "Display at most 1 line",
+              "zh-hans-cn": "最多展示1行"
+            }
+          },
+          {
+            "value": "display_up_to_2_rows",
+            "label": {
+              "en": "Display at most 2 lines",
+              "zh-hans-cn": "最多展示2行"
+            }
+          }
+        ],
+        "default": "full_display"
+      },
+      {
+        "id": "product_mobile_title_show",
+        "type": "switch",
+        "label": {
+          "en": "Display of product title on mobile phones",
+          "zh-hans-cn": "手机端展示商品标题"
+        },
+        "default": true
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "en": "Product details",
+          "zh-hans-cn": "商品详情"
+        },
+        "info": {
+          "en": "It will influence the range includes product detail page and the single product component of the homepage",
+          "zh-hans-cn": "影响范围包括商品详情页、首页的单个商品组件"
+        }
+      },
+      {
+        "id": "product_sku_style",
+        "type": "select",
+        "label": {
+          "en": "Display style of multiattribute",
+          "zh-hans-cn": "多属性展示方式"
+        },
+        "options": [
+          {
+            "value": "flatten",
+            "label": {
+              "en": "Tiled",
+              "zh-hans-cn": "平铺"
+            }
+          },
+          {
+            "value": "select",
+            "label": {
+              "en": "Drop-down list",
+              "zh-hans-cn": "下拉框"
+            }
+          }
+        ],
+        "default": "flatten"
+      },
+      {
+        "id": "product_count_​selector",
+        "type": "switch",
+        "label": {
+          "en": "Display the quantity selector",
+          "zh-hans-cn": "展示数量选择器"
+        },
+        "default": false
+      },
+      {
+        "id": "product_image_scale",
+        "type": "switch",
+        "label": {
+          "en": "Supports for magnifying the image",
+          "zh-hans-cn": "支持图片放大"
+        },
+        "default": false
+      },
+      {
+        "id": "product_description_show",
+        "type": "switch",
+        "label": {
+          "en": "*展开商品描述*",
+          "zh-hans-cn": "展开商品描述"
+        },
+        "default": true
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "en": "*销售信息*",
+          "zh-hans-cn": "销售信息"
+        },
+        "info": {
+          "en": "*影响范围包括商品详情页、首页的单个商品组件*",
+          "zh-hans-cn": "影响范围包括商品详情页、首页的单个商品组件"
+        }
+      },
+      {
+        "id": "product_sales_point_1_icon",
+        "type": "select",
+        "label": {
+          "en": "*销售信息1图标*",
+          "zh-hans-cn": "销售信息1图标"
+        },
+        "options": [
+          {
+            "value": "checkmark",
+            "label": {
+              "en": "Checkmark",
+              "zh-hans-cn": "复选框"
+            }
+          },
+          {
+            "value": "globe",
+            "label": {
+              "en": "Globe",
+              "zh-hans-cn": "地球"
+            }
+          },
+          {
+            "value": "leaf",
+            "label": {
+              "en": "Leaf",
+              "zh-hans-cn": "环保"
+            }
+          },
+          {
+            "value": "package",
+            "label": {
+              "en": "Package",
+              "zh-hans-cn": "包裹"
+            }
+          },
+          {
+            "value": "lock",
+            "label": {
+              "en": "Lock",
+              "zh-hans-cn": "安全锁"
+            }
+          },
+          {
+            "value": "truck",
+            "label": {
+              "en": "Truck",
+              "zh-hans-cn": "货车"
+            }
+          }
+        ],
+        "default": "globe"
+      },
+      {
+        "id": "product_sales_point_1",
+        "type": "text",
+        "label": {
+          "en": "*销售信息1文案*",
+          "zh-hans-cn": "销售信息1文案"
+        },
+        "default": "Free worldwide shipping"
+      },
+      {
+        "id": "product_sales_point_2_icon",
+        "type": "select",
+        "label": {
+          "en": "*销售信息2图标*",
+          "zh-hans-cn": "销售信息2图标"
+        },
+        "options": [
+          {
+            "value": "checkmark",
+            "label": {
+              "en": "Checkmark",
+              "zh-hans-cn": "复选框"
+            }
+          },
+          {
+            "value": "globe",
+            "label": {
+              "en": "Globe",
+              "zh-hans-cn": "地球"
+            }
+          },
+          {
+            "value": "leaf",
+            "label": {
+              "en": "Leaf",
+              "zh-hans-cn": "环保"
+            }
+          },
+          {
+            "value": "package",
+            "label": {
+              "en": "Package",
+              "zh-hans-cn": "包裹"
+            }
+          },
+          {
+            "value": "lock",
+            "label": {
+              "en": "Lock",
+              "zh-hans-cn": "安全锁"
+            }
+          },
+          {
+            "value": "truck",
+            "label": {
+              "en": "Truck",
+              "zh-hans-cn": "货车"
+            }
+          }
+        ],
+        "default": "checkmark"
+      },
+      {
+        "id": "product_sales_point_2",
+        "type": "text",
+        "label": {
+          "en": "*销售信息2文案*",
+          "zh-hans-cn": "销售信息2文案"
+        },
+        "default": "Free returns"
+      },
+      {
+        "id": "product_sales_point_3_icon",
+        "type": "select",
+        "label": {
+          "en": "*销售信息3图标*",
+          "zh-hans-cn": "销售信息3图标"
+        },
+        "options": [
+          {
+            "value": "checkmark",
+            "label": {
+              "en": "Checkmark",
+              "zh-hans-cn": "复选框"
+            }
+          },
+          {
+            "value": "globe",
+            "label": {
+              "en": "Globe",
+              "zh-hans-cn": "地球"
+            }
+          },
+          {
+            "value": "leaf",
+            "label": {
+              "en": "Leaf",
+              "zh-hans-cn": "环保"
+            }
+          },
+          {
+            "value": "package",
+            "label": {
+              "en": "Package",
+              "zh-hans-cn": "包裹"
+            }
+          },
+          {
+            "value": "lock",
+            "label": {
+              "en": "Lock",
+              "zh-hans-cn": "安全锁"
+            }
+          },
+          {
+            "value": "truck",
+            "label": {
+              "en": "Truck",
+              "zh-hans-cn": "货车"
+            }
+          }
+        ],
+        "default": "leaf"
+      },
+      {
+        "id": "product_sales_point_3",
+        "type": "text",
+        "label": {
+          "en": "*销售信息3文案*",
+          "zh-hans-cn": "销售信息3文案"
+        },
+        "default": "Carbon neutral"
+      },
+      {
+        "id": "product_sales_point_4_icon",
+        "type": "select",
+        "label": {
+          "en": "*销售信息4图标*",
+          "zh-hans-cn": "销售信息4图标"
+        },
+        "options": [
+          {
+            "value": "checkmark",
+            "label": {
+              "en": "Checkmark",
+              "zh-hans-cn": "复选框"
+            }
+          },
+          {
+            "value": "globe",
+            "label": {
+              "en": "Globe",
+              "zh-hans-cn": "地球"
+            }
+          },
+          {
+            "value": "leaf",
+            "label": {
+              "en": "Leaf",
+              "zh-hans-cn": "环保"
+            }
+          },
+          {
+            "value": "package",
+            "label": {
+              "en": "Package",
+              "zh-hans-cn": "包裹"
+            }
+          },
+          {
+            "value": "lock",
+            "label": {
+              "en": "Lock",
+              "zh-hans-cn": "安全锁"
+            }
+          },
+          {
+            "value": "truck",
+            "label": {
+              "en": "Truck",
+              "zh-hans-cn": "货车"
+            }
+          }
+        ],
+        "default": "lock"
+      },
+      {
+        "id": "product_sales_point_4",
+        "type": "text",
+        "label": {
+          "en": "*销售信息4文案*",
+          "zh-hans-cn": "销售信息4文案"
+        },
+        "default": "Secure payments"
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "en": "Additional contents",
+          "zh-hans-cn": "附加内容"
+        },
+        "info": {
+          "en": "It will influence the range includes product detail page and the single product component of the homepage",
+          "zh-hans-cn": "影响范围包括商品详情页、首页的单个商品组件"
+        }
+      },
+      {
+        "id": "product_custom_tab1",
+        "type": "page_picker",
+        "label": {
+          "en": "Custom content 1",
+          "zh-hans-cn": "自定义内容1"
+        },
+        "default": ""
+      },
+      {
+        "id": "product_custom_tab1_fold",
+        "type": "switch",
+        "label": {
+          "en": "Folded display",
+          "zh-hans-cn": "折叠展示"
+        },
+        "default": true
+      },
+      {
+        "id": "product_custom_tab2",
+        "type": "page_picker",
+        "label": {
+          "en": "Custom content 2",
+          "zh-hans-cn": "自定义内容2"
+        },
+        "default": ""
+      },
+      {
+        "id": "product_custom_tab2_fold",
+        "type": "switch",
+        "label": {
+          "en": "Folded display",
+          "zh-hans-cn": "折叠展示"
+        },
+        "default": true
+      },
+      {
+        "id": "product_custom_tab3",
+        "type": "page_picker",
+        "label": {
+          "en": "Custom content 3",
+          "zh-hans-cn": "自定义内容3"
+        },
+        "default": ""
+      },
+      {
+        "id": "product_custom_tab3_fold",
+        "type": "switch",
+        "label": {
+          "en": "Folded display",
+          "zh-hans-cn": "折叠展示"
+        },
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Cart",
+      "zh-hans-cn": "购物车"
+    },
+    "settings": [
+      {
+        "id": "cart_open_type",
+        "type": "select",
+        "label": {
+          "en": "Open mode of the shopping cart",
+          "zh-hans-cn": "打开购物车方式"
+        },
+        "options": [
+          {
+            "value": "select",
+            "label": {
+              "en": "Open the drop-down list",
+              "zh-hans-cn": "打开下拉框"
+            }
+          },
+          {
+            "value": "newpage",
+            "label": {
+              "en": "Enter the page",
+              "zh-hans-cn": "进入页面"
+            }
+          }
+        ],
+        "default": "drawer"
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "CHECKOUT",
+      "zh-hans-cn": "结账"
+    },
+    "settings": [
+      {
+        "type": "group_header",
+        "label": {
+          "en": "Logo",
+          "zh-hans-cn": "Logo"
+        }
+      },
+      {
+        "id": "checkout_image",
+        "type": "image_picker",
+        "label": {
+          "en": "Custom image",
+          "zh-hans-cn": "自定义图片"
+        },
+        "default": {}
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Social media",
+      "zh-hans-cn": "社交媒体"
+    },
+    "settings": [
+      {
+        "type": "group_header",
+        "label": {
+          "en": "Account",
+          "zh-hans-cn": "账号"
+        },
+        "info": {
+          "en": "Used to let customers visit your social media account",
+          "zh-hans-cn": "用于客户访问你的社交媒体账号"
+        }
+      },
+      {
+        "id": "social_facebook_link",
+        "type": "text",
+        "label": {
+          "en": "Facebook",
+          "zh-hans-cn": "Facebook"
+        },
+        "default": "https://shoplineapp.cn/",
+        "placeholder": "http://",
+        "format": "uri"
+      },
+      {
+        "id": "social_twitter_link",
+        "type": "text",
+        "label": {
+          "en": "Twitter",
+          "zh-hans-cn": "Twitter"
+        },
+        "default": "https://shoplineapp.cn/",
+        "placeholder": "http://",
+        "format": "uri"
+      },
+      {
+        "id": "social_instagram_link",
+        "type": "text",
+        "label": {
+          "en": "Instagram",
+          "zh-hans-cn": "Instagram"
+        },
+        "default": "https://shoplineapp.cn/",
+        "placeholder": "http://",
+        "format": "uri"
+      },
+      {
+        "id": "social_snapchat_link",
+        "type": "text",
+        "label": {
+          "en": "Snapchat",
+          "zh-hans-cn": "Snapchat"
+        },
+        "default": "https://shoplineapp.cn/",
+        "placeholder": "http://",
+        "format": "uri"
+      },
+      {
+        "id": "social_tiktok_link",
+        "type": "text",
+        "label": {
+          "en": "TikTok",
+          "zh-hans-cn": "TikTok"
+        },
+        "default": "https://shoplineapp.cn/",
+        "placeholder": "http://",
+        "format": "uri"
+      },
+      {
+        "id": "social_youtube_link",
+        "type": "text",
+        "label": {
+          "en": "Youtube",
+          "zh-hans-cn": "Youtube"
+        },
+        "default": "https://shoplineapp.cn/",
+        "placeholder": "http://",
+        "format": "uri"
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "en": "Share",
+          "zh-hans-cn": "分享"
+        },
+        "info": {
+          "en": "Enable sharing on the product detail page and blog page",
+          "zh-hans-cn": "在商品详情页、博客页提供分享操作"
+        }
+      },
+      {
+        "id": "share_to_facebock",
+        "type": "switch",
+        "label": {
+          "en": "Share to Facebook",
+          "zh-hans-cn": "分享到Facebook"
+        },
+        "default": true
+      },
+      {
+        "id": "share_to_twitter",
+        "type": "switch",
+        "label": {
+          "en": "Share to Twitter",
+          "zh-hans-cn": "分享到Twitter"
+        },
+        "default": true
+      },
+      {
+        "id": "share_to_line",
+        "type": "switch",
+        "label": {
+          "en": "Share to LINE",
+          "zh-hans-cn": "分享到LINE"
+        },
+        "default": true
+      },
+      {
+        "id": "share_to_whatsapp",
+        "type": "switch",
+        "label": {
+          "en": "Share to Whatsapp",
+          "zh-hans-cn": "分享到Whatsapp"
+        },
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Favicon",
+      "zh-hans-cn": "网站图标"
+    },
+    "settings": [
+      {
+        "id": "favicon_image",
+        "type": "favicon_picker",
+        "label": {
+          "en": "Browser tag icon",
+          "zh-hans-cn": "浏览器标签icon"
+        },
+        "info": {
+          "en": "Size: 32 x 32px",
+          "zh-hans-cn": "尺寸：32x32px"
+        },
+        "default": ""
+      }
+    ]
+  }
 ]

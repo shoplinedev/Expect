@@ -1,0 +1,381 @@
+{{assign 'showItem' true}}
+{{assign 'showBox' true}}
+{{assign 'imagePosition' "center center"}}
+{{assign 'linkObj' (useLink section.settings.jump_link)}}
+{{assign 'hasMobileImage' (boolean section.settings.image_mobile '&&' section.settings.image_mobile.url)}}
+{{assign 'hasPcImage' (boolean section.settings.image '&&' section.settings.image.url)}}
+{{assign 'hasImage' (or hasMobileImage hasPcImage)}}
+
+{{assign 'pcImageScale' '100%'}}
+{{assign 'mobileImageScale' '100%'}}
+{{#if (boolean (has section.settings.image 'width') '&&' (has section.settings.image 'height'))}}
+  {{assign 'pcImageScale' (append (multiply (divide section.settings.image.height section.settings.image.width) 100) '%')}}
+{{/if}}
+
+ {{#if (isTruthy section.settings.image_mobile.url )}}
+  {{assign 'mobileImageScale' (append (multiply (divide section.settings.image_mobile.height section.settings.image_mobile.width) 100) '%')}}
+  {{!-- 配了m端图片， 用m端的scale --}}
+{{else if (boolean (isTruthy section.settings.image.url ) '&&' (isFalsey section.settings.image_mobile.url))}}
+  {{!-- 配了pc的图片， m端图片没配， 用pc的scale --}}
+  {{assign 'mobileImageScale' (append (multiply (divide section.settings.image.height section.settings.image.width) 100) '%')}}
+{{/if}}
+
+{{#if section.settings.title  "==="  ''}}
+  {{#if section.settings.sub_title  "==="  ''}}
+    {{#if section.settings.text  "==="  ''}}
+      {{#if section.settings.button_text  "==="  ''}}
+        {{assign 'showItem' false}}
+        {{#if section.settings.jump_link  "==="  ''}}
+          {{#if section.settings.image "==="  null}}
+            {{assign 'showBox' false}}
+          {{/if}}
+          {{#if section.settings.image.url "==="  ""}}
+            {{assign 'showBox' false}}
+          {{/if}}
+        {{/if}}
+      {{/if}}
+    {{/if}}
+  {{/if}}
+{{/if}}
+
+{{#switch section.settings.image_select}}
+  {{#case 'left_top'}} {{assign 'imagePosition' "0% 0"}} {{/case}}
+  {{#case 'center_top'}} {{assign 'imagePosition' "top center"}} {{/case}}
+  {{#case 'right_top'}} {{assign 'imagePosition' "100% 0"}} {{/case}}
+  {{#case 'left_center'}} {{assign 'imagePosition' "0% 50%"}} {{/case}}
+  {{#case 'center_center'}} {{assign 'imagePosition' "center center"}} {{/case}}
+  {{#case 'right_center'}} {{assign 'imagePosition' "100% 50%"}} {{/case}}
+  {{#case 'left_bottom'}} {{assign 'imagePosition' "0% 100%"}} {{/case}}
+  {{#case 'center_bottom'}} {{assign 'imagePosition' "bottom center"}} {{/case}}
+  {{#case 'right_bottom'}} {{assign 'imagePosition' "100% 100%"}} {{/case}}
+{{/switch}}
+
+{{#if showBox "===" true}}
+  <div 
+    class="large-image-with-text-box  large-image-with-text-box--{{ section.settings.image_height }} {{#if (isFalsey hasImage)}}large-image-with-text-box--no-image{{/if}} large-image-with-text-box__mobile--{{ section.settings.mobile_height }} parallax-container" 
+    style="--large-image-with-text-body--pc-scale: {{pcImageScale}};--large-image-with-text-body--mobile-scale: {{mobileImageScale}}">
+    <div class="large-image-with-text-box__wrapper">
+      <div class="{{#if section.settings.parallax }}parallax{{else}}large-image-with-text-box__default{{/if}}">
+        {{#if hasImage}}
+          {{#if hasMobileImage}}
+            <img 
+              class="lozad large-image-with-text-box__image--mobile"
+              alt="{{section.settings.image_mobile.alt}}"
+              data-src="{{section.settings.image_mobile.url}}"
+              data-srcset="{{img_url section.settings.image_mobile.url width=1920 }} 1x, {{img_url section.settings.image_mobile.url width=1920 scale=2 }} 2x"
+              style="object-position:{{imagePosition}}" 
+              alt="large-image-with-text-box">
+          {{/if}}
+          {{#if hasPcImage}}
+            <img 
+              class="lozad large-image-with-text-box__image--pc {{#if (isFalsey hasMobileImage)}}d-block{{/if}}"
+              alt="{{section.settings.image.alt}}"
+              data-src="{{section.settings.image.url}}"
+              data-srcset="{{img_url section.settings.image.url width=1920 }} 1x, {{img_url section.settings.image.url width=1920 scale=2 }} 2x"
+              style="object-position:{{imagePosition}}" 
+              alt="large-image-with-text-box">
+          {{/if}}
+        {{else}}
+          <div class="large-image-with-text-box__icon">
+            {{ snippet 'icons/icon_image' }}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+    <div class="large-image-with-text-box__inner">
+      <div class="large-image-with-text-box__aligner">
+        <div class="large-image-with-text-box__content large-image-with-text-box__content--{{section.settings.text_position}}">
+          {{#if showItem "===" true}}
+            <div class="large-image-with-text-box__item">
+              {{#if section.settings.sub_title }}
+                <p class="large-image-with-text-box__subtitle body6 ls-30p"> {{ section.settings.sub_title }} </p>
+              {{/if}}
+              {{#if section.settings.title}}
+                <p class="large-image-with-text-box__title title5"> {{ section.settings.title }}</p>
+              {{/if}}
+              {{#if section.settings.text}}
+                <div class="large-image-with-text-box__text body3 sl-richtext"> {{{ section.settings.text }}} </div>
+              {{/if}}
+              {{#if section.settings.button_text}}
+                <a
+                  {{{linkObj.hrefAttr}}}
+                  class="large-image-with-text-box__btn btn btn-primary">
+                  {{ section.settings.button_text }}
+                </a>
+              {{/if}}
+            </div>
+          {{/if}}
+          
+        </div>
+      </div>
+    </div>
+  </div>
+{{/if}}
+
+
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "单图",
+    "en": "Large image with text box"
+  },
+  "settings": [
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": {
+        "zh-hans-cn": "电脑端图片",
+        "en": "Image"
+      },
+      "default": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": {
+        "zh-hans-cn": "移动端图片",
+        "en": "Image on mobile device"
+      },
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "image_select",
+      "label": {
+        "zh-hans-cn": "图片展示区域",
+        "en": "Image focal point"
+      },
+      "options": [
+        {
+          "value": "left_top",
+          "label": {
+            "zh-hans-cn": "左上方",
+            "en": "Upper left"
+          }
+        },
+        {
+          "value": "center_top",
+          "label": {
+            "zh-hans-cn": "正上方",
+            "en": "Right above"
+          }
+        },
+        {
+          "value": "right_top",
+          "label": {
+            "zh-hans-cn": "右上方",
+            "en": "Upper right"
+          }
+        },
+        {
+          "value": "left_center",
+          "label": {
+            "zh-hans-cn": "左侧",
+            "en": "Left side"
+          }
+        },
+        {
+          "value": "center_center",
+          "label": {
+            "zh-hans-cn": "正中",
+            "en": "Center"
+          }
+        },
+        {
+          "value": "right_center",
+          "label": {
+            "zh-hans-cn": "右侧",
+            "en": "Right side"
+          }
+        },
+        {
+          "value": "left_bottom",
+          "label": {
+            "zh-hans-cn": "左下方",
+            "en": "Bottom left"
+          }
+        },
+        {
+          "value": "center_bottom",
+          "label": {
+            "zh-hans-cn": "正下方",
+            "en": "Below"
+          }
+        },
+        {
+          "value": "right_bottom",
+          "label": {
+            "zh-hans-cn": "右下方",
+            "en": "Bottom right"
+          }
+        }
+      ],
+      "default": "center_center"
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "label": {
+        "zh-hans-cn": "电脑端高度",
+        "en": "Height on PC"
+      },
+      "default": "natural",
+      "options": [
+        {
+          "label": {
+            "zh-hans-cn": "适应图片",
+            "en": "Natural"
+          },
+          "value": "natural"
+        },
+        {
+          "label": "450px",
+          "value": 450
+        },
+        {
+          "label": "550px",
+          "value": 550
+        },
+        {
+          "label": "650px",
+          "value": 650
+        },
+        {
+          "label": "750px",
+          "value": 750
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_height",
+      "label": {
+        "zh-hans-cn": "移动端高度",
+        "en": "Height on mobile device"
+      },
+      "default": "auto",
+      "options": [
+        {
+          "label": {
+            "zh-hans-cn": "适应图片",
+            "en": "Auto"
+          },
+          "value": "auto"
+        },
+        {
+          "label": "510px",
+          "value": "510px"
+        }
+      ]
+    },
+    {
+      "id": "sub_title",
+      "type": "text",
+      "label": {
+        "zh-hans-cn": "副标题",
+        "en": "Subtitle"
+      },
+      "default": "Impressive"
+    },
+    {
+      "id": "title",
+      "type": "text",
+      "label": {
+        "zh-hans-cn": "标题",
+        "en": "Title"
+      },
+      "default": "Large image with text box"
+    },
+    {
+      "id": "text",
+      "type": "richtext",
+      "label": {
+        "zh-hans-cn": "文本",
+        "en": "Texts"
+      },
+      "default": "Pair large text with a full-width image to draw attention to an important detail of your brand or product line."
+    },
+    {
+      "id": "button_text",
+      "type": "text",
+      "label": {
+        "zh-hans-cn": "按钮文案",
+        "en": "Button text"
+      },
+      "default": "Optional button"
+    },
+    {
+      "id": "jump_link",
+      "type": "url",
+      "label": {
+        "zh-hans-cn": "跳转链接",
+        "en": "Jump link"
+      }
+    },
+    {
+      "id": "text_position",
+      "type": "select",
+      "label": {
+        "zh-hans-cn": "文本位置",
+        "en": "Text position"
+      },
+      "options": [
+        {
+          "value": "left",
+          "label": {
+            "en": "Text on the left",
+            "zh-hans-cn": "文本靠左"
+          }
+        },
+        {
+          "value": "right",
+          "label": {
+            "en": "Text on the right",
+            "zh-hans-cn": "文本靠右"
+          }
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "id": "parallax",
+      "type": "switch",
+      "label": {
+        "zh-hans-cn": "启用滚动视差效果",
+        "en": "When enabling the parallax effect, part of the image will be cropped to ensure the correct display."
+      },
+      "info": {
+        "zh-hans-cn": "开启视差效果会裁减部分图片以达到效果",
+        "en": "Enable the parallax scroll"
+      },
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "zh-hans-cn": "单图",
+        "en": "Large image with text box"
+      },
+      "category": {
+        "zh-hans-cn": "内容展示",
+        "en": "Content display"
+      },
+      "settings": {
+        "image": {},
+        "image_mobile": {},
+        "image_select": "center_center",
+        "image_height": "natural",
+        "mobile_height": "auto",
+        "sub_title": "Impressive",
+        "title": "Large image with text box",
+        "text": "Pair large text with a full-width image to draw attention to an important detail of your brand or product line.",
+        "button_text": "Optional button",
+        "jump_link": "",
+        "text_position": "left",
+        "parallax": true
+      }
+    }
+  ]
+}
+{{/schema}}

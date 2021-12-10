@@ -1,1 +1,114 @@
-<div>search</div>
+{{preload_state 'products'}}
+{{assign 'top_ten_products_list' (array-slice products.list 0 10)}}
+
+{{#partial 'head'}}
+<link rel="stylesheet" href="{{assets_url 'product/search/index.min.css'}}">
+{{/partial}}
+
+{{#partial 'script'}}
+<script src="{{assets_url 'product/search/index.min.js'}}"></script>
+{{/partial}}
+
+{{#partial 'title'}}
+  <title>Search - {{storeInfo.name}}</title>
+{{/partial}}
+
+{{#partial 'page_view'}}
+<script>
+  !function () {
+    const params = (new URL(document.location))?.searchParams
+    const keyword = params.get('keyword');
+    if (!keyword) return;
+    // 第三方埋点
+    window.SL_EventBus.emit('global:thirdPartReport', {
+      GA: [
+        [
+          'event',
+          'view_search_results',
+          {
+            search_term: '{{request.uri.query.keyword}}',
+            items: [{{#forEach products.list}}{id: '{{reportSkuId}}', name: '{{title}}', list_position: {{index}} }{{#unless isLast}},{{/unless}}{{/forEach}}]
+          }
+        ],
+      ],
+      FBPixel: [
+        [
+          'track',
+          'Search',
+          {
+            search_string: '{{request.uri.query.keyword}}',
+          },
+          {
+            eventID: 'search{{serverEventId}}'
+          }
+        ],
+      ],
+      GAR: [
+        [
+         'event',
+          'view_search_results',
+          {
+            items: [{{#forEach top_ten_products_list}}{id: '{{reportSkuId}}', google_business_vertical: 'retail'}{{#unless isLast}},{{/unless}}{{/forEach}}]
+          }
+        ]
+      ],
+       GARemarketing: [
+       [
+         'event',
+          'view_search_results',
+          {
+            ecomm_prodid: [{{#forEach top_ten_products_list}}'{{reportSkuId}}'{{#unless isLast}},{{/unless}}{{/forEach}}], 
+            ecomm_pagetype: 'searchresults',
+          }
+        ]
+      ],
+    });
+  }()
+</script>
+<script>
+  window.HdSdk.shopTracker.report('60006259', {
+    event_name: 'view',
+    page: '106',
+    search_type: '{{default (get 'type' request.uri.query) ''}}',
+    iframe_id: 1
+  })
+</script>
+{{/partial}}
+
+{{ content_for_index }}
+
+{{!-- define computed props --}}
+{{assign 'keyword' (get 'keyword' request.uri.query)}}
+{{assign 'total' (get 'total' products)}}
+{{assign 'count' (length products.list)}}
+
+<main class="product-search__container">
+  <div class="product-search__body">
+    <nav class="product-search__breadcrumb">
+      <a href="/" title="{{t 'productSearch.search.backHome'}}">Home</a>
+      <span class="product-search__breadcrumbDivider">/</span>
+      <span class="product-search__searchText">
+        Search
+        {{#if (trim keyword)}}
+          ：{{{t 'productSearch.search.resultsFoundFor' count=total keyword=keyword}}}
+        {{/if}}
+      </span>
+    </nav>
+    <header class="product-search__header">
+      <h2 class="product-search__headerTitle title2">Search</h2>
+    </header>
+    <section class="product-search__form">
+      {{snippet 'product/search/search-input'}}
+    </section>
+    <hr class="product-search__hr">
+    <div class="product-search__results">
+      <div class="product-search__header">
+        <h2 class="product-search__headerTitle title2">{{t 'productSearch.search.results' count=total}}</h2>
+        {{#if total '===' 0}}
+          <p class="product-search__searchText">{{{t 'productSearch.search.searchNoResults' keyword=keyword}}}</p>
+        {{/if}}
+      </div>
+    </div>
+    {{snippet 'product/commons/product-item-list' listData=products.list pageSize=48 pageNum=products.pageNum total=products.total className='__sl-custom-track-product-item-search' }}
+  </div>
+</main>

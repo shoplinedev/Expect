@@ -1,0 +1,166 @@
+{{assign 'product' (get section.settings.product_id all_products)}}
+{{assign 'notEmpty' (boolean (isTruthy section.settings.product_id) '&&' (isTruthy (get 'spu.shelves' product)))}}
+{{assign 'prefix' 'stage__featured__product'}}
+{{#if section.settings.show_divider}}
+<div class="section--divider">
+{{/if}}
+  <div id="{{prefix}}--{{section.id}}" class='{{#if (isFalsey notEmpty)}}container g-4 g-md-6 {{/if}}{{prefix}}--wrapped' data-section-id="{{section.id}}" data-state-path="product_{{section.settings.product_id}}" data-product-id="{{section.settings.product_id}}">
+    {{#if (isTruthy notEmpty) }}
+      {{snippet 'product/detail/product-preview' id=section.id statePrefix=(append 'product_' section.settings.product_id)  product=product description=product.desc section=section }}
+    {{else}}
+      {{!-- 未配置商品展示默认图 --}}
+      <div class="{{prefix}}--empty">
+        <div class="{{prefix}}--empty-image">{{snippet 'icons/icon_empty_product'}}</div>
+        <div class="{{prefix}}--empty-text">
+          <h2 class="title4">Example product</h2>
+          <div class="body1">
+            <div class="notranslate">
+              <span class="{{prefix}}__price">$575</span><sup class="body6">00</sup>
+            </div>
+          </div>
+          {{ snippet 'product/detail/product-sell-info' id=section.id }}
+        </div>
+      </div>
+    {{/if}}
+  </div>
+{{#if section.settings.show_divider}}
+</div>
+{{/if}}
+
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "单个商品",
+    "en": "Featured product"
+  },
+  "class": "index-section--gap",
+  "settings": [
+    {
+      "type": "product_picker",
+      "id": "product_id",
+      "label": {
+        "zh-hans-cn": "商品",
+        "en": "Product"
+      }
+    },
+    {
+      "type": "switch",
+      "id": "show_product_desc",
+      "label": {
+        "zh-hans-cn": "展示商品描述",
+        "en": "Display product description"
+      },
+      "default": true
+    },
+    {
+      "type": "switch",
+      "id": "show_divider",
+      "label": {
+        "zh-hans-cn": "展示分割线",
+        "en": "Dismay the split line"
+      },
+      "default": false
+    },
+    {
+      "type": "group_header",
+      "label": {
+        "zh-hans-cn": "商品图片/视频",
+        "en": "Product image/video"
+      }
+    },
+    {
+      "type": "select",
+      "id": "thumbnail_position",
+      "label": {
+        "zh-hans-cn": "略缩图位置",
+        "en": "Thumbnail position"
+      },
+      "options": [
+        {
+          "value": "aside",
+          "label": {
+            "zh-hans-cn": "商品图旁边",
+            "en": "Beside the product image"
+          }
+        },
+        {
+          "value": "bottom",
+          "label": {
+            "zh-hans-cn": "商品图下方",
+            "en": "Below the product image"
+          }
+        }
+      ],
+      "default": "aside"
+    },
+    {
+      "type": "switch",
+      "id": "show_thumbnail_arrow",
+      "label": {
+        "zh-hans-cn": "展示略缩图箭头",
+        "en": "Display the thumbnail arrow"
+      },
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "image_width_in_mobile",
+      "label": {
+        "zh-hans-cn": "移动端图片宽度",
+        "en": "Image width on mobile device"
+      },
+      "options": [
+        {
+          "value": "75%",
+          "label": {
+            "zh-hans-cn": "75% 宽",
+            "en": "75% wide"
+          }
+        },
+        {
+          "value": "full",
+          "label": {
+            "zh-hans-cn": "全屏",
+            "en": "Full screen"
+          }
+        }
+      ],
+      "default": "75%"
+    },
+    {
+      "type": "switch",
+      "id": "video_loop",
+      "label": {
+        "zh-hans-cn": "启用视频循环",
+        "en": "Enable video loop"
+      },
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "video_mute",
+      "label": {
+        "zh-hans-cn": "开启视频静音",
+        "en": "Mute the video"
+      },
+      "info": {
+        "zh-hans-cn": "静音前视频不会自动播放",
+        "en": "Video with sound will not autoplay"
+      },
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "zh-hans-cn": "单个商品",
+        "en": "Featured product"
+      },
+      "category": {
+        "zh-hans-cn": "商品",
+        "en": "Product"
+      }
+    }
+  ]
+}
+{{/schema}}

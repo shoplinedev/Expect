@@ -1,0 +1,192 @@
+{{assign 'child_category_list' (navigation_to_category all_collections navigations.head sortationId )}}
+
+
+<section class="product-list-filter">
+  {{snippet 'product/collections/collections-menu' settings=section.settings blocks=(product_blocks_order_translate section 'blocks' 'block_order')}}
+</section>
+
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "侧栏筛选",
+    "en": "Collection filter"
+  },
+  "settings": [
+    {
+      "type": "switch",
+      "id": "filter_enable",
+      "label": {
+        "zh-hans-cn": "启用侧栏筛选",
+        "en": "Enable side column filter"
+      },
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "filter_style",
+      "label": {
+        "zh-hans-cn": "筛选器展示样式",
+        "en": "Display style of filter"
+      },
+      "options": [
+        {
+          "value": "sidebar",
+          "label": {
+            "zh-hans-cn": "侧边栏",
+            "en": "Side column"
+          }
+        },
+        {
+          "value": "drawer",
+          "label": {
+            "zh-hans-cn": "抽屉",
+            "en": "Drawer"
+          }
+        }
+      ],
+      "default": "sidebar"
+    },
+    {
+      "type": "switch",
+      "id": "support_multiple",
+      "label": {
+        "zh-hans-cn": "标签开启多选",
+        "en": "The tag supports for multiple choice"
+      },
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tag_filter",
+      "icon": "product",
+      "name": {
+        "zh-hans-cn": "标签筛选",
+        "en": "Tag filter"
+      },
+      "settings": [
+        {
+          "type": "text",
+          "id": "tag_filter_title",
+          "label": {
+            "zh-hans-cn": "标签标题",
+            "en": "Tag title"
+          },
+          "default": "Filters"
+        },
+        {
+          "type": "tag_picker",
+          "id": "tag_data",
+          "label": {
+            "zh-hans-cn": "标签选择器",
+            "en": "Tag selector"
+          },
+          "default": {
+            "group": "1",
+            "tags": []
+          }
+        },
+        {
+          "type": "switch",
+          "id": "default_fold",
+          "label": {
+            "zh-hans-cn": "默认折叠",
+            "en": "Fold by default"
+          },
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "child_category",
+      "icon": "productCategories",
+      "name": {
+        "zh-hans-cn": "子分类",
+        "en": "Subcollection"
+      },
+      "settings": [
+        {
+          "type": "group_header",
+          "label": {
+            "zh-hans-cn": "子分类",
+            "en": "Subcollection"
+          },
+          "info": {
+            "zh-hans-cn": "菜单导航中配置的子分类菜单将在此处展示。[了解更多](https://shoplineapphelp.zendesk.com/hc/zh-cn/articles/4404860397977)",
+            "en": "The collection menu configured in the navigation menu will be displayed here. [Know more](https://shoplineapphelp.zendesk.com/hc/zh-cn/articles/4404860397977)"
+          }
+        },
+        {
+          "type": "switch",
+          "id": "show_level3_title",
+          "label": {
+            "zh-hans-cn": "展示三级标题",
+            "en": "Display the third-level title"
+          },
+          "default": false
+        },
+        {
+          "type": "switch",
+          "id": "show_product_num",
+          "label": {
+            "zh-hans-cn": "展示商品数量",
+            "en": "Display product quantity"
+          },
+          "default": false
+        },
+        {
+          "type": "switch",
+          "id": "default_fold",
+          "label": {
+            "zh-hans-cn": "默认折叠",
+            "en": "Fold by default"
+          },
+          "default": false
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "menu",
+      "icon": "navigation",
+      "name": {
+        "zh-hans-cn": "菜单栏",
+        "en": "Menu column"
+      },
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title",
+          "label": {
+            "zh-hans-cn": "菜单标题",
+            "en": "Menu title"
+          }
+        },
+        {
+          "type": "menu_picker",
+          "id": "menu_selector",
+          "label": {
+            "zh-hans-cn": "菜单选择器",
+            "en": "Menu selector"
+          }
+        },
+        {
+          "type": "switch",
+          "id": "default_fold",
+          "label": {
+            "zh-hans-cn": "默认折叠",
+            "en": "Fold by default"
+          }
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "default": {
+    "settings": {
+      "filter_enable": true,
+      "filter_style": "sidebar"
+    }
+  }
+}
+{{/schema}}

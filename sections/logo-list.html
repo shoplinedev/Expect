@@ -1,0 +1,370 @@
+{{assign 'icon_color' section.settings.icon_color}}
+{{assign 'font_color' section.settings.font_color}}
+{{assign 'background_color' section.settings.background_color}}
+{{assign 'layout' section.settings.layout}}
+{{assign 'width' section.settings.width}}
+{{assign 'mobile_rendermode' section.settings.mobile_rendermode}}
+{{#if layout '===' 'vertical'}}
+  {{assign 'icon_class' 'iconlist__iconItem__vertical__icon'}}
+{{else}}
+  {{assign 'icon_class' 'iconlist__iconItem__horizontal__icon'}}
+{{/if}}
+{{assign 'blocks' (product_blocks_order_translate section 'blocks' 'block_order')}}
+{{#if width '!==' 'full'}}
+  {{assign 'widthClass' 'container'}}
+{{/if}}
+
+{{#if blocks}}
+  <div class="iconlist__scrollBox">
+    <div class="iconlist__bg" style="background:{{background_color}}">
+    </div>
+
+    <div class="iconlist iconlist__{{width}} iconlist__{{mobile_rendermode}} {{widthClass}} g-4 g-md-6" style="{{#if layout '===' 'horizontal'}}align-items: center;{{/if}}">
+      {{#if mobile_rendermode '===' 'scroll'}}
+        <div class="iconlist__shadow" style="background:linear-gradient(-90deg, {{background_color}} 0%, rgba(255, 255, 255, 0) 100%)"></div>
+      {{/if}}
+      {{#each blocks}}
+        {{assign 'icon' settings.icon}}
+        {{assign 'image' settings.image}}
+        {{assign 'title' settings.title}}
+        {{assign 'sub_title' settings.sub_title}}
+        {{assign 'link_item' (useLink settings.jump_link)}}
+        {{#if ../layout '===' 'vertical'}}
+          <a class="iconlist__iconItem__vertical" {{#if (boolean (isTruthy image.url) '||' (boolean (boolean icon '!=' 'none') '||' (boolean (isTruthy title) '||' (isTruthy sub_title))))}} {{{link_item.hrefAttr}}} {{/if}}>
+            {{#if image.url}}
+              <img alt="{{ image.alt }}" class="lozad iconlist__iconItem__vertical__icon" data-src="{{ image.url }}" data-srcset="{{ image.url }} 1x, {{ image.url }} 2x" />
+            {{else}}
+              {{snippet 'logo-list-icon' icon=icon}}
+            {{/if}}
+
+            <div class="iconlist__iconItem__vertical__title title6" style="color:{{../font_color}}">{{title}}</div>
+            <div class="iconlist__iconItem__vertical__subTitle body3" style="color:{{../font_color}}">{{sub_title}}</div>
+          </a>
+
+          {{!-- 防止不渲染 兜底 水平布局 渲染 --}}
+        {{else}}
+          <a class="iconlist__iconItem__horizontal" {{#if (boolean (isTruthy image.url) '||' (boolean (boolean icon '!=' 'none') '||' (boolean (isTruthy title) '||' (isTruthy sub_title))))}} {{{link_item.hrefAttr}}} {{/if}}>
+            {{#if image.url}}
+              <img alt="{{ image.alt }}" class="lozad iconlist__iconItem__horizontal__icon" data-src="{{ image.url }}" data-srcset="{{ image.url }} 1x, {{ image.url }} 2x" />
+            {{else}}
+              {{snippet 'logo-list-icon'}}
+            {{/if}}
+            <div class="iconlist__iconItem__horizontal__right">
+              <div class="iconlist__iconItem__horizontal__title title6" style="color:{{../font_color}}">{{title}}</div>
+              <div class="iconlist__iconItem__horizontal__subTitle body3" style="color:{{../font_color}}">{{sub_title}}</div>
+            </div>
+          </a>
+        {{/if}}
+
+      {{/each}}
+    </div>
+  </div>
+{{/if}}
+
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "图标申明",
+    "en": "Logo list"
+  },
+  "type": "logo-list",
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "icon",
+      "name": {
+        "zh-hans-cn": "图标",
+        "en": "Logo"
+      },
+      "icon": "image",
+      "settings": [
+        {
+          "id": "icon",
+          "type": "select",
+          "label": {
+            "zh-hans-cn": "图标",
+            "en": "Logo"
+          },
+          "default": "logistics",
+          "options": [
+            {
+              "label": {
+                "zh-hans-cn": "不显示",
+                "en": "Don't display"
+              },
+              "value": "none"
+            },
+            {
+              "label": {
+                "zh-hans-cn": "安全支付",
+                "en": "Secure payment"
+              },
+              "value": "pay"
+            },
+            {
+              "label": {
+                "zh-hans-cn": "包裹",
+                "en": "Package"
+              },
+              "value": "package"
+            },
+            {
+              "label": {
+                "zh-hans-cn": "电子邮箱",
+                "en": "Email"
+              },
+              "value": "email"
+            },
+            {
+              "label": {
+                "zh-hans-cn": "定位",
+                "en": "Locate"
+              },
+              "value": "position"
+            },
+            {
+              "label": {
+                "zh-hans-cn": "顾客",
+                "en": "Customer"
+              },
+              "value": "customer"
+            },
+            {
+              "label": {
+                "zh-hans-cn": "聊天",
+                "en": "Chat"
+              },
+              "value": "chat"
+            },
+            {
+              "label": {
+                "zh-hans-cn": "礼物",
+                "en": "Gifts"
+              },
+              "value": "gift"
+            },
+            {
+              "label": {
+                "zh-hans-cn": "手机",
+                "en": "Mobile Phone"
+              },
+              "value": "phone"
+            },
+            {
+              "label": {
+                "zh-hans-cn": "帮助信息",
+                "en": "Question mark"
+              },
+              "value": "faq"
+            },
+            {
+              "label": {
+                "zh-hans-cn": "物流",
+                "en": "Logistics"
+              },
+              "value": "logistics"
+            },
+            {
+              "label": {
+                "zh-hans-cn": "折扣标签",
+                "en": "Discount tag"
+              },
+              "value": "discount"
+            }
+          ]
+        },
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": {
+            "zh-hans-cn": "图片",
+            "en": "Image"
+          }
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": {
+            "zh-hans-cn": "标题",
+            "en": "Title"
+          },
+          "default": "Free Shipping"
+        },
+        {
+          "id": "sub_title",
+          "type": "text",
+          "label": {
+            "zh-hans-cn": "副标题",
+            "en": "Subtitle"
+          },
+          "default": "Free Capped at $50 per order"
+        },
+        {
+          "id": "jump_link",
+          "type": "url",
+          "label": {
+            "en": "Jump link",
+            "zh-hans-cn": "跳转链接"
+          }
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "width",
+      "label": {
+        "zh-hans-cn": "组件宽度",
+        "en": "Component width"
+      },
+      "options": [
+        {
+          "value": "full",
+          "label": {
+            "zh-hans-cn": "全屏",
+            "en": "Wide screen"
+          }
+        },
+        {
+          "value": "normal",
+          "label": {
+            "zh-hans-cn": "标准宽屏",
+            "en": "Standard"
+          }
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": {
+        "zh-hans-cn": "布局",
+        "en": "Layout"
+      },
+      "options": [
+        {
+          "label": {
+            "zh-hans-cn": "上下布局",
+            "en": "Vertical layout"
+          },
+          "value": "vertical"
+        },
+        {
+          "label": {
+            "zh-hans-cn": "左右布局",
+            "en": "Horizontal layout"
+          },
+          "value": "horizontal"
+        }
+      ]
+    },
+    {
+      "type": "color_picker",
+      "id": "font_color",
+      "label": {
+        "zh-hans-cn": "字体颜色",
+        "en": "Font color"
+      }
+    },
+    {
+      "type": "color_picker",
+      "id": "icon_color",
+      "label": {
+        "zh-hans-cn": "ICON颜色",
+        "en": "ICON color"
+      }
+    },
+    {
+      "type": "color_picker",
+      "id": "background_color",
+      "label": {
+        "zh-hans-cn": "背景颜色",
+        "en": "Background color"
+      }
+    },
+    {
+      "type": "select",
+      "id": "mobile_rendermode",
+      "label": {
+        "zh-hans-cn": "移动端样式",
+        "en": "Styles on mobile device"
+      },
+      "options": [
+        {
+          "value": "scroll",
+          "label": {
+            "zh-hans-cn": "左右滑动",
+            "en": "Slide the screen left or right"
+          }
+        },
+        {
+          "value": "grid",
+          "label": {
+            "zh-hans-cn": "网格",
+            "en": "Grid"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "zh-hans-cn": "图标申明",
+        "en": "Logo list"
+      },
+      "category": {
+        "zh-hans-cn": "内容展示",
+        "en": "Content display"
+      },
+      "settings": {
+        "background_color": "#F8F8F8",
+        "font_color": "#000000",
+        "icon_color": "#000000",
+        "layout": "vertical",
+        "width": "normal",
+        "mobile_rendermode": "scroll"
+      },
+      "blocks": [
+        {
+          "type": "icon",
+          "icon": "image",
+          "settings": {
+            "icon": "logistics",
+            "title": "Free shipping",
+            "sub_title": "Capped at $50 per order."
+          }
+        },
+        {
+          "type": "icon",
+          "icon": "image",
+          "settings": {
+            "icon": "customer",
+            "title": "Chat with us",
+            "sub_title": "We offer 24-hour chat support."
+          }
+        },
+        {
+          "type": "icon",
+          "icon": "image",
+          "settings": {
+            "icon": "pay",
+            "title": "securety payments",
+            "sub_title": "Up to 12 months installments."
+          }
+        },
+        {
+          "type": "icon",
+          "icon": "image",
+          "settings": {
+            "icon": "package",
+            "title": "14-day returns",
+            "sub_title": "Shop with confidence."
+          }
+        }
+      ]
+    }
+  ]
+}
+{{/schema}}

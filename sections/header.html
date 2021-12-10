@@ -1,1 +1,347 @@
-<h1 class="header">header</h1>
+{{assign 'header_logo_alignment' 'center'}}
+{{assign 'search_at_left' false}}
+{{assign 'search_at_right' false }}
+{{assign 'menu_at_right' false}}
+{{assign 'has_topbar' false}}
+{{assign 'overlay_header' false}}
+{{assign 'show_toolbar' false}}
+{{assign 'drawer_position' 'right'}}
+{{assign 'announcement_bar_is_above' false}}
+{{assign 'main_menu' (get section.settings.main_menu_link_list navigations) }}
+{{assign 'dropdown_alignment' 'left'}}
+{{assign 'mega_menu_images' section.settings.mega_menu_images}}
+{{assign 'header_layout' section.settings.main_menu_alignment}}
+{{assign 'has_layout' false}}
+{{#or header_layout '===' 'center-down' header_layout '===' 'left-down' header_layout '===' 'left-left' header_layout '===' 'left-center'  }}
+  {{assign 'has_layout' true}}
+{{/or}}
+
+{{#if (boolean section.settings.sticky_index '&&' (boolean template '===' 'index'))}}
+	{{ assign 'overlay_header' true}}
+{{/if}}
+
+{{#if (boolean section.settings.sticky_collection '&&'(boolean template '===' 'collection'))}}
+	{{#if (isTruthy sortation)}}
+		{{#if (isTruthy sortation.sortation.sortationImg)}}
+			{{ assign 'overlay_header' true}}
+		{{/if}}
+	{{/if}}
+{{/if}}
+
+{{#if (boolean section.settings.show_locale_selector '||'  section.settings.show_currency_selector) }}
+	{{assign 'show_toolbar' true}}
+{{/if}}
+
+{{preload_state "tradeSettleConfig"}}
+
+
+<!-- 全局语言、货币选择下拉 -->
+{{snippet 'mobile-locale-currency-drawer' }}
+
+<div class="header__top">
+  <div class="header__top-content container g-4 g-md-6 d-flex">
+    {{snippet 'announcement-bar'}}
+
+    {{#if (boolean show_toolbar)}}
+    {{snippet 'toolbar'}}
+    {{/if}}
+  </div>
+</div>
+
+<div class="header-sticky-wrapper">
+	<div id="stage-headerWrapper" class="header__wrapper {{#if overlay_header}}header--is-light header-wrapper--sticky{{/if}}" data-overlay="{{overlay_header}}">
+
+    <header class="header__main" id="stage-header" data-sticky={{boolean section.settings.header_style}} data-section-id="{{section.id}}">
+      {{#if header_layout '===' 'center-down'}}
+        {{snippet 'header-layout-center-down' mega_menu_images=mega_menu_images overlay_header=overlay_header main_menu=main_menu}}
+      {{/if}}
+
+      {{#if header_layout '===' 'left-down'}}
+        {{snippet 'header-layout-left-down' mega_menu_images=mega_menu_images overlay_header=overlay_header main_menu=main_menu}}
+      {{/if}}
+
+      {{#if header_layout '===' 'left-left'}}
+        {{snippet 'header-layout-left' mega_menu_images=mega_menu_images overlay_header=overlay_header main_menu=main_menu}}
+      {{/if}}
+
+      {{#if header_layout '===' 'left-center' }}
+        {{snippet 'header-layout-left' mega_menu_images=mega_menu_images overlay_header=overlay_header main_menu=main_menu}}
+      {{/if}}
+
+      {{!-- 偶现没有渲染出 header 的情况，用下面这个布局作为兜底 --}}
+      {{#unless has_layout}}
+        <div class="d-none header-layout-debug">{{header_layout}}</div>
+        {{snippet 'header-layout-left-down' mega_menu_images=mega_menu_images overlay_header=overlay_header main_menu=main_menu}}
+      {{/unless}}
+
+      {{snippet 'header-search'}}
+
+      <!-- 移动端菜单下拉 -->
+      <div class="header-menu__slot d-block d-md-none">
+        {{#snippet 'global-top-drawer' id="header-mobile-menu-drawer"}}
+          {{snippet 'header-mobile-menu' main_menu=main_menu}}
+        {{/snippet}}
+      </div>
+
+    </header>
+  </div>
+</div>
+
+
+
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "页头",
+    "en": "Header"
+  },
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "icon": "image",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo-inverted",
+          "label": {
+            "zh-hans-cn": "白色LOGO",
+            "en": "White logo"
+          },
+          "info": {
+            "zh-hans-cn": "当开启透明页头时显示",
+            "en": "Used when on top of an image"
+          }
+        },
+        {
+          "type": "range",
+          "id": "desktop_logo_width",
+          "label": {
+            "zh-hans-cn": "电脑端LOGO宽度",
+            "en": "Desktop logo width"
+          },
+          "default": 200,
+          "min": 100,
+          "max": 400,
+          "step": 10,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "mobile_logo_width",
+          "label": {
+            "en": "Mobile logo width",
+            "zh-hans-cn": "移动端LOGO宽度"
+          },
+          "default": 140,
+          "min": 60,
+          "max": 200,
+          "step": 10,
+          "unit": "px",
+          "info": {
+            "zh-hans-cn": "此设置为最大可展示宽度，实际根据屏幕大小适应显示",
+            "en": "This setting is the maximum displayable width, the width will be adjusted according to the actual screen size"
+          }
+        }
+      ]
+    },
+    {
+      "type": "announcement",
+      "icon": "post",
+      "name": {
+        "zh-hans-cn": "公告栏",
+        "en": "Notice board"
+      },
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": {
+            "zh-hans-cn": "正文",
+            "en": "Main text"
+          },
+          "default": "30-day postage paid returns"
+        },
+        {
+          "type": "text",
+          "id": "link_text_mobile",
+          "label": {
+            "zh-hans-cn": "手机端正文",
+            "en": "Main text on mobile devices"
+          },
+          "default": ""
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": {
+            "zh-hans-cn": "跳转链接",
+            "en": "Jump link"
+          }
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "menu_picker",
+      "id": "main_menu_link_list",
+      "label": {
+        "zh-hans-cn": "导航菜单",
+        "en": "Navigation menu"
+      },
+      "default": "head"
+    },
+    {
+      "type": "switch",
+      "id": "mega_menu_images",
+      "label": {
+        "zh-hans-cn": "显示超级菜单图片",
+        "en": "Show the mega menu image"
+      },
+      "info": {
+        "zh-hans-cn": "[查看如何设置超级菜单教程](https://shoplineapphelp.zendesk.com/hc/zh-cn/articles/4404157592217)"
+      },
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "main_menu_alignment",
+      "label": {
+        "zh-hans-cn": "导航布局",
+        "en": "Navigation layout"
+      },
+      "default": "left",
+      "options": [
+        {
+          "value": "left-down",
+          "label": {
+            "zh-hans-cn": "LOGO居左，菜单居下",
+            "en": "Logo left, menu below"
+          }
+        },
+        {
+          "value": "left-left",
+          "label": {
+            "zh-hans-cn": "LOGO居左，菜单居左",
+            "en": "Logo left, menu left"
+          }
+        },
+        {
+          "value": "left-center",
+          "label": {
+            "zh-hans-cn": "LOGO居左，菜单居中",
+            "en": "Logo left, menu center"
+          }
+        },
+        {
+          "value": "center-down",
+          "label": {
+            "zh-hans-cn": "LOGO居中，菜单居下",
+            "en": "Logo center, menu below"
+          }
+        }
+      ]
+    },
+    {
+      "type": "switch",
+      "id": "header_style",
+      "label": {
+        "zh-hans-cn": "页头固定在顶部",
+        "en": "Header fixed on the top"
+      },
+      "default": true
+    },
+    {
+      "type": "switch",
+      "id": "sticky_index",
+      "label": {
+        "zh-hans-cn": "首页启用透明页头",
+        "en": "Transparent header for homepage"
+      },
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "sticky_collection",
+      "label": {
+        "zh-hans-cn": "分类启用透明页头",
+        "en": "Transparent header for category page"
+      },
+      "info": {
+        "zh-hans-cn": "配置分类页封面后生效",
+        "en": "It will be effective once the cover of collection page is configured"
+      },
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "show_search",
+      "label": {
+        "zh-hans-cn": "展示搜索入口",
+        "en": "Display the search entrance"
+      },
+      "default": true
+    },
+    {
+      "type": "switch",
+      "id": "show_user_center",
+      "label": {
+        "zh-hans-cn": "展示个人中心入口",
+        "en": "Display the personal center entrance"
+      },
+      "default": true
+    },
+    {
+      "type": "switch",
+      "id": "show_cart",
+      "label": {
+        "zh-hans-cn": "展示购物车入口",
+        "en": "Display the shopping cart entrance"
+      },
+      "default": true
+    },
+    {
+      "type": "switch",
+      "id": "show_locale_selector",
+      "label": {
+        "zh-hans-cn": "展示语言选择器",
+        "en": "Display the language selector"
+      },
+      "info": {
+        "zh-hans-cn": "若要添加语言，可前往[语言设置](/admin/settings/lang)"
+      },
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "show_currency_selector",
+      "label": {
+        "zh-hans-cn": "展示货币选择器",
+        "en": "Display the currency selector"
+      },
+      "info": {
+        "zh-hans-cn": "若要添加货币，可前往[货币设置](/admin/settings/base)"
+      },
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "show_currency_flags",
+      "label": {
+        "zh-hans-cn": "展示货币符号",
+        "en": "Display the currency symbol"
+      },
+      "default": true
+    }
+  ]
+}
+{{/schema}}

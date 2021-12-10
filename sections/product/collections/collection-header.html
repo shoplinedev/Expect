@@ -1,0 +1,56 @@
+<!-- snippet -->
+{{snippet 'product/collections/collections-banner' sortation=sortation.sortation settings=section.settings}}
+
+<!-- schema -->
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "分类封面",
+    "en": "Collection header"
+  },
+  "settings": [
+    {
+      "type": "switch",
+      "id": "show_category_name",
+      "label": {
+        "zh-hans-cn": "展示分类名称",
+        "en": "Display collection name"
+      },
+      "default": true
+    },
+    {
+      "type": "switch",
+      "id": "show_category_cover",
+      "label": {
+        "zh-hans-cn": "展示分类图",
+        "en": "Display collection image"
+      },
+      "info": {
+        "zh-hans-cn": "如需设置分类Banner图，可前往商品分类管理进行配置。[立即前往](/admin/categories)",
+        "en": "If you need to set the collection banner, you can turn to the product collection management then complete the configuration. [Go now](/admin/categories)"
+      },
+      "default": true
+    },
+    {
+      "type": "switch",
+      "id": "parallax_scroll",
+      "label": {
+        "zh-hans-cn": "滚动视差",
+        "en": "Parallax scroll"
+      },
+      "info": {
+        "zh-hans-cn": "开启视差效果会裁减部分图片以达到效果",
+        "en": "When enabling the parallax effect, part of the image will be cropped to ensure the correct display."
+      },
+      "default": true
+    }
+  ],
+  "default": {
+    "settings": {
+      "show_category_name": true,
+      "show_category_cover": true,
+      "parallax_scroll": true
+    }
+  }
+}
+{{/schema}}

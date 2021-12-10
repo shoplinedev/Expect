@@ -1,0 +1,252 @@
+---
+collection_products:
+  limit: 0
+---
+{{!-- 不需要商品数据只需要分类数据 所以设置为0 提高响应速度 --}}
+
+{{assign 'blocks' (product_blocks_order_translate section 'blocks' 'block_order')}}
+
+{{assign 'add_margin' section.settings.add_margin}}
+{{assign 'show_divider' section.settings.show_divider}}
+{{assign 'title' section.settings.title}}
+{{assign 'col' section.settings.col}}
+{{assign 'real_product_img_width' (divide 1420 col)}}
+{{assign 'mbCol' 3}}
+{{#if (lt col 6)}}
+    {{assign 'mbCol' 2}}
+{{/if}}
+{{#if (lt col 3)}}
+    {{assign 'mbCol' 1}}
+{{/if}}
+{{#if nameShowType '===' 'centerHasBg'}}
+  {{assign 'labelSuffixClass' 'hasbg'}}
+{{/if}}
+
+{{#if nameShowType '===' 'bottom'}}
+  {{assign 'labelSuffixClass' 'bottom'}}
+{{/if}}
+
+{{#if add_margin '===' false}}
+  {{assign 'marginItemClass' 'colletionlist__cagetegory--noMargin'}}
+{{/if}}
+
+
+
+<div class="{{#if show_divider}}section--divider{{/if}} colletionlist container g-4 g-md-6">
+  <h2 class="section-title colletionlist__title title4">{{title}}</h2>
+
+  <div class="colletionlist__cagetegory  row row-cols-{{mbCol}} row-cols-lg-{{col}} row-cols-md-{{col}} {{marginItemClass}}">
+    {{#each blocks}}
+      {{assign 'sortationData' (get settings.category_id ../all_collections)}}
+      {{#if settings.title}}
+        {{assign 'showTitle' settings.title}}
+      {{/if}}
+      {{snippet 'product/commons/collection-item' imgRealWidth=../real_product_img_width title=showTitle bgDisplayPosition=settings.image_display_area colNum=col sortationData=sortationData }}
+    {{/each}}
+  </div>
+</div>
+
+
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "商品分类",
+    "en": "Collection list"
+  },
+  "class": "index-section--gap",
+  "presets": [
+    {
+      "category": {
+        "zh-hans-cn": "商品",
+        "en": "Product"
+      },
+      "name": {
+        "zh-hans-cn": "商品分类",
+        "en": "Collections list"
+      },
+      "settings": {
+        "title": "Collection list",
+        "col": 6,
+        "add_margin": true,
+        "show_divider": false
+      },
+      "blocks": [
+        {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "image_display_area": "center_center"
+          }
+        },
+        {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "image_display_area": "center_center"
+          }
+        },
+        {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "image_display_area": "center_center"
+          }
+        },
+        {
+          "type": "collection",
+          "icon": "productCategories",
+          "settings": {
+            "image_display_area": "center_center"
+          }
+        }
+      ]
+    }
+  ],
+  "max_blocks": 15,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "zh-hans-cn": "标题",
+        "en": "Title"
+      }
+    },
+    {
+      "type": "range",
+      "id": "col",
+      "label": {
+        "zh-hans-cn": "列数",
+        "en": "Number of columns"
+      },
+      "min": 2,
+      "max": 6,
+      "default": 6
+    },
+    {
+      "type": "switch",
+      "id": "add_margin",
+      "label": {
+        "zh-hans-cn": "增加分类间间距",
+        "en": "Increase the spacing for collections"
+      },
+      "default": true
+    },
+    {
+      "type": "switch",
+      "id": "show_divider",
+      "label": {
+        "zh-hans-cn": "展示分割线",
+        "en": "Dismay the split line"
+      },
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "icon": "productCategories",
+      "name": {
+        "zh-hans-cn": "商品分类",
+        "en": "Collection"
+      },
+      "settings": [
+        {
+          "type": "collection_picker",
+          "id": "category_id",
+          "label": {
+            "zh-hans-cn": "商品分类",
+            "en": "Collection"
+          }
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "zh-hans-cn": "标题",
+            "en": "Title"
+          }
+        },
+        {
+          "type": "select",
+          "id": "image_display_area",
+          "label": {
+            "zh-hans-cn": "图片展示区域",
+            "en": "Image display area"
+          },
+          "info": {
+            "zh-hans-cn": "调整商品图展示的区域",
+            "en": "Adjust the display area of the product map"
+          },
+          "default": "center_center",
+          "options": [
+            {
+              "value": "left_top",
+              "label": {
+                "zh-hans-cn": "左上方",
+                "en": "Upper left"
+              }
+            },
+            {
+              "value": "center_top",
+              "label": {
+                "zh-hans-cn": "正上方",
+                "en": "Right above"
+              }
+            },
+            {
+              "value": "right_top",
+              "label": {
+                "zh-hans-cn": "右上方",
+                "en": "Upper right"
+              }
+            },
+            {
+              "value": "center_left",
+              "label": {
+                "zh-hans-cn": "左侧",
+                "en": "Left side"
+              }
+            },
+            {
+              "value": "center_center",
+              "label": {
+                "zh-hans-cn": "正中",
+                "en": "Center"
+              }
+            },
+            {
+              "value": "center_right",
+              "label": {
+                "zh-hans-cn": "右侧",
+                "en": "Right side"
+              }
+            },
+            {
+              "value": "left_bottom",
+              "label": {
+                "zh-hans-cn": "左下方",
+                "en": "Bottom left"
+              }
+            },
+            {
+              "value": "center_bottom",
+              "label": {
+                "zh-hans-cn": "正下方",
+                "en": "Below"
+              }
+            },
+            {
+              "value": "right_bottom",
+              "label": {
+                "zh-hans-cn": "右下方",
+                "en": "Bottom right"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{{/schema}}

@@ -1,0 +1,170 @@
+<div data-product-preview-section-id="{{section.id}}"></div>
+{{assign 'modalPrefix' (default modalPrefix 'productModal_') }}
+
+{{#if forModal}}
+  {{snippet 'product/detail/product-preview' id=(append modalPrefix product.spu.spuSeq)  statePrefix=(append modalPrefix product.spu.spuSeq) isAjax=true description=productDesc.description}}
+{{else}}
+  {{snippet 'product/detail/product-preview' id='productDetail' statePrefix="product" description=productDesc.description section=section }}
+{{/if}}
+
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "商品详情",
+    "en": "Product"
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "product_desc_position",
+      "label": {
+        "zh-hans-cn": "商品描述显示位置",
+        "en": "Display position of product description"
+      },
+      "options": [
+        {
+          "value": "aside",
+          "label": {
+            "zh-hans-cn": "商品图旁边",
+            "en": "Beside the product image"
+          }
+        },
+        {
+          "value": "bottom",
+          "label": {
+            "zh-hans-cn": "商品图下方",
+            "en": "Below the product image"
+          }
+        }
+      ],
+      "default": "aside"
+    },
+    {
+      "type": "select",
+      "id": "product_image_position",
+      "label": {
+        "zh-hans-cn": "商品图片位置",
+        "en": "Product image display position"
+      },
+      "options": [
+        {
+          "value": "left",
+          "label": {
+            "zh-hans-cn": "左",
+            "en": "Left"
+          }
+        },
+        {
+          "value": "right",
+          "label": {
+            "zh-hans-cn": "右",
+            "en": "Right"
+          }
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "product_image_size",
+      "label": {
+        "zh-hans-cn": "商品图片大小",
+        "en": "Product image size"
+      },
+      "options": [
+        {
+          "value": "large",
+          "label": {
+            "zh-hans-cn": "大",
+            "en": "Big"
+          }
+        },
+        {
+          "value": "medium",
+          "label": {
+            "zh-hans-cn": "中",
+            "en": "Medium"
+          }
+        },
+        {
+          "value": "small",
+          "label": {
+            "zh-hans-cn": "小",
+            "en": "Small"
+          }
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "select",
+      "id": "thumbnail_position",
+      "label": {
+        "zh-hans-cn": "缩略图位置",
+        "en": "Thumbnail position"
+      },
+      "options": [
+        {
+          "value": "aside",
+          "label": {
+            "zh-hans-cn": "商品图旁边",
+            "en": "Beside the product image"
+          }
+        },
+        {
+          "value": "bottom",
+          "label": {
+            "zh-hans-cn": "商品图下方",
+            "en": "Below the product image"
+          }
+        }
+      ],
+      "default": "aside"
+    },
+    {
+      "type": "switch",
+      "id": "show_thumbnail_arrow",
+      "label": {
+        "zh-hans-cn": "展示略缩图箭头",
+        "en": "Display the thumbnail arrow"
+      },
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "image_width_in_mobile",
+      "label": {
+        "zh-hans-cn": "移动端图片宽度",
+        "en": "Image width on mobile device"
+      },
+      "options": [
+        {
+          "value": "75%",
+          "label": {
+            "zh-hans-cn": "75% 宽",
+            "en": "75% wide"
+          }
+        },
+        {
+          "value": "full",
+          "label": {
+            "zh-hans-cn": "全屏",
+            "en": "Full screen"
+          }
+        }
+      ],
+      "default": "75%"
+    }
+  ],
+  "default": {
+    "settings": {
+      "product_desc_position": "aside",
+      "product_image_position": "left",
+      "product_image_size": "large",
+      "thumbnail_position": "aside",
+      "show_thumbnail_arrow": true,
+      "image_width_in_mobile": "75%"
+    }
+  }
+}
+{{/schema}}

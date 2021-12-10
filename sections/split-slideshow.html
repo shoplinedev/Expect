@@ -1,0 +1,631 @@
+<script type="text/json" id="split-slideshow-data-{{ section.id }}">{{{ stringify section.settings }}}</script>
+
+{{ assign 'type_title_uppercase' theme.settings.type_title_uppercase }}
+{{ assign 'blocks' (product_blocks_order_translate section 'blocks' 'block_order') }}
+{{ assign 'pagination_style' section.settings.style }}
+{{ assign 'has_pagination' (isFalsey (eq pagination_style 'minimal')) }}
+{{ assign 'srcset_w_list' (split '180,360,540,720,900,1080,1296,1512,1728,1944,2160,2376,2592') }}
+{{ assign 'pc_image_height' section.settings.section_height }}
+{{ assign 'mobile_image_height' section.settings.mobile_height }}
+{{ assign 'is_pc_image_natural_height' (boolean pc_image_height '==' 'auto') }}
+{{ assign 'is_mobile_image_natural_height' (boolean mobile_image_height '==' 'auto') }}
+{{ assign 'first_block_settings' (get 'settings' (first blocks)) }}
+
+{{#if first_block_settings}}
+  {{#style}}
+    {{#if (and is_pc_image_natural_height first_block_settings.image.url)}}
+      {{ assign 'natural_height_ratio' (multiply (divide first_block_settings.image.height first_block_settings.image.width) 100) }}
+      @media only screen and (min-width: 769px) {
+        .natural--{{section.id}} {
+          padding-top: {{natural_height_ratio}}% !important;
+        }
+      }
+    {{/if}}
+    {{#if (and is_mobile_image_natural_height first_block_settings.image_mobile.url)}}
+      {{ assign 'natural_height_ratio' (multiply (divide (add first_block_settings.image_mobile.height 150) first_block_settings.image_mobile.width) 100) }}
+      @media only screen and (max-width: 768px) {
+        .natural-mobile--{{section.id}} {
+          padding-top: {{ natural_height_ratio }}% !important;
+        }
+      }
+    {{/if}}
+  {{/style}}
+{{/if}}
+
+<section
+  class="split-slideshow"
+  data-section-type="split-slideshow"
+  data-section-id="{{ section.id }}">
+  {{#if (length blocks) '>' 0}}
+    {{#with this as |global|}}
+      <div class="split-slideshow__container split-slideshow__container--h{{ pc_image_height }} split-slideshow__container--m{{ mobile_image_height }} natural--{{section.id}} natural-mobile--{{section.id}}">
+        <div class="split-slideshow__wrapper">
+          <ul class="split-slideshow__swiper loading">
+            {{#each blocks as |block|}}
+              {{#with block.settings as |blockSettings|}}
+                {{#style}}
+                  .split-slideshow__slider--{{ @key }} .slider__image-wrapper img {
+                    object-position: {{ blockSettings.focal_point }};
+                  }
+                  .split-slideshow__slider--{{ @key }} .slider__title {
+                    font-size: {{ blockSettings.title_size }}px;
+                  }
+                  @media only screen and (max-width: 768px) {
+                    .split-slideshow__slider--{{ @key }} .slider__title {
+                      font-size: {{ multiply blockSettings.title_size 0.5 }}px;
+                    }
+                  }
+                {{/style}}
+
+                <li class="split-slideshow__slider split-slideshow__slider--{{blockSettings.text_position}} split-slideshow__slider--{{ @key }}">
+                  <div class="slider__image-wrapper">
+                    {{ assign 'mobile_image' blockSettings.image_mobile.url }}
+                    {{ assign 'pc_image' blockSettings.image.url }}
+                    {{ assign 'has_image' (or pc_image mobile_image ) }}
+
+                    {{!-- pc 端图片 --}}
+                    {{#if pc_image}}
+                      {{ assign 'image_srcset' '' }}
+                      {{#eachIndex global.srcset_w_list}}
+                        {{ assign 'image_srcset' (append image_srcset (img_url pc_image width=item) ' ' item 'w,') }}
+                      {{/eachIndex}}
+
+                      <img
+                        class="lozad {{#if mobile_image}}d-none d-md-block{{/if}}"
+                        data-src="{{ pc_image }}"
+                        data-srcset="{{ image_srcset }}"
+                        alt="{{ blockSettings.image.alt }}">
+                    {{else}}
+                      {{ snippet 'icons/icon_slideshow_placeholder' class="d-none d-md-block" }}
+                    {{/if}}
+
+                    {{!-- 移动端图片 --}}
+                    {{#if mobile_image}}
+                      {{ assign 'image_srcset' '' }}
+                      {{#eachIndex global.srcset_w_list}}
+                        {{ assign 'image_srcset' (append image_srcset (img_url mobile_image width=item) ' ' item 'w,') }}
+                      {{/eachIndex}}
+
+                      <img
+                        class="lozad d-md-none"
+                        data-src="{{ mobile_image }}"
+                        data-srcset="{{ image_srcset }}"
+                        alt="{{ blockSettings.image_mobile.alt }}">
+                    {{else}}
+                      {{ snippet 'icons/icon_slideshow_mobile_placeholder' class="d-md-none" }}
+                    {{/if}}
+                  </div>
+                  <div class="slider__content">
+                    <div class="slider__content-wrapper color-scheme-{{blockSettings.color_scheme}}">
+                      {{ snippet 'texture' color_scheme=blockSettings.color_scheme }}
+                      {{#if blockSettings.sub_title}}
+                        <div class="slider__sub-title body3">
+                          <div class="animation-cropper">
+                            <div class="animation-contents">{{ blockSettings.sub_title }}</div>
+                          </div>
+                        </div>
+                      {{/if}}
+
+                      {{#if blockSettings.title}}
+                        <h2 class="slider__title title2 {{#if global.type_title_uppercase}}is-uppercase{{/if}}">
+                          <div class="animation-cropper">
+                            <div class="animation-contents">{{ newline_to_br blockSettings.title }}</div>
+                          </div>
+                        </h2>
+                      {{/if}}
+
+                      {{#if blockSettings.main_text}}
+                        <div class="slider__main-text body2">
+                          <div class="animation-cropper">
+                            <div class="animation-contents">{{ blockSettings.main_text }}</div>
+                          </div>
+                        </div>
+                      {{/if}}
+
+                      {{#if (or blockSettings.link_text blockSettings.link_text2)}}
+                        <div class="slider__btns">
+                          {{# if blockSettings.link_text}}
+                            {{ assign 'link_item' (useLink blockSettings.link global.request.uri.query) }}
+                            <a {{{ link_item.hrefAttr }}} class="btn btn-primary">{{ blockSettings.link_text }}</a>
+                          {{/if}}
+                          {{# if blockSettings.link_text2}}
+                            {{ assign 'link_item' (useLink blockSettings.link2 global.request.uri.query) }}
+                            <a {{{ link_item.hrefAttr }}} class="btn btn-primary">{{ blockSettings.link_text2 }}</a>
+                          {{/if}}
+                        </div>
+                      {{/if}}
+                    </div>
+                  </div>
+                </li>
+              {{/with}}
+            {{/each}}
+          </ul>
+          {{#if has_pagination}}
+            {{#if (boolean section.settings.autoplay '&&' (boolean section.settings.style '===' 'bars'))}}
+              {{#style}}
+                .split-slideshow__pagination--{{ section.id }} .swiper-pagination-bullet:after {
+                  animation-duration: {{ multiply section.settings.autoplay_speed 1000 }}ms !important;
+                }
+              {{/style}}
+            {{/if}}
+            <div class="split-slideshow__pagination split-slideshow__pagination--{{section.settings.style}} split-slideshow__pagination--{{section.id}}">
+              {{#if pagination_style '===' 'arrows' }}
+                <div class="pagination__btn pagination__btn--prev">
+                  {{ snippet 'icons/icon_strong_arrow_r' class="pagination__icon" }}
+                </div>
+                <div class="pagination__btn pagination__btn--next">
+                  {{ snippet 'icons/icon_strong_arrow_r' class="pagination__icon" }}
+                </div>
+              {{/if}}
+            </div>
+          {{/if}}
+        </div>
+      </div>
+    {{/with}}
+  {{else}}
+    <div class="split-slideshow__placeholder-noblocks">This section doesn’t currently include any content. Add content to this section using the sidebar.</div>
+  {{/if}}
+</section>
+
+{{#schema}}
+  {
+    "name": {
+      "zh-hans-cn": "特色轮播图",
+      "en": "Split slideshow"
+    },
+    "class": "index-section--mc",
+    "max_blocks": 5,
+    "blocks": [
+      {
+        "type": "image",
+        "icon": "image",
+        "name": {
+          "zh-hans-cn": "图片",
+          "en": "Slide"
+        },
+        "settings": [
+          {
+            "id": "image",
+            "type": "image_picker",
+            "label": {
+              "zh-hans-cn": "电脑端图片",
+              "en": "Image on PC"
+            }
+          },
+          {
+            "id": "image_mobile",
+            "type": "image_picker",
+            "label": {
+              "zh-hans-cn": "移动端图片",
+              "en": "Image on mobile device"
+            }
+          },
+          {
+            "id": "focal_point",
+            "type": "select",
+            "label": {
+              "zh-hans-cn": "图片展示区域",
+              "en": "Image display area"
+            },
+            "default": "center center",
+            "options": [
+              {
+                "value": "20% 0",
+                "label": {
+                  "zh-hans-cn": "左上方",
+                  "en": "Top left"
+                }
+              },
+              {
+                "value": "top center",
+                "label": {
+                  "zh-hans-cn": "正上方",
+                  "en": "Top center"
+                }
+              },
+              {
+                "value": "80% 0",
+                "label": {
+                  "zh-hans-cn": "右上方",
+                  "en": "Top right"
+                }
+              },
+              {
+                "value": "20% 50%",
+                "label": {
+                  "zh-hans-cn": "左侧",
+                  "en": "Left"
+                }
+              },
+              {
+                "value": "center center",
+                "label": {
+                  "zh-hans-cn": "正中",
+                  "en": "Center"
+                }
+              },
+              {
+                "value": "80% 50%",
+                "label": {
+                  "zh-hans-cn": "右侧",
+                  "en": "Right"
+                }
+              },
+              {
+                "value": "20% 100%",
+                "label": {
+                  "zh-hans-cn": "左下方",
+                  "en": "Bottom left"
+                }
+              },
+              {
+                "value": "bottom center",
+                "label": {
+                  "zh-hans-cn": "正下方",
+                  "en": "Bottom center"
+                }
+              },
+              {
+                "value": "80% 100%",
+                "label": {
+                  "zh-hans-cn": "右下方",
+                  "en": "Bottom right"
+                }
+              }
+            ]
+          },
+
+          {
+            "type": "group_header",
+            "label": {
+              "zh-hans-cn": "文本内容",
+              "en": "Text content"
+            }
+          },
+          {
+            "id": "sub_title",
+            "type": "text",
+            "label": {
+              "zh-hans-cn": "副标题",
+              "en": "Subtitle"
+            }
+          },
+          {
+            "id": "title",
+            "type": "textarea",
+            "label": {
+              "zh-hans-cn": "主标题",
+              "en": "Main title"
+            },
+            "default": "Side by Side Slide",
+            "limit": 500
+          },
+          {
+            "id": "title_size",
+            "type": "range",
+            "label": {
+              "zh-hans-cn": "主标题文字大小",
+              "en": "Text size of main title"
+            },
+            "default": 50,
+            "min": 40,
+            "max": 100,
+            "unit": "px"
+          },
+          {
+            "id": "main_text",
+            "type": "text",
+            "label": {
+              "zh-hans-cn": "正文",
+              "en": "Main text"
+            },
+            "default": "And optional subtext"
+          },
+          {
+            "id": "text_position",
+            "type": "select",
+            "label": {
+              "zh-hans-cn": "文本位置",
+              "en": "Text position"
+            },
+            "default": "left",
+            "options": [
+              {
+                "value": "left",
+                "label": {
+                  "zh-hans-cn": "文本靠左",
+                  "en": "Left text"
+                }
+              },
+              {
+                "value": "right",
+                "label": {
+                  "zh-hans-cn": "文本靠右",
+                  "en": "Right text"
+                }
+              }
+            ]
+          },
+          
+          {
+            "type": "group_header",
+            "label": {
+              "zh-hans-cn": "按钮内容",
+              "en": "Button content"
+            }
+          },
+          {
+            "id": "link_text",
+            "type": "text",
+            "label": {
+              "zh-hans-cn": "按钮文案",
+              "en": "Button text"
+            },
+            "default": "Optional button"
+          },
+          {
+            "id": "link",
+            "type": "url",
+            "label": {
+              "zh-hans-cn": "跳转链接",
+              "en": "Jump link"
+            }
+          },
+          {
+            "id": "link_text2",
+            "type": "text",
+            "label": {
+              "zh-hans-cn": "按钮文案2",
+              "en": "Button text 2"
+            }
+          },
+          {
+            "id": "link2",
+            "type": "url",
+            "label": {
+              "zh-hans-cn": "跳转链接2",
+              "en": "Jump link 2"
+            }
+          },
+          {
+            "type": "select",
+            "id": "color_scheme",
+            "label": {
+              "zh-hans-cn": "颜色风格",
+              "en": "Color scheme"
+            },
+            "default": "1",
+            "options": [
+              {
+                "value": "none",
+                "label": {
+                  "zh-hans-cn": "无",
+                  "en": "None"
+                }
+              },
+              {
+                "value": "1",
+                "label": {
+                  "zh-hans-cn": "风格1",
+                  "en": "Style 1"
+                }
+              },
+              {
+                "value": "2",
+                "label": {
+                  "zh-hans-cn": "风格2",
+                  "en": "Style 2"
+                }
+              },
+              {
+                "value": "3",
+                "label": {
+                  "zh-hans-cn": "风格3",
+                  "en": "Style 3"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "id": "section_height",
+        "type": "select",
+        "label": {
+          "zh-hans-cn": "电脑端高度",
+          "en": "Height on PC"
+        },
+        "default": "650",
+        "options": [
+          {
+            "label": {
+              "zh-hans-cn": "适应图片",
+              "en": "Auto"
+            },
+            "value": "auto"
+          },
+          {
+            "label": "450px",
+            "value": "450"
+          },
+          {
+            "label": "550px",
+            "value": "550"
+          },
+          {
+            "label": "650px",
+            "value": "650"
+          },
+          {
+            "label": "750px",
+            "value": "750"
+          },
+          {
+            "label": {
+              "zh-hans-cn": "全屏",
+              "en": "Full screen"
+            },
+            "value": "100vh"
+          }
+        ]
+      },
+      {
+        "id": "mobile_height",
+        "type": "select",
+        "label": {
+          "zh-hans-cn": "移动端高度",
+          "en": "Height on mobile device"
+        },
+        "default": "auto",
+        "options": [
+          {
+            "label": {
+              "zh-hans-cn": "适应图片",
+              "en": "Auto"
+            },
+            "value": "auto"
+          },
+          {
+            "label": "250px",
+            "value": "250"
+          },
+          {
+            "label": "300px",
+            "value": "300"
+          },
+          {
+            "label": "400px",
+            "value": "400"
+          },
+          {
+            "label": "500px",
+            "value": "500"
+          },
+          {
+            "label": {
+              "zh-hans-cn": "全屏",
+              "en": "Full screen"
+            },
+            "value": "100vh"
+          }
+        ]
+      },
+      {
+        "id": "style",
+        "type": "select",
+        "label": {
+          "zh-hans-cn": "翻页样式",
+          "en": "Style of turning pages"
+        },
+        "default": "arrows",
+        "options": [
+          {
+            "value": "minimal",
+            "label": {
+              "zh-hans-cn": "简单",
+              "en": "Minimal"
+            }
+          },
+          {
+            "value": "arrows",
+            "label": {
+              "zh-hans-cn": "箭头",
+              "en": "Arrows"
+            }
+          },
+          {
+            "value": "bars",
+            "label": {
+              "zh-hans-cn": "进度条",
+              "en": "Bars"
+            }
+          },
+          {
+            "value": "dots",
+            "label": {
+              "zh-hans-cn": "小圆点",
+              "en": "Dots"
+            }
+          }
+        ]
+      },
+      {
+        "id": "autoplay",
+        "type": "switch",
+        "label": {
+          "zh-hans-cn": "启用自动切换",
+          "en": "Enable the auto-switching"
+        }
+      },
+      {
+        "id": "autoplay_speed",
+        "type": "range",
+        "label": {
+          "zh-hans-cn": "切换间隔",
+          "en": "Switching interval"
+        },
+        "default": 7,
+        "min": 5,
+        "max": 10,
+        "step": 1,
+        "unit": {
+          "zh-hans-cn": "秒",
+          "en": "s"
+        }
+      }
+    ],
+    "presets": [
+      {
+        "name": {
+          "zh-hans-cn": "特色轮播图",
+          "en": "Split slideshow"
+        },
+        "category": {
+          "zh-hans-cn": "内容展示",
+          "en": "Content display"
+        },
+        "settings": {
+          "section_height": "650",
+          "mobile_height": "auto",
+          "style": "arrows",
+          "autoplay": true,
+          "autoplay_speed": 9
+        },
+        "blocks": [
+          {
+            "type": "image",
+            "icon": "image",
+            "settings": {
+              "image": {},
+              "image_mobile": {},
+              "focal_point": "center center",
+              "title": "Side by Side Slide",
+              "title_size": 50,
+              "main_text": "And optional subtext",
+              "text_position": "left",
+              "link_text": "Optional button",
+              "color_scheme": "1"
+            }
+          },
+          {
+            "type": "image",
+            "icon": "image",
+            "settings": {
+              "image": {},
+              "image_mobile": {},
+              "focal_point": "center center",
+              "title": "Side by Side Slide",
+              "title_size": 50,
+              "main_text": "And optional subtext",
+              "text_position": "right",
+              "link_text": "Optional button",
+              "color_scheme": "2"
+            }
+          }
+        ]
+      }
+    ]
+  }  
+{{/schema}}

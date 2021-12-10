@@ -1,0 +1,139 @@
+---
+collection_products:
+  limit: {{ multiply section.settings.col section.settings.row}}
+---
+
+{{ assign 'prefix' 'stage-featured-collection'}}
+
+{{ assign 'productList' (get 'list' (get section.settings.product_categories collection_products))}}
+{{#if (boolean (isTruthy section.settings.product_categories) '&&' (boolean (length productList) '!=' 0 ))}}
+  {{ assign 'categoryDetail' (get section.settings.product_categories all_collections)}}
+  {{ assign 'forbiddenBtn' false}}
+{{else}}
+  {{assign 'productList' (product_mock_data section.settings.col section.settings.row)}}
+  {{ assign 'forbiddenBtn' true}}
+{{/if}}
+
+{{!-- 计算product-item 宽度 参考snipper product-item-list --}}
+{{assign 'real_product_img_width' (divide 1200 section.settings.col)}}
+{{#if request.is_mobile}}
+  {{assign 'real_product_img_width' 300}}
+{{/if}}
+
+
+<div class="{{#if section.settings.show_divider}}section--divider{{/if}} {{prefix}} {{prefix}}-{{section.id}}" data-slice_in_mobile="{{section.settings.slice_in_mobile}}">
+    <div class='container g-4 g-md-6 {{prefix}}--container'>
+        {{#if (boolean section.settings.title '||' section.settings.button_text)}}
+            <h2 class="title4 col-24 align-top {{prefix}}--title">
+                 <span class="{{prefix}}--title-content">
+                    {{#isTruthy section.settings.title}}
+                       {{section.settings.title}}
+                    {{/isTruthy}}
+                 </span>
+                {{#if (isTruthy section.settings.button_text)}}
+                    <span class='{{prefix}}--btn'>
+                        <a class='btn btn-link'
+                           href="/collections/{{#if (isTruthy categoryDetail.uniqueKey) }}{{categoryDetail.uniqueKey}}{{else}}{{categoryDetail.sortationId}}{{/if}}">
+                            {{section.settings.button_text}}
+                        </a>
+                    </span>
+                {{/if}}
+            </h2>
+        {{/if}}
+      <div class='product-list-item-parent-controller g-4 row row-cols-2 row-cols-md-{{section.settings.col}} row-cols-lg-{{section.settings.col}} {{#if section.settings.slice_in_mobile}}{{prefix}}--scroll-container{{/if}} {{#if (boolean (boolean theme.settings.product_image_ratio '==' 0 ) '&&' section.settings.slice_in_mobile)}}{{prefix}}--ratio-free{{/if}}'>
+        {{#each (sliceListByGrid productList section.settings.row section.settings.col)}}
+          <div class='col{{#if ../forbiddenBtn}} {{../prefix}}--empty-product-item{{/if}}'>{{snippet 'product/commons/product-item' forbiddenBtn=../forbiddenBtn imgRealWidth=../real_product_img_width }} </div>
+        {{/each}}
+      </div>
+    </div>
+</div>
+
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "精选商品",
+    "en": "Featured collection"
+  },
+  "class": "index-section--gap",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "zh-hans-cn": "标题",
+        "en": "Title"
+      },
+      "default": "Featured collection"
+    },
+    {
+      "type": "collection_picker",
+      "id": "product_categories",
+      "label": {
+        "zh-hans-cn": "商品分类",
+        "en": "Collection list"
+      }
+    },
+    {
+      "type": "range",
+      "id": "col",
+      "label": {
+        "zh-hans-cn": "列数",
+        "en": "Number of columns"
+      },
+      "default": 5,
+      "max": 5,
+      "min": 1
+    },
+    {
+      "type": "range",
+      "id": "row",
+      "label": {
+        "zh-hans-cn": "行数",
+        "en": "Number of rows"
+      },
+      "default": 1,
+      "max": 5,
+      "min": 1
+    },
+    {
+      "type": "switch",
+      "id": "slice_in_mobile",
+      "label": {
+        "zh-hans-cn": "移动端左右滑动查看",
+        "en": "Slide the screen left or right to view"
+      },
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": {
+        "zh-hans-cn": "按钮文案",
+        "en": "Button text"
+      },
+      "default": "View ALL"
+    },
+    {
+      "type": "switch",
+      "id": "show_divider",
+      "label": {
+        "zh-hans-cn": "展示分割线",
+        "en": "Dismay the split line"
+      },
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "zh-hans-cn": "精选商品",
+        "en": "Featured collection"
+      },
+      "category": {
+        "zh-hans-cn": "商品",
+        "en": "Product"
+      }
+    }
+  ]
+}
+{{/schema}}

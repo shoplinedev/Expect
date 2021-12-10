@@ -1,0 +1,37 @@
+{{#with this as |global|}}
+  {{assign 'linkObj' (useLink this.settings.jump_link)}}
+
+  <div class="text-columns-with-images-item text-columns-with-images-item--{{section.settings.text_align}}"> 
+    {{#if this.settings.show_image}}
+      <div class="text-columns-with-images-item__image" style="max-width: {{this.settings.image_width}}px">
+        {{#if this.settings.image.url}}
+          <a 
+            {{{linkObj.hrefAttr}}}
+            class="text-columns-with-images-item__link"
+            style="padding-bottom:{{dividedBy 100 this.settings.image.scale}}%">
+            <img 
+              class="lozad" 
+              alt="{{this.settings.image.alt}}"
+              data-src="{{this.settings.image.url}}" 
+              data-srcset="{{img_url this.settings.image.url width=this.settings.image_width }} 1x, {{img_url this.settings.image.url width=this.settings.image_width scale=2 }} 2x">
+          </a>
+        {{else}}
+          {{ snippet 'icons/icon_image' }}
+        {{/if}}
+      </div>
+    {{/if}}
+    {{#if this.settings.title}}
+      <div class="text-columns-with-images-item__title title5">{{this.settings.title}}</div>
+    {{/if}}
+    {{#if this.settings.description}}
+      <div class="text-columns-with-images-item__text body3 sl-richtext">{{{this.settings.description}}}</div>
+    {{/if}}
+    {{#if this.settings.button_text}}
+      <a 
+        {{{linkObj.hrefAttr}}}
+        class="text-columns-with-images-item__button btn btn-extra body6">
+        {{this.settings.button_text}}
+      </a>
+    {{/if}}
+  </div>
+{{/with}}

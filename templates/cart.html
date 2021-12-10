@@ -1,1 +1,60 @@
-<div>cart</div>
+{{#partial 'head'}}
+  <link rel="stylesheet" href="{{assets_url 'cart/index.min.css'}}" />
+{{/partial}}
+{{#partial 'script'}}
+  <script src="{{assets_url 'cart/index.min.js'}}"></script>
+{{/partial}}
+{{#partial 'title'}}
+  <title>Your cart - {{storeInfo.name}}</title>
+{{/partial}}
+{{#partial 'page_view'}}
+  <script>
+  window.HdSdk.shopTracker.report('60006254', {
+    event_name: '101',
+    page: '103',
+    iframe_id: 1
+  })
+</script>
+{{/partial}}
+{{preload_state "cartInfo"}}
+<div class="trade_cart_empty_wrapper{{#if cartInfo.count '!=' 0}} hide{{/if}}">
+  <main class="main_wrapper" role="main">
+    {{snippet 'trade/cart-title'}}
+    {{snippet 'trade/cart-empty'}}
+    {{snippet 'trade/cart-continue-btn' is_empty=true}}
+  </main>
+</div>
+<div class="trade_cart_not_empty_wrapper{{#if cartInfo.count '==' 0}} hide{{/if}}">
+  <div class="trade_cart_title_wrapper">
+    {{snippet 'trade/cart-title'}}
+  </div>
+  <div class="trade_cart">
+    <main class="main_wrapper" role="main">
+      {{snippet 'trade/sku-card-list' data=cartInfo is-mobile=request.is_mobile main=true}}
+    </main>
+    {{! 右侧内容 }}
+    <aside class="sidebar main_cart" role="summations">
+      <div class="trade-cart-checkout-module">
+        {{! 优惠码 }}
+        {{snippet 'trade/coupon' trade_cart_type="main"}}
+        {{! 金额汇总 }}
+        {{snippet 'trade/summations'}}
+        {{snippet 'trade/cart-shopping-money-desc' classes="trade_money_desc_top"}}
+        {{snippet 'trade/cart-checkout' id="cart-spb" trade_cart_type="main"}}
+        {{snippet 'trade/cart-continue-btn' is_empty=false}}
+        {{snippet 'trade/cart-shopping-money-desc' classes="trade_money_desc_bottom"}}
+        {{snippet 'trade/cart-checkout-error' trade_cart_type="main"}}
+      </div>
+      {{snippet 'trade/safety-logo'}}
+    </aside>
+  </div>
+  <div class="cart__stick_container">
+    {{! 金额汇总 }}
+    {{snippet 'trade/summations'}}
+    {{snippet 'trade/cart-shopping-money-desc' classes="trade_money_desc_top"}}
+    {{snippet 'trade/cart-checkout' id="cart-spb-fixed" trade_cart_type="main"}}
+    {{snippet 'trade/cart-shopping-money-desc' classes="trade_money_desc_bottom"}}
+    {{snippet 'trade/cart-checkout-error' trade_cart_type="main"}}
+  </div>
+  {{snippet 'trade/commons/base-modal' modalId="sku-filter"}}
+</div>

@@ -1,0 +1,43 @@
+<div class="container g-4 g-md-6">
+    {{{section.settings.html}}}
+</div>
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "自定义HTML",
+    "en": "Custom HTML"
+  },
+  "class": "index-section--gap",
+  "settings": [
+    {
+      "id": "html",
+      "type": "textarea",
+      "limit": 0,
+      "options": {
+        "style": {
+          "height": "432px"
+        }
+      },
+      "label": {
+        "zh-hans-cn": "HTML",
+        "en": "HTML"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "zh-hans-cn": "自定义HTML",
+        "en": "Custom HTML"
+      },
+      "category": {
+        "zh-hans-cn": "内容展示",
+        "en": "Content display"
+      },
+      "settings": {
+        "html": "<div style=\"text-align:center;\"><h2>Use HTML to format your text so it can be easily read.</h2>This text can be used to share information about your brand with customers.</div>"
+      }
+    }
+  ]
+}
+{{/schema}}

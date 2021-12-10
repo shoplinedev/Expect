@@ -1,1 +1,408 @@
-<h1 class="footer">footer</h1>
+<footer id="stage-footer">
+{{#if section.settings.show_newsletter}}
+  <div class="footer__header container g-4 g-md-6">
+    {{snippet 'footer-news-letter'}}
+  </div>
+{{/if}}
+
+<div class="footer__wrapper">
+  <div class="footer__body container g-4 g-md-6">
+    <div class="footer__block-container row g-4">
+
+      {{#with section as |section|}}
+        {{#eachIndex section.block_order}}
+          {{#with (lookup ../blocks [item])}}
+
+            <div class="footer__block">
+              <div class="footer__block-item">
+
+                {{#if type '===' 'social'}}
+                  {{snippet 'footer-social'}}
+                {{/if}}
+
+                {{#if type '===' 'payment'}}
+                  {{ snippet 'footer-pay-channel' }}
+                {{/if}}
+
+                {{#if type '===' 'custom'}}
+                  {{snippet 'footer-custom'}}
+                {{/if}}
+
+                {{#if type '===' 'menu'}}
+                  {{snippet 'footer-menu'}}
+                {{/if}}
+
+              </div>
+            </div>
+
+          {{/with}}
+          {{#ifOdd index}}
+            <div class="footer__block-divider d-md-none"></div>
+          {{/ifOdd}}
+        {{/eachIndex}}
+      {{/with}}
+
+    </div>
+
+    {{#or section.settings.show_locale_selector section.settings.show_currency_selector}}
+      <div class="footer__tool-container d-none d-md-flex">
+        {{snippet 'locale-currency' position="footer"}}
+      </div>
+    {{/or}}
+    <div class="footer__tool-container d-flex d-md-none">
+      {{snippet 'locale-currency-mobile'}}
+    </div>
+  </div>
+
+  {{#if section.settings.show_copyright}}
+    <div class="footer__copyright-container container g-4 g-md-6">
+        <p>© {{year}} {{storeInfo.name}} {{section.settings.copyright_text}}</p>
+    </div>
+  {{/if}}
+</div>
+</footer>
+
+
+{{#schema}}
+{
+  "name": {
+    "en": "Footer",
+    "zh-hans-cn": "页脚"
+  },
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "group_header",
+      "label": {
+        "en": "Email subscription",
+        "zh-hans-cn": "邮件订阅"
+      }
+    },
+    {
+      "type": "switch",
+      "id": "show_newsletter",
+      "label": {
+        "en": "Display Email Subscription",
+        "zh-hans-cn": "显示邮箱订阅"
+      },
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "newsletter_title",
+      "label": {
+        "en": "Email subscription title",
+        "zh-hans-cn": "邮箱订阅标题"
+      },
+      "default": "Subscribe today and get 10% off your first purchase"
+    },
+    {
+      "type": "group_header",
+      "label": {
+        "en": "Additional content",
+        "zh-hans-cn": "附加内容"
+      }
+    },
+    {
+      "type": "switch",
+      "id": "show_locale_selector",
+      "label": {
+        "en": "Display the language selector",
+        "zh-hans-cn": "展示语言选择器"
+      },
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "show_currency_selector",
+      "label": {
+        "en": "Display the currency selector",
+        "zh-hans-cn": "展示货币选择器"
+      },
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "show_currency_flags",
+      "label": {
+        "en": "Display the currency symbol",
+        "zh-hans-cn": "展示货币符号"
+      },
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "show_copyright",
+      "label": {
+        "en": "Display the copyright information",
+        "zh-hans-cn": "展示版权信息"
+      },
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": {
+        "en": "Additional copyright texts",
+        "zh-hans-cn": "附加版权文案"
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "limit": 1,
+      "type": "social",
+      "icon": "image",
+      "name": {
+        "en": "Social media",
+        "zh-hans-cn": "社交媒体"
+      },
+      "settings": [
+        {
+          "type": "group_header",
+          "label": {
+            "en": "*社交媒体*",
+            "zh-hans-cn": "社交媒体"
+          },
+          "info": {
+            "en": "Icons will be displayed once the social media link is configured in theme settings",
+            "zh-hans-cn": "在主题设置中配置社交媒体链接后可展示图标"
+          }
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "en": "Title",
+            "zh-hans-cn": "标题"
+          },
+          "default": "FOLLOW US"
+        }
+      ]
+    },
+    {
+      "type": "menu",
+      "icon": "navigation",
+      "name": {
+        "en": "Fast navigation",
+        "zh-hans-cn": "快速导航"
+      },
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "en": "Navigation title",
+            "zh-hans-cn": "导航标题"
+          }
+        },
+        {
+          "type": "menu_picker",
+          "id": "menu",
+          "label": {
+            "en": "Navigation menu",
+            "zh-hans-cn": "导航菜单"
+          }
+        }
+      ]
+    },
+    {
+      "limit": 1,
+      "type": "payment",
+      "icon": "image",
+      "name": {
+        "en": "Payment icon",
+        "zh-hans-cn": "支付图标"
+      },
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "en": "Title",
+            "zh-hans-cn": "标题"
+          },
+          "default": "We accept"
+        },
+        {
+          "type": "checkboxes",
+          "id": "pay_channel_list",
+          "options": [
+            {
+              "icon": "Visa",
+              "label": {
+                "en": "Visa",
+                "zh-hans-cn": "Visa"
+              },
+              "value": "visa"
+            },
+            {
+              "icon": "MasterCard1",
+              "label": {
+                "en": "Master Card",
+                "zh-hans-cn": "Master Card"
+              },
+              "value": "master-card"
+            },
+            {
+              "icon": "MasterCard2",
+              "label": {
+                "en": "Master Card",
+                "zh-hans-cn": "Master Card"
+              },
+              "value": "master-card2"
+            },
+            {
+              "icon": "VISA_Electron",
+              "label": {
+                "en": "VISA(Electron)",
+                "zh-hans-cn": "VISA(Electron)"
+              },
+              "value": "visa-electron"
+            },
+            {
+              "icon": "JCB",
+              "label": {
+                "en": "JCB",
+                "zh-hans-cn": "JCB"
+              },
+              "value": "jcb"
+            },
+            {
+              "icon": "AmeriacanExpress",
+              "label": {
+                "en": "Ameriacan Express",
+                "zh-hans-cn": "Ameriacan Express"
+              },
+              "value": "american-express"
+            },
+            {
+              "icon": "DinersClub",
+              "label": {
+                "en": "Diners Club",
+                "zh-hans-cn": "Diners Club"
+              },
+              "value": "diners-club"
+            },
+            {
+              "icon": "Discover",
+              "label": {
+                "en": "Discover",
+                "zh-hans-cn": "Discover"
+              },
+              "value": "discover"
+            },
+            {
+              "icon": "Paypal",
+              "label": {
+                "en": "Paypal",
+                "zh-hans-cn": "Paypal"
+              },
+              "value": "paypal"
+            },
+            {
+              "icon": "UnionPay",
+              "label": {
+                "en": "UnionPay",
+                "zh-hans-cn": "银联"
+              },
+              "value": "union-pay"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "icon": "image",
+      "name": {
+        "en": "Custom content",
+        "zh-hans-cn": "自定义内容"
+      },
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "en": "Title",
+            "zh-hans-cn": "标题"
+          },
+          "default": "Custom text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": {
+            "en": "Image",
+            "zh-hans-cn": "图片"
+          }
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": {
+            "en": "Main text",
+            "zh-hans-cn": "正文"
+          },
+          "default": "Add your own custom text here."
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "payment",
+        "settings": {
+          "title": "We accept",
+          "pay_channel_list": [
+            "visa",
+            "master-card",
+            "master-card2",
+            "visa-electron",
+            "jcb",
+            "american-express",
+            "diners-club",
+            "discover",
+            "paypal",
+            "union-pay"
+          ]
+        }
+      },
+      {
+        "type": "menu",
+        "settings": {
+          "menu": "foot",
+          "title": "Menu title"
+        }
+      },
+      {
+        "type": "social",
+        "settings": {
+          "title": "Follow us"
+        }
+      },
+      {
+        "type": "custom",
+        "settings": {
+          "title": "Custom text",
+          "image": {
+            "url": "",
+            "alt": ""
+          },
+          "content": "Add your own custom text here."
+        }
+      }
+    ],
+    "settings": {
+      "show_newsletter": true,
+      "newsletter_title": "Subscribe today and get 10% off your first purchase",
+      "show_locale_selector": false,
+      "show_currency_selector": false,
+      "show_currency_flags": true,
+      "show_copyright": true,
+      "copyright_text": ""
+    }
+  }
+}
+{{/schema}}

@@ -1,0 +1,234 @@
+{{assign 'customPages' (default section.settings.show_pages.customPages (JSONparse '[]') ) }}
+{{assign 'showType' section.settings.show_pages.showType }}
+{{assign 'templateAlias' (cond (boolean templateAlias '===' 'Page')  request.uri.params.pageId  templateAlias)}}
+{{#if (boolean (isTruthy section.block_order.length) '&&' (boolean showType '===' 'all' '||' (inArray customPages templateAlias) )) }}
+<div class="footer__promotion-wrap">
+    <div class="footer__promotion container gx-4 gx-md-6">
+      {{#with section as |section|}}
+          {{#each block_order as |blockId|}}
+              {{#with (lookup ../blocks [blockId])}}
+                  {{snippet 'footer-promotion/block' ratio=../../settings.img_ratio query=../../../request.uri.query item=settings}}
+              {{/with}}
+          {{/each}}
+      {{/with}}
+  </div>
+</div>
+{{else}}
+    <div class="footer__promotion-border"></div>
+{{/if}}
+{{#schema}}
+{
+  "name":{
+    "en":"Footer promotion",
+    "zh-hans-cn":"页脚推广"
+  },
+  "max_blocks":3,
+  "settings":[
+    {
+      "type":"select",
+      "id":"img_ratio",
+      "default": "56.25%",
+      "label":{
+        "en":"Image scale",
+        "zh-hans-cn":"图片比例"
+      },
+      "options": [
+        {
+          "value": "0",
+          "label": {
+            "en":"Original scale",
+            "zh-hans-cn":"原比例"
+          }
+        },
+        {
+          "value": "100%",
+          "label": {
+            "en":"Square(1:1)",
+            "zh-hans-cn":"方形(1:1)"
+          }
+        },
+        {
+          "value": "75%",
+          "label": {
+            "en":"Horizontal(4:3)",
+            "zh-hans-cn":"横版（4:3）"
+          }
+        },
+        {
+          "value": "150%",
+          "label": {
+            "en":"Vertical(2:3)",
+            "zh-hans-cn":"竖版（2:3）"
+          }
+        },
+        {
+          "value": "56.25%",
+          "label": {
+            "en":"Wide(16:9)",
+            "zh-hans-cn":"宽幅（16:9）"
+          }
+        }
+      ]
+    },
+    {
+      "type":"showpage",
+      "id":"show_pages",
+      "default": {
+        "showType": "all",
+        "customPages": []
+      },
+      "label":{
+        "en":"Display page",
+        "zh-hans-cn":"展示页面"
+      }
+    }
+  ],
+  "blocks":[
+    {
+      "type": "richText",
+      "icon": "image",
+      "name": {
+        "en":"All-station promotion",
+        "zh-hans-cn":"全站推广"
+      },
+      "settings": [
+        {
+          "id": "show_img",
+          "type": "switch",
+          "label": {
+            "en":"Display the image",
+            "zh-hans-cn":"展示图片"
+          },
+          "default": true
+        },
+        {
+          "id": "image_url",
+          "type": "image_picker",
+          "label": {
+            "en":"Image",
+            "zh-hans-cn":"图片"
+          }
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "default": "Site-wide promotion",
+          "label": {
+            "en":"Title",
+            "zh-hans-cn":"标题"
+          }
+        },
+        {
+          "id": "text",
+          "type": "richtext",
+          "default": "Use this section to promote content throughout every page of your site. Add images for further impact",
+          "label": {
+            "en":"Main text",
+            "zh-hans-cn":"正文"
+          }
+        },
+        {
+          "id": "btn_title",
+          "type": "text",
+          "default": "Optional button",
+          "label": {
+            "en":"Button text",
+            "zh-hans-cn":"按钮文案"
+          }
+        },
+        {
+          "id": "url",
+          "type": "url",
+          "label": {
+            "en":"Jump link",
+            "zh-hans-cn":"跳转链接"
+          }
+        },
+        {
+          "type": "select",
+          "id": "color_scheme",
+          "default": "1",
+          "label": {
+            "zh-hans-cn": "颜色风格",
+            "en": "Color scheme"
+          },
+          "options": [
+            {
+              "value": "none",
+              "label": {
+                "zh-hans-cn": "无",
+                "en": "None"
+              }
+            },
+            {
+              "value": "1",
+              "label": {
+                "zh-hans-cn": "风格1",
+                "en": "Style 1"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "zh-hans-cn": "风格2",
+                "en": "Style 2"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "zh-hans-cn": "风格3",
+                "en": "Style 3"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "default": {
+    "settings": {
+      "show_pages": {
+        "showType": "all",
+        "customPages": []
+      },
+      "img_ratio": "56.25%"
+    },
+    "blocks": [
+      {
+        "type": "richText",
+        "settings": {
+          "show_img": true,
+          "title": "Site-wide promotion",
+          "text": "Use this section to promote content throughout every page of your site. Add images for further impact",
+          "btn_title": "Optional button",
+          "color_scheme": "1"
+        }
+      },
+      {
+        "type": "richText",
+        "settings": {
+          "show_img": true,
+          "title": "Site-wide promotion",
+          "text": "Use this section to promote content throughout every page of your site. Add images for further impact",
+          "btn_title": "Optional button",
+          "color_scheme": "1"
+        }
+      },
+      {
+        "type": "richText",
+        "settings": {
+          "show_img": true,
+          "title": "Site-wide promotion",
+          "text": "Use this section to promote content throughout every page of your site. Add images for further impact",
+          "btn_title": "Optional button",
+          "color_scheme": "1"
+        }
+      }
+    ]
+  }
+}
+{{/schema}}
+
+
+

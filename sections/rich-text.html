@@ -1,0 +1,250 @@
+{{assign 'title' section.settings.title }}
+{{assign 'main_text' section.settings.main_text }}
+{{assign 'button_text' section.settings.button_text }}
+{{assign 'jump_link' section.settings.jump_link}}
+{{assign 'normal_width' section.settings.normal_width}}
+{{assign 'big_fontsize' section.settings.big_fontsize}}
+{{assign 'show_divider' section.settings.show_divider}}
+{{assign 'text_align' section.settings.text_align }}
+{{assign 'color_scheme' section.settings.color_scheme }}
+
+{{assign 'blocks' section.blocks}}
+{{assign 'blocks' (product_blocks_order_translate section 'blocks' 'block_order')}}
+
+{{#if normal_width }}
+  {{assign 'textwidthClass' 'richtext__normalwidth'}}
+{{else}}
+  {{assign 'textwidthClass' 'richtext__smallwidth'}}
+{{/if}}
+
+{{#if big_fontsize }}
+  {{assign 'contentFontSize' 'body1'}}
+{{else}}
+  {{assign 'contentFontSize' 'body3'}}
+{{/if}}
+
+{{#if (boolean (isTruthy title) '||' (boolean (isTruthy main_text)) '||' (boolean (length blocks) '!=' 0 ))}}
+  <div class="{{#if show_divider}}section--divider{{/if}} color-scheme-{{color_scheme }}">
+      {{ snippet 'texture' color_scheme=color_scheme width="200" }}
+      <div class=" richtext container g-4 g-md-6">
+          {{#if title}}
+              <h2 class="richtext__title title4 section-title">{{title}}</h2>
+          {{/if}}
+          <div class="richtext__container richtext__text{{text_align}}">
+              <div class="richtext__content sl-richtext {{contentFontSize}} {{textwidthClass}}">{{{main_text}}}</div>
+
+              {{#if button_text}}
+                  {{assign 'link_item' (useLink jump_link)}}
+                  <a class="btn btn-primary {{textwidthClass}} richtext__btn" {{{link_item.hrefAttr}}}>{{button_text}}</a>
+              {{/if}}
+
+              {{#each blocks}}
+                  {{#if settings.big_fontsize }}
+                      {{assign 'contentFontSize' 'body1'}}
+                  {{else}}
+                      {{assign 'contentFontSize' 'body3'}}
+                  {{/if}}
+                  {{#if type '===' 'textRow'}}
+                      <div class="richtext__container__customtext sl-richtext {{contentFontSize}} {{../textwidthClass}}">{{{settings.main_text}}}</div>
+                  {{/if}}
+
+                  {{#if type '===' 'pageId'}}
+                      <div class="richtext__container__custompage sl-richtext {{../textwidthClass}}" style="width: 100%;">
+                          {{snippet 'custom-page-render' pageConfig=(get 'htmlConfig' (get settings.page_id ../pages)) }}
+                      </div>
+                  {{/if}}
+
+              {{/each}}
+          </div>
+      </div>
+  </div>
+{{/if}}
+
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "富文本",
+    "en": "Rich text",
+    "default": "Rich text"
+  },
+  "type": "rich-text",
+  "max_blocks": 2,
+  "blocks": [
+    {
+      "type": "textRow",
+      "icon": "text",
+      "name": {
+        "zh-hans-cn": "文本段落",
+        "en": "Paragraph",
+        "default": "Paragraph"
+      },
+      "settings": [
+        {
+          "default": true,
+          "id": "big_fontsize",
+          "type": "switch",
+          "label": {
+            "en": "Magnify texts",
+            "zh-hans-cn": "放大文字"
+          }
+        },
+        {
+          "id": "main_text",
+          "type": "richtext",
+          "label": {
+            "en": "Main text",
+            "zh-hans-cn": "正文"
+          },
+          "default": "A sentence or two introducing your brand, what you sell, and what makes your brand compelling to customers."
+        }
+      ]
+    },
+    {
+      "type": "pageId",
+      "icon": "text",
+      "name": {
+        "zh-hans-cn": "自定义页面",
+        "en": "Custom page",
+        "default": "Custom page"
+      },
+      "settings": [
+        {
+          "id": "page_id",
+          "type": "page_picker",
+          "label": {
+            "en": "Custom content",
+            "zh-hans-cn": "自定义内容"
+          }
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "en": "Title",
+        "zh-hans-cn": "标题"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "main_text",
+      "label": {
+        "en": "Main text",
+        "zh-hans-cn": "正文"
+      }
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": {
+        "en": "Button text",
+        "zh-hans-cn": "按钮文案"
+      }
+    },
+    {
+      "type": "url",
+      "id": "jump_link",
+      "label": {
+        "en": "Jump link",
+        "zh-hans-cn": "跳转链接"
+      }
+    },
+    {
+      "type": "text_align",
+      "id": "text_align",
+      "label": {
+        "en": "Text alignment",
+        "zh-hans-cn": "文本对齐"
+      }
+    },
+    {
+      "type": "switch",
+      "id": "normal_width",
+      "label": {
+        "en": "Use the standard column width",
+        "zh-hans-cn": "使用标准列宽"
+      }
+    },
+    {
+      "type": "switch",
+      "id": "big_fontsize",
+      "label": {
+        "en": "Magnify texts",
+        "zh-hans-cn": "放大文字"
+      }
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "default": "1",
+      "label": {
+        "zh-hans-cn": "颜色风格",
+        "en": "Color scheme"
+      },
+      "options": [
+        {
+          "value": "none",
+          "label": {
+            "zh-hans-cn": "无",
+            "en": "None"
+          }
+        },
+        {
+          "value": "1",
+          "label": {
+            "zh-hans-cn": "风格1",
+            "en": "Style 1"
+          }
+        },
+        {
+          "value": "2",
+          "label": {
+            "zh-hans-cn": "风格2",
+            "en": "Style 2"
+          }
+        },
+        {
+          "value": "3",
+          "label": {
+            "zh-hans-cn": "风格3",
+            "en": "Style 3"
+          }
+        }
+      ]
+    },
+    {
+      "type": "switch",
+      "id": "show_divider",
+      "label": {
+        "en": "Display the module split line",
+        "zh-hans-cn": "显示模块分割线"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "zh-hans-cn": "富文本",
+        "en": "Rich text"
+      },
+      "category": {
+        "zh-hans-cn": "内容展示",
+        "en": "Content display"
+      },
+      "settings": {
+        "title": "Rich text",
+        "main_text": "A sentence or two introducing your brand, what you sell, and what makes your brand compelling to customers.",
+        "text_align": "center",
+        "jump_link": "",
+        "normal_width": true,
+        "big_fontsize": true,
+        "color_scheme": "1",
+        "show_divider": false
+      }
+    }
+  ]
+}
+{{/schema}}

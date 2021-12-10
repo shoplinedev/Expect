@@ -1,0 +1,34 @@
+{{ assign "salesIndexArr" (JSONparse '["1", "2", "3", "4"]' )}}
+
+{{!-- 销售信息模块 --}}
+<div class="product-sell-info" id="product-sell-info_{{id}}">
+  {{#each salesIndexArr}}
+    {{#if (trim (get (append 'product_sales_point_' this) ../theme/settings)) }}
+      <div class="product-sell-box">
+        <div class="product-sell-icon">
+          {{#if (get (append 'product_sales_point_' this '_icon') ../theme/settings) '==' 'checkmark'}}
+            {{snippet 'icons/icon_sell_checkmark' }}
+          {{/if}}
+          {{#if (get (append 'product_sales_point_' this '_icon') ../theme/settings) '==' 'globe'}}
+            {{snippet 'icons/icon_sell_globe' }}
+          {{/if}}
+          {{#if (get (append 'product_sales_point_' this '_icon') ../theme/settings) '==' 'leaf'}}
+            {{snippet 'icons/icon_sell_leaf' }}
+          {{/if}}
+          {{#if (get (append 'product_sales_point_' this '_icon') ../theme/settings) '==' 'lock'}}
+            {{snippet 'icons/icon_sell_lock' }}
+          {{/if}}
+          {{#if (get (append 'product_sales_point_' this '_icon') ../theme/settings) '==' 'package'}}
+            {{snippet 'icons/icon_sell_package' }}
+          {{/if}}
+          {{#if (get (append 'product_sales_point_' this '_icon') ../theme/settings) '==' 'truck'}}
+            {{snippet 'icons/icon_sell_truck' }}
+          {{/if}}
+        </div>
+        <div class="product-sell-text body3">
+          {{ get (append 'product_sales_point_' this) ../theme/settings }}
+        </div>
+      </div>
+    {{/if}}
+  {{/each}}
+</div>

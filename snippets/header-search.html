@@ -1,0 +1,21 @@
+<div class="header__search--container">
+	<div class="header__search">
+		<div class="container g-4 g-md-6">
+			<div class="header__search--form">
+				<button type="button" class="header__search--btn j-stage-force-search">
+					{{ snippet 'icons/icon_header_search' }}
+				</button>
+				<input type="search" value placeholder="{{t 'header.searchInputPlaceholder'}}" class="header__search--input body3" maxlength="255">
+			</div>
+			<button type="button" class="header__search--btn header__cancel--btn j-stage-search-close">
+        {{ snippet 'icons/icon_header_close' }}
+      </button>
+		</div>
+	</div>
+	<div id="header-search-predicate" class="header__search--predicate">
+		<div class="container g-4 g-md-6">
+			<ul class="header__suggest--list">
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,16 @@
+{{#style}}
+  {{ assign 'color' '#fff' }}
+  {{#if (color_extract theme.settings.color_header_search 'lightness') '>' 40}}
+    {{ assign 'color' '#000' }}
+  {{/if}}
+  .header__searchBar-container,
+  .header__searchBar-container input {
+    background-color: {{ theme.settings.color_header_search }};
+    color: {{color}} !important;
+  }
+{{/style}}
+
+<div class="header__searchBar-container j-stage-header-search {{ classnames }}">
+	<input class="body3" placeholder="{{t 'header.search'}}" type="text">
+	{{ snippet 'icons/icon_header_search' }}
+</div>

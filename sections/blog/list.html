@@ -1,0 +1,124 @@
+{{ assign 'homeText' (t 'common.home') }}
+{{ assign 'title' (get 'title' blogs) }}
+{{ assign 'total' (default (get 'blogs.total' blogs) 0) }}
+{{ assign 'pageNum' (default (get 'blogs.pageNum' blogs) 0) }}
+{{ assign 'pageSize' (default (get 'blogs.pageSize' blogs) 12) }}
+{{ assign 'blogs' (default (get 'blogs.list' blogs) (JSONparse '[]')) }}
+
+
+{{#if (length blogs) '>' 0}}
+  {{#if section.settings.is_show_breadcrumb}}
+    {{ assign 'routes' (JSONparse (append '[{"name":"' homeText '","link":"/"}]')) }}
+    {{ array-push routes (object_create name=title) }}
+
+    {{ snippet 'blogs/breadcrumb' classes='blogs__breadcrumb d-none d-md-flex' routes=routes }}
+  {{/if}}
+    
+  <h1 class="blogs__title title3">{{ title }}</h1>
+
+  {{#with this as |global|}}
+    <div class="blogs__list-wrapper">
+      <ul class="blogs__list blogs__list--{{ global.section.settings.layout }}">
+        {{#each blogs}}
+          <li class="blogs__item">
+            {{
+              snippet 'blogs/simple-blog'
+              info=this
+              showAuthor=global.section.settings.is_show_author
+              showDate=global.section.settings.is_show_date
+              showCover=global.section.settings.is_show_cover
+            }}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/with}}
+
+  {{ snippet 'product/commons/pagination' mode='href' id="blogs-pagination" wrapperClass='blogs__pagination' total=total pageSize=pageSize current=pageNum request=request }}
+{{else}}
+  <div class="blogs__empty">
+    <h2 class="blogs__empty-title title3">{{ t 'blogList.container.empty.title' }}</h2>
+    <p class="blogs__empty-desc body3">{{ t 'blogList.container.empty.desc' }}</p>
+  </div>
+{{/if}}
+
+{{#schema}}
+{
+  "name":{
+    "en":"Blogs",
+    "zh-hans-cn":"博客集合"
+  },
+  "settings":[
+    {
+      "type":"select",
+      "id":"layout",
+      "default": "grid",
+      "label":{
+        "en":"Layout",
+        "zh-hans-cn":"布局"
+      },
+      "options": [
+        {
+          "label": {
+            "en": "Grid",
+            "zh-hans-cn": "网格"
+          },
+          "value": "grid"
+        },
+        {
+          "label": {
+            "en": "List",
+            "zh-hans-cn": "列表"
+          },
+          "value": "list"
+        }
+      ]
+    },
+    {
+      "type": "switch",
+      "id": "is_show_author",
+      "default": true,
+      "label": {
+        "en": "Display author",
+        "zh-hans-cn": "显示作者"
+      }
+    },
+    {
+      "type": "switch",
+      "id": "is_show_date",
+      "default": true,
+      "label": {
+        "en": "Display date",
+        "zh-hans-cn": "显示日期"
+      }
+    },
+    {
+      "type": "switch",
+      "id": "is_show_cover",
+      "default": true,
+      "label": {
+        "en": "Display cover",
+        "zh-hans-cn": "显示封面图"
+      }
+    },
+    {
+      "type": "switch",
+      "id": "is_show_breadcrumb",
+      "default": true,
+      "label": {
+        "en": "Display breadcrumb",
+        "zh-hans-cn": "显示面包屑"
+      }
+    }
+  ],
+  "default": {
+    "settings": {
+      "layout": "grid",
+      "is_show_author": true,
+      "is_show_date": true,
+      "is_show_cover": true,
+      "is_show_breadcrumb": true
+    }
+  }
+}
+{{/schema}}

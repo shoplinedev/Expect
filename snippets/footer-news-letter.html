@@ -1,0 +1,17 @@
+<div class="footer__newsletter">
+
+  {{#if section.settings.newsletter_title}}
+    <div class="body2 footer_newsletter-content sl-richtext richtext-content">{{{section.settings.newsletter_title}}}</div>
+  {{/if}}
+
+  <div class="footer__newsletter-input" data-button_style="{{theme.settings.button_style}}">
+    <input class="body4" type="text" placeholder="Enter your email">
+    <div class="footer__newsletter-btn body3 pc">
+      Subscribe
+    </div>
+    <div class="footer__newsletter-btn mobile">
+      {{ snippet 'icons/icon_footer_email' }}
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,168 @@
+{{ assign 'blocks' (product_blocks_order_translate section 'blocks' 'block_order') }}
+{{ assign 'text_align' theme.settings.type_body_text_align }}
+{{ assign 'show_divider' section.settings.show_divider }}
+
+{{#if show_divider }}
+<div class="section--divider">
+{{/if}}
+
+<div class="icon-list container g-4 g-md-6">
+  {{#if (isTruthy section.settings.title)}}
+    <div class="icon-list__title title4 {{#if text_align }}text-{{text_align}}{{/if}}">
+      {{section.settings.title}}
+    </div>
+  {{/if}}
+  <ul class="icon-list__wrapper g-4 row row-cols-2 row-cols-md-6">
+    {{#each blocks}}
+      {{ assign 'jump_link' this.settings.jump_link }}
+      {{ assign 'link_obj' (useLink jump_link) }}
+      {{ assign 'image_url' this.settings.image.url }}
+
+      <li class="icon-list__item">
+        <a {{{link_obj.hrefAttr}}} class="icon-list__link {{#if (isFalsey jump_link)}}icon-list__link--text{{/if}}" target="_blank" rel="noopener">
+          {{#if (isTruthy image_url) }}
+            <img
+              class="lozad"
+              data-src="{{image_url}}"
+              data-srcset="{{ img_url image_url }} 1x, {{ img_url image_url scale=2}} 2x"
+              alt="{{ this.settings.image.alt }}">
+          {{else}}
+            <div class="icon-list__empty-wraper">
+            {{ snippet 'icons/icon_image' }}
+            </div>
+          {{/if}}
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+{{#if show_divider }}
+</div>
+{{/if}}
+
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "商标列表",
+    "en": "Icon list"
+  },
+  "type": "icon-list",
+  "class": "index-section--gap",
+  "max_blocks": 12,
+  "blocks": [
+    {
+      "type": "item",
+      "name": {
+        "zh-hans-cn": "商标",
+        "en": "Logo"
+      },
+      "icon": "image",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": {
+            "zh-hans-cn": "商标",
+            "en": "Logo"
+          }
+        },
+        {
+          "id": "jump_link",
+          "type": "url",
+          "label": {
+            "en": "Jump link",
+            "zh-hans-cn": "跳转链接"
+          }
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "zh-hans-cn": "标题",
+        "en": "Title"
+      },
+      "default": "Popular brands"
+    },
+    {
+      "type": "switch",
+      "id": "show_divider",
+      "label": {
+        "zh-hans-cn": "展示分割线",
+        "en": "Dismay the split line"
+      },
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "zh-hans-cn": "商标列表",
+        "en": "Logo list"
+      },
+      "category": {
+        "zh-hans-cn": "内容展示",
+        "en": "Content display"
+      },
+      "settings": {
+        "title": "Popular brands",
+        "show_divider": false
+      },
+      "blocks": [
+        {
+          "type": "item",
+          "icon": "image",
+          "settings": {
+            "image": {},
+            "jump_link": ""
+          }
+        },
+        {
+          "type": "item",
+          "icon": "image",
+          "settings": {
+            "image": {},
+            "jump_link": ""
+          }
+        },
+        {
+          "type": "item",
+          "icon": "image",
+          "settings": {
+            "image": {},
+            "jump_link": ""
+          }
+        },
+        {
+          "type": "item",
+          "icon": "image",
+          "settings": {
+            "image": {},
+            "jump_link": ""
+          }
+        },
+        {
+          "type": "item",
+          "icon": "image",
+          "settings": {
+            "image": {},
+            "jump_link": ""
+          }
+        },
+        {
+          "type": "item",
+          "icon": "image",
+          "settings": {
+            "image": {},
+            "jump_link": ""
+          }
+        }
+      ]
+    }
+  ]
+}
+{{/schema}}

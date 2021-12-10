@@ -1,0 +1,61 @@
+
+{{!-- 传入参数（可选）：title 标题 --}}
+{{assign '_title' title}}
+{{!-- 传入参数：sortationData 分类数据，参考分类页sortations数组里面的item的sortation对象 --}}
+{{assign '_sortation' (default sortationData (JSONstringify '{}'))}}
+{{!-- 传入参数：collectionData 分类列表数据 --}}
+{{assign '_collections' (cond (isArray collectionData) collectionData (JSONparse '[]'))}}
+{{!-- 传入参数：imgRealWidth 图片真实占位宽度 --}}
+{{assign '_imgRealWidth' (default imgRealWidth 300)}}
+
+
+{{!-- 封面图展示形状（circle/square/landscape/portrait） --}}
+{{assign 'gridShape' (default theme.settings.collection_grid_shape 'circle')}}
+{{!-- 分类图片（collection/product） --}}
+{{assign 'gridImage' (default theme.settings.collection_grid_image 'collection')}}
+{{!-- 封面图与容器内边距 --}}
+{{assign 'gridImageMargin' (default theme.settings.collection_grid_image_margin 10)}}
+{{!-- 分类图片处理 --}}
+{{assign 'product' (default (itemAt _sortation.productList 0) (JSONparse '{}'))}}
+{{assign 'productImage' (itemAt product.imageList 0)}}
+{{assign 'sortationImage' sortationData.sortationCoverImg}}
+{{#if (is gridImage 'product')}}
+  {{assign 'sortationCoverImg' (cond productImage productImage sortationImage)}}
+{{else}}
+  {{assign 'sortationCoverImg' (cond sortationImage sortationImage productImage)}}
+{{/if}}
+{{assign 'srcSet1' (append (img_url sortationCoverImg width=360 ) ' 360w,') }}
+{{assign 'srcSet2' (append (img_url sortationCoverImg width=540 ) ' 540w,') }}
+{{assign 'srcSet3' (append (img_url sortationCoverImg width=720 ) ' 720w,') }}
+{{assign 'srcSet4' (append (img_url sortationCoverImg width=1000 ) ' 1000w,') }}
+{{assign 'srcSet' (append srcSet1 srcSet2 srcSet3 srcSet4) }}
+{{!-- /分类图片处理 --}}
+{{assign 'defaultImg' (split 'https://img.myshopline.com/image/shopline/ff8b7961d80d4f3db2329083ea5872c5.png,https://img.myshopline.com/image/shopline/e034d68bed0940e48221f9689aba4851.png,https://img.myshopline.com/image/shopline/b46b403a492046b490d239399ae2744a.png' ',')}}
+{{assign 'randomIndex' (random 0 2)}}
+{{assign 'showTitle' (default _title _sortation.title)}}
+{{assign 'imageRatio' (cond (is gridShape 'landscape') '75' (cond (is gridShape 'portrait') '150' '100'))}}
+
+<a data-sortation-id="{{_sortation.sortationId}}" class="collection-item col"
+  href="{{#if (isFalsey _sortation.uniqueKey) }}javascript:;{{else}}/collections/{{ _sortation.uniqueKey }}{{/if}}">
+  <div class="collection-item-image-wrapper" {{#if (is gridShape 'circle')}}style="border-radius: 50%;"{{/if}}>
+    <div class="collection-item-image" style="padding: {{gridImageMargin}}%">
+      {{snippet
+        'product/commons/product-process-image'
+        sizes=imgRealWidth
+        imageRatio=imageRatio
+        imageFit='cover'
+        srcSet=srcSet
+        fallbacksSrc=(itemAt defaultImg randomIndex)
+        fallbacksBgColor="#f3f3f3"
+      }}
+    </div>
+    <div class="collection-item-hover-mask"></div>
+  </div>
+    <div class="collection-item-under-title body3" style="font-weight: 600;">
+      {{#if (isTruthy showTitle)}}
+        {{showTitle}}
+      {{else}}
+        Example Collection
+      {{/if}}
+    </div>
+</a>

@@ -1,0 +1,23 @@
+{{assign 'show_selectors' false}}
+{{assign 'currency_selector' false}}
+{{assign 'locale_selector' false}}
+
+{{#if (boolean section.settings.show_currency_selector '&&' currencyConfig.enable)}}
+	{{assign 'currency_selector' true}}
+{{/if}}
+
+{{#if (boolean section.settings.show_locale_selector '&&' storeInfo.languageSetting.enableSelector)}}
+	{{assign 'locale_selector' true}}
+{{/if}}
+
+{{#if (boolean currency_selector '||' locale_selector)}}
+	{{assign 'show_selectors' true}}
+{{/if}}
+
+
+<div class="toolbar d-none d-md-flex ">
+	{{!-- Currency & Language --}}
+	<div class="toolbar__select">
+		{{snippet 'locale-currency' position="header"}}
+	</div>
+</div>

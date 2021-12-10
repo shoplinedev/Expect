@@ -1,0 +1,124 @@
+{{assign 'limit' force_limit}}
+{{assign 'startAt' offset}}
+{{#if (isFalsey force_limit)}}
+	{{assign 'limit' (length main_menu.nodeTree)}}
+{{/if}}
+{{#if (isFalsey startAt)}}
+	{{assign 'startAt' 0}}
+{{/if}}
+<ul class="desktop-site-nav">
+	{{#with this as |global|}}
+		{{#each main_menu.nodeTree}}
+			{{assign 'has_dropdown' false}}
+			{{assign 'is_megamenu' false}}
+
+			{{#if @index '>=' global.startAt}}
+				{{#if @index '<' (plus global.limit global.startAt)}}
+					{{#if (isTruthy (length this.childNodes))}}
+						{{assign 'has_dropdown' true}}
+						{{#if (depth_of_nav this) '>' 1}}
+							{{assign 'is_megamenu' true}}
+						{{/if}}
+					{{/if}}
+
+					<li data-site-nav-menu-id="{{this.id}}" class="d-site--nav__item  {{#if has_dropdown}}site-nav--has-dropdown{{/if}} {{#if is_megamenu}}site-nav--is-megamenu{{/if}}">
+						{{assign 'navItem' (navLink this global.request.uri.query global.request.locale global.all_collections)}}
+						<a class="navigation-font navigation-font-size site-nav__link d-site--nav__underline navigation-font-size  {{#if has_dropdown}}site-nav__link--has-dropdown{{/if}} {{#if global.theme.settings.type_navigation_uppercase}}text-uppercase{{/if}}"
+						{{{navItem.hrefAttr}}}>
+							{{navItem.name}}
+						</a>
+						{{#if is_megamenu}}
+
+              {{!-- 递归遍历，判断二、三级分类下是否有商品可以展示 --}}
+              {{assign 'sortation_has_product' false}}
+              {{#each this.childNodes}}
+                  {{assign 'sortationData' (get this.pageLink ../../all_collections)}}
+                  {{#if (boolean (boolean this.nodeType '==' 3) '&&' (isTruthy sortationData.productList.[0]))}}
+                      {{#with ../.}}
+                        {{assign 'sortation_has_product' true}}
+                      {{/with}}
+                  {{/if}}
+
+                  {{#each this.childNodes}}
+                      {{assign 'sortationData' (get this.pageLink ../../../all_collections)}}
+                      {{#if (boolean (boolean this.nodeType '==' 3) '&&' (isTruthy sortationData.productList.[0]))}}
+                          {{#with ../../.}}
+                            {{assign 'sortation_has_product' true}}
+                          {{/with}}
+                      {{/if}}
+                  {{/each}}
+              {{/each}}
+
+              {{!-- 是否需要展示分类下的商品 --}}
+              {{assign 'show_sortation_product' (boolean global.mega_menu_images '&&' sortation_has_product)}}
+
+							<div class="site-nav__dropdown megamenu text-left">
+								<div class="container magamenu__container g-4 g-md-6">
+									<div class="grid {{#if show_sortation_product}}grid-4{{/if}}">
+                                        {{#each this.childNodes}}
+                                            <div class="grid__item">
+                                                {{assign 'navItem' (navLink this global.request.uri.query global.request.locale global.all_collections)}}
+                                                <div class="body3 fw-blod">
+                                                  <a data-node-id="{{this.id}}" {{{navItem.hrefAttr}}} class="site-nav__dropdown-link site-nav__node site-nav__dropdown-link--top-level">{{ navItem.name }}</a>
+                                                </div>
+                                                {{#each this.childNodes}}
+                                                    {{assign 'navItem' (navLink this global.request.uri.query global.request.locale global.all_collections)}}
+                                                        <div>
+                                                            <a data-node-id="{{this.id}}"  class="site-nav__dropdown-link site-nav__node body5" {{{navItem.hrefAttr}}}>{{navItem.name}}</a>
+                                                        </div>
+                                                {{/each}}
+                                            </div>
+                                        {{/each}}
+                                    </div>
+                                    <div class="nav__product--container {{#if show_sortation_product}}nav__product--container--display{{/if}}">
+                                        {{#each this.childNodes}}
+                                            {{assign 'sortationData' (get this.pageLink ../../all_collections)}}
+                                            {{#if (boolean (boolean this.nodeType '==' 3) '&&' (isTruthy sortationData.productList.[0]))}}
+                                                <div class="nav__sortation--item" data-navnode-id="{{this.id}}">
+                                                    {{#with sortationData.productList.[0]}}
+                                                        {{snippet 'product/commons/product-item' spu=this imgRealWidth=../real_product_img_width }}
+                                                    {{/with}}
+                                                </div>
+                                            {{/if}}
+                                        {{/each}}
+                                        {{#each this.childNodes}}
+                                            {{#each this.childNodes}}
+                                                {{assign 'sortationData' (get this.pageLink ../../../all_collections)}}
+                                                {{#if (boolean (boolean this.nodeType '==' 3) '&&' (isTruthy sortationData.productList.[0]))}}
+                                                    <div class="nav__sortation--item" data-navnode-id="{{this.id}}">
+                                                        {{#with sortationData.productList.[0]}}
+                                                            {{snippet 'product/commons/product-item' spu=this imgRealWidth=../real_product_img_width }}
+                                                        {{/with}}
+                                                    </div>
+                                                {{/if}}
+                                            {{/each}}
+                                        {{/each}}
+                                    </div>
+								</div>
+							</div>
+						{{/if}}
+
+
+						{{#unless is_megamenu}}
+							{{#if has_dropdown}}
+                                <div class="site-nav__dropdown unmegamenu-container">
+                                    <ul class="text-left">
+                                        {{#each this.childNodes}}
+                                            <li class="{{#if has_sub_dropdown}}site-nav__deep-dropdown-trigger{{/if}}">
+                                                {{assign 'navItem' (navLink this global.request.uri.query global.request.locale global.all_collections)}}
+                                                <a {{{navItem.hrefAttr}}} class="body5 site-nav__dropdown-link site-nav__dropdown-link--second-level">
+                                                    {{navItem.name}}
+                                                </a>
+                                            </li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+							{{/if}}
+						{{/unless}}
+					</li>
+				{{/if}}
+			{{/if}}
+		{{/each}}
+	{{/with}}
+
+</ul>

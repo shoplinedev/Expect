@@ -1,0 +1,268 @@
+{{assign 'data' (getTextColumnList section.blocks section.block_order)}}
+<div class="{{#if section.settings.show_divider}}section--divider{{/if}} color-scheme-{{section.settings.color_scheme }} text-columns-with-images">
+    {{ snippet 'texture' color_scheme=section.settings.color_scheme width="200" }}
+    <div class="container g-4 g-md-6 {{#if section.settings.show_touch}}show-touch-scroll-box{{/if}}">
+        {{#if section.settings.title}}
+            <div class="text-columns-with-images__title section-title title4">{{section.settings.title}}</div>
+        {{/if}}
+
+        <div class="d-md-none text-columns-with-images__wrapper">
+          {{#each data.rowList}}
+              {{ snippet 'text-columns-with-images-item' }}
+          {{/each}}
+          {{#each data.wrapList}}
+              {{ snippet 'text-columns-with-images-item' }}
+          {{/each}}
+        </div>
+        <div class="d-none d-md-flex text-columns-with-images__wrapper row row-cols-1 row-cols-md-{{data.rowNum}} row-cols-lg-{{data.rowNum}}">
+            {{#each data.rowList}}
+                {{ snippet 'text-columns-with-images-item' }}
+            {{/each}}
+        </div>
+        {{#if data.wrapNum '!==' 0}}
+          <div class="d-none d-md-flex text-columns-with-images__wrapper row row-cols-1 row-cols-md-{{data.wrapNum}} row-cols-lg-{{data.wrapNum}}">
+              {{#each data.wrapList}}
+                  {{ snippet 'text-columns-with-images-item' }}
+              {{/each}}
+          </div>
+        {{/if}}
+
+    </div>
+</div>
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "图文列表",
+    "en": "Text columns with images"
+  },
+  "max_blocks": 20,
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": {
+        "zh-hans-cn": "标题",
+        "en": "Title"
+      },
+      "default": "Text columns with images"
+    },
+    {
+      "id": "text_align",
+      "type": "text_align",
+      "label": {
+        "zh-hans-cn": "文本对齐",
+        "en": "Text alignment"
+      },
+      "options": [
+        {
+          "value": "left"
+        },
+        {
+          "value": "center"
+        },
+        {
+          "value": "right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "default": "none",
+      "label": {
+        "zh-hans-cn": "颜色风格",
+        "en": "Color scheme"
+      },
+      "options": [
+        {
+          "value": "none",
+          "label": {
+            "zh-hans-cn": "无",
+            "en": "None"
+          }
+        },
+        {
+          "value": "1",
+          "label": {
+            "zh-hans-cn": "风格1",
+            "en": "Style 1"
+          }
+        },
+        {
+          "value": "2",
+          "label": {
+            "zh-hans-cn": "风格2",
+            "en": "Style 2"
+          }
+        },
+        {
+          "value": "3",
+          "label": {
+            "zh-hans-cn": "风格3",
+            "en": "Style 3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "show_touch",
+      "type": "switch",
+      "label": {
+        "zh-hans-cn": "移动端左右滑动",
+        "en": "Mobile swipe left and right"
+      },
+      "default": false
+    },
+    {
+      "id": "show_divider",
+      "type": "switch",
+      "label": {
+        "zh-hans-cn": "展示分割线",
+        "en": "Dismay the split line"
+      },
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "icon": "image",
+      "name": {
+        "zh-hans-cn": "图片",
+        "en": "Image"
+      },
+      "settings": [
+        {
+          "id": "show_image",
+          "type": "switch",
+          "label": {
+            "zh-hans-cn": "展示图片",
+            "en": "Display the image"
+          },
+          "default": true
+        },
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": {
+            "zh-hans-cn": "图片",
+            "en": "Image"
+          },
+          "default": ""
+        },
+        {
+          "id": "image_width",
+          "type": "range",
+          "label": {
+            "zh-hans-cn": "图片宽度",
+            "en": "Image width"
+          },
+          "min": 60,
+          "max": 650,
+          "step": 10,
+          "unit": "px",
+          "default": 650
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": {
+            "zh-hans-cn": "标题",
+            "en": "Title"
+          },
+          "default": "Example title"
+        },
+        {
+          "id": "description",
+          "type": "richtext",
+          "label": {
+            "zh-hans-cn": "描述",
+            "en": "Description"
+          },
+          "default": "Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis."
+        },
+        {
+          "id": "button_text",
+          "type": "text",
+          "label": {
+            "zh-hans-cn": "按钮文案",
+            "en": "Button text"
+          },
+          "default": "Optional button"
+        },
+        {
+          "id": "jump_link",
+          "type": "url",
+          "label": {
+            "zh-hans-cn": "跳转链接",
+            "en": "Jump link"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "zh-hans-cn": "图文列表",
+        "en": "Text columns with images"
+      },
+      "category": {
+        "zh-hans-cn": "内容展示",
+        "en": "Content display"
+      },
+      "blocks": [
+        {
+          "type": "item",
+          "name": "Title",
+          "icon": "image",
+          "settings": {
+            "show_image": true,
+            "image": {},
+            "image_width": 650,
+            "title": "Example title",
+            "description": "Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.",
+            "button_text": "Optional button",
+            "jump_link": ""
+          }
+        },
+        {
+          "type": "item",
+          "name": "Title",
+          "icon": "image",
+          "settings": {
+            "show_image": true,
+            "image": {},
+            "image_width": 650,
+            "title": "Example title",
+            "description": "Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.",
+            "button_text": "Optional button",
+            "jump_link": ""
+          }
+        },
+        {
+          "type": "item",
+          "name": "Title",
+          "icon": "image",
+          "settings": {
+            "show_image": true,
+            "image": {},
+            "image_width": 650,
+            "title": "Example title",
+            "description": "Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.",
+            "button_text": "Optional button",
+            "jump_link": ""
+          }
+        }
+      ],
+      "settings": {
+        "title": "Text columns with images",
+        "text_align": "center",
+        "color_scheme":"none",
+        "show_divider": false
+      }
+    }
+  ]
+}
+{{/schema}}

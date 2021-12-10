@@ -1,0 +1,54 @@
+{{ layout none }}
+<div class="trade_mini_cart--close-btn hide">
+  <div class="trade_mini_cart--close-btn-icon">
+    {{ snippet 'icons/icon_header_close' }}
+  </div>
+</div>
+<div class="trade_cart_empty_wrapper{{#if cartInfo.count '!=' 0}} hide{{/if}}">
+  <div class="mini-cart-title">
+    {{snippet 'trade/cart-empty'}}
+    {{snippet 'trade/cart-continue-btn' is_empty=true}}
+  </div>
+</div>
+<div class="trade_cart_not_empty_wrapper{{#if cartInfo.count '==' 0}} hide{{/if}}">
+  {{snippet 'trade/sku-card-list' data=cartInfo is-mobile=request.is_mobile main=false}}
+
+  {{#if (cart_show_security tradeSettleConfig) }}
+  {{!-- <div class="miniCart_vp_container"> --}}
+  {{! 优惠码 }}
+  {{snippet 'trade/coupon' trade_cart_type="sidebar"}}
+  {{! 金额汇总 }}
+  <div class="miniCart_vp_container">
+    {{snippet 'trade/summations'}}
+    {{snippet 'trade/cart-shopping-money-desc' classes="trade_money_desc_top"}}
+    {{snippet 'trade/cart-checkout' id="mini-cart-spb" trade_cart_type="sidebar"}}
+    {{snippet 'trade/cart-shopping-money-desc' classes="trade_money_desc_bottom"}}
+    {{snippet 'trade/cart-checkout-error' trade_cart_type="sidebar"}}
+  </div>
+
+  {{snippet 'trade/safety-logo'}}
+  {{else}}
+  {{! 优惠码 }}
+  {{snippet 'trade/coupon' trade_cart_type="sidebar"}}
+  {{/if}}
+
+  {{#if (cart_show_security tradeSettleConfig) '===' false }}
+  <div class="miniCart__stick_container_fixed">
+    {{snippet 'trade/summations'}}
+    {{snippet 'trade/cart-shopping-money-desc' classes="trade_money_desc_top"}}
+    {{snippet 'trade/cart-checkout' id="mini-cart-spb" trade_cart_type="sidebar"}}
+    {{snippet 'trade/cart-shopping-money-desc' classes="trade_money_desc_bottom"}}
+    {{snippet 'trade/cart-checkout-error' trade_cart_type="sidebar"}}
+  </div>
+  {{/if}}
+
+  <div class="miniCart__stick_container">
+    {{! 金额汇总 }}
+    {{snippet 'trade/summations'}}
+    {{snippet 'trade/cart-shopping-money-desc' classes="trade_money_desc_top"}}
+    {{snippet 'trade/cart-checkout' id="mini-cart-spb-fixed" trade_cart_type="sidebar"}}
+    {{snippet 'trade/cart-shopping-money-desc' classes="trade_money_desc_bottom"}}
+    {{snippet 'trade/cart-checkout-error' trade_cart_type="sidebar"}}
+  </div>
+
+</div>

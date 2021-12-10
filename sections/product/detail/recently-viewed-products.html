@@ -1,0 +1,47 @@
+{{assign 'show_product_number' section.settings.show_product_number}}
+
+{{#if (boolean section.settings.show_recently_product '&&' historyBrowseProducts.length)}}
+  <div class="product-detail-block-space"></div>
+  <div class="product-list product-recently-viewed" data-recently-product-section-id={{ section.id }}>
+    <div class="product-list-title product-section-title title5">{{ t 'productDetail.recentlyViewedProducts' }}</div>
+    {{snippet 'product/commons/product-item-list' forbiddenBtn=true listData=(first historyBrowseProducts show_product_number) className='__sl-custom-track-product-recently-viewed-item' }}
+  </div>
+{{/if}}
+
+{{#schema}}
+{
+  "name": {
+    "zh-hans-cn": "最近浏览商品",
+    "en": "Recently viewed products"
+  },
+  "settings": [
+    {
+      "type": "switch",
+      "id": "show_recently_product",
+      "label": {
+        "zh-hans-cn": "展示最近浏览商品",
+        "en": "Display recently viewed products"
+      },
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "show_product_number",
+      "label": {
+        "zh-hans-cn": "展示商品数量",
+        "en": "Display product quantity"
+      },
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 6
+    }
+  ],
+  "default": {
+    "settings": {
+      "show_recently_product": true,
+      "show_product_number": 6
+    }
+  }
+}
+{{/schema}}

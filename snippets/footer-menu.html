@@ -1,0 +1,26 @@
+<div class="footer__menu">
+  {{ snippet 'footer-block-header' }}
+
+  <div class="footer__block-wrapper">
+    <div class="footer__block-content">
+      {{#with this as |global|}}
+        {{ assign 'navigation' (get this.settings.menu navigations) }}
+        {{#if navigation }}
+          <dl class="footer__menu-list body5">
+            {{#each navigation.nodeTree as | navItem |}}
+              {{ assign 'query' global.request.uri.query}}
+              {{ assign 'locale' global.request.locale}}
+              {{ assign 'allCollections' global.all_collections}}
+              {{ assign 'allProducts' global.all_products}}
+              {{ assign 'navDetail' (navLink navItem query locale allCollections allProducts ) }}
+              <dd>
+                <a {{{navDetail.hrefAttr}}} rel="noreferrer">{{navDetail.name}}</a>
+              </dd>
+            {{/each}}
+          </dl>
+        {{/if}}
+      {{/with}}
+    </div>
+  </div>
+
+</div>

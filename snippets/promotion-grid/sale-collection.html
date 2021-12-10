@@ -1,0 +1,60 @@
+{{assign 'prefix' 'stage_promotion_grid--sc'}}
+{{assign 'bodyClass' 'body3'}}
+{{assign 'imgWrapperClass' (append prefix '-right-img-wrapper')}}
+{{assign '_collection_product' (get 'list' (get settings.product_categories collection_products))}}
+{{!-- 判断是否配置 以展示兜底 --}}
+{{#if (boolean (isTruthy settings.product_categories) '&&' (boolean (length _collection_product) '!=' 0 ))}}
+    {{ assign 'showEmpty' false}}
+    {{ assign 'productList' (first _collection_product 2)}}
+    {{ assign 'categoryDetail' (get settings.product_categories all_collections)}}
+{{else}}
+{{ assign 'showEmpty' true}}
+{{ assign 'emptyImageList' (JSONparse '["https://img.myshopline.com/image/shopline/abdc273a1a4643a588a09d00e6822466.png?w=280&h=281", "https://img.myshopline.com/image/shopline/9d5a39df47f847e39d98ffd2b6609819.png?w=280&h=281"]')}}
+{{/if}}
+
+{{#if (boolean settings.width '==' '50%')}}
+    {{assign 'bodyClass' 'body4'}}
+{{/if}}
+
+{{!-- 中间文案匹配% off --}}
+{{#if (isTruthy settings.middle_content)}}
+  {{assign 'middleContent' (replace_by_regex settings.middle_content "%\s?of{2}" "gi" "<sup class=\"notranslate\">%</sup><small class=\"notranslate\">OFF</small>")}}
+{{/if}}
+
+<a href="{{#if (isTruthy categoryDetail)}}/collections/{{#if (isTruthy categoryDetail.uniqueKey) }}{{categoryDetail.uniqueKey}}{{else}}{{categoryDetail.sortationId}}{{/if}}{{else}}javascript:void(0);{{/if}}" class="stage_promotion_grid--block-box" style="flex-basis: {{settings.width}};">
+    <div class=" {{prefix}} color-scheme-{{ settings.color_scheme }}">
+        {{ snippet 'texture' color_scheme=settings.color_scheme width="200" }}
+        <div class="{{prefix}}-left{{#if (boolean settings.width '==' '100%')}} {{prefix}}-left-full{{/if}}{{#if (boolean (boolean settings.width '==' '50%') '&&' (isFalsey sectionSetting.enable_full_screen))}} {{prefix}}-left-narrow{{/if}}">
+            {{#if (isTruthy settings.top_content)}}
+            <p class="{{bodyClass}}">{{settings.top_content}}</p>
+            {{/if}}
+            {{#if (isTruthy settings.middle_content)}}
+            <div class="title1 {{prefix}}-left-middle {{#if (boolean settings.width '==' '100%')}} {{prefix}}-middle-full{{/if}}">
+                {{{middleContent}}}
+            </div>
+            {{/if}}
+            {{#if (isTruthy settings.bottom_content)}}
+            <p class="{{bodyClass}}">{{settings.bottom_content}}</p>
+            {{/if}}
+        </div>
+        <div class="{{prefix}}-right{{#if (boolean settings.width '==' '100%')}} {{prefix}}-right-full{{/if}}{{#if (boolean (boolean settings.width '==' '50%') '&&' (isFalsey sectionSetting.enable_full_screen))}} {{prefix}}-right-narrow{{/if}}">
+            <div class="{{prefix}}-right-content">
+              {{#if (isTruthy showEmpty)}}
+              {{!-- 空图展示 --}}
+                  {{#each emptyImageList}}
+                  <div class="{{../prefix}}-right-item">
+                      {{snippet 'promotion-grid/sale-collection-img' imageSrc=this imageSrcSet=(append this ' 1x, ' this ' 2x') imgWrapperClass=(append ../imgWrapperClass ' ' ../prefix '-empty-img') }}
+                  </div>
+                  {{/each}}
+              {{else}}
+                {{#each productList}}
+                <div class="{{../prefix}}-right-item">
+                  {{assign 'productImage' (first imageList 1)}}
+                  {{snippet 'promotion-grid/sale-collection-img' imageSrc=productImage imageSrcSet=(append productImage ' 1x, ' productImage ' 2x') imgWrapperClass=../imgWrapperClass}}
+                </div>
+                {{/each}}
+              {{/if}}
+            </div>
+        </div>
+    </div>
+</a>

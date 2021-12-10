@@ -1,0 +1,25 @@
+<!-- 判断侧边栏是否有内容 helper product_collections_sidebar_isEmpty-->
+{{assign 'sidebarIsEmpty' (product_collections_sidebar_isEmpty blocks product_tags child_category_list navigations)}}
+
+{{#if (isTruthy sidebarIsEmpty)}}
+  <style>
+     {{!-- 如果filter无内容，强制隐藏移动端filter按钮 --}}
+      #product-list-list-header-filter {
+        display: none !important;
+      }
+      .product-list-product-number{
+        display: none!important;
+      }
+      .product-list-list-header-left{
+        display: block!important;
+      }
+      .product-list-list-header-right{
+        width: auto!important;
+      }
+  </style>
+{{/if}}
+
+{{snippet 'product/collections/collections-sidebar-filters-activeTagList' }}
+{{#each blocks}}
+  {{snippet 'product/collections/collections-sidebar-filters' sectionSettings=../settings supportMultiple=../settings.support_multiple }}
+{{/each}}

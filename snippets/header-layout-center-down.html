@@ -1,0 +1,55 @@
+<div class="header__layout-container">
+	<div class="header__layout-background">
+		<div class="container g-4 g-md-6 header__layout header__layout--{{section.settings.main_menu_alignment}}">
+
+      <div class="header__item header__item--left d-md-flex d-none">
+        <div class="header__nav-toggle j-header-nav-btn">
+          <a class="header__toggle-btn header__toggle-on">
+            {{ snippet 'icons/icon_menu' }}
+          </a>
+          <a class="header__toggle-btn header__toggle-off">
+            {{ snippet 'icons/icon_header_close' }}
+          </a>
+        </div>
+        {{#if section.settings.show_search}}
+          {{snippet 'header-search-bar' classnames="d-md-flex d-none middle" }}
+        {{/if}}
+      </div>
+
+			<div class="header__item header__item--logo">
+				{{snippet 'header-logo'}}
+			</div>
+
+			<div class="header__item header__item--buttons">
+				{{#if section.settings.show_search}}
+					{{snippet 'header-btns' btns='search' classnames='header__btn-search-mobile' }}
+				{{/if}}
+				{{#if section.settings.show_user_center}}
+					{{snippet 'header-btns' btns='user' classnames='d-none d-md-block' }}
+				{{/if}}
+				{{#if section.settings.show_cart}}
+					{{snippet 'header-btns' btns='cart' overlay_header=overlay_header}}
+				{{/if}}
+				<div class="j-header-drawer-btn header__nav--drawer d-md-none">
+					{{ snippet 'header-btns' btns='menu' }}
+				</div>
+			</div>
+
+		</div>
+
+		{{#if section.settings.show_search}}
+			<div class="header__search-mobile container g-4 g-md-6">
+				{{snippet 'header-search-bar' classnames="d-flex full" }}
+			</div>
+		{{/if}}
+
+    {{ snippet 'header-mini-cart' }}
+	</div>
+
+  <div class="header__text-center header__nav-container d-none d-md-block">
+    <div class="container g-4 g-md-6">
+      {{snippet 'desktop-site-nav' mega_menu_images=mega_menu_images main_menu=main_menu}}
+    </div>
+	</div>
+</div>
+

@@ -1,0 +1,50 @@
+{{#if info.coverImagePath}}
+  {{ assign 'coverImageData' (JSONparse info.coverImagePath) }}
+  {{ assign 'coverImage' (object_create url=coverImageData.mediaUrl alt=coverImageData.alt) }}
+{{/if}}
+
+{{#with this as |global|}}
+  {{#with info}}
+    {{ assign 'linkUrl' (append global.request.uri.path '/' id) }}
+
+    <div class="simple-blog">
+      {{#if global.showCover}}
+        <a class="simple-blog__image-wrapper" href="{{ linkUrl }}" title="{{ title }}">
+          {{#snippet
+            'global-image'
+            image=global.coverImage
+            image-class="simple-blog__image"
+            scale=0.75
+            custom-empty=true
+          }}
+            {{#child 'empty'}}
+              <div class="simple-blog__empty-img">
+                {{ snippet 'icons/icon_empty' }}
+              </div>
+            {{/child}}
+          {{/snippet}}
+        </a>
+      {{/if}}
+      <div class="simple-blog__main">
+        <div class="simple-blog__info">
+          <a href="{{ linkUrl }}" title="{{ title }}">
+            <h4 class="simple-blog__title title5">{{ title }}</h4>
+          </a>
+          {{#if (and (or publishTime author) (or global.showDate global.showAuthor))}}
+            <p class="simple-blog__extra-info body4">
+              {{ assign 'showDate' (and publishTime global.showDate) }}
+              {{ assign 'showAuthor' (and author global.showAuthor) }}
+              {{#if showDate}}<span class="text"><a href="{{ linkUrl }}" title="{{ title }}">{{dayjs method='format' init=publishTime format='MMM DD,YYYY' }}</a></span>{{/if}}
+              {{#if (and showDate showAuthor)}}<span class="separator">|</span>{{/if}}
+              {{#if showAuthor}}<span class="text"><a href="{{ linkUrl }}" title="{{ title }}">{{ author }}</a></span>{{/if}}
+            </p>
+          {{/if}}
+        </div>
+        <a href="{{ linkUrl }}" title="{{ title }}">
+          <p class="simple-blog__description body3">{{ digest }}</p>
+        </a>
+        <a class="simple-blog__btn btn-link" href="{{ linkUrl }}" title="{{ title }}">{{ t 'blogList.container.readBtnText' }}</a>
+      </div>
+    </div> 
+  {{/with}}
+{{/with}}
