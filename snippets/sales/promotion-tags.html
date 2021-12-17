@@ -9,7 +9,7 @@
   {{!-- 未展开默认展示2个 --}}
   <div class="sales__promotionTags-packUp">
     {{#each benefitConditions}}
-      {{#if @index "<" 2}}
+      {{#if @index "<" 3}}
         {{ snippet 'sales/promotion-tag' benefitCondition=this benefitType=../benefitType }}
       {{/if}}
     {{/each}}
@@ -26,7 +26,7 @@
 
   {{!-- 商品详情页展示布局 --}}
   <div class="sales__promotionTags-switch">
-    {{#if benefitConditions.length ">" 2}}
+    {{#if benefitConditions.length ">" 3}}
       {{!-- 是否展示展开更多按钮 --}}
       <i class="sales__promotionTags-switchIcon __sl-track_click" data-track-event_name="click_component" data-track-custom_component="view_more">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">

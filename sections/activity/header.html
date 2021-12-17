@@ -34,7 +34,14 @@
               <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd"
                 d="M8.25 16.5L8.25 7.5H8.75C9.30228 7.5 9.75 7.94772 9.75 8.5V15.5C9.75 16.0523 9.30228 16.5 8.75 16.5H8.25Z" fill="currentColor" />
             </svg>
-          </i>{{t 'sales.customer-purchase-limit' count=activity.acquirePerUserLimit}}
+          </i>
+          {{#if activity.userLimitedType '===' 2}}
+            {{!-- 每人每款商品限购 --}}
+            {{t 'sales.customer-purchase-limit-each-item' count=activity.acquirePerUserLimit}}
+          {{else}}
+            {{!-- 每人每活动限购 --}}
+            {{t 'sales.customer-purchase-limit' count=activity.acquirePerUserLimit}}
+          {{/if}}
         </div>
       {{/if}}
       <div class="body3 activity__limit-time">
@@ -55,7 +62,7 @@
   {{!-- 活动标签 --}}
   {{#if activity.benefitConditions.length}}
     <div class="activity__tags">
-      {{ snippet 'sales/promotion-tags' benefitType=activity.benefitType benefitConditions=activity.benefitConditions }}
+      {{ snippet 'sales/promotion-tags' benefitType=activity.benefitType benefitConditions=activity.benefitConditions  template = activity.discountStyleText}}
     </div>
   {{/if}}
 </div>

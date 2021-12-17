@@ -59,7 +59,8 @@
             }
           }
         }
-      }
+      },
+      "tags-label": "Menos:"
     },
     "bundle": {
       "title": "Los clientes que compraron este artículo también compraron",
@@ -67,10 +68,24 @@
     },
     "selected-count-activity-product": "Se han elegido {{selectCount}} artículo(s) para participar en el evento",
     "customer-purchase-limit": "Límite de compra {{count}} por persona",
+    "customer-purchase-limit-each-item": "Limitación de compra de {{count}} piezas por persona y modelo",
     "flash-sale-tips": "Límite de compra: {{count}}",
     "flash-sale-text": "Promoción de límite de tiempo",
     "hot-sale": "A la venta",
-    "sold": "Vendido {{count}}"
+    "sold": "Vendido {{count}}",
+    "discount-coupon": {
+      "coupon-label": "Descuento de código de cupón:",
+      "coupon-content": {
+        "threshold": "Comprar {threshold}",
+        "discount1": "{discount} de descuento",
+        "discount2": "Envío gratis",
+        "shippingRateBelow": "Costo de envío menos de {value}",
+        "until": "Válido hasta: {{endTime}}"
+      },
+      "couponNoFound": "No existe el código de descuento",
+      "applySuccess": "Se ha empleado exitosamente el código de descuento",
+      "applyFail": "Uso fallido"
+    }
   },
   "header": {
     "searchItems": "Búsqueda de artículos",
@@ -192,7 +207,12 @@
       "catalog": "Catálogo",
       "menuitem": "Todos los artículos"
     },
+    "filterMenu": {
+      "filter": "Filtrar",
+      "price": "Precio"
+    },
     "container": {
+      "from": "De {{price}}",
       "empty": {
         "desc": "No hay artículo en esta categoría",
         "title": "Perdón, no hay artículo ahora",
@@ -233,11 +253,7 @@
       },
       "show": "Mostrar",
       "viewAs": "Ver método",
-      "from": "De {{price}}"
-    },
-    "filterMenu": {
-      "filter": "Filtrar",
-      "price": "Precio"
+      "productsNum": "{{num}} productos"
     }
   },
   "productSearch": {
@@ -282,6 +298,11 @@
     "goToRakutenByLink": "Comprar en LOTTE",
     "goToYahooByLink": "Comprar en Yahoo",
     "recentlyViewedProducts": "Artículos que has visto",
+    "activityToast": {
+      "product-limit": "Puedes comprar simultáneamente {{stock}} artículos de precio preferencial como máximo",
+      "price-limit": "El precio preferencial de este artículo solo admite comprar {{num}} piezas",
+      "title-limit": "Los siguientes artículos exceden la restricción de compra"
+    },
     "tabs": {
       "description": "Descripción",
       "shippingPayment": "Envíos y pagos",
@@ -344,11 +365,6 @@
     },
     "previewLinkToast": "No se admite la operación para la previsualización de URL.",
     "morePaymentOptions": "Más opciones de pago",
-    "activityToast": {
-      "product-limit": "Puedes comprar simultáneamente {{stock}} artículos de precio preferencial como máximo",
-      "price-limit": "El precio preferencial de este artículo solo admite comprar {{num}} piezas",
-      "title-limit": "Los siguientes artículos exceden la restricción de compra"
-    },
     "bulkDiscount": {
       "title": "¡Compra Más para Ahorrar Más!"
     }
@@ -433,6 +449,9 @@
     "next-step-calc": "Calculado en el próximo paso",
     "delivery-fee": "Costo de envío",
     "pay-fee": "Comisión de pago",
+    "point-discount": "Descuento de puntos",
+    "point-discount-desc": "Puedes usar {{deductMemberPointNum}} puntos para deducir {{deductMemberPointAmount}}",
+    "point-discount-remark": "Gastar {{value}} puntos",
     "summary": "Total",
     "use-member-account-can": "¿Procesar el pago rápido con la membresía? Puede inmediatamente",
     "i-want-recieve-discount-info": "Deseo recibir las últimas noticias y promociones",
@@ -444,7 +463,7 @@
     "order-detail": "Detalles del pedido",
     "order-info": "Información del pedido",
     "order-status": "Estado del pedido",
-    "create-order-time": "Tiempo de ordenar",
+    "create-order-time": "Fecha de orden",
     "comment-product": "Valorar el artículo",
     "give-stars": "Calificar",
     "at-least-comment-one-before-submit": "Elige al menos uno para calificar antes de enviar",
@@ -538,7 +557,7 @@
     },
     "ship-to": "Enviar a",
     "self-mention": "Auto recogida",
-    "logistics-package": "Paquete de envío",
+    "logistics-package": "Tipo de entrega",
     "shopping-list": "Carro de compras",
     "item": "Artículo",
     "quantity": "Cantidad",
@@ -556,7 +575,8 @@
     "other-reason": "Otros motivos",
     "get-the-order": "Elige un complemento",
     "free": "Gratis",
-    "sku-changed-title": "artículos cambiados, ¿continúas con el pago?",
+    "sku-changed-title": "{{num}}artículos cambiados, ¿continúas con el pago?",
+    "sku-limit-title": "Los siguientes artículos exceden la restricción de compra, modifica el número",
     "sorry-all-sku-unusable": "Perdón, todos los artículos son inválidos, no se pudieron enviar pedido",
     "off-shelf": "Fuera de la estantería",
     "sold-out": "Agotado",
@@ -606,9 +626,6 @@
     },
     "coupon": "Cupón",
     "coupon-mutra-discount": "Este código de descuento no se puede usar junto con otras promociones u ofertas",
-    "activity-product-limit ": "Puedes comprar simultáneamente X artículos de precio preferencial como máximo",
-    "sku-limit-title": "Los siguientes artículos exceden la restricción de compra, modifica el número",
-    "activity-title-limit ": "Los siguientes artículos exceden la restricción de compra, ¿continúa pagando?",
     "activity-price-limit": "El precio preferencial de este artículo solo admite comprar X piezas",
     "policy": {
       "refund-policy": "Politica de reembolso",
@@ -617,12 +634,11 @@
     "tip": {
       "add-tip": "Aumentar la propina"
     },
-    "point-discount-desc": "Puedes usar {{deductMemberPointNum}} puntos para deducir {{deductMemberPointAmount}}",
-    "point-discount-remark": "Gastar {{value}}  puntos",
-    "point-discount": "Descuento de puntos",
     "free-shipping": "Envío gratis",
     "pod-link": "Click para ver",
-    "pod-pic": "Vista previa personalizada"
+    "pod-pic": "Vista previa personalizada",
+    "activity-product-limit": "Puedes comprar simultáneamente {{stock}} artículos de precio preferencial como máximo",
+    "activity-title-limit": "Los siguientes artículos exceden la restricción de compra, ¿continúa pagando?"
   },
   "payments-name": {
     "Paypal": "Paypal",
@@ -710,11 +726,11 @@
     "coupon-code-cannot-exceed-25-length": "El código de cupón no puede exceder los 25 caracteres",
     "discount-code-error": "Introduce un código de descuento válido",
     "discount-code-user-invalid": "Los artículos en tu carrito no son aplicables al código de descuento {{discountCode}}",
-    "mutual-excluded-by-time-limited": "Exclusión mutua del descuento por tiempo limitado y el código de cupón",
     "enter-correct-email": "Introduce el correo electrónico de formato correcto",
     "enter-correct-phone-number": "Introduce el número de celular de formato correcto",
     "phone-number-less-than-100": "El número de celular no puede exceder los 100 caracteres",
-    "shipping_plan_unavailable": "Código de cupón {{discountCode}}  no está aplicable a la forma de logística actual"
+    "shipping_plan_unavailable": "Código de cupón {{discountCode}} no está aplicable a la forma de logística actual",
+    "mutual-excluded-by-time-limited": "Exclusión mutua del descuento por tiempo limitado y el código de cupón"
   },
   "subscription": {
     "subscript-via-line-facebook": "Suscríbete a la notificación de pedido a través de LINE o Facebook",
@@ -752,7 +768,8 @@
     "no-comment-title-tip": "No hay reseñas ahora",
     "no-comment-first-tip": "ven a publicar la primera reseña",
     "on-img-upload-tip": "Subiendo imagen, envía más tarde",
-    "mobile-submit": "Enviar"
+    "mobile-submit": "Enviar",
+    "nickname": "Apodo"
   },
   "order": {
     "refund-methods": {
@@ -770,12 +787,12 @@
     "after-order-status": {
       "processing": "Procesando",
       "confirmed": "Confirmado",
+      "delivery-progress": "Confirmado",
       "cancelled": "Cancelado",
       "customer-canceled": "Cliente canceló",
       "customer-rejected": "Cliente rechazó",
       "merchant-cancellation": "Vendedor canceló",
-      "completed": "Terminado",
-      "delivery-progress": "Confirmado"
+      "completed": "Terminado"
     },
     "order-status": {
       "processing": "Procesando",
@@ -878,7 +895,7 @@
           "blank-trace": "Rastrea tu paquete clicando en el siguiente enlace:",
           "no-data2": "Actualmente no hay información de envío, consulta más tarde."
         },
-        "send-to-Messenger": " Enviar a Messenger",
+        "send-to-Messenger": "Enviar a Messenger",
         "send-to-Line": "Enviar a Line",
         "unshipped-order-num": "Procesando ({{num}} artículos)",
         "payment-deal": {
@@ -955,7 +972,7 @@
     "order-at": "Ordenado en:",
     "customer-info": "Información del cliente",
     "help-tips": "¿Necesitas ayuda? Ponte en contacto con nosotros: {{email}}",
-    "order-date": "Tiempo de ordenar"
+    "order-date": "Fecha de orden"
   },
   "promotion": {
     "full-reduction": "Reembolsos",
@@ -1154,18 +1171,18 @@
       "day4": "Jueves",
       "day5": "Viernes",
       "day6": "Sábado",
-      "month1": "1",
-      "month2": "2",
-      "month3": "3",
-      "month4": "4",
-      "month5": "5",
-      "month6": "6",
-      "month7": "7",
-      "month8": "8",
-      "month9": "9",
-      "month10": "10",
-      "month11": "11",
-      "month12": "12",
+      "month1": 1,
+      "month2": 2,
+      "month3": 3,
+      "month4": 4,
+      "month5": 5,
+      "month6": 6,
+      "month7": 7,
+      "month8": 8,
+      "month9": 9,
+      "month10": 10,
+      "month11": 11,
+      "month12": 12,
       "actionTypeDesc": {
         "addPoint": "Agregar subsidio de compras",
         "deductPoint": "Deducir subsidio de compras",
@@ -1203,15 +1220,11 @@
     "most-100-sku": "Agrega hasta 100 artículos",
     "most-buy-999": "Se puede agregar hasta 999 artículos al carrito",
     "stock-limit": "Queda {{stock}} artículo(s)",
-    "active-stock-limit-2 ": "El precio preferencial de este artículo solo admite comprar {{stock}} piezas",
-    "active-stock-limit-1 ": "Puedes comprar simultáneamente {{stock}} artículos de precio preferencial como máximo",
-    "activity-product-limit": "Puedes comprar simultáneamente {{stock}} artículos de precio preferencial como máximo",
-    "activity-price-limit": "El precio preferencial de este artículo solo admite comprar {{num}} piezas",
     "activity-title-limit": "Los siguientes artículos exceden la restricción de compra, ¿continúa pagando?",
-    "activity-product-limit ": "Puedes comprar simultáneamente {{stock}} artículos de precio preferencial como máximo",
-    "activity-title-limit ": "Los siguientes artículos exceden la restricción de compra, ¿continúa pagando?",
+    "activity-price-limit": "El precio preferencial de este artículo solo admite comprar {{num}} piezas",
     "active-stock-limit-2": "El precio preferencial de este artículo solo admite comprar {{stock}} piezas",
     "active-stock-limit-1": "Puedes comprar simultáneamente {{stock}} artículos de precio preferencial como máximo",
+    "activity-product-limit": "Puedes comprar simultáneamente {{stock}} artículos de precio preferencial como máximo",
     "view-link": "Click para ver",
     "view-pic": "Vista previa personalizada",
     "not-participation-offers": "No participar en la oferta",
@@ -1223,7 +1236,6 @@
     }
   },
   "user": {
-    "account": "Cuenta",
     "email": "E-mail",
     "phone": "Número de celular",
     "username": "Dirección de correo electrónico/Número de celular",
@@ -1286,7 +1298,8 @@
       "err3010": "El correo electrónico ha sido vinculado por otra cuenta",
       "err3014": "Error al enviar el código",
       "udbResponse": "Tu cuenta ha sido inhabilitada debido a una excepción, comunícate con el vendedor para levantar la prohibición"
-    }
+    },
+    "account": "CUENTA"
   },
   "address": {
     "dropdown": {
@@ -1294,7 +1307,7 @@
       "no-item-tips": "Actualmente no hay datos",
       "no-search-result": "Sin contenido coincidente"
     },
-    "mobile-errorMessage": "Introduce un número de celular válido",
+    "mobile-errorMessage": "Introduce un número de celular válido",
     "mobile-errorMessage-country-code": "No ingrese el código de área"
   },
   "oneShop": {
@@ -1305,18 +1318,18 @@
     "discountByNum": "{{n}}% de descuento por {{num}} artículos o más",
     "cutByAmount": "{{n}} de descuento por {{amount}} o más",
     "cutByNum": "{{n}} de descuento por {{num}} artículos o más",
-    "buyPop": "{{name}} compró este artículo hace {{minutes}} minutos",
     "buyNow": "Comprar ahora",
     "productDetail": "Detalles del artículo",
     "selectedProductSoldOut": "Inventario insuficiente del artículo seleccionado",
     "currentProductSoldOut": "Inventario insuficiente del artículo actual",
     "productNoSelect": "Elige la especificación del artículo",
     "orderAgain": "Por favor, reordena",
+    "soleOutSelectAgain": "El inventario del artículo actual es insuficiente, por favor elige de nuevo",
     "productFailure": "El artículo que elegiste ha caducado, por favor elige de nuevo",
     "comboSelectFailure": "El plan que elegiste ha caducado, por favor elige de nuevo",
     "comboFailure": "El plan ha caducado",
-    "soleOutSelectAgain": "El inventario del artículo actual es insuficiente, por favor elige de nuevo",
     "freeShipping": "Envío gratuito",
+    "buyPop": "{{name}} compró este artículo hace {{minutes}} minutos",
     "noProductDesc": "Actualmente no hay descripción del artículo",
     "TCTD0108": "No existe el método de envío, por favor elige de nuevo",
     "TCTD0118": "No existe la forma de pago, por favor elige de nuevo",
@@ -1328,7 +1341,7 @@
     "submit": "Enviar",
     "overLength": "La longitud introducida ha excedido el límite, por favor completa correctamente",
     "optional": "Opcional",
-    "bracket": " ({{content}})"
+    "bracket": "({{content}})"
   },
   "blogList": {
     "container": {
@@ -1341,7 +1354,7 @@
   },
   "blog": {
     "container": {
-      "backTo": "Regresar a {{collectionTitle}}"
+      "backTo": "Volver a {{{collectionTitle}}}"
     }
   }
 }

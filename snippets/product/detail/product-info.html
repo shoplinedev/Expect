@@ -18,7 +18,7 @@
   {{!-- 面包屑/标题 --}}
   {{#if id 'productDetail' }}
     <div class="product-crumbs">
-      <a class="body4" href="/">Home</a> /
+      <a class="body4" href="/">{{t 'common.home'}}</a> /
     </div>
     <h1 class="title title-font title4 text-left">{{ spuInfo.title }}</h1>
   {{else}}
@@ -79,7 +79,7 @@
                   {{/if}}
                 {{/currency_convert_price}}
               {{else}}
-                {{ discount_text }}%
+                {{ discount_text }}% OFF
               {{/if}}
             {{/if}}
           </div>
@@ -97,7 +97,7 @@
                 {{#if theme.settings.product_discount_style '===' 'number'}}
                   {{ currency_convert discount_text }}
                 {{else}}
-                  {{ discount_text }}%
+                  {{ discount_text }}% OFF
                 {{/if}}
               </span>
             {{/if}}
@@ -107,9 +107,9 @@
     </div>
   {{/not}}
   {{assign 'saleActivity' (itemAt product.productSale.saleActivities 0) }}
-  {{#if (and saleActivity.activityBenefitConditionList (compare id '===' 'productDetail') (isFalsey spuInfo.inquiry))}}
+  {{#if (and saleActivity.activityBenefitConditionList (compare id '===' 'productDetail') (isFalsey spuInfo.inquiry) (compare saleActivity.discountStyleType '===' 1))}}
     <div class="text-left product-info-salesTag" data-track-eventid="60006253" data-track-page="pdp">
-      {{ snippet 'sales/promotion-tags' benefitType=saleActivity.benefitType benefitConditions=saleActivity.activityBenefitConditionList scene='pdp'}}
+      {{ snippet 'sales/promotion-tags' benefitType=saleActivity.benefitType benefitConditions=saleActivity.activityBenefitConditionList scene='pdp' template = saleActivity.discountStyleText}}
     </div>
   {{/if}}
 

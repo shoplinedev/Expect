@@ -59,7 +59,8 @@
             }
           }
         }
-      }
+      },
+      "tags-label": "ส่วนลด:"
     },
     "bundle": {
       "title": "มักจะซื้อคู่กัน",
@@ -67,10 +68,24 @@
     },
     "selected-count-activity-product": "เลือกสินค้ากิจกรรม {{selectCount}}",
     "customer-purchase-limit": "จำกัด การซื้อ {{count}} ต่อคน",
+    "customer-purchase-limit-each-item": "จำกัดการซื้อ {{count}} ต่อผลิตภัณฑ์ต่อคน",
     "flash-sale-tips": "จำกัดการซื้อ {{count}} ชิ้น",
     "flash-sale-text": "แฟลชเซลล์",
     "hot-sale": "ลดกระหน่ำ",
-    "sold": "ขายแล้ว {{count}}"
+    "sold": "ขายแล้ว {{count}}",
+    "discount-coupon": {
+      "coupon-label": "รหัสส่วนลดข้อเสนอ:",
+      "coupon-content": {
+        "threshold": "ซื้อ{threshold}",
+        "discount1": "ลด {discount}",
+        "discount2": "ฟรีค่าระวาง",
+        "shippingRateBelow": "ค่าขนส่งน้อยกว่า {value}",
+        "until": "ใช้ได้จนถึง: {{endTime}}"
+      },
+      "couponNoFound": "ไม่มีรหัสโปรโมชั่น",
+      "applySuccess": "ใช้รหัสส่วนลดสำเร็จแล้ว",
+      "applyFail": "ใช้งานล้มเหลว"
+    }
   },
   "header": {
     "searchItems": "ค้นหาสินค้า",
@@ -84,22 +99,22 @@
     "noCurrencyFallback": "ไม่พบสกุลเงินที่เกี่ยวข้อง"
   },
   "common": {
-    "title": "ชื่อหัวข้อ",
+    "title": "หัวข้อ",
     "category": "หมวดหมู่",
-    "outOfStock": "สินค้าหมด",
+    "outOfStock": "สินค้าหมดสต็อก",
     "subTotal": "ยอดรวมย่อย",
     "descountPrice": "ราคาขาย",
     "total": "ยอดรวม",
     "soldOut": "ขายหมดแล้ว",
-    "settleMent": "การชำระ",
+    "settleMent": "ซื้อตอนนี้",
     "selectProduct": "เลือกสินค้า",
-    "hasSelected": "ได้เลือก",
-    "pieces": "จำนวนชิ้น",
+    "hasSelected": "เลือกแล้ว",
+    "pieces": "ชิ้น",
     "discount": "ส่วนลด",
-    "piece": "จำนวนชิ้น",
+    "piece": "ชิ้น",
     "remove": "เอาออก",
     "cancel": "ยกเลิก",
-    "tips": "เตือนความจำ",
+    "tips": "แจ้งเตือน",
     "checkout": "ชำระเงิน",
     "finish": "เสร็จสมบูรณ์",
     "username": "ชื่อ",
@@ -111,8 +126,8 @@
     "email": "อีเมล",
     "email2": "ไปรษณีย์",
     "order": "คำสั่งซื้อ",
-    "remain": "ที่เหลืออยู่",
-    "operation": "ทำการ",
+    "remain": "คงเหลือ",
+    "operation": "ดำเนินการ",
     "bank-name": "ชื่อธนาคาร",
     "bank-card-number": "หมายเลขบัตรธนาคาร",
     "bank-Account": "บัญชีธนาคาร",
@@ -123,7 +138,7 @@
     "mobile": "หมายเลขโทรศัพท์",
     "address": "ที่อยู่",
     "logistics": "การส่งสินค้า",
-    "backout": "เลิกทำ",
+    "backout": "เปลี่ยนกลับ",
     "confirm": "ตกลง",
     "upload": "อัปโหลด",
     "error-stack": "เรียงไม่ถูกต้อง",
@@ -161,7 +176,7 @@
     "returnInfo": "ข้อมูลการส่งคืนสินค้า",
     "rollback": "ถอน",
     "applyDate": "วันที่ร้องขอ",
-    "evaluation": "แสดงความคิดเห็น",
+    "evaluation": "รีวิว",
     "upload-image": "อัปโหลดภาพ",
     "page": "หน้า",
     "day": "วัน",
@@ -174,7 +189,7 @@
     "home": "หน้าหลัก"
   },
   "modal": {
-    "iKnow": "เข้าใจแล้ว",
+    "iKnow": "รับทราบ",
     "goCart": "ไปที่ตะกร้า",
     "exceedCartTitle": "ขออภัย! จำนวนผลิตภัณฑ์ในตะกร้าเกินจำนวนจำกัด",
     "exceedCartContent": "คุณสามารถเพิ่มผลิตภัณฑ์นี้ลงในตะกร้าของคุณได้โดยการซื้อแยกก่อนหรือลบผลิตภัณฑ์อื่นออกจากตะกร้าของคุณ"
@@ -197,6 +212,7 @@
       "price": "ราคา"
     },
     "container": {
+      "from": "จาก {{price}}",
       "empty": {
         "desc": "ไม่มีสินค้าในหมวดหมู่นี้",
         "title": "ขออภัย ผลิตภัณฑ์ยังไม่พร้อมใช้งานในขณะนี้",
@@ -206,14 +222,14 @@
         "text1": "สินค้าทั้งหมด",
         "text2": "เรียงลำดับตาม:",
         "recommend": "แนะนำ",
-        "option1": "วันที่ขาย (จากใหม่ไปเก่า)",
-        "option2": "วันที่ขาย (จากเก่าไปใหม่)",
-        "option3": "ราคา (สูงไปต่ำ)",
-        "option4": "ราคา (ต่ำไปสูง)",
         "sales": "ขายดีที่สุด",
         "newest": "สินค้าใหม่",
         "priceLowToHigh": "ราคาต่ำไปสูง",
-        "priceHighToLow": "ราคาสูงไปต่ำ"
+        "priceHighToLow": "ราคาสูงไปต่ำ",
+        "option1": "วันที่ขาย (จากใหม่ไปเก่า)",
+        "option2": "วันที่ขาย (จากเก่าไปใหม่)",
+        "option3": "ราคา (สูงไปต่ำ)",
+        "option4": "ราคา (ต่ำไปสูง)"
       },
       "network": {
         "message": "ไม่พบข้อมูลสินค้า โปรดลองอีกครั้งในภายหลัง"
@@ -237,7 +253,7 @@
       },
       "show": "แสดง",
       "viewAs": "ดูวิธีการ",
-      "from": "จาก {{price}}"
+      "productsNum": "สิ้นค้า {{num}} ชิ้น"
     }
   },
   "productSearch": {
@@ -273,7 +289,20 @@
   },
   "productDetail": {
     "goToAmazon": "ไปที่ Amazon",
+    "goOutsideOfAmazon": "ออกไปซื้อสินค้านอก Amazon",
+    "goOtherChannels": "ช่องทางการซื้ออื่น ๆ",
+    "toAmazon": "Amazon",
+    "goToRakuten": "LOTTE",
+    "goToYahoo": "Yahoo",
+    "goToAmazonByLink": "ไปที่ Amazon",
+    "goToRakutenByLink": "ไปที่ LOTTE",
+    "goToYahooByLink": "ไปที่ Yahoo",
     "recentlyViewedProducts": "สินค้าที่ดูล่าสุด",
+    "activityToast": {
+      "product-limit": "คุณสามารถซื้อสินค้าลดราคาได้สูงสุด {{stock}} ชิ้นในเวลาเดียวกัน",
+      "price-limit": "ราคาส่วนลดของผลิตภัณฑ์นี้รองรับเฉพาะการซื้อ {{num}} ชิ้น",
+      "title-limit": "สินค้าต่อไปนี้เกินขีดจำกัดการซื้อ โปรดแก้ไขจำนวน"
+    },
     "tabs": {
       "description": "คำอธิบาย",
       "shippingPayment": "การส่งสินค้าและการชำระเงิน",
@@ -314,14 +343,6 @@
     "no-product-introduction": "ยังไม่มีการแนะนำสินค้า",
     "no-logistics-and-payment-information": "ยังไม่มีข้อมูลโลจิสติกส์และวิธีการชำระเงิน",
     "addCart": "เพิ่ม",
-    "goOutsideOfAmazon": "ออกไปซื้อสินค้านอก Amazon",
-    "goToRakuten": "LOTTE",
-    "goToYahoo": "Yahoo",
-    "goToAmazonByLink": "ไปที่ Amazon",
-    "goToRakutenByLink": "ไปที่ LOTTE",
-    "goToYahooByLink": "ไปที่ Yahoo",
-    "goOtherChannels": "ช่องทางการซื้ออื่น ๆ",
-    "toAmazon": "Amazon",
     "default-placeholder": "โปรดเลือก {{attrName}}",
     "inquiry": {
       "inquiryTitle": "สอบถามสินค้า",
@@ -344,11 +365,6 @@
     },
     "previewLinkToast": "ลิงก์แสดงตัวอย่างไม่รองรับการดำเนินการนี้",
     "morePaymentOptions": "ตัวเลือกการชำระเงินเพิ่มเติม",
-    "activityToast": {
-      "product-limit": "คุณสามารถซื้อสินค้าลดราคาได้สูงสุด {{stock}} ชิ้นในเวลาเดียวกัน",
-      "price-limit": "ราคาส่วนลดของผลิตภัณฑ์นี้รองรับเฉพาะการซื้อ {{num}} ชิ้น",
-      "title-limit": "สินค้าต่อไปนี้เกินขีดจำกัดการซื้อ โปรดแก้ไขจำนวน"
-    },
     "bulkDiscount": {
       "title": "ยิ่งซื้อเยอะยิ่งประหยัด"
     }
@@ -425,6 +441,7 @@
     "product-offline": "สินค้าถูกนำออกจากชั้นวางแล้ว",
     "stock-not-enough": "สินค้าไม่เพียงพอ",
     "over-limit-number": "เกินโควต้าสินค้า",
+    "product-removed": "รายการสินค้าถูกลบแล้ว",
     "product-package": "แพ็คเกจ",
     "product-fee": "ยอดรวมย่อย",
     "product-tax": "ภาษีสินค้าอุปโภคบริโภค",
@@ -432,6 +449,9 @@
     "next-step-calc": "คำนวณในขั้นตอนถัดไป",
     "delivery-fee": "การส่งสินค้า",
     "pay-fee": "ค่าธรรมเนียมการชำระเงิน",
+    "point-discount": "ส่วนลดคะแนน",
+    "point-discount-desc": "คุณสามารถใช้คะแนน {{deductMemberPointNum}} เพื่อหัก {{deductMemberPointAmount}}",
+    "point-discount-remark": "ใช้ {{value}} แต้ม",
     "summary": "ยอดรวม",
     "use-member-account-can": "มีบัญชีผู้ใช้แล้วใช่ไหม",
     "i-want-recieve-discount-info": "ฉันต้องการรับข่าวสารและโปรโมชั่นล่าสุด",
@@ -555,15 +575,17 @@
     "other-reason": "เหตุผลอื่นๆ",
     "get-the-order": "ส่วนเสริม",
     "free": "ฟรี",
-    "sku-changed-title": "ตรวจพบการเปลี่ยนแปลงผลิตภัณฑ์ คุณแน่ใจหรือไม่ว่าต้องการดำเนินการชำระเงินต่อ",
+    "sku-changed-title": "{{num}}ตรวจพบการเปลี่ยนแปลงผลิตภัณฑ์ คุณแน่ใจหรือไม่ว่าต้องการดำเนินการชำระเงินต่อ",
+    "sku-limit-title": "สินค้าต่อไปนี้เกินขีดจำกัดการซื้อ โปรดแก้ไขจำนวน",
     "sorry-all-sku-unusable": "ขออภัย ไม่สามารถทำการสั่งซื้อได้เนื่องจากไม่มีผลิตภัณฑ์อีกต่อไป",
     "off-shelf": "นำออกจากชั้นวางแล้ว",
     "sold-out": "ขายหมดแล้ว",
-    "footer-all-rights-reserved": "{{name}} สงวนลิขสิทธิ์",
+    "has-removed": "ลบแล้ว",
+    "footer-all-rights-reserved": "Copyright © {{year}} {{name}} สงวนลิขสิทธิ์",
     "return-to-selection-goods": "ตัวเลือกสินค้าที่ส่งคืน",
     "return-apply-fail-SKU": "จำนวนผลิตภัณฑ์ที่ร้องขอเกินจำนวนจำกัด",
-    "return-apply-fail-min-amount": "สำหรับการคืนเงินเท่านั้น จำนวนเงินที่คืนจะต้องมากกว่า 0 หยวน",
     "return-apply-fail-max-amount": "จำนวนเงินที่คืนได้ไม่สามารถมากกว่าจำนวนเงินที่คืนได้สูงสุด",
+    "return-apply-fail-min-amount": "สำหรับการคืนเงินเท่านั้น จำนวนเงินที่คืนจะต้องมากกว่า 0 หยวน",
     "slpayment": {
       "cardNumber": {
         "placeholder": "หมายเลขบัตรเครดิต",
@@ -604,11 +626,6 @@
     },
     "coupon": "คูปอง",
     "coupon-mutra-discount": "ไม่สามารถใช้รหัสโปรโมชั่นนี้ร่วมกับโปรโมชั่นหรือข้อเสนออื่น ๆ",
-    "product-removed": "รายการสินค้าถูกลบแล้ว",
-    "has-removed": "ลบแล้ว",
-    "activity-product-limit ": "คุณสามารถซื้อสินค้าลดราคาได้สูงสุด X ชิ้นในเวลาเดียวกัน",
-    "sku-limit-title": "สินค้าต่อไปนี้เกินขีดจำกัดการซื้อ โปรดแก้ไขจำนวน",
-    "activity-title-limit ": "รายการต่อไปนี้เกินขีดจำกัดการซื้อ คุณจะชำระเงินต่อหรือไม่",
     "activity-price-limit": "ราคาส่วนลดของผลิตภัณฑ์นี้รองรับเฉพาะการซื้อ X ชิ้น",
     "policy": {
       "refund-policy": "นโยบายการคืนเงิน",
@@ -617,12 +634,11 @@
     "tip": {
       "add-tip": "เพิ่มทิป"
     },
-    "point-discount-desc": "คุณสามารถใช้คะแนน {{deductMemberPointNum}} เพื่อหัก {{deductMemberPointAmount}}",
-    "point-discount-remark": "ใช้ {{value}}  แต้ม",
-    "point-discount": "ส่วนลดคะแนน",
     "free-shipping": "จัดส่งฟรี",
     "pod-link": "คลิกเพื่อดู",
-    "pod-pic": "ตัวอย่างแบบกำหนดเอง"
+    "pod-pic": "ตัวอย่างแบบกำหนดเอง",
+    "activity-product-limit": "คุณสามารถซื้อสินค้าลดราคาได้สูงสุด {{stock}} ชิ้นในเวลาเดียวกัน",
+    "activity-title-limit": "รายการต่อไปนี้เกินขีดจำกัดการซื้อ คุณจะชำระเงินต่อหรือไม่"
   },
   "payments-name": {
     "Paypal": "Paypal",
@@ -710,11 +726,11 @@
     "coupon-code-cannot-exceed-25-length": "รหัสข้อเสนอต้องไม่เกิน 25 ตัวอักษร",
     "discount-code-error": "กรุณาใส่รหัสโปรโมชั่นที่ถูกต้อง",
     "discount-code-user-invalid": "สินค้าในรถเข็นของคุณใช้กับรหัสโปรโมชั่น {{discountCode}} ไม่ได้",
-    "mutual-excluded-by-time-limited": "กิจกรรมส่วนลดและรหัสคูปองในเวลาจำกัดไม่สามารถใช้ร่วมกันได้",
     "enter-correct-email": "โปรดใส่ที่อยู่อีเมลที่มีรูปแบบถูกต้อง",
     "enter-correct-phone-number": "โปรดใส่หมายเลขโทรศัพท์มือถือที่มีรูปแบบที่ถูกต้อง",
     "phone-number-less-than-100": "หมายเลขโทรศัพท์มือถือต้องมีความยาวไม่เกิน 100 ตัวอักษร",
-    "shipping_plan_unavailable": "รหัสคูปอง {{discountCode}}  ใช้ไม่ได้กับวิธีการขนส่งในปัจจุบัน"
+    "shipping_plan_unavailable": "รหัสคูปอง {{discountCode}} ใช้ไม่ได้กับวิธีการขนส่งในปัจจุบัน",
+    "mutual-excluded-by-time-limited": "กิจกรรมส่วนลดและรหัสคูปองในเวลาจำกัดไม่สามารถใช้ร่วมกันได้"
   },
   "subscription": {
     "subscript-via-line-facebook": "สมัครรับการแจ้งเตือนคำสั่งซื้อผ่านทาง LINE หรือ Facebook",
@@ -752,7 +768,8 @@
     "no-comment-title-tip": "ยังไม่มีความคิดเห็น",
     "no-comment-first-tip": "มาโพสต์ความคิดเห็นแรกเถอะ",
     "on-img-upload-tip": "กำลังอัปโหลดภาพ กรุณาส่งภายหลัง",
-    "mobile-submit": "ส่ง"
+    "mobile-submit": "ส่ง",
+    "nickname": "ชื่อเล่น"
   },
   "order": {
     "refund-methods": {
@@ -770,12 +787,12 @@
     "after-order-status": {
       "processing": "กำลังดำเนินการ",
       "confirmed": "ยืนยันแล้ว",
+      "delivery-progress": "ยืนยันแล้ว",
       "cancelled": "ยกเลิกแล้ว",
       "customer-canceled": "ลูกค้ายกเลิก",
       "customer-rejected": "ลูกค้าปฏิเสธ",
       "merchant-cancellation": "ผู้ขายยกเลิก",
-      "completed": "เสร็จสมบูรณ์",
-      "delivery-progress": "ยืนยันแล้ว"
+      "completed": "เสร็จสมบูรณ์"
     },
     "order-status": {
       "processing": "กำลังดำเนินการ",
@@ -788,6 +805,7 @@
     "pay-status": {
       "unpaid": "ไม่ได้ชำระเงิน",
       "paying": "กำลังชำระเงิน",
+      "partial-payment": "ชำระเงินบางส่วน",
       "already-paid": "ชำระเงินแล้ว",
       "failed": "การชำระเงินล้มเหลว",
       "timed-out": "หมดเวลาการชำระเงิน",
@@ -795,11 +813,11 @@
       "refunded": "คืนเงินแล้ว",
       "refund-failed": "การคืนเงินล้มเหลว",
       "partial-refund": "คืนเงินบางส่วน",
-      "abolished": "เป็นโมฆะ",
-      "partial-payment": "ชำระเงินบางส่วน"
+      "abolished": "เป็นโมฆะ"
     },
     "delivery-statusType": {
       "stocking": "กำลังเตรียมสินค้า",
+      "delivery-partial": "การจัดส่งบางส่วน",
       "cancelled": "ยกเลิกแล้ว",
       "cancel-delivery": "ยกเลิกการจัดส่ง",
       "shipping": "กำลังจัดส่ง",
@@ -807,8 +825,18 @@
       "arrived": "มาถึงแล้ว",
       "picked-up": "ได้รับแล้ว",
       "problem": "ปัญหาต่างๆ เช่น การจัดส่งที่มีปัญหาและคำสั่งซื้อที่หายจะต้องอาศัยความช่วยเหลือด้วยตนเอง",
-      "delivery-partial": "การจัดส่งบางส่วน",
       "delivery-return": "ส่งคืนแล้ว"
+    },
+    "oms-status": {
+      "executing": "กำลังดำเนินการ",
+      "prepare-pick": "พร้อมให้รับสินค้าแล้ว",
+      "shipped": "ส่งสินค้าแล้ว",
+      "cancelled": "ยกเลิกการจัดส่ง",
+      "arrived": "มาถึงแล้ว",
+      "picked": "เซ็นชื่อสำหรับ",
+      "returning": "กำลังส่งคืน",
+      "returned": "ส่งคืนแล้ว",
+      "problem": "มีปัญหาในการส่งสินค้า"
     },
     "order-list": {
       "empty-title": "ภาพ",
@@ -852,12 +880,12 @@
           "express": "ค่าระวาง",
           "express-surcharge": "ภาษีค่าระวาง",
           "channel-surcharge": "ค่าธรรมเนียมการชำระเงิน",
+          "discount-amount-name": "ส่วนลดที่กำหนดเองโดยร้านค้า",
+          "tip": "ทิป",
           "preferential": "สิทธิพิเศษ",
           "discount": "ส่วนลดรหัสคูปอง",
           "deduct-voucher": "จำนวนเงินบัตรกำนัล",
-          "total": "ยอดรวม",
-          "tip": "ทิป",
-          "discount-amount-name": "ส่วนลดที่กำหนดเองโดยร้านค้า"
+          "total": "ยอดรวม"
         },
         "order-num": "พัสดุ ({{num}})",
         "logistics": {
@@ -929,13 +957,13 @@
       "coms": {
         "operationLog": {
           "PayDealLog": {
+            "title": "การชำระเงินจำนวน {amount} ได้รับการดำเนินการผ่าน {payName} แล้ว",
             "payName": "ช่องทางการชำระเงิน",
             "amount": "จำนวน",
             "dealId": "หมายเลขซีเรียลการชำระเงิน",
             "createTime": "เวลาเริ่มต้นการชำระเงิน",
             "updateTime": "เวลาส่งคืนผลลัพธ์",
-            "status": "สถานะ",
-            "title": "การชำระเงินจำนวน {amount} ได้รับการดำเนินการผ่าน {payName} แล้ว"
+            "status": "สถานะ"
           }
         }
       }
@@ -944,18 +972,7 @@
     "order-at": "สั่งซื้อเมื่อ:",
     "customer-info": "ข้อมูลลูกค้า",
     "help-tips": "ต้องการความช่วยเหลือใช่หรือไม่ ติดต่อเรา: {{email}}",
-    "order-date": "เวลาสั่งของ",
-    "oms-status": {
-      "executing": "กำลังดำเนินการ",
-      "prepare-pick": "พร้อมให้รับสินค้าแล้ว",
-      "shipped": "ส่งสินค้าแล้ว",
-      "cancelled": "ยกเลิกการจัดส่ง",
-      "arrived": "มาถึงแล้ว",
-      "picked": "เซ็นชื่อสำหรับ",
-      "returning": "กำลังส่งคืน",
-      "returned": "ส่งคืนแล้ว",
-      "problem": "มีปัญหาในการส่งสินค้า"
-    }
+    "order-date": "เวลาสั่งของ"
   },
   "promotion": {
     "full-reduction": "ลดเมื่อถึงขั้นต่ำ",
@@ -1034,6 +1051,7 @@
     "edit": "แก้ไข",
     "cancel": "ยกเลิก",
     "save": "บันทึก",
+    "buy-record-entry": "สินค้าที่ซื้อแล้ว",
     "account": {
       "account-subscription-email": "ส่งไปยังอีเมล",
       "account-subscription-phone": "ส่งไปยังโทรศัพท์มือถือ",
@@ -1153,18 +1171,18 @@
       "day4": "วันพฤหัสบดี",
       "day5": "วันศุกร์",
       "day6": "วันเสาร์",
-      "month1": "1",
-      "month2": "2",
-      "month3": "3",
-      "month4": "4",
-      "month5": "5",
-      "month6": "6",
-      "month7": "7",
-      "month8": "8",
-      "month9": "9",
-      "month10": "10",
-      "month11": "11",
-      "month12": "12",
+      "month1": 1,
+      "month2": 2,
+      "month3": 3,
+      "month4": 4,
+      "month5": 5,
+      "month6": 6,
+      "month7": 7,
+      "month8": 8,
+      "month9": 9,
+      "month10": 10,
+      "month11": 11,
+      "month12": 12,
       "actionTypeDesc": {
         "addPoint": "เงินอุดหนุนการซื้อสินค้าใหม่",
         "deductPoint": "เงินอุดหนุนการซื้อสินค้าที่หักแล้ว",
@@ -1185,8 +1203,7 @@
       "loaded": "โหลดแล้ว",
       "empty2": "ไม่มีบันทึกอีก",
       "order": "ดูคำสั่งซื้อ:"
-    },
-    "buy-record-entry": "สินค้าที่ซื้อแล้ว"
+    }
   },
   "cart": {
     "render-empty-status": "ตะกร้าของคุณว่างเปล่า",
@@ -1203,15 +1220,11 @@
     "most-100-sku": "เพิ่มสินค้าได้สูงสุด 100 รายการ",
     "most-buy-999": "คุณสามารถเพิ่มได้มากสุด 999 รายการในตะกร้าสินค้า",
     "stock-limit": "เหลืออีก {{stock}} ชิ้น",
-    "active-stock-limit-2 ": "ราคาส่วนลดของผลิตภัณฑ์นี้รองรับเฉพาะการซื้อ {{stock}} ชิ้น",
-    "active-stock-limit-1 ": "คุณสามารถซื้อสินค้าลดราคาได้สูงสุด {{stock}} ชิ้นในเวลาเดียวกัน",
-    "activity-product-limit": "คุณสามารถซื้อสินค้าลดราคาได้สูงสุด {{stock}} ชิ้นในเวลาเดียวกัน",
-    "activity-price-limit": "ราคาส่วนลดของผลิตภัณฑ์นี้รองรับเฉพาะการซื้อ {{num}} ชิ้น",
     "activity-title-limit": "รายการต่อไปนี้เกินขีดจำกัดการซื้อ คุณจะชำระเงินต่อหรือไม่",
-    "activity-product-limit ": "คุณสามารถซื้อสินค้าลดราคาได้สูงสุด {{stock}} ชิ้นในเวลาเดียวกัน",
-    "activity-title-limit ": "รายการต่อไปนี้เกินขีดจำกัดการซื้อ คุณจะชำระเงินต่อหรือไม่",
+    "activity-price-limit": "ราคาส่วนลดของผลิตภัณฑ์นี้รองรับเฉพาะการซื้อ {{num}} ชิ้น",
     "active-stock-limit-2": "ราคาส่วนลดของผลิตภัณฑ์นี้รองรับเฉพาะการซื้อ {{stock}} ชิ้น",
     "active-stock-limit-1": "คุณสามารถซื้อสินค้าลดราคาได้สูงสุด {{stock}} ชิ้นในเวลาเดียวกัน",
+    "activity-product-limit": "คุณสามารถซื้อสินค้าลดราคาได้สูงสุด {{stock}} ชิ้นในเวลาเดียวกัน",
     "view-link": "คลิกเพื่อดู",
     "view-pic": "ตัวอย่างแบบกำหนดเอง",
     "not-participation-offers": "ไม่เข้าร่วมในข้อเสนอ",
@@ -1223,7 +1236,6 @@
     }
   },
   "user": {
-    "account": "บัญชี",
     "email": "ที่อยู่อีเมล",
     "phone": "หมายเลขโทรศัพท์มือถือ",
     "username": "ที่อยู่อีเมล/หมายเลขโทรศัพท์มือถือ",
@@ -1286,7 +1298,8 @@
       "err3010": "อีเมลถูกผูกโดยบัญชีอื่นแล้ว",
       "err3014": "ส่งรหัสไม่สำเร็จ",
       "udbResponse": "บัญชีถูกล็อคชั่วคราว"
-    }
+    },
+    "account": "บัญชีผู้ใช้"
   },
   "address": {
     "dropdown": {
@@ -1301,22 +1314,22 @@
     "noComment": "ยังไม่มีความคิดเห็น",
     "productCommentTitle": "รีวิวสินค้า（{{n}}）",
     "priceStart": "เริ่มต้นที่ {{n}}",
-    "discountByAmount": "ครบ{{Amount}} รับส่วนลด {{n}}%",
+    "discountByAmount": "ครบ{{amount}} รับส่วนลด {{n}}%",
     "discountByNum": "ซื้อ {{num}} ชิ้นรับส่วนลด {{n}}%",
     "cutByAmount": "ครบ {{amount}} รับส่วนลด {{n}}",
     "cutByNum": "ครบ{{num}}ชิ้นรับส่วนลด {{n}}",
-    "buyPop": "{{name}} ซื้อผลิตภัณฑ์นี้เมื่อ {{minutes}} นาทีที่แล้ว",
     "buyNow": "ซื้อเลย",
     "productDetail": "รายละเอียดสินค้า",
     "selectedProductSoldOut": "สินค้าคงคลังของสินค้าที่เลือกไม่เพียงพอ",
     "currentProductSoldOut": "สินค้าคงคลังของสินค้าในปัจจุบันไม่เพียงพอ",
     "productNoSelect": "โปรดเลือกข้อกำหนดของสินค้า",
     "orderAgain": "กรุณาทำการสั่งซื้อใหม่",
+    "soleOutSelectAgain": "สินค้าคงคลังของสินค้าในปัจจุบันไม่เพียงพอโปรดเลือกใหม่อีกครั้ง",
     "productFailure": "สินค้าที่คุณเลือกหมดอายุ โปรดเลือกใหม่อีกครั้ง",
     "comboSelectFailure": "แพ็กเกจที่คุณเลือกหมดอายุ โปรดเลือกใหม่อีกครั้ง",
     "comboFailure": "แพ็กเกจหมดอายุ",
-    "soleOutSelectAgain": "สินค้าคงคลังของสินค้าในปัจจุบันไม่เพียงพอโปรดเลือกใหม่อีกครั้ง",
     "freeShipping": "จัดส่งฟรี",
+    "buyPop": "{{name}} ซื้อผลิตภัณฑ์นี้เมื่อ {{minutes}} นาทีที่แล้ว",
     "noProductDesc": "ไม่มีรายละเอียดสินค้า",
     "TCTD0108": "ไม่พบช่องทางการขนส่ง โปรดเลือกใหม่อีกครั้ง",
     "TCTD0118": "ไม่พบวิธีการชำระเงิน โปรดเลือกใหม่อีกครั้ง",
@@ -1328,7 +1341,7 @@
     "submit": "ส่ง",
     "overLength": "ความยาวอินพุตเกินขีดจำกัด โปรดกรอกให้ถูกต้อง",
     "optional": "เลือกกรอก",
-    "bracket": " ({{content}})"
+    "bracket": "({{content}})"
   },
   "blogList": {
     "container": {
@@ -1341,7 +1354,7 @@
   },
   "blog": {
     "container": {
-      "backTo": "ย้อนกลับ {{collectionTitle}}"
+      "backTo": "กลับไป {{{collectionTitle}}}"
     }
   }
 }

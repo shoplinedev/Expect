@@ -29,8 +29,14 @@
   {{else}}
     {{ assign 'image' theme.setting.checkout_image.url }}
   {{/if}}
-  {{#if blog.coverImagePath}}
-    {{ assign 'image' blog.coverImagePath }}
+  {{ assign 'coverImagePath' (get 'coverImagePath' blog) }}
+  {{ assign 'coverImage' (object_create) }}
+  {{#if coverImagePath}}
+    {{ assign 'coverImageData' (JSONparse coverImagePath) }}
+    {{ assign 'coverImage' (object_create url=coverImageData.mediaUrl alt=coverImageData.alt) }}
+  {{/if}}
+  {{#if coverImage.url}}
+    {{ assign 'image' coverImage.url }}
   {{/if}}
   {{ assign 'type' 'blog' }}
   {{#if blog.seoDesc}}

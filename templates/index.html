@@ -116,7 +116,11 @@
 {{/partial}}
 
 {{#partial 'script'}}
-	<script src="{{ assets_url 'home/index.min.js' }}"></script>
+  {{#is_modern_browser}}
+  <script src="{{ assets_url 'home/index.min.modern.js' }}"></script>
+  {{else}}
+  <script src="{{ assets_url 'home/index.min.js' }}"></script>
+  {{/is_modern_browser}}
 {{/partial}}
 
 {{ content_for_index }}

@@ -59,7 +59,8 @@
             }
           }
         }
-      }
+      },
+      "tags-label": "割引:"
     },
     "bundle": {
       "title": "よく一緒に購入されている商品",
@@ -67,10 +68,24 @@
     },
     "selected-count-activity-product": "{{selectCount}} 件のイベント商品が選択されました",
     "customer-purchase-limit": "1人あたりの購入制限{{count}}",
+    "customer-purchase-limit-each-item": "各商品はお一人様最大{{count}}件購入ができます",
     "flash-sale-tips": "最大注文個数：{{count}}点",
     "flash-sale-text": "タイムセール",
     "hot-sale": "好評発売中",
-    "sold": "{{count}} 予約済み"
+    "sold": "{{count}} 予約済み",
+    "discount-coupon": {
+      "coupon-label": "クーポンコードの提供:",
+      "coupon-content": {
+        "threshold": "{threshold}買う",
+        "discount1": "{discount} オフ",
+        "discount2": "送料無料",
+        "shippingRateBelow": "送料が{value}未満となる",
+        "until": "有効期限は{{endTime}}までです"
+      },
+      "couponNoFound": "クーポンコードが存在しません",
+      "applySuccess": "クーポンコード適用成功",
+      "applyFail": "適用失敗"
+    }
   },
   "header": {
     "searchItems": "商品を検索します",
@@ -197,6 +212,7 @@
       "price": "価格"
     },
     "container": {
+      "from": "{{price}} より",
       "empty": {
         "desc": "このカテゴリには商品がありません",
         "title": "申し訳ありません。現在この商品はお求めいただけません",
@@ -206,14 +222,14 @@
         "text1": "すべての商品",
         "text2": "並べ替え：",
         "recommend": "お勧め",
-        "option1": "販売日（新しい順）",
-        "option2": "販売日（古い順）",
-        "option3": "価格（高い順）",
-        "option4": "価格（安い順）",
         "sales": "人気順",
         "newest": "新着順",
         "priceLowToHigh": "価格が安い順",
-        "priceHighToLow": "価格が高い順"
+        "priceHighToLow": "価格が高い順",
+        "option1": "販売日（新しい順）",
+        "option2": "販売日（古い順）",
+        "option3": "価格（高い順）",
+        "option4": "価格（安い順）"
       },
       "network": {
         "message": "商品データが見つかりません。しばらくしてからもう一度お試しください"
@@ -237,7 +253,7 @@
       },
       "show": "見せる",
       "viewAs": "として表示",
-      "from": "{{price}} より"
+      "productsNum": "{{num}} 商品"
     }
   },
   "productSearch": {
@@ -282,6 +298,11 @@
     "goToRakutenByLink": "楽天 で購入する",
     "goToYahooByLink": "ヤフー で購入する",
     "recentlyViewedProducts": "最近チェックした商品",
+    "activityToast": {
+      "product-limit": "最大{{stock}}点の割引商品を同時に購入できます",
+      "price-limit": "本商品の特別価格は{{num}}点の購入のみをサポートしています",
+      "title-limit": "以下の商品が購入制限を超えていますので"
+    },
     "tabs": {
       "description": "説明",
       "shippingPayment": "配送と支払い",
@@ -344,11 +365,6 @@
     },
     "previewLinkToast": "リンクプレビューの操作はサポートされていません",
     "morePaymentOptions": "その他の支払いオプション",
-    "activityToast": {
-      "product-limit": "最大{{stock}}点の割引商品を同時に購入できます",
-      "price-limit": "本商品の特別価格は{{num}}点の購入のみをサポートしています",
-      "title-limit": "以下の商品が購入制限を超えていますので"
-    },
     "bulkDiscount": {
       "title": "もっと買うもっと節約！"
     }
@@ -425,6 +441,7 @@
     "product-offline": "商品は棚から削除されます",
     "stock-not-enough": "商品が不十分です",
     "over-limit-number": "商品の割り当て分を超過しました",
+    "product-removed": "この商品は既に削除されました。",
     "product-package": "パッケージ",
     "product-fee": "小計",
     "product-tax": "物品税",
@@ -432,6 +449,9 @@
     "next-step-calc": "次の手順で計算されます",
     "delivery-fee": "配送",
     "pay-fee": "支払料金",
+    "point-discount": "ポイント割引",
+    "point-discount-desc": "{{deductMemberPointNum}}ポイントで{{deductMemberPointAmount}}を差し引くことができます",
+    "point-discount-remark": "{{value}} ポイントをコストします",
     "summary": "合計",
     "use-member-account-can": "すでにアカウントをお持ちですか？",
     "i-want-recieve-discount-info": "最新のニュースやプロモーションを受け取る",
@@ -555,15 +575,17 @@
     "other-reason": "その他の理由",
     "get-the-order": "追加",
     "free": "無料",
-    "sku-changed-title": "商品が変更されています。支払いを続行してよろしいですか？",
+    "sku-changed-title": "{{num}}商品が変更されています。支払いを続行してよろしいですか？",
+    "sku-limit-title": "以下の商品が購入制限を超えていますので、購入数を変更してください",
     "sorry-all-sku-unusable": "申し訳ありません。商品は現在無効なため、注文できません",
     "off-shelf": "棚から削除されました",
     "sold-out": "完売",
-    "footer-all-rights-reserved": "{{name}} 無断転載を禁じます",
+    "has-removed": "既に削除されました",
+    "footer-all-rights-reserved": "Copyright © {{year}} {{name}} 無断転載を禁じます",
     "return-to-selection-goods": "返却された商品の選択",
     "return-apply-fail-SKU": "リクエストされた商品数が制限を超えています",
-    "return-apply-fail-min-amount": "払い戻しの場合のみ、払い戻し金額は 0 CNY 以上でなければなりません",
     "return-apply-fail-max-amount": "払い戻し可能金額は、払い戻し可能最大金額以内でなければなりません",
+    "return-apply-fail-min-amount": "払い戻しの場合のみ、払い戻し金額は 0 CNY 以上でなければなりません",
     "slpayment": {
       "cardNumber": {
         "placeholder": "クレジットカード番号",
@@ -604,11 +626,6 @@
     },
     "coupon": "クーポン",
     "coupon-mutra-discount": "このクーポンコードはほかのプロモーションと割引と一緒に使用できません。",
-    "product-removed": "この商品は既に削除されました。",
-    "has-removed": "既に削除されました",
-    "activity-product-limit ": "最大X点の割引商品を同時に購入できます",
-    "sku-limit-title": "以下の商品が購入制限を超えていますので、購入数を変更してください",
-    "activity-title-limit ": "以下の商品が購入制限を超えていますが、引き続き支払いますか？",
     "activity-price-limit": "本商品の特別価格はX点の購入のみをサポートしています",
     "policy": {
       "refund-policy": "代金返却方針",
@@ -617,12 +634,11 @@
     "tip": {
       "add-tip": "チップを追加"
     },
-    "point-discount-desc": "{{deductMemberPointNum}}ポイントで{{deductMemberPointAmount}}を差し引くことができます",
-    "point-discount-remark": "{{value}} ポイントをコストします",
-    "point-discount": "ポイント割引",
     "free-shipping": "送料無料",
     "pod-link": "クリックして表示",
-    "pod-pic": "カスタムプレビュー"
+    "pod-pic": "カスタムプレビュー",
+    "activity-product-limit": "最大{{stock}}点の割引商品を同時に購入できます",
+    "activity-title-limit": "以下の商品が購入制限を超えていますが、引き続き支払いますか？"
   },
   "payments-name": {
     "Paypal": "Paypal",
@@ -710,11 +726,11 @@
     "coupon-code-cannot-exceed-25-length": "クーポンコードは 25 文字以内で入力してください",
     "discount-code-error": "有効なるクーポンコードを入力してください。",
     "discount-code-user-invalid": "{{discountCode}}のクーポンコードがカード内の商品に適用できません。",
-    "mutual-excluded-by-time-limited": "期間限定割引とクーポンコードを組み合わせて使用​​することができません。",
     "enter-correct-email": "有効な形式の電子メールアドレスを入力してください",
     "enter-correct-phone-number": "有効な形式の携帯電話番号を入力してください",
     "phone-number-less-than-100": "携帯電話番号は 100 文字以内で入力してください",
-    "shipping_plan_unavailable": "{{discountCode}} クーポンコードは今の配送方法に適用されていません"
+    "shipping_plan_unavailable": "{{discountCode}} クーポンコードは今の配送方法に適用されていません",
+    "mutual-excluded-by-time-limited": "期間限定割引とクーポンコードを組み合わせて使用​​することができません。"
   },
   "subscription": {
     "subscript-via-line-facebook": "LINE または Facebook 経由で注文通知を購読する",
@@ -752,7 +768,8 @@
     "no-comment-title-tip": "まだカスタマーレビューはありません",
     "no-comment-first-tip": "最初のレビューを投稿しましょう",
     "on-img-upload-tip": "ただいま画像がアップロードしています、後で送信してください",
-    "mobile-submit": "送信"
+    "mobile-submit": "送信",
+    "nickname": "ニックネーム"
   },
   "order": {
     "refund-methods": {
@@ -770,12 +787,12 @@
     "after-order-status": {
       "processing": "処理中",
       "confirmed": "確認済み",
+      "delivery-progress": "確認しました",
       "cancelled": "キャンセル済み",
       "customer-canceled": "お客様がキャンセルしました",
       "customer-rejected": "お客様が拒否しました",
       "merchant-cancellation": "販売者がキャンセルしました",
-      "completed": "完了",
-      "delivery-progress": "確認しました"
+      "completed": "完了"
     },
     "order-status": {
       "processing": "処理中",
@@ -788,6 +805,7 @@
     "pay-status": {
       "unpaid": "支払いなし",
       "paying": "支払い",
+      "partial-payment": "一部支払い済み",
       "already-paid": "支払い済み",
       "failed": "支払いに失敗しました",
       "timed-out": "支払いがタイムアウトしました",
@@ -795,11 +813,11 @@
       "refunded": "払い戻し済み",
       "refund-failed": "払い戻しに失敗しました",
       "partial-refund": "部分的に払い戻し",
-      "abolished": "無効になりました",
-      "partial-payment": "一部支払い済み"
+      "abolished": "無効になりました"
     },
     "delivery-statusType": {
       "stocking": "商品を準備中",
+      "delivery-partial": "一部出荷",
       "cancelled": "キャンセル済み",
       "cancel-delivery": "出荷をキャンセルする",
       "shipping": "配送中",
@@ -807,8 +825,18 @@
       "arrived": "到着",
       "picked-up": "受領",
       "problem": "出荷の問題や注文の紛失などの問題には、手動サポートが必要です",
-      "delivery-partial": "一部出荷",
       "delivery-return": "返品済み"
+    },
+    "oms-status": {
+      "executing": "実行中",
+      "prepare-pick": "集荷準備完了",
+      "shipped": "出荷済み",
+      "cancelled": "出荷キャンセル",
+      "arrived": "到着",
+      "picked": "サイン済み",
+      "returning": "返品中",
+      "returned": "返品済み",
+      "problem": "出荷の問題"
     },
     "order-list": {
       "empty-title": "img",
@@ -852,12 +880,12 @@
           "express": "貨物",
           "express-surcharge": "貨物税",
           "channel-surcharge": "支払い手数料",
+          "discount-amount-name": "セラーカスタム割引",
+          "tip": "ヒント",
           "preferential": "特典",
           "discount": "クーポンコードの割引",
           "deduct-voucher": "バウチャー金額",
-          "total": "合計",
-          "tip": "ヒント",
-          "discount-amount-name": "セラーカスタム割引"
+          "total": "合計"
         },
         "order-num": "パッケージ（{{num}}）",
         "logistics": {
@@ -929,13 +957,13 @@
       "coms": {
         "operationLog": {
           "PayDealLog": {
+            "title": "{amount}の金額は{payName}で支払いました",
             "payName": "支払いチャネル",
             "amount": "量",
             "dealId": "支払いシリアル番号",
             "createTime": "支払い開始時間",
             "updateTime": "結果時間を返す",
-            "status": "状態",
-            "title": "{amount}の金額は{payName}で支払いました"
+            "status": "状態"
           }
         }
       }
@@ -944,18 +972,7 @@
     "order-at": "注文：",
     "customer-info": "お客様情報",
     "help-tips": "何かお困りですか？お問い合わせ: {{email}}",
-    "order-date": "注文時間",
-    "oms-status": {
-      "executing": "実行中",
-      "prepare-pick": "集荷準備完了",
-      "shipped": "出荷済み",
-      "cancelled": "出荷キャンセル",
-      "arrived": "到着",
-      "picked": "サイン済み",
-      "returning": "返品中",
-      "returned": "返品済み",
-      "problem": "出荷の問題"
-    }
+    "order-date": "注文時間"
   },
   "promotion": {
     "full-reduction": "金額プロモーション",
@@ -1154,18 +1171,18 @@
       "day4": "木曜日",
       "day5": "金曜日",
       "day6": "土曜日",
-      "month1": "1",
-      "month2": "2",
-      "month3": "3",
-      "month4": "4",
-      "month5": "5",
-      "month6": "6",
-      "month7": "7",
-      "month8": "8",
-      "month9": "9",
-      "month10": "10",
-      "month11": "11",
-      "month12": "12",
+      "month1": 1,
+      "month2": 2,
+      "month3": 3,
+      "month4": 4,
+      "month5": 5,
+      "month6": 6,
+      "month7": 7,
+      "month8": 8,
+      "month9": 9,
+      "month10": 10,
+      "month11": 11,
+      "month12": 12,
       "actionTypeDesc": {
         "addPoint": "新しい買い物補助金",
         "deductPoint": "差し引かれた買い物補助金",
@@ -1203,15 +1220,11 @@
     "most-100-sku": "商品を最大 100 個追加できます",
     "most-buy-999": "1 つの製品を最大 999 個購入できます",
     "stock-limit": "{{stock}} pieces in stock",
-    "active-stock-limit-2 ": "本商品の特別価格は{{stock}}点の購入のみをサポートしています",
-    "active-stock-limit-1 ": "最大{{stock}}点の割引商品を同時に購入できます",
-    "activity-product-limit": "最大{{stock}}点の割引商品を同時に購入できます",
-    "activity-price-limit": "本商品の特別価格は{{num}}点の購入のみをサポートしています",
     "activity-title-limit": "以下の商品が購入制限を超えていますが、引き続き支払いますか？",
-    "activity-product-limit ": "最大{{stock}}点の割引商品を同時に購入できます",
-    "activity-title-limit ": "以下の商品が購入制限を超えていますが、引き続き支払いますか？",
+    "activity-price-limit": "本商品の特別価格は{{num}}点の購入のみをサポートしています",
     "active-stock-limit-2": "本商品の特別価格は{{stock}}点の購入のみをサポートしています",
     "active-stock-limit-1": "最大{{stock}}点の割引商品を同時に購入できます",
+    "activity-product-limit": "最大{{stock}}点の割引商品を同時に購入できます",
     "view-link": "クリックして表示",
     "view-pic": "カスタムプレビュー",
     "not-participation-offers": "オファーに参加していません",
@@ -1223,7 +1236,6 @@
     }
   },
   "user": {
-    "account": "アカウント",
     "email": "メールアドレス",
     "phone": "携帯電話番号",
     "username": "メールアドレス/携帯電話番号",
@@ -1286,7 +1298,8 @@
       "err3010": "このメールアドレスは他のアカウントに関連付けられています",
       "err3014": "コード送信エラー",
       "udbResponse": "アカウントの一時的ロック"
-    }
+    },
+    "account": "アカウント"
   },
   "address": {
     "dropdown": {
@@ -1305,30 +1318,30 @@
     "discountByNum": "{{num}}点以上購入すると、{{n}}%割引",
     "cutByAmount": "{{amount}}以上購入すると、￥{{n}} OFF",
     "cutByNum": "{{num}}点以上購入すると、￥{{n}} OFF",
-    "buyPop": "{{name}}は{{minutes}}分間前にこの商品を購入しました",
     "buyNow": "今すぐ買う",
     "productDetail": "商品の詳細情報",
     "selectedProductSoldOut": "お選びした商品の在庫が足りません。",
     "currentProductSoldOut": "この商品の在庫が足りません。",
     "productNoSelect": "商品の規格を選択してください。",
     "orderAgain": "改めてご注文してください。",
+    "soleOutSelectAgain": "この商品の在庫が足りませんので、改めて選択してください。",
     "productFailure": "お選びした商品が無効になっておりましたので、改めて選択してください。",
     "comboSelectFailure": "お選びしたセットが無効になっておりましたので、改めて選択してください。",
     "comboFailure": "セットが無効になっておりました。",
-    "soleOutSelectAgain": "この商品の在庫が足りませんので、改めて選択してください。",
     "freeShipping": "送料無料",
+    "buyPop": "{{name}}は{{minutes}}分間前にこの商品を購入しました",
     "noProductDesc": "商品の説明がありません。",
     "TCTD0108": "この配送方法は無効のために、改めて選択してください。",
     "TCTD0118": "この支払方法は無効のために、改めて選択してください。",
     "TCTD0121": "このマーケティング活動が変わりますのために、改めて選択してください。",
+    "TCTD0112": "選択した製品の有効期限が切れています。もう一度選択してください",
     "defaultErrorCodeMsg": "ネットワーク接続異常です。後でページをリフレッシュしてもう一度試してください。",
     "comment": "コメント（オプション）",
     "country": "国",
     "submit": "送信",
     "overLength": "入力長が制限を超えています。正しく入力してください",
     "optional": "オプション",
-    "bracket": "（{{content}}）",
-    "TCTD0112": "選択した製品の有効期限が切れています。もう一度選択してください"
+    "bracket": "（{{content}}）"
   },
   "blogList": {
     "container": {
@@ -1341,7 +1354,7 @@
   },
   "blog": {
     "container": {
-      "backTo": "戻る {{collectionTitle}}"
+      "backTo": "帰ります {{{collectionTitle}}}"
     }
   }
 }

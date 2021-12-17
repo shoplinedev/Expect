@@ -38,8 +38,8 @@
           },
           "threshold1": {
             "step1": "Compre mais de {{threshold}} unidades e economize {{willSave}}",
-            "step3": "Parabéns! Você economizou {{saved}}!",
-            "step2": "Economizou {{saved}} já! {{br}} compre mais de {{threshold}} unidades e economize {{willSave}}"
+            "step2": "Economizou {{saved}} já! {{br}} compre mais de {{threshold}} unidades e economize {{willSave}}",
+            "step3": "Parabéns! Você economizou {{saved}}!"
           }
         },
         "benefit11": {
@@ -59,7 +59,8 @@
             }
           }
         }
-      }
+      },
+      "tags-label": "Redução de:"
     },
     "bundle": {
       "title": "Comprados frequentemente juntos",
@@ -67,10 +68,24 @@
     },
     "selected-count-activity-product": "Selecionou {{selectCount}} protudos deste atividade",
     "customer-purchase-limit": "Limite de {{count}} unidades por pessoa",
+    "customer-purchase-limit-each-item": "Cada pessoa pode comprar apenas {{count}} peças de cada produto.",
     "flash-sale-tips": "Limite de compra: {{count}} unidade",
     "flash-sale-text": "Promoção por tempo limitado",
     "hot-sale": "Venda quente",
-    "sold": "Vendido{{count}}"
+    "sold": "Vendido{{count}}",
+    "discount-coupon": {
+      "coupon-label": "Oferta de código promocional:",
+      "coupon-content": {
+        "threshold": "Comprar {threshold}",
+        "discount1": "{discount} de desconto",
+        "discount2": "Frete grátis",
+        "shippingRateBelow": "Custo de frete abaixo de {value}",
+        "until": "Válido até: {{endTime}}"
+      },
+      "couponNoFound": "O código promocional não existe",
+      "applySuccess": "Código de desconto aplicado com sucesso",
+      "applyFail": "Falha na aplicação"
+    }
   },
   "header": {
     "searchItems": "Buscar produtos",
@@ -78,10 +93,10 @@
     "navItemAll": "Todos",
     "search": "Buscar",
     "cart": "Carrinho",
+    "center": "Centro de conta",
     "login": "Entre",
     "logout": "Sair",
-    "noCurrencyFallback": "Nenhuma moeda relevante encontrada",
-    "center": "Centro de conta"
+    "noCurrencyFallback": "Nenhuma moeda relevante encontrada"
   },
   "common": {
     "title": "Título",
@@ -108,6 +123,7 @@
     "meno": "Notas",
     "package": "Pacote",
     "login": "Entre",
+    "email": "Email",
     "email2": "Email",
     "order": "Pedidos",
     "remain": "Restante",
@@ -170,8 +186,7 @@
     "continue": "Continue",
     "contactUs": "Contate-nos",
     "productError": "Sem dados de produto atual, tente novamente mais tarde",
-    "email": "Email",
-    "home": " Página inicial"
+    "home": "Página inicial"
   },
   "modal": {
     "iKnow": "Entendi",
@@ -181,11 +196,11 @@
   },
   "footer": {
     "followus": "Siga-nos",
+    "subscribeBarPlaceholder": "Email",
     "subscribeSuccess": "Inscrição com sucesso",
     "subscribeError": "Falha na inscrição",
     "subscribeRegExpError": "Formato do endereço de e-mail errado",
-    "copyright": "Todos os direitos reservados",
-    "subscribeBarPlaceholder": "Email"
+    "copyright": "Todos os direitos reservados"
   },
   "productList": {
     "gategoryMenu": {
@@ -197,6 +212,7 @@
       "price": "Preço"
     },
     "container": {
+      "from": "de {{price}}",
       "empty": {
         "desc": "Não há produtos na categoria atual",
         "title": "Desculpe, nenhum produto",
@@ -222,22 +238,22 @@
         "error1": "Este produto tem apenas {{stock}} peças restantes, ajuste a quantidade",
         "error2": "Este produto só pode ser comprado em {{saleMax}} peças, ajuste a quantidade!",
         "error3": "Selecione a quantidade de compra!",
+        "error4": "Selecione as especificações do produto primeiro!",
         "error5": "O produto atual está esgotado",
         "error6": "O produto atual foi removido",
-        "addToCart": "Adicionar ao carrinho",
-        "error4": "Selecione as especificações do produto primeiro!"
+        "addToCart": "Adicionar ao carrinho"
       },
       "listItem": {
         "sold": {
           "out": "Esgotado"
         },
+        "off": "- {{value}}%",
         "addToCart": "Adicionar ao carrinho",
-        "toDetail": "Ver detalhes",
-        "off": "- {{value}}%"
+        "toDetail": "Ver detalhes"
       },
       "show": "Exposição",
       "viewAs": "Método de visualização",
-      "from": "de {{price}}"
+      "productsNum": "{{num}} produtos"
     }
   },
   "productSearch": {
@@ -282,6 +298,11 @@
     "goToRakutenByLink": "Faça compras na Lotte",
     "goToYahooByLink": "Faça compras no Yahoo",
     "recentlyViewedProducts": "Produtos vistos recentemente",
+    "activityToast": {
+      "product-limit": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
+      "price-limit": "O preço com desconto deste produto apenas suporta a compra de {{num}} unidades",
+      "title-limit": "Os seguintes produtos excedem o limite de compra"
+    },
     "tabs": {
       "description": "Descrição",
       "shippingPayment": "Logística e pagamento",
@@ -344,11 +365,6 @@
     },
     "previewLinkToast": "O link de visualização não suporta esta operação",
     "morePaymentOptions": "Mais opções de pagamento",
-    "activityToast": {
-      "product-limit": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
-      "price-limit": "O preço com desconto deste produto apenas suporta a compra de {{num}} unidades",
-      "title-limit": "Os seguintes produtos excedem o limite de compra"
-    },
     "bulkDiscount": {
       "title": "Compre mais economize mais"
     }
@@ -366,6 +382,7 @@
     "man-money-share": "Aproveite com uma compra de {{money}} ou mais",
     "man-piece-reduce": "de desconto para {{count}} ou mais",
     "man-money-reduce": "de desconto com uma compra de {{money}} ou mais",
+    "invalid-product": "Produtos vencidos",
     "delete-invalid-product": "Excluir produtos inválidos",
     "remove-product": "Remover produto",
     "sure-remove-this-product": "Você tem certeza de que quer remover este produto?",
@@ -395,6 +412,7 @@
     "service-fee": "Taxa de serviço",
     "pay-way": "Formas de pagamento",
     "pay-way-logo-and-more": "Mais",
+    "jump-to-pay-longtips": "Clique em \"Complete Pedido\" e você será redirecionado para {{payChannel}} para pagamento seguro",
     "reciever-info": "Informações de entrega",
     "reciever-to": "Informações de entrega",
     "use-customer-info": "Use as informações do cliente",
@@ -431,6 +449,9 @@
     "next-step-calc": "Calculado na próxima etapa",
     "delivery-fee": "Frete",
     "pay-fee": "Taxa de serviço de pagamento",
+    "point-discount": "Desconto de pontos",
+    "point-discount-desc": "Pode usar {{deductMemberPointNum}} pontos para deduzir {{deductMemberPointAmount}}",
+    "point-discount-remark": "Gastar {{value}} pontos",
     "summary": "Total",
     "use-member-account-can": "Faça checkout expresso como membro? Pode imediatamente",
     "i-want-recieve-discount-info": "Eu gostaria de receber as últimas informações e ofertas especiais",
@@ -448,6 +469,7 @@
     "at-least-comment-one-before-submit": "Selecione pelo menos um item para avaliar antes de submeter",
     "leave-your-words": "Deixe seus sentimentos de uso para referência a outros compradores ~",
     "is-paying": "Pagamento em andamento",
+    "you-are-paying-wait-result": "Seu pedido de pagamento foi enviada e está aguardando {{payChannel}} retornar o resultado do pagamento",
     "need-pay": "Deve pagar",
     "after-sale-order": "Pedido pós-venda",
     "see-refund-progress": "Ver o progresso de devolução",
@@ -492,6 +514,7 @@
     "refund-order-stataus": "Status do pedido de devolução",
     "refund-order-number": "Número do pedido de devolução",
     "apply-time": "Tempo de requisição",
+    "number-refund-product": "{{number}} produtos devolvidos",
     "refund-reason": "Motivo de devolução",
     "refund-way-intro": "Introdução do método de devolução",
     "fill-logistics": "Preencha as informações de logística",
@@ -552,6 +575,8 @@
     "other-reason": "Outras razões",
     "get-the-order": "Adicionar produtos",
     "free": "Grátis",
+    "sku-changed-title": "{{num}}itens são alterados, você quer continuar o pagamento?",
+    "sku-limit-title": "Os seguintes produtos excedem o limite de compra, altere o número",
     "sorry-all-sku-unusable": "Desculpe, todos os produtos não são mais válidos e o pedido não pode ser submetido",
     "off-shelf": "Removido",
     "sold-out": "Esgotado",
@@ -601,14 +626,6 @@
     },
     "coupon": "Ofertas",
     "coupon-mutra-discount": "Este código promocional não pode ser usado em conjunto com outras promoções ou ofertas",
-    "invalid-product": "Produtos vencidos",
-    "jump-to-pay-longtips": "Clique em \"Complete Pedido\" e você será redirecionado para {{payChannel}} para pagamento seguro",
-    "you-are-paying-wait-result": "Seu pedido de pagamento foi enviada e está aguardando {{payChannel}} retornar o resultado do pagamento",
-    "number-refund-product": "{{number}} produtos devolvidos",
-    "sku-changed-title": "itens são alterados, você quer continuar o pagamento?",
-    "activity-product-limit ": "Pode comprar até X unidades com desconto ao mesmo tempo",
-    "sku-limit-title": "Os seguintes produtos excedem o limite de compra, altere o número",
-    "activity-title-limit ": "Os seguintes produtos excedem o limite de compra e continua a fazer o checkout?",
     "activity-price-limit": "O preço com desconto deste produto apenas suporta a compra de X unidades",
     "policy": {
       "refund-policy": "Politica de reembolso",
@@ -617,12 +634,11 @@
     "tip": {
       "add-tip": "Adicionar uma gorjeta"
     },
-    "point-discount": "Desconto de pontos",
-    "point-discount-desc": "Pode usar {{deductMemberPointNum}} pontos para deduzir {{deductMemberPointAmount}}",
-    "point-discount-remark": "Gastar {{value}}  pontos",
     "free-shipping": "Frete grátis",
     "pod-link": "Clique para ver",
-    "pod-pic": "Visualização personalizada"
+    "pod-pic": "Visualização personalizada",
+    "activity-product-limit": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
+    "activity-title-limit": "Os seguintes produtos excedem o limite de compra e continua a fazer o checkout?"
   },
   "payments-name": {
     "Paypal": "Paypal",
@@ -631,11 +647,11 @@
   },
   "paypal": {
     "error-expired": "O produto expirou",
+    "error-sold-out": "Estoque de produto insuficiente",
+    "error-product-limit": "Exceder o limite do produto",
     "error-network-error": "Erro de rede",
     "error-shop-not-exit": "Loja não existe",
-    "error-login-limit": "Entre na sua conta antes de fazer um pedido",
-    "error-sold-out": "Estoque de produto insuficiente",
-    "error-product-limit": "Exceder o limite do produto"
+    "error-login-limit": "Entre na sua conta antes de fazer um pedido"
   },
   "tips": {
     "more-than-0-int": "Insira um número inteiro maior que 0",
@@ -713,8 +729,8 @@
     "enter-correct-email": "Insira seu e-mail no formato correto",
     "enter-correct-phone-number": "Insira seu número de celular no formato correto",
     "phone-number-less-than-100": "O número do celular não pode exceder 100 caracteres",
-    "mutual-excluded-by-time-limited": "Descontos por tempo limitado e atividades de código promocional não podem ser usados ao mesmo tempo",
-    "shipping_plan_unavailable": "O código promocional {{discountCode}}  não se aplica ao método logístico atual"
+    "shipping_plan_unavailable": "O código promocional {{discountCode}} não se aplica ao método logístico atual",
+    "mutual-excluded-by-time-limited": "Descontos por tempo limitado e atividades de código promocional não podem ser usados ao mesmo tempo"
   },
   "subscription": {
     "subscript-via-line-facebook": "Inscreva-se para receber notificações de pedidos via LINE ou Facebook",
@@ -752,7 +768,8 @@
     "no-comment-title-tip": "Sem avaliações",
     "no-comment-first-tip": "venha e publique a primeira avaliação",
     "on-img-upload-tip": "A imagem está sendo carregada, favor enviar mais tarde",
-    "mobile-submit": "Enviar"
+    "mobile-submit": "Enviar",
+    "nickname": "Apelido"
   },
   "order": {
     "refund-methods": {
@@ -1034,6 +1051,7 @@
     "edit": "Editar",
     "cancel": "Cancelar",
     "save": "Salvar",
+    "buy-record-entry": "Produtos comprados",
     "account": {
       "account-subscription-email": "Enviar para email",
       "account-subscription-phone": "Enviar para celular",
@@ -1061,12 +1079,12 @@
       "bind": "Vincular",
       "modify-email": "Alterar Email",
       "phone": "Celular",
+      "modify-phone": "Celular",
       "password": "Senha",
       "change-password": "Alterar senha",
       "subscription-notification": "Notificação de inscrição",
       "unsubscribed": "Cancelar a inscrição",
-      "account-binding": "Vinculação de conta",
-      "modify-phone": "Celular"
+      "account-binding": "Vinculação de conta"
     },
     "address": {
       "delete-address": "Excluir endereço",
@@ -1139,8 +1157,9 @@
       "title": "Vale-presente",
       "empty-mainText": "Você não recebeu nenhum vale-presente",
       "empty-btn-link": "Como adquirir e usar vale presente",
+      "mainview-dedection": "O limite máximo de crédito atual é de <italic>{{money}}</italic>",
       "mainview-link": "Entendendo as regras",
-      "mainview-save": "Ao utilizar a taxa de compra {{{historyTotalUsedScore}}, você economizou históricoTotalUsedDeduction",
+      "mainview-save": "Ao utilizar a taxa de compra {{historyTotalUsedScore}}, você economizou <italic> {historyTotalUsedDeduction}} </italic>",
       "modal-title": "Descrição de vale-presente",
       "ok-btn": "Confirme",
       "unuseHistoryScore": "Você não usou o vale-presente para economizar despesas",
@@ -1173,8 +1192,7 @@
         "deductFreezePoint": "Cancelamento de vales-presente congelados",
         "reverseAddPoint": "Reversão de vales-presente adicionais",
         "reverseDeductPoint": "Cancelamento de vales-presente reduzidos"
-      },
-      "mainview-dedection": "O limite máximo de crédito atual é de <italic>{{money}}</italic>"
+      }
     },
     "pointList": {
       "empty": "Atualmente não há registro de pontos",
@@ -1185,8 +1203,7 @@
       "loaded": "Carregado",
       "empty2": "Sem mais registros",
       "order": "Ver pedido:"
-    },
-    "buy-record-entry": "Produtos comprados"
+    }
   },
   "cart": {
     "render-empty-status": "Não existem produtos no seu carrinho de compras",
@@ -1201,17 +1218,13 @@
     "shopping-money-step": "A próxima etapa será calcular os impostos e frete",
     "view-shopping-cart": "Ver o carrinho",
     "most-100-sku": "Adicione até 100 produtos",
-    "stock-limit": "{{stock}} unidades restantes",
     "most-buy-999": "Pode adicionar até 999 unidades ao carrinho",
-    "active-stock-limit-2 ": "O preço com desconto deste produto apenas suporta a compra de {{stock}} unidades",
-    "active-stock-limit-1 ": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
-    "activity-product-limit ": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
-    "activity-title-limit ": "Os seguintes produtos excedem o limite de compra e continua a fazer o checkout?",
-    "activity-price-limit": "O preço com desconto deste produto apenas suporta a compra de {{num}} unidades",
-    "activity-product-limit": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
+    "stock-limit": "{{stock}} unidades restantes",
     "activity-title-limit": "Os seguintes produtos excedem o limite de compra e continua a fazer o checkout?",
+    "activity-price-limit": "O preço com desconto deste produto apenas suporta a compra de {{num}} unidades",
     "active-stock-limit-2": "O preço com desconto deste produto apenas suporta a compra de {{stock}} unidades",
     "active-stock-limit-1": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
+    "activity-product-limit": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
     "view-link": "Clique para ver",
     "view-pic": "Visualização personalizada",
     "not-participation-offers": "Não participando da oferta",
@@ -1223,7 +1236,6 @@
     }
   },
   "user": {
-    "account": "Conta",
     "email": "Email",
     "phone": "Número de celular",
     "username": "Email/número de celular",
@@ -1286,7 +1298,8 @@
       "err3010": "O email já foi vinculado",
       "err3014": "Falha na renderização do modelo de SMS/email",
       "udbResponse": "Sua conta foi desativada devido a uma anormalidade, entre em contato com o vendedor para desbloqueá-la"
-    }
+    },
+    "account": "CONTA"
   },
   "address": {
     "dropdown": {
@@ -1323,12 +1336,12 @@
     "TCTD0121": "A atividade de marketing não existe, selecione novamente",
     "TCTD0112": "O produto que você selecionou é inválido para comprar, selecione novamente",
     "defaultErrorCodeMsg": "Em caso de anomalia na rede, atualize a página e tente novamente",
+    "comment": "Mensagem (Não essenciais)",
     "country": "País",
     "submit": "Submeter",
     "overLength": "O comprimento inserido excede o limite, preencha corretamente",
-    "bracket": "({{content}})",
-    "comment": "Mensagem (Não essenciais)",
-    "optional": "Não essenciais"
+    "optional": "Não essenciais",
+    "bracket": "({{content}})"
   },
   "blogList": {
     "container": {
@@ -1341,7 +1354,7 @@
   },
   "blog": {
     "container": {
-      "backTo": "Voltar ao {{collectionTitle}}."
+      "backTo": "Volte para {{{collectionTitle}}}"
     }
   }
 }

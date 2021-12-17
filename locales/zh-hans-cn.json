@@ -22,7 +22,7 @@
           "threshold0": {
             "step1": "买{{threshold}}或更多节省{{willSave}}",
             "step2": "已经节省{{saved}}！{{br}}再买{{threshold}}节省{{willSave}}",
-            "step3": "恭喜你！ 您节省了{{saved}}！"
+            "step3": "恭喜你！您节省了{{saved}}！"
           },
           "threshold1": {
             "step1": "购买{{threshold}}件以上，节省{{willSave}}",
@@ -55,11 +55,12 @@
             },
             "step3": {
               "normal": "恭喜！其中一件已减免{{saved}}",
-              "free": "恭喜！其中一件已免费"
+              "free": "恭喜！其中一件已减免{{saved}}"
             }
           }
         }
-      }
+      },
+      "tags-label": "折扣："
     },
     "bundle": {
       "title": "经常一起购买",
@@ -67,10 +68,24 @@
     },
     "selected-count-activity-product": "已选择{{selectCount}}件参加该活动的商品",
     "customer-purchase-limit": "每人限购{{count}}件",
+    "customer-purchase-limit-each-item": "每人每款商品限购{{count}}件",
     "flash-sale-tips": "购买限制：{{count}} 件",
     "flash-sale-text": "FLASH SALE",
     "hot-sale": "Hot sale!",
-    "sold": "{{count}} sold"
+    "sold": "{{count}} sold",
+    "discount-coupon": {
+      "coupon-label": "优惠码折扣：",
+      "coupon-content": {
+        "threshold": "买{threshold}",
+        "discount1": "{discount}折优惠",
+        "discount2": "免运费",
+        "shippingRateBelow": "运费低于{value}",
+        "until": "有效期至: {{endTime}}"
+      },
+      "couponNoFound": "折扣码不存在",
+      "applySuccess": "折扣码应用成功",
+      "applyFail": "应用失败"
+    }
   },
   "header": {
     "searchItems": "搜索商品",
@@ -197,6 +212,7 @@
       "price": "价格"
     },
     "container": {
+      "from": "{{price}} 起",
       "empty": {
         "desc": "当前分类暂无商品",
         "title": "抱歉，暂无商品",
@@ -237,7 +253,7 @@
       },
       "show": "显示",
       "viewAs": "查看方式",
-      "from": "{{price}} 起"
+      "productsNum": "{{num}}  商品"
     }
   },
   "productSearch": {
@@ -282,6 +298,11 @@
     "goToRakutenByLink": "去乐天购物",
     "goToYahooByLink": "去雅虎购物",
     "recentlyViewedProducts": "最近浏览商品",
+    "activityToast": {
+      "product-limit": "最多可同时购买{{stock}}件优惠价商品",
+      "price-limit": "此商品优惠价仅支持购买{{num}}件",
+      "title-limit": "以下商品超过购买限制"
+    },
     "tabs": {
       "description": "描述",
       "shippingPayment": "物流与支付",
@@ -344,11 +365,6 @@
     },
     "previewLinkToast": "预览链接不支持此操作",
     "morePaymentOptions": "更多支付选项",
-    "activityToast": {
-      "product-limit": "最多可同时购买{{stock}}件优惠价商品",
-      "price-limit": "此商品优惠价仅支持购买{{num}}件",
-      "title-limit": "以下商品超过购买限制"
-    },
     "bulkDiscount": {
       "title": "Buy More Save More!"
     }
@@ -433,6 +449,9 @@
     "next-step-calc": "下一步计算",
     "delivery-fee": "运费",
     "pay-fee": "付款手续费",
+    "point-discount": "积分折扣",
+    "point-discount-desc": "你可以使用{{deductMemberPointNum}}积分抵扣{{deductMemberPointAmount}}",
+    "point-discount-remark": "花费{{value}} 积分",
     "summary": "合计",
     "use-member-account-can": "以会员身份快速结账？可立即",
     "i-want-recieve-discount-info": "我想收到最新资讯及优惠方案",
@@ -523,7 +542,7 @@
     "go-login": "去登录",
     "complete-payment": "完成支付",
     "shopping-money-deduction": "购物金抵扣",
-    "use-shopping-deduction": "可使用{{num}}购物金约抵扣",
+    "use-shopping-deduction": "可使用{{num}}购物金抵扣",
     "can-get": "可获",
     "shopping-money": "购物金",
     "next-time-use-shopping-money": "下次购物时预计可抵扣",
@@ -557,6 +576,7 @@
     "get-the-order": "去凑单",
     "free": "免费",
     "sku-changed-title": "{{num}}件商品变更，是否继续结算?",
+    "sku-limit-title": "以下商品超过购买限制，请修改数量",
     "sorry-all-sku-unusable": "抱歉，所有商品均已失效，无法提交订单",
     "off-shelf": "已下架",
     "sold-out": "售罄",
@@ -606,9 +626,6 @@
     },
     "coupon": "优惠",
     "coupon-mutra-discount": "这个优惠码不能与其他促销或优惠同时使用",
-    "activity-product-limit ": "最多可同时购买{{stock}} 件优惠价商品",
-    "sku-limit-title": "以下商品超过购买限制，请修改数量",
-    "activity-title-limit ": "以下商品超过购买限制，是否继续结账？",
     "activity-price-limit": "此商品优惠价仅支持购买{{num}}件",
     "policy": {
       "refund-policy": "退款政策",
@@ -617,12 +634,11 @@
     "tip": {
       "add-tip": "添加小费"
     },
-    "point-discount-desc": "你可以使用{{deductMemberPointNum}}积分抵扣{{deductMemberPointAmount}}",
-    "point-discount-remark": "花费{{value}} 积分",
-    "point-discount": "积分折扣",
     "free-shipping": "包邮",
     "pod-link": "点击查看",
-    "pod-pic": "定制预览"
+    "pod-pic": "定制预览",
+    "activity-product-limit": "最多可同时购买{{stock}}件优惠价商品",
+    "activity-title-limit": "以下商品超过购买限制，是否继续结账？"
   },
   "payments-name": {
     "Paypal": "Paypal",
@@ -710,11 +726,11 @@
     "coupon-code-cannot-exceed-25-length": "优惠码不能超过25长度",
     "discount-code-error": "优惠码输入错误",
     "discount-code-user-invalid": "{{discountCode}}输入正确，但商品价格或数量不符合要求",
-    "mutual-excluded-by-time-limited": "限时折扣和优惠码活动互斥",
     "enter-correct-email": "请输入正确格式的邮箱",
     "enter-correct-phone-number": "请输入正确格式的手机号码",
     "phone-number-less-than-100": "手机号码不能超过100字符长度",
-    "shipping_plan_unavailable": "{{discountCode}} 优惠码不适用当前物流方式"
+    "shipping_plan_unavailable": "{{discountCode}} 优惠码不适用当前物流方式",
+    "mutual-excluded-by-time-limited": "限时折扣和优惠码活动互斥"
   },
   "subscription": {
     "subscript-via-line-facebook": "通过LINE或Facebook订阅订单通知",
@@ -752,7 +768,8 @@
     "no-comment-title-tip": "暂无评论",
     "no-comment-first-tip": "快来发表第一个评论吧",
     "on-img-upload-tip": "图片上传中，请稍后提交",
-    "mobile-submit": "提交"
+    "mobile-submit": "提交",
+    "nickname": "昵称"
   },
   "order": {
     "refund-methods": {
@@ -1154,18 +1171,18 @@
       "day4": "星期四",
       "day5": "星期五",
       "day6": "星期六",
-      "month1": "1",
-      "month2": "2",
-      "month3": "3",
-      "month4": "4",
-      "month5": "5",
-      "month6": "6",
-      "month7": "7",
-      "month8": "8",
-      "month9": "9",
-      "month10": "10",
-      "month11": "11",
-      "month12": "12",
+      "month1": 1,
+      "month2": 2,
+      "month3": 3,
+      "month4": 4,
+      "month5": 5,
+      "month6": 6,
+      "month7": 7,
+      "month8": 8,
+      "month9": 9,
+      "month10": 10,
+      "month11": 11,
+      "month12": 12,
       "actionTypeDesc": {
         "addPoint": "新增购物金",
         "deductPoint": "扣除购物金",
@@ -1203,19 +1220,15 @@
     "most-100-sku": "最多添加100个商品",
     "most-buy-999": "最多可添加999件商品至购物车",
     "stock-limit": "剩余{{stock}}件",
-    "active-stock-limit-2 ": "此商品优惠价仅支持买{{stock}}件",
-    "active-stock-limit-1 ": "最多可同时购买{{stock}} 件优惠价商品",
-    "activity-product-limit": "最多可同时购买{{stock}} 件优惠价商品",
-    "activity-price-limit": "此商品优惠价仅支持购买{{num}}件",
     "activity-title-limit": "以下商品超过购买限制，是否继续结账？",
-    "activity-product-limit ": "最多可同时购买{{stock}} 件优惠价商品",
-    "activity-title-limit ": "以下商品超过购买限制，是否继续结账？",
+    "activity-price-limit": "此商品优惠价仅支持购买{{num}}件",
     "active-stock-limit-2": "此商品优惠价仅支持买{{stock}}件",
     "active-stock-limit-1": "最多可同时购买{{stock}} 件优惠价商品",
+    "activity-product-limit": "最多可同时购买{{stock}} 件优惠价商品",
     "view-link": "点击查看",
     "view-pic": "定制预览",
     "not-participation-offers": "不参与优惠",
-    "active-stock-limit": "此商品优惠价仅剩X件"
+    "active-stock-limit": "此商品优惠价仅剩{{stock}}件"
   },
   "widget": {
     "order": {
@@ -1223,7 +1236,6 @@
     }
   },
   "user": {
-    "account": "账户",
     "email": "邮箱",
     "phone": "手机号",
     "username": "邮箱/手机号",
@@ -1286,7 +1298,8 @@
       "err3010": "邮箱已存在绑定",
       "err3014": "短信/邮件模板渲染失败",
       "udbResponse": "您的账号因异常被禁用，请联系商家解禁处理"
-    }
+    },
+    "account": "账户"
   },
   "address": {
     "dropdown": {
@@ -1341,7 +1354,7 @@
   },
   "blog": {
     "container": {
-      "backTo": "返回 {{collectionTitle}}"
+      "backTo": "返回 {{{collectionTitle}}}"
     }
   }
 }

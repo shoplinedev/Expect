@@ -3,7 +3,9 @@
     {{t 'common.contactUs'}}
   </div>
   <div class="inquiry-modal__productInfo">
-    <img src="{{img_url (default activeSku.imageList.[0] activeSku.image spuInfo.images.[0])}}" alt="productInfo" />
+    <div class="image-container">
+      <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" src="{{img_url (default activeSku.imageList.[0] activeSku.image spuInfo.images.[0])}}" alt="productInfo" />
+    </div>
     <div class="inquiry-modal__productTitle">
       {{t 'productDetail.inquiry.inquiryTitle'}}
       <br /> {{spuInfo.title}}

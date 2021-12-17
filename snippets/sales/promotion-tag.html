@@ -10,7 +10,7 @@
   </i>
   <span class='sales__promotionTag-body'>
     <span class='sales__promotionTag-body-text'>
-      {{ noTranslationHTML (t config.path  save=config.params.save threshold=config.params.threshold) }}
+      {{ noTranslationHTML (replace (replace template '{condition}' config.params.threshold.string) '{discount}' config.params.save.string)}}
     </span>
   </span>
   <i class="sales__promotionTag-right">

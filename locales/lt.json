@@ -1,0 +1,1360 @@
+{
+  "sales": {
+    "promotion": {
+      "tags": {
+        "benefit1": {
+          "threshold0": "Įsigykite {{threshold}}, kad sutaupytumėte {{save}}",
+          "threshold1": "Įsigykite {{threshold}}, kad gautumėte {{save}} nuolaidą"
+        },
+        "benefit2": {
+          "threshold0": "Įsigykite {{threshold}}, kad sutaupytumėte {{save}}",
+          "threshold1": "Įsigykite {{threshold}}, Kad Gautumėte {{save}} nuolaidą"
+        },
+        "benefit11": {
+          "threshold1": {
+            "normal": "Įsigykite {{threshold}} prekių, kad mėgautumėtės {{save}} nuolaida vienai iš prekių",
+            "free": "Įsigykite {{threshold}} prekių, kad mėgautumėtės nemokamai viena iš prekių!"
+          }
+        }
+      },
+      "reminder": {
+        "benefit1": {
+          "threshold0": {
+            "step1": "Įsigykite {{threshold}} daugiau, kad sutaupytumėte {{willSave}}",
+            "step2": "Jau {{saved}} sutaupoyta! {{br}}Įsigykite {{threshold}} daugiau, kad sutaupytumėte {{willSave}}",
+            "step3": "Sveikiname! Sutaupėte {{saved}}!"
+          },
+          "threshold1": {
+            "step1": "Įsigykite {{threshold}} daugiau, kad sutaupytumėte {{willSave}}",
+            "step2": "Jau {{saved}} sutaupoyta! {{br}}Įsigykite {{threshold}} daugiau, kad sutaupytumėte {{willSave}}",
+            "step3": "Sveikiname! Sutaupėte {{saved}}!"
+          }
+        },
+        "benefit2": {
+          "threshold0": {
+            "step1": "Įsigytkite {{threshold}} daugiau, kad gautumėte {{willSave}} NUOLAIDĄ",
+            "step2": "Jau {{saved}} sutaupoyta! {{br}}Įsigykite {{threshold}} daugiau, kad gautumėte {{willSave}} NUOLAIDĄ",
+            "step3": "Sveikiname! Sutaupėte {{saved}}!"
+          },
+          "threshold1": {
+            "step1": "Įsigytkite {{threshold}} daugiau, kad gautumėte {{willSave}} NUOLAIDĄ",
+            "step2": "Jau {{saved}} sutaupoyta! {{br}}Įsigykite {{threshold}} daugiau, kad gautumėte {{willSave}} NUOLAIDĄ",
+            "step3": "Sveikiname! Sutaupėte {{saved}}!"
+          }
+        },
+        "benefit11": {
+          "threshold1": {
+            "step1": {
+              "normal": "Įsigykite {{threshold}} daugiau prekių, kad gautumėte {{willSave}} NUOILAIDĄ vienai iš prekių",
+              "nextFree": "Įsigykite {{threshold}} daugiau prekių, kad mėgautumėtės nemokamai viena iš prekių"
+            },
+            "step2": {
+              "normal": "Sveikiname! {{saved}} Suataupėte, {{br}}Įsigykite {{threshold}} daugiau prekių, kad mėgautumėtės {{willSave}} NUOLAIDA vienai iš jų",
+              "free": "Sveikiname! mėgaukitės nemokamai viena iš prekių",
+              "nextFree": "Sveikiname! {{saved}} Sutaupėte, {{br}}Įsigykite {{threshold}} daugiau prekių, kad mėgautumėtės nemokamai viena iš prekių"
+            },
+            "step3": {
+              "normal": "Sveikiname! Mėgaukitės {{saved}} NUOLAIDA vienai iš prekių",
+              "free": "Sveikiname! mėgaukitės nemokamai viena iš prekių"
+            }
+          }
+        }
+      },
+      "tags-label": "Nuolaida:"
+    },
+    "bundle": {
+      "title": "Dažnai įsigyjama kartu",
+      "saveTip": "Sutaupykite {{amount}} pirkdami kartu"
+    },
+    "selected-count-activity-product": "{{selectCount}} pasirinktos akcinės prekės",
+    "customer-purchase-limit": "Įsigijimo apribojimas {{count}} asmeniui",
+    "customer-purchase-limit-each-item": "Vienas asmuo gali įsigyti iki {{count}} produkto vnt",
+    "flash-sale-tips": "Įsigijimo apribojimas: {{count}} kiekis",
+    "flash-sale-text": "MOMENTINIS PARDAVIMAS",
+    "hot-sale": "Išpardavimas!",
+    "sold": "{{count}} parduota",
+    "discount-coupon": {
+      "coupon-label": "Kuponas:",
+      "coupon-content": {
+        "threshold": "Pirkite {threshold}",
+        "discount1": "{discount} nuolaida",
+        "discount2": "Nemokamas pristatymas",
+        "shippingRateBelow": "Krovinys yra mažesnis negu {value}",
+        "until": "Galioja iki {{endTime}}"
+      },
+      "couponNoFound": "Nuolaidos kodas neegzistuoja",
+      "applySuccess": "Nuolaidos kodas sėkmingai pritaikytas",
+      "applyFail": "Pateikti nepavyko"
+    }
+  },
+  "header": {
+    "searchItems": "Prekių paieška",
+    "searchInputPlaceholder": "Įveskite čia ir bakstelėkite paiešką",
+    "navItemAll": "Visa",
+    "search": "Paieška",
+    "cart": "Jūsų vežimėlis",
+    "center": "Centras",
+    "login": "Prisijungti",
+    "logout": "Atsijungti",
+    "noCurrencyFallback": "Nerasta reikiama valiuta"
+  },
+  "common": {
+    "title": "Titulas",
+    "category": "Kategorija",
+    "outOfStock": "Nėra atsargose",
+    "subTotal": "Tarpinė suma",
+    "descountPrice": "Pardavimo kaina",
+    "total": "Bendroji suma",
+    "soldOut": "Išparduota",
+    "settleMent": "Įsigykite dabar",
+    "selectProduct": "Pasirinkti prekę",
+    "hasSelected": "Pasirinkta",
+    "pieces": "Vnt.",
+    "discount": "Nuolaida",
+    "piece": "vnt.",
+    "remove": "Šalinti",
+    "cancel": "Atšaukti",
+    "tips": "Priminimas",
+    "checkout": "PIRKIMO UŽBAIGIMAS",
+    "finish": "Užbaigti",
+    "username": "Vardas ir pavardė",
+    "mobile-phone": "Mobiliojo telefono numeris",
+    "tel-phone": "Telefono Nr.",
+    "meno": "Pastabos",
+    "package": "Pakuotė",
+    "login": "Prisijungti",
+    "email": "El. pašto adresas",
+    "email2": "Paštas",
+    "order": "Užsakymai",
+    "remain": "Likę",
+    "operation": "Veikti",
+    "bank-name": "Banko pavadinimas",
+    "bank-card-number": "Banko kortelės numeris",
+    "bank-Account": "Banko sąskaita",
+    "bank-Account2": "Banko sąskaita",
+    "close": "Uždaryta",
+    "audit": "Peržiūra",
+    "tax": "Mokesčiai ir įmokos",
+    "mobile": "Telefono Nr.",
+    "address": "Adresas",
+    "logistics": "Pristatymas",
+    "backout": "Anuliuoti",
+    "confirm": "OK",
+    "upload": "Įkelti",
+    "error-stack": "Neteisinga krūva",
+    "amount": "Kiekis",
+    "stock-limit": "Liko tik {{stock}}",
+    "back-to-user-center": "Grįžti į vartotojo centrą",
+    "member-login": "Nario prisijungimas",
+    "contact-information": "Kontaktinė informacija",
+    "back-to-cart": "Grįžti į vežimėlį",
+    "recommend": "Rekomenduojamas",
+    "free-shipping": "Nemokamas pristatymas",
+    "apply": "Taikyti",
+    "anonymous": "Anoniminis",
+    "logistics-and-payment": "Pristatymas iur mokėjimas",
+    "payment": "Mokėjimas",
+    "payment-2": "Mokėti dabar",
+    "modify": "Keisti",
+    "cardholder-name": "Kortelės savininko (-ės) vardas ir pavardė",
+    "use-address": "Naudojamas adresas",
+    "default-address": "Numatytasis adresas",
+    "use-new-address": "Naudoti naują adresą",
+    "sign-out": "Išeiti",
+    "enter-username": "Prašome įvesti vartotojo vardą",
+    "enter-email": "Prašome įvesti savo el. pašto adresą",
+    "enter-mobile-phone": "Prašome įvesti mobiliojo telefono numerį",
+    "order-evaluation": "Užsakymo peržiūra",
+    "submit-evaluation": "Pateikti peržiūrą",
+    "anonymous-evaluation": "Anoniminė peržiūra",
+    "discountOff": "Nuolaida",
+    "discountDesc": "Pardavimo aprašymas",
+    "freightDesc": "Pristatymo įmokos aprašymas",
+    "taxDesc": "Mokesčių ir įmokų aprašymas",
+    "returnMoney": "Grąžinti",
+    "returnProgress": "Grąžinimo pažanga",
+    "returnInfo": "Grąžinimo info",
+    "rollback": "Išimti",
+    "applyDate": "Užklausos data",
+    "evaluation": "Peržiūra",
+    "upload-image": "Įkelti vaizdą",
+    "page": "puslapis",
+    "day": "diena",
+    "days": "dienos",
+    "buy-now": "ĮSIGYKITE DABAR",
+    "ok": "OK",
+    "continue": "Tęsti",
+    "contactUs": "SUSISIEKITE SU MUMIS",
+    "productError": "Duomenų apie prekę nerasta Prašome bandyti dar kartą vėliau",
+    "home": "Titulinis lapas"
+  },
+  "modal": {
+    "iKnow": "Gavau",
+    "goCart": "Eiti į vežimėlį",
+    "exceedCartTitle": "Atsiprašome! Prekių skaičius krepšelyje viršija apribojimą.",
+    "exceedCartContent": "Galite pridėti šią prekę į savo vežimėlį, pirmuoju pirkiniu ar pašalindami kitas prekes iš savo vežimėlio"
+  },
+  "footer": {
+    "followus": "SEKITE MUS",
+    "subscribeBarPlaceholder": "Prašome įvesti savo el. pašto adresą čia",
+    "subscribeSuccess": "Prenumeruoti sėkmę",
+    "subscribeError": "Nepavyko prenumeruoti",
+    "subscribeRegExpError": "El. pašto adreso formato klaida",
+    "copyright": "Visos teisės saugomos."
+  },
+  "productList": {
+    "gategoryMenu": {
+      "catalog": "KATALOGAS",
+      "menuitem": "Visos prekės"
+    },
+    "filterMenu": {
+      "filter": "Filtras",
+      "price": "Kaina"
+    },
+    "container": {
+      "from": "Nuo {{price}}",
+      "empty": {
+        "desc": "Šioje kategorijoje nėra prekių",
+        "title": "Atsiprašome, šios prekės nebėra atsargose.",
+        "description": "Jei reikia, konsultacijai galite susisiekti su verslininkais"
+      },
+      "sort": {
+        "text1": "Visos prekės",
+        "text2": "Rūšiuoti pagal",
+        "recommend": "Rekomenduojamas",
+        "sales": "Populiariausi pardavėjai",
+        "newest": "Naujos prekės",
+        "priceLowToHigh": "Kaina nuo mažiausios iki didžiausios",
+        "priceHighToLow": "Kaina nuo aukščiausios iki mažiausios",
+        "option1": "Pardavimo data (nauja - sena)",
+        "option2": "Pardavimo data (senas - nauja)",
+        "option3": "Kaina (nuo aukščiausios iki mažiausios)",
+        "option4": "Kaina (nuo mažiausios iki didžiausios)"
+      },
+      "network": {
+        "message": "Duomenų apie prekę nerasta Prašome bandyti dar kartą vėliau"
+      },
+      "tradePopup": {
+        "error1": "{{stock}} liko vnt. Prašome pasirinkti kiekį iš naujo",
+        "error2": "Galima įsigyti tik {{saleMax}} vnt. Prašome pasirinkti kiekį iš naujo!",
+        "error3": "Prašome pasirinkti kiekį!",
+        "error4": "Pirma, prašome pasirinkti prekės dydį!",
+        "error5": "Prekė išparduota",
+        "error6": "Prekė pašalinta iš lentynų",
+        "addToCart": "PRIDĖTI PRIE VEŽIMĖLIO"
+      },
+      "listItem": {
+        "sold": {
+          "out": "IŠPARDUOTA"
+        },
+        "off": "{{value}}% nuolaida",
+        "addToCart": "PRIDĖTI PRIE VEŽIMĖLIO",
+        "toDetail": "Peržiūrėti duomenis"
+      },
+      "show": "Rodyti",
+      "viewAs": "Peržiūrėti kaip",
+      "productsNum": "{{num}} prekės"
+    }
+  },
+  "productSearch": {
+    "serachTitle": {
+      "text1": "Nerasta jokių susijusių rezultatų"
+    },
+    "search": {
+      "backHome": "Atgal į pradžios puslapį",
+      "resultsFoundFor": "{{count}} rezultatai rasti \"{{keyword}}\"",
+      "results": "{{count}} Rezultatai",
+      "noRelatedResultFound": "Nerasta jokių susijusių rezultatų",
+      "searchNoResults": "Jūsų \"{{keyword}}\" paieška neteikia jokių rezultatų"
+    },
+    "empty": {
+      "title1": "Rekomenduojame patikrinti, ar nėra įvedimo klaidų,",
+      "title2": "ir atlikite paiešką tiksliais raktažodžiais"
+    },
+    "sortName": "Rūšiuoti pagal:",
+    "container": {
+      "sort": {
+        "option1": "Buvimo lentynoje trukmė (nauja - sena)",
+        "option2": "Buvimo lentynoje trukmė (senas - nauja)",
+        "option3": "Kaina (nuo aukščiausios iki mažiausios)",
+        "option4": "Kaina (nuo mažiausios iki didžiausios)"
+      }
+    }
+  },
+  "collection": {
+    "all": {
+      "title": "Visos kolekcijos",
+      "h1Title": "Kategorija"
+    }
+  },
+  "productDetail": {
+    "goToAmazon": "Pirkite Amazon",
+    "goOutsideOfAmazon": "Eiti apsipirkti už Amazon ribų",
+    "goOtherChannels": "Kiti pardavimo kanalai",
+    "toAmazon": "Amazon",
+    "goToRakuten": "LOTTE",
+    "goToYahoo": "Yahoo",
+    "goToAmazonByLink": "Pirkite Amazon",
+    "goToRakutenByLink": "Pirkite LOTTE",
+    "goToYahooByLink": "Pirkite Yahoo",
+    "recentlyViewedProducts": "Naujausiai peržiūrėtos prekės",
+    "activityToast": {
+      "product-limit": "Įsigijimas apribotas iki {{stock}} remiamų prekių",
+      "price-limit": "Maksimalus kiekis leidžiamas šiai ribotai prekei - {{num}}",
+      "title-limit": "Toliau nurodytos prekės viršija įsigijimo apribojimą"
+    },
+    "tabs": {
+      "description": "Aprašymas",
+      "shippingPayment": "Pristatymas ir mokėjimas",
+      "comments": "Peržiūros"
+    },
+    "recommendTitle": "Jums taip pat gali patikti",
+    "commentsTitle": "Peržiūros",
+    "network": {
+      "message2": "Nepavyko gauti prekės info. Prašome bandyti dar kartą vėliau"
+    },
+    "thumbSwiper": {
+      "image": {
+        "alt": "Prekės miniatiūra"
+      },
+      "share": {
+        "text": "Bendrinti su"
+      }
+    },
+    "tabPanel": {
+      "desc": "Dar nėra aprašymo",
+      "descFs": "Nepavyko gauti duomenų. Prašome bandyti dar kartą vėliau",
+      "ship": {
+        "sh": {
+          "text1": "Būdas"
+        },
+        "text2": "Dar nėra pristatymo būdas"
+      },
+      "pay": {
+        "text1": "Mokėjimo būdas",
+        "text2": "Dar nėra mokėjimo būdo",
+        "text3": "Dar nėra apmokėjimo už logistiką"
+      },
+      "comments": {
+        "empty": "Dar nėra peržiūros",
+        "error": "Nepavyko gauti prekės apžvalgos Prašome bandyti dar kartą vėliau"
+      }
+    },
+    "no-product-introduction": "Dar nėra prekės įvado",
+    "no-logistics-and-payment-information": "Dar nėra logistikos ir apmokėjimo būdų",
+    "addCart": "PRIDĖTI",
+    "default-placeholder": "Prašome pasirinkti {{attrName}}",
+    "inquiry": {
+      "inquiryTitle": "Prekės užklausa",
+      "inquiryTips1": "Prašome palikti mums pranešimą ir kuo skubiau pateiksime atsakymą",
+      "email": "El. paštas",
+      "message": "Jūsų pranešimas",
+      "inquiryTips2": "Galite suteikti mums daugiau informacijos, kad galėtumėte suteikti jums daugiau tinkamų paslaugų",
+      "optional": "Pasirinktinis",
+      "name": "Vardas ir pavardė",
+      "mobile": "Telefono Nr.",
+      "region": "Šalis / regionas",
+      "cancel": "Atšaukti",
+      "submit": "Pateikti",
+      "emailEmptyErr": "Prašome įvesti savo el. pašto adresą",
+      "messageEmptyErr": "Prašome įvesti savo pranešimą",
+      "emailFormatErr": "Prašome įvesti galiojantį el. pašto adresą",
+      "messageLengthErr": "Maksimalus jūsų pranešimų ilgis turi būti ne daugiau nei 1500 žodžių",
+      "submitSuccess": "Pateikta sėkmingai",
+      "submitFailed": "Nepavyko pateikti, prašome bandyti dar kartą"
+    },
+    "previewLinkToast": "Nuorodos peržiūros operacija nepalaikoma",
+    "morePaymentOptions": "daugiau mokėjimo parinkčių",
+    "bulkDiscount": {
+      "title": "Pirkite daugiau Sutaupykite!"
+    }
+  },
+  "trade": {
+    "contact": "Kontaktinė informacija",
+    "can-not-submit-order": "Negalima pateikti užsakymo",
+    "sorry-rechoose-longtips": "Atsiprašome, jūsų pasirinktos prekės negalima įsigyti. Prašome pasirinkti iš naujo",
+    "product-amount": "Tarpinė suma",
+    "will-discount": "Nuolaida",
+    "some-discount-limit-to-pay-and-delivery": "Kai kurios iš palūkanų yra prieinamos tik pagal tam tikrą logistikos / mokėjimo būdą",
+    "total": "Bendroji suma",
+    "go-on-shopping": "Tęsti apsipirkimą",
+    "man-piece-share": "Mėgaukitės {{count}} vnt. ir daugiau",
+    "man-money-share": "Mėgaukitės {{money}} ar daugiau pirkinio suma",
+    "man-piece-reduce": "Nuolaida {{count}} už vnt. ir daugiau",
+    "man-money-reduce": "Nuolaida už pirkinį, kurio suma {{money}} ar daugiau",
+    "invalid-product": "Negaliojančios prekės",
+    "delete-invalid-product": "Šalinti negaliojančias prekes",
+    "remove-product": "Šalinti prekę",
+    "sure-remove-this-product": "Ar tikrai norite šalinti šią prekę?",
+    "order-created-but-data-fail": "Užsakymas sukurtas, bet yra duomenų apie grąžinimo klaidą...",
+    "agree-user-terms-first": "Pirma, prašome sutikti su Vartotojo sąlygų",
+    "recieve-address-unavailable-rechoose": "Neprieinamas pristatymas būdas gavėjo adresu. Prašome grįžti, kad pasirinktumėte iš naujo",
+    "please-fill-meno": "Prašome užpildyti pastabas",
+    "please-choose-delivery-way": "Prašome pasirinkti pristatymo būdą",
+    "please-choose-pay-way": "Prašome pasirinkti mokėjimo būdą",
+    "bad-userinfo-or-in-blocklist": "Vartotojo informacijos klaida ar vartotojas blokuotas",
+    "bad-userinfo": "Vartotojo duomenų klaida",
+    "fail-get-product-back-cart": "Nepavyko gauti patikrintos prekės duomenų. Prašome grąžinti į vežimėlį ir pateikti iš naujo",
+    "fill-info": "Informacija",
+    "back-prev-step": "Grįžti į informaciją",
+    "back-prev-step2": "Grąžinti į pristatymą",
+    "next-step": "Tęsti",
+    "next-step-shipment": "Tęsti į pristatymą",
+    "next-step-payment": "Eikite pasirinkti mokėjimo būdą",
+    "submit-order": "Užpildyti užsakymą",
+    "i-agree-website": "Sutinku su tinklapio",
+    "service-terms": "paslaugos teikimo sąlygos",
+    "and": "ir",
+    "private-policy": "Privatumo politika",
+    "fast-checkout": "„Express“ užbaigimas",
+    "or-fill-info": "AR",
+    "not-support-paypal": "Pardavėjas nepalaiko PayPal",
+    "service-fee": "Paslaugos mokestis",
+    "pay-way": "Mokėjimo būdas",
+    "pay-way-logo-and-more": "ir daugiau",
+    "jump-to-pay-longtips": "Spustelėję „Baigti užsakymą“, būsite nukreiptas į {{payChannel}}, kad užbaigtumėte savo pirkimą saugiai",
+    "reciever-info": "Pristatymo adresas",
+    "reciever-to": "Siųsti į",
+    "use-customer-info": "Naudoti kliento duomenis",
+    "please-input-field": "Prašome įvesti {{field}}",
+    "reciever-name": "Gavėjo pavardė",
+    "reciever-fullname": "Gavėjo vardas ir pavardė",
+    "field-can-not-longer-than": "{{field}} negali viršyti {{length}} simbolių ilgio",
+    "can-not-empty": "Negali būti tuščias",
+    "must-fill": "Būtina",
+    "must-choose": "Būtina pasirinkti",
+    "must-select": "Būtina parinktis",
+    "must-agree-policy": "Privalote sutikti su grąžinimo politika, kad tęstumėte!",
+    "optional-fill": "Pasirinktinis",
+    "other-info": "Kiti duomenys",
+    "need-choose-delivery-way": "Pristatymo būdas būtinas visiems laikiniems sluoksniams",
+    "your-delivery-need-choose-store": "Parduotuvės duomenys būtini visiems pristatymo būdams",
+    "supermarket-self-pick": "Paėmimas parduotuvėje",
+    "delivery-to-home": "Pristatymas į namus",
+    "other-delivery": "Kiti pristatymo būdai",
+    "delivery-way": "Pristatymo būdas",
+    "please-choose-area": "Prašome pasirinkti vietovę",
+    "please-choose-store": "Prašome pasirinkti parduotuvę",
+    "please-input-legal-passport-id-card": "Prašome įvesti galiojančią asmens tapatybės (AT) kortelę / pasą",
+    "passport-id-card-placeholder": "AT kortelės / paso numeris (pasirinktinis)",
+    "passport-id-card-tip": "Prašome įvesti gavėjo tikrąjį AT ar paso numerį, kad būtų užtikrinta sklandi muitinės deklaracija ir pristatymas",
+    "product-offline": "Prekė pašalinta iš lentynų",
+    "stock-not-enough": "Nepakankama prekė",
+    "over-limit-number": "Viršytas prekės apribojimas",
+    "product-removed": "Prekė buvo pašalinta",
+    "product-package": "Pakuotė",
+    "product-fee": "Tarpinė suma",
+    "product-tax": "Prekės mokestis",
+    "delivery-tax": "Krovinio mokestis",
+    "next-step-calc": "Apskaičiuota kitu žingsniu",
+    "delivery-fee": "Pristatymas",
+    "pay-fee": "Mokėjimo mokesčiai",
+    "point-discount": "Nuolaida už taškus",
+    "point-discount-desc": "Galite naudoti {{deductMemberPointNum}} taškus, kad sutaupytumėte {{deductMemberPointAmount}}",
+    "point-discount-remark": "Išlaidų {{value}} taškai",
+    "summary": "Bendroji suma",
+    "use-member-account-can": "Patikrinkite greitai kaip narys (-ė)? Galite atlikti tai nedelsiant",
+    "i-want-recieve-discount-info": "Pateikite naujienas ir išskirtinius pasiūlymus",
+    "order-detail-query-fail": "Užsakymo duomenų užklauso klaida",
+    "your-order-created": "jūsų užsakymas pateiktas",
+    "your-order-not-pay": "Nebaigėte apmokėjimo už jūsų užsakymo",
+    "go-pay": "Mokėti dabar",
+    "now-can-not-comment": "Dabar negaliu peržiūrėti!",
+    "order-detail": "Užsakymo duomenys",
+    "order-info": "Užsakymo info",
+    "order-status": "Užsakymo būklė",
+    "create-order-time": "Užsakymo teikimo laikas",
+    "comment-product": "Prekės peržiūra",
+    "give-stars": "Įvertinimas",
+    "at-least-comment-one-before-submit": "Prašome bandyti įvertinti mažiausiai vieną prekę, prieš pateikdami",
+    "leave-your-words": "Išsakykite mums savo mintis ir dalinkitės jomis su kitais pirkėjais～",
+    "is-paying": "Mokėjimas",
+    "you-are-paying-wait-result": "Jūsų mokėjimo užklausa pateikta. Laukiamas mokėjimo rezultatas iš {{payChannel}}",
+    "need-pay": "Reikia mokėti",
+    "after-sale-order": "Popardavimo užsakymas",
+    "see-refund-progress": "Peržiūrėti grąžinimo pažangą",
+    "has-number-products": "Liko {{number}} prekių",
+    "order-meno": "Užsakymo pastabos",
+    "comment-order": "Peržiūrėti užsakymą",
+    "apply-refund": "Kreiptis dėl grąžinimo",
+    "cancel-order": "Atšaukti užsakymą",
+    "product-preview": "Prekės peržiūra",
+    "see-detail": "Peržiūrėti duomenis",
+    "start-refund": "Inicijuoti grąžinimą",
+    "buy-number-greater-then-stock": "Kiekis turi būti didesnis nei 1 ir mažesnis nei inventoriaus kiekis!",
+    "can-refund-number": "Grąžinamas kiekis",
+    "choose-refund-reason": "Prašome pasirinkti grąžinimo priežastį",
+    "please-fill-80charact-refund-reason": "Prašome užpildyti savo grąžinimo priežastį, naudodami 80 simbolių",
+    "please-fill-refund-reason": "Prašome užpildyti savo grąžinimo priežastį",
+    "choose-refund-product": "Pasirinkite grąžintiną prekę",
+    "refund-reason-less-60": "Grąžinimo priežastis neturi viršyti 60 simbolių!",
+    "refund-number": "Grąžintinų prekių kiekis",
+    "sub-total": "Tarpinė suma",
+    "refund-amount": "Grąžintina suma",
+    "refund-amount-bigger-zero": "Grąžintina suma turi būti didesnė nei 0",
+    "refund-amount-can-over": "Grąžintina suma negali viršyti maksimalios grąžintinos sumos",
+    "max-refund": "Maksimali grąžintina suma",
+    "confirm-refund": "Patvirtinti grąžinimą",
+    "refund-policy": "Grąžinimo politika",
+    "fill-refund-info": "Užpildyti grąžinimo informaciją",
+    "refund-way": "Grąžinimo būdas",
+    "refund-type": "Grąžinimo tipas",
+    "please-choose-refund-type": "Pasirinkti grąžinimo tipą",
+    "refund-express": "Grąžinimo logistika",
+    "please-choose-refund-express": "Prašome pasirinkti grąžinimo logistikos režimą!",
+    "refund-person": "Grąžino",
+    "pick-address": "Paėmimo adresas",
+    "refund-account": "Grąžinimo sąskaita",
+    "please-choose-refund-account": "Prašome pasirinkti grąžinimo sąskaitą!",
+    "your-refund-order-created": "Jūsų grąžinimas užsakymas pateiktas",
+    "confirm-email-send-to-you": "Patvirtinimo raštas buvo išsiųstas jūsų el. paštu",
+    "refunding": "Grąžinimas",
+    "user-cancel-apply": "Vartotojas atšaukė užklausą",
+    "audit-refuse": "Nepatvirtinta",
+    "refund-order-stataus": "Grąžinimo užsakymo būklė",
+    "refund-order-number": "Grąžinimo užsakymo numeris",
+    "apply-time": "Užklausos laikas",
+    "number-refund-product": "{{number}} prekių grąžinimui",
+    "refund-reason": "Grąžinimo priežastis",
+    "refund-way-intro": "Gražinimo būdo įvadas",
+    "fill-logistics": "Užpildyti logistikos duomenis",
+    "backout-apply": "Atšaukti užklausą",
+    "backout-refund-apply": "Atšaukti grąžinimo užklausą",
+    "your-apply-auditing-sure-backout": "Jūsų grąžinimo užklausa peržiūrima Atšaukti užklausą?",
+    "see-origin-order": "Peržiūrėti originalų užsakymą",
+    "refund-logistics-info": "Grąžinimo logistikos duomenys",
+    "express-company": "Logistikos bendrovė",
+    "please-fill-express-company": "Prašome užpildyti logistikos bendrovę",
+    "please-fill-express-bills-sn": "Prašome užpildyti logistikos express numerį",
+    "express-bills-sn": "Logistikos express numeris",
+    "express-bill-pic": "Logistikos express vaizdas",
+    "optional-support-jpg": "Pasirinktinis. Palaiko JPG / PNG",
+    "pic-upload-fail": "Nepavyko įkelti vaizdo {{name}}",
+    "shopping-gold-trade-off": "Pirkimo subsidijos sumažinimas",
+    "coupon-code-offer": "Kuponas",
+    "product-sold-out": "Prekė išparduota",
+    "sorry-limit-re-choose": "Atsiprašome! Galite įsigyti tik {{promotionRemainStock}} vnt. užsakyme. Prašome iš naujo pasirinkti jūsų kiekį",
+    "sorry-product-not-available-re-reorder": "Atsiprašome! Kai kurios jūsų įsigyti prekės buvo pašalintos iš lentynų ir yra negaliojančios. Prašome patikrinti ir iš naujo patvirtinti ją, prieš teikdami iš naujo",
+    "product-remain-please-re-choose": "{{stock}} liko prekės vnt. Prašome iš naujo pasirinkti kiekį",
+    "coupon-code": "Kupono kodas",
+    "shop-list": "Vežimėlis ({{count}} )",
+    "add-to-cart-fail": "Atsiprašome! Nepavyko pridėti prie vežimėlio. Prašome bandyti dar kartą!",
+    "go-login": "Eikite registruotis",
+    "complete-payment": "Užbaigti mokėjimą",
+    "shopping-money-deduction": "Pirkimo subsidijos sumažinimas",
+    "use-shopping-deduction": "Apytikslis {{num}} naudojamos pirkimo subsidijos sumažinimas",
+    "can-get": "Prieinama",
+    "shopping-money": "Pirkimo subsidija",
+    "next-time-use-shopping-money": "Tikėtinas sumažinimas kitam pirkimui",
+    "delivery-address-abnormal": "Gavėjo adreso klaida",
+    "billing-address-abnormal": "Sąskaitos teikimo adreso klaida",
+    "billing-address": {
+      "title": "Sąskaitos teikimo adresas",
+      "desc": "Pasirinkite adresą, kuris atitinka jūsų kortelę ar mokėjimo būdą.",
+      "option-same": "Toks pat kaip ir pristatymo adresas",
+      "option-another": "Naudokite kitą sąskaitos teikimo adresą",
+      "input-email": "Jūsų pasirinktam mokėjimo būdui taip pat reikia pateikti el. pašto adresą sąskaitos informacijai siųsti"
+    },
+    "ship-to": "Pristatyti į",
+    "self-mention": "Asmeninis paėmimas",
+    "logistics-package": "Siuntimo būdas",
+    "shopping-list": "Jūsų vežimėlis",
+    "item": "PREKĖ",
+    "quantity": "KIEKIS",
+    "total-num": "BENDROJI SUMA",
+    "no-pay-way": "Neprieinamas mokėjimo būdas",
+    "refund-detail": "Grąžinimo duomenys",
+    "only-refund": "Tik grąžinti",
+    "return-and-refund": "Grąžinti prekę ir pinigus",
+    "come-way-return": "Grąžinti į pradinę mokėjimo sąskaitą",
+    "others": "Kita",
+    "not-as-expected": "Tikėtina prekė",
+    "damage": "Prekė pažeista pristatant",
+    "sku-not-match": "Prekės matmenys / specifikacijos skiriasi nuo aprašymo",
+    "wrong-product": "Netinkama prekė",
+    "other-reason": "Kitos priežastys",
+    "get-the-order": "Paimti ir pridėti elementą",
+    "free": "Nemokamas",
+    "sku-changed-title": "{{num}}Prekės pakeistos, tęsti pirkimą?",
+    "sku-limit-title": "Toliau nurodytos prekės viršija pirkimo apribojimą, prašome pakeisti kiekį.",
+    "sorry-all-sku-unusable": "Atsiprašome, visos prekės negaliojančios, negalima pateikti užsakymo",
+    "off-shelf": "NEGALIOJANTIS",
+    "sold-out": "IŠPARDUOTA",
+    "has-removed": "NEGALIOJANTIS",
+    "footer-all-rights-reserved": "Autorinės teisės © {{year}} {{name}}. Visos teisės saugomos.",
+    "return-to-selection-goods": "Grąžintinų prekių pasirinkimas",
+    "return-apply-fail-SKU": "Pageidaujamų prekių skaičius viršija apribojimą!",
+    "return-apply-fail-max-amount": "Grąžintina suma negali viršyti maksimaliai grąžintiną sumą",
+    "return-apply-fail-min-amount": "Tik grąžinimams, grąžinimo suma neturi būti didesnė nei 0 CNY",
+    "slpayment": {
+      "cardNumber": {
+        "placeholder": "Kreditinės kortelės numeris",
+        "errorTips": "Prašome įvesti teisingą kortelės numerį.",
+        "tips": "Visi sandoriai yra saugūs ir šifruoti"
+      },
+      "expiryDate": {
+        "errorTips": "Prašome įvesti teisingą laiką."
+      },
+      "cvv": {
+        "placeholder": "CVV",
+        "errorTips": "Prašome patikrinti dar kartą.",
+        "tips": "Paprastai nurodyta už kortelės"
+      },
+      "footer": "Dabar naudojate SHOPLINE mokėjimus pirkimui užbaigti Užbaigdami mokėjimą, sutinkate",
+      "service": "su SHOPLINE mokėjimo naudojimo sąlygomis.",
+      "cardholdername": "Kortelės savininko (-ės) vardas",
+      "cardHolderNamePlaceHolder": "Kortelės savininko (-ės) vardas",
+      "cardHolderNameErrorTips": "Prašome patikrinti dar kartą."
+    },
+    "find-store": "Pasirinkti parduotuvę",
+    "choose-store": "Pakeisti parduotuvę",
+    "please-pay-within": "prašome mokėti per",
+    "enter-a-tip-on-more-than": "Įveskite ne daugiau nei {{amount}} patarimą",
+    "payment-security-description": "Visi sandoriai yra saugūs ir šifruoti.",
+    "pay-failed-err-code": {
+      "default": "Dėl kai kurių priežasčių jūsų mokėjimo negalima apdoroti. Prašome bandyti dar kartą ar naudoti kitus mokėjimo būdus.",
+      "buyer-account-abnormal": "Dėl kai kurių jūsų sąskaitos problemų, mokėjimo negalima apdoroti. Prašome bandyti dar kartą ar naudoti kitus mokėjimo būdus.",
+      "wrong-password": "Dėl neteisingo slaptažodžio negalima apdoroti jūsų mokėjimo. Prašome bandyti dar kartą ar naudoti kitus mokėjimo būdus.",
+      "overpayment": "Užsakymo suma viršija pirkimo apribojimą, todėl negalime apdoroti jūsų mokėjimą. Prašome pasirinkti kitą kortelę ar mokėjimo būdą ir bandykite kitą kartą.",
+      "insufficient-balance": "Nepakankamas likutis, todėl negalime apdoroti jūsų mokėjimo. Prašome pasirinkti kitą kortelę ar mokėjimo būdą ir bandykite kitą kartą.",
+      "invalid-card-number": "Negaliojantis kortelės numeris, todėl negalime apdoroti jūsų mokėjimo. Prašome pasirinkti kitą kortelę ar mokėjimo būdą ir bandykite kitą kartą.",
+      "card-expired": "Kortelė nebegalioja, todėl negalime apdoroti jūsų mokėjimo. Prašome pasirinkti kitą kortelę ar mokėjimo būdą ir bandykite kitą kartą.",
+      "change-card": "Dabar negalime apdoroti jūsų mokėjimo. Prašome pasirinkti kitą kortelę ar mokėjimo būdą ir bandykite dar kartą.",
+      "user-cancel": "Mokėjimas atšauktas. Prašome bandyti dar kartą, jei turite tęsti.",
+      "3d-overtime": "3DS autentifikavimas nepavyko, prašome bandyti dar kartą.",
+      "pin-over-times": "Viršytas maksimalus slaptažodžių įvedimo skaičius, todėl negalima apdoroti jūsų mokėjimo. Prašome pasirinkti kitą mokėjimo būdą ir bandyti kitą kartą."
+    },
+    "coupon": "Kuponas",
+    "coupon-mutra-discount": "Šis kupono kodas negali būti naudojamas kartu su kitų akcijų ar nuolaidų pasiūlymais",
+    "activity-price-limit": "Galite įsigyti tik {{num}} šios prekės vienetų su nuolaida",
+    "policy": {
+      "refund-policy": "Grąžinimo politika",
+      "privacy-policy": "Privatumo politika"
+    },
+    "tip": {
+      "add-tip": "Pridėti patarimą"
+    },
+    "free-shipping": "Nemokamas pristatymas",
+    "pod-link": "Spustelėti, kad peržiūrėtumėte",
+    "pod-pic": "Pasirinktinė peržiūra",
+    "activity-product-limit": "Su nuolaidomis vienu metu galite įsigyti daugiausia {{stock}} gaminį (-ius).",
+    "activity-title-limit": "Žemiau esantys produktai viršija pirkimo limitą, vis tiek pereiti prie apmokėjimo?"
+  },
+  "payments-name": {
+    "Paypal": "Paypal",
+    "COD": "Apmokėti grynais pristačius",
+    "third-part": "Kreditinė kortelė"
+  },
+  "paypal": {
+    "error-expired": "Baigėsi prekės galiojimo terminas",
+    "error-sold-out": "Nepakankamas prekių inventorius",
+    "error-product-limit": "Viršytas prekės apribojimas",
+    "error-network-error": "Tinklo klaida",
+    "error-shop-not-exit": "Parduotuvė neegzistuoja",
+    "error-login-limit": "Prašome prisijungti prie savo paskyros, prieš teikdami užsakymą"
+  },
+  "tips": {
+    "more-than-0-int": "Prašome įvesti skaičių, didesnį už 0",
+    "bind-change-mobile-phone-number": "Prijungti / keisti mobiliojo telefono numerį",
+    "bind-change-email": "Prijungti / keisti el. paštą",
+    "verification-code-has-been-sent-to-your-account": "Patikrinimo kodas buvo išsiųstas į jūsų paskyrą",
+    "change-binding-after-verification": "Galite prijungti / keisti {{value}} po patikrinimo",
+    "set-new-password": "Atkurti slaptažodį",
+    "forget-password": "Pamiršote slaptažodį",
+    "update-password": "Keisti slaptažodį",
+    "reset-password": "Atkuriate paskyros {{account}} slaptažodį",
+    "verify-account-to-reset-password": "Prašome patvirtinti savo paskyrą ir atkurti slaptažodį",
+    "password-can-be-changed-after-verification": "Galite keisti slaptažodį po patikrinimo",
+    "login": "PRISIJUNGTI",
+    "register": "Registruotis",
+    "or-use-the-following-method-to-log-in": "arba prisijungti šiais būdais",
+    "i-agree-with-the-shop": "Sutinku su",
+    "and": "ir",
+    "user-agreement": "parduotuvės vartotojo sąlygomis",
+    "please-read-and-agree-to-the-user-agreement-first": "Prašome pirma perskaityti ir sutikti su vartotojo sutartimi",
+    "no-order-information-please-confirm": "Nepavyko gauti užsakymo duomenų. Prašome įsitikinti, kad užsakymo numeris būtų teisingas",
+    "no-order-number-please-confirm": "Nepavyko gauti užsakymo numerio. Prašome įsitikinti, kad užsakymo numeris būtų teisingas",
+    "error-obtaining-support-logistics-country": "Įvyko klaida, gaunant šalies palaikomą logistiką",
+    "please-complete-the-payment-method-content": "Prašome užpildyti mokėjimo būdą",
+    "order-creation-exception": "Nepavyko pateikti užsakymo",
+    "bind-success": "Prisijungęs (-usi)",
+    "update-success": "Pakeista",
+    "pay-params-error": "Nepavyko gauti mokėjimo parametrų, prašome bandyti dar kartą",
+    "change-heart": "Pakeičiau savo nuomonę",
+    "price-more-expensive": "Sumažinti kainą, rastą kitoje vietoje",
+    "repeat-buy": "Įsigyti dar kartą",
+    "sale-too-slow": "Siuntimo atidėjimai",
+    "change-item": "Noriu pakeisti įsigytą (-as) prekę (-es)",
+    "incorrect-delivery-or-payment-information": "Neteisinga pristatymo ar mokėjimo informacija",
+    "other-reason": "Kitos priežastys",
+    "select-cancel-reason": "Prašome pasirinkti atšaukimo priežastį",
+    "fill-cancel-reason": "Prašome įrašyti užsakymo atšaukimo priežastį",
+    "sure-cancel-order": "Ar tikrai norite atšaukti šį užsakymą?",
+    "cancel-reason-feedback": "Prašome mums nurodyti savo atšaukimo priežastį, kad galėtumėte pasitaisyti ateityje. Jums bus grąžinti pinigai, sėkmingai atšaukus jūsų užsakymą. Nekantriai laukiame jūsų kito apsilankymo mūsų parduotuvėje!",
+    "cancel-apply-sent": "Išsiusta atšaukimo užklausa",
+    "cancel-order-fail": "Nepavyko atšaukti užsakymo, prašome bandyti dar kartą",
+    "cancel-success-notice": "Gausite pranešimą el. paštu, kai jūsų užsakymas bus sėkmingai atšauktas, ačiū!",
+    "fail-contact": "Jei jūsų atšaukimo užklausa buvo nesėkminga, prašome kreiptis į mus nurodydami toliau pateiktą pardavėjo / pirkėjo užsakymo susirašinėjimo skirsnį",
+    "max-upload-img": "Atsiprašome! Pasiekėte maksimalų {{maxNum}} vaizdų įkėlimų portalo paramai skaičių!",
+    "img-name-too-long": "Įvesties vaizdo pavadinimas yra per ilgas～",
+    "img-size-too-large": "Atsiprašome! Vaizdo rinkmenos dydis viršija apribojimą!",
+    "get-checkout-detail-fail": "Pirkimo duomenų išgavimo klaida",
+    "product-abnormal-back-to-cart": "Prekės būklės klaida, prašome grįžti į vežimėlį ir bandykite kitą kartą",
+    "get-checkout-config-fail": "Pirkimo konfigūravimo išgavimo klaida",
+    "country-address-fail": "Pardavėjai, esantys įvėsto adreso šalyje, nėra atsakingi už pristatymo įmokų mokėjimą. Prašome atlikti rankinį pasirinkimą",
+    "paypal-country-fail": "Šalis, kurioje yra „Paypal“ paskyra, neįtraukta į pristatymo įmokų mokėjimo šalių sąrašą. Prašome atlikti rankinį pasirinkimą",
+    "need-phone-number-to-deliver": "Tuo atveju, jei mums reikės kreiptis į jus dėl jūsų užsakymo",
+    "enter-tel-number": "Prašome įvesti telefono numerį",
+    "enter-email": "Prašome įvesti el. pašto adresą",
+    "no-logistics-available": "Nėra pristatymo būdo",
+    "logistics-no-pre-selection": "Pristatymo išankstinis pasirinkimas neprieinamas",
+    "logistics-pre-selection": "Pristatymo išankstinis pasirinkimas prieinamas",
+    "address-no-logistics": "Dabartiniam adresui nėra jokių prieinamų pristatymo būdų",
+    "enter-address-first": "Prašome pirma įvesti adresą",
+    "expand-order-summary": "Rodyti užsakymo santrauką",
+    "put-up-order-summary": "Slėpti užsakymo santrauką",
+    "select-return-product-first": "Prašome pirma pasirinkti grąžintiną prekę",
+    "enter-bank-name": "Prašome įvesti banko pavadinimą!",
+    "enter-bank-card-number": "Prašome įvesti banko kortelės numerį!",
+    "enter-name": "Prašome įvesti pavadinimą!",
+    "max-upload-image": "Galite įkelti maksimalų {{max}} vaizdų skaičių",
+    "upload-image-fail": "Nepavyko įkelti vaizdo {{name}}",
+    "image-size-less-than": "Vaizdų turi būti mažesnis nei {{max}} MB",
+    "sku-change-tips": "Aptikti prekės būsenos pokyčiai, prašome iš naujo patvirtinti savo siuntimo / mokėjimo būdą"
+  },
+  "validate": {
+    "coupon-code-cannot-exceed-25-length": "Kupono kodas negali viršyti 25 simbolių",
+    "discount-code-error": "Nuolaidos kodas įvestas neteisingai",
+    "discount-code-user-invalid": "{{discountCode}} įvestas teisingai, bet prekių kaina ar kiekis neatitinka reikalavimų",
+    "enter-correct-email": "Prašome įvesti el. pašto adresą galiojančiu formatu",
+    "enter-correct-phone-number": "Prašome įvesti mobiliojo telefono numerį galiojančiu formatu",
+    "phone-number-less-than-100": "Mobiliojo telefono numeris negali viršyti 100 simbolių",
+    "shipping_plan_unavailable": "{{discountCode}} kuponas galioja siuntimo būdui",
+    "mutual-excluded-by-time-limited": "Nuolaida taikoma šiam užsakymui. Negalite pridėti kitos nuolaidos"
+  },
+  "subscription": {
+    "subscript-via-line-facebook": "Prenumeruoti užsakymo pranešimą LINE ar Facebook",
+    "not-subscript-via-line-facebook": "Negalima prenumeruoti užsakymo pranešimo LINE ar Facebook"
+  },
+  "comment": {
+    "enter-comment": "Rašyti prekės atsiliepimą",
+    "customer-comment": "Klientų atsiliepimai",
+    "comment-count": "{{total}} atsiliepimai",
+    "read-more-comments": "Peržiūrėti daugiau",
+    "rate-score": "{{score}} reitingas",
+    "text": "Peržiūros",
+    "total": "{{total}} atsiliepimai",
+    "bad": "Labai blogai",
+    "worse": "Blogai",
+    "general": "Patenkinamai",
+    "good": "Gerai",
+    "best": "Puikiai",
+    "shipping-information": "Siuntimo informacija",
+    "all-reviews": "Žiūrėti visus atsiliepimus",
+    "leave-a-review": "Palikti atsiliepimą",
+    "no-login-msg": "Šią prekę įsigiję klientai gali palikti atsiliepimą, prašome pirma prisijungti",
+    "sign-in": "Prisijungti",
+    "no-bought-msg": "Atsiprašome, neįsigijote šios prekės anksčiau, todėl negalite palikti atsiliepimo.",
+    "ratings": "Reitingai",
+    "experience-about": "Prašome įvesti savo atsiliepimą apie šią prekę",
+    "add-img": "Pridėti vaizdą",
+    "more-images": "Galite pridėti daugiausiai {{total}} vaizdų",
+    "write-review": "Parašyti atsiliepimą",
+    "thanks-msg": "Dėkojame už jūsų atsiliepimą",
+    "network-err-msg": "Dėl sistemos klaidos, jūsų atsiliepimo negalima apdoroti, prašome bandyti dar kartą~",
+    "only-image": "Palaiko tik įkeliant jpg.jpeg.png.bmp rinkmeną",
+    "image-only-2m": "Maksimalus vaizdo dydis - {{size}} MB",
+    "about-product": "Prašome įvesti bent žodį",
+    "no-comment-title-tip": "Dar nėra komentarų",
+    "no-comment-first-tip": "Dabar skelbkite pirmąjį komentarą",
+    "on-img-upload-tip": "Įkeliama, prašome pateikti vėliau",
+    "mobile-submit": "Pateikti",
+    "nickname": "Slapyvardis"
+  },
+  "order": {
+    "refund-methods": {
+      "self": "Siųsti atgal pačiam",
+      "merchant": "Paėmimas pardavėjui"
+    },
+    "refund-type": {
+      "origin": "Grąžinti į pradinę mokėjimo sąskaitą",
+      "other": "Kiti"
+    },
+    "after-sale-type": {
+      "refund": "Grąžinti",
+      "return-and-refund": "Grąžinti prekę ir pinigus"
+    },
+    "after-order-status": {
+      "processing": "Apdorojama",
+      "confirmed": "Patvirtinta",
+      "delivery-progress": "Patvirtinta",
+      "cancelled": "Atšaukta",
+      "customer-canceled": "Klientas atšauktas",
+      "customer-rejected": "Klientas atmestas",
+      "merchant-cancellation": "Pardavėjas atšauktas",
+      "completed": "Baigta"
+    },
+    "order-status": {
+      "processing": "Apdorojama",
+      "confirmed": "Patvirtinta",
+      "cancelled": "Atšaukta",
+      "customer-canceled": "Klientas atšauktas",
+      "merchant-cancellation": "Pardavėjas atšauktas",
+      "completed": "Baigta"
+    },
+    "pay-status": {
+      "unpaid": "Nesumokėta",
+      "paying": "Mokėjimas",
+      "partial-payment": "Dalinai sumokėta",
+      "already-paid": "Sumokėta",
+      "failed": "Nepavyko sumokėti",
+      "timed-out": "Baigėsi mokėjimo laikas",
+      "refunding": "Grąžinimas",
+      "refunded": "Grąžinta",
+      "refund-failed": "Nepavyko grąžinti",
+      "partial-refund": "Dalinai grąžinta",
+      "abolished": "Negaliojantis"
+    },
+    "delivery-statusType": {
+      "stocking": "Prekių ruošimas",
+      "delivery-partial": "Dalinis siuntimas",
+      "cancelled": "Atšaukta",
+      "cancel-delivery": "Atšaukti siuntimą",
+      "shipping": "Pristatoma",
+      "shipped": "Pristatyta",
+      "arrived": "Atvyko",
+      "picked-up": "Gauta",
+      "problem": "Klausimams, tokiems kaip siuntimo problema ir prarasti užsakymai, būtina rankinė parama",
+      "delivery-return": "Grąžinta"
+    },
+    "oms-status": {
+      "executing": "Vykdoma",
+      "prepare-pick": "Parengta paimti",
+      "shipped": "Išsiųsta",
+      "cancelled": "Atšaukti siuntimą",
+      "arrived": "Atvyko",
+      "picked": "Pasirašyta",
+      "returning": "Grąžinama",
+      "returned": "Grąžinta",
+      "problem": "Siuntimo problema"
+    },
+    "order-list": {
+      "empty-title": "img",
+      "empty-tip": "Šiuo metu nėra jokio užsakymo įrašo, eikite apsipirkti",
+      "no-more": "Nėra daugiau informacijos",
+      "load-more": "Paruošti vietos didesniam kroviniui",
+      "pay-now": "Mokėti dabar",
+      "track": "Kelias",
+      "item-total": "{{transPackages}} prekės iš viso",
+      "item-total-plural": "{{transPackages}} prekių iš viso",
+      "package-item": "Pakuotė {{num}}({{item}} prekės)",
+      "package-more": "ir {{num}} daugiau",
+      "sub-order": "pagalbiniai užsakymai"
+    },
+    "breadcrumb": {
+      "title": "Užsakymai",
+      "order": "Užsakymai",
+      "order-detail": "Užsakymo duomenys"
+    },
+    "detail": {
+      "packages": {
+        "title": "Informacija",
+        "sub-title": "Pakuotės sekimas",
+        "payment-info": {
+          "method": "Mokėjimo būdas",
+          "status": "Mokėjimo būklė",
+          "address": "Sąskaitos teikimo adresas",
+          "detail": "Detalė"
+        },
+        "payment-title": "Mokėjimas",
+        "subscriptions-title": "Prenumeratos",
+        "order-note-title": "Užsakymo pastaba",
+        "shippings": {
+          "method": "Pristatymo būdas",
+          "fee": "Pristatymo įmoka",
+          "status": "Pristatymo būklė"
+        },
+        "amount": {
+          "subtotal": "Prekės tarpinė suma",
+          "tax": "Prekės mokestis",
+          "express": "Krovinys",
+          "express-surcharge": "Krovinio mokestis",
+          "channel-surcharge": "Mokėjimo komisinis",
+          "discount-amount-name": "Pardavėjo(s) papildoma nuolaida",
+          "tip": "Patarimas",
+          "preferential": "preferencinis",
+          "discount": "Kupono kodo nuolaida",
+          "deduct-voucher": "Kvito suma",
+          "total": "Bendroji suma"
+        },
+        "order-num": "Pakuotė ({{num}})",
+        "logistics": {
+          "no-data": "Šiuo metu nėra logistinės informacijos",
+          "detail": "Duomenys",
+          "tab-title": "Pakuotė {{index}}",
+          "blank-trace": "Prašome sekti savo pakuotę spustelėdami toliau pateiktą nuorodą:",
+          "no-data2": "Dar nėra pristatymo informacijos, prašome tikrinti vėliau."
+        },
+        "send-to-Messenger": "Siųsti į Messenger",
+        "send-to-Line": "Siųsti į Line",
+        "unshipped-order-num": "Apdorojamos ({{num}} prekės)",
+        "payment-deal": {
+          "name": "Mokėjimo kanalas",
+          "amount": "Suma",
+          "deal-id": "Sandorio nuorodos numeris",
+          "create-time": "Sukurta",
+          "update-time": "Atnaujinta",
+          "status": "Būklė",
+          "title": "Mokėjimo duomenys"
+        },
+        "status": {
+          "pedding": {
+            "title": "Siuntimo parengimas",
+            "desc": "Šiuo metu ruošiamos prekės siuntimui."
+          },
+          "success": {
+            "desc": "Priėmėme jūsų užsakymą ir jis rengiamas. Grįžkite į šį puslapį atnaujinimams dėl jūsų siuntimo būklę."
+          }
+        },
+        "contact-us-title": "Susiekite su mumis",
+        "contact-us": "Reikia pagalbos? Prašome susisiekti su mumis: {{email}}"
+      },
+      "order-status": {
+        "cancel": {
+          "title": "Jūsų užsakymas buvo atšauktas",
+          "desc": "Jūsų užsakymas buvo atšauktas {{cancelTime}}. Susisiekite su mumis, jei turite bet kokių klausimų."
+        },
+        "success": {
+          "title": "Jūsų užsakymas patvirtintas",
+          "desc": "Užsakymo informacija buvo išsiųsta {{buyerContact}}, prašome patikrinti."
+        },
+        "pedding": {
+          "title": "Mokėjimas apdorojimas...",
+          "desc": "Jūsų mokėjimo užklausa pateikta ir laukiate {{payChannelDesc}}, kad būtų pateiktas mokėjimo rezultatas"
+        },
+        "redirect": {
+          "title": "Nukreipiama į mokėjimo rezultatą",
+          "desc": "Jei automatiškai nesate nukreipiama(s), atnaujinkite šį puslapį"
+        },
+        "pay": {
+          "title": "Laukiama mokėjimo",
+          "go-pay": "MOKĖTI <0>{{orderAmount}}</0>"
+        },
+        "button": {
+          "refresh": "Atnaujinti"
+        }
+      },
+      "order-info": {
+        "processing": "Apdorojama",
+        "confirmed": "Patvirtinta",
+        "finished": "Baigta",
+        "canceled": "Atšaukta"
+      },
+      "cancel-btn": "ATŠAUKTI UŽSAKYMĄ",
+      "communication": {
+        "title": "Užsakymai bendravimui"
+      },
+      "coms": {
+        "operationLog": {
+          "PayDealLog": {
+            "title": "Mokėjimas už {amount} buvo apdorotas per {payName}",
+            "payName": "Mokėjimo kanalas",
+            "amount": "Suma",
+            "dealId": "Mokėjimo serijos numeris",
+            "createTime": "Mokėjimo pradžios laikas",
+            "updateTime": "Grąžinto rezultato laikas",
+            "status": "Būklė"
+          }
+        }
+      }
+    },
+    "seq-no": "Nr.{{id}}",
+    "order-at": "Užsakyta:",
+    "customer-info": "Kliento informacija",
+    "help-tips": "Reikia pagalbos? Prašome susisiekti su mumis: {{email}}",
+    "order-date": "Užsakymo data"
+  },
+  "promotion": {
+    "full-reduction": "Rėmimas",
+    "full-reduction-benefit": "Nuolaidų skatinimas",
+    "full-discount": "Rėmimas",
+    "full-discount-benefit": "Nuolaidų skatinimas",
+    "free-shipping": "Nemokamas pristatymas",
+    "flash-sale": "Momentinis pardavimas",
+    "member-price": "Nario (-ės) kaina",
+    "all-product": "Visos prekės",
+    "permanent": "Nuolatinis",
+    "all-user": "Visi vartotojai",
+    "all-vip": "Visi nariai",
+    "level-vip": "Lv.{{level}} narys",
+    "label-vip": "{{label}} narys",
+    "other-customer": "Klientas (vartojai, kurie nepateikė užsakymo)",
+    "activity-scope": "Renginio apimtis",
+    "activity-benefit": "Renginio pasiūlymai",
+    "activity-introduction": "Renginio įvadas",
+    "terms-and-conditions": "Terminai ir sąlygos",
+    "selected-count-activity-product": "{{selectCount}} pasirinktos akcinės prekės",
+    "price-unit": "Juanis",
+    "piece-unit": "Vnt.",
+    "discount-benefit": "{{discount}} nuolaida",
+    "full-amount": "<0>{{value}}</0> ar daugiau",
+    "full-piece": "{{value}} vnt. ar daugiau",
+    "reduce": "Nuolaida <0>{{value}}</0>",
+    "reduce1": "Nuolaida {{value}}",
+    "reduce-again": "<0>{{value}}</0> papildoma nuolaida",
+    "get-discount-1": "mėgaukitės {{value}} nuolaida",
+    "get-discount-2": "mėgaukitės {{value}}% pasiūlymu",
+    "flash-sale-limit": "Įsigijimo apribojimas {{value}} asmeniui",
+    "buy-again": "Įsigyti <0>{{value}}</0> daugiau",
+    "buy-again-piece": "Įsigyti {{value}} daugiau vnt.",
+    "still-lacking": "<0>{{value}}</0> reikia",
+    "discounted": "Sutaupėte <0>{{value}}</0>",
+    "coupon": "Kuponas",
+    "select-sku": "Pasirinkti prekės specifikacijas",
+    "select-combo": "Pasirinkti pakuotę",
+    "more-combo": "Daugiau pakuočių",
+    "item-num": "Prekė {{value}}",
+    "only-one-sku": "Dabartinė prekė turi tik vieną specifikaciją",
+    "select-product": "Pirkti prekes",
+    "bundle": {
+      "title": "Jungtinės prekės",
+      "desc": "Pridėti jas prie pirkinių vežimėlio <italic>{{value}}</italic> nuolaidai"
+    },
+    "whole-full-piece-discount": "<italic>{{content}}</italic>% nuolaida už <italic>{{condition}}</italic> vnt.",
+    "whole-full-amount-discount": "<italic>{{content}}</italic>% nuolaida virš <italic>{{condition}}</italic>",
+    "whole-full-piece-reduce": "<italic>{{content}}</italic> nuolaida už <italic>{{condition}}</italic> vnt.",
+    "whole-full-amount-reduce": "<italic>{{content}}</italic> nuolaida virš <italic>{{condition}}</italic>",
+    "price-price-step1": "Įsigyti <more>{{morePrice}}</more> daugiau, kad sutaupytumėte <more>{{totalPrice}}</more>",
+    "price-price-step2": "Jau <normal>{{price}}</normal> sutaupėte!<white /> Įsigykite <more>{{morePrice}}</more> daugiau, kad sutaupytumėte <more>{{totalPrice}}</more>",
+    "price-price-step3": "Sveikiname! Sutaupėte <normal>{{price}}</normal> !",
+    "price-piece-step1": "Įsigyti <more>{{morePrice}}</more> daugiau, kad sutaupytumėte <more>{{totalPrice}}</more>",
+    "price-piece-step2": "Jau <normal>{{price}}</normal> sutaupėte!<white /> Įsigykite <more>{{morePrice}}</more> daugiau, kad sutaupytumėte <more>{{totalPrice}}</more>",
+    "price-piece-step3": "Sveikiname! Sutaupėte <normal>{{price}}</normal> !",
+    "percent-price-step1": "Įsigykite <more>{{price}}</more> daugiau, kad gautumėte <more>{{percent}}</more> NUOLAIDĄ",
+    "percent-price-step2": "Jau <normal>{{percent}}</normal> sutaupėte!<white /> Įsigykite <more>{{price}}</more> daugiau, kad gautumėte <more>{{morePercent}}</more> NUOLAIDĄ",
+    "percent-price-step3": "Sveikiname! Sutaupėte <normal>{{percent}}</normal> !",
+    "percent-piece-step1": "Įsigykite <more>{{price}}</more> daugiau, kad gautumėte <more>{{percent}}</more> NUOLAIDĄ",
+    "percent-piece-step2": "Jau <normal>{{percent}}</normal> sutaupėte!<white /> Įsigykite <more>{{price}}</more> daugiau, kad gautumėte <more>{{morePercent}}</more> NUOLAIDĄ",
+    "percent-piece-step3": "Sveikiname! Sutaupėte <normal>{{percent}}</normal> !"
+  },
+  "labelInput": {
+    "email-error": "Prašome įvesti el. pašto adresą galiojančiu formatu",
+    "phone-error": "Prašome įvesti mobiliojo telefono numerį galiojančiu formatu",
+    "contact-error": "Prašome įvesti el. pašto adresą / mobiliojo telefono numerį galiojančiu formatu",
+    "phone-error-tips": "Prašome įrašyti tikrąjį gavėjo vardą ir pavardę, kad užtikrintumėte sklandų gavimą"
+  },
+  "userCenter": {
+    "personal-info": "Asmeninė informacija",
+    "orders": "Užsakymai",
+    "refunds": "Grąžinimai",
+    "sign-out": "Atsijungti",
+    "edit": "Redaguoti",
+    "cancel": "ATŠAUKTI",
+    "save": "IŠSAUGOTI",
+    "buy-record-entry": "Įsigytos prekės",
+    "account": {
+      "account-subscription-email": "Siųsti į el. paštą",
+      "account-subscription-phone": "Siųsti į mobilųjį telefoną",
+      "account-subscription-messenger": "Siųsti į Messenger",
+      "account-subscription-line": "Siųsti į „Line“ programėle",
+      "reset-password-error": "Prašome pirma susieti el. paštą ar mobilųjį telefoną",
+      "account-info": "Paskyros informacija",
+      "member-level": "Narystės lygis",
+      "memberLevelCom": {
+        "defaultLevel": "Bendrasis narys",
+        "expire": "Sueina {{time}}",
+        "upgradeText1": "Vieninteliu pirkiniu <italic>{{money}}</italic>, galite atnaujinti {{nextLevelName}}",
+        "upgradeText0": "Atnaujinti {{nextLevelName}} išleidus spending <italic>{{money}}</italic>",
+        "upgradeSuccessText": "Sveikiname, sėkmingai atnaujinote",
+        "modalTitle": "Klasės interesų aprašymą",
+        "tableTitleGrade": "Narystės klasė",
+        "tableTitleInterest": "Narių interesai",
+        "discountInterest": "Pirkimo nuolaida"
+      },
+      "general-member": "Bendrasis narys",
+      "username": "Vartotojo vardas",
+      "username-message": "Prašome įvesti savo vartotojo vardą!",
+      "username-placeholder": "Prašome įvesti savo vartotojo vardą",
+      "email": "El. paštas",
+      "bind": "Susiejama",
+      "modify-email": "Keisti el. paštą",
+      "phone": "Mobilusis telefonas",
+      "modify-phone": "Keisti telefoną",
+      "password": "Slaptažodis",
+      "change-password": "Pakeisti slaptažodį",
+      "subscription-notification": "Prenumeratos pranešimas",
+      "unsubscribed": "Neprenumeruota",
+      "account-binding": "Paskyros susiejimas"
+    },
+    "address": {
+      "delete-address": "Šalinti adresą",
+      "address": "Adresas",
+      "no-data": "Šiuo metu nėra pristatymo adreso",
+      "add": "Pridėti naują adresą",
+      "full-tip": "5 adresai buvo išsaugoti ir negali būti pridėti šiuo metu",
+      "default": "Numatytas",
+      "ok": "OK"
+    },
+    "subscription": {
+      "title": "Ptenumerata",
+      "line": "„LINE“",
+      "phone": "Mobilusis telefonas",
+      "email": "El. paštas",
+      "messenger": "Messenger",
+      "not-sub": "Neprenumeruota",
+      "subed": "Prenumeruota",
+      "unsub": {
+        "title": "Neprenumeruoti",
+        "content": "Užsiprenumeravę daugiau nebegausite paskutinio skatinimo.",
+        "ok-text": "Neprenumeruoti"
+      },
+      "modal": {
+        "eamil-title": "Gaukite prenumeratos rėmimo duomenis el. Paštu",
+        "ok-text": "PRENUMERUOTI",
+        "cancel-text": "Neprenumeruoti",
+        "phone-title": "Prenumeruoti telefono skatinimą",
+        "save": "IŠSAUGOTI"
+      }
+    },
+    "personal": {
+      "gender-male": "Vyras",
+      "gender-female": "Moteris",
+      "gender-secret": "Nesakyti",
+      "personal-information": "Asmeninė informacija",
+      "birthday-date": "Gimimo data",
+      "date": "Data",
+      "select-date": "Pasirinkti datą",
+      "select-date-ok": "OK",
+      "select-date-placeholder": "Pasirinkti",
+      "select-date-cancel": "Atšaukti",
+      "gender": "Lytis",
+      "unknown": "Nežinoma"
+    },
+    "editAddress": {
+      "country-message": "Prašome pasirinkti savo šalį!",
+      "province-message": "Prašome pasirinkti savo provinciją!",
+      "city-message": "Prašome pasirinkti savo miestą!",
+      "district-message": "Prašome pasirinkti savo rajoną!",
+      "postcode-message": "Mažiau nei 32 simbolius!",
+      "address1-message": "Mažiau nei 512 simbolius!",
+      "address2-message": "Mažiau nei 512 simbolius!",
+      "edit": "REDAGUOTI DIUNTIMO ADRESĄ",
+      "contact-message": "Prašome įvesti savo vardą!",
+      "lastName-message": "Prašome įvesti savo pavardę!",
+      "phone-message": "Prašome įvesti savo mobilųjį telefoną!",
+      "default": "Nustatyti kaip numatytąjį adresą",
+      "name-placeholder": "Vardas ir pavardė",
+      "firstName-placeholder": "Vardas (pasirinktinai)",
+      "lastName-placeholder": "Pavardė",
+      "phone-label": "Telefonas"
+    },
+    "message": {
+      "message": "Pranešimas",
+      "send": "Siųsti",
+      "inputPlaceholder": "Ar norėtumėte palikti pranešimą?"
+    },
+    "point": {
+      "title": "Prekiauti auksu",
+      "empty-mainText": "Dar neturite pirkimo pinigų",
+      "empty-btn-link": "Kaip įgyti ir naudoti pirkimo pinigus?",
+      "mainview-dedection": "Dabartinis maksimalus kreditas - <italic>{{money}}</italic>",
+      "mainview-link": "Suprasti taisykles",
+      "mainview-save": "Sutaupėte <italic>{{historyTotalUsedDeduction}}</italic> naudojami {{historyTotalUsedScore}} pirmiko įmokas",
+      "modal-title": "Pirkimo kupono aprašymas",
+      "ok-btn": "OK",
+      "unuseHistoryScore": "Nenaudojote pirkimo kupono, kad sutaupytumėte išlaidų",
+      "date": "{{day}}, {{month}} {{date}}, {{year}}",
+      "day0": "Sekmadienis",
+      "day1": "Pirmadienis",
+      "day2": "Antradienis",
+      "day3": "Trečiadienis",
+      "day4": "Ketvirtadienis",
+      "day5": "Penktadienis",
+      "day6": "Šeštadienis",
+      "month1": "Saus",
+      "month2": "Vas",
+      "month3": "Kov",
+      "month4": "Bal",
+      "month5": "Geg",
+      "month6": "Bir",
+      "month7": "Liep",
+      "month8": "Rugj",
+      "month9": "Rugs",
+      "month10": "Spa",
+      "month11": "Lap",
+      "month12": "Gr",
+      "actionTypeDesc": {
+        "addPoint": "pridėti tašką",
+        "deductPoint": "atimti tašką",
+        "expirePoint": "baigėsi taško galiojimas",
+        "freezePoint": "užšaldyti tašką",
+        "releaseFreezePoint": "atleisti užšaldytą tašką",
+        "deductFreezePoint": "atimti užšaldytą tašką",
+        "reverseAddPoint": "atšaukti pridėtą tašką",
+        "reverseDeductPoint": "atšaukti atimtą tašką"
+      }
+    },
+    "pointList": {
+      "empty": "Šiuo metu nėra jokių taškų įrašų",
+      "breadcrumb1": "Informacija",
+      "breadcrumb2": "Pirkimo kaina",
+      "total": "Peržiūra({{total}})",
+      "loading": "Įkeliama...",
+      "loaded": "Įkelta",
+      "empty2": "Nėra daugiau įrašų",
+      "order": "Peržiūrėti užsakymą:"
+    }
+  },
+  "cart": {
+    "render-empty-status": "Jūsų vežimėlyje nėra prekių",
+    "render-add-items": "Jūsų vežimėlis šiuo metu tuščias.",
+    "go-shopping": "TĘSTI APSIPIRKIMĄ",
+    "login-description": "Jau narys (-ė)? Prisijungimas gali būti patogus užsakymui tvarkyti!",
+    "login-membership": "Nemokama narystė",
+    "checkout-error": "Pirkinių krepšelyje yra mažiausiai viena neprieinama prekė. Prašome reguliuoti krepšelio prekes galutiniam pirkimui.",
+    "get": "Gauti nuolaidą",
+    "shopping-money": "Nuolaida, mokesčiai ir siuntimas bus apskaičiuotas kitame žingsnyje",
+    "shopping-fees": "pirkimo įmokos",
+    "shopping-money-step": "Mokesčiai ir siuntimas apskaičiuotas galutiniam pirkimui",
+    "view-shopping-cart": "Peržiūrėti pirkinių vežimėlį",
+    "most-100-sku": "Pridėti iki 100 prekių",
+    "most-buy-999": "Maksimalus vienos prekės kiekis – 999 vienetai",
+    "stock-limit": "{{stock}} vnt. sandėlyje",
+    "activity-title-limit": "Toliau nurodytos prekės viršija pirkimo apribojimą, vis dar tęskite pirkimą?",
+    "activity-price-limit": "Galite įsigyti tik {{num}} šios prekės vienetų su nuolaida",
+    "active-stock-limit-2": "Galite tik pirkti šios prekės {{stock}} vnt. su nuolaidomis",
+    "active-stock-limit-1": "Tuo pačiu metu galite pirkti daugiausia {{stock}} prekių su nuolaida",
+    "activity-product-limit": "Tuo pačiu metu galite pirkti daugiausia {{stock}} prekių su nuolaida",
+    "view-link": "Spustelėti, kad peržiūrėtumėte",
+    "view-pic": "Pasirinktinė peržiūra",
+    "not-participation-offers": "Netaikoma nuolaida",
+    "active-stock-limit": "Tik {{stock}} vnt. liko su šia nuolaida"
+  },
+  "widget": {
+    "order": {
+      "pending-order": "Laukiamas užsakymas"
+    }
+  },
+  "user": {
+    "email": "El. pašto adresas",
+    "phone": "Mobiliojo telefono numeris",
+    "username": "El. pašto adresas / mobiliojo telefono numeris",
+    "password": "Slaptažodis",
+    "repeatPassword": "Iš naujo įvesti slaptažodį",
+    "primevalPassword": "Dabartinis slaptažodis",
+    "code": "Patikrinimo kodas",
+    "signUp": "REGISTRUOTIS",
+    "signIn": "PRISIJUNGTI",
+    "confirm": "OK",
+    "emailError": "Prašome įvesti el. pašto adresą galiojančiu formatu ir mažiau nei 50 simbolių",
+    "phoneError": "Prašome įvesti mobiliojo telefono numerį galiojančiu formatu",
+    "codeError": "Prašome įvesti patvirtinimo kodą",
+    "passwordError": "Prašome nustatyti slaptažodį minimaliai 8 simbolių ilgio ir maksimaliai 20 simbolių ilgio. Slaptažodžiuose turi būti bent viena didžioji raidė, viena mažoji raidė ir vienas skaičius",
+    "repeatPasswordError": "Jūsų įvestieji slaptažodžiai neatitinka",
+    "repeatPasswordEmptyError": "Prašome įvesti slaptažodį dar kartą",
+    "primevalPasswordError": "Prašome įvesti savo dabartinį slaptažodį",
+    "send": "Siųsti",
+    "resend": "Siųsti iš naujo",
+    "sendError": "Prašome pirma išsiųsti patvirtinimo kodą",
+    "noData": "Nėra prieinamų duomenų",
+    "passwordEmptyError": "Prašome įvesti slaptažodį",
+    "passwordMemberError": "Prašome nustatyti slaptažodį minimaliai 6 simbolių ilgio ir maksimaliai 18 simbolių ilgio",
+    "emailEmptyError": "Prašome įvesti el. pašto adresą",
+    "phoneEmptyError": "Prašome įvesti mobiliojo telefono numerį",
+    "usernameEmptyError": "Prašome įvesti el. pašto adresą ar mobilųjį telefono numerį",
+    "primevalNewPasswordError": "Jūsų naujas slaptažodis negali būti toks pat kaip jūsų dabartinis slaptažodis",
+    "udbResponse": {
+      "err-1": "Parametrai tušti",
+      "err-4": "Parametrai negaliojantys",
+      "err-5": "Neteisėta operacija",
+      "err-13": "baigėsi stoken terminas",
+      "err-999": "Nepavyko paskambinti nuotoliniu būdu",
+      "err1001": "Slaptažodžio klaida",
+      "err1002": "Vartotojas neegzistuoja",
+      "err1003": "Jūsų paskyra neprieinama dėl sutrikimo; prašome susisiekti su pardavėju, kad būtų atšauktas draudimas",
+      "err1004": "Siųsti SMS kelis kartus",
+      "err1005": "Baigėsi kodo laikas",
+      "err1006": "Kodo klaida",
+      "err1007": "Per daug kartų naudoto patikros kodo klaida",
+      "err1008": "Gija ar kanalas nebuvo konfigūruoti",
+      "err1009": "Nepavyko trečiosios šalies patvirtinimas",
+      "err1010": "Nepavyko pateikti SMS / pašto šablono",
+      "err2001": "Mobilusis buvo registruotas",
+      "err2002": "El. paštas buvo registruotas",
+      "err2003": "Nebandykite taip dažnai",
+      "err2004": "Baigėsi kodo laikas",
+      "err2005": "Kodo klaida",
+      "err2006": "Per daug tikrinimo kartų, prašome gauti kitą kodą",
+      "err2007": "Nepavyko pateikti SMS / pašto šablono",
+      "err3001": "Slapukas negaliojantis",
+      "err3002": "Vartotojai, kurie nėra susieti mobiliaisiais telefonais / pašto dėžutėmis, bando pakeisti savo slaptažodžius",
+      "err3003": "Nebandykite taip dažnai",
+      "err3004": "Baigėsi kodo laikas",
+      "err3005": "Kodo klaida",
+      "err3006": "Per daug tikrinimo kartų, prašome gauti kitą kodą",
+      "err3007": "Mobilusis neegzistuoja",
+      "err3008": "El. paštas neegzistuoja",
+      "err3009": "Mobilusis buvo susietas su kitomis paskyromis",
+      "err3010": "El. paštas buvo susietas su kitomis paskyromis",
+      "err3014": "Nepavyko pateikti SMS / pašto šablono",
+      "udbResponse": "Jūsų paskyra neprieinama dėl sutrikimo; prašome susisiekti su pardavėju, kad būtų atšauktas draudimas"
+    },
+    "account": "PASKYRA"
+  },
+  "address": {
+    "dropdown": {
+      "default-placeholder": "Prašome pasirinkti",
+      "no-item-tips": "Nėra prieinamų duomenų",
+      "no-search-result": "Nerasta atitikmenų"
+    },
+    "mobile-errorMessage": "Prašome įvesti galiojantį telefono numerį",
+    "mobile-errorMessage-country-code": "Prašome pridėti vietovės kodą"
+  },
+  "oneShop": {
+    "noComment": "Dar nėra komentarų",
+    "productCommentTitle": "Prekė Atsiliepimai({{n}})",
+    "priceStart": "Iš CNY {{n}}",
+    "discountByAmount": "{{n}}% nuolaidos virš CNY {{amount}}",
+    "discountByNum": "{{n}}% nuolaidos už {{num}} vnt.",
+    "cutByAmount": "CNY {{n}} nuolaida virš CNY {{amount}}",
+    "cutByNum": "CNY {{n}} nuolaidą už {{num}} vnt.",
+    "buyNow": "Įsigykite dabar",
+    "productDetail": "Prekės duomenys",
+    "selectedProductSoldOut": "Nepakankamas pasirinktos prekės inventorius",
+    "currentProductSoldOut": "Nepakankamas dabartinės prekės inventorius",
+    "productNoSelect": "Prašome pasirinkti prekės specifikaciją",
+    "orderAgain": "Prašome bandyti pateikti užsakymą dar kartą",
+    "soleOutSelectAgain": "Nepakankamas dabartinės prekės inventorius, prašome pasirinkti dar kartą",
+    "productFailure": "Jūsų pasirinkta prekė negaliojantis, prašome pasirinkti dar kartą",
+    "comboSelectFailure": "Jūsų pasirinktas jungtinis paketas negaliojantis, prašome pasirinkti dar kartą",
+    "comboFailure": "Negaliojantis jungtinis paketas",
+    "freeShipping": "Nemokamas pristatymas",
+    "buyPop": "{{name}} įsigijo šią prekę prieš {{minutes}} minučių",
+    "noProductDesc": "Dabar nėra prekės aprašymų",
+    "TCTD0108": "Siuntimo būdas neegzistuoja, prašome pasirinkti dar kartą",
+    "TCTD0118": "Mokėjimo būdas neegzistuoja, prašome pasirinkti dar kartą",
+    "TCTD0121": "Rinkodaros kampanija pakeista, prašome pasirinkti dar kartą",
+    "TCTD0112": "Jūsų pasirinkta prekė negaliojantis, prašome pasirinkti dar kartą",
+    "defaultErrorCodeMsg": "Tinklas neveikia tinkamai, prašome atnaujinti puslapį ir bandyti dar kartą vėliau",
+    "comment": "Prašome palikti pranešimą (nebūtina)",
+    "country": "Šalis",
+    "submit": "Pateikti",
+    "overLength": "Įvesties ilgis viršija apribojimą, prašome reguliuoti savo turinį ir bandyti dar kartą.",
+    "optional": "Nebūtina",
+    "bracket": "({{content}})"
+  },
+  "blogList": {
+    "container": {
+      "empty": {
+        "title": "Dienoraštis",
+        "desc": "Šiame tinklaraštyje nėra jokių tinklaraščio įrašų."
+      },
+      "readBtnText": "Skaityti daugiau"
+    }
+  },
+  "blog": {
+    "container": {
+      "backTo": "Grąžinti {{{collectionTitle}}}"
+    }
+  }
+}

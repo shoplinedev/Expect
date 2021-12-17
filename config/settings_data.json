@@ -98,6 +98,7 @@
       "header": {
         "type": "header",
         "settings": {
+          "main_menu_link_list": "head",
           "main_menu_alignment": "left-down",
           "mega_menu_images": true,
           "header_style": true,
@@ -108,8 +109,7 @@
           "show_locale_selector": false,
           "show_currency_flags": true,
           "show_user_center": true,
-          "show_cart": true,
-          "main_menu_link_list": "head"
+          "show_cart": true
         },
         "disabled": false,
         "blocks": {
@@ -139,11 +139,7 @@
             }
           }
         },
-        "block_order": [
-          "header-logo",
-          "header-announcement",
-          "header-announcement2"
-        ]
+        "block_order": ["header-logo", "header-announcement", "header-announcement2"]
       },
       "product/collections/collection-filter": {
         "type": "product/collections/collection-filter",
@@ -171,10 +167,7 @@
             }
           }
         },
-        "block_order": [
-          "a",
-          "b"
-        ]
+        "block_order": ["a", "b"]
       },
       "product/collections/collection-page": {
         "type": "product/collections/collection-page",
@@ -216,18 +209,7 @@
             "type": "payment",
             "settings": {
               "title": "We accept",
-              "pay_channel_list": [
-                "visa",
-                "master-card",
-                "master-card2",
-                "visa-electron",
-                "jcb",
-                "american-express",
-                "diners-club",
-                "discover",
-                "paypal",
-                "union-pay"
-              ]
+              "pay_channel_list": ["visa", "master-card", "master-card2", "visa-electron", "jcb", "american-express", "diners-club", "discover", "paypal", "union-pay"]
             }
           },
           "footer-custom": {
@@ -244,17 +226,12 @@
           "footer-menu": {
             "type": "menu",
             "settings": {
-              "title": "Menu title",
-              "menu": "foot"
+              "menu": "foot",
+              "title": "Menu title"
             }
           }
         },
-        "block_order": [
-          "footer-social",
-          "footer-payment",
-          "footer-menu",
-          "footer-custom"
-        ]
+        "block_order": ["footer-social", "footer-payment", "footer-menu", "footer-custom"]
       },
       "footer-promotion": {
         "type": "footer-promotion",
@@ -303,11 +280,7 @@
             }
           }
         },
-        "block_order": [
-          "footer-promotion-richText1",
-          "footer-promotion-richText2",
-          "footer-promotion-richText3"
-        ]
+        "block_order": ["footer-promotion-richText1", "footer-promotion-richText2", "footer-promotion-richText3"]
       },
       "product/detail/product-preview": {
         "type": "product/detail/product-preview",
@@ -367,116 +340,107 @@
             }
           }
         },
-        "block_order": [
-          "split-slideshow-image1",
-          "split-slideshow-image2"
-        ]
+        "block_order": ["split-slideshow-image1", "split-slideshow-image2"]
       },
       "collection-list": {
         "type": "collection-list",
+        "disabled": false,
         "settings": {
           "title": "Collection list",
-          "col": 2,
+          "col": 6,
           "add_margin": true,
-          "slice_in_mobile": true,
           "show_divider": false
         },
-        "disabled": false,
         "blocks": {
           "collection-list1": {
             "type": "collection",
+            "icon": "productCategories",
             "settings": {
-              "image_display_area": "center_center",
-              "category_id": "SORN46643055375407145413535"
+              "image_display_area": "center_center"
             }
           },
           "collection-list2": {
             "type": "collection",
+            "icon": "productCategories",
             "settings": {
               "image_display_area": "center_center"
             }
           },
           "collection-list3": {
             "type": "collection",
+            "icon": "productCategories",
             "settings": {
               "image_display_area": "center_center"
             }
           },
           "collection-list4": {
             "type": "collection",
+            "icon": "productCategories",
             "settings": {
               "image_display_area": "center_center"
             }
           },
           "collection-list5": {
             "type": "collection",
+            "icon": "productCategories",
             "settings": {
               "image_display_area": "center_center"
             }
           },
           "collection-list6": {
             "type": "collection",
+            "icon": "productCategories",
             "settings": {
               "image_display_area": "center_center"
             }
           }
         },
-        "block_order": [
-          "collection-list1",
-          "collection-list2",
-          "collection-list3",
-          "collection-list4",
-          "collection-list5",
-          "collection-list6"
-        ]
+        "block_order": ["collection-list1", "collection-list2", "collection-list3", "collection-list4", "collection-list5", "collection-list6"]
       },
       "promotion-grid": {
         "type": "promotion-grid",
+        "disabled": false,
         "settings": {
           "enable_full_screen": false,
           "gap": 20,
           "enable_top_space": false,
           "enable_bottom_space": false
         },
-        "disabled": false,
         "blocks": {
           "block1": {
             "type": "sale_collection",
             "settings": {
               "color_scheme": "3",
+              "product_categories": "",
               "top_content": "UP to",
               "middle_content": "50% off",
               "bottom_content": "Select products",
-              "width": "50%",
-              "product_categories": ""
+              "width": "50%"
             }
           },
           "block2": {
             "type": "sale_collection",
             "settings": {
               "color_scheme": "3",
+              "product_categories": "",
               "top_content": "UP to",
               "middle_content": "50% off",
               "bottom_content": "Select products",
-              "width": "50%",
-              "product_categories": ""
+              "width": "50%"
             }
           }
         },
-        "block_order": [
-          "block1",
-          "block2"
-        ]
+        "block_order": ["block1", "block2"]
       },
       "promotion-grid-2": {
         "type": "promotion-grid",
+        "disabled": false,
         "settings": {
           "enable_full_screen": false,
           "gap": 20,
           "enable_top_space": false,
           "enable_bottom_space": false
         },
-        "disabled": false,
         "blocks": {
           "block1": {
             "type": "banner",
@@ -488,26 +452,24 @@
             }
           }
         },
-        "block_order": [
-          "block1"
-        ]
+        "block_order": ["block1"]
       },
       "featured-collection": {
         "type": "featured-collection",
+        "disabled": false,
         "settings": {
+          "product_categories": "",
           "title": "Featured collection",
           "col": 5,
           "row": 1,
           "slice_in_mobile": false,
           "button_text": "View all",
-          "show_divider": false,
-          "product_categories": ""
-        },
-        "disabled": false,
-        "blocks": {}
+          "show_divider": false
+        }
       },
       "rich-text": {
         "type": "rich-text",
+        "disabled": false,
         "settings": {
           "title": "Rich text",
           "main_text": "A sentence or two introducing your brand, what you sell, and what makes your brand compelling to customers.",
@@ -518,12 +480,11 @@
           "color_style": "1",
           "color_scheme": "1",
           "show_divider": false
-        },
-        "disabled": false,
-        "blocks": {}
+        }
       },
       "large-image-with-text-box": {
         "type": "large-image-with-text-box",
+        "disabled": false,
         "settings": {
           "image": null,
           "image_mobile": {},
@@ -538,37 +499,36 @@
           "text_position": "left",
           "text_border": false,
           "parallax": true
-        },
-        "disabled": false,
-        "blocks": {}
+        }
       },
       "featured-collection2": {
         "type": "featured-collection",
+        "disabled": false,
         "settings": {
+          "product_categories": "",
           "title": "Featured collection",
           "col": 5,
           "row": 1,
           "slice_in_mobile": false,
           "button_text": "View all",
-          "show_divider": false,
-          "product_categories": ""
-        },
-        "disabled": false,
-        "blocks": {}
+          "show_divider": false
+        }
       },
       "text-columns-with-images": {
         "type": "text-columns-with-images",
+        "disabled": false,
         "settings": {
           "title": "Text columns with images",
           "text_align": "center",
           "color_scheme": "none",
           "show_divider": false,
-          "show_touch": false
+          "show_touch":false
         },
-        "disabled": false,
         "blocks": {
           "text-columns-item1": {
             "type": "item",
+            "name": "Title",
+            "icon": "image",
             "settings": {
               "show_image": true,
               "image": {},
@@ -581,6 +541,8 @@
           },
           "text-columns-item2": {
             "type": "item",
+            "name": "Title",
+            "icon": "image",
             "settings": {
               "show_image": true,
               "image": {},
@@ -593,6 +555,8 @@
           },
           "text-columns-item3": {
             "type": "item",
+            "name": "Title",
+            "icon": "image",
             "settings": {
               "show_image": true,
               "image": {},
@@ -604,22 +568,20 @@
             }
           }
         },
-        "block_order": [
-          "text-columns-item1",
-          "text-columns-item2",
-          "text-columns-item3"
-        ]
+        "block_order": ["text-columns-item1", "text-columns-item2", "text-columns-item3"]
       },
       "icon-list": {
         "type": "icon-list",
+        "disabled": false,
         "settings": {
           "title": "Popular brands",
           "show_divider": false
         },
-        "disabled": false,
         "blocks": {
           "icon-list-item1": {
             "type": "item",
+            "name": "Logo",
+            "icon": "image",
             "settings": {
               "image": {},
               "jump_link": ""
@@ -627,6 +589,8 @@
           },
           "icon-list-item2": {
             "type": "item",
+            "name": "Logo",
+            "icon": "image",
             "settings": {
               "image": {},
               "jump_link": ""
@@ -634,6 +598,8 @@
           },
           "icon-list-item3": {
             "type": "item",
+            "name": "Logo",
+            "icon": "image",
             "settings": {
               "image": {},
               "jump_link": ""
@@ -641,6 +607,8 @@
           },
           "icon-list-item4": {
             "type": "item",
+            "name": "Logo",
+            "icon": "image",
             "settings": {
               "image": {},
               "jump_link": ""
@@ -648,6 +616,8 @@
           },
           "icon-list-item5": {
             "type": "item",
+            "name": "Logo",
+            "icon": "image",
             "settings": {
               "image": {},
               "jump_link": ""
@@ -655,20 +625,15 @@
           },
           "icon-list-item6": {
             "type": "item",
+            "name": "Logo",
+            "icon": "image",
             "settings": {
               "image": {},
               "jump_link": ""
             }
           }
         },
-        "block_order": [
-          "icon-list-item1",
-          "icon-list-item2",
-          "icon-list-item3",
-          "icon-list-item4",
-          "icon-list-item5",
-          "icon-list-item6"
-        ]
+        "block_order": ["icon-list-item1", "icon-list-item2", "icon-list-item3", "icon-list-item4", "icon-list-item5", "icon-list-item6"]
       }
     },
     "content_for_index": [
@@ -825,11 +790,7 @@
               }
             }
           },
-          "block_order": [
-            "header-logo",
-            "header-announcement",
-            "header-announcement2"
-          ]
+          "block_order": ["header-logo", "header-announcement", "header-announcement2"]
         },
         "product/collections/collection-filter": {
           "type": "product/collections/collection-filter",
@@ -857,10 +818,7 @@
               }
             }
           },
-          "block_order": [
-            "a",
-            "b"
-          ]
+          "block_order": ["a", "b"]
         },
         "product/collections/collection-page": {
           "type": "product/collections/collection-page",
@@ -902,18 +860,7 @@
               "type": "payment",
               "settings": {
                 "title": "We accept",
-                "pay_channel_list": [
-                  "visa",
-                  "master-card",
-                  "master-card2",
-                  "visa-electron",
-                  "jcb",
-                  "american-express",
-                  "diners-club",
-                  "discover",
-                  "paypal",
-                  "union-pay"
-                ]
+                "pay_channel_list": ["visa", "master-card", "master-card2", "visa-electron", "jcb", "american-express", "diners-club", "discover", "paypal", "union-pay"]
               }
             },
             "footer-custom": {
@@ -935,12 +882,7 @@
               }
             }
           },
-          "block_order": [
-            "footer-social",
-            "footer-payment",
-            "footer-menu",
-            "footer-custom"
-          ]
+          "block_order": ["footer-social", "footer-payment", "footer-menu", "footer-custom"]
         },
         "footer-promotion": {
           "type": "footer-promotion",
@@ -989,11 +931,7 @@
               }
             }
           },
-          "block_order": [
-            "footer-promotion-richText1",
-            "footer-promotion-richText2",
-            "footer-promotion-richText3"
-          ]
+          "block_order": ["footer-promotion-richText1", "footer-promotion-richText2", "footer-promotion-richText3"]
         },
         "product/detail/product-preview": {
           "type": "product/detail/product-preview",
@@ -1053,10 +991,7 @@
               }
             }
           },
-          "block_order": [
-            "split-slideshow-image1",
-            "split-slideshow-image2"
-          ]
+          "block_order": ["split-slideshow-image1", "split-slideshow-image2"]
         },
         "collection-list": {
           "type": "collection-list",
@@ -1111,14 +1046,7 @@
               }
             }
           },
-          "block_order": [
-            "collection-list1",
-            "collection-list2",
-            "collection-list3",
-            "collection-list4",
-            "collection-list5",
-            "collection-list6"
-          ]
+          "block_order": ["collection-list1", "collection-list2", "collection-list3", "collection-list4", "collection-list5", "collection-list6"]
         },
         "promotion-grid": {
           "type": "promotion-grid",
@@ -1153,10 +1081,7 @@
               }
             }
           },
-          "block_order": [
-            "block1",
-            "block2"
-          ]
+          "block_order": ["block1", "block2"]
         },
         "promotion-grid-2": {
           "type": "promotion-grid",
@@ -1178,9 +1103,7 @@
               }
             }
           },
-          "block_order": [
-            "block1"
-          ]
+          "block_order": ["block1"]
         },
         "featured-collection": {
           "type": "featured-collection",
@@ -1295,11 +1218,7 @@
               }
             }
           },
-          "block_order": [
-            "text-columns-item1",
-            "text-columns-item2",
-            "text-columns-item3"
-          ]
+          "block_order": ["text-columns-item1", "text-columns-item2", "text-columns-item3"]
         },
         "icon-list": {
           "type": "icon-list",
@@ -1364,14 +1283,7 @@
               }
             }
           },
-          "block_order": [
-            "icon-list-item1",
-            "icon-list-item2",
-            "icon-list-item3",
-            "icon-list-item4",
-            "icon-list-item5",
-            "icon-list-item6"
-          ]
+          "block_order": ["icon-list-item1", "icon-list-item2", "icon-list-item3", "icon-list-item4", "icon-list-item5", "icon-list-item6"]
         }
       },
       "content_for_index": [

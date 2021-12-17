@@ -1,0 +1,1360 @@
+{
+  "sales": {
+    "promotion": {
+      "tags": {
+        "benefit1": {
+          "threshold0": "Køb {{threshold}} gem {{save}}",
+          "threshold1": "Køb {{threshold}} Få {{save}} væk"
+        },
+        "benefit2": {
+          "threshold0": "Køb {{threshold}} gem {{save}}",
+          "threshold1": "Køb {{threshold}} FÅ {{save}} Væk"
+        },
+        "benefit11": {
+          "threshold1": {
+            "normal": "Køb {{threshold}} elementer, nyd {{save}} fra på et af elementerne!",
+            "free": "Køb {{threshold}} elementer, og nyd gratis på et af elementerne!"
+          }
+        }
+      },
+      "reminder": {
+        "benefit1": {
+          "threshold0": {
+            "step1": "Køb {{threshold}} mere for at gemme {{willSave}}",
+            "step2": "Gem allerede {{saved}}! {{br}}Køb {{threshold}} mere for at gemme {{willSave}}",
+            "step3": "Tillykke! Du har gemt {{saved}}!"
+          },
+          "threshold1": {
+            "step1": "Køb {{threshold}} mere for at gemme {{willSave}}",
+            "step2": "Gem allerede {{saved}}! {{br}}Køb {{threshold}} mere for at gemme {{willSave}}",
+            "step3": "Tillykke! Du har gemt {{saved}}！"
+          }
+        },
+        "benefit2": {
+          "threshold0": {
+            "step1": "Køb {{threshold}} mere for at få {{willSave}} væk",
+            "step2": "Gem allerede {{saved}}! {{br}}Køb {{threshold}} mere for at få {{willSave}} RABAT",
+            "step3": "Tillykke! Du har gemt {{saved}}!"
+          },
+          "threshold1": {
+            "step1": "Køb {{threshold}} mere for at få {{willSave}} væk",
+            "step2": "Gem allerede {{saved}}! {{br}}Køb {{threshold}} mere for at få {{willSave}} RABAT",
+            "step3": "Tillykke! Du har gemt {{saved}}!"
+          }
+        },
+        "benefit11": {
+          "threshold1": {
+            "step1": {
+              "normal": "Køb {{threshold}} flere elementer, nyd {{willSave}} FRA på et af elementerne!",
+              "nextFree": "Køb {{threshold}} flere elementer, og nyd gratis på et af elementerne!"
+            },
+            "step2": {
+              "normal": "Tillykke! {{saved}} Gemt, {{br}}Køb {{threshold}} flere elementer, nyd {{willSave}} FRA på et af elementerne!",
+              "free": "Tillykke! nyd gratis på et af punkterne!",
+              "nextFree": "Tillykke! {{saved}} Gemt, {{br}}Køb {{threshold}} flere elementer, nyd gratis på et af elementerne!"
+            },
+            "step3": {
+              "normal": "Tillykke! nyd {{saved}} FRA på et af elementerne!",
+              "free": "Tillykke! nyd gratis på et af punkterne!"
+            }
+          }
+        }
+      },
+      "tags-label": "Rabat:"
+    },
+    "bundle": {
+      "title": "Ofte købt sammen",
+      "saveTip": "Gem {{amount}} til at købe sammen"
+    },
+    "selected-count-activity-product": "{{selectCount}} valgte hændelsesprodukter",
+    "customer-purchase-limit": "Købsgrænse {{count}} pr. person",
+    "customer-purchase-limit-each-item": "Købsgrænse på {{count}} pr. produkt pr. Person",
+    "flash-sale-tips": "Købsgrænse: Antal {{count}}",
+    "flash-sale-text": "FLASH-SALG",
+    "hot-sale": "Varmt salg!",
+    "sold": "{{count}} blev solgt",
+    "discount-coupon": {
+      "coupon-label": "Kupon:",
+      "coupon-content": {
+        "threshold": "Køb {threshold}",
+        "discount1": "{discount} af",
+        "discount2": "Fri fragt",
+        "shippingRateBelow": "Fragt er mindre end {value}",
+        "until": "Gyldig indtil: {{endTime}}"
+      },
+      "couponNoFound": "Rabatkode findes ikke",
+      "applySuccess": "Rabatkode anvendt med succes",
+      "applyFail": "Anvendelsen mislykkedes"
+    }
+  },
+  "header": {
+    "searchItems": "Søg efter produkter",
+    "searchInputPlaceholder": "Skriv her, og tryk på søgning",
+    "navItemAll": "Alle",
+    "search": "Søg",
+    "cart": "Din indkøbsvogn",
+    "center": "Centreret",
+    "login": "Login",
+    "logout": "Log af",
+    "noCurrencyFallback": "Der blev ikke fundet nogen relevant valuta"
+  },
+  "common": {
+    "title": "Titel",
+    "category": "Kategori",
+    "outOfStock": "Ikke på lager",
+    "subTotal": "Subtotal",
+    "descountPrice": "Salgspris",
+    "total": "I alt",
+    "soldOut": "Solgt Ud",
+    "settleMent": "Køb nu",
+    "selectProduct": "Vælg produkt",
+    "hasSelected": "Har valgt",
+    "pieces": "Stykker",
+    "discount": "Rabat",
+    "piece": "stykke",
+    "remove": "Fjern",
+    "cancel": "Annuller",
+    "tips": "Påmindelse",
+    "checkout": "CHECK UD",
+    "finish": "Fuldført",
+    "username": "Navn",
+    "mobile-phone": "Mobiltelefonnummer",
+    "tel-phone": "Telefonnummer",
+    "meno": "Bemærkninger",
+    "package": "Pakke",
+    "login": "Log på",
+    "email": "Mailadresse",
+    "email2": "Mail",
+    "order": "Ordrer",
+    "remain": "Resterende",
+    "operation": "Operer",
+    "bank-name": "Banknavn",
+    "bank-card-number": "Bankkort nummer",
+    "bank-Account": "Bankkonto",
+    "bank-Account2": "Bankkonto",
+    "close": "Luk",
+    "audit": "Revision",
+    "tax": "Skatter og afgifter",
+    "mobile": "Telefonnummer",
+    "address": "Adresse",
+    "logistics": "Forsendelse",
+    "backout": "Fortryd",
+    "confirm": "OK",
+    "upload": "Overfør",
+    "error-stack": "Forkert stak",
+    "amount": "Antal",
+    "stock-limit": "Kun {{stock}} tilbage",
+    "back-to-user-center": "Tilbage til brugercenter",
+    "member-login": "Medlem login",
+    "contact-information": "Kontaktoplysninger",
+    "back-to-cart": "Vend tilbage til indkøbskurven",
+    "recommend": "Anbefalet",
+    "free-shipping": "Fri fragt",
+    "apply": "Anvend",
+    "anonymous": "Anonym",
+    "logistics-and-payment": "Levering og betaling",
+    "payment": "Betaling",
+    "payment-2": "Betal nu",
+    "modify": "Skift",
+    "cardholder-name": "Kortindehaverens navn",
+    "use-address": "Anvendt adresse",
+    "default-address": "Standardadresse",
+    "use-new-address": "Brug ny adresse",
+    "sign-out": "Log af",
+    "enter-username": "Angiv brugernavn",
+    "enter-email": "Angiv din mailadresse",
+    "enter-mobile-phone": "Indtast mobiltelefonnummer",
+    "order-evaluation": "Ordregennemgang",
+    "submit-evaluation": "Send anmeldelse",
+    "anonymous-evaluation": "Anonym gennemgang",
+    "discountOff": "Rabat",
+    "discountDesc": "Salgsbeskrivelse",
+    "freightDesc": "Forsendelsesgebyr Beskrivelse",
+    "taxDesc": "Beskrivelsen af skatter og afgifter",
+    "returnMoney": "Refusion",
+    "returnProgress": "Retur status",
+    "returnInfo": "Returoplysninger",
+    "rollback": "Træk",
+    "applyDate": "Anmodnings Dato",
+    "evaluation": "Revision",
+    "upload-image": "Overfør et billede",
+    "page": "side",
+    "day": "dag",
+    "days": "dage",
+    "buy-now": "KØB NU",
+    "ok": "OK",
+    "continue": "Fortsæt",
+    "contactUs": "KONTAKT OS",
+    "productError": "Ingen produktdata fundet. Prøv igen senere",
+    "home": "Hjemmeside"
+  },
+  "modal": {
+    "iKnow": "Jeg har den",
+    "goCart": "Gå til indkøbsvogn",
+    "exceedCartTitle": "Beklager! Antallet af produkter i indkøbsvognen overstiger grænsen.",
+    "exceedCartContent": "Du kan føje dette produkt til din indkøbsvogn ved først at købe eller fjerne andre produkter fra din indkøbsvogn"
+  },
+  "footer": {
+    "followus": "FØLG OS",
+    "subscribeBarPlaceholder": "Udfyld din mailadresse her",
+    "subscribeSuccess": "Abonner på succes",
+    "subscribeError": "Abonnementet mislykkedes",
+    "subscribeRegExpError": "Fejl i mail adresse format",
+    "copyright": "Alle rettigheder forbeholdes."
+  },
+  "productList": {
+    "gategoryMenu": {
+      "catalog": "KATALOG",
+      "menuitem": "Alle produkter"
+    },
+    "filterMenu": {
+      "filter": "Filtrer",
+      "price": "Pris"
+    },
+    "container": {
+      "from": "Fra {{price}}",
+      "empty": {
+        "desc": "Intet produkt i denne kategori",
+        "title": "Beklager, dette produkt er i øjeblikket ikke på lager.",
+        "description": "Hvis det er nødvendigt, kan du kontakte forretningsmand for at høre"
+      },
+      "sort": {
+        "text1": "Alle produkter",
+        "text2": "Sortér efter",
+        "recommend": "Anbefalet",
+        "sales": "Mest populære sælgere",
+        "newest": "Ny ankomst",
+        "priceLowToHigh": "Prislav til høj",
+        "priceHighToLow": "Pris høj til lav",
+        "option1": "Solgt dato (ny til gammel)",
+        "option2": "Solgt dato (gammel til ny)",
+        "option3": "Pris (høj til lav)",
+        "option4": "Pris (lav til høj)"
+      },
+      "network": {
+        "message": "Ingen produktdata fundet. Prøv igen senere"
+      },
+      "tradePopup": {
+        "error1": "{{stock}} stykker tilbage. Vælg antal igen",
+        "error2": "Der kan kun købes {{saleMax}} stykker. Vælg venligst antal igen!",
+        "error3": "Vælg antal!",
+        "error4": "Vælg produktstørrelse først!",
+        "error5": "Produktet sælges ude",
+        "error6": "Produktet fjernes fra hylderne",
+        "addToCart": "FØJ TIL KORT"
+      },
+      "listItem": {
+        "sold": {
+          "out": "SOLGT UD"
+        },
+        "off": "{{value}} % rabat",
+        "addToCart": "FØJ TIL KORT",
+        "toDetail": "Vis detaljer"
+      },
+      "show": "Vis",
+      "viewAs": "Vis som",
+      "productsNum": "{{num}} produkter"
+    }
+  },
+  "productSearch": {
+    "serachTitle": {
+      "text1": "Ingen relaterede resultater fundet"
+    },
+    "search": {
+      "backHome": "Tilbage til startsiden",
+      "resultsFoundFor": "{{count}} resultater fundet for \"{{keyword}}\"",
+      "results": "{{count}} resultater",
+      "noRelatedResultFound": "Ingen relaterede resultater fundet",
+      "searchNoResults": "Din søgning efter \"{{keyword}}\" gav ikke nogen resultater"
+    },
+    "empty": {
+      "title1": "Vi anbefaler at kontrollere, om der er skrivefejl,",
+      "title2": "og søg igen med præcise nøgleord"
+    },
+    "sortName": "Sortér efter:",
+    "container": {
+      "sort": {
+        "option1": "Tid på hylderne (ny til gammel)",
+        "option2": "Hyldetid (gammel til ny)",
+        "option3": "Pris (høj til lav)",
+        "option4": "Pris (lav til høj)"
+      }
+    }
+  },
+  "collection": {
+    "all": {
+      "title": "Alle samlinger",
+      "h1Title": "Kategori"
+    }
+  },
+  "productDetail": {
+    "goToAmazon": "Køb i Amazona",
+    "goOutsideOfAmazon": "Køb uden for Amazon",
+    "goOtherChannels": "Andre købskanaler",
+    "toAmazon": "Amazon",
+    "goToRakuten": "LOTTE",
+    "goToYahoo": "Yahoo",
+    "goToAmazonByLink": "Køb i Amazona",
+    "goToRakutenByLink": "Køb i LOTTE",
+    "goToYahooByLink": "Køb i Yahoo",
+    "recentlyViewedProducts": "Senest viste produkter",
+    "activityToast": {
+      "product-limit": "Køb begrænset til {{stock}} kampagneprodukt",
+      "price-limit": "Det maksimale tilladte antal for dette begrænsede produkt er {{num}}",
+      "title-limit": "Nedenstående produkter overstiger købsgrænsen"
+    },
+    "tabs": {
+      "description": "Beskrivelse",
+      "shippingPayment": "Forsendelse og betaling",
+      "comments": "Gennemsyn"
+    },
+    "recommendTitle": "Du kan også lide",
+    "commentsTitle": "gennemsyn",
+    "network": {
+      "message2": "Det lykkedes ikke at hente produktoplysninger. Prøv igen senere"
+    },
+    "thumbSwiper": {
+      "image": {
+        "alt": "Produktets miniaturebillede"
+      },
+      "share": {
+        "text": "Del med"
+      }
+    },
+    "tabPanel": {
+      "desc": "Ingen beskrivelse endnu",
+      "descFs": "Det lykkedes ikke at hente data. Prøv igen senere",
+      "ship": {
+        "sh": {
+          "text1": "Metode"
+        },
+        "text2": "Ingen forsendelsesmetode endnu"
+      },
+      "pay": {
+        "text1": "Betalingsmetode",
+        "text2": "Ingen betalingsmetode endnu",
+        "text3": "Ingen logistisk betalingsoplysninger endnu"
+      },
+      "comments": {
+        "empty": "Ingen produktanmeldelse endnu",
+        "error": "Det lykkedes ikke at hente produktanmeldelse. Prøv igen senere"
+      }
+    },
+    "no-product-introduction": "Ingen produktintroduktion endnu",
+    "no-logistics-and-payment-information": "Ingen oplysninger om logistik og betalingsmetoder endnu",
+    "addCart": "TILFØJ",
+    "default-placeholder": "Vælg {{attrName}}",
+    "inquiry": {
+      "inquiryTitle": "Produktforespørgsel",
+      "inquiryTips1": "Lad os få en besked, og så vender vi tilbage til Dem så hurtigt som muligt",
+      "email": "Mail",
+      "message": "Din besked",
+      "inquiryTips2": "Du kan give os flere oplysninger, så vi kan tilbyde dig mere relevante services",
+      "optional": "Valgfrit",
+      "name": "Navn",
+      "mobile": "Telefonnummer",
+      "region": "Land/område",
+      "cancel": "Annuller",
+      "submit": "Send",
+      "emailEmptyErr": "Angiv din mailadresse",
+      "messageEmptyErr": "Indtast din besked",
+      "emailFormatErr": "Angiv en gyldig mailadresse",
+      "messageLengthErr": "Den maksimale længde af din meddelelse må ikke være mere end 1.500 ord",
+      "submitSuccess": "Sendt korrekt",
+      "submitFailed": "Afsendelse mislykkedes. Prøv igen"
+    },
+    "previewLinkToast": "Handlingen for eksempelvisningen af kæden understøttes ikke",
+    "morePaymentOptions": "flere betalingsmuligheder",
+    "bulkDiscount": {
+      "title": "Køb mere Spar mere!"
+    }
+  },
+  "trade": {
+    "contact": "Kontakt",
+    "can-not-submit-order": "Rækkefølgen kan ikke sendes",
+    "sorry-rechoose-longtips": "Det valgte produkt er desværre ugyldigt at købe. Vælg igen",
+    "product-amount": "Subtotal",
+    "will-discount": "Rabat",
+    "some-discount-limit-to-pay-and-delivery": "Nogle af rabatterne er kun tilgængelige for en bestemt logistisk metode/betalingsmetode",
+    "total": "I alt",
+    "go-on-shopping": "Fortsæt med at handle",
+    "man-piece-share": "Nyd {{count}} stykker eller mere",
+    "man-money-share": "Nyd købsbeløbet på {{money}} eller mere",
+    "man-piece-reduce": "Rabat for {{count}} stykker eller mere",
+    "man-money-reduce": "Rabat for købsbeløbet på {{money}} eller mere",
+    "invalid-product": "Ugyldige produkter",
+    "delete-invalid-product": "Slet ugyldige produkter",
+    "remove-product": "Fjern produkt",
+    "sure-remove-this-product": "Er du sikker på, at du vil fjerne produktet?",
+    "order-created-but-data-fail": "Rækkefølgen er oprettet, men der er en data returfejl...",
+    "agree-user-terms-first": "Du skal først acceptere vilkårene for brugeren",
+    "recieve-address-unavailable-rechoose": "Ingen tilgængelig leveringsmetode til modtagerens adresse. Vend tilbage for at vælge igen",
+    "please-fill-meno": "Udfyld venligst bemærkninger",
+    "please-choose-delivery-way": "Vælg en leveringsmetode",
+    "please-choose-pay-way": "Vælg en betalingsmetode",
+    "bad-userinfo-or-in-blocklist": "Fejl i brugeroplysninger, eller brugeren er blokeret",
+    "bad-userinfo": "Fejl i brugeroplysninger",
+    "fail-get-product-back-cart": "Det lykkedes ikke at hente de markerede produktoplysninger. Vend tilbage til indkøbskurven, og send den igen",
+    "fill-info": "Oplysninger",
+    "back-prev-step": "Vend tilbage til oplysninger",
+    "back-prev-step2": "Tilbage til forsendelse",
+    "next-step": "Fortsæt",
+    "next-step-shipment": "Fortsæt med at levere",
+    "next-step-payment": "Gå til valg af betalingsmetode",
+    "submit-order": "Fuldfør ordre",
+    "i-agree-website": "Jeg accepterer webstedets",
+    "service-terms": "Servicebetingelser",
+    "and": "og",
+    "private-policy": "Privatliv Politik",
+    "fast-checkout": "Ekspres udlevering",
+    "or-fill-info": "ELLER",
+    "not-support-paypal": "Sælgeren understøtter ikke PayPal",
+    "service-fee": "Servicegebyr",
+    "pay-way": "Betaling",
+    "pay-way-logo-and-more": "og mere",
+    "jump-to-pay-longtips": "Når du har klikket på \"Fuldstændig ordre\", bliver du omdirigeret til {{payChannel}} for at gennemføre dit køb sikkert",
+    "reciever-info": "Forsendelsesadresse",
+    "reciever-to": "Levér til",
+    "use-customer-info": "Brug kundeoplysninger",
+    "please-input-field": "Angiv {{field}}",
+    "reciever-name": "Modtagers efternavn",
+    "reciever-fullname": "Modtagerens fulde navn",
+    "field-can-not-longer-than": "{{field}} kan ikke overskride {{length}} tegn i længden",
+    "can-not-empty": "Kan ikke være tom",
+    "must-fill": "Påkrævet",
+    "must-choose": "Skal vælges",
+    "must-select": "Nødvendig indstilling",
+    "must-agree-policy": "De må acceptere, at tilbagesendelsespolitikken fortsætter!",
+    "optional-fill": "Valgfrit",
+    "other-info": "Andre oplysninger",
+    "need-choose-delivery-way": "Der kræves en leveringsmetode for alle temperaturlag",
+    "your-delivery-need-choose-store": "Der kræves produktionsoplysninger for alle leveringsmetoder",
+    "supermarket-self-pick": "Selvplukning i butikken",
+    "delivery-to-home": "Hjemmelevering",
+    "other-delivery": "Andre leveringsmetoder",
+    "delivery-way": "Leveringsmetode",
+    "please-choose-area": "Vælg et område",
+    "please-choose-store": "Vælg en butik",
+    "please-input-legal-passport-id-card": "Indtast et gyldigt ID/pas",
+    "passport-id-card-placeholder": "ID-kort/pasnummer (valgfrit)",
+    "passport-id-card-tip": "Angiv modtagerens reelle ID- eller pasnummer for at sikre en gnidningsløs toldangivelse og levering",
+    "product-offline": "Produktet fjernes fra hylderne",
+    "stock-not-enough": "Utilstrækkeligt produkt",
+    "over-limit-number": "Overskred produktgrænsen",
+    "product-removed": "Produktet er slettet",
+    "product-package": "Pakke",
+    "product-fee": "Subtotal",
+    "product-tax": "Råvareafgift",
+    "delivery-tax": "Fragtafgift",
+    "next-step-calc": "Beregnet ved næste trin",
+    "delivery-fee": "Forsendelse",
+    "pay-fee": "Betalingsgebyrer",
+    "point-discount": "Punktrabat",
+    "point-discount-desc": "Du kan bruge {{deductMemberPointNum}}-punkter til at gemme {{deductMemberPointAmount}}",
+    "point-discount-remark": "Omkostninger {{value}} point",
+    "summary": "I alt",
+    "use-member-account-can": "Tjek hurtigt ud som medlem? Du kan gøre det med det samme",
+    "i-want-recieve-discount-info": "Hold mig opdateret om nyheder og eksklusive tilbud",
+    "order-detail-query-fail": "Fejl i forespørgsel om ordredetaljer",
+    "your-order-created": "din ordre er afgivet",
+    "your-order-not-pay": "Du har ikke fuldført betalingen for din ordre",
+    "go-pay": "Betal nu",
+    "now-can-not-comment": "Kan ikke gennemse nu!",
+    "order-detail": "Ordreoplysninger",
+    "order-info": "Ordreoplysninger",
+    "order-status": "Ordrestatus",
+    "create-order-time": "Ordrebehandlingstid",
+    "comment-product": "Produktgennemgang",
+    "give-stars": "Vurdering",
+    "at-least-comment-one-before-submit": "Prøv at bedømme mindst ét element, før du sender",
+    "leave-your-words": "Fortæl os om dine tanker, og del dem med andre købere~",
+    "is-paying": "Betaling",
+    "you-are-paying-wait-result": "Din betalingsanmodning er sendt. Betalingsresultatet fra {{payChannel}} afventer",
+    "need-pay": "Betaling",
+    "after-sale-order": "Efter Salgsordre",
+    "see-refund-progress": "Vis status",
+    "has-number-products": "{{number}} produkter er tilbage",
+    "order-meno": "Ordrebemærkninger",
+    "comment-order": "Gennemgå ordren",
+    "apply-refund": "Ansøg returnering",
+    "cancel-order": "Annuller ordren",
+    "product-preview": "Produkteksempel",
+    "see-detail": "Vis detaljer",
+    "start-refund": "Begynd at returnere",
+    "buy-number-greater-then-stock": "Mængden skal være større end 1 og mindre end lagermængden!",
+    "can-refund-number": "Returnerbar mængde",
+    "choose-refund-reason": "Vælg en årsag til returnering",
+    "please-fill-80charact-refund-reason": "Udfyld returårsagen med 80 tegn",
+    "please-fill-refund-reason": "Angiv venligst din begrundelse for at vende tilbage",
+    "choose-refund-product": "Vælg det produkt, der skal returneres",
+    "refund-reason-less-60": "Returårsagen må ikke være på mere end 60 tegn!",
+    "refund-number": "Mængde returnerede produkter",
+    "sub-total": "Subtotal",
+    "refund-amount": "Restitutionsbeløb",
+    "refund-amount-bigger-zero": "Restitutionsbeløbet skal være større end 0",
+    "refund-amount-can-over": "Beløbet, der kan refunderes, må ikke overstige det maksimale beløb, der kan refunderes",
+    "max-refund": "Maksimalt refusionsberettiget beløb",
+    "confirm-refund": "Bekræft returneringen",
+    "refund-policy": "Returpolitik",
+    "fill-refund-info": "Udfyld returoplysningerne",
+    "refund-way": "Returmetode",
+    "refund-type": "Returtype",
+    "please-choose-refund-type": "Vælg returtype",
+    "refund-express": "Logistik til returnering",
+    "please-choose-refund-express": "Vælg en logistisk tilstand, som du vil vende tilbage til!",
+    "refund-person": "Returneret af",
+    "pick-address": "Samlingsadresse",
+    "refund-account": "Tilbagebetalingskonto",
+    "please-choose-refund-account": "Vælg tilbagebetalingskontoen!",
+    "your-refund-order-created": "Din returordre er afgivet",
+    "confirm-email-send-to-you": "Bekræftelse brev er sendt til din mail",
+    "refunding": "Refundering",
+    "user-cancel-apply": "Brugeren trak anmodningen tilbage",
+    "audit-refuse": "Ikke godkendt",
+    "refund-order-stataus": "Returordre status",
+    "refund-order-number": "Returordre nummer",
+    "apply-time": "Anmodnings tid",
+    "number-refund-product": "{{number}} produkter til returnering",
+    "refund-reason": "Årsag til tilbagesendelse",
+    "refund-way-intro": "Introduktion til returmetoden",
+    "fill-logistics": "Udfyld logistiske oplysninger",
+    "backout-apply": "Tilbagekaldelse af anmodning",
+    "backout-refund-apply": "Tilbagetrækker anmodningen om tilbagesendelse",
+    "your-apply-auditing-sure-backout": "Din anmodning om tilbagesendelse er under gennemgang. Vil du trække anmodningen tilbage?",
+    "see-origin-order": "Vis oprindelig ordre",
+    "refund-logistics-info": "Returner logistiske oplysninger",
+    "express-company": "Logistikvirksomhed",
+    "please-fill-express-company": "Udfyld et logistikfirma",
+    "please-fill-express-bills-sn": "Angiv et ekspresnummer for logistik",
+    "express-bills-sn": "Logistikekspres nummer",
+    "express-bill-pic": "Logistik ekspresbillede",
+    "optional-support-jpg": "Valgfrit. Understøtter JPG/PNG",
+    "pic-upload-fail": "Det lykkedes ikke at overføre billedet {{name}}",
+    "shopping-gold-trade-off": "Indkøb af subsidiers nedsættelse",
+    "coupon-code-offer": "Kupon",
+    "product-sold-out": "Produktet sælges ud",
+    "sorry-limit-re-choose": "Beklager! Du kan kun købe {{promotionRemainStock}} stykker pr. ordre. Vælg dit antal igen",
+    "sorry-product-not-available-re-reorder": "Beklager! Nogle af de produkter, du køber, er blevet fjernet fra hylderne og er ugyldige. Kontroller og bekræft den igen, før du sender den igen",
+    "product-remain-please-re-choose": "{{stock}} stykker produkt tilbage. Vælg antallet igen",
+    "coupon-code": "Kuponkode",
+    "shop-list": "Indkøbsvogn ({{count}} )",
+    "add-to-cart-fail": "Beklager! Det lykkedes ikke at føje til indkøbsvognen. Prøv igen!",
+    "go-login": "Gå til logon",
+    "complete-payment": "Fuldstændig betaling",
+    "shopping-money-deduction": "Indkøb af subsidiers nedsættelse",
+    "use-shopping-deduction": "Omtrentlig reduktion af {{num}} brugbart indkøbstilskud",
+    "can-get": "Tilgængelig",
+    "shopping-money": "Køb af subsidier",
+    "next-time-use-shopping-money": "Anslået reduktion for næste butik",
+    "delivery-address-abnormal": "Modtagers adressefejl",
+    "billing-address-abnormal": "Fakturerings adresse Fejl",
+    "billing-address": {
+      "title": "Fakturerings adresse",
+      "desc": "Vælg den adresse, der svarer til dit kort eller din betalingsmetode.",
+      "option-same": "Samme som forsendelsesadresse",
+      "option-another": "Brug en anden fakturerings adresse",
+      "input-email": "Den betalingsmetode, du vælger, skal også angive en mailadresse for at sende fakturerings oplysninger"
+    },
+    "ship-to": "Levér til",
+    "self-mention": "Selvopslag",
+    "logistics-package": "Forsendelsesmetode",
+    "shopping-list": "Din indkøbsvogn",
+    "item": "VARE",
+    "quantity": "ANTAL",
+    "total-num": "I ALT",
+    "no-pay-way": "Utilgængelig betalingsmetode",
+    "refund-detail": "Refusionsdetaljer",
+    "only-refund": "Kun restitution",
+    "return-and-refund": "Tilbagesendelse og tilbagebetaling",
+    "come-way-return": "Refusion til den oprindelige betalingskonto",
+    "others": "Andet",
+    "not-as-expected": "Produkt under forventning",
+    "damage": "Produkt beskadiget under levering",
+    "sku-not-match": "Produktdimensioner/specifikationer, der er forskellige fra beskrivelsen",
+    "wrong-product": "Forkert produkt",
+    "other-reason": "Andre grunde",
+    "get-the-order": "Vælg et tilføjelseselement",
+    "free": "Gratis",
+    "sku-changed-title": "{{num}}varer, der er ændret, skal du fortsætte udtjekningen?",
+    "sku-limit-title": "Under produkter, der overstiger købsgrænsen, bedes du ændre mængden",
+    "sorry-all-sku-unusable": "Beklager, alle varer er ugyldige, ordren kan ikke sendes",
+    "off-shelf": "UGYLDIG",
+    "sold-out": "SOLGT UD",
+    "has-removed": "UGYLDIG",
+    "footer-all-rights-reserved": "Copyright © {{year}} {{name}}. Alle rettigheder forbeholdes.",
+    "return-to-selection-goods": "Udvælgelse af returnerede varer",
+    "return-apply-fail-SKU": "Antallet af varer, der er anmodet om, overstiger grænsen!",
+    "return-apply-fail-max-amount": "Beløb, der kan refunderes, må ikke overstige det maksimale beløb, der kan refunderes",
+    "return-apply-fail-min-amount": "Restitutionsbeløbet må kun for restitutioner være over 0 CNY",
+    "slpayment": {
+      "cardNumber": {
+        "placeholder": "Kreditkort nummer",
+        "errorTips": "Indtast det korrekte kortnummer.",
+        "tips": "Alle transaktioner er sikre og krypterede"
+      },
+      "expiryDate": {
+        "errorTips": "Angiv det korrekte tidspunkt."
+      },
+      "cvv": {
+        "placeholder": "CVV",
+        "errorTips": "Tjek igen.",
+        "tips": "Almindeligvis placeret bag kortet"
+      },
+      "footer": "Du bruger SHOPLINE-betalinger til udtjekning nu. Ved at gennemføre betalingen accepterer du",
+      "service": "Servicebetingelser for SHOPLINE-betalinger.",
+      "cardholdername": "Navn på kortindehaver",
+      "cardHolderNamePlaceHolder": "Navn på kortindehaver",
+      "cardHolderNameErrorTips": "Tjek igen."
+    },
+    "find-store": "Vælg butikken",
+    "choose-store": "Skift lager",
+    "please-pay-within": "betale inden",
+    "enter-a-tip-on-more-than": "Angiv et tip, der højst er {{amount}}",
+    "payment-security-description": "Alle transaktioner er sikre og krypterede.",
+    "pay-failed-err-code": {
+      "default": "Af nogle årsager kan din betaling ikke behandles. Prøv igen, eller brug andre betalingsmetoder.",
+      "buyer-account-abnormal": "På grund af nogle problemer med din konto kan betalingen ikke behandles. Prøv igen, eller brug andre betalingsmetoder.",
+      "wrong-password": "På grund af forkert adgangskode kan din betaling ikke behandles. Prøv igen, eller brug andre betalingsmetoder.",
+      "overpayment": "Ordrebeløbet overstiger købsgrænsen. Din betaling kan ikke behandles. Vælg en anden kort- eller betalingsmetode for at prøve igen.",
+      "insufficient-balance": "Utilstrækkelig saldo, din betaling kan ikke behandles. Vælg en anden kort- eller betalingsmetode for at prøve igen.",
+      "invalid-card-number": "Ugyldigt kortnummer. Din betaling kan ikke behandles. Vælg en anden kort- eller betalingsmetode for at prøve igen.",
+      "card-expired": "Kortet er udløbet, din betaling kan ikke behandles. Vælg en anden kort- eller betalingsmetode for at prøve igen.",
+      "change-card": "Din betaling kan ikke behandles nu. Vælg et andet kort eller en anden betalingsmetode for at prøve igen.",
+      "user-cancel": "Betaling annulleret. Prøv igen, hvis du har brug for at fortsætte.",
+      "3d-overtime": "3DS-godkendelse mislykkedes. Prøv igen.",
+      "pin-over-times": "Det maksimale antal forsøg på adgangskode er overskredet. Din betaling kan ikke behandles. Vælg en anden betalingsmetode, og prøv igen."
+    },
+    "coupon": "Kupon",
+    "coupon-mutra-discount": "Denne kuponkode kan ikke bruges sammen med andre kampagnetilbud eller rabattilbud.",
+    "activity-price-limit": "Du kan kun købe {{num}} stk. af dette produkt med rabatterne",
+    "policy": {
+      "refund-policy": "Tilbagebetalingspolitik",
+      "privacy-policy": "Privatliv Politik"
+    },
+    "tip": {
+      "add-tip": "Tilføj tip"
+    },
+    "free-shipping": "frysning",
+    "pod-link": "Klik for at få vist",
+    "pod-pic": "Brugerdefineret eksempel",
+    "activity-product-limit": "Du kan højst købe {{stock}} produkt(er) med rabatterne på samme tid",
+    "activity-title-limit": "Nedenstående produkter overskrider købsgrænsen. Fortsæt stadig til kassen?"
+  },
+  "payments-name": {
+    "Paypal": "Paypal",
+    "COD": "Kontanter ved levering",
+    "third-part": "Kreditkort"
+  },
+  "paypal": {
+    "error-expired": "Produktet er udløbet",
+    "error-sold-out": "Utilstrækkelig produktopgørelse",
+    "error-product-limit": "Produktgrænsen er overskredet",
+    "error-network-error": "Netværksfejl",
+    "error-shop-not-exit": "Butikken findes ikke",
+    "error-login-limit": "Log på din konto, før du afgiver en ordre"
+  },
+  "tips": {
+    "more-than-0-int": "Indtast et tal, der er større end 0",
+    "bind-change-mobile-phone-number": "Forbind/skift et mobiltelefonnummer",
+    "bind-change-email": "Opret forbindelse til/rediger en mail",
+    "verification-code-has-been-sent-to-your-account": "Bekræftelses koden er sendt til din konto",
+    "change-binding-after-verification": "Du kan oprette forbindelse til/ændre {{value}} efter bekræftelse",
+    "set-new-password": "Nulstil adgangskode",
+    "forget-password": "Glemt adgangskode",
+    "update-password": "Skift adgangskode",
+    "reset-password": "Du nulstiller adgangskoden for kontoen {{account}}",
+    "verify-account-to-reset-password": "Bekræft din konto, og nulstil adgangskoden",
+    "password-can-be-changed-after-verification": "Du kan ændre adgangskoden efter bekræftelse",
+    "login": "LOGGER PÅ",
+    "register": "Tilmeld dig",
+    "or-use-the-following-method-to-log-in": "Eller log på med følgende metoder",
+    "i-agree-with-the-shop": "Jeg accepterer",
+    "and": "og",
+    "user-agreement": "Vilkår for brugeren af butikken",
+    "please-read-and-agree-to-the-user-agreement-first": "Læs og indvilg i brugeraftalen først",
+    "no-order-information-please-confirm": "Det lykkedes ikke at hente ordreoplysninger. Kontroller, at ordrenummeret er korrekt",
+    "no-order-number-please-confirm": "Det lykkedes ikke at hente ordrenummer. Kontroller, at ordrenummeret er korrekt",
+    "error-obtaining-support-logistics-country": "Der opstod en fejl under henter af lande, der støtter logistik",
+    "please-complete-the-payment-method-content": "Udfyld betalingsmetoden",
+    "order-creation-exception": "Det lykkedes ikke at afgive ordre",
+    "bind-success": "Tilsluttet",
+    "update-success": "Ændret",
+    "pay-params-error": "Betalingsparametrene kunne ikke hentes. Prøv igen",
+    "change-heart": "Ændret mit sind",
+    "price-more-expensive": "Lavere pris fundet andre steder",
+    "repeat-buy": "Køb igen",
+    "sale-too-slow": "Forsinkelser på forsendelsen",
+    "change-item": "Jeg vil ændre de købte varer",
+    "incorrect-delivery-or-payment-information": "Forkerte leverings- eller betalingsoplysninger",
+    "other-reason": "Andre grunde",
+    "select-cancel-reason": "Vælg årsagen til annullering",
+    "fill-cancel-reason": "Angiv årsagen til ordreannullering",
+    "sure-cancel-order": "Er du sikker på, at du vil annullere denne ordre?",
+    "cancel-reason-feedback": "Fortæl os venligst grunden til Deres aflysning, så vi kan gøre det bedre i fremtiden. Du refunderes, når din ordre er annulleret. Vi ser frem til dit næste besøg i vores butik!",
+    "cancel-apply-sent": "Annulleringsanmodning sendt",
+    "cancel-order-fail": "Ordreannullering mislykkedes. Prøv igen",
+    "cancel-success-notice": "Du modtager en e-mail-meddelelse, når din ordre er annulleret. Tak!",
+    "fail-contact": "Hvis din annulleringsanmodning ikke lykkedes, skal du kontakte os ved at henvise til Afsnittet Sælger/køber-ordrekorrespondance nedenfor.",
+    "max-upload-img": "Beklager! Du har nået det maksimale antal {{maxNum}} billeder, der kan uploades via portalen!",
+    "img-name-too-long": "Navnet på inputbilledet er for langt",
+    "img-size-too-large": "Beklager! Navnet på inputbilledet er for langt",
+    "get-checkout-detail-fail": "Fejl ved henter af detaljer for udtjekning",
+    "product-abnormal-back-to-cart": "Produktionsfejl. Gå tilbage til indkøbskurven, og prøv igen",
+    "get-checkout-config-fail": "Fejl ved henter af konfigurationen er tjekket ud",
+    "country-address-fail": "Sælgere med hjemsted i det land, hvor den angivne adresse er beliggende, er ikke ansvarlige for betaling af leveringsgebyrer. Foretag en manuel markering",
+    "paypal-country-fail": "Det land, hvor denne PayPal konto er baseret, er ikke medtaget på listen over lande, hvor der skal betales leveringsgebyr. Foretag en manuel markering",
+    "need-phone-number-to-deliver": "I tilfælde af at vi har brug for at kontakte dig om din ordre",
+    "enter-tel-number": "Indtast telefonnummer",
+    "enter-email": "Angiv mailadresse",
+    "no-logistics-available": "Ingen tilgængelig leveringsmetode",
+    "logistics-no-pre-selection": "Forhåndsudvælgelse af levering er ikke tilgængelig",
+    "logistics-pre-selection": "Levering Forhåndsudvælgelse er tilgængelig",
+    "address-no-logistics": "Der er ingen tilgængelige leveringsmetoder for den aktuelle adresse",
+    "enter-address-first": "Indtast adressen først",
+    "expand-order-summary": "Vis ordreoversigt",
+    "put-up-order-summary": "Skjul ordreoversigt",
+    "select-return-product-first": "Vælg først det produkt, der skal returneres",
+    "enter-bank-name": "Indtast venligst banknavn!",
+    "enter-bank-card-number": "Indtast venligst bankkort nummer!",
+    "enter-name": "Indtast navn!",
+    "max-upload-image": "Du kan overføre maksimalt {{max}} billeder",
+    "upload-image-fail": "Det lykkedes ikke at overføre billedet {{name}}",
+    "image-size-less-than": "Billeder skal være mindre end {{max}} MB",
+    "sku-change-tips": "Der er registreret ændringer i produktstatus. Bekræft din forsendelses-/betalingsmetode igen"
+  },
+  "validate": {
+    "coupon-code-cannot-exceed-25-length": "Kuponkoden må ikke være på mere end 25 tegn.",
+    "discount-code-error": "Rabatkoden er angivet forkert",
+    "discount-code-user-invalid": "{{discountCode}} er angivet korrekt, men prisen eller mængden af varerne opfylder ikke kravene",
+    "enter-correct-email": "Angiv en mailadresse med gyldigt format",
+    "enter-correct-phone-number": "Indtast et mobiltelefonnummer med gyldigt format",
+    "phone-number-less-than-100": "Mobiltelefonnummeret må ikke være længere end 100 tegn",
+    "shipping_plan_unavailable": "Kuponen {{discountCode}} er gyldig for forsendelsesmetoden",
+    "mutual-excluded-by-time-limited": "Der er anvendt en rabat på denne ordre. Du kan ikke tilføje en ekstra rabat."
+  },
+  "subscription": {
+    "subscript-via-line-facebook": "Abonner på bestilling af besked via LINE eller Facebook",
+    "not-subscript-via-line-facebook": "Du kan ikke abonnere på ordremeddelelse via LINE eller Facebook"
+  },
+  "comment": {
+    "enter-comment": "Skriv produktanmeldelse",
+    "customer-comment": "Kundeanmeldelser",
+    "comment-count": "{{total}} anmeldelser",
+    "read-more-comments": "Se mere",
+    "rate-score": "Vurdering af {{score}}",
+    "text": "Gennemsyn",
+    "total": "{{total}} anmeldelser",
+    "bad": "Meget dårlig",
+    "worse": "Dårlig",
+    "general": "Fair",
+    "good": "God",
+    "best": "Fremragende",
+    "shipping-information": "Forsendelsesoplysninger",
+    "all-reviews": "Se alle korrekturer",
+    "leave-a-review": "Forlad en anmeldelse",
+    "no-login-msg": "Kunder, der har købt dette produkt, kan forlade anmeldelsen. Log på først",
+    "sign-in": "Logger på",
+    "no-bought-msg": "Du har ikke købt dette produkt før, så du kan ikke forlade korrekturen",
+    "ratings": "Bedømmelser",
+    "experience-about": "Angiv din anmeldelse af dette produkt",
+    "add-img": "Tilføj et billede",
+    "more-images": "Du kan højst tilføje {{total}} billeder",
+    "write-review": "Skriv en anmeldelse",
+    "thanks-msg": "Tak for din anmeldelse",
+    "network-err-msg": "På grund af systemfejlen kan din anmeldelse ikke behandles. Prøv igen~",
+    "only-image": "Understøtter kun overførsel af .jpg .jpeg .png .bmp-filen",
+    "image-only-2m": "Den maksimale billedstørrelse er {{size}} MB",
+    "about-product": "Indtast mindst et ord",
+    "no-comment-title-tip": "Ingen kommentarer endnu",
+    "no-comment-first-tip": "Send den første kommentar nu!",
+    "on-img-upload-tip": "Uploader, send venligst senere",
+    "mobile-submit": "Send",
+    "nickname": "Kaldenavn"
+  },
+  "order": {
+    "refund-methods": {
+      "self": "Send selv tilbage",
+      "merchant": "Afhentning efter sælger"
+    },
+    "refund-type": {
+      "origin": "Refusion til den oprindelige betalingskonto",
+      "other": "Andet"
+    },
+    "after-sale-type": {
+      "refund": "Refusion",
+      "return-and-refund": "Tilbagesendelse og tilbagebetaling"
+    },
+    "after-order-status": {
+      "processing": "Behandler",
+      "confirmed": "Bekræftet",
+      "delivery-progress": "Bekræftet",
+      "cancelled": "Annulleret",
+      "customer-canceled": "Kunden er annulleret",
+      "customer-rejected": "Kunden afviste",
+      "merchant-cancellation": "Sælger annulleret",
+      "completed": "Fuldført"
+    },
+    "order-status": {
+      "processing": "Behandler",
+      "confirmed": "Bekræftet",
+      "cancelled": "Annulleret",
+      "customer-canceled": "Kunden er annulleret",
+      "merchant-cancellation": "Sælger annulleret",
+      "completed": "Fuldført"
+    },
+    "pay-status": {
+      "unpaid": "Ubetalt",
+      "paying": "Betaling",
+      "partial-payment": "Delvist betalt",
+      "already-paid": "Betalt",
+      "failed": "Betaling mislykkedes",
+      "timed-out": "Betalingen blev afbrudt pga. timeout",
+      "refunding": "Refundering",
+      "refunded": "Refunderet",
+      "refund-failed": "Tilbagebetaling mislykkedes",
+      "partial-refund": "Delvis refunderet",
+      "abolished": "Annulleret"
+    },
+    "delivery-statusType": {
+      "stocking": "Forberedelse af produkterne",
+      "delivery-partial": "Delvis overførsel",
+      "cancelled": "Annulleret",
+      "cancel-delivery": "Annuller levering",
+      "shipping": "Levering",
+      "shipped": "Leveret",
+      "arrived": "Ankommet",
+      "picked-up": "Modtaget",
+      "problem": "Problemer som problem forsendelse og mistede ordrer kræver manuel støtte",
+      "delivery-return": "Returneret"
+    },
+    "oms-status": {
+      "executing": "Udførelse",
+      "prepare-pick": "Klar til afhentning",
+      "shipped": "Sendt",
+      "cancelled": "Annuller levering",
+      "arrived": "Ankommet",
+      "picked": "Signeret til",
+      "returning": "Tilbagesendes",
+      "returned": "Returneret",
+      "problem": "Problemoverførsel"
+    },
+    "order-list": {
+      "empty-title": "img",
+      "empty-tip": "Der er i øjeblikket ingen ordrepost, gå på indkøb",
+      "no-more": "Ikke flere oplysninger",
+      "load-more": "Træk op for at indlæse mere",
+      "pay-now": "Betal nu",
+      "track": "Spor",
+      "item-total": "{{transPackages}} element i alt",
+      "item-total-plural": "{{transPackages}} elementer i alt",
+      "package-item": "Pakke {{num}}（{{item}} elementer ）",
+      "package-more": "og {{num}} flere",
+      "sub-order": "underordrer"
+    },
+    "breadcrumb": {
+      "title": "Ordre",
+      "order": "Ordre",
+      "order-detail": "Ordreoplysninger"
+    },
+    "detail": {
+      "packages": {
+        "title": "Oplysninger",
+        "sub-title": "Pakkesporing",
+        "payment-info": {
+          "method": "Betalingsmetode",
+          "status": "Betalingsstatus",
+          "address": "Fakturerings adresse",
+          "detail": "Detalje"
+        },
+        "payment-title": "Betaling",
+        "subscriptions-title": "Abonnementer",
+        "order-note-title": "Ordrebemærkning",
+        "shippings": {
+          "method": "Leveringsmetode",
+          "fee": "Leveringsgebyr",
+          "status": "Leveringsstatus"
+        },
+        "amount": {
+          "subtotal": "Varesubtotal",
+          "tax": "Råvareafgift",
+          "express": "Fragt",
+          "express-surcharge": "Fragtafgift",
+          "channel-surcharge": "Betalingskommission",
+          "discount-amount-name": "Sælger ekstra rabat",
+          "tip": "Tip",
+          "preferential": "præferencer",
+          "discount": "Rabat på kuponkode",
+          "deduct-voucher": "Værdi af værdikupon",
+          "total": "I alt"
+        },
+        "order-num": "Pakke ({{num}})",
+        "logistics": {
+          "no-data": "Ingen logistiske oplysninger i øjeblikket",
+          "detail": "Detaljer",
+          "tab-title": "Pakke {{index}}",
+          "blank-trace": "Spor din pakke ved at klikke på linket herunder:",
+          "no-data2": "Ingen leveringsoplysninger endnu, tjek venligst senere."
+        },
+        "send-to-Messenger": "Send til Messenger",
+        "send-to-Line": "Send til linje",
+        "unshipped-order-num": "Behandler ({{num}} elementer)",
+        "payment-deal": {
+          "name": "Betalingskanal",
+          "amount": "Beløb",
+          "deal-id": "Transaktions Referencenummer",
+          "create-time": "Oprettet",
+          "update-time": "Opdateret",
+          "status": "Status",
+          "title": "Betalingsdetaljer"
+        },
+        "status": {
+          "pedding": {
+            "title": "Forberedelse af overførslen",
+            "desc": "Vi er i øjeblikket ved at forberede disse varer til forsendelse."
+          },
+          "success": {
+            "desc": "Vi har accepteret din ordre, og vi gør den klar. Gå tilbage til denne side for at få opdateringer om din leveringsstatus."
+          }
+        },
+        "contact-us-title": "Kontakt os",
+        "contact-us": "Har du brug for hjælp? Kontakt os:{{email}}"
+      },
+      "order-status": {
+        "cancel": {
+          "title": "Din ordre er blevet annulleret",
+          "desc": "Din ordre blev annulleret den {{cancelTime}}. Kontakt os, hvis du har spørgsmål."
+        },
+        "success": {
+          "title": "Din ordre er bekræftet",
+          "desc": "Ordreoplysninger er sendt til {{buyerContact}}. Kontrollér det."
+        },
+        "pedding": {
+          "title": "Betaling er i gang...",
+          "desc": "Din betalingsanmodning er blevet sendt, og du venter på, at {{payChannelDesc}} returnerer betalingsresultatet"
+        },
+        "redirect": {
+          "title": "Omdirigerer til betalingsresultat...",
+          "desc": "Hvis du ikke omdirigeres automatisk, skal du opdatere denne side."
+        },
+        "pay": {
+          "title": "Afventer betaling",
+          "go-pay": "BETALING <0>{{orderAmount}}</0>"
+        },
+        "button": {
+          "refresh": "Opdater"
+        }
+      },
+      "order-info": {
+        "processing": "Behandler",
+        "confirmed": "Bekræftet",
+        "finished": "Afsluttet",
+        "canceled": "Annulleret"
+      },
+      "cancel-btn": "ANNULLER ORDREN",
+      "communication": {
+        "title": "Kommunikationsordrer"
+      },
+      "coms": {
+        "operationLog": {
+          "PayDealLog": {
+            "title": "Betalingen på {amount} er blevet behandlet gennem {payName}",
+            "payName": "Betalingsudbyder",
+            "amount": "Beløb",
+            "dealId": "Betalingsserie nummer",
+            "createTime": "Betalings starttidspunkt",
+            "updateTime": "Retur resultattid",
+            "status": "Status"
+          }
+        }
+      }
+    },
+    "seq-no": "Nej{{id}}",
+    "order-at": "Bestilt den:",
+    "customer-info": "Kundeoplysninger",
+    "help-tips": "Har du brug for hjælp? Kontakt os: {{email}}",
+    "order-date": "Ordredato"
+  },
+  "promotion": {
+    "full-reduction": "Kampagnetilbud",
+    "full-reduction-benefit": "Kampagnetilbud",
+    "full-discount": "Kampagnetilbud",
+    "full-discount-benefit": "Kampagnetilbud",
+    "free-shipping": "Fri fragt",
+    "flash-sale": "Flash-salg",
+    "member-price": "Medlemspris",
+    "all-product": "Alle produkter",
+    "permanent": "Permanent",
+    "all-user": "Alle brugere",
+    "all-vip": "Alle medlemmer",
+    "level-vip": "Lv.{{level}} medlem",
+    "label-vip": "{{label}} medlem",
+    "other-customer": "Kunde (brugere, der ikke har afgivet en ordre)",
+    "activity-scope": "Hændelsesomfang",
+    "activity-benefit": "Hændelsestilbud",
+    "activity-introduction": "Hændelsesintroduktion",
+    "terms-and-conditions": "Vilkår og betingelser",
+    "selected-count-activity-product": "{{selectCount}} valgte hændelsesprodukter",
+    "price-unit": "CNY",
+    "piece-unit": "Stykker",
+    "discount-benefit": "{{discount}} af",
+    "full-amount": "<0>{{value}}</0> eller mere",
+    "full-piece": "{{value}} stykker eller mere",
+    "reduce": "Rabat <0>{{value}}</0>",
+    "reduce1": "Rabat {{value}}",
+    "reduce-again": "<0>{{value}}</0> ekstra rabat",
+    "get-discount-1": "nyd {{value}} fra",
+    "get-discount-2": "nyd tilbuddet {{value}} %",
+    "flash-sale-limit": "Købsgrænse {{value}} pr. person",
+    "buy-again": "Køb <0>{{value}}</0> mere",
+    "buy-again-piece": "Køb {{value}} flere enheder",
+    "still-lacking": "<0>{{value}}</0> nødvendig",
+    "discounted": "Du har gemt <0>{{value}}</0>",
+    "coupon": "Kupon",
+    "select-sku": "Vælg produktspecifikationer",
+    "select-combo": "Vælg pakke",
+    "more-combo": "Flere pakker",
+    "item-num": "Element {{value}}",
+    "only-one-sku": "Det aktuelle produkt har kun én specifikation",
+    "select-product": "Køb varer",
+    "bundle": {
+      "title": "Samlede varer",
+      "desc": "Føj disse til indkøbskurven for <italic>{{value}}</italic> fra"
+    },
+    "whole-full-piece-discount": "<italic>{{content}}</italic> % af for <italic>{{condition}}</italic> stykker",
+    "whole-full-amount-discount": "<italic>{{content}}</italic> % af over <italic>{{condition}}</italic>",
+    "whole-full-piece-reduce": "<italic>{{content}}</italic> af for <italic>{{condition}}</italic> stykker",
+    "whole-full-amount-reduce": "<italic>{{content}}</italic> af over <italic>{{condition}}</italic>",
+    "price-price-step1": "<children>Køb <more>{{morePrice}}</more> mere for at gemme <more>{{totalPrice}}</more>",
+    "price-price-step2": "<children>Gem allerede <normal>{{price}}</normal>!<white /> Køb <more>{{morePrice}}</more> mere for at gemme <more>{{totalPrice}}</more>",
+    "price-price-step3": "<children>Tillykke! Du har gemt <normal>{{price}}</normal> !",
+    "price-piece-step1": "<children>Køb <more>{{morePrice}}</more> mere for at gemme <more>{{totalPrice}}</more>",
+    "price-piece-step2": "<children>Gem allerede <normal>{{price}}</normal>!<white /> Køb <more>{{morePrice}}</more> mere for at gemme <more>{{totalPrice}}</more>",
+    "price-piece-step3": "<children>Tillykke! Du har gemt <normal>{{price}}</normal> !",
+    "percent-price-step1": "<children>Køb <more>{{price}}</more> mere for at få <more>{{percent}}</more> FRA",
+    "percent-price-step2": "<children>Gem <normal>{{percent}}</normal> allerede!<white /> Køb <more>{{price}}</more> mere for at få <more>{{morePercent}}</more> FRA",
+    "percent-price-step3": "<children>Tillykke! Du har gemt </children><normal>{{percent}}</normal><children> !</children>",
+    "percent-piece-step1": "<children>Køb <more>{{price}}</more> mere for at få <more>{{percent}}</more> FRA",
+    "percent-piece-step2": "<children>Gem <normal>{{percent}}</normal> allerede!<white /> Køb <more>{{price}}</more> mere for at få <more>{{morePercent}}</more> FRA",
+    "percent-piece-step3": "<children>Tillykke! Du har gemt </children><normal>{{percent}}</normal><children> !</children>"
+  },
+  "labelInput": {
+    "email-error": "Angiv mailadresse med gyldigt format",
+    "phone-error": "Indtast mobiltelefonnummer med gyldigt format",
+    "contact-error": "Angiv mailadresse/mobiltelefonnummer med gyldigt format",
+    "phone-error-tips": "Udfyld modtagerens rigtige navn for at sikre, at kvitteringen er nem"
+  },
+  "userCenter": {
+    "personal-info": "Personlige oplysninger",
+    "orders": "Ordrer",
+    "refunds": "Tilbagebetalinger",
+    "sign-out": "Log af",
+    "edit": "Rediger",
+    "cancel": "ANNULLER",
+    "save": "GEM",
+    "buy-record-entry": "Købte produkter",
+    "account": {
+      "account-subscription-email": "Send til mail",
+      "account-subscription-phone": "Send til mobiltelefon",
+      "account-subscription-messenger": "Send til Messenger",
+      "account-subscription-line": "Send til linje-app",
+      "reset-password-error": "bind først e-mail eller mobiltelefon",
+      "account-info": "Kontooplysninger",
+      "member-level": "Medlemsniveau",
+      "memberLevelCom": {
+        "defaultLevel": "Generelt medlem",
+        "expire": "{{time}} forfalder",
+        "upgradeText1": "Med et enkelt køb på <italic>{{money}}</italic> kan du opgradere til {{nextLevelName}}",
+        "upgradeText0": "Opgrader til {{nextLevelName}} efter at have brugt <italic>{{money}}</italic>",
+        "upgradeSuccessText": "Tillykke, du har opgraderet til",
+        "modalTitle": "Beskrivelse af klasseinteresser",
+        "tableTitleGrade": "Medlemskategori",
+        "tableTitleInterest": "Medlemmernes interesser",
+        "discountInterest": "Slukket for indkøb"
+      },
+      "general-member": "Generelt medlem",
+      "username": "Brugernavn",
+      "username-message": "Indtast dit brugernavn!",
+      "username-placeholder": "Indtast dit brugernavn",
+      "email": "E-mail",
+      "bind": "Binding",
+      "modify-email": "Rediger mail",
+      "phone": "Mobiltelefon",
+      "modify-phone": "Rediger telefon",
+      "password": "Adgangskode",
+      "change-password": "Skift adgangskode",
+      "subscription-notification": "Meddelelse om abonnement",
+      "unsubscribed": "Ophæv abonnement",
+      "account-binding": "Kontobinding"
+    },
+    "address": {
+      "delete-address": "Slet adresse",
+      "address": "Adresse",
+      "no-data": "Der er i øjeblikket ingen leveringsadresse",
+      "add": "Tilføj ny adresse",
+      "full-tip": "5 adresser er blevet gemt og kan ikke tilføjes i øjeblikket",
+      "default": "Standard",
+      "ok": "OK"
+    },
+    "subscription": {
+      "title": "Abonnement",
+      "line": "LINJE",
+      "phone": "Mobiltelefon",
+      "email": "E-mail",
+      "messenger": "Messenger",
+      "not-sub": "Ikke tilmeldt",
+      "subed": "Abonneret",
+      "unsub": {
+        "title": "Ophæv abonnementet",
+        "content": "Når du har opsagt abonnementet, vil du ikke længere modtage den seneste kampagne.",
+        "ok-text": "Ophæv abonnementet"
+      },
+      "modal": {
+        "eamil-title": "Modtag forfremmelse oplysningerne for abonnementet pr. e-mail",
+        "ok-text": "ABONNER",
+        "cancel-text": "OPHÆV ABONNEMENTET",
+        "phone-title": "Abonner telefonkampagne",
+        "save": "GEM"
+      }
+    },
+    "personal": {
+      "gender-male": "Mand",
+      "gender-female": "Kvinde",
+      "gender-secret": "Hold hemmeligt",
+      "personal-information": "Personlige oplysninger",
+      "birthday-date": "Fødselsdag",
+      "date": "Dato",
+      "select-date": "Vælg dato",
+      "select-date-ok": "OK",
+      "select-date-placeholder": "Vælg",
+      "select-date-cancel": "Annuller",
+      "gender": "Køn",
+      "unknown": "Ukendt"
+    },
+    "editAddress": {
+      "country-message": "Vælg dit land!",
+      "province-message": "Vælg din provins!",
+      "city-message": "Vælg din by!",
+      "district-message": "Vælg dit distrikt!",
+      "postcode-message": "Mindre end 32 tegn!",
+      "address1-message": "Mindre end 512 tegn!",
+      "address2-message": "Mindre end 512 tegn!",
+      "edit": "REDIGER LEVERINGSADRESSE",
+      "contact-message": "Indtast dit navn",
+      "lastName-message": "Indtast dit efternavn!",
+      "phone-message": "Indtast din mobiltelefon",
+      "default": "Angiv som standardadresse",
+      "name-placeholder": "Navn",
+      "firstName-placeholder": "Fornavn (valgfrit)",
+      "lastName-placeholder": "Efternavn",
+      "phone-label": "Telefon"
+    },
+    "message": {
+      "message": "Meddelelse",
+      "send": "Send",
+      "inputPlaceholder": "Er der noget, du vil efterlade en besked til?"
+    },
+    "point": {
+      "title": "Køb af guld",
+      "empty-mainText": "Du har ikke købt penge endnu",
+      "empty-btn-link": "Hvordan skaffer og bruger man indkøbspenge?",
+      "mainview-dedection": "Den aktuelle maksimale kredit er <italic>{{money}}</italic>",
+      "mainview-link": "Forstå reglerne",
+      "mainview-save": "Du har gemt <italic>{{historyTotalUsedDeduction}}</italic> ved at bruge {{historyTotalUsedScore}} indkøbshonorarer",
+      "modal-title": "Beskrivelse af indkøbskupon",
+      "ok-btn": "OK",
+      "unuseHistoryScore": "Du har ikke brugt indkøbskupon til at spare på udgifterne",
+      "date": "{{day}}, {{month}} {{date}}, {{year}}",
+      "day0": "Søndag",
+      "day1": "Mandag",
+      "day2": "Tirsdag",
+      "day3": "Onsdag",
+      "day4": "Torsdag",
+      "day5": "Fredag",
+      "day6": "Lørdag",
+      "month1": "Jan",
+      "month2": "Gebyr",
+      "month3": "Mar",
+      "month4": "APR",
+      "month5": "Maj",
+      "month6": "Jun",
+      "month7": "Jul",
+      "month8": "aug",
+      "month9": "Sep",
+      "month10": "Okt",
+      "month11": "Nov",
+      "month12": "Dec",
+      "actionTypeDesc": {
+        "addPoint": "tilføj punkt",
+        "deductPoint": "fradragspunkt",
+        "expirePoint": "udløbspunkt",
+        "freezePoint": "frysepunkt",
+        "releaseFreezePoint": "frigivelsespunkt",
+        "deductFreezePoint": "fradragsfrysepunkt",
+        "reverseAddPoint": "omvendt tilføjelsespunkt",
+        "reverseDeductPoint": "omvendt fradragspunkt"
+      }
+    },
+    "pointList": {
+      "empty": "Der er i øjeblikket ingen punktoptegnelser",
+      "breadcrumb1": "Oplysninger",
+      "breadcrumb2": "Købspris",
+      "total": "Korrekturer ({{total}})",
+      "loading": "Indlæser...",
+      "loaded": "Indlæst",
+      "empty2": "Ikke flere poster",
+      "order": "Visningsrækkefølge:"
+    }
+  },
+  "cart": {
+    "render-empty-status": "Ingen varer i din indkøbsvogn",
+    "render-add-items": "Din indkøbsvogn er tom i øjeblikket.",
+    "go-shopping": "FORTSÆT MED AT KØBE",
+    "login-description": "Er du allerede medlem? Det kan være mere praktisk at logge på for at administrere ordren!",
+    "login-membership": "Gratis medlemskab",
+    "checkout-error": "Der er mindst ét utilgængeligt produkt i indkøbskurven. Juster varerne i indkøbsvognen for at tjekke ud.",
+    "get": "Få rabat",
+    "shopping-money": "rabat, skatter og fragt beregnes i næste trin",
+    "shopping-fees": "indkøbsgebyrer",
+    "shopping-money-step": "Skatter og forsendelse beregnet ved udlevering",
+    "view-shopping-cart": "Vis indkøbskurv",
+    "most-100-sku": "Tilføj op til 100 elementer",
+    "most-buy-999": "Den maksimale mængde af et enkelt produkt er 999 stk.",
+    "stock-limit": "{{stock}} stykker på lager",
+    "activity-title-limit": "Under produkterne overskrider købsgrænsen, fortsætter du stadig med at tjekke ud?",
+    "activity-price-limit": "Du kan kun købe {{num}} stk. af dette produkt med rabatterne",
+    "active-stock-limit-2": "Du kan kun købe {{stock}} stk. af dette produkt med rabatterne",
+    "active-stock-limit-1": "Du kan højst købe {{stock}} produkt(er) med rabatterne på samme tid",
+    "activity-product-limit": "Du kan højst købe {{stock}} produkt(er) med rabatterne på samme tid",
+    "view-link": "Klik for at få vist",
+    "view-pic": "Brugerdefineret eksempel",
+    "not-participation-offers": "Ikke-deltagende rabat",
+    "active-stock-limit": "Kun {{stock}} stykker tilbage med denne rabatpris"
+  },
+  "widget": {
+    "order": {
+      "pending-order": "Afventer ordre"
+    }
+  },
+  "user": {
+    "email": "Mailadresse",
+    "phone": "Mobiltelefonnummer",
+    "username": "Mailadresse/mobiltelefonnummer",
+    "password": "Adgangskode",
+    "repeatPassword": "Indtast adgangskoden igen",
+    "primevalPassword": "Nuværende adgangskode",
+    "code": "Verifikationskode",
+    "signUp": "TILMELD DIG",
+    "signIn": "LOGGER PÅ",
+    "confirm": "OK",
+    "emailError": "Angiv en mailadresse med gyldigt format og mindre end 50 tegn",
+    "phoneError": "Indtast et mobiltelefonnummer med gyldigt format",
+    "codeError": "Angiv bekræftelses koden",
+    "passwordError": "Angiv en adgangskode med en længde på mindst 8 tegn og højst 20 tegn. Adgangskoder skal indeholde mindst ét stort tegn, ét lille tegn og ét tal",
+    "repeatPasswordError": "De indtastede adgangskoder stemmer ikke overens",
+    "repeatPasswordEmptyError": "Indtast adgangskoden igen",
+    "primevalPasswordError": "Indtast din nuværende adgangskode",
+    "send": "Send",
+    "resend": "Send igen",
+    "sendError": "Send først bekræftelses koden",
+    "noData": "Ingen tilgængelige data",
+    "passwordEmptyError": "Indtast adgangskode",
+    "passwordMemberError": "Angiv en adgangskode med en længde på mindst 6 tegn og højst 18 tegn.",
+    "emailEmptyError": "Angiv mailadresse",
+    "phoneEmptyError": "Indtast mobiltelefonnummer",
+    "usernameEmptyError": "Angiv mailadresse eller mobiltelefonnummer",
+    "primevalNewPasswordError": "Din nye adgangskode kan ikke være den samme som din nuværende adgangskode",
+    "udbResponse": {
+      "err-1": "Parametrene er tomme",
+      "err-4": "Ugyldige parametre",
+      "err-5": "Ulovlig handling",
+      "err-13": "stoken timeout",
+      "err-999": "Fjernopkald mislykkedes",
+      "err1001": "Adgangskodefejl",
+      "err1002": "Brugeren findes ikke",
+      "err1003": "Kontoen blev midlertidigt låst",
+      "err1004": "Send sms-besked til tider",
+      "err1005": "Koden er udløbet",
+      "err1006": "Kodefejl",
+      "err1007": "For mange gange fejl i bekræftelseskode",
+      "err1008": "Det tredje id eller den anden kanal er ikke konfigureret",
+      "err1009": "Tredjepartsvalidering mislykkedes",
+      "err1010": "Gengivelse af tekstmeddelelse/mailskabelon mislykkedes",
+      "err2001": "Mobilen er blevet registreret",
+      "err2002": "E-mailen er registreret",
+      "err2003": "Forsøg ikke så ofte",
+      "err2004": "Koden er udløbet",
+      "err2005": "Kodefejl",
+      "err2006": "For mange gange bekræftelse skal du hente en anden kode",
+      "err2007": "Gengivelse af tekstmeddelelse/mailskabelon mislykkedes",
+      "err3001": "Cookie er ugyldig",
+      "err3002": "Brugere, der ikke er bundet til mobiltelefoner/postkasser, forsøger at ændre deres adgangskoder",
+      "err3003": "Forsøg ikke så ofte",
+      "err3004": "Koden er udløbet",
+      "err3005": "Kodefejl",
+      "err3006": "For mange gange bekræftelse skal du hente en anden kode",
+      "err3007": "Motoren findes ikke",
+      "err3008": "Mailen findes ikke",
+      "err3009": "Motoren er blevet bundet af andre konti",
+      "err3010": "E-mailen er bundet af andre konti",
+      "err3014": "Koden kunne ikke sendes",
+      "udbResponse": "Kontoen blev midlertidigt låst"
+    },
+    "account": "KONTO"
+  },
+  "address": {
+    "dropdown": {
+      "default-placeholder": "Vælg",
+      "no-item-tips": "Ingen tilgængelige data",
+      "no-search-result": "Ingen match fundet"
+    },
+    "mobile-errorMessage": "Indtast et gyldigt telefonnummer",
+    "mobile-errorMessage-country-code": "Indtast ikke områdenummer"
+  },
+  "oneShop": {
+    "noComment": "Der er endnu ingen kommentarer",
+    "productCommentTitle": "Produktanmeldelser（{{n}}）",
+    "priceStart": "Fra CNY {{n}}",
+    "discountByAmount": "{{n}} % rabatter over {{amount}}",
+    "discountByNum": "{{n}} % rabatter for {{num}} stykker",
+    "cutByAmount": "CNY {{n}} rabat på over {{amount}}",
+    "cutByNum": "CNY {{n}} rabat for {{num}} stykker",
+    "buyNow": "Køb nu",
+    "productDetail": "Produktdetaljer",
+    "selectedProductSoldOut": "Utilstrækkelig lagerbeholdning for det valgte produkt",
+    "currentProductSoldOut": "Utilstrækkelig lagerbeholdning for det aktuelle produkt",
+    "productNoSelect": "Vælg produktspecifikationen",
+    "orderAgain": "Prøv at indsætte ordren igen",
+    "soleOutSelectAgain": "Der er ikke tilstrækkelig lagerbeholdning til det aktuelle produkt. Vælg igen",
+    "productFailure": "Det produkt, du vælger, er ugyldigt. Vælg igen",
+    "comboSelectFailure": "Den valgte kombinationspakke er ugyldig. Vælg igen",
+    "comboFailure": "Ugyldig kombinationspakke",
+    "freeShipping": "Fri fragt",
+    "buyPop": "{{name}} købte dette produkt for {{minutes}} minutter siden",
+    "noProductDesc": "Ingen produktbeskrivelser nu",
+    "TCTD0108": "Forsendelsesmetoden findes ikke. Vælg igen",
+    "TCTD0118": "Betalingsmetoden findes ikke. Vælg igen",
+    "TCTD0121": "Markedsføringskampagnen er blevet ændret. Vælg igen",
+    "TCTD0112": "Det produkt, du vælger, er ugyldigt. Vælg igen",
+    "defaultErrorCodeMsg": "Netværk unormalt. Opdater siden, og prøv igen senere",
+    "comment": "Læg en meddelelse (kræves ikke)",
+    "country": "Land",
+    "submit": "Send",
+    "overLength": "Inputlængden overskrider grænsen. Juster indholdet, og prøv igen",
+    "optional": "Ikke påkrævet",
+    "bracket": "({{content}})"
+  },
+  "blogList": {
+    "container": {
+      "empty": {
+        "title": "Blog",
+        "desc": "Der er ingen blogindlæg i denne blog."
+      },
+      "readBtnText": "Læs mere"
+    }
+  },
+  "blog": {
+    "container": {
+      "backTo": "Gå tilbage til {{{collectionTitle}}}"
+    }
+  }
+}

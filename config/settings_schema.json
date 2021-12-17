@@ -1469,6 +1469,17 @@
         "format": "uri"
       },
       {
+        "id": "social_pinterest_link",
+        "type": "text",
+        "label": {
+          "en": "Pinterest",
+          "zh-hans-cn": "Pinterest"
+        },
+        "default": "https://shoplineapp.cn/",
+        "placeholder": "http://",
+        "format": "uri"
+      },
+      {
         "id": "social_instagram_link",
         "type": "text",
         "label": {
@@ -1538,6 +1549,15 @@
         "label": {
           "en": "Share to Twitter",
           "zh-hans-cn": "分享到Twitter"
+        },
+        "default": true
+      },
+      {
+        "id": "share_to_pinterest",
+        "type": "switch",
+        "label": {
+          "en": "Share to Pinterest",
+          "zh-hans-cn": "分享到Pinterest"
         },
         "default": true
       },

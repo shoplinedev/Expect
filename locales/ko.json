@@ -12,8 +12,8 @@
         },
         "benefit11": {
           "threshold1": {
-            "normal": "{{threshold}} 건 사면그 중에 한건은 무료",
-            "free": "{{threshold}} 건 사면그 중에 한건은 {{save}} 절약"
+            "normal": "{{threshold}} 건 사면그 중에 한건은 {{save}} 절약",
+            "free": "{{threshold}} 건 사면그 중에 한건은 무료"
           }
         }
       },
@@ -27,7 +27,7 @@
           "threshold1": {
             "step1": "{{threshold}} 건 이상 구매했을 때 {{willSave}} 을 절약",
             "step2": "이미 {{saved}} 절약했습니다!{{br}}{{threshold}} 더 사면 {{willSave}} 을 절약",
-            "step3": "축하합니다! 당신은  {{saved}} 을 절약했습니다!"
+            "step3": "축하합니다! 당신은 {{saved}} 을 절약했습니다!"
           }
         },
         "benefit2": {
@@ -38,8 +38,8 @@
           },
           "threshold1": {
             "step1": "{{threshold}} 건 이상 구매했을 때 {{willSave}} 을 절약",
-            "step3": "축하합니다! 당신은 {{saved}} 을 절약했습니다!",
-            "step2": "이미 {{saved}} 절약했습니다!{{br}}{{threshold}} 더 사면 {{willSave}} 을 절약"
+            "step2": "이미 {{saved}} 절약했습니다!{{br}}{{threshold}} 더 사면 {{willSave}} 을 절약",
+            "step3": "축하합니다! 당신은 {{saved}} 을 절약했습니다!"
           }
         },
         "benefit11": {
@@ -59,7 +59,8 @@
             }
           }
         }
-      }
+      },
+      "tags-label": "감소:"
     },
     "bundle": {
       "title": "함께 자주 구매되는 것",
@@ -67,10 +68,24 @@
     },
     "selected-count-activity-product": "{{selectCount}}건의 이 활동에 참여하는 상품을 선택했습니다",
     "customer-purchase-limit": "매 사람 제한 {{count}}건",
+    "customer-purchase-limit-each-item": "1인당 상품당 {{count}}건 구매가 제한됩니다.",
     "flash-sale-tips": "구매 제한:{{count}}건",
     "flash-sale-text": "시간제한 판촉",
     "hot-sale": "절찬 판매중",
-    "sold": "이미 {{count}} 판매"
+    "sold": "이미 {{count}} 판매",
+    "discount-coupon": {
+      "coupon-label": "혜택코드 혜택:",
+      "coupon-content": {
+        "threshold": "{threshold}을 삽니다.",
+        "discount1": "{discount}할 혜택",
+        "discount2": "무료 배송",
+        "shippingRateBelow": "운임이 {value}보다 낮습니다.",
+        "until": "유효기간 {{endTime}} 까지입니다."
+      },
+      "couponNoFound": "할인코드가 존재하지 않습니다",
+      "applySuccess": "할인코드 적용이 완료되었습니다",
+      "applyFail": "적용에 실패했습니다"
+    }
   },
   "header": {
     "searchItems": "제품 검색",
@@ -78,10 +93,10 @@
     "navItemAll": "전체",
     "search": "검색",
     "cart": "바구니",
+    "center": "계좌 관리",
     "login": "로그인",
     "logout": "로그아웃",
-    "noCurrencyFallback": "상관 화폐를 찾지 못했습니다",
-    "center": "계좌 관리"
+    "noCurrencyFallback": "상관 화폐를 찾지 못했습니다"
   },
   "common": {
     "title": "제목",
@@ -108,6 +123,7 @@
     "meno": "비주",
     "package": "팩",
     "login": "로그인",
+    "email": "이메일",
     "email2": "이메일",
     "order": "주문",
     "remain": "잔여",
@@ -170,7 +186,6 @@
     "continue": "계속",
     "contactUs": "우리에게 연락하기",
     "productError": "현재 상품 데이터가 없습니다. 잠시후 다시 시도하세요",
-    "email": "이메일",
     "home": "초기 화면"
   },
   "modal": {
@@ -181,11 +196,11 @@
   },
   "footer": {
     "followus": "구독하기",
+    "subscribeBarPlaceholder": "이메일",
     "subscribeSuccess": "구독 성공",
     "subscribeError": "구독 실패",
     "subscribeRegExpError": "이메일 주소 격식이 틀렸습니다",
-    "copyright": "판권 소유",
-    "subscribeBarPlaceholder": "이메일"
+    "copyright": "판권 소유"
   },
   "productList": {
     "gategoryMenu": {
@@ -197,6 +212,7 @@
       "price": "가격"
     },
     "container": {
+      "from": "{{price}}에서",
       "empty": {
         "desc": "지금 분류에는 상품이 없습니다",
         "title": "죄송합니다, 상품이 없습니다",
@@ -222,22 +238,22 @@
         "error1": "이 제품은 {{stock}}개 남았고 구매 수량을 조절하세요",
         "error2": "이 제품은 {{saleMax}}개만 구매가능하고 구매 수량을 조절하세요!",
         "error3": "구매수량을 선택하세요!",
+        "error4": "제품 사이즈를 선택하세요!",
         "error5": "상품이 판매되었습니다",
         "error6": "상품을 내렸습니다",
-        "addToCart": "바구니에 담기",
-        "error4": "제품 사이즈를 선택하세요!"
+        "addToCart": "바구니에 담기"
       },
       "listItem": {
         "sold": {
           "out": "상품 판매"
         },
+        "off": "- {{value}}%",
         "addToCart": "바구니에 담기",
-        "toDetail": "상세정보 보기",
-        "off": "- {{value}}%"
+        "toDetail": "상세정보 보기"
       },
       "show": "보여 주다",
       "viewAs": "보기 방법",
-      "from": "{{price}}에서"
+      "productsNum": "{{num}} 제품"
     }
   },
   "productSearch": {
@@ -282,6 +298,11 @@
     "goToRakutenByLink": "롯데에서 쇼핑하기",
     "goToYahooByLink": "야후에서 쇼핑하기",
     "recentlyViewedProducts": "최근 둘러본 상품",
+    "activityToast": {
+      "product-limit": "최다 동시에 {{stock}}건을 구매할 때의 혜택가격 상품",
+      "price-limit": "이 상품 혜택 가격은 {{num}}건을 구매할 때만 가능하고",
+      "title-limit": "다음 상품은 구매 제한을 초과했기 수량을 수정하"
+    },
     "tabs": {
       "description": "묘사",
       "shippingPayment": "물류와 지불",
@@ -344,11 +365,6 @@
     },
     "previewLinkToast": "링크는 이 작업을 지지하지 않습니다",
     "morePaymentOptions": "더 많은 지불 옵션",
-    "activityToast": {
-      "product-limit": "최다 동시에 {{stock}}건을 구매할 때의 혜택가격 상품",
-      "price-limit": "이 상품 혜택 가격은 {{num}}건을 구매할 때만 가능하고",
-      "title-limit": "다음 상품은 구매 제한을 초과했기 수량을 수정하"
-    },
     "bulkDiscount": {
       "title": "더 많이 구매하시면 더 많이 절약할수있습니다"
     }
@@ -366,6 +382,7 @@
     "man-money-share": "{{money}}되면 누릴수 있습니다",
     "man-piece-reduce": "{{count}}되면 감소",
     "man-money-reduce": "{{money}}되면 감소",
+    "invalid-product": "실효 상품",
     "delete-invalid-product": "실효 상품 지우기",
     "remove-product": "상품 제거",
     "sure-remove-this-product": "이 상품을 제거하시겠습니까?",
@@ -395,6 +412,7 @@
     "service-fee": "수수료",
     "pay-way": "지불 방식",
     "pay-way-logo-and-more": "더보기",
+    "jump-to-pay-longtips": "\"주문완성\"을 클릭하면 {{payChannel}}에서 안전하게 지불합니다",
     "reciever-info": "수하 정보",
     "reciever-to": "수하 정보",
     "use-customer-info": "고객 정보 사용",
@@ -431,6 +449,9 @@
     "next-step-calc": "다음 계산",
     "delivery-fee": "배송비",
     "pay-fee": "지불 수수료",
+    "point-discount": "포인트 할인",
+    "point-discount-desc": "당신은 {{deductMemberPointNum}} 포인트를 사용하여 {{deductMemberPointAmount}}를 할인할 수 있습니다.",
+    "point-discount-remark": "{{value}} 포인트 소비",
     "summary": "합계",
     "use-member-account-can": "회원 신분으로 빨리 결제하시겠습니까? 즉시 가능",
     "i-want-recieve-discount-info": "최신 정보 및 혜택 방안 받아보기",
@@ -448,6 +469,7 @@
     "at-least-comment-one-before-submit": "최서 한개 평점을 선택한 후 제출해야 합니다",
     "leave-your-words": "당신의 사용 느낌을 남기고 다른 구매자에게 참고를 제공하세요~",
     "is-paying": "지금 지불중",
+    "you-are-paying-wait-result": "당신의 지불 청구가 제출되었고 {{payChannel}}돌아가 결과를 기다리는중입니다",
     "need-pay": "지불해야 될 금액",
     "after-sale-order": "애프터 주문",
     "see-refund-progress": "환불 진척 보기",
@@ -492,6 +514,7 @@
     "refund-order-stataus": "환불 상태",
     "refund-order-number": "환불 번호",
     "apply-time": "신청 시간",
+    "number-refund-product": "{{number}}개 환불 상품",
     "refund-reason": "환불 원인",
     "refund-way-intro": "환불 방식 소개",
     "fill-logistics": "물류 정보 입력",
@@ -552,6 +575,8 @@
     "other-reason": "기타 원인",
     "get-the-order": "주문 채우기",
     "free": "무료",
+    "sku-changed-title": "{{num}}상품이 변경되었는데 계속 계산하시겠습니까?",
+    "sku-limit-title": "다음 상품은 구매 제한을 초과했고 수량을 수정하세요",
     "sorry-all-sku-unusable": "죄송합니다, 모든 상품이 실효되었고 주문을 내릴수 없습니다",
     "off-shelf": "이미 내림",
     "sold-out": "품절",
@@ -601,14 +626,6 @@
     },
     "coupon": "혜택",
     "coupon-mutra-discount": "이 혜택코드는 다른 도매나 혜택과 동시에 사용할 수 없습니다",
-    "invalid-product": "실효 상품",
-    "jump-to-pay-longtips": "\"주문완성\"을 클릭하면 {{payChannel}}에서 안전하게 지불합니다",
-    "you-are-paying-wait-result": "당신의 지불 청구가 제출되었고 {{payChannel}}돌아가 결과를 기다리는중입니다",
-    "number-refund-product": "{{number}}개 환불 상품",
-    "sku-changed-title": "상품이 변경되었는데 계속 계산하시겠습니까?",
-    "activity-product-limit ": "최다 동시에 X건을 구매할 때의 혜택가격 상품",
-    "sku-limit-title": "다음 상품은 구매 제한을 초과했고 수량을 수정하세요",
-    "activity-title-limit ": "다음 상품은 구매 제한을 초과했습니다. 계속 결산하시겠습니까?",
     "activity-price-limit": "이 상품 혜택 가격은 X건을 구매할 때만 가능하고",
     "policy": {
       "refund-policy": "환불 정책",
@@ -617,12 +634,11 @@
     "tip": {
       "add-tip": "팁 추가"
     },
-    "point-discount": "포인트 할인",
-    "point-discount-desc": "당신은 {{deductMemberPointNum}} 포인트를 사용하여 {{deductMemberPointAmount}}를 할인할 수 있습니다.",
-    "point-discount-remark": "{{value}} 포인트 소비",
     "free-shipping": "무료 배송",
     "pod-link": "보려면 클릭",
-    "pod-pic": "맞춤 미리보기"
+    "pod-pic": "맞춤 미리보기",
+    "activity-product-limit": "최다 동시에 {{stock}}건을 구매할 때의 혜택가격 상품",
+    "activity-title-limit": "다음 상품은 구매 제한을 초과했습니다. 계속 결산하시겠습니까?"
   },
   "payments-name": {
     "Paypal": "Paypal",
@@ -631,11 +647,11 @@
   },
   "paypal": {
     "error-expired": "상품이 실효되었습니다",
+    "error-sold-out": "이미 상품 제한 수량을 초과했습니다",
+    "error-product-limit": "상품이 이미 제한을 초과했습니다",
     "error-network-error": "인터넷 이상",
     "error-shop-not-exit": "가게가 존재하지 않음",
-    "error-login-limit": "주문전에 아이디 등록하세요",
-    "error-sold-out": "이미 상품 제한 수량을 초과했습니다",
-    "error-product-limit": "상품이 이미 제한을 초과했습니다"
+    "error-login-limit": "주문전에 아이디 등록하세요"
   },
   "tips": {
     "more-than-0-int": "0보다 큰 완수를 입력하세요",
@@ -713,8 +729,8 @@
     "enter-correct-email": "정확한 격식의 이메일을 입력하세요",
     "enter-correct-phone-number": "정확한 격식의 전화번호를 입력하세요",
     "phone-number-less-than-100": "핸드폰 번호는 100 글자를 초과하면 안됩니다",
-    "mutual-excluded-by-time-limited": "제한시간 할인과 혜택 번호 활동을 서로 갈라놓기",
-    "shipping_plan_unavailable": "{{discountCode}} 혜택 번호는 이 물류 방식에 적합하지 않습니다"
+    "shipping_plan_unavailable": "{{discountCode}} 혜택 번호는 이 물류 방식에 적합하지 않습니다",
+    "mutual-excluded-by-time-limited": "제한시간 할인과 혜택 번호 활동을 서로 갈라놓기"
   },
   "subscription": {
     "subscript-via-line-facebook": "으로 주문 통지를 구독하세요",
@@ -752,7 +768,8 @@
     "no-comment-title-tip": "아직 평가가 없습니다",
     "no-comment-first-tip": "빨리 첫번째 평가를 입력하세요",
     "on-img-upload-tip": "이미지 업로드 중, 잠시후 제출하세요",
-    "mobile-submit": "제출하기"
+    "mobile-submit": "제출하기",
+    "nickname": "별칭"
   },
   "order": {
     "refund-methods": {
@@ -1034,6 +1051,7 @@
     "edit": "편집",
     "cancel": "취소",
     "save": "저장",
+    "buy-record-entry": "구매한 상품",
     "account": {
       "account-subscription-email": "이메일에 보내기",
       "account-subscription-phone": "핸드폰에 보내기",
@@ -1061,12 +1079,12 @@
       "bind": "귀속",
       "modify-email": "이메일 수정",
       "phone": "핸드폰",
+      "modify-phone": "핸드폰 수정",
       "password": "비밀번호",
       "change-password": "비밀번호 변경",
       "subscription-notification": "구독 일림",
       "unsubscribed": "구독 취소됨",
-      "account-binding": "아이디 귀속",
-      "modify-phone": "핸드폰 수정"
+      "account-binding": "아이디 귀속"
     },
     "address": {
       "delete-address": "주소 삭제",
@@ -1139,6 +1157,7 @@
       "title": "구매금",
       "empty-mainText": "당신은 구매금을 획득하지 못했습니다",
       "empty-btn-link": "어떻게 구매금을 획득하고 사용하나요?",
+      "mainview-dedection": "현재 최고 신용도는 <italic>{{money}}</italic>",
       "mainview-link": "규칙 이해",
       "mainview-save": "{{historyTotalUsedScore}}구매비용을 사용하여 당신은 이미 <italic>{{historyTotalUsedDeduction}}</italic>을 절약했습니다",
       "modal-title": "구매금 설명",
@@ -1173,8 +1192,7 @@
         "deductFreezePoint": "구매금 동결 심사 삭제",
         "reverseAddPoint": "구매금 구하기",
         "reverseDeductPoint": "구매금 말장"
-      },
-      "mainview-dedection": "현재 최고 신용도는 <italic>{{money}}</italic>"
+      }
     },
     "pointList": {
       "empty": "현재 누적 기록이 없습니다",
@@ -1185,8 +1203,7 @@
       "loaded": "로딩됨",
       "empty2": "더욱 많은 기록이 없습니다",
       "order": "주문 보기:"
-    },
-    "buy-record-entry": "구매한 상품"
+    }
   },
   "cart": {
     "render-empty-status": "당신의 바구니에 상품이 없습니다",
@@ -1201,17 +1218,13 @@
     "shopping-money-step": "다음으로 세금과 운비를 계산합니다",
     "view-shopping-cart": "바구니 보기",
     "most-100-sku": "최다 100개 상품 푸가",
-    "stock-limit": "{{stock}}건이 남았습니다",
     "most-buy-999": "최다 999 건 상품을 바구니에 추가할 수 있습니다",
-    "active-stock-limit-2 ": "이 상품 혜택 가격은 {{stock}}건을 구매할 때만 가능하고",
-    "active-stock-limit-1 ": "최다 동시에 {{stock}}건을 구매할 때의 혜택가격 상품",
-    "activity-product-limit ": "최다 동시에 {{stock}}건을 구매할 때의 혜택가격 상품",
-    "activity-title-limit ": "다음 상품은 구매 제한을 초과했습니다. 계속 결산하시겠습니까?",
-    "activity-price-limit": "이 상품 혜택 가격은 {{num}}건을 구매할 때만 가능하고",
-    "activity-product-limit": "최다 동시에 {{stock}}건을 구매할 때의 혜택가격 상품",
+    "stock-limit": "{{stock}}건이 남았습니다",
     "activity-title-limit": "다음 상품은 구매 제한을 초과했습니다. 계속 결산하시겠습니까?",
+    "activity-price-limit": "이 상품 혜택 가격은 {{num}}건을 구매할 때만 가능하고",
     "active-stock-limit-2": "이 상품 혜택 가격은 {{stock}}건을 구매할 때만 가능하고",
     "active-stock-limit-1": "최다 동시에 {{stock}}건을 구매할 때의 혜택가격 상품",
+    "activity-product-limit": "최다 동시에 {{stock}}건을 구매할 때의 혜택가격 상품",
     "view-link": "보려면 클릭",
     "view-pic": "맞춤 미리보기",
     "not-participation-offers": "제안에 참여하지 않음",
@@ -1223,7 +1236,6 @@
     }
   },
   "user": {
-    "account": "계좌",
     "email": "이메일",
     "phone": "핸드폰 번호",
     "username": "이메일/핸드폰 번호",
@@ -1286,7 +1298,8 @@
       "err3010": "이메일 이미 귀속됨",
       "err3014": "메시지/이메일 템플릿 렌더링 실패",
       "udbResponse": "당신의 아이디 이상으로 사용 금지되었습니다. 상가와 연락하여 해제하세요"
-    }
+    },
+    "account": "계좌"
   },
   "address": {
     "dropdown": {
@@ -1316,19 +1329,19 @@
     "comboSelectFailure": "당신이 선택한 세트는 실효되었고 다시 선택하세요",
     "comboFailure": "세트가 실효되었습니다",
     "freeShipping": "무료배송",
-    "buyPop": "{{name}}이 {{minute}}분 전에 이 상품을 구매했습니다",
+    "buyPop": "{{name}}이 {{minutes}} 분 전에 이 상품을 구매했습니다",
     "noProductDesc": "아직 상품 묘사가 없습니다",
     "TCTD0108": "물류 방식이 존재하지 않고 다시 선택하세요",
     "TCTD0118": "지불 방식이 존재하지 않고 다시 선택하세요",
     "TCTD0121": "영업 활동이 존재하지 않고 다시 선택하세요",
     "TCTD0112": "당신이 선택한 상품은 실효되었고 다시 선택하세요",
     "defaultErrorCodeMsg": "인터넷 이상 상황, 새로고침하여 다시 시도하세요",
+    "comment": "댓글(필수항 아님)",
     "country": "국가",
     "submit": "제출",
     "overLength": "입력 길이가 제한을 초과했고 정확하게 입력하세요",
-    "bracket": "({{content}})",
-    "comment": "댓글(필수항 아님)",
-    "optional": "필수 입력항이 아닙니다"
+    "optional": "필수 입력항이 아닙니다",
+    "bracket": "({{content}})"
   },
   "blogList": {
     "container": {
@@ -1341,7 +1354,7 @@
   },
   "blog": {
     "container": {
-      "backTo": "되돌아가다{{collectionTitle}}"
+      "backTo": "되돌아가다{{{collectionTitle}}}"
     }
   }
 }

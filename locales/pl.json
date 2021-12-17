@@ -38,8 +38,8 @@
           },
           "threshold1": {
             "step1": "Kup powyżej {{threshold}} sztuk，oszczędzisz {{willSave}}",
-            "step3": "Gratulacje! Już oszczędziłeś {{saved}}!",
-            "step2": "Już oszczędziłeś {{saved}}!{{br}} Kup powużej {{threshold}} sztuk，oszczędzisz {{willSave}}"
+            "step2": "Już oszczędziłeś {{saved}}!{{br}} Kup powużej {{threshold}} sztuk，oszczędzisz {{willSave}}",
+            "step3": "Gratulacje! Już oszczędziłeś {{saved}}!"
           }
         },
         "benefit11": {
@@ -59,7 +59,8 @@
             }
           }
         }
-      }
+      },
+      "tags-label": "Minus:"
     },
     "bundle": {
       "title": "Zwykle są zakupione razem",
@@ -67,10 +68,24 @@
     },
     "selected-count-activity-product": "Już wybrano {{selectCount}} sztuk produktów, które biorą udział w tej działalności",
     "customer-purchase-limit": "Każdy kupi najwięcej {{count}} sztuk",
+    "customer-purchase-limit-each-item": "Każdy może kupić każdy towar pod limitem {{count}} sztuk",
     "flash-sale-tips": "limit zakupów: {{count}} sztuk",
     "flash-sale-text": "Promocja tymczasowa",
     "hot-sale": "W sprzedaniu",
-    "sold": "Juz sprzedano {{count}}"
+    "sold": "Juz sprzedano {{count}}",
+    "discount-coupon": {
+      "coupon-label": "Zniżka za pomocą kodu zniżkowego:",
+      "coupon-content": {
+        "threshold": "Kupić {threshold}",
+        "discount1": "{discount} % zniżki",
+        "discount2": "Darmowa dostawa",
+        "shippingRateBelow": "Koszt za dostawę jest niższy niż {value}",
+        "until": "Czas ważności sięga po: {{endTime}}."
+      },
+      "couponNoFound": "Nie ma tego kosu ulgowego",
+      "applySuccess": "Kod ulgowy pomyślnie dostasowano.",
+      "applyFail": "Nie udało się dostasować"
+    }
   },
   "header": {
     "searchItems": "Znajdź produkty",
@@ -78,10 +93,10 @@
     "navItemAll": "Wszystko",
     "search": "Znajdź",
     "cart": "Koszyk",
+    "center": "Rozrządzanie konta",
     "login": "Zalogować się",
     "logout": "Wylogować się",
-    "noCurrencyFallback": "Nie znaleziono tej waluty",
-    "center": "Rozrządzanie konta"
+    "noCurrencyFallback": "Nie znaleziono tej waluty"
   },
   "common": {
     "title": "Tytuł",
@@ -108,6 +123,7 @@
     "meno": "Komentarze",
     "package": "Paczka",
     "login": "Zaloguj się",
+    "email": "E-mail",
     "email2": "E-mail",
     "order": "Zamówienia",
     "remain": "Reszta",
@@ -170,7 +186,6 @@
     "continue": "Kontynuj",
     "contactUs": "Kontaktuj się z nami",
     "productError": "Brak danych tego produktu, proszę spróbować później",
-    "email": "E-mail",
     "home": "główna strona"
   },
   "modal": {
@@ -181,11 +196,11 @@
   },
   "footer": {
     "followus": "Subskrybuj nas",
+    "subscribeBarPlaceholder": "E-mail",
     "subscribeSuccess": "Pomyślnie zasubskrybowano",
     "subscribeError": "Subskrypcja nie powiodła się",
     "subscribeRegExpError": "Nieprawidłowa forma adresu e-maila",
-    "copyright": "Wszelkie prawa zastrzeżone",
-    "subscribeBarPlaceholder": "E-mail"
+    "copyright": "Wszelkie prawa zastrzeżone"
   },
   "productList": {
     "gategoryMenu": {
@@ -197,6 +212,7 @@
       "price": "Cena"
     },
     "container": {
+      "from": "z {{price}}",
       "empty": {
         "desc": "Nie ma produktów w tej kategorii",
         "title": "Przepraszam, na razie nie ma tych produktów",
@@ -222,22 +238,22 @@
         "error1": "Tylko {{stock}} sztuk tego produkt pozostało, proszę zmienić ilość zakupu",
         "error2": "Wolno kupić tylko {{saleMax}} sztuk tego produktu，proszę zmienić ilość zakupu.",
         "error3": "Proszę wybrać ilość zakupu!",
+        "error4": "Proszę wybrać specyfikację produktu!",
         "error5": "Ten produkt już jest wyprzedany",
         "error6": "Produkt jest usuwany z półek",
-        "addToCart": "Dodaj do koszyku",
-        "error4": "Proszę wybrać specyfikację produktu!"
+        "addToCart": "Dodaj do koszyku"
       },
       "listItem": {
         "sold": {
           "out": "Produkt wyprzedany"
         },
+        "off": "- {{value}}%",
         "addToCart": "Dodaj do koszyku",
-        "toDetail": "Sprawdź szczegóły",
-        "off": "- {{value}}%"
+        "toDetail": "Sprawdź szczegóły"
       },
       "show": "Pokazać",
       "viewAs": "Zobacz metodę",
-      "from": "z {{price}}"
+      "productsNum": "{{num}} produktów "
     }
   },
   "productSearch": {
@@ -282,6 +298,11 @@
     "goToRakutenByLink": "Zrób zakupy na Lotte",
     "goToYahooByLink": "Zrób zakupy na Yahoo",
     "recentlyViewedProducts": "Ostatnio oglądane produkty",
+    "activityToast": {
+      "product-limit": "tylko wolno jednocześnie kupić {{stock}} sztuk produktu z zniżką",
+      "price-limit": "tylko wolno kupić {{num}} sztuk tego produktu za zniżkową cenę",
+      "title-limit": "poniższe produkty już przekraczają limit zakupów"
+    },
     "tabs": {
       "description": "Opis",
       "shippingPayment": "Dostawa i płatność",
@@ -344,13 +365,8 @@
     },
     "previewLinkToast": "Link do podglądu nie obsługuje tej operacji",
     "morePaymentOptions": "Więcej opcji zapłaty",
-    "activityToast": {
-      "product-limit": "tylko wolno jednocześnie kupić {{stock}} sztuk produktu z zniżką",
-      "price-limit": "tylko wolno kupić {{num}} sztuk tego produktu za zniżkową cenę",
-      "title-limit": "poniższe produkty już przekraczają limit zakupów"
-    },
     "bulkDiscount": {
-      "title": "Koop Meer Bespaar Meer!\tKup więcej oszczędzaj więcej!"
+      "title": "Kup więcej oszczędzaj więcej!"
     }
   },
   "trade": {
@@ -365,7 +381,8 @@
     "man-piece-share": "Ciesz się powyżej{{count}} sztuk",
     "man-money-share": "Ciesz się powyżej {{money}}",
     "man-piece-reduce": "Dostać znizkę powyżej {{count}} sztuk",
-    "man-money-reduce": "Dostać znizkę powyżej {{count}} sztuk",
+    "man-money-reduce": "Dostać znizkę powyżej {{money}} sztuk",
+    "invalid-product": "Produkt niedostępny",
     "delete-invalid-product": "Usuwać niedostępne produkty",
     "remove-product": "Usuwać produkty",
     "sure-remove-this-product": "Czu już potwierdzisz, że chcesz ten produkt usuwać?",
@@ -395,6 +412,7 @@
     "service-fee": "Opłata za usługę",
     "pay-way": "Metody płatności",
     "pay-way-logo-and-more": "Więcej",
+    "jump-to-pay-longtips": "Po kliknięciu “Zamówienie zrealizowane”, automatycznie skoczy się do {{payChannel}} i tam można dokonać bezpiecznej płatności",
     "reciever-info": "Informacje o dostawie",
     "reciever-to": "Informacje o dostawie",
     "use-customer-info": "Użyć informacji klientów",
@@ -431,6 +449,9 @@
     "next-step-calc": "Przeliczy na kolejnym etapie",
     "delivery-fee": "Koszty za dostawę",
     "pay-fee": "Opłata",
+    "point-discount": "zniżka na punkty",
+    "point-discount-desc": "możesz oszczędzić {{deductMemberPointNum}} za pomocą {{deductMemberPointAmount}} kodu zniżkowego",
+    "point-discount-remark": "kosztuje {{value}} punktów",
     "summary": "Suma",
     "use-member-account-can": "Zapłacić szybko jako członek? Dostępny już",
     "i-want-recieve-discount-info": "Chcę otrzymać najnowsze wiadomości i projekt ulgowy",
@@ -448,6 +469,7 @@
     "at-least-comment-one-before-submit": "Proszę ocenić przynajmniej jedną opcję, potem to przesłać",
     "leave-your-words": "Pozostaw twoje poczucie użycia, zeby inni mogli z tego czegoś się uczyć",
     "is-paying": "W stanie płacenia",
+    "you-are-paying-wait-result": "Twoja prośba o płatność została przesłana, teraz {{payChannel}} na zwrócony wynik płatności",
     "need-pay": "Trzeba zapłacić",
     "after-sale-order": "Zamówienie posprzedażowe",
     "see-refund-progress": "Sprawdź stan zwrotu",
@@ -492,6 +514,7 @@
     "refund-order-stataus": "Stan zamówienia zwrotu",
     "refund-order-number": "Numer zamówienia zwrotu",
     "apply-time": "Czas aplikacji",
+    "number-refund-product": "{{number}} sztuk zwróconych produktów",
     "refund-reason": "Powód zwrotu",
     "refund-way-intro": "Opis metod zwrotu",
     "fill-logistics": "Napisać informacje dotyczące dostawy",
@@ -552,6 +575,8 @@
     "other-reason": "Inne powody",
     "get-the-order": "Dodaj coś do zamówienia",
     "free": "Za darmo",
+    "sku-changed-title": "Stan {{num}}produktów już są zmienione, czy chcesz dokonać płatności teraz?",
+    "sku-limit-title": "poniższe produkty już przekraczają limit zakupów, proszę zmienić ilość",
     "sorry-all-sku-unusable": "Przepraszam, wszystkie produkty już są nie ważne, nie można złożyć zamówienia teraz.",
     "off-shelf": "Już są niedostępne",
     "sold-out": "Wyprzedany",
@@ -601,14 +626,6 @@
     },
     "coupon": "Zniżka",
     "coupon-mutra-discount": "Ten kod zniżkowy nie może być wykorzystany z inną promocją albo inną zniżką jednocześnie.",
-    "invalid-product": "Produkt niedostępny",
-    "jump-to-pay-longtips": "Po kliknięciu “Zamówienie zrealizowane”, automatycznie skoczy się do {{payChannel}} i tam można dokonać bezpiecznej płatności",
-    "you-are-paying-wait-result": "Twoja prośba o płatność została przesłana, teraz {{payChannel}} na zwrócony wynik płatności",
-    "number-refund-product": "{{number}} sztuk zwróconych produktów",
-    "sku-changed-title": "Stan produktów już są zmienione, czy chcesz dokonać płatności teraz?",
-    "activity-product-limit ": "tylko wolno jednocześnie kupić X sztuk produktu z zniżką",
-    "sku-limit-title": "poniższe produkty już przekraczają limit zakupów, proszę zmienić ilość",
-    "activity-title-limit ": "poniższe produkty już przekraczają limit zakupów, chcesz dokonać płatności jeszcze?",
     "activity-price-limit": "tylko wolno kupić X sztuk tego produktu za zniżkową cenę",
     "policy": {
       "refund-policy": "Polityka zwrotów",
@@ -617,12 +634,11 @@
     "tip": {
       "add-tip": "Dodaj napiwki"
     },
-    "point-discount": "zniżka na punkty",
-    "point-discount-desc": "możesz oszczędzić {{deductMemberPointNum}}  za pomocą {{deductMemberPointAmount}} kodu zniżkowego",
-    "point-discount-remark": "kosztuje {{value}}  punktów",
     "free-shipping": "darmowa dostawa",
     "pod-link": "Kliknij, aby zobaczyć",
-    "pod-pic": "Podgląd niestandardowy"
+    "pod-pic": "Podgląd niestandardowy",
+    "activity-product-limit": "tylko wolno jednocześnie kupić {{stock}} sztuk produktu z zniżką",
+    "activity-title-limit": "poniższe produkty już przekraczają limit zakupów, chcesz dokonać płatności jeszcze?"
   },
   "payments-name": {
     "Paypal": "Paypal",
@@ -631,11 +647,11 @@
   },
   "paypal": {
     "error-expired": "Towar już jest niedostępny",
+    "error-sold-out": "Niewystarczające zapasy produktów",
+    "error-product-limit": "Liczba zakupionych produktów już przekracza limit",
     "error-network-error": "Nieprawidłowe połączenie z interentem",
     "error-shop-not-exit": "Sklepu nie ma",
-    "error-login-limit": "Proszę zalogować się na swoim koncie przed złożeniem zamówienia",
-    "error-sold-out": "Niewystarczające zapasy produktów",
-    "error-product-limit": "Liczba zakupionych produktów już przekracza limit"
+    "error-login-limit": "Proszę zalogować się na swoim koncie przed złożeniem zamówienia"
   },
   "tips": {
     "more-than-0-int": "Proszę wpisać liczbę całkowitę powyżej 0",
@@ -713,8 +729,8 @@
     "enter-correct-email": "Proszę wpisać prawdziwą formę e-mail",
     "enter-correct-phone-number": "Proszęwpisać prawdziwą formęnumeru telefonu",
     "phone-number-less-than-100": "Długość numeru telefonu nie może przekraczać 100 słów",
-    "mutual-excluded-by-time-limited": "rabaty czasowe i działania związane z kodem kuponów wzajemnie się wykluczają",
-    "shipping_plan_unavailable": "{{discountCode}}  kod zniżkowy nie jest odpowiedni na tę metodę dostawy na bieżąco"
+    "shipping_plan_unavailable": "{{discountCode}} kod zniżkowy nie jest odpowiedni na tę metodę dostawy na bieżąco",
+    "mutual-excluded-by-time-limited": "rabaty czasowe i działania związane z kodem kuponów wzajemnie się wykluczają"
   },
   "subscription": {
     "subscript-via-line-facebook": "Subskrybować wiadomość dotyczącą zamówienia przez Line albo Facebook",
@@ -752,7 +768,8 @@
     "no-comment-title-tip": "brak komentarzy",
     "no-comment-first-tip": "komentuj teraz jako pierwszy",
     "on-img-upload-tip": "zdjęcie zostało dodane, proszę zatwierdzić później",
-    "mobile-submit": "zatwierdzić"
+    "mobile-submit": "zatwierdzić",
+    "nickname": "Przezwisko"
   },
   "order": {
     "refund-methods": {
@@ -1034,6 +1051,7 @@
     "edit": "Edytować",
     "cancel": "Anulować",
     "save": "Zachować",
+    "buy-record-entry": "Produkt zakupiony",
     "account": {
       "account-subscription-email": "Prześle do e-maila",
       "account-subscription-phone": "Prześle do telefonu",
@@ -1061,12 +1079,12 @@
       "bind": "Powiązać",
       "modify-email": "Zmienić e-mail",
       "phone": "Telefon",
+      "modify-phone": "Telefon",
       "password": "Hasło",
       "change-password": "Zmienić hasło",
       "subscription-notification": "Subskrybuj powiadomienia",
       "unsubscribed": "Już anulowano subskrypcję",
-      "account-binding": "Powiązać konto",
-      "modify-phone": "Telefon"
+      "account-binding": "Powiązać konto"
     },
     "address": {
       "delete-address": "Usuwać adres",
@@ -1139,8 +1157,9 @@
       "title": "Kredyt sklepowy",
       "empty-mainText": "Jeszcze nie otrzymujesz kredytu sklepowego",
       "empty-btn-link": "Jak otrzymać i dostać kredyt sklepowy",
+      "mainview-dedection": "Obecny maksymalny limit kredytowy sięga po {{money}}",
       "mainview-link": "Zrozumieć zasady",
-      "mainview-save": "Dzięki wykorzystaniu {{historyTotalUsedScore}} kredytu sklepowego，już oszczędzasz historyTotalUsedDeduction",
+      "mainview-save": "Dzięki wykorzystaniu {{historyTotalUsedScore}} kredytu sklepowego，już oszczędzasz <italic>{{historyTotalUsedDeduction}}</italic>",
       "modal-title": "Wyjaśnienie kredytu sklepowego",
       "ok-btn": "Potwierdzić",
       "unuseHistoryScore": "Nie oszczędzasz pieniądze za pomocą użycia kredytu sklepowego",
@@ -1173,8 +1192,7 @@
         "deductFreezePoint": "Odpis zamrożenia kredytu sklepowego",
         "reverseAddPoint": "Odwróć dodany punkt",
         "reverseDeductPoint": "Rozliczenie rachunku kredytem sklepowym"
-      },
-      "mainview-dedection": "Obecny maksymalny limit kredytowy sięga po {{money}}"
+      }
     },
     "pointList": {
       "empty": "Obecnie brak zapisów punktów",
@@ -1185,8 +1203,7 @@
       "loaded": "Załadowany",
       "empty2": "Brak więcej zapisów",
       "order": "Sprawdź zamówienia："
-    },
-    "buy-record-entry": "Produkt zakupiony"
+    }
   },
   "cart": {
     "render-empty-status": "Nie masz produktów w koszyku",
@@ -1201,17 +1218,13 @@
     "shopping-money-step": "Kolejnie przeliczyć podatki i koszty za dostawę",
     "view-shopping-cart": "Sprawdź koszyk",
     "most-100-sku": "Najwięcej wolno dodać 100 produktów",
-    "stock-limit": "Pozostało {{stock}} sztuk",
     "most-buy-999": "Wolno dodać do koszyku najwyżej 999 sztuk produktów",
-    "active-stock-limit-2 ": "tylko wolno kupić {{stock}} sztuk tego produktu za zniżkową cenę",
-    "active-stock-limit-1 ": "tylko wolno jednocześnie kupić {{stock}} sztuk produktu z zniżką",
-    "activity-product-limit ": "tylko wolno jednocześnie kupić {{stock}} sztuk produktu z zniżką",
-    "activity-title-limit ": "poniższe produkty już przekraczają limit zakupów, chcesz dokonać płatności jeszcze?",
-    "activity-price-limit": "tylko wolno kupić {{num}} sztuk tego produktu za zniżkową cenę",
-    "activity-product-limit": "tylko wolno jednocześnie kupić {{stock}} sztuk produktu z zniżką",
+    "stock-limit": "Pozostało {{stock}} sztuk",
     "activity-title-limit": "poniższe produkty już przekraczają limit zakupów, chcesz dokonać płatności jeszcze?",
+    "activity-price-limit": "tylko wolno kupić {{num}} sztuk tego produktu za zniżkową cenę",
     "active-stock-limit-2": "tylko wolno kupić {{stock}} sztuk tego produktu za zniżkową cenę",
     "active-stock-limit-1": "tylko wolno jednocześnie kupić {{stock}} sztuk produktu z zniżką",
+    "activity-product-limit": "tylko wolno jednocześnie kupić {{stock}} sztuk produktu z zniżką",
     "view-link": "Kliknij, aby zobaczyć",
     "view-pic": "Podgląd niestandardowy",
     "not-participation-offers": "Nie uczestniczę w ofercie",
@@ -1223,7 +1236,6 @@
     }
   },
   "user": {
-    "account": "Konto",
     "email": "E-mail",
     "phone": "Numer telefonu",
     "username": "E-mail/numer telefonu",
@@ -1286,7 +1298,8 @@
       "err3010": "E-mail już jest powiązany",
       "err3014": "Nie udało się wyrenderować szablonu SMS/e-mail",
       "udbResponse": "Twoje konto zostało zniesione z powodu wyjątku, skontaktuj się ze sprzedawcą, aby znieść zakaz"
-    }
+    },
+    "account": "KONTO"
   },
   "address": {
     "dropdown": {
@@ -1323,12 +1336,12 @@
     "TCTD0121": "Brak tego działania marketingowego, wybierz ponownie",
     "TCTD0112": "Wybrany produkt wygasł, wybierz ponownie",
     "defaultErrorCodeMsg": "Nieprawidłowa sytuacja internetowa, proszę odświeżać stronę i spróbować później",
+    "comment": "Komentarz（opcjonalny）",
     "country": "Kraj",
     "submit": "Przesłać",
     "overLength": "Długość komentarzy przekracza limit, proszę napisać prawidłowo",
-    "bracket": "({{content}})",
-    "comment": "Komentarz（opcjonalny）",
-    "optional": "Opcjonalny"
+    "optional": "Opcjonalny",
+    "bracket": "({{content}})"
   },
   "blogList": {
     "container": {
@@ -1337,6 +1350,11 @@
         "desc": "W tym blogu jeszcze nie ma artykułów"
       },
       "readBtnText": "Czytać więcej"
+    }
+  },
+  "blog": {
+    "container": {
+      "backTo": "Wróć {{{collectionTitle}}}"
     }
   }
 }

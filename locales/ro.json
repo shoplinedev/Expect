@@ -1,0 +1,1360 @@
+{
+  "sales": {
+    "promotion": {
+      "tags": {
+        "benefit1": {
+          "threshold0": "Cumpărați {{threshold}} pentru a economisi {{save}}",
+          "threshold1": "Cumpărați {{threshold}} Obțineți o REDUCERE de {{save}}"
+        },
+        "benefit2": {
+          "threshold0": "Cumpărați {{threshold}} pentru a economisi {{save}}",
+          "threshold1": "Cumpărați {{threshold}} OBȚINEȚI O REDUCERE de {{save}}"
+        },
+        "benefit11": {
+          "threshold1": {
+            "normal": "Cumpărați {{threshold}} (de) articole, profitați de o REDUCERE DE {{save}} la unul dintre articole",
+            "free": "Cumpărați {{threshold}} (de) articole, profitați de un articol gratuit!"
+          }
+        }
+      },
+      "reminder": {
+        "benefit1": {
+          "threshold0": {
+            "step1": "Cumpărați mai mult de {{threshold}} pentru a economisi {{willSave}}",
+            "step2": "Economisiți {{saved}} deja ! {{br}}Cumpărați mai mult de {{threshold}} pentru a economisi {{willSave}}",
+            "step3": "Felicitări! Ați economisit {{saved}}!"
+          },
+          "threshold1": {
+            "step1": "Cumpărați mai mult de {{threshold}} pentru a economisi {{willSave}}",
+            "step2": "Economisiți {{saved}} deja ! {{br}}Cumpărați mai mult de {{threshold}} pentru a economisi {{willSave}}",
+            "step3": "Felicitări! Ați economisit {{saved}}！"
+          }
+        },
+        "benefit2": {
+          "threshold0": {
+            "step1": "Cumpărați mai mult de {{threshold}} pentru a obține o REDUCERE de {{willSave}}",
+            "step2": "Economisiți {{saved}} deja ! {{br}}Cumpărați mai mult de {{threshold}} pentru a obține o REDUCERE de {{willSave}}",
+            "step3": "Felicitări! Ați economisit {{saved}}!"
+          },
+          "threshold1": {
+            "step1": "Cumpărați mai mult de {{threshold}} pentru a obține o REDUCERE de {{willSave}}",
+            "step2": "Economisiți {{saved}} deja ! {{br}}Cumpărați mai mult de {{threshold}} pentru a obține o REDUCERE de {{willSave}}",
+            "step3": "Felicitări! Ați economisit {{saved}}!"
+          }
+        },
+        "benefit11": {
+          "threshold1": {
+            "step1": {
+              "normal": "Cumpărați mai mult de {{threshold}} (de) produse și profitați de o REDUCERE de {{willSave}} la unul dintre articole",
+              "nextFree": "Cumpărați mai mult de {{threshold}} (de) articole și profitați de unul gratuit"
+            },
+            "step2": {
+              "normal": "Felicitări! Ați economisit {{saved}}, {{br}}Cumpărați mai mult de {{threshold}} (de) articole și profitați de o REDUCERE {{willSave}} la unul dintre ele",
+              "free": "Felicitări! profitați de un articol gratuit",
+              "nextFree": "Felicitări! Ați economisit {{saved}}, {{br}}Cumpărați mai mult de {{threshold}} (de) articole și profitați de unul dintre ele gratuit"
+            },
+            "step3": {
+              "normal": "Felicitări! profitați de o REDUCERE de {{saved}} la unul dintre articole",
+              "free": "Felicitări! profitați de un articol gratuit"
+            }
+          }
+        }
+      },
+      "tags-label": "Reducere:"
+    },
+    "bundle": {
+      "title": "Cumpărate frecvent împreună",
+      "saveTip": "Economisiți {{amount}} la cumpărarea împreună"
+    },
+    "selected-count-activity-product": "Produse {{selectCount}} pentru evenimentul selectat",
+    "customer-purchase-limit": "Limită de achiziție {{count}} per persoană",
+    "customer-purchase-limit-each-item": "Limită de achiziție de {{count}} per produs și per persoană",
+    "flash-sale-tips": "Limită de achiziție: Cantitate {{count}}",
+    "flash-sale-text": "VÂNZARE RAPIDĂ",
+    "hot-sale": "Trend vânzare!",
+    "sold": "{{count}} vândute",
+    "discount-coupon": {
+      "coupon-label": "Cupon:",
+      "coupon-content": {
+        "threshold": "Cumpărați{threshold}",
+        "discount1": "Reducere {discount}",
+        "discount2": "Livrare gratuită",
+        "shippingRateBelow": "Cheltuielile cu transportul sunt mai mici de {value}",
+        "until": "Valabil până la: {{endTime}}"
+      },
+      "couponNoFound": "Codul pentru reducere nu există",
+      "applySuccess": "Codul pentru reducere a fost aplicat cu succes",
+      "applyFail": "Aplicația a eșuat"
+    }
+  },
+  "header": {
+    "searchItems": "Căutați produse",
+    "searchInputPlaceholder": "Introduceți aici și apăsați pe Caută",
+    "navItemAll": "Toate",
+    "search": "Caută",
+    "cart": "Coșul dvs.",
+    "center": "Centru",
+    "login": "Autentificare",
+    "logout": "Deconectare",
+    "noCurrencyFallback": "Nu a fost găsită nicio valută relevantă"
+  },
+  "common": {
+    "title": "Nume",
+    "category": "Categorie",
+    "outOfStock": "Stoc epuizat",
+    "subTotal": "Subtotal",
+    "descountPrice": "Preț redus",
+    "total": "Total",
+    "soldOut": "Vândut",
+    "settleMent": "Cumpără acum",
+    "selectProduct": "Alegeți produs",
+    "hasSelected": "A selectat",
+    "pieces": "Bucăți",
+    "discount": "Reducere",
+    "piece": "bucată",
+    "remove": "Elimină",
+    "cancel": "Anulează",
+    "tips": "Memento",
+    "checkout": "FINALIZARE COMANDĂ",
+    "finish": "Finalizat",
+    "username": "Nume",
+    "mobile-phone": "Număr de telefon mobil",
+    "tel-phone": "Număr de telefon",
+    "meno": "Observații",
+    "package": "Pachet",
+    "login": "Autentificare",
+    "email": "Adresă de e-mail",
+    "email2": "Adresă poștală",
+    "order": "Comenzi",
+    "remain": "Rămase",
+    "operation": "Operează",
+    "bank-name": "Denumire bancă",
+    "bank-card-number": "Număr card bancar",
+    "bank-Account": "Cont bancar",
+    "bank-Account2": "Cont bancar",
+    "close": "Închide",
+    "audit": "Revizuiește",
+    "tax": "Taxe și impozite",
+    "mobile": "Număr de telefon",
+    "address": "Adresă",
+    "logistics": "Livrare",
+    "backout": "Anulează",
+    "confirm": "OK",
+    "upload": "Încarcă",
+    "error-stack": "Depozit greșit",
+    "amount": "Cantitate",
+    "stock-limit": "Au rămas doar {{stock}}",
+    "back-to-user-center": "Înapoi la Centrul utilizatorului",
+    "member-login": "Autentificare membru",
+    "contact-information": "Informații de contact",
+    "back-to-cart": "Revenire la coș",
+    "recommend": "Recomandate",
+    "free-shipping": "Livrare gratuită",
+    "apply": "Aplică",
+    "anonymous": "Anonim",
+    "logistics-and-payment": "Condiții de livrare și plată",
+    "payment": "Plată",
+    "payment-2": "Plăteşte acum",
+    "modify": "Modifică",
+    "cardholder-name": "Nume titular card",
+    "use-address": "Adresă utilizată",
+    "default-address": "Adresă principală",
+    "use-new-address": "Utilizează adresă nouă",
+    "sign-out": "Deconectare",
+    "enter-username": "Introduceți numele de utilizator",
+    "enter-email": "Introduceți adresa de e-mail",
+    "enter-mobile-phone": "Introduceți numărul de telefon mobil",
+    "order-evaluation": "Recenzie comandă",
+    "submit-evaluation": "Trimite recenzie",
+    "anonymous-evaluation": "Recenzie anonimă",
+    "discountOff": "Reducere",
+    "discountDesc": "Descriere comercială",
+    "freightDesc": "Descriere taxă de livrare",
+    "taxDesc": "Descriere taxe și impozite",
+    "returnMoney": "Rambursare",
+    "returnProgress": "Revenire la progres",
+    "returnInfo": "Revenire la informații",
+    "rollback": "Retragere",
+    "applyDate": "Dată solicitare",
+    "evaluation": "Revizuiește",
+    "upload-image": "Încarcă o imagine",
+    "page": "pagină",
+    "day": "zi",
+    "days": "zile",
+    "buy-now": "CUMPĂRĂ ACUM",
+    "ok": "OK",
+    "continue": "Continuă",
+    "contactUs": "CONTACTAȚI-NE",
+    "productError": "Nu a fost găsită nicio informație despre produs. Vă rugăm să încercați din nou mai târziu",
+    "home": "Pagina principala"
+  },
+  "modal": {
+    "iKnow": "Am înțeles",
+    "goCart": "Accesează coș",
+    "exceedCartTitle": "Ne pare rău! Numărul de produse din coș depășește limita.",
+    "exceedCartContent": "Puteți adăuga mai întâi produsul în coșul dvs. prin cumpărarea sau ștergerea celorlalte produse din coș"
+  },
+  "footer": {
+    "followus": "URMĂREȘTE-NE",
+    "subscribeBarPlaceholder": "Introduceți adresa dvs. de e-mail aici",
+    "subscribeSuccess": "Abonare reușită",
+    "subscribeError": "Abonare nereușită",
+    "subscribeRegExpError": "Eroare formatare adresă de e-mail",
+    "copyright": "Toate drepturile rezervate."
+  },
+  "productList": {
+    "gategoryMenu": {
+      "catalog": "CATALOG",
+      "menuitem": "Toate produsele"
+    },
+    "filterMenu": {
+      "filter": "Filtru",
+      "price": "Preț"
+    },
+    "container": {
+      "from": "Începând de la {{price}}",
+      "empty": {
+        "desc": "Nu există produse în categorie",
+        "title": "Ne pare rău, dar produsul nu se află momentan în stoc.",
+        "description": "Dacă doriți, puteți contacta departamentul comercial pentru informații suplimentare"
+      },
+      "sort": {
+        "text1": "Toate produsele",
+        "text2": "Sortare după",
+        "recommend": "Recomandate",
+        "sales": "Top vânzări",
+        "newest": "Noutăți",
+        "priceLowToHigh": "De la prețul cel mai mic la cel mai mare",
+        "priceHighToLow": "De la prețul cel mai mare la cel mai mic",
+        "option1": "Dată vânzare (de la nou la vechi)",
+        "option2": "Dată vânzare (de la vechi la nou)",
+        "option3": "Preț (de la mare la mic)",
+        "option4": "Preț (de la mic la mare)"
+      },
+      "network": {
+        "message": "Nu a fost găsită nicio informație despre produs. Vă rugăm să încercați din nou mai târziu"
+      },
+      "tradePopup": {
+        "error1": "Au rămas {{stock}} (de) bucăți. Selectați din nou cantitatea",
+        "error2": "Pot fi achiziționate doar {{saleMax}} (de) bucăți. Selectați din nou cantitatea!",
+        "error3": "Selectați cantitatea!",
+        "error4": "Selectați mai întâi prima mărime a produsului!",
+        "error5": "Produsul nu mai este în stoc",
+        "error6": "Produsul a fost eliminat de pe rafturi",
+        "addToCart": "ADAUGĂ LA COȘ"
+      },
+      "listItem": {
+        "sold": {
+          "out": "VÂNDUT"
+        },
+        "off": "Reducere {{value}}%",
+        "addToCart": "ADAUGĂ LA COȘ",
+        "toDetail": "Vezi detalii"
+      },
+      "show": "Afişează",
+      "viewAs": "Vizualizează ca",
+      "productsNum": "{{num}} produsele"
+    }
+  },
+  "productSearch": {
+    "serachTitle": {
+      "text1": "Nu au fost găsite rezultate corespunzătoare"
+    },
+    "search": {
+      "backHome": "Înapoi la prima pagină",
+      "resultsFoundFor": "{{count}} (de) rezultate pentru „{{keyword}}”",
+      "results": "{{count}} (de) rezultate",
+      "noRelatedResultFound": "Nu au fost găsite rezultate corespunzătoare",
+      "searchNoResults": "Căutarea dvs. pentru „{{keyword}}” nu a generat niciun rezultat"
+    },
+    "empty": {
+      "title1": "Vă recomandăm să verificați dacă există greșeli de scriere,",
+      "title2": "și să căutați din nou cu cuvinte-cheie concise"
+    },
+    "sortName": "Sortare după:",
+    "container": {
+      "sort": {
+        "option1": "Durată pe rafturi (de la nou la vechi)",
+        "option2": "Durată pe rafturi (de la vechi la nou)",
+        "option3": "Preț (de la mare la mic)",
+        "option4": "Preț (de la mic la mare)"
+      }
+    }
+  },
+  "collection": {
+    "all": {
+      "title": "Toate colecțiile",
+      "h1Title": "Categorie"
+    }
+  },
+  "productDetail": {
+    "goToAmazon": "Cumpărați de pe Amazon",
+    "goOutsideOfAmazon": "Mergeți la cumpărături în afara Amazon",
+    "goOtherChannels": "Alte canale de achiziții",
+    "toAmazon": "Amazon",
+    "goToRakuten": "LOTTE",
+    "goToYahoo": "Yahoo",
+    "goToAmazonByLink": "Cumpărați de pe Amazon",
+    "goToRakutenByLink": "Cumpărați de pe LOTTE",
+    "goToYahooByLink": "Cumpărați de pe Yahoo",
+    "recentlyViewedProducts": "Produse recent vizualizate",
+    "activityToast": {
+      "product-limit": "Limita de achiziție pentru produsul promoțional {{stock}}",
+      "price-limit": "Cantitatea maximă pentru produsul limitat este de {{num}}",
+      "title-limit": "Produsele de mai jos depășesc limita de achiziție"
+    },
+    "tabs": {
+      "description": "Descriere",
+      "shippingPayment": "Livrare și plată",
+      "comments": "Recenzii"
+    },
+    "recommendTitle": "V-ar putea interesa",
+    "commentsTitle": "Recenzii",
+    "network": {
+      "message2": "Nu s-a reușit obținerea informațiilor despre produs. Vă rugăm să încercați din nou mai târziu"
+    },
+    "thumbSwiper": {
+      "image": {
+        "alt": "Miniatură produs"
+      },
+      "share": {
+        "text": "Distribuie pe"
+      }
+    },
+    "tabPanel": {
+      "desc": "Nicio descriere momentan",
+      "descFs": "Nu s-a reușit obținerea datelor. Vă rugăm să încercați din nou mai târziu",
+      "ship": {
+        "sh": {
+          "text1": "Metodă"
+        },
+        "text2": "Nicio metodă de livrare momentan"
+      },
+      "pay": {
+        "text1": "Metodă de plată",
+        "text2": "Nicio metodă de plată momentan",
+        "text3": "Nicio informație despre plata logisticii momentan"
+      },
+      "comments": {
+        "empty": "Nicio recenzie despre produs momentan",
+        "error": "Nu s-a reușit obținerea recenziei produsului. Vă rugăm să încercați din nou mai târziu"
+      }
+    },
+    "no-product-introduction": "Nicio introducere despre produs momentan",
+    "no-logistics-and-payment-information": "Nicio metodă de logistică și plată momentan",
+    "addCart": "ADAUGĂ",
+    "default-placeholder": "Selectați {{attrName}}",
+    "inquiry": {
+      "inquiryTitle": "Solicitare produs",
+      "inquiryTips1": "Lăsați-ne un mesaj și vom reveni către dvs. cât mai repede posibil",
+      "email": "E-mail",
+      "message": "Mesajul dvs.",
+      "inquiryTips2": "Ne puteți furniza mai multe informații despre dvs., pentru a vă putea oferi cele mai potrivite servicii",
+      "optional": "Opțional",
+      "name": "Nume",
+      "mobile": "Număr de telefon",
+      "region": "Țară/Regiune",
+      "cancel": "Anulează",
+      "submit": "Trimite",
+      "emailEmptyErr": "Introduceți adresa de e-mail",
+      "messageEmptyErr": "Introduceți mesajul dvs.",
+      "emailFormatErr": "Introduceți o adresă de e-mail validă",
+      "messageLengthErr": "Lungimea maximă a mesajului dvs. nu trebuie să fie mai mare de 1500 de cuvinte",
+      "submitSuccess": "Trimitere reușită",
+      "submitFailed": "Trimitere nereușită, încercați din nou"
+    },
+    "previewLinkToast": "Operația pentru linkul de previzualizare nu este acceptată",
+    "morePaymentOptions": "mai multe opțiuni de plată",
+    "bulkDiscount": {
+      "title": "Cumpărați mai mult Economisiți mai mult!"
+    }
+  },
+  "trade": {
+    "contact": "Contact",
+    "can-not-submit-order": "Comanda nu poate fi trimisă",
+    "sorry-rechoose-longtips": "Ne pare rău, dar produsul selectat nu este valid pentru achiziție. Selectați din nou",
+    "product-amount": "Subtotal",
+    "will-discount": "Reducere",
+    "some-discount-limit-to-pay-and-delivery": "Unele dintre reduceri sunt disponibile doar pentru anumite metode de logistică/metode de plată",
+    "total": "Total",
+    "go-on-shopping": "Continuă cu Cumpărături",
+    "man-piece-share": "Bucurați-vă de {{count}} (de) bucăți sau mai multe",
+    "man-money-share": "Bucurați-vă de suma de achiziție de {{money}} sau mai mult",
+    "man-piece-reduce": "Reducere pentru {{count}} (de) bucăți sau mai multe",
+    "man-money-reduce": "Reducere pentru suma de achiziție de {{money}} sau mai mult",
+    "invalid-product": "Produse nevalide",
+    "delete-invalid-product": "Șterge produse nevalide",
+    "remove-product": "Elimină produs",
+    "sure-remove-this-product": "Sigur doriți să eliminați produsul?",
+    "order-created-but-data-fail": "Comanda este creată, dar există o eroare de returnare a datelor...",
+    "agree-user-terms-first": "Acceptați mai întâi Termenii de utilizare",
+    "recieve-address-unavailable-rechoose": "Nu există o metodă de livrare disponibilă la adresa destinatarului. Reveniți pentru a selecta din nou",
+    "please-fill-meno": "Completați cu remarci",
+    "please-choose-delivery-way": "Selectați o metodă de livrare",
+    "please-choose-pay-way": "Selectaţi o metodă de plată",
+    "bad-userinfo-or-in-blocklist": "Eroare informații utilizator sau utilizatorul este blocat",
+    "bad-userinfo": "Eroare informații utilizator",
+    "fail-get-product-back-cart": "Nu s-a reușit obținerea informațiilor despre produsul verificat. Reveniți la coș și trimiteți din nou",
+    "fill-info": "Informații",
+    "back-prev-step": "Reveniți la informații",
+    "back-prev-step2": "Reveniți la livrare",
+    "next-step": "Continuă",
+    "next-step-shipment": "Continuați cumpărăturile",
+    "next-step-payment": "Accesați pentru alegerea metodei de plată",
+    "submit-order": "Comandă finalizată",
+    "i-agree-website": "Sunt de acord cu site-ul",
+    "service-terms": "Condițiile de utilizare a site-ului",
+    "and": "și cu",
+    "private-policy": "Politica de confidențialitate",
+    "fast-checkout": "Comandă rapidă",
+    "or-fill-info": "SAU",
+    "not-support-paypal": "Vânzătorul nu suportă PayPal",
+    "service-fee": "Taxă de serviciu",
+    "pay-way": "Metodă de plată",
+    "pay-way-logo-and-more": "și mai multe informații",
+    "jump-to-pay-longtips": "După ce dați clic pe „Finalizează comandă”, veți fi redirecționat către {{payChannel}} pentru a termina achiziția securizată",
+    "reciever-info": "Adresă de livrare",
+    "reciever-to": "Livrat către",
+    "use-customer-info": "Utilizează informații client",
+    "please-input-field": "Introduceți {{field}}",
+    "reciever-name": "Nume de familie destinatar",
+    "reciever-fullname": "Nume complet destinatar",
+    "field-can-not-longer-than": "{{field}} nu poate depăși lungimea de {{length}} (de) caractere",
+    "can-not-empty": "Nu poate fi necompletat",
+    "must-fill": "Necesar",
+    "must-choose": "Necesar pentru selectare",
+    "must-select": "Opțiune necesară",
+    "must-agree-policy": "Trebuie să fiți de acord cu politica de returnare pentru a continua!",
+    "optional-fill": "Opțional",
+    "other-info": "Alte informații",
+    "need-choose-delivery-way": "Este necesară o metodă de livrare pentru toate straturile de temperatură",
+    "your-delivery-need-choose-store": "Informațiile despre magazin sunt necesare pentru toate metodele de livrare",
+    "supermarket-self-pick": "Ridicare personală din magazin",
+    "delivery-to-home": "Livrare la domiciliu",
+    "other-delivery": "Alte metode de livrare",
+    "delivery-way": "Metodă de livrare",
+    "please-choose-area": "Selectați o zonă",
+    "please-choose-store": "Selectați un magazin",
+    "please-input-legal-passport-id-card": "Introduceți o CI/pașaport valid/ă",
+    "passport-id-card-placeholder": "Număr CI/pașaport (Opțional)",
+    "passport-id-card-tip": "Introduceți CI reală a destinatarului sau numărul de pașaport pentru a asigura declararea la vamă și livrarea rapidă",
+    "product-offline": "Produsul a fost eliminat de pe rafturi",
+    "stock-not-enough": "Produse insuficiente",
+    "over-limit-number": "S-a depășit limita de produse",
+    "product-removed": "Produsul a fost șters",
+    "product-package": "Pachet",
+    "product-fee": "Subtotal",
+    "product-tax": "Impozit pe bunuri",
+    "delivery-tax": "Taxă de transport",
+    "next-step-calc": "Calculată la pasul următor",
+    "delivery-fee": "Livrare",
+    "pay-fee": "Cheltuieli cu plata",
+    "point-discount": "Puncte de reducere",
+    "point-discount-desc": "Puteți utiliza punctele {{deductMemberPointNum}} pentru a economisi {{deductMemberPointAmount}}",
+    "point-discount-remark": "{{value}} puncte cost",
+    "summary": "Total",
+    "use-member-account-can": "Verificați rapid ca membru? O puteți face imediat",
+    "i-want-recieve-discount-info": "Ține-mă la curent cu noutăți și oferte exclusive",
+    "order-detail-query-fail": "Eroare interogare detalii comandă",
+    "your-order-created": "comanda dvs. a fost plasată",
+    "your-order-not-pay": "Nu ați terminat plata pentru comanda dvs.",
+    "go-pay": "Plăteşte acum",
+    "now-can-not-comment": "Nu se poate revizui acum!",
+    "order-detail": "Detalii comandă",
+    "order-info": "Informații comandă",
+    "order-status": "Stare comandă",
+    "create-order-time": "Durată plasare comandă",
+    "comment-product": "Recenzie produs",
+    "give-stars": "Evaluare",
+    "at-least-comment-one-before-submit": "Încercați să evaluați cel puțin un produs înainte de trimitere",
+    "leave-your-words": "Împărtășiți-ne părerile dvs. și distribuiți-le celorlalți cumpărători～",
+    "is-paying": "Se plătește",
+    "you-are-paying-wait-result": "Plata dvs. a fost trimisă. Rezultatul plății pentru {{payChannel}} este în așteptare",
+    "need-pay": "De plată",
+    "after-sale-order": "Comandă postvânzare",
+    "see-refund-progress": "Vizualizare revenire la progres",
+    "has-number-products": "{{number}} (de) produse rămase",
+    "order-meno": "Observații comandă",
+    "comment-order": "Revizuire comandă",
+    "apply-refund": "Aplică pentru revenire",
+    "cancel-order": "Anulează comanda",
+    "product-preview": "Previzualizare produs",
+    "see-detail": "Vezi detalii",
+    "start-refund": "Porniți un retur",
+    "buy-number-greater-then-stock": "Cantitatea trebuie să fie mai mare de 1 și mai mică decât cantitatea din inventar!",
+    "can-refund-number": "Cantitate returnabilă",
+    "choose-refund-reason": "Alegeți un motiv de retur",
+    "please-fill-80charact-refund-reason": "Completați motivul returului cu maxim 80 de caractere",
+    "please-fill-refund-reason": "Completați motivul returului",
+    "choose-refund-product": "Selectați produsul de returnat",
+    "refund-reason-less-60": "Motivul returului nu trebuie să depășească 60 de caractere!",
+    "refund-number": "Cantitate produse returnate",
+    "sub-total": "Subtotal",
+    "refund-amount": "Valoare retur",
+    "refund-amount-bigger-zero": "Valoarea returului trebuie să fie mai mare de 0",
+    "refund-amount-can-over": "Suma returnabilă nu poate depăși suma maximă returnabilă",
+    "max-refund": "Sumă maximă returnabilă",
+    "confirm-refund": "Confirmați returul",
+    "refund-policy": "Politica de returnare",
+    "fill-refund-info": "Completați informațiile despre retur",
+    "refund-way": "Metodă de retur",
+    "refund-type": "Tip retur",
+    "please-choose-refund-type": "Selectați tipul returului",
+    "refund-express": "Logistica returului",
+    "please-choose-refund-express": "Selectați un mod de logistică pentru retur!",
+    "refund-person": "Returnat de",
+    "pick-address": "Adresă de colectare",
+    "refund-account": "Cont de rambursare",
+    "please-choose-refund-account": "Selectați contul de rambursare!",
+    "your-refund-order-created": "Comanda dvs. de retur a fost plasată",
+    "confirm-email-send-to-you": "Scrisoarea de confirmare vă va fi trimisă pe e-mail",
+    "refunding": "Se rambursează",
+    "user-cancel-apply": "Utilizatorul a retras cererea",
+    "audit-refuse": "Neaprobată",
+    "refund-order-stataus": "Stare retur comandă",
+    "refund-order-number": "Număr retur comandă",
+    "apply-time": "Dată cerere",
+    "number-refund-product": "{{number}} (de) produse pentru returnare",
+    "refund-reason": "Motiv returnare",
+    "refund-way-intro": "Introducere la metoda de returnare",
+    "fill-logistics": "Completați informațiile de logistică",
+    "backout-apply": "Retrageți cererea",
+    "backout-refund-apply": "Retrageți cererea de returnare",
+    "your-apply-auditing-sure-backout": "Cererea dvs. de returnare este în curs de revizuire. Retrageți cerere?",
+    "see-origin-order": "Vizualizați comanda originală",
+    "refund-logistics-info": "Reveniți la informațiile de logistică",
+    "express-company": "Compania de logistică",
+    "please-fill-express-company": "Completați compania de logistică",
+    "please-fill-express-bills-sn": "Completați numărul expres de logistică",
+    "express-bills-sn": "Număr expres de logistică",
+    "express-bill-pic": "Imagine logistică expres",
+    "optional-support-jpg": "Opțional. Acceptă JPG/PNG",
+    "pic-upload-fail": "Nu s-a putut încărca imaginea {{name}}",
+    "shopping-gold-trade-off": "Reducere subvenție cumpărături",
+    "coupon-code-offer": "Cupon",
+    "product-sold-out": "Produsul este epuizat",
+    "sorry-limit-re-choose": "Ne pare rău! Puteți achiziționa doar {{promotionRemainStock}} (de) bucăți per comandă. Selectați din nou cantitatea",
+    "sorry-product-not-available-re-reorder": "Ne pare rău! Unele dintre produsele achiziționate de dvs. au fost îndepărtate de pe rafturi și sunt nevalide. Verificați și reconfirmați înaintea trimiterii",
+    "product-remain-please-re-choose": "{{stock}} (de) bucăți de produse rămase. Selectați din nou cantitatea",
+    "coupon-code": "Cod de cupon",
+    "shop-list": "Coș ({{count}} )",
+    "add-to-cart-fail": "Ne pare rău! Nu s-a putut adăuga în coș. Încercați din nou!",
+    "go-login": "Accesați autentificarea",
+    "complete-payment": "Finalizați plata",
+    "shopping-money-deduction": "Reducere subvenție cumpărături",
+    "use-shopping-deduction": "Reducerea aproximativă a {{num}} reducerii utilizabile pentru cumpărături",
+    "can-get": "Disponibil",
+    "shopping-money": "Reducere pentru cumpărături",
+    "next-time-use-shopping-money": "Reducere estimată pentru următorul magazin",
+    "delivery-address-abnormal": "Eroare adresă destinatar",
+    "billing-address-abnormal": "Eroare adresă de facturare",
+    "billing-address": {
+      "title": "Adresă de facturare",
+      "desc": "Selectați adresa care se potrivește cu cardul sau cu metoda de plată.",
+      "option-same": "La fel ca adresa de livrare",
+      "option-another": "Utilizați o adresă de facturare diferită",
+      "input-email": "Metoda de plată aleasă de dvs. trebuie să aibă și o adresă de e-mail pentru trimiterea informațiilor de facturare"
+    },
+    "ship-to": "Livrează la",
+    "self-mention": "Ridicare personală",
+    "logistics-package": "Metodă de livrare",
+    "shopping-list": "Coșul dvs.",
+    "item": "ARTICOL",
+    "quantity": "Cantitate",
+    "total-num": "TOTAL",
+    "no-pay-way": "Metodă de plată nedisponibilă",
+    "refund-detail": "Detalii ramburs",
+    "only-refund": "Doar ramburs",
+    "return-and-refund": "Returnare și rambursare",
+    "come-way-return": "Rambursare în contul original de plată",
+    "others": "Altele",
+    "not-as-expected": "Produs sub așteptări",
+    "damage": "Produs deteriorat în timpul livrării",
+    "sku-not-match": "Dimensiuni/specificații produs diferite față de descriere",
+    "wrong-product": "Produs greșit",
+    "other-reason": "Alte motive",
+    "get-the-order": "Alegeți un articol suplimentar",
+    "free": "Gratuit",
+    "sku-changed-title": "{{num}}articol schimbat, continuați la finalizare?",
+    "sku-limit-title": "Produsele de mai jos depășesc limita de achiziție, schimbați cantitatea",
+    "sorry-all-sku-unusable": "Ne pare rău, dar articolele sunt nevalide, comanda nu poate fi trimisă",
+    "off-shelf": "NEVALID",
+    "sold-out": "VÂNDUT",
+    "has-removed": "NEVALID",
+    "footer-all-rights-reserved": "Copyright © {{year}} {{name}}. Toate drepturile rezervate.",
+    "return-to-selection-goods": "Selecție produse returnate",
+    "return-apply-fail-SKU": "Numărul de bunuri solicitate depășește limita!",
+    "return-apply-fail-max-amount": "Suma rambursabilă nu poate depăși suma maximă rambursabilă",
+    "return-apply-fail-min-amount": "Doar pentru rambursări, valoarea rambursului trebuie să fie mai mare de 0 CNY",
+    "slpayment": {
+      "cardNumber": {
+        "placeholder": "Număr card de credit",
+        "errorTips": "Introduceți numărul corect de card.",
+        "tips": "Toate tranzacțiile sunt securizate și criptate"
+      },
+      "expiryDate": {
+        "errorTips": "Introduceți ora corectă."
+      },
+      "cvv": {
+        "placeholder": "CVV",
+        "errorTips": "Încercați din nou.",
+        "tips": "Se află în general pe partea posterioară a cardului"
+      },
+      "footer": "Utilizați Plățile SHOPLINE pentru finalizare acum. Prin realizarea plății, sunteți de acord cu",
+      "service": "Condițiile de utilizare a Plăților SHOPLINE.",
+      "cardholdername": "Nume titular card",
+      "cardHolderNamePlaceHolder": "Nume titular card",
+      "cardHolderNameErrorTips": "Încercați din nou."
+    },
+    "find-store": "Selectați magazinul",
+    "choose-store": "Schimbați magazinul",
+    "please-pay-within": "plătiți în termen de",
+    "enter-a-tip-on-more-than": "Introduceți un sfat nu mai mare de {{amount}}",
+    "payment-security-description": "Toate tranzacțiile sunt securizate și criptate.",
+    "pay-failed-err-code": {
+      "default": "Din cauza unor motive, plata dvs. nu poate fi procesată. Încercaţi din nou sau utilizați alte metode de plată.",
+      "buyer-account-abnormal": "Din cauza unor probleme cu contul dvs., plata nu poate fi procesată. Încercaţi din nou sau utilizați alte metode de plată.",
+      "wrong-password": "Din cauza parolei incorecte, plata dvs. nu poate fi procesată. Încercaţi din nou sau utilizați alte metode de plată.",
+      "overpayment": "Valoarea comenzii depășește limita achiziției, iar plata dvs. nu poate fi procesată. Selectați un card diferit sau o altă metodă de plată pentru a încerca din nou.",
+      "insufficient-balance": "Balanță insuficientă, plata dvs. nu poate fi procesată. Selectați un card diferit sau o altă metodă de plată pentru a încerca din nou.",
+      "invalid-card-number": "Număr de card nevalid, plata dvs. nu poate fi procesată. Selectați un card diferit sau o altă metodă de plată pentru a încerca din nou.",
+      "card-expired": "Card expirat, plata dvs. nu poate fi procesată. Selectați un card diferit sau o altă metodă de plată pentru a încerca din nou.",
+      "change-card": "Plata dvs. nu poate fi procesată acum, vă rugăm să selectați un card diferit sau altă metodă de plata pentru a încerca din nou.",
+      "user-cancel": "Plată anulată. Încercați din nou dacă trebuie să continuați.",
+      "3d-overtime": "Autentificarea cu 3 DS nu a reușit, încercați din nou.",
+      "pin-over-times": "Numărul maxim de încercări cu parola a fost depășit, iar plata dvs. nu poate fi procesată. Selectați altă metodă de plată și încercați din nou."
+    },
+    "coupon": "Cupon",
+    "coupon-mutra-discount": "Codul cuponului nu poate fi utilizat împreună cu alte oferte promoționale sau reduceri",
+    "activity-price-limit": "Puteți cumpăra doar {{num}} bucată(i) din acest produs cu reducerile",
+    "policy": {
+      "refund-policy": "Politică de rambursare",
+      "privacy-policy": "Politica de confidențialitate"
+    },
+    "tip": {
+      "add-tip": "Adăugați sfat"
+    },
+    "free-shipping": "livrare gratuită",
+    "pod-link": "Clic pentru vizualizare",
+    "pod-pic": "Previzualizare personalizată",
+    "activity-product-limit": "Puteți cumpăra cel mult {{stock}} produs(e) cu reduceri în același timp",
+    "activity-title-limit": "Produsele de mai jos depășesc limita de achiziție, încă treceți la finalizarea comenzii?"
+  },
+  "payments-name": {
+    "Paypal": "Paypal",
+    "COD": "Numerar la livrare",
+    "third-part": "Card de credit"
+  },
+  "paypal": {
+    "error-expired": "Produsul a expirat",
+    "error-sold-out": "Inventar insuficient pentru produs",
+    "error-product-limit": "Limita produsului a fost depășită",
+    "error-network-error": "Eroare de rețea",
+    "error-shop-not-exit": "Magazinul nu există",
+    "error-login-limit": "Autentificați-vă în contul dvs. înaintea plasării comenzii"
+  },
+  "tips": {
+    "more-than-0-int": "Introduceți un număr mai mare de 0",
+    "bind-change-mobile-phone-number": "Conectați/Schimbați numărul de telefon mobil",
+    "bind-change-email": "Conectați/Schimbați e-mailul",
+    "verification-code-has-been-sent-to-your-account": "Codul de verificare a fost trimis pe contul dvs.",
+    "change-binding-after-verification": "Puteți conecta/schimba {{value}} după verificare",
+    "set-new-password": "Resetează parolă",
+    "forget-password": "Parolă uitată",
+    "update-password": "Schimbă parolă",
+    "reset-password": "Ați resetat parola pentru contul {{account}}",
+    "verify-account-to-reset-password": "Verificați-vă contul și resetați parola",
+    "password-can-be-changed-after-verification": "Puteți schimba parola după verificare",
+    "login": "AUTENTIFICARE",
+    "register": "Înscriere",
+    "or-use-the-following-method-to-log-in": "Sau autentificați-vă prin următoarele metode",
+    "i-agree-with-the-shop": "Sunt de acord cu",
+    "and": "și cu",
+    "user-agreement": "Condițiile de utilizare a magazinului",
+    "please-read-and-agree-to-the-user-agreement-first": "Citiți și acceptați mai întâi acordul pentru utilizator",
+    "no-order-information-please-confirm": "Nu s-au putut obține informațiile despre comandă. Asigurați-vă că numărul comenzii este corect",
+    "no-order-number-please-confirm": "Nu s-a putut obține numărul comenzii. Asigurați-vă că numărul comenzii este corect",
+    "error-obtaining-support-logistics-country": "A apărut o eroare la obținerea logisticii pentru țările acceptate",
+    "please-complete-the-payment-method-content": "Finalizați metoda de plată",
+    "order-creation-exception": "Nu s-a putut plasa comanda",
+    "bind-success": "Conectat",
+    "update-success": "Schimbată",
+    "pay-params-error": "Nu s-au putut obține parametrii de plată, încercați din nou",
+    "change-heart": "M-am răzgândit",
+    "price-more-expensive": "Preț mai scăzut găsit în altă parte",
+    "repeat-buy": "Cumpără din nou",
+    "sale-too-slow": "Durată de livrare",
+    "change-item": "Doresc să schimb articolul(elele) achiziționat(e)",
+    "incorrect-delivery-or-payment-information": "Livrare greșită sau informații de plată greșite",
+    "other-reason": "Alte motive",
+    "select-cancel-reason": "Selectați motivul anulării",
+    "fill-cancel-reason": "Completați motivul pentru anularea comenzii",
+    "sure-cancel-order": "Sunteţi sigur că doriţi să anulaţi comanda?",
+    "cancel-reason-feedback": "Spuneți-ne care este motivul pentru anulare, pentru a ne descurca mai bine pe viitor. Veți fi rambursat după ce comanda este anulată. Așteptăm cu plăcere vizita dvs. următoare în magazinul nostru!",
+    "cancel-apply-sent": "Cerere anulare trimisă",
+    "cancel-order-fail": "Cerere anulare nereușită, încercați din nou",
+    "cancel-success-notice": "Veți primi o notificare pe e-mail după anularea comenzii, vă mulțumim!",
+    "fail-contact": "Dacă cererea de anulare nu reușește, contactați-ne consultând secțiunea de mai jos Corespondență comandă vânzător/cumpărător",
+    "max-upload-img": "Ne pare rău! Ați atins numărul maxim de {{maxNum}} de imagini încărcate pe portalul de suport!",
+    "img-name-too-long": "Numele imaginii introduse este prea lung～",
+    "img-size-too-large": "Ne pare rău! Dimensiunea fișierului cu imaginea depășește limita!",
+    "get-checkout-detail-fail": "Eroare obținere detalii finalizare comandă",
+    "product-abnormal-back-to-cart": "Eroare stare produs, reveniți la coș și încercați din nou",
+    "get-checkout-config-fail": "Eroare obținere configurație finalizare comandă",
+    "country-address-fail": "Vânzătorii din țara adresei introduse sunt responsabili cu plățile cheltuielilor de livrare. Realizați o selecție manuală",
+    "paypal-country-fail": "Țara în care este bazat contul PayPal nu este inclusă în lista de țări pentru plățile cheltuielilor de livrare. Realizați o selecție manuală",
+    "need-phone-number-to-deliver": "În cazul în care trebuie să vă contactăm privitor la comanda dvs.",
+    "enter-tel-number": "Introduceți numărul de telefon",
+    "enter-email": "Introduceți adresa de e-mail",
+    "no-logistics-available": "Nicio metodă de livrare disponibilă",
+    "logistics-no-pre-selection": "Preselectarea livrării nu este disponibilă",
+    "logistics-pre-selection": "Preselectare livrare disponibilă",
+    "address-no-logistics": "Nu există metode de livrare disponibile pentru adresa curentă",
+    "enter-address-first": "Introduceți mai întâi adresa",
+    "expand-order-summary": "Afișează sumarul comenzii",
+    "put-up-order-summary": "Ascunde sumarul comenzii",
+    "select-return-product-first": "Selectați mai întâi produsul de returnat",
+    "enter-bank-name": "Introduceți numele băncii!",
+    "enter-bank-card-number": "Introduceți numărul cardului bancar!",
+    "enter-name": "Introduceți numele!",
+    "max-upload-image": "Puteți încărca maxim {{max}} (de) imagini",
+    "upload-image-fail": "Nu s-a putut încărca imaginea {{name}}",
+    "image-size-less-than": "Imaginile trebuie să fie mai mici de {{max}} MB",
+    "sku-change-tips": "Schimbări stare produs detectate, reconfirmați metoda de livrare/plată"
+  },
+  "validate": {
+    "coupon-code-cannot-exceed-25-length": "Codul cuponului nu poate depăși 25 de caractere",
+    "discount-code-error": "Codul de reducere nu este introdus corect",
+    "discount-code-user-invalid": "{{discountCode}} este introdus corect, dar prețul sau cantitatea bunurilor nu respectă cerințele",
+    "enter-correct-email": "Introduceți o adresă de e-mail cu formatul valid",
+    "enter-correct-phone-number": "Introduceți un număr de telefon cu formatul valid",
+    "phone-number-less-than-100": "Numărul de telefon nu poate depăși 100 de caractere în lungime",
+    "shipping_plan_unavailable": "Cuponul {{discountCode}} este valid pentru metoda de livrare",
+    "mutual-excluded-by-time-limited": "O reducere a fost aplicată pentru comandă. Nu puteți adăuga altă reducere"
+  },
+  "subscription": {
+    "subscript-via-line-facebook": "Abonați-vă la notificarea despre livrare prin LINE sau Facebook",
+    "not-subscript-via-line-facebook": "Nu mă pot abona la notificarea despre livrare prin LINE sau Facebook"
+  },
+  "comment": {
+    "enter-comment": "Scrieți o recenzie despre produs",
+    "customer-comment": "Recenzii clienți",
+    "comment-count": "{{total}} (de) recenzii",
+    "read-more-comments": "Vezi mai multe",
+    "rate-score": "Evaluare {{score}}",
+    "text": "Recenzii",
+    "total": "{{total}} (de) recenzii",
+    "bad": "Foarte slab",
+    "worse": "Slab",
+    "general": "Satisfăcător",
+    "good": "Bun",
+    "best": "Excelent",
+    "shipping-information": "Informații livrare",
+    "all-reviews": "Vedeți toate recenziile",
+    "leave-a-review": "Lăsați o recenzie",
+    "no-login-msg": "Clienții care au cumpărat produsul pot lăsa o recenzie, dar autentificați-vă mai întâi",
+    "sign-in": "Autentificare",
+    "no-bought-msg": "Ne pare rău, dar nu ați cumpărat produsul înainte, așadar nu puteți scrie o recenzie",
+    "ratings": "Evaluări",
+    "experience-about": "Scrieți recenzia despre produs",
+    "add-img": "Adăugați o imagine",
+    "more-images": "Puteți adăuga maxim {{total}} imagini",
+    "write-review": "Scrieți o recenzie",
+    "thanks-msg": "Vă mulțumim pentru recenzie",
+    "network-err-msg": "Din cauza erorii sistemului, recenzia dvs. nu poate fi procesată, încercați din nou~",
+    "only-image": "Acceptă doar încărcarea fișierelor .jpg .jpeg .png .bmp",
+    "image-only-2m": "Dimensiunea maximă a imaginii este {{size}} MB",
+    "about-product": "Scrieți cel puțin un cuvânt",
+    "no-comment-title-tip": "Niciun comentariu",
+    "no-comment-first-tip": "postați comentariul chiar acum",
+    "on-img-upload-tip": "Se încarcă, trimiteți mai târziu",
+    "mobile-submit": "Trimite",
+    "nickname": "Poreclă"
+  },
+  "order": {
+    "refund-methods": {
+      "self": "Trimite înapoi la mine",
+      "merchant": "Ridicare de către cumpărător"
+    },
+    "refund-type": {
+      "origin": "Rambursare în contul original de plată",
+      "other": "Altele"
+    },
+    "after-sale-type": {
+      "refund": "Rambursare",
+      "return-and-refund": "Returnare și rambursare"
+    },
+    "after-order-status": {
+      "processing": "În procesare",
+      "confirmed": "Confirmat",
+      "delivery-progress": "Confirmat",
+      "cancelled": "Anulat",
+      "customer-canceled": "Client anulat",
+      "customer-rejected": "Client respins",
+      "merchant-cancellation": "Vânzător anulat",
+      "completed": "Finalizat"
+    },
+    "order-status": {
+      "processing": "În procesare",
+      "confirmed": "Confirmat",
+      "cancelled": "Anulat",
+      "customer-canceled": "Client anulat",
+      "merchant-cancellation": "Vânzător anulat",
+      "completed": "Finalizat"
+    },
+    "pay-status": {
+      "unpaid": "Neplătit",
+      "paying": "Se plătește",
+      "partial-payment": "Plătit parțial",
+      "already-paid": "Plătit",
+      "failed": "Plată efectuată",
+      "timed-out": "Plată expirată",
+      "refunding": "Se rambursează",
+      "refunded": "Rambursat",
+      "refund-failed": "Rambursul nu a reușit",
+      "partial-refund": "Rambursat parțial",
+      "abolished": "Anulat"
+    },
+    "delivery-statusType": {
+      "stocking": "Se pregătesc produsele",
+      "delivery-partial": "Expediere parțială",
+      "cancelled": "Anulat",
+      "cancel-delivery": "Anulează livrare",
+      "shipping": "Se livrează",
+      "shipped": "Livrat",
+      "arrived": "Sosit",
+      "picked-up": "Recepționat",
+      "problem": "Problemele precum cele de livrare și comenzile pierdute necesită suport manual",
+      "delivery-return": "Returnat"
+    },
+    "oms-status": {
+      "executing": "Se execută",
+      "prepare-pick": "Pregătit de ridicare",
+      "shipped": "Expediat",
+      "cancelled": "Anulează livrare",
+      "arrived": "Sosit",
+      "picked": "Semnat pentru",
+      "returning": "Se returnează",
+      "returned": "Returnat",
+      "problem": "Problemă livrare"
+    },
+    "order-list": {
+      "empty-title": "img",
+      "empty-tip": "Momentan, nu există nicio înregistrare a comenzii, accesați cumpărături",
+      "no-more": "Nicio informație suplimentară",
+      "load-more": "Trageți pentru a încărca mai mult",
+      "pay-now": "Plăteşte acum",
+      "track": "Urmărire",
+      "item-total": "Articol {{transPackages}} în total",
+      "item-total-plural": "Articol {{transPackages}} în total",
+      "package-item": "Pachet {{num}}（articole {{item}}）",
+      "package-more": "și mai multe {{num}}",
+      "sub-order": "subcomenzi"
+    },
+    "breadcrumb": {
+      "title": "Comandă",
+      "order": "Comandă",
+      "order-detail": "Detalii comandă"
+    },
+    "detail": {
+      "packages": {
+        "title": "Informații",
+        "sub-title": "Urmărire pachet",
+        "payment-info": {
+          "method": "Metodă de plată",
+          "status": "Stare plată",
+          "address": "Adresă de facturare",
+          "detail": "Detalii"
+        },
+        "payment-title": "Plată",
+        "subscriptions-title": "Abonamente",
+        "order-note-title": "Observații comandă",
+        "shippings": {
+          "method": "Metodă de livrare",
+          "fee": "Taxă de livrare",
+          "status": "Stare de livrare"
+        },
+        "amount": {
+          "subtotal": "Subtotal articole",
+          "tax": "Impozit pe bunuri",
+          "express": "Transport",
+          "express-surcharge": "Taxă de transport",
+          "channel-surcharge": "Comision de plată",
+          "discount-amount-name": "Reducere suplimentară vânzător",
+          "tip": "Sfat",
+          "preferential": "preferențial",
+          "discount": "Reducere cod cupon",
+          "deduct-voucher": "Valoare vouchere",
+          "total": "Total"
+        },
+        "order-num": "Pachet ({{num}})",
+        "logistics": {
+          "no-data": "Nu există nicio informație despre logistică momentan",
+          "detail": "Detalii",
+          "tab-title": "Pachet {{index}}",
+          "blank-trace": "Urmăriți pachetul dând clic pe linkul de mai jos:",
+          "no-data2": "Nu există nicio informație despre livrare momentan, încercați mai târziu."
+        },
+        "send-to-Messenger": "Trimite la Messenger",
+        "send-to-Line": "Trimite la Line",
+        "unshipped-order-num": "Se procesează articolele ({{num}})",
+        "payment-deal": {
+          "name": "Canal de plată",
+          "amount": "Sumă",
+          "deal-id": "Număr de referință tranzacție",
+          "create-time": "Creat",
+          "update-time": "Actualizat",
+          "status": "Stare",
+          "title": "Detalii plată"
+        },
+        "status": {
+          "pedding": {
+            "title": "Se pregătește pentru expediere",
+            "desc": "Momentan, pregătim articolele pentru expediere."
+          },
+          "success": {
+            "desc": "V-am acceptat comanda și o pregătim. Reveniți pe această pagină pentru actualizări ale stării expedierii."
+          }
+        },
+        "contact-us-title": "Contactați-ne",
+        "contact-us": "Aveți nevoie de ajutor? Contactați-ne: {{email}}"
+      },
+      "order-status": {
+        "cancel": {
+          "title": "Comanda dvs. a fost anulată",
+          "desc": "Comanda dvs. a fost anulată pe {{cancelTime}}. Contactaţi-ne dacă aveţi întrebări."
+        },
+        "success": {
+          "title": "Comanda dvs. este confirmată",
+          "desc": "Informațiile despre comandă au fost trimise la {{buyerContact}}, verificați."
+        },
+        "pedding": {
+          "title": "Plată în curs...",
+          "desc": "Cererea dvs. de plată a fost trimisă și așteptăm {{payChannelDesc}} să returneze rezultatul plății"
+        },
+        "redirect": {
+          "title": "Se redirecționează la rezultatul plății...",
+          "desc": "Dacă nu sunteți redirecționat automat, reîmprospătați pagina"
+        },
+        "pay": {
+          "title": "Plată în așteptare",
+          "go-pay": "PLĂTEȘTE <0>{{orderAmount}}</0>"
+        },
+        "button": {
+          "refresh": "Reîmprospătează"
+        }
+      },
+      "order-info": {
+        "processing": "În procesare",
+        "confirmed": "Confirmat",
+        "finished": "Finalizat",
+        "canceled": "Anulat"
+      },
+      "cancel-btn": "ANULEAZĂ COMANDA",
+      "communication": {
+        "title": "Comenzi pentru comunicare"
+      },
+      "coms": {
+        "operationLog": {
+          "PayDealLog": {
+            "title": "Plata pentru {amount} a fost procesată prin {payName}",
+            "payName": "Canal de plată",
+            "amount": "Sumă",
+            "dealId": "Număr serie plată",
+            "createTime": "Oră de începere plată",
+            "updateTime": "Oră rezultat plată",
+            "status": "Stare"
+          }
+        }
+      }
+    },
+    "seq-no": "Nr. {{id}}",
+    "order-at": "Comandat la:",
+    "customer-info": "Informații client",
+    "help-tips": "Aveți nevoie de ajutor? Contactaţi-ne: {{email}}",
+    "order-date": "Dată comandă"
+  },
+  "promotion": {
+    "full-reduction": "Promoție",
+    "full-reduction-benefit": "Promoție rabaturi",
+    "full-discount": "Promoție",
+    "full-discount-benefit": "Promoție reduceri",
+    "free-shipping": "Livrare gratuită",
+    "flash-sale": "Vânzare rapidă",
+    "member-price": "Preț membru",
+    "all-product": "Toate produsele",
+    "permanent": "Permanent",
+    "all-user": "Toți utilizatorii",
+    "all-vip": "Toți membrii",
+    "level-vip": "Niv. {{level}} membru",
+    "label-vip": "{{label}} membru",
+    "other-customer": "Client (utilizatori care nu au plasat o comandă)",
+    "activity-scope": "Domeniu eveniment",
+    "activity-benefit": "Oferte eveniment",
+    "activity-introduction": "Introducere eveniment",
+    "terms-and-conditions": "Termeni și condiții",
+    "selected-count-activity-product": "Produse {{selectCount}} pentru evenimentul selectat",
+    "price-unit": "Yuan",
+    "piece-unit": "Bucată",
+    "discount-benefit": "Reducere {{discount}}",
+    "full-amount": "<0>{{value}}</0> sau mai mult",
+    "full-piece": "{{value}} (de) bucăți sau mai multe",
+    "reduce": "Reducere <0>{{value}}</0>",
+    "reduce1": "Reducere {{value}}",
+    "reduce-again": "<0>{{value}}</0> reducere suplimentară",
+    "get-discount-1": "profitați de o reducere de {{value}}",
+    "get-discount-2": "profitați de o ofertă de {{value}}%",
+    "flash-sale-limit": "Limită de {{value}} achiziție pe persoană",
+    "buy-again": "Achiziționați mai mult de <0>{{value}}</0>",
+    "buy-again-piece": "Achiziționați mai multe bucăți {{value}}",
+    "still-lacking": "<0>{{value}}</0> necesară",
+    "discounted": "Ați economisit <0>{{value}}</0>",
+    "coupon": "Cupon",
+    "select-sku": "Alegeți specificațiile produsului",
+    "select-combo": "Alegeți pachetul",
+    "more-combo": "Mai multe pachete",
+    "item-num": "{{value}} articol",
+    "only-one-sku": "Produsul prezent are doar o singură specificație",
+    "select-product": "Achiziționați bunuri",
+    "bundle": {
+      "title": "Bunuri la pachet",
+      "desc": "Adăugați acestea la coșul de cumpărături pentru reducerea de <italic>{{value}}</italic>"
+    },
+    "whole-full-piece-discount": "<italic>{{content}}</italic>% reducere pentru <italic>{{condition}}</italic> (de) bucăți",
+    "whole-full-amount-discount": "<italic>{{content}}</italic>% reducere peste <italic>{{condition}}</italic>",
+    "whole-full-piece-reduce": "<italic>{{content}}</italic> reducere pentru <italic>{{condition}}</italic> (de) bucăți",
+    "whole-full-amount-reduce": "<italic>{{content}}</italic> reducere peste <italic>{{condition}}</italic>",
+    "price-price-step1": "Cumpărați <more>{{morePrice}}</more> mai mult pentru a economisi <more>{{totalPrice}}</more>",
+    "price-price-step2": "Economisiți <normal>{{price}}</normal> deja!<white /> Cumpărați <more>{{morePrice}}</more> mai mult pentru a economisi<more>{{totalPrice}}</more>",
+    "price-price-step3": "Felicitări! Ați economisit <normal>{{price}}</normal> !",
+    "price-piece-step1": "Cumpărați <more>{{morePrice}}</more> mai mult pentru a economisi <more>{{totalPrice}}</more>",
+    "price-piece-step2": "Economisiți <normal>{{price}}</normal> deja!<white /> Cumpărați <more>{{morePrice}}</more> mai mult pentru a economisi<more>{{totalPrice}}</more>",
+    "price-piece-step3": "Felicitări! Ați economisit <normal>{{price}}</normal> !",
+    "percent-price-step1": "Cumpărați<more>{{price}}</more> mai mult pentru a obține o REDUCERE de <more>{{percent}}</more>",
+    "percent-price-step2": "Economisiți <normal>{{percent}}</normal> deja!<white /> Cumpărați <more>{{price}}</more> mai mult pentru a obținere o REDUCERE de <more>{{morePercent}}</more>",
+    "percent-price-step3": "<children>Felicitări! Ați economisit <normal>{{percent}}</normal> !",
+    "percent-piece-step1": "Cumpărați<more>{{price}}</more> mai mult pentru a obține o REDUCERE de <more>{{percent}}</more>",
+    "percent-piece-step2": "Economisiți <normal>{{percent}}</normal> deja!<white /> Cumpărați <more>{{price}}</more> mai mult pentru a obținere o REDUCERE de <more>{{morePercent}}</more>",
+    "percent-piece-step3": "Felicitări! Ați economisit <normal>{{percent}}</normal> !"
+  },
+  "labelInput": {
+    "email-error": "Introduceți adresa de e-mail cu formatul valid",
+    "phone-error": "Introduceți numărul de telefon cu formatul valid",
+    "contact-error": "Introduceți adresa de e-mail/numărul de telefon cu formatul valid",
+    "phone-error-tips": "Completați numele real al destinatarului pentru a asigura primirea fără probleme"
+  },
+  "userCenter": {
+    "personal-info": "Informaţii personale",
+    "orders": "Comenzi",
+    "refunds": "Rambursări",
+    "sign-out": "Deconectare",
+    "edit": "Editează",
+    "cancel": "ANULEAZĂ",
+    "save": "ECONOMISEȘTE",
+    "buy-record-entry": "Produse achiziționate",
+    "account": {
+      "account-subscription-email": "Trimite pe e-mail",
+      "account-subscription-phone": "Trimite pe telefonul mobil",
+      "account-subscription-messenger": "Trimite la Messenger",
+      "account-subscription-line": "Trimite la aplicația Line",
+      "reset-password-error": "Asociați mai întâi adresa de e-mail sau numărul de telefon mobil",
+      "account-info": "Informații cont",
+      "member-level": "Nivel membru",
+      "memberLevelCom": {
+        "defaultLevel": "Membru general",
+        "expire": "{{time}} datorată",
+        "upgradeText1": "Cu o singură achiziție de <italic>{{money}}</italic>, puteți actualiza la {{nextLevelName}}",
+        "upgradeText0": "Actualizați la {{nextLevelName}} după cheltuirea a <italic>{{money}}</italic>",
+        "upgradeSuccessText": "Felicitări, ai reușit actualizarea la",
+        "modalTitle": "Descrierea claselor de interese",
+        "tableTitleGrade": "Nivel membru",
+        "tableTitleInterest": "Interese membri",
+        "discountInterest": "Reducere pentru cumpărături"
+      },
+      "general-member": "Membru general",
+      "username": "Nume utilizator",
+      "username-message": "Introduceți numele dvs. de utilizator!",
+      "username-placeholder": "Introduceți numele dvs. de utilizator",
+      "email": "E-mail",
+      "bind": "Se asociază",
+      "modify-email": "Modifică e-mail",
+      "phone": "Telefon mobil",
+      "modify-phone": "Modifică telefon",
+      "password": "Parolă",
+      "change-password": "Schimbă parolă",
+      "subscription-notification": "Notificare abonament",
+      "unsubscribed": "Dezabonat",
+      "account-binding": "Asociere cont"
+    },
+    "address": {
+      "delete-address": "Șterge adresă",
+      "address": "Adresă",
+      "no-data": "Momentan, nu există nicio adresă de livrare",
+      "add": "Adaugă adresă nouă",
+      "full-tip": "5 adrese au fost salvate deja și nu mai pot fi adăugate altele momentan",
+      "default": "Principal",
+      "ok": "OK"
+    },
+    "subscription": {
+      "title": "Abonament",
+      "line": "LINE",
+      "phone": "Telefon mobil",
+      "email": "E-mail",
+      "messenger": "Messenger",
+      "not-sub": "Neabonat",
+      "subed": "Abonat",
+      "unsub": {
+        "title": "Dezabonare",
+        "content": "După dezabonare, nu veți mai primi ultimele promoții.",
+        "ok-text": "Dezabonare"
+      },
+      "modal": {
+        "eamil-title": "Obțineți informațiile despre promoția pentru abonament pe e-mail",
+        "ok-text": "ABONARE",
+        "cancel-text": "DEZABONARE",
+        "phone-title": "Abonare promoție prin telefon",
+        "save": "ECONOMISEȘTE"
+      }
+    },
+    "personal": {
+      "gender-male": "Bărbat",
+      "gender-female": "Femeie",
+      "gender-secret": "Păstrează secret",
+      "personal-information": "Informaţii personale",
+      "birthday-date": "Zi de naştere",
+      "date": "Dată",
+      "select-date": "Selectați dată",
+      "select-date-ok": "OK",
+      "select-date-placeholder": "Selectați",
+      "select-date-cancel": "Anulează",
+      "gender": "Sex",
+      "unknown": "Necunoscut"
+    },
+    "editAddress": {
+      "country-message": "Selectați țara dvs.!",
+      "province-message": "Selectați județul dvs.!",
+      "city-message": "Selectați orașul dvs.!",
+      "district-message": "Selectați districtul dvs.!",
+      "postcode-message": "Mai puțin de 32 de caractere!",
+      "address1-message": "Mai puțin de 512 de caractere!",
+      "address2-message": "Mai puțin de 512 de caractere!",
+      "edit": "EDITEAZĂ ADRESA DE LIVRARE",
+      "contact-message": "Introduceți prenumele dvs.!",
+      "lastName-message": "Introduceți numele dvs. de familie!",
+      "phone-message": "Introduceți numele dvs. de telefon mobil!",
+      "default": "Setează ca adresa principală",
+      "name-placeholder": "Nume",
+      "firstName-placeholder": "Prenume (opțional)",
+      "lastName-placeholder": "Nume de familie",
+      "phone-label": "Telefon"
+    },
+    "message": {
+      "message": "Mesaj",
+      "send": "Trimite",
+      "inputPlaceholder": "Doriți să lăsați un mesaj?"
+    },
+    "point": {
+      "title": "Cumpărături de aur",
+      "empty-mainText": "Nu ați primit încă banii de cumpărături",
+      "empty-btn-link": "Cum să obțineți și să utilizați banii de cumpărături?",
+      "mainview-dedection": "Creditul maxim prezent este de <italic>{{money}}</italic>",
+      "mainview-link": "Înțelegerea regulilor",
+      "mainview-save": "Ați economisit <italic>{{historyTotalUsedDeduction}}</italic> prin utilizarea taxelor de cumpărături {{historyTotalUsedScore}}",
+      "modal-title": "Descriere cupon de cumpărături",
+      "ok-btn": "OK",
+      "unuseHistoryScore": "Nu ați utilizat cuponul de cumpărături pentru a economisi cheltuielile",
+      "date": "{{day}}, {{month}} {{date}}, {{year}}",
+      "day0": "Duminică",
+      "day1": "Luni",
+      "day2": "Marţi",
+      "day3": "Miercuri",
+      "day4": "Joi",
+      "day5": "Vineri",
+      "day6": "Sâmbătă",
+      "month1": "Ian",
+      "month2": "Feb",
+      "month3": "Mar",
+      "month4": "Apr",
+      "month5": "Mai",
+      "month6": "Iun",
+      "month7": "Iul",
+      "month8": "Aug",
+      "month9": "Sept",
+      "month10": "Oct",
+      "month11": "Noi",
+      "month12": "Dec",
+      "actionTypeDesc": {
+        "addPoint": "adaugă punct",
+        "deductPoint": "scade punct",
+        "expirePoint": "punct expirat",
+        "freezePoint": "punct de îngheț",
+        "releaseFreezePoint": "eliberează punct de îngheț",
+        "deductFreezePoint": "scade punct de îngheț",
+        "reverseAddPoint": "inversează adăugare punct",
+        "reverseDeductPoint": "inversează scădere punct"
+      }
+    },
+    "pointList": {
+      "empty": "Momentan, nu există înregistrări de puncte",
+      "breadcrumb1": "Informații",
+      "breadcrumb2": "Preț de achiziție",
+      "total": "Recenzii ({{total}})",
+      "loading": "Se încarcă...",
+      "loaded": "Încărcat",
+      "empty2": "Nu mai există înregistrări",
+      "order": "Vizualizare comandă:"
+    }
+  },
+  "cart": {
+    "render-empty-status": "Niciun articol în coș",
+    "render-add-items": "Coșul dvs. este gol momentan.",
+    "go-shopping": "CONTINUAȚI CUMPĂRĂTURILE",
+    "login-description": "Sunteți deja membru? Autentificarea poate fi mai convenabilă pentru gestionarea comenzilor!",
+    "login-membership": "Abonament gratuit",
+    "checkout-error": "Există cel puțin un produs indisponibil în coșul de cumpărături. Ajustați articolele din coș pentru finalizarea comenzii.",
+    "get": "Obțineți o reducere",
+    "shopping-money": "reducere, Taxele și livrarea vor fi calculate la pasul următor",
+    "shopping-fees": "taxe de cumpărături",
+    "shopping-money-step": "Taxele și livrarea vor fi calculate la finalizarea comenzii",
+    "view-shopping-cart": "Vizualizare coș de cumpărături",
+    "most-100-sku": "Adăugați până la 100 de articole",
+    "most-buy-999": "Cantitatea maximă a unui singur produs este de 999 de bucăți",
+    "stock-limit": "{{stock}} (de) bucăți în stoc",
+    "activity-title-limit": "Produsele de mai jos depășesc limita de achiziție, tot doriți să finalizați?",
+    "activity-price-limit": "Puteți cumpăra doar {{num}} bucată(i) din acest produs cu reducerile",
+    "active-stock-limit-2": "Puteți achiziționa {{stock}} bucată(i) din produs cu reduceri",
+    "active-stock-limit-1": "Puteți cumpăra cel mult {{stock}} bucată(i) cu reduceri în același timp",
+    "activity-product-limit": "Puteți cumpăra cel mult {{stock}} bucată(i) cu reduceri în același timp",
+    "view-link": "Clic pentru vizualizare",
+    "view-pic": "Previzualizare personalizată",
+    "not-participation-offers": "Reducere neparticipantă",
+    "active-stock-limit": "Au mai rămas {{stock}} (de) bucăți cu prețul redus"
+  },
+  "widget": {
+    "order": {
+      "pending-order": "Comandă în așteptare"
+    }
+  },
+  "user": {
+    "email": "Adresă de e-mail",
+    "phone": "Număr de telefon mobil",
+    "username": "Adresă de e-mail/număr de telefon mobil",
+    "password": "Parolă",
+    "repeatPassword": "Reintroduceți parola",
+    "primevalPassword": "Parolă actuală",
+    "code": "Cod de verificare",
+    "signUp": "ÎNSCRIERE",
+    "signIn": "AUTENTIFICARE",
+    "confirm": "OK",
+    "emailError": "Introduceți o adresă de e-mail cu formatul valid și mai puțin de 50 de caractere",
+    "phoneError": "Introduceți un număr de telefon cu formatul valid",
+    "codeError": "Introduceți codul de verificare",
+    "passwordError": "Setați o parolă cu o lungime minimă de 8 caractere și o lungime maximă de 20 de caractere. Parolele trebuie să includă cel puțin o literă majusculă, o literă minusculă și un număr",
+    "repeatPasswordError": "Parolele introduse nu se potrivesc",
+    "repeatPasswordEmptyError": "Introduceți parola din nou",
+    "primevalPasswordError": "Introduceți parola dvs. actuală din nou",
+    "send": "Trimite",
+    "resend": "Retrimite",
+    "sendError": "Trimiteți mai întâi codul de verificare",
+    "noData": "Nu există date disponibile",
+    "passwordEmptyError": "Introduceți parola",
+    "passwordMemberError": "Setați o parolă cu o lungime minimă de 6 caractere și o lungime maximă de 18 de caractere",
+    "emailEmptyError": "Introduceți adresa de e-mail",
+    "phoneEmptyError": "Introduceți numărul de telefon mobil",
+    "usernameEmptyError": "Introduceți adresa de e-mail sau numărul de telefon mobil",
+    "primevalNewPasswordError": "Parola dvs. nouă nu poate fi aceeași cu parola actuală",
+    "udbResponse": {
+      "err-1": "Parametri necompletați",
+      "err-4": "Parametri nevalizi",
+      "err-5": "Operație ilegală",
+      "err-13": "stoken expirat",
+      "err-999": "Eroare de sistem",
+      "err1001": "Eroare parolă",
+      "err1002": "Utilizator inexistent",
+      "err1003": "Contul dvs. este dezactivat din cauza unor probleme; contactați comerciantul pentru înlăturarea interdicției",
+      "err1004": "Trimiteți un mesaj text de mai multe ori",
+      "err1005": "Cod expirat",
+      "err1006": "Eroare cod",
+      "err1007": "Prea multe erori cu verificarea codului",
+      "err1008": "Al treilea identificator sau canalul nu a fost configurat",
+      "err1009": "Validarea nereușită a terțului",
+      "err1010": "Transmitere nereușită mesaj text/șablon de e-mail",
+      "err2001": "Mobilul a fost înregistrat",
+      "err2002": "E-mailul a fost înregistrat",
+      "err2003": "Nu încercați atât de frecvent",
+      "err2004": "Cod expirat",
+      "err2005": "Eroare cod",
+      "err2006": "Prea multe dăți de verificare, obțineți alt cod",
+      "err2007": "Transmitere nereușită mesaj text/șablon de e-mail",
+      "err3001": "Cookie nevalid",
+      "err3002": "Utilizatorii care nu sunt asociați cu telefoanele mobile/adresele electronice încearcă să-și schimbe parolele",
+      "err3003": "Nu încercați atât de frecvent",
+      "err3004": "Cod expirat",
+      "err3005": "Eroare cod",
+      "err3006": "Prea multe dăți de verificare, obțineți alt cod",
+      "err3007": "Mobilul nu există",
+      "err3008": "E-mailul nu există",
+      "err3009": "Mobilul a fost asociat cu alte conturi",
+      "err3010": "E-mailul a fost asociat cu alte conturi",
+      "err3014": "Transmitere nereușită mesaj text/șablon de e-mail",
+      "udbResponse": "Contul dvs. este dezactivat din cauza unor probleme; contactați comerciantul pentru înlăturarea interdicției"
+    },
+    "account": "CONT"
+  },
+  "address": {
+    "dropdown": {
+      "default-placeholder": "Selectați",
+      "no-item-tips": "Nu există date disponibile",
+      "no-search-result": "Nu s-a găsit nicio potrivire"
+    },
+    "mobile-errorMessage": "Introduceți un număr de telefon valid",
+    "mobile-errorMessage-country-code": "Nu introduceți codul regional"
+  },
+  "oneShop": {
+    "noComment": "Nu există comentarii încă",
+    "productCommentTitle": "Recenzii produs({{n}})",
+    "priceStart": "Începând de la CNY {{n}}",
+    "discountByAmount": "{{n}}% reduceri peste CNY {{amount}}",
+    "discountByNum": "{{n}}% reduceri pentru {{num}} (de) bucăți",
+    "cutByAmount": "CNY {{n}} reducere peste CNY {{amount}}",
+    "cutByNum": "CNY {{n}} reducere pentru {{num}} (de) bucăți",
+    "buyNow": "Cumpără acum",
+    "productDetail": "Informații produs",
+    "selectedProductSoldOut": "Inventar insuficient pentru produsul selectat",
+    "currentProductSoldOut": "Inventar insuficient pentru produsul prezent",
+    "productNoSelect": "Selectați specificațiile produsului",
+    "orderAgain": "Încercați să plasați comanda din nou",
+    "soleOutSelectAgain": "Inventar insuficient pentru produsul prezent, selectați din nou",
+    "productFailure": "Produsul selectat este nevalid, selectați din nou",
+    "comboSelectFailure": "Pachetul combo este nevalid, selectați din nou",
+    "comboFailure": "Pachet combo nevalid",
+    "freeShipping": "Livrare gratuită",
+    "buyPop": "{{name}} a achiziționat produsul acum {{minutes}} (de) minute",
+    "noProductDesc": "Nicio descriere a produsului momentan",
+    "TCTD0108": "Metoda de livrare nu există, selectați din nou",
+    "TCTD0118": "Metoda de plată nu există, selectați din nou",
+    "TCTD0121": "Campania de marketing s-a schimbat, selectați din nou",
+    "TCTD0112": "Produsul selectat este nevalid, selectați din nou",
+    "defaultErrorCodeMsg": "Rețea anormală, reîmprospătați pagina și încercați din nou mai târziu",
+    "comment": "Lăsați un mesaj (Nu este obligatoriu)",
+    "country": "Țară",
+    "submit": "Trimite",
+    "overLength": "Lungimea mesajului depășește limita, ajustați conținutul și încercați din nou",
+    "optional": "Nu este necesar",
+    "bracket": "({{content}})"
+  },
+  "blogList": {
+    "container": {
+      "empty": {
+        "title": "Blog",
+        "desc": "Nu există postări pe blog în acest blog."
+      },
+      "readBtnText": "Citeste mai mult"
+    }
+  },
+  "blog": {
+    "container": {
+      "backTo": "Returnează {{{collectionTitle}}}"
+    }
+  }
+}

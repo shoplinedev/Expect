@@ -134,7 +134,11 @@
   <script>
     window.__I18N__.productDetail = {{{ JSONstringify (t 'productDetail') }}}
   </script>
+  {{#is_modern_browser}}
+  <script src="{{ assets_url 'product/collections/index.min.modern.js' }}"></script>
+  {{else}}
   <script src="{{ assets_url 'product/collections/index.min.js' }}"></script>
+  {{/is_modern_browser}}
 {{/partial}}
 
 <section class="product-list">

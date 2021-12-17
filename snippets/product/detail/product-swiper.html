@@ -1,32 +1,44 @@
 
 {{ assign 'productImageSizeObj' (JSONparse '{"large": 1704, "medium":1420, "small": 1136}')  }}
 {{ assign 'productWidth' (get productImageSize productImageSizeObj) }}
+{{ assign 'mediaList' spu.mediaList}}
+{{ assign 'coverImgObj' selectSku.imageBeanList.[0]}}
 
-<input type="hidden" value="{{ productImageScale }}" class="product_productImageScale">
-<input type="hidden" value="{{ videoMute }}" class="product_productVideoMute">
-<input type="hidden" value="{{ videoLoop }}" class="product_productVideoLoop">
-<input type="hidden" value="{{ productImageSize }}" class="product_productImageSize">
+<input type="hidden" value="{{ productImageScale }}" class="product_productImageScale_{{selectorId}}">
+<input type="hidden" value="{{ videoMute }}" class="product_productVideoMute_{{selectorId}}">
+<input type="hidden" value="{{ videoLoop }}" class="product_productVideoLoop_{{selectorId}}">
+<input type="hidden" value="{{ productImageSize }}" class="product_productImageSize_{{selectorId}}">
 
+<div data-ssr-product-swiper ></div>
+
+{{#if  true }}
 <div class="d-none d-md-block">
   <div 
     data-thumbs-direction="{{ thumbsDirection }}"
     data-show-thumbnail-arrow="{{ showThumbnailArrow }}"
     class="product_pc_productImageContainer {{ cond (boolean selectorId) (append 'execute_productImages_pc_' selectorId) '' }} {{ cond (boolean productImagePos '==' 'right') 'product_layoutRight' 'product_layoutLeft' }} {{ cond (boolean thumbsDirection '==' 'aside') 'product_layoutColumn' 'product_layoutRow' }}"
   >
-    {{#if (and (boolean thumbsDirection '==' 'aside') (boolean spu.mediaList.length ">" "1")) }}
-      <div class="product_thumbsColumnContainer">
+    {{#if (and (boolean thumbsDirection '==' 'aside')) }}
+      <div class="product_thumbsColumnContainer" style="display: {{#or (isFalsey mediaList.length) (boolean mediaList.length '<=' '1') }}none{{/or}};">
         {{#if showThumbnailArrow}}
           <div class="arrowTop thumbsArrowTop">
-            {{ snippet 'product/detail/svg/arrow' }}
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M11 6.5L6 1.5L1 6.5" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+  
           </div>
         {{/if}}
         <div class="productImageThumbs">
           <div class="productImageThumbsWrapper">
-            {{#each spu.mediaList }}
+            {{#each mediaList }}
               <div class="swiper-slide thumbsImageItem">
                 {{#if type '===' 'VIDEO' }}
                   <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" class="lozad" data-src="{{ get 'middle' (getYouTubeCover resource) }}" alt="">
-                  {{ snippet 'product/detail/svg/icon_videoPlay' }}
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10" cy="10" r="10" fill="black" fill-opacity="0.6"/>
+<path d="M13.6256 10.2496L8.46641 13.6891C8.26704 13.822 8 13.6791 8 13.4394V6.56056C8 6.32095 8.26704 6.17803 8.46641 6.31094L13.6256 9.75039C13.8037 9.86913 13.8037 10.1309 13.6256 10.2496Z" fill="white"/>
+</svg>
+
 
                 {{else if type '===' 'IMAGE'}}
                   <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" class="lozad" data-src="{{ img_url resource width=152 }}" alt="">
@@ -37,39 +49,42 @@
         </div>  
         {{#if showThumbnailArrow}}
           <div class="arrowBottom thumbsArrowBottom">
-            {{ snippet 'product/detail/svg/arrow' }}
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M11 6.5L6 1.5L1 6.5" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+  
           </div>
         {{/if}}
       </div>
     {{/if}}
     <div class="swiper-container product_productImages {{ cond (boolean productImageScale) 'product_productImageScale' ''}}">
-      {{#if product.spu.mediaList.length }}
+      {{#if mediaList.length }}
         <div class="swiper-wrapper">
-          {{#each spu.mediaList }}
+          {{#each mediaList }}
             {{#if type '===' 'VIDEO' }}
               <div class="swiper-slide videoItem">
                 <div class="product_youTubeVideoContainer">
                   <div class="product_youTubeVideoBox" data-video-id="{{ get 'videoId' (getYouTubeCover resource) }}"></div>
                 </div>
-                {{#if (isFalsey ../selectSku.imageBeanList.[0].url) }}
-                  <img class="product_photoSwipe_image swiper-lazy" data-photoswipe-src="{{ get 'middle' (getYouTubeCover resource) }}" data-src="{{ get 'middle' (getYouTubeCover resource) }}" alt="">
+                {{#if (isFalsey ../coverImgObj.url) }}
+                  <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" class="product_photoSwipe_image swiper-lazy" data-photoswipe-src="{{ get 'middle' (getYouTubeCover resource) }}" data-src="{{ get 'middle' (getYouTubeCover resource) }}" alt="">
                 {{else}}
                   {{#if @index '==' 0 }}
-                    <img class="product_photoSwipe_image lozad" data-photoswipe-src="{{ get 'middle' (getYouTubeCover resource) }}" data-src="{{ get 'middle' (getYouTubeCover resource) }}" alt="">
+                    <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" class="product_photoSwipe_image lozad" data-photoswipe-src="{{ get 'middle' (getYouTubeCover resource) }}" data-src="{{ get 'middle' (getYouTubeCover resource) }}" alt="">
                   {{else}}
-                    <img class="product_photoSwipe_image swiper-lazy" data-photoswipe-src="{{ get 'middle' (getYouTubeCover resource) }}" data-src="{{ get 'middle' (getYouTubeCover resource) }}" alt="">
+                    <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" class="product_photoSwipe_image swiper-lazy" data-photoswipe-src="{{ get 'middle' (getYouTubeCover resource) }}" data-src="{{ get 'middle' (getYouTubeCover resource) }}" alt="">
                   {{/if}}
                 {{/if}}
               </div>
             {{else if type '===' 'IMAGE'}}
               <div class="swiper-slide imageItem">
-                {{#if (isFalsey ../selectSku.imageBeanList.[0].url) }}
-                  <img data-photoswipe-src="{{ img_url resource width=1800 }}" data-src="{{ img_url resource width=../productWidth }}" alt="" class="swiper-lazy product_photoSwipe_image">
+                {{#if (isFalsey ../coverImgObj.url) }}
+                  <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" data-photoswipe-src="{{ img_url resource width=1800 }}" data-src="{{ img_url resource width=../productWidth }}" alt="" class="swiper-lazy product_photoSwipe_image">
                 {{else}}
                   {{#if @index '==' 0 }}
-                    <img data-photoswipe-src="{{ img_url resource width=1800 }}" data-src="{{ img_url resource width=../productWidth }}" alt="" class="lozad product_photoSwipe_image">
+                    <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" data-photoswipe-src="{{ img_url resource width=1800 }}" data-src="{{ img_url resource width=../productWidth }}" alt="" class="lozad product_photoSwipe_image">
                   {{else}}
-                    <img data-photoswipe-src="{{ img_url resource width=1800 }}" data-src="{{ img_url resource width=../productWidth }}" alt="" class="swiper-lazy product_photoSwipe_image">
+                    <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" data-photoswipe-src="{{ img_url resource width=1800 }}" data-src="{{ img_url resource width=../productWidth }}" alt="" class="swiper-lazy product_photoSwipe_image">
                   {{/if}}
                 {{/if}}
               </div>
@@ -83,30 +98,37 @@
           </div>
         </div>
       {{/if}}
-      {{#if selectSku.imageBeanList.[0].url }}
+      {{#if coverImgObj.url }}
         <div class="product_pc_skuImage" style="display: block">
-          <img class="lozad product_photoSwipe_image" data-photoswipe-src="{{ img_url selectSku.imageBeanList.[0].url width=1800 }}" data-src="{{ img_url selectSku.imageBeanList.[0].url width=productWidth }}" alt="{{ selectSku.imageBeanList.[0].alt }}">
+          <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" class="lozad product_photoSwipe_image" data-photoswipe-src="{{ img_url coverImgObj.url width=1800 }}" data-src="{{ img_url coverImgObj.url width=productWidth }}" alt="{{ coverImgObj.alt }}">
         </div>
       {{else}}
         <div class="product_pc_skuImage"></div>
       {{/if}}
     </div>
-    {{#if (and (boolean thumbsDirection '!=' 'aside') (boolean spu.mediaList.length ">" "1")) }}
-      <div class="product_thumbsRowContainer">
+    {{#if (and (boolean thumbsDirection '!=' 'aside')) }}
+      <div class="product_thumbsRowContainer" style="display: {{#or (isFalsey mediaList.length) (boolean mediaList.length '<=' '1') }}none{{/or}};">
         {{#if showThumbnailArrow}}
           <div class="arrowTopBox thumbsArrowTop">
             <div class="arrowTop">
-              {{ snippet 'product/detail/svg/arrow' }}
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M11 6.5L6 1.5L1 6.5" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+  
             </div>
           </div>
         {{/if}}
         <div class="productImageThumbs">
           <div class="swiper-wrapper productImageThumbsWrapper">
-            {{#each spu.mediaList }}
+            {{#each mediaList }}
               <div class="swiper-slide thumbsImageItem">
                 {{#if type '===' 'VIDEO' }}
                   <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" class="lozad" data-src="{{ get 'middle' (getYouTubeCover resource) }}" alt="">
-                  {{ snippet 'product/detail/svg/icon_videoPlay' }}
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10" cy="10" r="10" fill="black" fill-opacity="0.6"/>
+<path d="M13.6256 10.2496L8.46641 13.6891C8.26704 13.822 8 13.6791 8 13.4394V6.56056C8 6.32095 8.26704 6.17803 8.46641 6.31094L13.6256 9.75039C13.8037 9.86913 13.8037 10.1309 13.6256 10.2496Z" fill="white"/>
+</svg>
+
                 {{else if type '===' 'IMAGE'}}
                   <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" class="lozad" data-src="{{ img_url resource width=152 }}" alt="">
                 {{/if}}
@@ -117,7 +139,10 @@
         {{#if showThumbnailArrow}}
           <div class="arrowBottomBox thumbsArrowBottom">
             <div class="arrowBottom">
-              {{ snippet 'product/detail/svg/arrow' }}
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M11 6.5L6 1.5L1 6.5" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+  
             </div>
           </div>
         {{/if}}
@@ -125,42 +150,49 @@
     {{/if}}
   </div>
 </div>
+{{else}}
+  
+{{/if}}
+
 <div class="d-md-none">
-  <div class="product_mobile_productImageContainer {{ cond (boolean selectorId) (append 'execute_productImages_mobile_' selectorId) '' }}">
-    <div class="swiper-container product_productImages {{#isFalsey mobileProductImageIsFull }}middleWidth{{/isFalsey}}">
-      {{#if product.spu.mediaList.length }}
+  <div class="product_mobile_productImageContainer {{ cond (boolean selectorId) (append 'execute_productImages_mobile_' selectorId) '' }} {{#isFalsey mobileProductImageIsFull }}middleWidth{{/isFalsey}}">
+    <div class="swiper-container product_productImages">
+      {{#if mediaList.length }}
         <div class="swiper-wrapper">
-          {{#each spu.mediaList }}
+          {{#each mediaList }}
             {{#if type '===' 'VIDEO' }}
-              <div class="swiper-slide videoItem" data-index="{{ @index }}" data-length="{{ ../spu.mediaList.length }}">
+              <div class="swiper-slide videoItem" data-index="{{ @index }}" data-length="{{ ../mediaList.length }}">
                 <div 
                   class="swiper-slide-box"
-                  {{#and ../selectSku.imageBeanList.[0].url (boolean @index '==' 0 )}}
-                    data-image-ratio="56.25%"
-                    data-sku-image-ratio="{{ append (default (get 'ratio' (img_size ../selectSku.imageBeanList.[0].url)) 100) '%'}}"
-                    style="padding-bottom: {{ append (default (get 'ratio' (img_size ../selectSku.imageBeanList.[0].url)) 100) '%'}}"
-                  {{else}}
-                    data-image-ratio="56.25%"
-                    style="padding-bottom: 56.25%"
-                  {{/and}}
+                  data-image-ratio="56.25%"
+                  style="padding-bottom: {{#and ../coverImgObj.url (boolean @index '==' 0 )}}{{append (default (get 'ratio' (img_size ../coverImgObj.url)) 100) '%'}}{{else}}56.25%{{/and}}"
+                  data-sku-image-ratio="{{#and ../coverImgObj.url (boolean @index '==' 0 )}}{{ append (default (get 'ratio' (img_size ../coverImgObj.url)) 100) '%'}}{{/and}}"
                 >
                   <div class="product_youTubeVideoContainer">
                     <div class="product_youTubeVideoBox" data-video-id="{{ get 'videoId' (getYouTubeCover resource) }}"></div>
                   </div>
-                  <img class="lozad product_photoSwipe_image" data-photoswipe-src="{{ get 'middle' (getYouTubeCover resource) }}" data-src="{{ get 'middle' (getYouTubeCover resource) }}" alt="">
-                  {{#and ../selectSku.imageBeanList.[0].url (boolean @index '==' 0) }}
+                  <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" class="lozad product_photoSwipe_image" data-photoswipe-src="{{ get 'middle' (getYouTubeCover resource) }}" data-src="{{ get 'middle' (getYouTubeCover resource) }}" alt="">
+                  {{#and ../coverImgObj.url (boolean @index '==' 0) }}
                     <div class="product_m_skuImageBox">
-                      <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" class="lozad product_m_skuImage product_photoSwipe_image" data-photoswipe-src="{{ img_url ../selectSku.imageBeanList.[0].url width=1800 }}" data-src="{{ img_url ../selectSku.imageBeanList.[0].url width=750 }}" alt="{{ ../selectSku.imageBeanList.[0].alt }}">
+                      <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" class="lozad product_m_skuImage product_photoSwipe_image" data-photoswipe-src="{{ img_url ../coverImgObj.url width=1800 }}" data-src="{{ img_url ../coverImgObj.url width=750 }}" alt="{{ ../coverImgObj.alt }}">
                       {{#if ../productImageScale }}
                         <div class="scaleSkuImageIcon">
-                          {{ include 'snippets/product/detail/svg/icon_scaleImage' }}
+                          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="13" cy="12" r="7.5" />
+<path d="M18.5 17.5L23 22.5" stroke-linecap="round" />
+</svg>
+
                         </div>  
                       {{/if}}
                     </div>
                   {{/and}}
                   {{#if ../productImageScale }}
                     <div class="scaleImageIcon">
-                      {{ include 'snippets/product/detail/svg/icon_scaleImage' }}
+                      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="13" cy="12" r="7.5" />
+<path d="M18.5 17.5L23 22.5" stroke-linecap="round" />
+</svg>
+
                     </div>  
                   {{/if}}
                 </div>
@@ -168,30 +200,33 @@
             {{else if type '===' 'IMAGE'}}
               <div class="swiper-slide imageItem">
                 <div 
-                  class="swiper-slide-box" 
-                  {{#and ../selectSku.imageBeanList.[0].url (boolean @index '==' 0 )}}
-                    data-image-ratio="{{ append (default (get 'ratio' (img_size resource)) 100) '%'}}"
-                    data-sku-image-ratio="{{ append (default (get 'ratio' (img_size ../selectSku.imageBeanList.[0].url)) 100) '%'}}"
-                    style="padding-bottom: {{ append (default (get 'ratio' (img_size ../selectSku.imageBeanList.[0].url)) 100) '%'}}"
-                  {{else}}
-                    data-image-ratio="{{ append (default (get 'ratio' (img_size resource)) 100) '%'}}"
-                    style="padding-bottom: {{ append (default (get 'ratio' (img_size resource)) 100) '%'}}"
-                  {{/and}}
+                  class="swiper-slide-box"
+                  data-image-ratio="{{ append (default (get 'ratio' (img_size resource)) 100) '%'}}"
+                  data-sku-image-ratio="{{#and ../coverImgObj.url (boolean @index '==' 0 )}}{{ append (default (get 'ratio' (img_size ../coverImgObj.url)) 100) '%'}}{{/and}}"
+                  style="padding-bottom: {{#and ../coverImgObj.url (boolean @index '==' 0 )}}{{ append (default (get 'ratio' (img_size ../coverImgObj.url)) 100) '%'}}{{else}}{{ append (default (get 'ratio' (img_size resource)) 100) '%'}}{{/and}}"
                 >
                   <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" data-photoswipe-src="{{ img_url resource width=1800 }}" data-src="{{ img_url resource width=750 }}" alt="" class="lozad product_photoSwipe_image">
-                  {{#and ../selectSku.imageBeanList.[0].url (boolean @index '==' 0 )}}
+                  {{#and ../coverImgObj.url (boolean @index '==' 0 )}}
                     <div class="product_m_skuImageBox">
-                      <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" class="lozad product_m_skuImage product_photoSwipe_image" data-photoswipe-src="{{ img_url ../selectSku.imageBeanList.[0].url width=1800 }}" data-src="{{ img_url ../selectSku.imageBeanList.[0].url width=750 }}" alt="{{ ../selectSku.imageBeanList.[0].alt }}">
+                      <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" class="lozad product_m_skuImage product_photoSwipe_image" data-photoswipe-src="{{ img_url ../coverImgObj.url width=1800 }}" data-src="{{ img_url ../coverImgObj.url width=750 }}" alt="{{ ../coverImgObj.alt }}">
                       {{#if ../productImageScale }}
                         <div class="scaleSkuImageIcon">
-                          {{ include 'snippets/product/detail/svg/icon_scaleImage' }}
+                          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="13" cy="12" r="7.5" />
+<path d="M18.5 17.5L23 22.5" stroke-linecap="round" />
+</svg>
+
                         </div>  
                       {{/if}}
                     </div>
                   {{/and}}
                   {{#if ../productImageScale }}
                     <div class="scaleImageIcon">
-                      {{ include 'snippets/product/detail/svg/icon_scaleImage' }}
+                      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="13" cy="12" r="7.5" />
+<path d="M18.5 17.5L23 22.5" stroke-linecap="round" />
+</svg>
+
                     </div>  
                   {{/if}}
                 </div>
@@ -204,21 +239,20 @@
           <div class="swiper-slide">
             <div 
               class="swiper-slide-box" 
-              {{#if selectSku.imageBeanList.[0].url }}
-                data-image-ratio="100%"
-                style="padding-bottom: {{ append (default (get 'ratio' (img_size selectSku.imageBeanList.[0].url)) 100) '%'}}"
-              {{else}}
-                data-image-ratio="100%"
-                style="padding-bottom: 100%"
-              {{/if}}
+              data-image-ratio="100%"
+              style="padding-bottom: {{#if coverImgObj.url }}{{ append (default (get 'ratio' (img_size coverImgObj.url)) 100) '%'}}{{else}}100%{{/if}}"
             >
               <div class="product-detail-empty-image product-noImages"></div>
-              {{#if selectSku.imageBeanList.[0].url }}
+              {{#if coverImgObj.url }}
                 <div class="product_m_skuImageBox">
-                  <img class="lozad product_m_skuImage product_photoSwipe_image" data-photoswipe-src="{{ img_url selectSku.imageBeanList.[0].url width=1800 }}" data-src="{{ img_url selectSku.imageBeanList.[0].url width=750 }}" alt="{{ selectSku.imageBeanList.[0].alt }}">
+                  <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" class="lozad product_m_skuImage product_photoSwipe_image" data-photoswipe-src="{{ img_url coverImgObj.url width=1800 }}" data-src="{{ img_url coverImgObj.url width=750 }}" alt="{{ coverImgObj.alt }}">
                   {{#if productImageScale }}
                     <div class="scaleSkuImageIcon">
-                      {{ include 'snippets/product/detail/svg/icon_scaleImage' }}
+                      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="13" cy="12" r="7.5" />
+<path d="M18.5 17.5L23 22.5" stroke-linecap="round" />
+</svg>
+
                     </div>  
                   {{/if}}
                 </div>
@@ -228,12 +262,10 @@
         </div>
       {{/if}}
     </div>
-    {{#if (boolean spu.mediaList.length ">" "1")}}
-      <ul class="paginationList">
-        {{#each spu.mediaList }}
-          <div></div>
-        {{/each}}
-      </ul>
-    {{/if}}
+    <ul class="paginationList" style="display: {{#or (isFalsey mediaList.length) (boolean mediaList.length '<=' '1') }}none{{/or}};">
+      {{#each mediaList }}
+        <div></div>
+      {{/each}}
+    </ul>
   </div>
 </div>

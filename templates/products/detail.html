@@ -222,7 +222,11 @@ product_comment_config:
 {{ assign 'initSku' (product_default_sku product.sku.skuList product.spu.soldOut request.uri.query.sku (if theme.settings.product_sku_style 'select') product.spu.inquiry isPreviewProduct) }}
 
 {{#partial 'script'}}
-<script src="{{ assets_url 'product/detail/index.min.js' }}"></script>
+  {{#is_modern_browser}}
+  <script src="{{ assets_url 'product/detail/index.min.modern.js' }}"></script>
+  {{else}}
+  <script src="{{ assets_url 'product/detail/index.min.js' }}"></script>
+  {{/is_modern_browser}}
 {{/partial}}
 
 {{ preload_state 'productBundled' }}

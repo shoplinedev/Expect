@@ -19,8 +19,8 @@
   </div>
   {{#if (length tags) '>' 0}}
     {{assign 'filterNum' (length tags)}}
-    <span class="product_collections-drawer-filter-text body3">Filter（{{filterNum}}）</span>
+    <span class="product_collections-drawer-filter-text body3">{{t 'productList.filterMenu.filter'}}（{{filterNum}}）</span>
   {{else}}
-    <span class="product_collections-drawer-filter-text body3">Filter</span>
+    <span class="product_collections-drawer-filter-text body3">{{t 'productList.filterMenu.filter'}}</span>
   {{/if}}
 </div>

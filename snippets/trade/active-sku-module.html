@@ -27,6 +27,6 @@
     {{/if}}
   {{/if}}
   {{#each data.itemList}}
-    {{include 'snippets/trade/sku-item' data=this image-width=../image-width skuNumMap=../skuNumMap trade_cart_type=../trade_cart_type}}
+    {{include 'snippets/trade/sku-item' data=this image-width=../image-width skuNumMap=../skuNumMap trade_cart_type=../trade_cart_type findex=../index  index=@index}}
   {{/each}}
 </div>

@@ -59,7 +59,8 @@
             }
           }
         }
-      }
+      },
+      "tags-label": "Remise:"
     },
     "bundle": {
       "title": "Acheter souvent ensemble",
@@ -67,10 +68,24 @@
     },
     "selected-count-activity-product": "{{selectCount}} produits événementiels sélectionnés",
     "customer-purchase-limit": "Limite d'achat {{count}} par personne",
+    "customer-purchase-limit-each-item": "Chaque article pour chacun est limité à un achat de {{count}} pièces",
     "flash-sale-tips": "Limite d’achat: {{count}} pièce",
     "flash-sale-text": "Promotions d’une durée limitée",
     "hot-sale": "A la vente",
-    "sold": "Vendu{{count}}"
+    "sold": "Vendu{{count}}",
+    "discount-coupon": {
+      "coupon-label": "Code promotionnel:",
+      "coupon-content": {
+        "threshold": "Achetrer {threshold}",
+        "discount1": "{discount} de réduction",
+        "discount2": "Transport gratuit",
+        "shippingRateBelow": "Les frais d’expédition sont inférieurs à {value}",
+        "until": "Valable jusqu’à :{{endTime}}"
+      },
+      "couponNoFound": "Le code de réduction a été appliqué avec succès",
+      "applySuccess": "L’application a échoué",
+      "applyFail": "Félicitations! Vous avez gagné de nouveaux points!"
+    }
   },
   "header": {
     "searchItems": "Rechercher des produits",
@@ -197,6 +212,7 @@
       "price": "Le prix"
     },
     "container": {
+      "from": "À partir de {{price}}",
       "empty": {
         "desc": "Aucun produit dans cette catégorie",
         "title": "Nous sommes désolés, le produit n'est pas disponible pour le moment",
@@ -206,14 +222,14 @@
         "text1": "Tous les produits",
         "text2": "Trier par :",
         "recommend": "Recommandé",
-        "option1": "Date de vente (de la plus récente à la plus ancienne)",
-        "option2": "Date de vente (de la plus ancienne à la plus récente)",
-        "option3": "Prix (du plus cher au moins cher)",
-        "option4": "Prix (du moins cher au plus cher)",
         "sales": "Meilleurs vendeurs",
         "newest": "Nouveautés",
         "priceLowToHigh": "Prix du moins cher au plus cher",
-        "priceHighToLow": "Prix du plus cher au moins cher"
+        "priceHighToLow": "Prix du plus cher au moins cher",
+        "option1": "Date de vente (de la plus récente à la plus ancienne)",
+        "option2": "Date de vente (de la plus ancienne à la plus récente)",
+        "option3": "Prix (du plus cher au moins cher)",
+        "option4": "Prix (du moins cher au plus cher)"
       },
       "network": {
         "message": "Aucune donnée trouvée concernant le produit. Veuillez réessayer plus tard"
@@ -237,7 +253,7 @@
       },
       "show": "Affichage",
       "viewAs": "Voir la méthode",
-      "from": "À partir de {{price}}"
+      "productsNum": "{{num}} produits"
     }
   },
   "productSearch": {
@@ -273,7 +289,20 @@
   },
   "productDetail": {
     "goToAmazon": "Accéder à Amazon",
+    "goOutsideOfAmazon": "Faire des achats en dehors d'Amazon",
+    "goOtherChannels": "Autres canaux d'achat",
+    "toAmazon": "Amazon",
+    "goToRakuten": "LOTTE",
+    "goToYahoo": "Yahoo",
+    "goToAmazonByLink": "Accéder à Amazon",
+    "goToRakutenByLink": "Accéder à LOTTE",
+    "goToYahooByLink": "Accéder à Yahoo",
     "recentlyViewedProducts": "Derniers produits consultés",
+    "activityToast": {
+      "product-limit": "Vous pouvez acheter jusqu'à {{stock}} pièces à prix réduit en même temps",
+      "price-limit": "Le prix réduit de cette marchandise ne prend en charge que l'achat de {{num}} pièces",
+      "title-limit": "Les marchandises suivantes dépassent la limite d'achat"
+    },
     "tabs": {
       "description": "Description",
       "shippingPayment": "Expédition et paiement",
@@ -314,14 +343,6 @@
     "no-product-introduction": "Aucune présentation du produit pour le moment",
     "no-logistics-and-payment-information": "Aucune information sur le mode de paiement et de logistique pour le moment",
     "addCart": "AJOUTER",
-    "goOutsideOfAmazon": "Faire des achats en dehors d'Amazon",
-    "goToRakuten": "LOTTE",
-    "goToYahoo": "Yahoo",
-    "goToAmazonByLink": "Accéder à Amazon",
-    "goToRakutenByLink": "Accéder à LOTTE",
-    "goToYahooByLink": "Accéder à Yahoo",
-    "goOtherChannels": "Autres canaux d'achat",
-    "toAmazon": "Amazon",
     "default-placeholder": "Veuillez sélectionner {{attrName}}",
     "inquiry": {
       "inquiryTitle": "Consultation de marchandises",
@@ -344,11 +365,6 @@
     },
     "previewLinkToast": "Le pré-lien ne prend pas en charge cette opération",
     "morePaymentOptions": "Plus d'options de paiement",
-    "activityToast": {
-      "product-limit": "Vous pouvez acheter jusqu'à {{stock}} pièces à prix réduit en même temps",
-      "price-limit": "Le prix réduit de cette marchandise ne prend en charge que l'achat de {{num}} pièces",
-      "title-limit": "Les marchandises suivantes dépassent la limite d'achat"
-    },
     "bulkDiscount": {
       "title": "Achetez plus Économisez plus!"
     }
@@ -425,6 +441,7 @@
     "product-offline": "Le produit est retiré de la vente",
     "stock-not-enough": "Nombre de produits insuffisant",
     "over-limit-number": "Dépassement du quota de produits",
+    "product-removed": "La marchandise a été supprimée",
     "product-package": "Conditionnement",
     "product-fee": "Sous-total",
     "product-tax": "Taxe à la consommation",
@@ -432,6 +449,9 @@
     "next-step-calc": "Calculé à l'étape suivante",
     "delivery-fee": "Expédition",
     "pay-fee": "Frais de paiement",
+    "point-discount": "Déduction du point",
+    "point-discount-desc": "Vous pouvez utiliser {{deductMemberPointNum}} points pour déduire {{deductMemberPointAmount}}",
+    "point-discount-remark": "Dépenser {{value}} points",
     "summary": "Total",
     "use-member-account-can": "Avez-vous déjà un compte ?",
     "i-want-recieve-discount-info": "Je souhaite recevoir les dernières nouvelles et promotions",
@@ -555,15 +575,17 @@
     "other-reason": "Autres raisons",
     "get-the-order": "Complément",
     "free": "Gratuit",
-    "sku-changed-title": "Modifications de produit détectées. Voulez-vous vraiment procéder au paiement ?",
+    "sku-changed-title": "Modifications de {{num}}produit détectées. Voulez-vous vraiment procéder au paiement ?",
+    "sku-limit-title": "Les marchandises suivantes dépassent la limite d'achat, veuillez modifier le nombre",
     "sorry-all-sku-unusable": "Nous sommes désolés, cette commande ne peut être passée car les produits ne sont plus valides",
     "off-shelf": "Retiré de la vente",
     "sold-out": "Épuisé",
-    "footer-all-rights-reserved": "{{name}} Tous droits réservés",
+    "has-removed": "Supprimé",
+    "footer-all-rights-reserved": "Copyright © {{year}} {{name}} Tous droits réservés",
     "return-to-selection-goods": "Sélection de produits retournés",
     "return-apply-fail-SKU": "Le nombre de produits demandés dépasse la limite",
-    "return-apply-fail-min-amount": "Pour les remboursements uniquement, le montant du remboursement doit être supérieur à 0 CNY",
     "return-apply-fail-max-amount": "Le montant remboursable ne peut dépasser le montant remboursable maximal",
+    "return-apply-fail-min-amount": "Pour les remboursements uniquement, le montant du remboursement doit être supérieur à 0 CNY",
     "slpayment": {
       "cardNumber": {
         "placeholder": "Numéro de carte de crédit",
@@ -604,11 +626,6 @@
     },
     "coupon": "Réduction",
     "coupon-mutra-discount": "Ce code promotionnel ne peut pas être utilisé avec d'autres promotions ou réductions",
-    "product-removed": "La marchandise a été supprimée",
-    "has-removed": "Supprimé",
-    "activity-product-limit ": "Vous pouvez acheter jusqu'à X pièces à prix réduit en même temps",
-    "sku-limit-title": "Les marchandises suivantes dépassent la limite d'achat, veuillez modifier le nombre",
-    "activity-title-limit ": "Les marchandises suivantes dépassent la limite d'achat, continuez-vous à passer à la caisse ?",
     "activity-price-limit": "Le prix réduit de cette marchandise ne prend en charge que l'achat de X pièces",
     "policy": {
       "refund-policy": "Politique de remboursement",
@@ -617,12 +634,11 @@
     "tip": {
       "add-tip": "Augmenter le pourboire"
     },
-    "point-discount-desc": "Vous pouvez utiliser {{deductMemberPointNum}} points pour déduire {{deductMemberPointAmount}}",
-    "point-discount-remark": "Dépenser {{value}}  points",
-    "point-discount": "Déduction du point",
     "free-shipping": "Livraison gratuite",
     "pod-link": "Clique pour voir",
-    "pod-pic": "Aperçu personnalisé"
+    "pod-pic": "Aperçu personnalisé",
+    "activity-product-limit": "Vous pouvez acheter jusqu'à {{stock}} pièces à prix réduit en même temps",
+    "activity-title-limit": "Les marchandises suivantes dépassent la limite d'achat, continuez-vous à passer à la caisse ?"
   },
   "payments-name": {
     "Paypal": "Paypal",
@@ -710,11 +726,11 @@
     "coupon-code-cannot-exceed-25-length": "Le code promotionnel ne doit pas dépasser 25 caractères",
     "discount-code-error": "Veuillez saisir un code promotionnel valide",
     "discount-code-user-invalid": "Les marchandises de votre panier ne s'appliquent pas aux codes promotionnel {{discountCode}}",
-    "mutual-excluded-by-time-limited": "Les remises à durée limitée et les activités de code de coupon s'excluent mutuellement",
     "enter-correct-email": "Veuillez saisir une adresse e-mail au format correct",
     "enter-correct-phone-number": "Veuillez saisir un numéro de téléphone portable au format correct",
     "phone-number-less-than-100": "Le numéro de téléphone portable ne peut pas dépasser 100 caractères",
-    "shipping_plan_unavailable": "Le code promo {{discountCode}} n'est pas applicable à la méthode logistique actuelle"
+    "shipping_plan_unavailable": "Le code promo {{discountCode}} n'est pas applicable à la méthode logistique actuelle",
+    "mutual-excluded-by-time-limited": "Les remises à durée limitée et les activités de code de coupon s'excluent mutuellement"
   },
   "subscription": {
     "subscript-via-line-facebook": "S'abonner à la notification de commande via LINE ou Facebook",
@@ -752,7 +768,8 @@
     "no-comment-title-tip": "Aucun commentaire pour le moment",
     "no-comment-first-tip": "venez laisser votre premier commentaire",
     "on-img-upload-tip": "L’image est en train de télécharger, veuillez la soumettre plus tard",
-    "mobile-submit": "Soumettre"
+    "mobile-submit": "Soumettre",
+    "nickname": "Surnom"
   },
   "order": {
     "refund-methods": {
@@ -770,12 +787,12 @@
     "after-order-status": {
       "processing": "Traitement",
       "confirmed": "Confirmé",
+      "delivery-progress": "Comfirmé",
       "cancelled": "Annulé",
       "customer-canceled": "Annulation par le client",
       "customer-rejected": "Rejet par le client",
       "merchant-cancellation": "Annulation par le vendeur",
-      "completed": "Terminé",
-      "delivery-progress": "Comfirmé"
+      "completed": "Terminé"
     },
     "order-status": {
       "processing": "Traitement",
@@ -788,6 +805,7 @@
     "pay-status": {
       "unpaid": "Non payé",
       "paying": "Paiement en cours",
+      "partial-payment": "Partiellement payé",
       "already-paid": "Payé",
       "failed": "Échec du paiement",
       "timed-out": "Le délai de paiement a expiré",
@@ -795,11 +813,11 @@
       "refunded": "Remboursé",
       "refund-failed": "Échec du remboursement",
       "partial-refund": "Remboursement partiel",
-      "abolished": "Nul",
-      "partial-payment": "Partiellement payé"
+      "abolished": "Nul"
     },
     "delivery-statusType": {
       "stocking": "Préparation des produits",
+      "delivery-partial": "Expédition partielle",
       "cancelled": "Annulé",
       "cancel-delivery": "Annuler l'expédition",
       "shipping": "Livraison en cours",
@@ -807,8 +825,18 @@
       "arrived": "Arrivé",
       "picked-up": "Reçu",
       "problem": "Les problèmes tels que les problèmes d'expédition et les commandes perdues nécessitent une assistance manuelle",
-      "delivery-partial": "Expédition partielle",
       "delivery-return": "Retourné"
+    },
+    "oms-status": {
+      "executing": "En cours de traitement",
+      "prepare-pick": "Prêt pour la collecte",
+      "shipped": "Expédié",
+      "cancelled": "Annuler l'expédition",
+      "arrived": "Arrivé",
+      "picked": "Signé",
+      "returning": "En cours de retour",
+      "returned": "Retourné",
+      "problem": "Problème d'expédition"
     },
     "order-list": {
       "empty-title": "image",
@@ -852,12 +880,12 @@
           "express": "Le transport",
           "express-surcharge": "Taxe de transport",
           "channel-surcharge": "Commission de paiement",
+          "discount-amount-name": "Remise personnalisée du marchand",
+          "tip": "Pourboire",
           "preferential": "préférentiel",
           "discount": "Réduction sur le code coupon",
           "deduct-voucher": "Montant du bon",
-          "total": "Total",
-          "tip": "Pourboire",
-          "discount-amount-name": "Remise personnalisée du marchand"
+          "total": "Total"
         },
         "order-num": "Colis ({{num}})",
         "logistics": {
@@ -929,13 +957,13 @@
       "coms": {
         "operationLog": {
           "PayDealLog": {
+            "title": "Le paiement de {amount} a été traité via {payName}",
             "payName": "Canal de paiement",
             "amount": "Quantité",
             "dealId": "Numéro de série du paiement",
             "createTime": "Heure de début du paiement",
             "updateTime": "Temps de retour du résultat",
-            "status": "statut",
-            "title": "Le paiement de {amount} a été traité via {payName}"
+            "status": "statut"
           }
         }
       }
@@ -944,18 +972,7 @@
     "order-at": "Commandé à :",
     "customer-info": "Informations client",
     "help-tips": "Besoin d'aide ? Nous contacter: {{email}}",
-    "order-date": "Temps de passe de commande",
-    "oms-status": {
-      "executing": "En cours de traitement",
-      "prepare-pick": "Prêt pour la collecte",
-      "shipped": "Expédié",
-      "cancelled": "Annuler l'expédition",
-      "arrived": "Arrivé",
-      "picked": "Signé",
-      "returning": "En cours de retour",
-      "returned": "Retourné",
-      "problem": "Problème d'expédition"
-    }
+    "order-date": "Temps de passe de commande"
   },
   "promotion": {
     "full-reduction": "Réduction complète",
@@ -1034,6 +1051,7 @@
     "edit": "Modifier",
     "cancel": "ANNULER",
     "save": "ENREGISTRER",
+    "buy-record-entry": "Produit acheté",
     "account": {
       "account-subscription-email": "Envoyer par e-mail",
       "account-subscription-phone": "Envoyer sur un téléphone portable",
@@ -1153,18 +1171,18 @@
       "day4": "Jeudi",
       "day5": "Vendredi",
       "day6": "Samedi",
-      "month1": "1",
-      "month2": "2",
-      "month3": "3",
-      "month4": "4",
-      "month5": "5",
-      "month6": "6",
-      "month7": "7",
-      "month8": "8",
-      "month9": "9",
-      "month10": "10",
-      "month11": "11",
-      "month12": "12",
+      "month1": 1,
+      "month2": 2,
+      "month3": 3,
+      "month4": 4,
+      "month5": 5,
+      "month6": 6,
+      "month7": 7,
+      "month8": 8,
+      "month9": 9,
+      "month10": 10,
+      "month11": 11,
+      "month12": 12,
       "actionTypeDesc": {
         "addPoint": "Nouvelles subventions d'achat",
         "deductPoint": "Déduction des subventions d'achat",
@@ -1185,8 +1203,7 @@
       "loaded": "Chargé",
       "empty2": "Aucun enregistrement supplémentaire",
       "order": "Afficher la commande :"
-    },
-    "buy-record-entry": "Produit acheté"
+    }
   },
   "cart": {
     "render-empty-status": "Votre panier est vide",
@@ -1203,15 +1220,11 @@
     "most-100-sku": "Ajouter jusqu'à 100 produits",
     "most-buy-999": "Vous pouvez ajouter jusqu'à 999 marchandises au panier",
     "stock-limit": "{{stock}} pièces restantes",
-    "active-stock-limit-2 ": "Le prix réduit de cette marchandise ne prend en charge que l'achat de {{stock}} pièces",
-    "active-stock-limit-1 ": "Vous pouvez acheter jusqu'à {{stock}} pièces à prix réduit en même temps",
-    "activity-product-limit": "Vous pouvez acheter jusqu'à {{stock}} pièces à prix réduit en même temps",
-    "activity-price-limit": "Le prix réduit de cette marchandise ne prend en charge que l'achat de {{num}} pièces",
     "activity-title-limit": "Les marchandises suivantes dépassent la limite d'achat, continuez-vous à passer à la caisse ?",
-    "activity-product-limit ": "Vous pouvez acheter jusqu'à {{stock}} pièces à prix réduit en même temps",
-    "activity-title-limit ": "Les marchandises suivantes dépassent la limite d'achat, continuez-vous à passer à la caisse ?",
+    "activity-price-limit": "Le prix réduit de cette marchandise ne prend en charge que l'achat de {{num}} pièces",
     "active-stock-limit-2": "Le prix réduit de cette marchandise ne prend en charge que l'achat de {{stock}} pièces",
     "active-stock-limit-1": "Vous pouvez acheter jusqu'à {{stock}} pièces à prix réduit en même temps",
+    "activity-product-limit": "Vous pouvez acheter jusqu'à {{stock}} pièces à prix réduit en même temps",
     "view-link": "Clique pour voir",
     "view-pic": "Aperçu personnalisé",
     "not-participation-offers": "Ne pas participer à l'offre",
@@ -1223,7 +1236,6 @@
     }
   },
   "user": {
-    "account": "Compte",
     "email": "Adresse e-mail",
     "phone": "Numéro de téléphone portable",
     "username": "Adresse e-mail/numéro de téléphone portable",
@@ -1234,10 +1246,10 @@
     "signUp": "S'inscrire",
     "signIn": "Se connecter",
     "confirm": "OK",
-    "emailError": "Veuillez saisir une adresse e-mail au format correct et comportant moins de 50 caractères",
+    "emailError": "Veuillez saisir une adresse e-mail au format correct et comportant moins de 50 caractères",
     "phoneError": "Veuillez saisir un numéro de téléphone portable au format correct",
     "codeError": "Veuillez saisir le code de vérification",
-    "passwordError": "Veuillez définir un mot de passe comportant entre 8 caractères et 20 caractères Les mots de passe doivent comporter au moins une majuscule, une minuscule et un chiffre",
+    "passwordError": "Veuillez définir un mot de passe comportant entre 8 caractères et 20 caractères Les mots de passe doivent comporter au moins une majuscule, une minuscule et un chiffre",
     "repeatPasswordError": "Les mots de passe que vous avez saisis ne correspondent pas",
     "repeatPasswordEmptyError": "Veuillez saisir à nouveau le mot de passe",
     "primevalPasswordError": "Veuillez saisir votre mot de passe actuel",
@@ -1246,7 +1258,7 @@
     "sendError": "Veuillez d'abord envoyer le code de vérification",
     "noData": "Aucune donnée disponible",
     "passwordEmptyError": "Veuillez saisir un mot de passe",
-    "passwordMemberError": "Veuillez définir un mot de passe comportant entre 6 caractères et 18 caractères",
+    "passwordMemberError": "Veuillez définir un mot de passe comportant entre 6 caractères et 18 caractères",
     "emailEmptyError": "Veuillez saisir une adresse e-mail",
     "phoneEmptyError": "Veuillez saisir un numéro de téléphone portable",
     "usernameEmptyError": "Veuillez saisir une adresse e-mail ou un numéro de téléphone portable",
@@ -1286,7 +1298,8 @@
       "err3010": "L'e-mail a été lié à d'autres comptes",
       "err3014": "Échec de l'envoi du code",
       "udbResponse": "Le compte a été temporairement verrouillé"
-    }
+    },
+    "account": "COMPTE"
   },
   "address": {
     "dropdown": {
@@ -1305,18 +1318,18 @@
     "discountByNum": "Profitez de {{n}}% de réduction avec les achats de {{num}} pièces",
     "cutByAmount": "Réduction de {{n}} avec les achats de {{amount}}",
     "cutByNum": "Réduction de {{n}} avec les achats de {{num}}",
-    "buyPop": "{{name}} a acheté cette marchandise il y a {{minutes}} minutes",
     "buyNow": "Acheter maintenant",
     "productDetail": "Détails sur les marchandises",
     "selectedProductSoldOut": "Inventaire insuffisant des marchandises sélectionnées",
     "currentProductSoldOut": "Inventaire insuffisant des marchandises actuelles",
     "productNoSelect": "Veuillez sélectionner les spécifications de marchandise",
     "orderAgain": "Veuillez commander à nouveau",
+    "soleOutSelectAgain": "L'inventaire des marchandises actuelles est insuffisant, veuillez sélectionner à nouveau",
     "productFailure": "La marchandise que vous avez sélectionnée a expiré, veuillez la sélectionner à nouveau",
     "comboSelectFailure": "Le forfait que vous avez sélectionné a expiré, veuillez le sélectionner à nouveau",
     "comboFailure": "Le forfait a expiré",
-    "soleOutSelectAgain": "L'inventaire des marchandises actuelles est insuffisant, veuillez sélectionner à nouveau",
     "freeShipping": "Livraison gratuite",
+    "buyPop": "{{name}} a acheté cette marchandise il y a {{minutes}} minutes",
     "noProductDesc": "Aucune description de marchandise",
     "TCTD0108": "La méthode logistique n'existe pas, veuillez sélectionner à nouveau",
     "TCTD0118": "Le méthode de paiement n'existe pas, veuillez le sélectionner à nouveau",
@@ -1328,7 +1341,7 @@
     "submit": "Soumettre",
     "overLength": "La longueur d'entrée dépasse la limite, veuillez remplir correctement",
     "optional": "Facultatif",
-    "bracket": " ({{content}})"
+    "bracket": "({{content}})"
   },
   "blogList": {
     "container": {
@@ -1341,7 +1354,7 @@
   },
   "blog": {
     "container": {
-      "backTo": "Retourner{{collectionTitle}}"
+      "backTo": "Retourner {{{collectionTitle}}}"
     }
   }
 }

@@ -83,13 +83,18 @@
 
   {{preload_state 'currencyConfig.referenceCurrencies'}}
 
-  <script src="{{ assets_url 'shared/head_script.min.js' }}"></script>
-  {{#slot 'page_view'}}{{/slot}}
+  {{!-- <script src="{{ assets_url 'shared/head_script.min.js' }}"></script> --}}
 
   {{#slot 'script' }}{{/slot}}
+
+  {{#slot 'page_view'}}{{/slot}}
+
   {{ sales_widgets_script }}
   {{!-- 自定义代码底部 --}}
   {{ content_for_footer }}
+  
+  {{!-- 本地调试 pod 商品的代码 --}}
+  {{!-- <script src="http://localhost:8080/bundle.js"></script> --}}
 </body>
 
 </html>

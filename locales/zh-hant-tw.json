@@ -59,7 +59,8 @@
             }
           }
         }
-      }
+      },
+      "tags-label": "折扣："
     },
     "bundle": {
       "title": "經常一起購買",
@@ -67,10 +68,24 @@
     },
     "selected-count-activity-product": "已選取 {{selectCount}} 件活動產品",
     "customer-purchase-limit": "每人限購{{count}}件",
+    "customer-purchase-limit-each-item": "每人每款商品限購{{count}}件",
     "flash-sale-tips": "購買限制：{{count}} 件",
     "flash-sale-text": "限時促銷",
     "hot-sale": "熱賣中",
-    "sold": "已售{{count}}"
+    "sold": "已售{{count}}",
+    "discount-coupon": {
+      "coupon-label": "優惠代碼折扣：",
+      "coupon-content": {
+        "threshold": "買{threshold}",
+        "discount1": "{discount} 折扣",
+        "discount2": "免運費",
+        "shippingRateBelow": "運費低於{value}",
+        "until": "有效期至: {{endTime}}"
+      },
+      "couponNoFound": "折扣碼不存在",
+      "applySuccess": "折扣碼應用成功",
+      "applyFail": "應用失敗"
+    }
   },
   "header": {
     "searchItems": "搜尋產品",
@@ -91,7 +106,7 @@
     "descountPrice": "售價",
     "total": "總計",
     "soldOut": "已售罄",
-    "settleMent": "結算",
+    "settleMent": "立即購買",
     "selectProduct": "選取產品",
     "hasSelected": "已選取",
     "pieces": "件",
@@ -122,7 +137,7 @@
     "tax": "稅金與費用",
     "mobile": "電話號碼",
     "address": "地址",
-    "logistics": "運送",
+    "logistics": "送貨",
     "backout": "復原",
     "confirm": "確定",
     "upload": "上傳",
@@ -160,8 +175,8 @@
     "returnProgress": "退貨進度",
     "returnInfo": "退貨資訊",
     "rollback": "撤銷",
-    "applyDate": "要求日期",
-    "evaluation": "意見",
+    "applyDate": "申請日期",
+    "evaluation": "評價",
     "upload-image": "上傳影像",
     "page": "頁",
     "day": "天",
@@ -197,6 +212,7 @@
       "price": "價格"
     },
     "container": {
+      "from": "{{price}} 起",
       "empty": {
         "desc": "此類別中沒有產品",
         "title": "很抱歉，目前無法提供該產品",
@@ -206,14 +222,14 @@
         "text1": "所有產品",
         "text2": "排序方式：",
         "recommend": "建議",
-        "option1": "售出日期 (由新至舊)",
-        "option2": "售出日期 (由舊至新)",
-        "option3": "價格 (由高至低)",
-        "option4": "價格 (由低至高)",
         "sales": "熱賣商品",
         "newest": "新品",
         "priceLowToHigh": "價格：由低至高",
-        "priceHighToLow": "價格：由高至低"
+        "priceHighToLow": "價格：由高至低",
+        "option1": "售出日期 (由新至舊)",
+        "option2": "售出日期 (由舊至新)",
+        "option3": "價格 (由高至低)",
+        "option4": "價格 (由低至高)"
       },
       "network": {
         "message": "找不到產品資料。請稍後再試"
@@ -237,7 +253,7 @@
       },
       "show": "顯示",
       "viewAs": "查看方式",
-      "from": "{{price}} 起"
+      "productsNum": "{{num}}  產品"
     }
   },
   "productSearch": {
@@ -273,10 +289,23 @@
   },
   "productDetail": {
     "goToAmazon": "前往 Amazon",
+    "goOutsideOfAmazon": "前往 Amazon 以外的網站購物",
+    "goOtherChannels": "其他購買渠道",
+    "toAmazon": "Amazon",
+    "goToRakuten": "LOTTE",
+    "goToYahoo": "Yahoo",
+    "goToAmazonByLink": "前往 Amazon",
+    "goToRakutenByLink": "前往 LOTTE",
+    "goToYahooByLink": "前往 Yahoo",
     "recentlyViewedProducts": "最近瀏覽商品",
+    "activityToast": {
+      "product-limit": "最多可同時購買{{stock}}件優惠價商品",
+      "price-limit": "此商品優惠價僅支持購買{{num}}件",
+      "title-limit": "以下商品超過購買限制"
+    },
     "tabs": {
       "description": "說明",
-      "shippingPayment": "運送與付款",
+      "shippingPayment": "送貨與付款",
       "comments": "評論"
     },
     "recommendTitle": "建議",
@@ -314,14 +343,6 @@
     "no-product-introduction": "尚無產品介紹",
     "no-logistics-and-payment-information": "尚無物流及付款方式資訊",
     "addCart": "新增",
-    "goOutsideOfAmazon": "前往 Amazon 以外的網站購物",
-    "goToRakuten": "LOTTE",
-    "goToYahoo": "Yahoo",
-    "goToAmazonByLink": "前往 Amazon",
-    "goToRakutenByLink": "前往 LOTTE",
-    "goToYahooByLink": "前往 Yahoo",
-    "goOtherChannels": "其他購買渠道",
-    "toAmazon": "Amazon",
     "default-placeholder": "請選擇{{attrName}}",
     "inquiry": {
       "inquiryTitle": "諮詢商品",
@@ -329,7 +350,7 @@
       "email": "郵箱",
       "message": "留言",
       "inquiryTips2": "你還可以留下更多信息，盔甲我們提供更適合你的服務",
-      "optional": "任選",
+      "optional": "非必填",
       "name": "姓名",
       "mobile": "電話號碼",
       "region": "國家/地區",
@@ -344,11 +365,6 @@
     },
     "previewLinkToast": "預覽連結不支援此操作",
     "morePaymentOptions": "更多支付選項",
-    "activityToast": {
-      "product-limit": "最多可同時購買{{stock}}件優惠價商品",
-      "price-limit": "此商品優惠價僅支持購買{{num}}件",
-      "title-limit": "以下商品超過購買限制"
-    },
     "bulkDiscount": {
       "title": "多買多省！"
     }
@@ -383,8 +399,8 @@
     "back-prev-step": "返回",
     "back-prev-step2": "返回運送資訊",
     "next-step": "繼續",
-    "next-step-shipment": "前往運送方式",
-    "next-step-payment": "前往支付方式",
+    "next-step-shipment": "前往送貨方式",
+    "next-step-payment": "前往付款方式",
     "submit-order": "送出訂單",
     "i-agree-website": "我同意網站的",
     "service-terms": "服務條款",
@@ -394,7 +410,7 @@
     "or-fill-info": "或填寫資訊",
     "not-support-paypal": "賣家不支援 PayPal",
     "service-fee": "服務費",
-    "pay-way": "支付方式",
+    "pay-way": "付款方式",
     "pay-way-logo-and-more": "更多",
     "jump-to-pay-longtips": "輕按「送出訂單」，跳至 {{- payChannel}} 以進行安全付款",
     "reciever-info": "運送地址",
@@ -425,6 +441,7 @@
     "product-offline": "產品已從貨架上移除",
     "stock-not-enough": "產品不足",
     "over-limit-number": "超過產品額度",
+    "product-removed": "商品已刪除",
     "product-package": "包裝",
     "product-fee": "小計",
     "product-tax": "商品稅",
@@ -432,6 +449,9 @@
     "next-step-calc": "於下一步驟計算",
     "delivery-fee": "運送",
     "pay-fee": "付款手續費",
+    "point-discount": "積分折扣",
+    "point-discount-desc": "你可以使用 {{deductMemberPointNum}}積分抵扣{{deductMemberPointAmount}}",
+    "point-discount-remark": "花費{{value}} 積分",
     "summary": "總計",
     "use-member-account-can": "已有帳戶？",
     "i-want-recieve-discount-info": "订阅邮箱获取最新活动优惠码和订单的物流动态",
@@ -522,10 +542,10 @@
     "go-login": "前往登入",
     "complete-payment": "完成付款",
     "shopping-money-deduction": "減少購物津貼",
-    "use-shopping-deduction": "大約減少 {{num}} 筆可用的購物津貼",
+    "use-shopping-deduction": "購物金大約可折抵 {{num}} ",
     "can-get": "可用",
     "shopping-money": "購物津貼",
-    "next-time-use-shopping-money": "預估下一家商店的減少量",
+    "next-time-use-shopping-money": "下次購物預計可折抵",
     "delivery-address-abnormal": "收件者地址錯誤",
     "billing-address-abnormal": "帳單地址錯誤",
     "billing-address": {
@@ -555,12 +575,17 @@
     "other-reason": "其他原因",
     "get-the-order": "加購",
     "free": "免費",
-    "sku-changed-title": "偵測到產品變更，確定要繼續付款？",
+    "sku-changed-title": "偵測到{{num}}產品變更，確定要繼續付款？",
+    "sku-limit-title": "以下商品超過購買限制，請修改數量",
     "sorry-all-sku-unusable": "很抱歉，無法下訂單，因為產品已不再有效",
     "off-shelf": "已從貨架上移除",
     "sold-out": "售完",
-    "footer-all-rights-reserved": "{{name}} 保留一切權利",
+    "has-removed": "已刪除",
+    "footer-all-rights-reserved": "Copyright © {{year}} {{name}} 保留一切權利",
     "return-to-selection-goods": "退貨選項",
+    "return-apply-fail-SKU": "要求的商品數量超過限制",
+    "return-apply-fail-max-amount": "可退款金額不可超過可退款金額上限",
+    "return-apply-fail-min-amount": "僅限退款時，退款金額必須大於人民幣 0 元",
     "slpayment": {
       "cardNumber": {
         "placeholder": "信用卡號碼",
@@ -583,9 +608,6 @@
     },
     "find-store": "選取門店",
     "choose-store": "修改門店",
-    "return-apply-fail-SKU": "要求的商品數量超過限制",
-    "return-apply-fail-min-amount": "僅限退款時，退款金額必須大於人民幣 0 元",
-    "return-apply-fail-max-amount": "可退款金額不可超過可退款金額上限",
     "please-pay-within": "請在以下期限內付款：",
     "enter-a-tip-on-more-than": "輸入數量不超過 {{amount}} 的提示",
     "payment-security-description": "所有交易均安全，並已加密。",
@@ -604,11 +626,6 @@
     },
     "coupon": "優惠",
     "coupon-mutra-discount": "這個優惠碼不能與其他促銷或優惠同時使用",
-    "product-removed": "商品已刪除",
-    "has-removed": "已刪除",
-    "activity-product-limit ": "最多可同時購買X 件優惠價商品",
-    "sku-limit-title": "以下商品超過購買限制，請修改數量",
-    "activity-title-limit ": "以下商品超過購買限制，是否繼續結賬？",
     "activity-price-limit": "此商品優惠價僅支持購買X件",
     "policy": {
       "refund-policy": "退款政策",
@@ -617,12 +634,11 @@
     "tip": {
       "add-tip": "添加小費"
     },
-    "point-discount-desc": "你可以使用 {{deductMemberPointNum}}積分抵扣{{deductMemberPointAmount}}",
-    "point-discount-remark": "花費{{value}} 積分",
-    "point-discount": "積分折扣",
     "free-shipping": "包郵",
     "pod-link": "點擊查看",
-    "pod-pic": "定製預覽"
+    "pod-pic": "定製預覽",
+    "activity-product-limit": "最多可同時購買{{stock}}件優惠價商品",
+    "activity-title-limit": "以下商品超過購買限制，是否繼續結賬？"
   },
   "payments-name": {
     "Paypal": "Paypal",
@@ -710,11 +726,11 @@
     "coupon-code-cannot-exceed-25-length": "優惠代碼不可超過 25 個字元",
     "discount-code-error": "請輸入有效的優惠碼",
     "discount-code-user-invalid": "你購物車內的商品不適用於{{discountCode}}優惠碼",
-    "mutual-excluded-by-time-limited": "限時折扣和優惠碼活動互斥",
     "enter-correct-email": "請輸入有效格式的電子郵件地址",
     "enter-correct-phone-number": "請輸入有效格式的行動電話號碼",
     "phone-number-less-than-100": "行動電話號碼長度不可超過 100 個字元",
-    "shipping_plan_unavailable": "{{discountCode}} 優惠碼不適用當前物流方式"
+    "shipping_plan_unavailable": "{{discountCode}} 優惠碼不適用當前物流方式",
+    "mutual-excluded-by-time-limited": "限時折扣和優惠碼活動互斥"
   },
   "subscription": {
     "subscript-via-line-facebook": "透過 LINE 或 Facebook 訂閱訂單通知",
@@ -752,7 +768,8 @@
     "no-comment-title-tip": "暫無評論",
     "no-comment-first-tip": "快來發表第一個評論吧",
     "on-img-upload-tip": "圖片上傳中，請稍後提交",
-    "mobile-submit": "提交"
+    "mobile-submit": "提交",
+    "nickname": "名稱"
   },
   "order": {
     "refund-methods": {
@@ -770,12 +787,12 @@
     "after-order-status": {
       "processing": "處理中",
       "confirmed": "已確認",
+      "delivery-progress": "已確認",
       "cancelled": "已取消",
       "customer-canceled": "顧客已取消",
       "customer-rejected": "顧客已拒絕",
       "merchant-cancellation": "賣家已取消",
-      "completed": "已完成",
-      "delivery-progress": "已確認"
+      "completed": "已完成"
     },
     "order-status": {
       "processing": "處理中",
@@ -788,6 +805,7 @@
     "pay-status": {
       "unpaid": "未付款",
       "paying": "付款中",
+      "partial-payment": "部分付款",
       "already-paid": "已付款",
       "failed": "付款失敗",
       "timed-out": "付款逾時",
@@ -795,11 +813,11 @@
       "refunded": "已退款",
       "refund-failed": "無法退款",
       "partial-refund": "已部分退款",
-      "abolished": "已失效",
-      "partial-payment": "部分付款"
+      "abolished": "已失效"
     },
     "delivery-statusType": {
       "stocking": "正在準備產品",
+      "delivery-partial": "部分出貨",
       "cancelled": "已取消",
       "cancel-delivery": "取消運送",
       "shipping": "運送中",
@@ -807,8 +825,18 @@
       "arrived": "已抵達",
       "picked-up": "已收貨",
       "problem": "運送狀況及遺失訂單等問題需要手動支援",
-      "delivery-partial": "部分出貨",
       "delivery-return": "已退貨"
+    },
+    "oms-status": {
+      "executing": "執行中",
+      "prepare-pick": "準備取貨",
+      "shipped": "已出貨",
+      "cancelled": "取消出貨",
+      "arrived": "已送達",
+      "picked": "已簽收",
+      "returning": "退貨中",
+      "returned": "已退貨",
+      "problem": "問題貨件"
     },
     "order-list": {
       "empty-title": "影像",
@@ -852,12 +880,12 @@
           "express": "運費",
           "express-surcharge": "運費稅",
           "channel-surcharge": "付款手續費",
+          "discount-amount-name": "商家自定義折扣",
+          "tip": "小費",
           "preferential": "優先",
           "discount": "優惠券代碼折扣",
           "deduct-voucher": "兌換券金額",
-          "total": "總計",
-          "tip": "小費",
-          "discount-amount-name": "商家自定義折扣"
+          "total": "總計"
         },
         "order-num": "包裹 ({{num}} 個)",
         "logistics": {
@@ -929,13 +957,13 @@
       "coms": {
         "operationLog": {
           "PayDealLog": {
+            "title": "已通過 {payName} 處理了 {amount} 的付款",
             "payName": "付款渠道",
             "amount": "金額",
             "dealId": "付款序列號",
             "createTime": "付款開始時間",
             "updateTime": "返回結果時間",
-            "status": "狀態",
-            "title": "已通過 {payName} 處理了 {amount} 的付款"
+            "status": "狀態"
           }
         }
       }
@@ -943,19 +971,8 @@
     "seq-no": "編號 {{id}}",
     "order-at": "訂購於：",
     "customer-info": "客戶資訊",
-    "help-tips": "需要帮助？请联系我们：{{email}}",
-    "order-date": "下單時間",
-    "oms-status": {
-      "executing": "執行中",
-      "prepare-pick": "準備取貨",
-      "shipped": "已出貨",
-      "cancelled": "取消出貨",
-      "arrived": "已送達",
-      "picked": "已簽收",
-      "returning": "退貨中",
-      "returned": "已退貨",
-      "problem": "問題貨件"
-    }
+    "help-tips": "需要幫助？請聯繫我們：{{email}}",
+    "order-date": "下單時間"
   },
   "promotion": {
     "full-reduction": "滿減",
@@ -999,6 +1016,10 @@
     "item-num": "第{{value}}件",
     "only-one-sku": "當前商品只有一種規格",
     "select-product": "選購商品",
+    "bundle": {
+      "title": "捆綁商品",
+      "desc": "加購這些商品享受折扣<italic>{{value}}</italic>"
+    },
     "whole-full-piece-discount": "買<italic>{{condition}}</italic>件節省<italic>{{content}}</italic>%",
     "whole-full-amount-discount": "買<italic>{{condition}}</italic>節省<italic>{{content}}</italic>%",
     "whole-full-piece-reduce": "買<italic>{{condition}}</italic>件節省<italic>{{content}}</italic>",
@@ -1014,11 +1035,7 @@
     "percent-price-step3": "<children>恭喜你！您節省了</children><normal>{{percent}}</normal><children>！</children>",
     "percent-piece-step1": "<children>買</children><more>{{price}}</more><children>件以上，省</children><more>{{percent}}</more>",
     "percent-piece-step2": "<children>已省</children><normal>{{percent}}</normal><children>！</children><white /><children> 買</children><more>{{price}}</more><children>件以上省 </children><more>{{morePercent}}</more>",
-    "percent-piece-step3": "<children>恭喜你！您節省了</children><normal>{{percent}}</normal><children>！</children>",
-    "bundle": {
-      "title": "捆綁商品",
-      "desc": "加購這些商品享受折扣<italic>{{value}}</italic>"
-    }
+    "percent-piece-step3": "<children>恭喜你！您節省了</children><normal>{{percent}}</normal><children>！</children>"
   },
   "labelInput": {
     "email-error": "請輸入有效格式的電子郵件地址",
@@ -1034,6 +1051,7 @@
     "edit": "編輯",
     "cancel": "取消",
     "save": "儲存",
+    "buy-record-entry": "已購買的產品",
     "account": {
       "account-subscription-email": "傳送至電子郵件",
       "account-subscription-phone": "傳送至行動電話",
@@ -1153,18 +1171,18 @@
       "day4": "星期四",
       "day5": "星期五",
       "day6": "星期六",
-      "month1": "1",
-      "month2": "2",
-      "month3": "3",
-      "month4": "4",
-      "month5": "5",
-      "month6": "6",
-      "month7": "7",
-      "month8": "8",
-      "month9": "9",
-      "month10": "10",
-      "month11": "11",
-      "month12": "12",
+      "month1": 1,
+      "month2": 2,
+      "month3": 3,
+      "month4": 4,
+      "month5": 5,
+      "month6": 6,
+      "month7": 7,
+      "month8": 8,
+      "month9": 9,
+      "month10": 10,
+      "month11": 11,
+      "month12": 12,
       "actionTypeDesc": {
         "addPoint": "新的購物津貼",
         "deductPoint": "已扣除的購物津貼",
@@ -1185,8 +1203,7 @@
       "loaded": "已載入",
       "empty2": "沒有其他紀錄",
       "order": "檢視訂單："
-    },
-    "buy-record-entry": "已購買的產品"
+    }
   },
   "cart": {
     "render-empty-status": "您的購物車是空的",
@@ -1203,15 +1220,11 @@
     "most-100-sku": "最多可新增 100 項產品",
     "most-buy-999": "最多可添加999件商品至購物車",
     "stock-limit": "剩餘{{stock}}件",
-    "active-stock-limit-2 ": "此商品優惠價僅支持購買{{stock}}件",
-    "active-stock-limit-1 ": "最多可同時購買{{stock}} 件優惠價商品",
-    "activity-product-limit": "最多可同時購買{{stock}} 件優惠價商品",
-    "activity-price-limit": "此商品優惠價僅支持購買{{num}}件",
     "activity-title-limit": "以下商品超過購買限制，是否繼續結賬？",
-    "activity-product-limit ": "最多可同時購買{{stock}} 件優惠價商品",
-    "activity-title-limit ": "以下商品超過購買限制，是否繼續結賬？",
+    "activity-price-limit": "此商品優惠價僅支持購買{{num}}件",
     "active-stock-limit-2": "此商品優惠價僅支持購買{{stock}}件",
     "active-stock-limit-1": "最多可同時購買{{stock}} 件優惠價商品",
+    "activity-product-limit": "最多可同時購買{{stock}} 件優惠價商品",
     "view-link": "點擊查看",
     "view-pic": "定製預覽",
     "not-participation-offers": "不參與優惠",
@@ -1223,7 +1236,6 @@
     }
   },
   "user": {
-    "account": "賬戶",
     "email": "電子郵件地址",
     "phone": "行動電話號碼",
     "username": "電子郵件地址/行動電話號碼",
@@ -1286,7 +1298,8 @@
       "err3010": "該電子郵件已和其他帳戶綁定",
       "err3014": "傳送代碼失敗",
       "udbResponse": "帳戶暫時受到鎖定"
-    }
+    },
+    "account": "賬戶"
   },
   "address": {
     "dropdown": {
@@ -1305,18 +1318,18 @@
     "discountByNum": "買{{num}}件享{{n}}折",
     "cutByAmount": "滿{{amount}}減{{n}}",
     "cutByNum": "滿{{num}}件減{{n}}",
-    "buyPop": "{{name}}在{{minutes}}分鐘前購買了該商品",
     "buyNow": "立即購買",
     "productDetail": "商品詳情",
     "selectedProductSoldOut": "所選商品庫存不足",
     "currentProductSoldOut": "當前商品庫存不足",
     "productNoSelect": "請選擇商品規格",
     "orderAgain": "請重新下單",
+    "soleOutSelectAgain": "當前商品庫存不足, 請重新選擇",
     "productFailure": "您選擇的商品已失效，請重新選擇",
     "comboSelectFailure": "您選擇的套餐已失效，請重新選擇",
     "comboFailure": "套餐已失效",
-    "soleOutSelectAgain": "當前商品庫存不足, 請重新選擇",
     "freeShipping": "免郵",
+    "buyPop": "{{name}}在{{minutes}}分鐘前購買了該商品",
     "noProductDesc": "暫無商品描述",
     "TCTD0108": "物流方式不存在，請重新選擇",
     "TCTD0118": "支付方式不存在，請重新選擇",
@@ -1341,7 +1354,7 @@
   },
   "blog": {
     "container": {
-      "backTo": "返回 {{collectionTitle}}"
+      "backTo": "返回 {{{collectionTitle}}}"
     }
   }
 }

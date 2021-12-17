@@ -59,18 +59,34 @@
             }
           }
         }
-      }
+      },
+      "tags-label": "Discount:"
     },
     "bundle": {
       "title": "Frequently bought together",
       "saveTip": "Save {{amount}} for buying together"
     },
     "selected-count-activity-product": "{{selectCount}} event products selected",
-    "customer-purchase-limit": "Purchase limit {{count}} per person",
-    "flash-sale-tips": "Purchase limit: {{count}} quantity",
+    "customer-purchase-limit": "Limit {{count}} per customer",
+    "customer-purchase-limit-each-item": "Each item limit {{count}} per customer",
+    "flash-sale-tips": "Limit: {{count}} ",
     "flash-sale-text": "FLASH SALE",
     "hot-sale": "Hot sale!",
-    "sold": "{{count}} sold"
+    "sold": "{{count}} sold",
+    "discount-coupon": {
+      "coupon-label": "Coupon:",
+      "coupon-content": {
+        "threshold": "Buy {threshold}",
+        "discount1": "{discount} OFF",
+        "discount2": "Free Shipping",
+        "shippingRateBelow": "for shipping rate below {value}",
+        "until": "until: {{endTime}}"
+      },
+      "couponNoFound": "Coupon code does not exist",
+      "applySuccess": "Coupon code is successfully applied",
+      "applyFail": "Failed to apply",
+      "popupLabel": "shop coupons:"
+    }
   },
   "header": {
     "searchItems": "Search for products",
@@ -100,7 +116,7 @@
     "remove": "Remove",
     "cancel": "Cancel",
     "tips": "Reminder",
-    "checkout": "Check out",
+    "checkout": "CHECK OUT",
     "finish": "Complete",
     "username": "Name",
     "mobile-phone": "Mobile phone number",
@@ -166,7 +182,7 @@
     "page": "page",
     "day": "day",
     "days": "days",
-    "buy-now": "Buy now",
+    "buy-now": "BUY NOW",
     "ok": "OK",
     "continue": "Continue",
     "contactUs": "REQUEST A QUOTE",
@@ -197,6 +213,7 @@
       "price": "Price"
     },
     "container": {
+      "from": "From {{price}}",
       "empty": {
         "desc": "No product in this category",
         "title": "Sorry, this product is currently out of stock.",
@@ -207,13 +224,13 @@
         "text2": "Sort by",
         "recommend": "Recommended",
         "sales": "Top sellers",
+        "newest": "New arrival",
+        "priceLowToHigh": "Price low to high",
+        "priceHighToLow": "Price high to low",
         "option1": "Sold Date (new to old)",
         "option2": "Sold Date (old to new)",
         "option3": "Price (high to low)",
-        "option4": "Price (low to high)",
-        "newest": "New arrival",
-        "priceLowToHigh": "Price low to high",
-        "priceHighToLow": "Price high to low"
+        "option4": "Price (low to high)"
       },
       "network": {
         "message": "No product data found. Please try again later"
@@ -225,19 +242,19 @@
         "error4": "Please select all options of this product",
         "error5": "The product is sold out",
         "error6": "The product is removed from shelves",
-        "addToCart": "Add to cart"
+        "addToCart": "ADD TO CART"
       },
       "listItem": {
         "sold": {
           "out": "SOLD OUT"
         },
         "off": "- {{value}}%",
-        "addToCart": "Add to cart",
+        "addToCart": "ADD TO CART",
         "toDetail": "View details"
       },
       "show": "Show",
       "viewAs": "View as",
-      "from": "From {{price}} "
+      "productsNum": "{{num}} products"
     }
   },
   "productSearch": {
@@ -282,6 +299,11 @@
     "goToRakutenByLink": "Buy in the LOTTE",
     "goToYahooByLink": "Buy in the Yahoo",
     "recentlyViewedProducts": "Recently Viewed Products",
+    "activityToast": {
+      "product-limit": "Purchase limited to {{stock}} promotional product",
+      "price-limit": "Max Qty allowed for this limited product is {{num}}",
+      "title-limit": "Below products exceed the purchasing limit"
+    },
     "tabs": {
       "description": "Description",
       "shippingPayment": "Shipping & payment",
@@ -344,11 +366,6 @@
     },
     "previewLinkToast": "Operation for the link preview is not supported",
     "morePaymentOptions": "more payment options",
-    "activityToast": {
-      "product-limit": "Purchase limited to {{stock}} promotional product",
-      "price-limit": "Max Qty allowed for this limited product is {{num}}",
-      "title-limit": "Below products exceed the purchasing limit"
-    },
     "bulkDiscount": {
       "title": "Buy More Save More!"
     }
@@ -425,6 +442,7 @@
     "product-offline": "The product is removed from shelves",
     "stock-not-enough": "Insufficient product",
     "over-limit-number": "Exceeded the product limit",
+    "product-removed": "Product has been deleted",
     "product-package": "Package",
     "product-fee": "Subtotal",
     "product-tax": "Commodity tax",
@@ -432,6 +450,9 @@
     "next-step-calc": "Calculated at next step",
     "delivery-fee": "Shipping",
     "pay-fee": "Payment charges",
+    "point-discount": "Points discount",
+    "point-discount-desc": "You can use {{deductMemberPointNum}} points to save {{deductMemberPointAmount}}",
+    "point-discount-remark": "Cost {{value}} Points",
     "summary": "Total",
     "use-member-account-can": "Already have an account ?",
     "i-want-recieve-discount-info": "Keep me up to date on news and exclusive offers",
@@ -556,21 +577,16 @@
     "get-the-order": "Pick an add-on item",
     "free": "Free",
     "sku-changed-title": "There are {{num}} product changes, whether to continue Check out",
+    "sku-limit-title": "Below products exceed the purchasing limit, please change the quantity",
     "sorry-all-sku-unusable": "Sorry, all items are invalid, order cannot be submitted",
     "off-shelf": "INVALID",
     "sold-out": "SOLD OUT",
     "has-removed": "INVALID",
-    "btn-back-to-cart": "BACK TO CART",
-    "btn-continue": "CONTINE",
-    "btn-confirm": "CONFIRM",
-    "cart-title": "CART",
-    "none-product-title": "Sorry, all products are no longer valid and the order cannot be submitted.",
     "footer-all-rights-reserved": "Copyright © {{year}} {{name}}. All rights reserved.",
-    "please-pay-within": "please pay within",
     "return-to-selection-goods": "Selection of Returned goods",
     "return-apply-fail-SKU": "The number of goods requested exceeds the limit",
-    "empty-cart-title": "Your cart is currently empty.",
-    "empty-continue-btn": "Continue shopping",
+    "return-apply-fail-max-amount": "Refundable amount cannot exceed the maximum refundable amount",
+    "return-apply-fail-min-amount": "Only for refunds, refund amount must be greater than 0 CNY",
     "slpayment": {
       "cardNumber": {
         "placeholder": "Credit Card Number",
@@ -593,8 +609,7 @@
     },
     "find-store": "Select the store",
     "choose-store": "Change the store",
-    "return-apply-fail-min-amount": "Only for refunds, refund amount must be greater than 0 CNY",
-    "return-apply-fail-max-amount": "Refundable amount cannot exceed the maximum refundable amount",
+    "please-pay-within": "please pay within",
     "enter-a-tip-on-more-than": "Enter a tip no more than {{amount}}",
     "payment-security-description": "All transactions are secure and encrypted.",
     "pay-failed-err-code": {
@@ -610,13 +625,8 @@
       "3d-overtime": "3DS authentication failed, please try again.",
       "pin-over-times": "Maximum password attempts exceeded, your payment cannot be processed. Please select a different payment method and try again."
     },
-    "coupon-tip": "This coupon code cannot be used in conjunction with other promotional or discount offers.",
     "coupon": "Coupon",
     "coupon-mutra-discount": "This coupon code cannot be used in conjunction with other promotional or discount offers.",
-    "product-removed": "Product has been deleted",
-    "activity-product-limit ": "You can buy at most X product(s) with the discounts at the same time",
-    "sku-limit-title": "Below products exceed the purchasing limit, please change the quantity",
-    "activity-title-limit ": "Below products exceed the purchasing limit, still proceed to checkout?",
     "activity-price-limit": "You can only buy X piece(s) of this product with the discounts",
     "policy": {
       "refund-policy": "Refund policy",
@@ -625,12 +635,11 @@
     "tip": {
       "add-tip": "Add tip"
     },
-    "point-discount-desc": "You can use {{deductMemberPointNum}} points to save {{deductMemberPointAmount}}",
-    "point-discount-remark": "Cost {{value}} Points",
-    "point-discount": "Points discount",
     "free-shipping": "freeshipping",
     "pod-link": "Click to view",
-    "pod-pic": "Custom preview"
+    "pod-pic": "Custom preview",
+    "activity-product-limit": "You can buy at most {{stock}} product(s) with the discounts at the same time",
+    "activity-title-limit": "Below products exceed the purchasing limit, still proceed to checkout?"
   },
   "payments-name": {
     "Paypal": "Paypal",
@@ -718,11 +727,11 @@
     "coupon-code-cannot-exceed-25-length": "Coupon code cannot exceed 25 characters.",
     "discount-code-error": "Enter a valid discount code",
     "discount-code-user-invalid": "{{discountCode}} discount code isn’t valid for the items in your cart",
-    "mutual-excluded-by-time-limited": "A discount has been applied to this order. You can’t add another discount.",
     "enter-correct-email": "Please enter an email address with valid format",
     "enter-correct-phone-number": "Please enter a mobile phone number with valid format",
     "phone-number-less-than-100": "Mobile phone number can't exceed 100 characters in length",
-    "shipping_plan_unavailable": "{{discountCode}} coupon is valid for the shipping method"
+    "shipping_plan_unavailable": "{{discountCode}} coupon is valid for the shipping method",
+    "mutual-excluded-by-time-limited": "A discount has been applied to this order. You can’t add another discount."
   },
   "subscription": {
     "subscript-via-line-facebook": "Subscribe to order notification via LINE or Facebook",
@@ -760,7 +769,8 @@
     "no-comment-title-tip": "No comments yet",
     "no-comment-first-tip": "post the first comment now!",
     "on-img-upload-tip": "Uploading, please submit later",
-    "mobile-submit": "Submit"
+    "mobile-submit": "Submit",
+    "nickname": "Nickname"
   },
   "order": {
     "refund-methods": {
@@ -778,12 +788,12 @@
     "after-order-status": {
       "processing": "Processing",
       "confirmed": "Confirmed",
+      "delivery-progress": "Confirmed",
       "cancelled": "Canceled",
       "customer-canceled": "Customer canceled",
       "customer-rejected": "Customer rejected",
       "merchant-cancellation": "Seller canceled",
-      "completed": "Completed",
-      "delivery-progress": "Confirmed"
+      "completed": "Completed"
     },
     "order-status": {
       "processing": "Processing",
@@ -822,12 +832,12 @@
       "executing": "Executing",
       "prepare-pick": "Ready for pickup",
       "shipped": "Shipped",
+      "cancelled": "Cancel shipment",
       "arrived": "Arrived",
+      "picked": "Signed for",
       "returning": "Being returned",
       "returned": "Returned",
-      "problem": "Problem shipment",
-      "cancelled": "Cancel shipment",
-      "picked": "Signed for"
+      "problem": "Problem shipment"
     },
     "order-list": {
       "empty-title": "img",
@@ -879,7 +889,6 @@
           "total": "Total"
         },
         "order-num": "Package ({{num}})",
-        "unshipped-order-num": "Processing ({{num}} items)",
         "logistics": {
           "no-data": "No logistics information at present",
           "detail": "Details",
@@ -889,6 +898,7 @@
         },
         "send-to-Messenger": "Send to Messenger",
         "send-to-Line": "Send to Line",
+        "unshipped-order-num": "Processing ({{num}} items)",
         "payment-deal": {
           "name": "Payment provider",
           "amount": "Amount",
@@ -995,7 +1005,7 @@
     "reduce-again": "<0>{{value}}</0> extra discount",
     "get-discount-1": "enjoy {{value}} off",
     "get-discount-2": "enjoy {{value}}% offer",
-    "flash-sale-limit": "Purchase limit {{value}} per person",
+    "flash-sale-limit": "Each item limit  {{value}} per customer",
     "buy-again": "Purchase <0>{{value}}</0> more",
     "buy-again-piece": "Purchase {{value}} more pieces",
     "still-lacking": "<0>{{value}}</0> needed",
@@ -1042,6 +1052,7 @@
     "edit": "Edit",
     "cancel": "CANCEL",
     "save": "SAVE",
+    "buy-record-entry": "Purchased products",
     "account": {
       "account-subscription-email": "Send to email",
       "account-subscription-phone": "Send to mobile phone",
@@ -1193,8 +1204,7 @@
       "loaded": "Loaded",
       "empty2": "No more records",
       "order": "View order:"
-    },
-    "buy-record-entry": "Purchased products"
+    }
   },
   "cart": {
     "render-empty-status": "Your Cart",
@@ -1211,15 +1221,11 @@
     "most-100-sku": "Add up to 100 items",
     "most-buy-999": "You can add at most 999 pieces to the shopping cart",
     "stock-limit": "{{stock}} pieces in stock",
-    "active-stock-limit-2 ": "You can only buy {{stock}} piece(s) of this product with the discounts",
-    "active-stock-limit-1 ": "You can buy at most {{stock}} product(s) with the discounts at the same time",
-    "activity-product-limit": "You can buy at most {{stock}} product(s) with the discounts at the same time",
-    "activity-price-limit": "You can only buy {{num}} piece(s) of this product with the discounts",
     "activity-title-limit": "Below products exceed the purchasing limit, still proceed to checkout?",
-    "activity-product-limit ": "You can buy at most {{stock}} product(s) with the discounts at the same time",
-    "activity-title-limit ": "Below products exceed the purchasing limit, still proceed to checkout?",
+    "activity-price-limit": "You can only buy {{num}} piece(s) of this product with the discounts",
     "active-stock-limit-2": "You can only buy {{stock}} piece(s) of this product with the discounts",
     "active-stock-limit-1": "You can buy at most {{stock}} product(s) with the discounts at the same time",
+    "activity-product-limit": "You can buy at most {{stock}} product(s) with the discounts at the same time",
     "view-link": "Click to view",
     "view-pic": "Custom preview",
     "not-participation-offers": "Non-participating discount",
@@ -1231,7 +1237,6 @@
     }
   },
   "user": {
-    "account": "ACCOUNT",
     "email": "Email address",
     "phone": "Mobile phone number",
     "username": "Email address/mobile phone number",
@@ -1294,7 +1299,8 @@
       "err3010": "The email has been bound by other accounts",
       "err3014": "Send code failed",
       "udbResponse": "Account was temporarily locked"
-    }
+    },
+    "account": "ACCOUNT"
   },
   "address": {
     "dropdown": {
@@ -1313,18 +1319,18 @@
     "discountByNum": "{{n}}% discounts for {{num}} pieces",
     "cutByAmount": "{{n}} off over {{amount}}",
     "cutByNum": "{{n}} off for {{num}} pieces",
-    "buyPop": "{{name}} purchased this product {{minutes}} minutes ago",
     "buyNow": "Buy now",
     "productDetail": "Product details",
     "selectedProductSoldOut": "Insufficient inventory for selected product",
     "currentProductSoldOut": "Insufficient inventory for current product",
     "productNoSelect": "Please select the product specification",
     "orderAgain": "Please try to place the order again",
+    "soleOutSelectAgain": "Insufficient inventory for current product,please select again",
     "productFailure": "The product you select is invalid,please select again",
     "comboSelectFailure": "The combo pack you select is invalid,please select again",
     "comboFailure": "Invalid combo pack",
-    "soleOutSelectAgain": "Insufficient inventory for current product,please select again",
     "freeShipping": "Free shipping",
+    "buyPop": "{{name}} purchased this product {{minutes}} minutes ago",
     "noProductDesc": "No product descriptions now",
     "TCTD0108": "The shipping method does not exist,please select again",
     "TCTD0118": "The payment method doses not exist,please select again",
@@ -1336,7 +1342,7 @@
     "submit": "Submit",
     "overLength": "The input length exceeds the limit, please adjust your content and try again",
     "optional": "optional",
-    "bracket": " ({{content}})"
+    "bracket": "({{content}})"
   },
   "blogList": {
     "container": {
@@ -1349,7 +1355,7 @@
   },
   "blog": {
     "container": {
-      "backTo": "Back to {{collectionTitle}}."
+      "backTo": "Back to {{{collectionTitle}}}."
     }
   }
 }
