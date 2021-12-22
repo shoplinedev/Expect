@@ -58,6 +58,13 @@
               "free": "Congratulazioni! Uno di questi è gratuito"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Acquista {{threshold}} pezzi per avere {{willSave}} pezzi gratuiti",
+            "step2": "Aggiungi {{threshold}} pezzi per avere {{willSave}} pezzi gratuiti",
+            "step3": "Congratulazioni! Puoi risparmiare{{saved}}se acquisti{{threshold}}, paga ora!"
+          }
         }
       },
       "tags-label": "Sconto di:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Il codice di sconto non esiste",
       "applySuccess": "Codice di sconto usato con successo",
-      "applyFail": "Impossibile usare"
+      "applyFail": "Impossibile usare",
+      "popupLabel": "Coupon del negozio:",
+      "apply": "Applica",
+      "applied": "Applicato"
     }
   },
   "header": {
@@ -1171,18 +1181,18 @@
       "day4": "Giovedì",
       "day5": "Venerdì",
       "day6": "Sabato",
-      "month1": 1,
-      "month2": 2,
-      "month3": 3,
-      "month4": 4,
-      "month5": 5,
-      "month6": 6,
-      "month7": 7,
-      "month8": 8,
-      "month9": 9,
-      "month10": 10,
-      "month11": 11,
-      "month12": 12,
+      "month1": "1",
+      "month2": "2",
+      "month3": "3",
+      "month4": "4",
+      "month5": "5",
+      "month6": "6",
+      "month7": "7",
+      "month8": "8",
+      "month9": "9",
+      "month10": "10",
+      "month11": "11",
+      "month12": "12",
       "actionTypeDesc": {
         "addPoint": "Buoni regalo aggiunti",
         "deductPoint": "Buoni regalo ridotti",
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Tornare a {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Politica sulla riservatezza",
+      "refund": "Politica di rimborso",
+      "service": "Termini di servizio",
+      "shipping": "Politica di spedizione"
     }
   }
 }

@@ -58,6 +58,13 @@
               "free": "Herzlichen Glückwunsch, einen der Artikel kommt für kostenlose Angebot in Frage."
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "{{threshold}} Stk kaufen, {{willSave}} Stk Gratis erhalten",
+            "step2": "{{threshold}} Stk mehr hinzufügen, {{willSave}} Stk Gratis erhalten",
+            "step3": "Herzliche Glückwünsche! Kaufen Sie {{threshold}} und erhalten Sie {{saved}} gratis, zahlen Sie jetzt!"
+          }
         }
       },
       "tags-label": "Rabatt:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Rabattcode existiert nicht",
       "applySuccess": "Gutscheincode erfolgreich angewendet",
-      "applyFail": "Die Verwendung ist fehlgeschlagen"
+      "applyFail": "Die Verwendung ist fehlgeschlagen",
+      "popupLabel": "Shop Gutscheine:",
+      "apply": "Anwenden",
+      "applied": "Bereits verwendet"
     }
   },
   "header": {
@@ -1171,18 +1181,18 @@
       "day4": "Donnerstag",
       "day5": "Freitag",
       "day6": "Samstag",
-      "month1": 1,
-      "month2": 2,
-      "month3": 3,
-      "month4": 4,
-      "month5": 5,
-      "month6": 6,
-      "month7": 7,
-      "month8": 8,
-      "month9": 9,
-      "month10": 10,
-      "month11": 11,
-      "month12": 12,
+      "month1": "1",
+      "month2": "2",
+      "month3": "3",
+      "month4": "4",
+      "month5": "5",
+      "month6": "6",
+      "month7": "7",
+      "month8": "8",
+      "month9": "9",
+      "month10": "10",
+      "month11": "11",
+      "month12": "12",
       "actionTypeDesc": {
         "addPoint": "Neue Einkaufszuschüsse",
         "deductPoint": "Abgezogene Einkaufszuschüsse",
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Geh zurück zu {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Datenschutzrichtlinien der Website zu",
+      "refund": "Rückgaberecht",
+      "service": "Nutzungsbedingungen",
+      "shipping": "Versandbedingungen"
     }
   }
 }

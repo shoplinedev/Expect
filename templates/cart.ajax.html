@@ -8,10 +8,21 @@
   <div class="mini-cart-title">
     {{snippet 'trade/cart-empty'}}
     {{snippet 'trade/cart-continue-btn' is_empty=true}}
+    <div class="trade-cart-product-recommend-margin {{cond request.is_mobile 'product-item-title-color-change' ''}}">
+      {{ assign 'recommendType' 'miniCart' }}
+      {{!-- SSR 商品推荐插件 --}}
+      <div data-ssr-product-recommend-bottom></div>
+      <div style="display: none;">
+        {{snippet 'product/commons/product-item-list'}}
+      </div>
+    </div>
   </div>
 </div>
 <div class="trade_cart_not_empty_wrapper{{#if cartInfo.count '==' 0}} hide{{/if}}">
   {{snippet 'trade/sku-card-list' data=cartInfo is-mobile=request.is_mobile main=false}}
+  <div class="trade-cart-product-recommend-margin {{cond request.is_mobile 'product-item-title-color-change' ''}}">
+    <div data-ssr-product-recommend-bottom></div>
+  </div>
 
   {{#if (cart_show_security tradeSettleConfig) }}
   {{!-- <div class="miniCart_vp_container"> --}}

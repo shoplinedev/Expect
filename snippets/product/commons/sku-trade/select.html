@@ -6,16 +6,7 @@
     <div class="spec-title"  data-plugin-ruler="sku-btn-right" data-plugin-rule-sku-name="{{specName}}">
       <div class="spec-name body6 ls-30p">{{ specName }}</div>
     </div>
-    {{#if hasColorBoard}}
-    <div data-ssr-sku-trade></div>
-    {{else}}
-    <div class="select-box">
-
-      {{!-- <div class="select-entry" data-index="{{ @index }}">
-        <img style="display: {{#isFalsey specAttrList.[0].imgUrl }}none{{/isFalsey}}" class="entry-img" src="{{specAttrList.[0].imgUrl}}">
-        <span class="entry-text body3">{{ specAttrList.[0].name }}</span>
-        <span class="entry-arrow"></span>
-      </div> --}}
+    <div class="select-box" data-ssr-sku-value-list>
       <div class="select-entry" data-index="{{ @index }}">
         <img style="display: {{#isFalsey activeItem.imgUrl }}none{{/isFalsey}}" class="entry-img" src="{{img_url activeItem.imgUrl width=32 scale=2}}">
         <span class="entry-text body3">{{#if activeItem }}{{activeItem.name}}{{else}}{{t 'productDetail.default-placeholder' attrName=specName}}{{/if}}</span>
@@ -34,7 +25,6 @@
       {{/each}}
       </div>
     </div>
-    {{/if}}
   </div>
   {{/isFalsey}}
   {{/each}}

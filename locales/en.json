@@ -58,6 +58,13 @@
               "free": "Congratulations! enjoy free on one of the items!"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Add {{threshold}} to get {{willSave}} free",
+            "step2": "Add {{threshold}} more to get {{willSave}} free",
+            "step3": "Congratulations! You can enjoy buy {{threshold}} get {{saved}} free, check out now!"
+          }
         }
       },
       "tags-label": "Discount:"
@@ -85,7 +92,9 @@
       "couponNoFound": "Coupon code does not exist",
       "applySuccess": "Coupon code is successfully applied",
       "applyFail": "Failed to apply",
-      "popupLabel": "shop coupons:"
+      "popupLabel": "shop coupons:",
+      "apply": "APPLY",
+      "applied": "APPLIED"
     }
   },
   "header": {
@@ -1356,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Back to {{{collectionTitle}}}."
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Privacy Policy",
+      "refund": "Refund policy",
+      "service": "Terms of Service",
+      "shipping": "Shipping policy"
     }
   }
 }

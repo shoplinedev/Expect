@@ -58,6 +58,13 @@
               "free": "Õnnitlused! Saad ühe toote tasuta."
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Osta {{threshold}} tükki ja saad {{willSave}} tükki tasuta",
+            "step2": "Lisa {{threshold}} tükki ja saad {{willSave}} tükki tasuta",
+            "step3": "Palju õnne! Võite nautida {{threshold}} ostmist ja saada {{saved}} tasuta. Makske arve nüüd!"
+          }
         }
       },
       "tags-label": "Soodustus:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Allahindluskoodi ei ole olemas",
       "applySuccess": "Allahindluskood edukalt rakendatud",
-      "applyFail": "Kohaldamine ebaõnnestus"
+      "applyFail": "Kohaldamine ebaõnnestus",
+      "popupLabel": "Poe kupongid:",
+      "apply": "Rakenda",
+      "applied": "Rakendatud"
     }
   },
   "header": {
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Tagasta {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Privaatsuspoliitika",
+      "refund": "Tagasimaksete põhimõtted",
+      "service": "Kasutustingimused",
+      "shipping": "Saatmise põhimõtted"
     }
   }
 }

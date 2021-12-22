@@ -58,6 +58,13 @@
               "free": "Tahniah! nikmati item percuma pada salah satu item"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Beli {{threshold}} keping untuk mendapatkan {{willSave}} keping secara percuma",
+            "step2": "Tambah {{threshold}} keping untuk mendapatkan {{willSave}} keping secara percuma",
+            "step3": "Tahniah! Anda boleh membeli {{threshold}} dan mendapatkan {{saved}} secara percuma! Bayar bil sekarang!"
+          }
         }
       },
       "tags-label": "Diskaun:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Kod diskaun tidak wujud.",
       "applySuccess": "Kod diskaun berjaya dikenakan.",
-      "applyFail": "Gagal dikenakan."
+      "applyFail": "Gagal dikenakan.",
+      "popupLabel": "Kupon kedai:",
+      "apply": "Gunakan",
+      "applied": "Digunakan"
     }
   },
   "header": {
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Kembalikan {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Dasar Privasi Tapak Web",
+      "refund": "Dasar bayaran balik",
+      "service": "Terma Perkhidmatan",
+      "shipping": "Dasar penghantaran"
     }
   }
 }

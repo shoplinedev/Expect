@@ -9,7 +9,18 @@
 {{preload_state 'pageInfo.originalPath'}}
 {{assign 'prefix' 'stage__policy__page'}}
 <div class='container g-4 g-md-8 g-lg-2 {{prefix}}--container'>
-    <h1 class='title3'>{{{pageInfo.name.default}}}</h1>
+    {{#if pageInfo.name.zh '===' '退款政策'}}
+        <h1 class='title3'>{{t 'title.policy.refund'}}</h1>
+    {{/if}}
+    {{#if pageInfo.name.zh '===' '隐私政策'}}
+    <h1 class='title3'>{{t 'title.policy.privacy'}}</h1>
+    {{/if}}
+    {{#if pageInfo.name.zh '===' '服务条款'}}
+    <h1 class='title3'>{{t 'title.policy.service'}}</h1>
+    {{/if}}
+    {{#if pageInfo.name.zh '===' '发货政策'}}
+    <h1 class='title3'>{{t 'title.policy.shipping'}}</h1>
+    {{/if}}
     <div class="body3">
         <style>
             .policy-page-render-container iframe{max-width:100%}.policy-page-render-container img{height:auto;max-width:100%}.policy-page-render-container table{word-break: initial;}

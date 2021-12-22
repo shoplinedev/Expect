@@ -58,6 +58,13 @@
               "free": "Grattis! njut av en av punkterna gratis"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Köp {{threshold}} stycken för att få {{willSave}} stycken gratis",
+            "step2": "Lägg till {{threshold}} stycken för att få {{willSave}} stycken gratis",
+            "step3": "Grattis! Du kan njuta me att köpa {{threshold}} och få {{saved}}, betala nu!"
+          }
         }
       },
       "tags-label": "Rabatt:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Rabattkoden finns inte.",
       "applySuccess": "Rabattkoden har redan använts.",
-      "applyFail": "Ansökan misslyckades."
+      "applyFail": "Ansökan misslyckades.",
+      "popupLabel": "Butikskuponger:",
+      "apply": "Applicera",
+      "applied": "Tillämpad"
     }
   },
   "header": {
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Returnera {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Sekretesspolicy",
+      "refund": "Återbetalningspolicy",
+      "service": "Servicevillkor",
+      "shipping": "leverans policy"
     }
   }
 }

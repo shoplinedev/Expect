@@ -58,6 +58,13 @@
               "free": "¡Felicidades! Uno de los artículos ha sido gratuito"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "{{willSave}} piezas gratuitas si compra {{threshold}} piezas",
+            "step2": "{{willSave}} piezas gratuitas si aumenta {{threshold}} piezas",
+            "step3": "¡Felicidades! Obtendrás {{saved}} gratis cuando compres {{threshold}}, ¡paga ahora!"
+          }
         }
       },
       "tags-label": "Menos:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "No existe el código de descuento",
       "applySuccess": "Se ha empleado exitosamente el código de descuento",
-      "applyFail": "Uso fallido"
+      "applyFail": "Uso fallido",
+      "popupLabel": "Cupones de la tienda:",
+      "apply": "Aplicar",
+      "applied": "Aplicado"
     }
   },
   "header": {
@@ -1171,18 +1181,18 @@
       "day4": "Jueves",
       "day5": "Viernes",
       "day6": "Sábado",
-      "month1": 1,
-      "month2": 2,
-      "month3": 3,
-      "month4": 4,
-      "month5": 5,
-      "month6": 6,
-      "month7": 7,
-      "month8": 8,
-      "month9": 9,
-      "month10": 10,
-      "month11": 11,
-      "month12": 12,
+      "month1": "1",
+      "month2": "2",
+      "month3": "3",
+      "month4": "4",
+      "month5": "5",
+      "month6": "6",
+      "month7": "7",
+      "month8": "8",
+      "month9": "9",
+      "month10": "10",
+      "month11": "11",
+      "month12": "12",
       "actionTypeDesc": {
         "addPoint": "Agregar subsidio de compras",
         "deductPoint": "Deducir subsidio de compras",
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Volver a {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Política de Privacidad del sitio web",
+      "refund": "Politica de reembolso",
+      "service": "Términos de Servicios",
+      "shipping": "Politica de envios"
     }
   }
 }

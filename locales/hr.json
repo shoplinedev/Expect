@@ -58,6 +58,13 @@
               "free": "Čestitamo! Uživajte gratis na jednu od stavki!"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Kupite {{threshold}} dijela/dijelova kako biste dobili {{willSave}} dijela/dijelova besplatno",
+            "step2": "Dodajte {{threshold}} dijela/dijelova kako biste dobili {{willSave}} dijela/dijelova besplatno",
+            "step3": "Čestitamo! Možete uživati u kupovini {{threshold}} i dobijanju {{saved}} besplatno. Platite račun sada!"
+          }
         }
       },
       "tags-label": "Popust:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Kod za popust ne postoji",
       "applySuccess": "Kod za popust je uspješno primijenjen",
-      "applyFail": "Primjena nije uspjela"
+      "applyFail": "Primjena nije uspjela",
+      "popupLabel": "Kuponi prodavaonice:",
+      "apply": "Primjena",
+      "applied": "Primijenjeno"
     }
   },
   "header": {
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Vrati {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "politika privatnosti",
+      "refund": "Politika povrata novca",
+      "service": "Uvjeti pružanja usluge",
+      "shipping": "Politika dostave"
     }
   }
 }

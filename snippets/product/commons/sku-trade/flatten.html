@@ -6,10 +6,7 @@
         <div class="spec-title" data-plugin-ruler="sku-btn-right" data-plugin-rule-sku-name="{{specName}}">
          <div class="spec-name body3">{{ specName }}</div>
         </div>
-        {{#if hasColorBoard}}
-        <div data-ssr-sku-trade></div>
-        {{else}}
-        <div class="attr-box body3">
+        <div class="attr-box body3" data-ssr-sku-value-list>
           {{#each specAttrList }}
             {{#isTruthy imgUrl}}
               <div class="attr-value with-img {{#isTruthy active }}active{{/isTruthy}}" data-index="{{ @index }}">
@@ -25,7 +22,6 @@
             {{/isTruthy}}
           {{/each}}
         </div>
-        {{/if}}
       </div>
     {{/isFalsey}}
   {{/each}}

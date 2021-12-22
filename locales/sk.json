@@ -58,6 +58,13 @@
               "free": "Gratulujeme! Užite si jednu z položiek zadarmo!"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Kúpiť {{threshold}} kusov pre získanie {{willSave}} kusov zadarmo",
+            "step2": "Pridať {{threshold}} kusov pre získanie {{willSave}} kusov zadarmo",
+            "step3": "Blahoželáme! Môžete sa tešiť z nakupovania {{threshold}} a získavania {{saved}} zadarmo. Zaplaťte účet teraz!"
+          }
         }
       },
       "tags-label": "Zľava:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Zľavový kód neexistuje",
       "applySuccess": "Podarilo sa použiť zľavový kód",
-      "applyFail": "Žiadosť sa nepodarila"
+      "applyFail": "Žiadosť sa nepodarila",
+      "popupLabel": "Kupóny obchodu:",
+      "apply": "Použiť",
+      "applied": "Aplikované"
     }
   },
   "header": {
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Vrátiť {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Zásadami ochrany osobných údajov",
+      "refund": "Pravidlá vrátenia peňazí",
+      "service": "Podmienkami použitia",
+      "shipping": "Zásady prepravy"
     }
   }
 }

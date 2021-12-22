@@ -58,6 +58,13 @@
               "free": "Gefeliciteerd! Een ervan is al vrij"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Koop {{threshold}} stukken om {{willSave}} stukken gratis te krijgen",
+            "step2": "Voeg {{threshold}} stukjes toe om {{willSave}} stukjes gratis te krijgen",
+            "step3": "Gefeliciteerd! U krijgt {{saved}} gratis bij aankoop van {{threshold}}, betaal nu!"
+          }
         }
       },
       "tags-label": "Korting:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Kortingscode bestaat niet",
       "applySuccess": "Kortingscode is succesvol toegepast",
-      "applyFail": "Toepassing mislukt"
+      "applyFail": "Toepassing mislukt",
+      "popupLabel": "Winkel coupons:",
+      "apply": "Toepassen",
+      "applied": "Toegepast"
     }
   },
   "header": {
@@ -1171,18 +1181,18 @@
       "day4": "Donderdag",
       "day5": "Vrijdag",
       "day6": "Zaterdag",
-      "month1": 1,
-      "month2": 2,
-      "month3": 3,
-      "month4": 4,
-      "month5": 5,
-      "month6": 6,
-      "month7": 7,
-      "month8": 8,
-      "month9": 9,
-      "month10": 10,
-      "month11": 11,
-      "month12": 12,
+      "month1": "1",
+      "month2": "2",
+      "month3": "3",
+      "month4": "4",
+      "month5": "5",
+      "month6": "6",
+      "month7": "7",
+      "month8": "8",
+      "month9": "9",
+      "month10": "10",
+      "month11": "11",
+      "month12": "12",
       "actionTypeDesc": {
         "addPoint": "Nieuwe cadeauvoucher",
         "deductPoint": "Cadeauvoucher aftrekken",
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Ga terug naar {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Privacybeleid",
+      "refund": "Teruggavebeleid",
+      "service": "Dienst voorwaarden",
+      "shipping": "Verzendingsovereenkomst"
     }
   }
 }

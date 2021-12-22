@@ -198,7 +198,7 @@
         "id": "color_header_search",
         "type": "color_picker",
         "label": {
-          "en": "*搜索输入框颜色*",
+          "en": "Search bar background",
           "zh-hans-cn": "搜索输入框颜色"
         },
         "default": "#ffffff"
@@ -223,7 +223,7 @@
         "id": "color_footer_border",
         "type": "color_picker",
         "label": {
-          "en": "*边框与线条*",
+          "en": "Border color",
           "zh-hans-cn": "边框与线条"
         },
         "default": "#e8e1e1"
@@ -240,7 +240,7 @@
       {
         "type": "group_header",
         "label": {
-          "en": "*颜色风格1*",
+          "en": "Color style 1",
           "zh-hans-cn": "颜色风格1"
         }
       },
@@ -248,7 +248,7 @@
         "id": "color_scheme_1_bg",
         "type": "color_picker",
         "label": {
-          "en": "*背景颜色*",
+          "en": "Background color",
           "zh-hans-cn": "背景颜色"
         },
         "default": "#ffffff"
@@ -257,7 +257,7 @@
         "id": "color_scheme_1_text",
         "type": "color_picker",
         "label": {
-          "en": "*文字颜色*",
+          "en": "Text color",
           "zh-hans-cn": "文字颜色"
         },
         "default": "#000000"
@@ -266,7 +266,7 @@
         "id": "color_scheme_1_texture",
         "type": "select",
         "label": {
-          "en": "*纹理*",
+          "en": "Background texture",
           "zh-hans-cn": "纹理"
         },
         "options": [
@@ -311,7 +311,7 @@
       {
         "type": "group_header",
         "label": {
-          "en": "*颜色风格2*",
+          "en": "Color style 2",
           "zh-hans-cn": "颜色风格2"
         }
       },
@@ -319,7 +319,7 @@
         "id": "color_scheme_2_bg",
         "type": "color_picker",
         "label": {
-          "en": "*背景颜色*",
+          "en": "Background color",
           "zh-hans-cn": "背景颜色"
         },
         "default": "#acc6c3"
@@ -328,7 +328,7 @@
         "id": "color_scheme_2_text",
         "type": "color_picker",
         "label": {
-          "en": "*文字颜色*",
+          "en": "Text color",
           "zh-hans-cn": "文字颜色"
         },
         "default": "#812f2b"
@@ -337,7 +337,7 @@
         "id": "color_scheme_2_texture",
         "type": "select",
         "label": {
-          "en": "*纹理*",
+          "en": "Background texture",
           "zh-hans-cn": "纹理"
         },
         "options": [
@@ -382,7 +382,7 @@
       {
         "type": "group_header",
         "label": {
-          "en": "*颜色风格3*",
+          "en": "Color style 3",
           "zh-hans-cn": "颜色风格3"
         }
       },
@@ -390,7 +390,7 @@
         "id": "color_scheme_3_bg",
         "type": "color_picker",
         "label": {
-          "en": "*背景颜色*",
+          "en": "Background color",
           "zh-hans-cn": "背景颜色"
         },
         "default": "#f2f2ef"
@@ -399,7 +399,7 @@
         "id": "color_scheme_3_text",
         "type": "color_picker",
         "label": {
-          "en": "*文字颜色*",
+          "en": "Text color",
           "zh-hans-cn": "文字颜色"
         },
         "default": "#000000"
@@ -408,7 +408,7 @@
         "id": "color_scheme_3_texture",
         "type": "select",
         "label": {
-          "en": "*纹理*",
+          "en": "Background texture",
           "zh-hans-cn": "纹理"
         },
         "options": [
@@ -637,7 +637,7 @@
       {
         "type": "group_header",
         "label": {
-          "en": "*基础*",
+          "en": "Basic",
           "zh-hans-cn": "基础"
         }
       },
@@ -709,7 +709,7 @@
         "id": "superscript_decimals",
         "type": "switch",
         "label": {
-          "en": "*售价小数位缩小展示*",
+          "en": "Zoom out display for decimals of the selling price",
           "zh-hans-cn": "售价小数位缩小展示"
         },
         "default": true
@@ -718,7 +718,7 @@
         "id": "product_grid_image_margin",
         "type": "range",
         "label": {
-          "en": "*商品图留白*",
+          "en": "Image margin",
           "zh-hans-cn": "商品图留白"
         },
         "default": 10,
@@ -738,7 +738,7 @@
         "id": "collection_grid_shape",
         "type": "select",
         "label": {
-          "en": "*分类图片形状*",
+          "en": "Shape of collection image",
           "zh-hans-cn": "分类图片形状"
         },
         "options": [
@@ -777,7 +777,7 @@
         "id": "collection_grid_image",
         "type": "select",
         "label": {
-          "en": "*分类图片*",
+          "en": "Collection image",
           "zh-hans-cn": "分类图片"
         },
         "options": [
@@ -802,7 +802,7 @@
         "id": "collection_grid_image_margin",
         "type": "range",
         "label": {
-          "en": "*分类图片留白*",
+          "en": "Collection image margin",
           "zh-hans-cn": "分类图片留白"
         },
         "default": 10,
@@ -864,7 +864,7 @@
         "id": "product_add_to_cart",
         "type": "switch",
         "label": {
-          "en": "*支持快速加购*",
+          "en": "Supports fast purchase",
           "zh-hans-cn": "支持快速加购"
         },
         "default": false
@@ -1041,7 +1041,7 @@
         "id": "product_description_show",
         "type": "switch",
         "label": {
-          "en": "*展开商品描述*",
+          "en": "Display of product description",
           "zh-hans-cn": "展开商品描述"
         },
         "default": true
@@ -1049,11 +1049,11 @@
       {
         "type": "group_header",
         "label": {
-          "en": "*销售信息*",
+          "en": "Sale information",
           "zh-hans-cn": "销售信息"
         },
         "info": {
-          "en": "*影响范围包括商品详情页、首页的单个商品组件*",
+          "en": "It will effect the single product component on product detail page, homepage, etc.",
           "zh-hans-cn": "影响范围包括商品详情页、首页的单个商品组件"
         }
       },
@@ -1061,7 +1061,7 @@
         "id": "product_sales_point_1_icon",
         "type": "select",
         "label": {
-          "en": "*销售信息1图标*",
+          "en": "Sale information 1 icon",
           "zh-hans-cn": "销售信息1图标"
         },
         "options": [
@@ -1114,7 +1114,7 @@
         "id": "product_sales_point_1",
         "type": "text",
         "label": {
-          "en": "*销售信息1文案*",
+          "en": "Sale information 1 text",
           "zh-hans-cn": "销售信息1文案"
         },
         "default": "Free worldwide shipping"
@@ -1123,7 +1123,7 @@
         "id": "product_sales_point_2_icon",
         "type": "select",
         "label": {
-          "en": "*销售信息2图标*",
+          "en": "Sale information 2 icon",
           "zh-hans-cn": "销售信息2图标"
         },
         "options": [
@@ -1176,7 +1176,7 @@
         "id": "product_sales_point_2",
         "type": "text",
         "label": {
-          "en": "*销售信息2文案*",
+          "en": "Sale information 2 text",
           "zh-hans-cn": "销售信息2文案"
         },
         "default": "Free returns"
@@ -1185,7 +1185,7 @@
         "id": "product_sales_point_3_icon",
         "type": "select",
         "label": {
-          "en": "*销售信息3图标*",
+          "en": "Sale information 3 icon",
           "zh-hans-cn": "销售信息3图标"
         },
         "options": [
@@ -1238,7 +1238,7 @@
         "id": "product_sales_point_3",
         "type": "text",
         "label": {
-          "en": "*销售信息3文案*",
+          "en": "Sale information 3 text",
           "zh-hans-cn": "销售信息3文案"
         },
         "default": "Carbon neutral"
@@ -1247,7 +1247,7 @@
         "id": "product_sales_point_4_icon",
         "type": "select",
         "label": {
-          "en": "*销售信息4图标*",
+          "en": "Sale information 4 icon",
           "zh-hans-cn": "销售信息4图标"
         },
         "options": [
@@ -1300,7 +1300,7 @@
         "id": "product_sales_point_4",
         "type": "text",
         "label": {
-          "en": "*销售信息4文案*",
+          "en": "Sale information 4 text",
           "zh-hans-cn": "销售信息4文案"
         },
         "default": "Secure payments"

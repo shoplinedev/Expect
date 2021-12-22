@@ -58,6 +58,13 @@
               "free": "Gratulerer! nyt gratis på en av varene"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Kjøp {{threshold}} stykker for å få {{willSave}} stykker gratis",
+            "step2": "Legg til {{threshold}} stykker for å få {{willSave}} stykker gratis",
+            "step3": "Gratulerer! Du kan glede deg over å kjøpe {{threshold}} og få {{saved}}, gå til kassen nå!"
+          }
         }
       },
       "tags-label": "Rabatt:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Rabattkode finnes ikke.",
       "applySuccess": "Rabattkoden ble brukt.",
-      "applyFail": "Søknaden mislyktes."
+      "applyFail": "Søknaden mislyktes.",
+      "popupLabel": "Butikkkuponger:",
+      "apply": "Bruke",
+      "applied": "Anvendt"
     }
   },
   "header": {
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Returner {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Personvernpolicy",
+      "refund": "Retningslinjer for refusjon",
+      "service": "Vilkår for Bruk",
+      "shipping": "Retningslinjer for frakt"
     }
   }
 }

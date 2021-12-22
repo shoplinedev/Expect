@@ -58,6 +58,13 @@
               "free": "Tebrikler! Öğelerden birini ücretsiz almanın keyfini çıkarın!"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Ücretsiz {{willSave}} tane almak için {{threshold}} tane satın alın",
+            "step2": "Ücretsiz {{willSave}} tane almak için {{threshold}} tane ekleyin",
+            "step3": "Tebrikler! {{threshold}} satın almanın ve ücretsiz {{saved}} almanın keyfini çıkarın. Faturayı şimdi ödeyin!"
+          }
         }
       },
       "tags-label": "İndirim:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "İndirim kodu mevcut değil",
       "applySuccess": "İndirim kodu başarıyla uygulandı",
-      "applyFail": "Uygulanamadı"
+      "applyFail": "Uygulanamadı",
+      "popupLabel": "Mağaza kuponları:",
+      "apply": "Uygula",
+      "applied": "Uygulandı"
     }
   },
   "header": {
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "{{{collectionTitle}}} döndür"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Gizlilik Politikası",
+      "refund": "Geri ödeme politikası",
+      "service": "Hizmet Kullanım Şartları",
+      "shipping": "Kargo politikası"
     }
   }
 }

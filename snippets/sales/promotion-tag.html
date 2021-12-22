@@ -1,26 +1,4 @@
 {{ assign "config" (sales_promotion_tag_translate benefitCondition benefitType)}}
-{{ assign "tagBgColor" (default theme.settings.color_page_background '#fff')}}
-
-<span class="sales__promotionTag">
-  <i class="sales__promotionTag-left">
-    <svg width="12" height="28" viewBox="0 0 12 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4 0C1.79086 0 0 1.79086 0 4V10C2.20914 10 4 11.7909 4 14C4 16.2091 2.20914 18 0 18V24C0 26.2091 1.79086 28 4 28H12V0H4Z" fill={{tagBgColor}} />
-      <path d="M4 0C1.79086 0 0 1.79086 0 4V10C2.20914 10 4 11.7909 4 14C4 16.2091 2.20914 18 0 18V24C0 26.2091 1.79086 28 4 28H12V0H4Z" fill="currentColor" fill-opacity="0.1" />
-    </svg>
-  </i>
-  <span class='sales__promotionTag-body'>
-    <span class='sales__promotionTag-body-text'>
-      {{ noTranslationHTML (replace (replace template '{condition}' config.params.threshold.string) '{discount}' config.params.save.string)}}
-    </span>
-  </span>
-  <i class="sales__promotionTag-right">
-    <svg width="12" height="28" viewBox="0 0 12 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M8 28C10.2091 28 12 26.2091 12 24L12 18C9.79086 18 8 16.2091 8 14C8 11.7909 9.79086 10 12 10L12 4C12 1.79086 10.2091 -1.56562e-07 8 -3.49691e-07L2.44784e-06 -1.04907e-06L0 28L8 28Z"
-        fill={{tagBgColor}} />
-      <path
-        d="M8 28C10.2091 28 12 26.2091 12 24L12 18C9.79086 18 8 16.2091 8 14C8 11.7909 9.79086 10 12 10L12 4C12 1.79086 10.2091 -1.56562e-07 8 -3.49691e-07L2.44784e-06 -1.04907e-06L0 28L8 28Z"
-        fill="currentColor" fill-opacity="0.1" />
-    </svg>
-  </i>
-</span>
+<div class="sales__promotion-tag-wrap {{className}}">
+  {{ noTranslationHTML (replace (replace template '{condition}' config.params.threshold.string) '{discount}' config.params.save.string)}}
+</div>

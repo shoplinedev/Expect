@@ -58,6 +58,13 @@
               "free": "Čestitamo! Uživajte v brezplačnem nakupu enega od izdelkov!"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Kupite {{threshold}} kosov, da dobite {{willSave}} kosov brezplačno",
+            "step2": "Dodajte {{threshold}} kosov, da dobite {{willSave}} kosov brezplačno",
+            "step3": "Čestitamo! Uživate lahko v nakupu {{threshold}} in pridobite {{saved}} brezplačno. Plačajte račun zdaj!"
+          }
         }
       },
       "tags-label": "Popust:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Koda za popust ne obstaja",
       "applySuccess": "Koda za popust je bila uspešno uporabljena",
-      "applyFail": "Prijava ni uspela"
+      "applyFail": "Prijava ni uspela",
+      "popupLabel": "Kuponi za trgovino:",
+      "apply": "Uporabi",
+      "applied": "Vloženo"
     }
   },
   "header": {
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Vrni {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Pravilnikom o zasebnosti",
+      "refund": "Pravilnik o vračilu denarja",
+      "service": "Pogoji uporabe spletne strani",
+      "shipping": "Pogoji dostave"
     }
   }
 }

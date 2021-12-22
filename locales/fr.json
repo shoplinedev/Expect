@@ -58,6 +58,13 @@
               "free": "Félicitations! L'une d'entre elles est gratuite"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "{{willSave}} pièces gratuites peut être obtenues en achetant {{threshold}} pièces",
+            "step2": "{{willSave}} pièces gratuites peut être obtenues en ajoutant {{threshold}} pièces",
+            "step3": "Félicitations! Vous pouvez profiter de l’achat {{saved}}en achetant {{threshold}}, découvrez maintenant!"
+          }
         }
       },
       "tags-label": "Remise:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Le code de réduction a été appliqué avec succès",
       "applySuccess": "L’application a échoué",
-      "applyFail": "Félicitations! Vous avez gagné de nouveaux points!"
+      "applyFail": "Félicitations! Vous avez gagné de nouveaux points!",
+      "popupLabel": "Coupon de réduction du magasin",
+      "apply": "Appliquer",
+      "applied": "Appliqué"
     }
   },
   "header": {
@@ -1171,18 +1181,18 @@
       "day4": "Jeudi",
       "day5": "Vendredi",
       "day6": "Samedi",
-      "month1": 1,
-      "month2": 2,
-      "month3": 3,
-      "month4": 4,
-      "month5": 5,
-      "month6": 6,
-      "month7": 7,
-      "month8": 8,
-      "month9": 9,
-      "month10": 10,
-      "month11": 11,
-      "month12": 12,
+      "month1": "1",
+      "month2": "2",
+      "month3": "3",
+      "month4": "4",
+      "month5": "5",
+      "month6": "6",
+      "month7": "7",
+      "month8": "8",
+      "month9": "9",
+      "month10": "10",
+      "month11": "11",
+      "month12": "12",
       "actionTypeDesc": {
         "addPoint": "Nouvelles subventions d'achat",
         "deductPoint": "Déduction des subventions d'achat",
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Retourner {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "politique de confidentialité du site Web",
+      "refund": "Politique de remboursement",
+      "service": "conditions d'utilisation",
+      "shipping": "Politique de livraison"
     }
   }
 }

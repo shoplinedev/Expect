@@ -58,6 +58,13 @@
               "free": "Onnittelut! Saat yhden tuotteen ilmaiseksi!"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Osta {{threshold}} paloja saada{{willSave}} paloja ilmaiseksi",
+            "step2": "Lisää {{threshold}} paloja saada{{willSave}} paloja ilmaiseksi",
+            "step3": "Onnittelut! Voit nauttia ostamalla {{threshold}} ja saamalla {{saved}} ilmaiseksi. Maksa lasku nyt!"
+          }
         }
       },
       "tags-label": "Alennus:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Alennuskoodia ei ole",
       "applySuccess": "Alennuskoodia käytettiin onnistuneesti",
-      "applyFail": "Sovellus epäonnistui"
+      "applyFail": "Sovellus epäonnistui",
+      "popupLabel": "Tallennetut kuponkit :",
+      "apply": "Lähetä",
+      "applied": "Sovellettu"
     }
   },
   "header": {
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Palata takaisin {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Tietosuojakäytäntö",
+      "refund": "Palautusoikeus",
+      "service": "Käyttöehdot",
+      "shipping": "Toimitusehdot"
     }
   }
 }

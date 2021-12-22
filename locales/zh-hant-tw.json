@@ -58,6 +58,13 @@
               "free": "恭喜！ 其中一件已免費"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "購買{{threshold}}件可得{{willSave}}件免費",
+            "step2": "增加{{threshold}}件可得{{willSave}}件免費",
+            "step3": "恭喜！您可以享受買{{threshold}}送{{saved}}，現在結賬！"
+          }
         }
       },
       "tags-label": "折扣："
@@ -77,14 +84,17 @@
       "coupon-label": "優惠代碼折扣：",
       "coupon-content": {
         "threshold": "買{threshold}",
-        "discount1": "{discount} 折扣",
+        "discount1": "折扣 {discount}",
         "discount2": "免運費",
         "shippingRateBelow": "運費低於{value}",
         "until": "有效期至: {{endTime}}"
       },
       "couponNoFound": "折扣碼不存在",
       "applySuccess": "折扣碼應用成功",
-      "applyFail": "應用失敗"
+      "applyFail": "應用失敗",
+      "popupLabel": "店鋪優惠券：",
+      "apply": "套用",
+      "applied": "已應用"
     }
   },
   "header": {
@@ -454,7 +464,7 @@
     "point-discount-remark": "花費{{value}} 積分",
     "summary": "總計",
     "use-member-account-can": "已有帳戶？",
-    "i-want-recieve-discount-info": "订阅邮箱获取最新活动优惠码和订单的物流动态",
+    "i-want-recieve-discount-info": "訂閱郵箱獲取最新活動優惠碼和訂單的物流動態",
     "order-detail-query-fail": "訂單詳細資料查詢錯誤",
     "your-order-created": "已送出您的訂單",
     "your-order-not-pay": "您尚未完成訂單付款",
@@ -1171,18 +1181,18 @@
       "day4": "星期四",
       "day5": "星期五",
       "day6": "星期六",
-      "month1": 1,
-      "month2": 2,
-      "month3": 3,
-      "month4": 4,
-      "month5": 5,
-      "month6": 6,
-      "month7": 7,
-      "month8": 8,
-      "month9": 9,
-      "month10": 10,
-      "month11": 11,
-      "month12": 12,
+      "month1": "1",
+      "month2": "2",
+      "month3": "3",
+      "month4": "4",
+      "month5": "5",
+      "month6": "6",
+      "month7": "7",
+      "month8": "8",
+      "month9": "9",
+      "month10": "10",
+      "month11": "11",
+      "month12": "12",
       "actionTypeDesc": {
         "addPoint": "新的購物津貼",
         "deductPoint": "已扣除的購物津貼",
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "返回 {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "隱私權政策",
+      "refund": "退款政策",
+      "service": "服務條款",
+      "shipping": "發貨政策"
     }
   }
 }

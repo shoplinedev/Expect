@@ -68,8 +68,13 @@ imgRealWidth 图片真实占位宽度
 {{#if itemType '===' 'recommend'}}
   {{assign 'soldOut' false}}
   {{assign 'product_mobile_title_show' recommendConfig.showProductTitleOnMobile}}
-  {{assign 'product_quick_view' recommendConfig.showAddToCard}}
-  {{assign 'product_add_to_cart' recommendConfig.showAddToCard}}
+  {{#if (boolean (boolean recommendType '===' 'miniCart') '||' (boolean recommendType '===' 'cart'))}}
+    {{assign 'product_quick_view' false}}
+    {{assign 'product_add_to_cart' false}}
+  {{else}}
+    {{assign 'product_quick_view' recommendConfig.showAddToCard}}
+    {{assign 'product_add_to_cart' recommendConfig.showAddToCard}}
+  {{/if}}
   {{#if recommendConfig.pcProductTitleLine '===' 1}}
     {{assign 'product_title_show_type' 'display_up_to_1_rows'}}
   {{else if recommendConfig.pcProductTitleLine '===' 2}}

@@ -58,6 +58,13 @@
               "free": "Xin chúc mừng! Nhận ngay một sản phẩm miễn phí trong danh sách mua"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Mua {{threshold}} mảnh để nhận {{willSave}} mảnh miễn phí",
+            "step2": "Thêm {{threshold}} mảnh để nhận {{willSave}} mảnh miễn phí",
+            "step3": "Xin chúc mừng! Bạn có thể mua {{threshold}} và nhận {{saved}}, trả tiền ngay!"
+          }
         }
       },
       "tags-label": "Chiết khấu:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Mã giảm giá không tồn tại.",
       "applySuccess": "Áp dụng mã giảm giá thành công.",
-      "applyFail": "Đăng ký không thành công."
+      "applyFail": "Đăng ký không thành công.",
+      "popupLabel": "Phiếu giảm giá cửa hàng:",
+      "apply": "Áp Dụng",
+      "applied": "Đã áp dụng"
     }
   },
   "header": {
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Trả lại {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Chính Sách Bảo Mật Của Trang Web",
+      "refund": "Chính sách hoàn tiền",
+      "service": "Điều Khoản Dịch Vụ",
+      "shipping": "Chính sách giao hàng"
     }
   }
 }

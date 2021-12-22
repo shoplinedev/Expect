@@ -58,6 +58,13 @@
               "free": "Gratulálunk! Az egyik terméket ingyen kapja"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Vásároljon {{threshold}} darabot és {{willSave}} darabot ingyen kap",
+            "step2": "Adjon hozzá {{threshold}} darabot és {{willSave}} darabot ingyen kap",
+            "step3": "Gratulálunk! Élvezheti {{threshold}} vasalását és megszerezheti {{saved}}-t, nézze meg most!"
+          }
         }
       },
       "tags-label": "Kedvezmény:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "A kedvezménykód nem létezik",
       "applySuccess": "A kedvezménykód sikeresen felhasználva",
-      "applyFail": "A felhasználás sikertelen"
+      "applyFail": "A felhasználás sikertelen",
+      "popupLabel": "Bolti kuponok:",
+      "apply": "Alkalmaz",
+      "applied": "Alkalmazott"
     }
   },
   "header": {
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Visszaküldés: {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "az Adatvédelmi szabályzatát",
+      "refund": "Visszatérítési szabályzat",
+      "service": "Szolgáltatási feltételeit",
+      "shipping": "Szállítási szabályzat"
     }
   }
 }

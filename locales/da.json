@@ -58,6 +58,13 @@
               "free": "Tillykke! nyd gratis på et af punkterne!"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Køb {{threshold}} stykker for at få {{willSave}} stykker gratis",
+            "step2": "Tilføj {{threshold}} stykker for at få {{willSave}} stykker gratis",
+            "step3": "Tillykke med det! Du kan nyde at købe {{threshold}} og få {{saved}} gratis. Betal regningen nu!"
+          }
         }
       },
       "tags-label": "Rabat:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Rabatkode findes ikke",
       "applySuccess": "Rabatkode anvendt med succes",
-      "applyFail": "Anvendelsen mislykkedes"
+      "applyFail": "Anvendelsen mislykkedes",
+      "popupLabel": "Gemte kuponer :",
+      "apply": "Anvend",
+      "applied": "Anvendt"
     }
   },
   "header": {
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Gå tilbage til {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Privatliv Politik",
+      "refund": "Tilbagebetalingspolitik",
+      "service": "Servicebetingelser",
+      "shipping": "Skibspolitik"
     }
   }
 }

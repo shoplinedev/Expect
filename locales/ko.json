@@ -58,6 +58,13 @@
               "free": "축하합니다！그중하나는 무료입니다"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "{{threshold}}건을 구매하시면 {{willSave}}건을 무료입니다.",
+            "step2": "{{threshold}}건을 추가하면 {{willSave}}건을 무료로 받을 수 있습니다.",
+            "step3": "축하합니다!{{threshold}}구매하셔서 {{saved}} 증정, 지금 결제하세요!"
+          }
         }
       },
       "tags-label": "감소:"
@@ -77,14 +84,17 @@
       "coupon-label": "혜택코드 혜택:",
       "coupon-content": {
         "threshold": "{threshold}을 삽니다.",
-        "discount1": "{discount}할 혜택",
+        "discount1": "{discount} 감소",
         "discount2": "무료 배송",
         "shippingRateBelow": "운임이 {value}보다 낮습니다.",
         "until": "유효기간 {{endTime}} 까지입니다."
       },
       "couponNoFound": "할인코드가 존재하지 않습니다",
       "applySuccess": "할인코드 적용이 완료되었습니다",
-      "applyFail": "적용에 실패했습니다"
+      "applyFail": "적용에 실패했습니다",
+      "popupLabel": "점포 쿠폰:",
+      "apply": "애플리케이션",
+      "applied": "이미 사용"
     }
   },
   "header": {
@@ -1171,18 +1181,18 @@
       "day4": "목요일",
       "day5": "금요일",
       "day6": "토요일",
-      "month1": 1,
-      "month2": 2,
-      "month3": 3,
-      "month4": 4,
-      "month5": 5,
-      "month6": 6,
-      "month7": 7,
-      "month8": 8,
-      "month9": 9,
-      "month10": 10,
-      "month11": 11,
-      "month12": 12,
+      "month1": "1",
+      "month2": "2",
+      "month3": "3",
+      "month4": "4",
+      "month5": "5",
+      "month6": "6",
+      "month7": "7",
+      "month8": "8",
+      "month9": "9",
+      "month10": "10",
+      "month11": "11",
+      "month12": "12",
       "actionTypeDesc": {
         "addPoint": "새로 증가된 구매금",
         "deductPoint": "구매금 빼기",
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "되돌아가다{{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "개인정보 정책",
+      "refund": "환불 정책",
+      "service": "서비스 조항",
+      "shipping": "배송 정책"
     }
   }
 }

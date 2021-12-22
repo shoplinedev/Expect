@@ -58,6 +58,13 @@
               "free": "Apsveicam!! baudiet vienu no rakstiem bez maksas!"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Pirkt {{threshold}} gabalus iekļūt{{willSave}} gabalus par brīvu",
+            "step2": "Pievienot {{threshold}} gabalus iekļūt{{willSave}} gabalus par brīvu",
+            "step3": "Apsveicam! Jūs varat baudīt pirkumu {{threshold}} un saņemt {{saved}} bez maksas. Apmaksājiet rēķinu tagad!"
+          }
         }
       },
       "tags-label": "Atlaide:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Atlaides kods nepastāv",
       "applySuccess": "Atlaides kods piemērots veiksmīgi",
-      "applyFail": "Piemērošana neizdevās"
+      "applyFail": "Piemērošana neizdevās",
+      "popupLabel": "Uzglabātās kuponus:",
+      "apply": "Lietot",
+      "applied": "Pielietots"
     }
   },
   "header": {
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Atgriezt {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Konfidencialitātes politika",
+      "refund": "Atmaksa politika",
+      "service": "Lietošanas nosacījumi",
+      "shipping": "Piegādes politika"
     }
   }
 }

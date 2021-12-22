@@ -58,6 +58,13 @@
               "free": "おめでとう！商品の中の一件が無料となりました。"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "{{threshold}}件買うと{{willSave}}件無料",
+            "step2": "これ以上{{threshold}}件買うと{{willSave}}件無料",
+            "step3": "おめでとうございます！{{threshold}}買うと{{saved}}プレゼントとしてお送ります。今すぐ注文！"
+          }
         }
       },
       "tags-label": "割引:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "クーポンコードが存在しません",
       "applySuccess": "クーポンコード適用成功",
-      "applyFail": "適用失敗"
+      "applyFail": "適用失敗",
+      "popupLabel": "ストアクーポン：",
+      "apply": "適用",
+      "applied": "適用しました"
     }
   },
   "header": {
@@ -1171,18 +1181,18 @@
       "day4": "木曜日",
       "day5": "金曜日",
       "day6": "土曜日",
-      "month1": 1,
-      "month2": 2,
-      "month3": 3,
-      "month4": 4,
-      "month5": 5,
-      "month6": 6,
-      "month7": 7,
-      "month8": 8,
-      "month9": 9,
-      "month10": 10,
-      "month11": 11,
-      "month12": 12,
+      "month1": "1",
+      "month2": "2",
+      "month3": "3",
+      "month4": "4",
+      "month5": "5",
+      "month6": "6",
+      "month7": "7",
+      "month8": "8",
+      "month9": "9",
+      "month10": "10",
+      "month11": "11",
+      "month12": "12",
       "actionTypeDesc": {
         "addPoint": "新しい買い物補助金",
         "deductPoint": "差し引かれた買い物補助金",
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "帰ります {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "プライバシーポリシー",
+      "refund": "代金返却方針",
+      "service": "利用規約",
+      "shipping": "配送ポリシー"
     }
   }
 }

@@ -58,6 +58,13 @@
               "free": "Gratulacje！Jeden z tych produktów już jest za darmo"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Po zakupach {{threshold}} sztuk dostaniesz {{willSave}} sztuk za darmo",
+            "step2": "Po dodaniu {{threshold}} sztuk dostaniesz {{willSave}} sztuk za darmo",
+            "step3": "Gratulacje! Możesz obsługiwać to, że kupisz {{threshold}} i dostaniesz {{saved}} za darmo, zapłać teraz!"
+          }
         }
       },
       "tags-label": "Minus:"
@@ -77,14 +84,17 @@
       "coupon-label": "Zniżka za pomocą kodu zniżkowego:",
       "coupon-content": {
         "threshold": "Kupić {threshold}",
-        "discount1": "{discount} % zniżki",
+        "discount1": "{discount} zniżki",
         "discount2": "Darmowa dostawa",
         "shippingRateBelow": "Koszt za dostawę jest niższy niż {value}",
         "until": "Czas ważności sięga po: {{endTime}}."
       },
       "couponNoFound": "Nie ma tego kosu ulgowego",
       "applySuccess": "Kod ulgowy pomyślnie dostasowano.",
-      "applyFail": "Nie udało się dostasować"
+      "applyFail": "Nie udało się dostasować",
+      "popupLabel": "Kupon rabatowy:",
+      "apply": "Stosuj",
+      "applied": "Stosowany"
     }
   },
   "header": {
@@ -1171,18 +1181,18 @@
       "day4": "Czwartek",
       "day5": "Piątek",
       "day6": "Sobota",
-      "month1": 1,
-      "month2": 2,
-      "month3": 3,
-      "month4": 4,
-      "month5": 5,
-      "month6": 6,
-      "month7": 7,
-      "month8": 8,
-      "month9": 9,
-      "month10": 10,
-      "month11": 11,
-      "month12": 12,
+      "month1": "1",
+      "month2": "2",
+      "month3": "3",
+      "month4": "4",
+      "month5": "5",
+      "month6": "6",
+      "month7": "7",
+      "month8": "8",
+      "month9": "9",
+      "month10": "10",
+      "month11": "11",
+      "month12": "12",
       "actionTypeDesc": {
         "addPoint": "Nowy kredyt sklepowy",
         "deductPoint": "Odliczenie kredytu sklepowego",
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Wróć {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Polityka prywatności",
+      "refund": "Polityka zwrotów",
+      "service": "Warunki usługi",
+      "shipping": "Polityka wysyłki"
     }
   }
 }

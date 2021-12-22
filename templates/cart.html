@@ -58,3 +58,12 @@
   </div>
   {{snippet 'trade/commons/base-modal' modalId="sku-filter"}}
 </div>
+
+<div class="container g-4 g-md-6 trade-cart-product-recommend-margin">
+  {{ assign 'recommendType' 'cart' }}
+  {{!-- SSR 商品推荐插件 --}}
+  <div data-ssr-product-recommend-bottom></div>
+  <div style="display: none;">
+    {{snippet 'product/commons/product-item-list'}}
+  </div>
+</div>

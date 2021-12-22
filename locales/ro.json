@@ -58,6 +58,13 @@
               "free": "Felicitări! profitați de un articol gratuit"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Cumpără {{threshold}} (de) bucăți și beneficiază de {{willSave}} (de) bucăți gratis",
+            "step2": "Adaugă {{threshold}} (de) bucăți pentru a beneficia de {{willSave}} (de) bucăți gratis",
+            "step3": "Felicitări! Vă puteți bucura de achiziționarea {{threshold}} și obțineți {{saved}} gratuit. Plătiți acum!"
+          }
         }
       },
       "tags-label": "Reducere:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Codul pentru reducere nu există",
       "applySuccess": "Codul pentru reducere a fost aplicat cu succes",
-      "applyFail": "Aplicația a eșuat"
+      "applyFail": "Aplicația a eșuat",
+      "popupLabel": "Cupoane magazin:",
+      "apply": "Aplică",
+      "applied": "Aplicat"
     }
   },
   "header": {
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Returnează {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Politica de confidențialitate",
+      "refund": "Politică de rambursare",
+      "service": "Condițiile de utilizare a site-ului",
+      "shipping": "Politică de livrare"
     }
   }
 }

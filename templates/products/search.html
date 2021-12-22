@@ -111,4 +111,8 @@
     </div>
     {{snippet 'product/commons/product-item-list' listData=products.list pageSize=48 pageNum=products.pageNum total=products.total className='__sl-custom-track-product-item-search' }}
   </div>
+    <div class="container g-4 g-md-6 product-recommend-margin">
+    {{!-- SSR 商品推荐插件 --}}
+    <div data-ssr-product-recommend-bottom></div>
+  </div>
 </main>

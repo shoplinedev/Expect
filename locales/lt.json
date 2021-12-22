@@ -58,6 +58,13 @@
               "free": "Sveikiname! mėgaukitės nemokamai viena iš prekių"
             }
           }
+        },
+        "benefit9": {
+          "threshold1": {
+            "step1": "Įsigykite {{threshold}} vnt. ir gaukite {{willSave}} vnt. nemokamai",
+            "step2": "Pridėkite {{threshold}} vnt. ir gaukite {{willSave}} vnt. nemokamai",
+            "step3": "Sveikinimai! Galite įsigyti {{threshold}} ir gauti {{saved}} - išbandykite jau dabar!"
+          }
         }
       },
       "tags-label": "Nuolaida:"
@@ -84,7 +91,10 @@
       },
       "couponNoFound": "Nuolaidos kodas neegzistuoja",
       "applySuccess": "Nuolaidos kodas sėkmingai pritaikytas",
-      "applyFail": "Pateikti nepavyko"
+      "applyFail": "Pateikti nepavyko",
+      "popupLabel": "Parduotuvės kuponai:",
+      "apply": "Taikyti",
+      "applied": "Taikyta"
     }
   },
   "header": {
@@ -1355,6 +1365,14 @@
   "blog": {
     "container": {
       "backTo": "Grąžinti {{{collectionTitle}}}"
+    }
+  },
+  "title": {
+    "policy": {
+      "privacy": "Privatumo politika",
+      "refund": "Grąžinimo politika",
+      "service": "paslaugos teikimo sąlygos",
+      "shipping": "Siuntimo politika"
     }
   }
 }
