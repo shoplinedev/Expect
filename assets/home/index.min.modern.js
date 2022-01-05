@@ -8791,148 +8791,20 @@
             var utc_default = __webpack_require__.n(utc);
             var timezone = __webpack_require__("../shared/node_modules/dayjs/plugin/timezone.js");
             var timezone_default = __webpack_require__.n(timezone);
-            var debounce = __webpack_require__("../shared/node_modules/lodash/debounce.js");
-            var debounce_default = __webpack_require__.n(debounce);
-            function reportPageView(session) {
-                var _window$HdSdk;
-                const params = session ? {
-                    session_id: session.sid,
-                    session_create_time: session.createAt,
-                    session_rn: session.rn,
-                    last_session_id: session.last_session_id,
-                    session_create_type: session.session_create_type
-                } : {};
-                null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : _window$HdSdk.shopTracker.collect({
-                    event_name: "PageView",
-                    ...params
-                });
-            }
-            function reportPageLeave(session) {
-                var _window$HdSdk2;
-                const params = session ? {
-                    session_id: session.sid,
-                    session_create_time: session.createAt,
-                    session_rn: session.rn,
-                    last_session_id: session.last_session_id,
-                    session_create_type: session.session_create_type
-                } : {};
-                null === (_window$HdSdk2 = window.HdSdk) || void 0 === _window$HdSdk2 ? void 0 : _window$HdSdk2.shopTracker.collect({
-                    event_name: "PageLeave",
-                    ...params
-                });
-            }
-            function reportPageScrollMaxHeight() {
-                let max = 0;
-                const record = () => {
-                    const {scrollTop} = document.documentElement;
-                    if (scrollTop > max) max = scrollTop;
-                };
-                return {
-                    record: debounce_default()(record, 200),
-                    report: () => {
-                        const root = document.documentElement || document.body;
-                        if (root) {
-                            var _window$HdSdk3;
-                            null === (_window$HdSdk3 = window.HdSdk) || void 0 === _window$HdSdk3 ? void 0 : _window$HdSdk3.shopTracker.collect({
-                                max_height: max,
-                                max_height_pc: `${(root.scrollTop + root.clientHeight) / root.scrollHeight * 100}%`
-                            });
-                        }
-                    }
-                };
-            }
-            function reportBrowsingTimeSpent() {
-                const max = 30 * 60;
-                let startTime = 0;
-                const get = () => {
-                    const endTime = (new Date).getTime();
-                    const duration = (endTime - startTime) / 1e3;
-                    return duration > max ? max : duration;
-                };
-                return {
-                    get,
-                    record: () => {
-                        startTime = (new Date).getTime();
-                    },
-                    report: () => {
-                        var _window$HdSdk4;
-                        null === (_window$HdSdk4 = window.HdSdk) || void 0 === _window$HdSdk4 ? void 0 : _window$HdSdk4.shopTracker.collect({
-                            event_name: "PageLeave",
-                            event_duration: get()
-                        });
-                    }
-                };
-            }
             var get_env = __webpack_require__("../shared/browser/utils/get-env.js");
             var state_selector = __webpack_require__("../shared/browser/utils/state-selector.js");
-            var createLogger = __webpack_require__("../shared/browser/utils/createLogger.js");
-            function composedPath(event) {
-                if (event.path) return event.path;
-                if ("function" === typeof event.composedPath) return event.composedPath();
-                const path = [];
-                let {target} = event;
-                while (null !== target.parentNode) {
-                    path.push(target);
-                    target = target.parentNode;
-                }
-                path.push(document, window);
-                return path;
-            }
-            (0, createLogger["default"])("helpers", "[matchOrderSign]");
-            function onDomReady(fn) {
-                document.removeEventListener("DOMContentLoaded", fn);
-                if ("loading" !== document.readyState) setTimeout(fn, 1); else document.addEventListener("DOMContentLoaded", fn);
-            }
-            function onDomScroll(fn) {
-                window.removeEventListener("scroll", fn);
-                window.addEventListener("scroll", fn, false);
-            }
-            function onPageLeave(fn) {
-                window.removeEventListener("beforeunload", fn);
-                window.addEventListener("beforeunload", fn);
-            }
-            function onPageHide(fn) {
-                window.removeEventListener("pagehide", fn);
-                window.addEventListener("pagehide", fn);
-            }
-            const autoReport = () => {
-                var _window$HdSdk;
-                const shopTracker = null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : _window$HdSdk.shopTracker;
-                if (!shopTracker) return;
-                const scrollMaxHeightHandlers = reportPageScrollMaxHeight();
-                const browseTimeHandlers = reportBrowsingTimeSpent();
-                onDomReady((() => {
-                    shopTracker.report("86000101", {
-                        event_name: "142"
-                    });
-                    browseTimeHandlers.record();
-                    reportPageView();
-                }));
-                onDomScroll((() => {
-                    scrollMaxHeightHandlers.record();
-                }));
-                onPageLeave((() => {
-                    scrollMaxHeightHandlers.report();
-                    reportPageLeave();
-                    browseTimeHandlers.report();
-                }));
-                onPageHide((() => {
-                    reportPageLeave();
-                }));
-            };
-            autoReport();
             dayjs_min_default().extend(utc_default());
             dayjs_min_default().extend(timezone_default());
             class HdReport {
                 constructor() {
                     var _window$__PRELOAD_STA, _window$HdSdk, _window$HdSdk$shopTra, _SL_State$get, _window$HdSdk2, _window$HdSdk2$shopTr, _window$HdSdk3;
                     const {APP_ENV} = (0, get_env["default"])();
+                    const env = "develop" !== APP_ENV ? "product" : "";
                     const debugMode = "staging" === APP_ENV || "develop" === APP_ENV;
                     const Shopline = window.Shopline || {};
                     const pid = null === (_window$__PRELOAD_STA = window.__PRELOAD_STATE__) || void 0 === _window$__PRELOAD_STA ? void 0 : _window$__PRELOAD_STA.serverEventId;
-                    const {USE_REPORT_URL_STORE_IDS} = window.__ENV__ || {};
                     null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : null === (_window$HdSdk$shopTra = _window$HdSdk.shopTracker) || void 0 === _window$HdSdk$shopTra ? void 0 : _window$HdSdk$shopTra.setOptions({
-                        env: "product",
+                        env,
                         timezoneOffset: null !== (_SL_State$get = state_selector.SL_State.get("storeInfo.timezoneOffset")) && void 0 !== _SL_State$get ? _SL_State$get : 0,
                         disableIframeId: true,
                         beforeSend: async data => {
@@ -8951,20 +8823,12 @@
                             };
                             if (!Object.prototype.hasOwnProperty.call(data, "iframe_id") || 1 === Number(data.iframe_id)) warpData.iframe_id = js_cookie_default().get("n_u") || js_cookie_default().get("sl_iframe_id");
                             return warpData;
-                        },
-                        onSessionUpdate: (lastSession, nextSession) => {
-                            reportPageView(nextSession);
-                            reportPageLeave(lastSession);
                         }
                     });
                     null === (_window$HdSdk2 = window.HdSdk) || void 0 === _window$HdSdk2 ? void 0 : null === (_window$HdSdk2$shopTr = _window$HdSdk2.shopTracker) || void 0 === _window$HdSdk2$shopTr ? void 0 : _window$HdSdk2$shopTr.setDebugMode(debugMode);
                     null === (_window$HdSdk3 = window.HdSdk) || void 0 === _window$HdSdk3 ? void 0 : _window$HdSdk3.shopTracker.use("url", ((url, payload) => {
-                        const payloads = [].concat(payload);
-                        if ("product" !== APP_ENV) {
-                            var _window$hiidoPayloads;
-                            window.hiidoPayloads = null !== (_window$hiidoPayloads = window.hiidoPayloads) && void 0 !== _window$hiidoPayloads && _window$hiidoPayloads.length ? [ ...window.hiidoPayloads, ...payloads ] : payloads;
-                        }
                         const enhancedUrl = `${url}${-1 === url.indexOf("?") ? `?` : "&"}_pid=${pid}`;
+                        const payloads = [].concat(payload);
                         const defaultEventId = -999;
                         const obj = payloads.reduce(((o, {source}) => {
                             var _ref;
@@ -8975,21 +8839,10 @@
                             return result;
                         }), {});
                         const joinStr = Object.keys(obj).reduce(((str, act) => `${str}:${act}_${obj[act].join(",")}`), "").slice(1);
-                        const tempUrl = `${enhancedUrl}&_act=${joinStr}`;
-                        if (-1 !== USE_REPORT_URL_STORE_IDS.indexOf(Shopline.storeId)) {
-                            if (-1 !== tempUrl.indexOf("n.gif")) return tempUrl.replace("/eclytics/n.gif", "/eclytics/i");
-                            if (-1 !== tempUrl.indexOf("o.gif")) return tempUrl.replace("/eclytics/o.gif", "/eclytics/c");
-                        }
-                        return tempUrl;
+                        return `${enhancedUrl}&_act=${joinStr}`;
                     }));
                 }
             }
-            HdReport.dfSdkEnv = {
-                develop: "dev",
-                staging: "test",
-                preview: "pre",
-                product: "pro"
-            };
             new HdReport;
             function _defineProperty(obj, key, value) {
                 if (key in obj) Object.defineProperty(obj, key, {
@@ -9101,6 +8954,24 @@
                 timmer: null
             });
             const _hiido = new Hidoo;
+            var createLogger = __webpack_require__("../shared/browser/utils/createLogger.js");
+            function composedPath(event) {
+                if (event.path) return event.path;
+                if ("function" === typeof event.composedPath) return event.composedPath();
+                const path = [];
+                let {target} = event;
+                while (null !== target.parentNode) {
+                    path.push(target);
+                    target = target.parentNode;
+                }
+                path.push(document, window);
+                return path;
+            }
+            (0, createLogger["default"])("helpers", "[matchOrderSign]");
+            function onDomReady(fn) {
+                document.removeEventListener("DOMContentLoaded", fn);
+                if ("loading" !== document.readyState) setTimeout(fn, 1); else document.addEventListener("DOMContentLoaded", fn);
+            }
             function reportHeadless() {
                 const report = async () => {
                     var _window$HdSdk;
@@ -9149,126 +9020,120 @@
                 onDomReady(report);
             }
             const report_headless = reportHeadless;
-            if (!window.SL_EventBus._events["global:thirdPartReport"]) {
-                window.SL_EventBus.on("global:thirdPartReport", (data => {
-                    try {
-                        var _data$FBPixel;
-                        Object.keys(data).forEach((dataKey => {
-                            var _window$__PRELOAD_STA;
-                            let eventKey = dataKey;
-                            if ("GAR" === dataKey) eventKey = "GARemarketing";
-                            if (null !== (_window$__PRELOAD_STA = window.__PRELOAD_STATE__.eventTrace) && void 0 !== _window$__PRELOAD_STA && _window$__PRELOAD_STA.enabled[eventKey]) {
-                                const configs = window.__PRELOAD_STATE__.eventTrace.enabled[eventKey];
-                                let payloads = data[dataKey];
-                                switch (dataKey) {
-                                  case "GA":
-                                  case "GAAds":
-                                  case "GARemarketing":
-                                  case "GAR":
-                                    configs.forEach((config => {
-                                        if ("GA" === dataKey && config.enableEnhancedEcom && data.GAE) payloads = data[dataKey].concat(data.GAE);
-                                        payloads.forEach((([track, event, data = {}, scope, ...rest]) => {
-                                            data = data || {};
-                                            const {useLegacyCode, traceType} = config;
-                                            if (0 === parseInt(traceType, 10)) return;
-                                            if (void 0 === useLegacyCode && "GAR" === dataKey) return;
-                                            if (0 === parseInt(useLegacyCode, 10) && "GARemarketing" === dataKey) return;
-                                            if (1 === parseInt(useLegacyCode, 10) && "GAR" === dataKey) return;
-                                            if ((config.scope || scope) && scope !== config.scope) return;
-                                            const isDataObj = "[object Object]" === Object.prototype.toString.call(data);
-                                            if (-1 !== [ "GA", "GARemarketing", "GAR" ].indexOf(dataKey) && isDataObj) data.send_to = `${config.id}`;
-                                            if ("GAAds" === dataKey && isDataObj) data.send_to = `${config.id}/${config.tag}`;
-                                            window.gtag(track, event, data, ...rest);
-                                        }));
-                                    }));
-                                    break;
-
-                                  case "FBPixel":
-                                    payloads.forEach((payload => {
-                                        const [action, eventName, customData = {}, extData = {}, ...rest] = payload;
-                                        window.fbq(action, eventName, customData, extData, ...rest);
-                                    }));
-                                }
-                            }
-                        }));
-                        if (null !== (_data$FBPixel = data.FBPixel) && void 0 !== _data$FBPixel && _data$FBPixel[0]) _hiido.report(data.FBPixel[0][1], data.FBPixel[0][2], data.FBPixel[0][3], data.FBPixel[0][4]);
-                    } catch (err) {
-                        console.error("global:thirdPartReport err:", err);
-                    }
-                }));
-                let beforeunloadCallback;
-                let getDestPathCallback;
-                let sendLock = false;
-                window.SL_EventBus.on("global:hdReport:exit", (data => {
-                    if (beforeunloadCallback) {
-                        sendLock = false;
-                        window.removeEventListener("beforeunload", beforeunloadCallback);
-                        document.removeEventListener("click", getDestPathCallback);
-                    }
-                    function report(data, page_dest) {
-                        if (sendLock) return;
-                        sendLock = true;
-                        if (Array.isArray(data)) {
-                            var _window$HdSdk;
-                            const [eventId, params] = data;
-                            null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : _window$HdSdk.shopTracker.report(eventId, {
-                                page_dest,
-                                event_name: "999",
-                                ...params
-                            });
-                        }
-                        if ("[object Object]" === Object.prototype.toString.call(data)) {
-                            var _window$HdSdk2, _window$HdSdk2$shopTr, _window$HdSdk2$shopTr2;
-                            null === (_window$HdSdk2 = window.HdSdk) || void 0 === _window$HdSdk2 ? void 0 : null === (_window$HdSdk2$shopTr = (_window$HdSdk2$shopTr2 = _window$HdSdk2.shopTracker).collect) || void 0 === _window$HdSdk2$shopTr ? void 0 : _window$HdSdk2$shopTr.call(_window$HdSdk2$shopTr2, {
-                                action_type: "999",
-                                page_dest_url: page_dest,
-                                ...data
-                            });
-                        }
-                    }
-                    beforeunloadCallback = () => {
-                        report(data, "");
-                    };
-                    getDestPathCallback = event => {
-                        const path = composedPath(event);
-                        for (let i = path.length; i--; ) {
-                            const element = path[i];
-                            if (element && 1 === element.nodeType && "a" === element.nodeName.toLowerCase()) if (/^https?:\/\//.test(element.href)) {
-                                report(data, element.href);
-                                break;
-                            }
-                        }
-                    };
-                    window.addEventListener("beforeunload", beforeunloadCallback);
-                    document.addEventListener("click", getDestPathCallback);
-                }));
-                window.SL_EventBus.on("global:hdReport:pageview", ((...data) => {
-                    const [eventIdOrData, ...rest] = data;
-                    if ("string" == typeof eventIdOrData) {
-                        var _window$HdSdk3;
-                        null === (_window$HdSdk3 = window.HdSdk) || void 0 === _window$HdSdk3 ? void 0 : _window$HdSdk3.shopTracker.report(eventIdOrData, ...rest);
-                    }
-                    if ("[object Object]" === Object.prototype.toString.call(eventIdOrData)) {
-                        var _window$HdSdk4, _window$HdSdk4$shopTr, _window$HdSdk4$shopTr2;
-                        null === (_window$HdSdk4 = window.HdSdk) || void 0 === _window$HdSdk4 ? void 0 : null === (_window$HdSdk4$shopTr = (_window$HdSdk4$shopTr2 = _window$HdSdk4.shopTracker).collect) || void 0 === _window$HdSdk4$shopTr ? void 0 : _window$HdSdk4$shopTr.call(_window$HdSdk4$shopTr2, eventIdOrData);
-                    }
-                }));
-                const isTradePage = location.pathname.includes("/trade/");
-                if (!location.pathname.startsWith("/user/")) {
-                    var _window$__PRELOAD_STA2;
-                    window.SL_EventBus.emit("global:thirdPartReport", {
-                        FBPixel: [ [ "track", "PageView", {}, {
-                            eventID: null === (_window$__PRELOAD_STA2 = window.__PRELOAD_STATE__) || void 0 === _window$__PRELOAD_STA2 ? void 0 : _window$__PRELOAD_STA2.serverEventId
-                        } ] ],
-                        GAAds: isTradePage ? [] : [ [ "event", "conversion", null ] ],
-                        GA: [ [ "event", "page_view", {
-                            page_title: document.title,
-                            page_location: window.location.href,
-                            page_path: window.location.pathname + window.location.search
-                        } ] ]
+            const autoReport = () => {
+                var _window$HdSdk;
+                const shopTracker = null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : _window$HdSdk.shopTracker;
+                if (!shopTracker) return;
+                onDomReady((() => {
+                    shopTracker.report("86000101", {
+                        event_name: "142"
                     });
+                }));
+            };
+            autoReport();
+            window.SL_EventBus.on("global:thirdPartReport", (data => {
+                try {
+                    var _data$FBPixel;
+                    Object.keys(data).forEach((dataKey => {
+                        var _window$__PRELOAD_STA;
+                        let eventKey = dataKey;
+                        if ("GAR" === dataKey) eventKey = "GARemarketing";
+                        if (null !== (_window$__PRELOAD_STA = window.__PRELOAD_STATE__.eventTrace) && void 0 !== _window$__PRELOAD_STA && _window$__PRELOAD_STA.enabled[eventKey]) {
+                            const configs = window.__PRELOAD_STATE__.eventTrace.enabled[eventKey];
+                            let payloads = data[dataKey];
+                            switch (dataKey) {
+                              case "GA":
+                              case "GAAds":
+                              case "GARemarketing":
+                              case "GAR":
+                                configs.forEach((config => {
+                                    if ("GA" === dataKey && config.enableEnhancedEcom && data.GAE) payloads = data[dataKey].concat(data.GAE);
+                                    payloads.forEach((([track, event, data = {}, scope, ...rest]) => {
+                                        data = data || {};
+                                        const {useLegacyCode, traceType} = config;
+                                        if (0 === parseInt(traceType, 10)) return;
+                                        if (void 0 === useLegacyCode && "GAR" === dataKey) return;
+                                        if (0 === parseInt(useLegacyCode, 10) && "GARemarketing" === dataKey) return;
+                                        if (1 === parseInt(useLegacyCode, 10) && "GAR" === dataKey) return;
+                                        if ((config.scope || scope) && scope !== config.scope) return;
+                                        const isDataObj = "[object Object]" === Object.prototype.toString.call(data);
+                                        if (-1 !== [ "GA", "GARemarketing", "GAR" ].indexOf(dataKey) && isDataObj) data.send_to = `${config.id}`;
+                                        if ("GAAds" === dataKey && isDataObj) data.send_to = `${config.id}/${config.tag}`;
+                                        window.gtag(track, event, data, ...rest);
+                                    }));
+                                }));
+                                break;
+
+                              case "FBPixel":
+                                payloads.forEach((payload => {
+                                    const [action, eventName, customData = {}, extData = {}, ...rest] = payload;
+                                    window.fbq(action, eventName, customData, extData, ...rest);
+                                }));
+                            }
+                        }
+                    }));
+                    if (null !== (_data$FBPixel = data.FBPixel) && void 0 !== _data$FBPixel && _data$FBPixel[0]) _hiido.report(data.FBPixel[0][1], data.FBPixel[0][2], data.FBPixel[0][3], data.FBPixel[0][4]);
+                } catch (err) {
+                    console.error("global:thirdPartReport err:", err);
                 }
-            }
+            }));
+            let beforeunloadCallback;
+            let getDestPathCallback;
+            let sendLock = false;
+            window.SL_EventBus.on("global:hdReport:exit", (data => {
+                if (beforeunloadCallback) {
+                    sendLock = false;
+                    window.removeEventListener("beforeunload", beforeunloadCallback);
+                    document.removeEventListener("click", getDestPathCallback);
+                }
+                function report(data, page_dest) {
+                    if (sendLock) return;
+                    sendLock = true;
+                    if (Array.isArray(data)) {
+                        var _window$HdSdk;
+                        const [eventId, params] = data;
+                        null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : _window$HdSdk.shopTracker.report(eventId, {
+                            page_dest,
+                            event_name: "999",
+                            ...params
+                        });
+                    }
+                    if ("[object Object]" === Object.prototype.toString.call(data)) {
+                        var _window$HdSdk2, _window$HdSdk2$shopTr, _window$HdSdk2$shopTr2;
+                        null === (_window$HdSdk2 = window.HdSdk) || void 0 === _window$HdSdk2 ? void 0 : null === (_window$HdSdk2$shopTr = (_window$HdSdk2$shopTr2 = _window$HdSdk2.shopTracker).collect) || void 0 === _window$HdSdk2$shopTr ? void 0 : _window$HdSdk2$shopTr.call(_window$HdSdk2$shopTr2, {
+                            action_type: "999",
+                            page_dest_url: page_dest,
+                            ...data
+                        });
+                    }
+                }
+                beforeunloadCallback = () => {
+                    report(data, "");
+                };
+                getDestPathCallback = event => {
+                    const path = composedPath(event);
+                    for (let i = path.length; i--; ) {
+                        const element = path[i];
+                        if (element && 1 === element.nodeType && "a" === element.nodeName.toLowerCase()) if (/^https?:\/\//.test(element.href)) {
+                            report(data, element.href);
+                            break;
+                        }
+                    }
+                };
+                window.addEventListener("beforeunload", beforeunloadCallback);
+                document.addEventListener("click", getDestPathCallback);
+            }));
+            window.SL_EventBus.on("global:hdReport:pageview", ((...data) => {
+                const [eventIdOrData, ...rest] = data;
+                if ("string" == typeof eventIdOrData) {
+                    var _window$HdSdk3;
+                    null === (_window$HdSdk3 = window.HdSdk) || void 0 === _window$HdSdk3 ? void 0 : _window$HdSdk3.shopTracker.report(eventIdOrData, ...rest);
+                }
+                if ("[object Object]" === Object.prototype.toString.call(eventIdOrData)) {
+                    var _window$HdSdk4, _window$HdSdk4$shopTr, _window$HdSdk4$shopTr2;
+                    null === (_window$HdSdk4 = window.HdSdk) || void 0 === _window$HdSdk4 ? void 0 : null === (_window$HdSdk4$shopTr = (_window$HdSdk4$shopTr2 = _window$HdSdk4.shopTracker).collect) || void 0 === _window$HdSdk4$shopTr ? void 0 : _window$HdSdk4$shopTr.call(_window$HdSdk4$shopTr2, eventIdOrData);
+                }
+            }));
             let HdObserverSet = new WeakSet;
             const CLICK_CLASSNAME = "__sl-track_click";
             const EXPOSE_CLASSNAME = "__sl-track_expose";
@@ -9358,6 +9223,21 @@
             };
             startObserver();
             clickCollect();
+            const isTradePage = location.pathname.includes("/trade/");
+            if (!location.pathname.startsWith("/user/")) {
+                var _window$__PRELOAD_STA2;
+                window.SL_EventBus.emit("global:thirdPartReport", {
+                    FBPixel: [ [ "track", "PageView", {}, {
+                        eventID: null === (_window$__PRELOAD_STA2 = window.__PRELOAD_STATE__) || void 0 === _window$__PRELOAD_STA2 ? void 0 : _window$__PRELOAD_STA2.serverEventId
+                    } ] ],
+                    GAAds: isTradePage ? [] : [ [ "event", "conversion", null ] ],
+                    GA: [ [ "event", "page_view", {
+                        page_title: document.title,
+                        page_location: window.location.href,
+                        page_path: window.location.pathname + window.location.search
+                    } ] ]
+                });
+            }
             report_headless();
         },
         "../shared/browser/utils/state-selector.js": (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -18865,81 +18745,6 @@
             }
             module.exports = identity;
         },
-        "../shared/node_modules/lodash/debounce.js": (module, __unused_webpack_exports, __webpack_require__) => {
-            var isObject = __webpack_require__("../shared/node_modules/lodash/isObject.js"), now = __webpack_require__("../shared/node_modules/lodash/now.js"), toNumber = __webpack_require__("../shared/node_modules/lodash/toNumber.js");
-            var FUNC_ERROR_TEXT = "Expected a function";
-            var nativeMax = Math.max, nativeMin = Math.min;
-            function debounce(func, wait, options) {
-                var lastArgs, lastThis, maxWait, result, timerId, lastCallTime, lastInvokeTime = 0, leading = false, maxing = false, trailing = true;
-                if ("function" != typeof func) throw new TypeError(FUNC_ERROR_TEXT);
-                wait = toNumber(wait) || 0;
-                if (isObject(options)) {
-                    leading = !!options.leading;
-                    maxing = "maxWait" in options;
-                    maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
-                    trailing = "trailing" in options ? !!options.trailing : trailing;
-                }
-                function invokeFunc(time) {
-                    var args = lastArgs, thisArg = lastThis;
-                    lastArgs = lastThis = void 0;
-                    lastInvokeTime = time;
-                    result = func.apply(thisArg, args);
-                    return result;
-                }
-                function leadingEdge(time) {
-                    lastInvokeTime = time;
-                    timerId = setTimeout(timerExpired, wait);
-                    return leading ? invokeFunc(time) : result;
-                }
-                function remainingWait(time) {
-                    var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime, timeWaiting = wait - timeSinceLastCall;
-                    return maxing ? nativeMin(timeWaiting, maxWait - timeSinceLastInvoke) : timeWaiting;
-                }
-                function shouldInvoke(time) {
-                    var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime;
-                    return void 0 === lastCallTime || timeSinceLastCall >= wait || timeSinceLastCall < 0 || maxing && timeSinceLastInvoke >= maxWait;
-                }
-                function timerExpired() {
-                    var time = now();
-                    if (shouldInvoke(time)) return trailingEdge(time);
-                    timerId = setTimeout(timerExpired, remainingWait(time));
-                }
-                function trailingEdge(time) {
-                    timerId = void 0;
-                    if (trailing && lastArgs) return invokeFunc(time);
-                    lastArgs = lastThis = void 0;
-                    return result;
-                }
-                function cancel() {
-                    if (void 0 !== timerId) clearTimeout(timerId);
-                    lastInvokeTime = 0;
-                    lastArgs = lastCallTime = lastThis = timerId = void 0;
-                }
-                function flush() {
-                    return void 0 === timerId ? result : trailingEdge(now());
-                }
-                function debounced() {
-                    var time = now(), isInvoking = shouldInvoke(time);
-                    lastArgs = arguments;
-                    lastThis = this;
-                    lastCallTime = time;
-                    if (isInvoking) {
-                        if (void 0 === timerId) return leadingEdge(lastCallTime);
-                        if (maxing) {
-                            clearTimeout(timerId);
-                            timerId = setTimeout(timerExpired, wait);
-                            return invokeFunc(lastCallTime);
-                        }
-                    }
-                    if (void 0 === timerId) timerId = setTimeout(timerExpired, wait);
-                    return result;
-                }
-                debounced.cancel = cancel;
-                debounced.flush = flush;
-                return debounced;
-            }
-            module.exports = debounce;
-        },
         "../shared/node_modules/lodash/eq.js": module => {
             function eq(value, other) {
                 return value === other || value !== value && other !== other;
@@ -19040,13 +18845,6 @@
             var overArg = __webpack_require__("../shared/node_modules/lodash/_overArg.js");
             var nativeKeys = overArg(Object.keys, Object);
             module.exports = nativeKeys;
-        },
-        "../shared/node_modules/lodash/now.js": (module, __unused_webpack_exports, __webpack_require__) => {
-            var root = __webpack_require__("../shared/node_modules/lodash/_root.js");
-            var now = function() {
-                return root.Date.now();
-            };
-            module.exports = now;
         },
         "../shared/node_modules/lodash/property.js": module => {
             function baseProperty(key) {
@@ -22017,17 +21815,311 @@
             } ]); else res = [];
             return res;
         };
+        const eventName = {
+            view: "101",
+            additem: "102",
+            updateitem: "103",
+            removeitem: "104",
+            checkout: "105",
+            recommenditem: "106",
+            proceed_to_checkout: "107",
+            place_order: "108",
+            click_component: "109",
+            product_view: "110",
+            product_share: "111",
+            buy_now: "112",
+            select_product: "113",
+            deselect_product: "114",
+            menu_view: "115",
+            menu_click: "116",
+            catalog_view: "117",
+            catalog_click: "118",
+            sku_click: "119",
+            component_view: "120",
+            display_click: "121",
+            sort_click: "122",
+            select_bundling: "123",
+            add_wishlist: "124",
+            cancel_wishlist: "125",
+            proceed_to_delivery_payment: "126",
+            proceed_to_pay: "127",
+            proceed_to_delivery: "128",
+            quick_payment: "129",
+            click_product: "130",
+            search_suggest: "131",
+            paypal: "132",
+            input: "133",
+            modify: "134",
+            select_shipping: "135",
+            select_payment: "136",
+            inventory_shortage: "137",
+            login_success: "138",
+            view_cart: "139",
+            leave: "999"
+        };
+        const eventCategory = {
+            order: "101",
+            cart: "102",
+            email: "103",
+            expresscheckoutpage: "104"
+        };
+        const productType = {
+            product: "101",
+            addon: "102",
+            subscription: "103"
+        };
+        const hd_const_status = {
+            soldout: "101",
+            selling: "102"
+        };
+        const purchaseSource = {
+            common_store: "101",
+            one_page_store: "102"
+        };
+        const page = {
+            homepage: "101",
+            pdp: "102",
+            cart: "103",
+            order_check_out: "104",
+            transaction: "105",
+            product_search: "106",
+            product_list: "107",
+            user_page: "108",
+            email: "109",
+            expresscheckout: "110",
+            "404page": "111",
+            call_to_action: "112",
+            consumer_home: "113",
+            onepage_checkout: "114",
+            address_confirm: "115",
+            delivery_payment_confirm: "116",
+            delivery_confirm: "117",
+            payment_confirm: "118",
+            addon: "119",
+            other: "120",
+            landing_page: "121"
+        };
+        const generalComponent = {
+            catalog: "101",
+            logo: "102",
+            search: "103",
+            sign_in_bottom: "104",
+            message: "105",
+            cart: "106",
+            store_language: "107",
+            currency: "108",
+            search_product: "109",
+            H1: "110",
+            paragraph: "111",
+            single_image: "112",
+            slider: "113",
+            poster: "114",
+            gallery: "115",
+            media_lr: "116",
+            media_ud: "117",
+            end_payment: "118",
+            end_email: "119",
+            end_fb: "120",
+            end_ins: "121",
+            end_twitter: "122",
+            end_snapchat: "123",
+            end_pinterest: "124",
+            end_line: "125",
+            theme: "126",
+            free_layout: "127",
+            search_pop: "128",
+            search_bar: "129"
+        };
+        const customComponent = {
+            sign_up_tab: "101",
+            sign_in_tab: "102",
+            line_signin: "103",
+            fb_signin: "104",
+            sign_in_105: "105",
+            sign_up: "106",
+            title_component: "107",
+            content_component: "108",
+            productmoduel_component: "109",
+            productlist_component: "110",
+            QRcode_component: "111",
+            ins_component: "112",
+            googlemap_component: "113",
+            facebook_component: "114",
+            video_component: "115",
+            pic_component: "116",
+            product_menu: "117",
+            pre_order: "118",
+            gotoamazon: "119",
+            wishlist: "120",
+            product_descri: "121",
+            deliver_payment: "122",
+            score: "123",
+            reviews: "123",
+            share: "124",
+            recommendation: "125",
+            checkout: "126",
+            removement: "127",
+            sign_in_128: "128",
+            proceed_to_checkout: "129",
+            select_all: "130",
+            deselect_all: "131",
+            select: "132",
+            deselect: "133",
+            product_edit: "134",
+            subscribe_line: "135",
+            back_to_cart: "136",
+            place_order: "137",
+            buy_now: "138",
+            view_more: "139",
+            play_video: "140",
+            more_bundling: "141",
+            rec_turn_page: "142",
+            arrival_notice: "143",
+            more_reviews: "144",
+            consumer_info: "145",
+            message: "146",
+            order: "147",
+            return_order: "148",
+            wishlist_149: "149",
+            wishlist_turn_page: "150",
+            use_coupon: "151",
+            sign_in: "152",
+            subscription: "153",
+            back: "154",
+            continue: "155"
+        };
+        const displayIterm = {
+            24: "101",
+            48: "102",
+            72: "103"
+        };
+        const sortBy = {
+            newestToOldest: "101",
+            oldestToNewest: "102",
+            priceHighToLow: "103",
+            priceLowToHigh: "104",
+            default: "999"
+        };
+        const proListType = {
+            category: "101",
+            all_product: "102",
+            chosen_product: "103"
+        };
+        const shareDest = {
+            line: "101",
+            fb: "102",
+            message: "103",
+            link: "104",
+            whatsapp: "105",
+            twitter: "106"
+        };
+        const signinSource = {
+            sign_in_bottom: "101",
+            order_edit: "102"
+        };
+        const searchType = {
+            user_search: "101",
+            suggest_ai: "102",
+            suggest_search: "103"
+        };
+        const inputBox = {
+            email: "101",
+            first_name: "102",
+            last_name: "103",
+            country: "104",
+            province: "105",
+            city: "106",
+            district: "107",
+            address1: "108",
+            address2: "108",
+            postcode: "109",
+            phone: "110",
+            same_address: "111",
+            another_address: "112",
+            remark: "113"
+        };
+        const objectType = {
+            info: "101",
+            address: "102",
+            shipping: "103"
+        };
+        const isFirst = {
+            yes: "1",
+            no: "0"
+        };
+        const loginResult = {
+            success: "1",
+            fail: "0"
+        };
+        const paramsMapping = {
+            event_name: eventName,
+            event_category: eventCategory,
+            product_type: productType,
+            status: hd_const_status,
+            purchase_source: purchaseSource,
+            page,
+            general_component: generalComponent,
+            custom_component: customComponent,
+            display_iterm: displayIterm,
+            sort_by: sortBy,
+            pro_list_type: proListType,
+            share_dest: shareDest,
+            signin_source: signinSource,
+            search_type: searchType,
+            input_box: inputBox,
+            object: objectType,
+            isFirst,
+            loginResult
+        };
+        const paramsMappingToArrayKeys = [ "general_component", "custom_component", "status", "product_type" ];
+        class TradeHdReport {
+            constructor() {
+                this.paramsMapping = paramsMapping;
+                this.paramsMappingToArrayKeys = paramsMappingToArrayKeys;
+            }
+            setReportContent(params) {
+                const reportContent = {
+                    ...params
+                };
+                const that = this;
+                if (reportContent.products && Array.isArray(reportContent.products)) {
+                    const keys = [ "product_type", "product_id", "variantion_id", "product_name", "product_price", "position", "status", "quantity", "update_quantity", "price" ];
+                    reportContent.products.forEach((spu => {
+                        keys.forEach((key => {
+                            if (spu[key]) {
+                                if (!reportContent[key]) reportContent[key] = [];
+                                reportContent[key].push(spu[key]);
+                            }
+                        }));
+                    }));
+                    delete reportContent.products;
+                }
+                Object.entries(reportContent).forEach((([key, value]) => {
+                    let trueValue = value;
+                    if (key in that.paramsMapping) if (Array.isArray(value)) {
+                        if (that.paramsMappingToArrayKeys.indexOf(key) > -1) trueValue = (value || []).map((v => that.paramsMapping[key][v])).join(",");
+                    } else trueValue = that.paramsMapping[key][value] || value;
+                    if (Array.isArray(trueValue)) trueValue = trueValue.join(",");
+                    reportContent[key] = trueValue;
+                }));
+                const data = {
+                    ...null !== reportContent && void 0 !== reportContent ? reportContent : {}
+                };
+                return data;
+            }
+            event(reportContent, id) {
+                var _window$HdSdk, _window$HdSdk$shopTra;
+                const data = this.setReportContent(reportContent);
+                null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : null === (_window$HdSdk$shopTra = _window$HdSdk.shopTracker) || void 0 === _window$HdSdk$shopTra ? void 0 : _window$HdSdk$shopTra.report(id, data);
+            }
+        }
+        const hidooRp = new TradeHdReport;
         var uuid = __webpack_require__("../shared/node_modules/uuid/index.js");
         function getEventID() {
             return `${Date.now()}_${(0, uuid.v4)().replace(/-/g, "")}`;
         }
         Symbol("REPORT_ADD_CART");
         Symbol("PAYPAL_CLICK");
-        const paypalPage = {
-            Cart: "Cart",
-            MiniCart: "MiniCart",
-            FilterModal: "FilterModal"
-        };
         const encode = str => {
             var _window, _window2;
             if ("undefined" === typeof window) return "";
@@ -22035,16 +22127,6 @@
             return null === (_window2 = window) || void 0 === _window2 ? void 0 : _window2.btoa(ec);
         };
         const isFn = object => "function" === typeof object;
-        const setProducts = data => {
-            const products = null === data || void 0 === data ? void 0 : data.map((item => ({
-                product_id: item.productSeq,
-                variantion_id: item.productSku,
-                quantity: item.productNum,
-                price: currency.formatNumber(Number(null === item || void 0 === item ? void 0 : item.productPrice) || 0).toString(),
-                product_name: item.productName
-            })));
-            return products;
-        };
         class TradeReport {
             constructor() {
                 this.eventBus = event_bus.SL_EventBus;
@@ -22078,14 +22160,19 @@
             reportPaypal(data, key) {
                 const cid = this.pageMap[key];
                 if (cid) {
-                    var _window$HdSdk, _window$HdSdk$shopTra;
+                    const products = null === data || void 0 === data ? void 0 : data.map((item => ({
+                        product_id: item.productSeq,
+                        variantion_id: item.productSku,
+                        quantity: item.productNum,
+                        price: currency.formatNumber(Number(null === item || void 0 === item ? void 0 : item.productPrice) || 0).toString(),
+                        product_name: item.productName
+                    })));
                     const page = this.hdPage[key];
-                    const products = setProducts(data);
-                    null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : null === (_window$HdSdk$shopTra = _window$HdSdk.shopTracker) || void 0 === _window$HdSdk$shopTra ? void 0 : _window$HdSdk$shopTra.report(cid, {
+                    hidooRp.event({
                         event_name: "quick_payment",
                         page,
                         products
-                    });
+                    }, cid);
                 }
             }
         }
@@ -22098,6 +22185,21 @@
                 eventName: "AddToCart"
             };
             return params;
+        };
+        const hdRpCheckout = (data, id) => {
+            var _window$HdSdk, _window$HdSdk$shopTra;
+            const products = null === data || void 0 === data ? void 0 : data.map((item => ({
+                product_id: item.productSeq,
+                variantion_id: item.productSku,
+                quantity: item.productNum,
+                price: currency.formatNumber(Number(null === item || void 0 === item ? void 0 : item.productPrice) || 0).toString(),
+                product_name: item.productName
+            })));
+            null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : null === (_window$HdSdk$shopTra = _window$HdSdk.shopTracker) || void 0 === _window$HdSdk$shopTra ? void 0 : _window$HdSdk$shopTra.report(id, {
+                event_name: "105",
+                page: "cart",
+                products
+            });
         };
         const setIniiateCheckout = (seq, needReport) => {
             let eventID;
@@ -22112,38 +22214,19 @@
                 ed: eventID || getEventID()
             });
         };
-        const hdPayReportV2 = (productsInfo, extra) => {
-            var _window$HdSdk2, _window$HdSdk2$shopTr;
-            const products = setProducts(productsInfo);
-            null === (_window$HdSdk2 = window.HdSdk) || void 0 === _window$HdSdk2 ? void 0 : null === (_window$HdSdk2$shopTr = _window$HdSdk2.shopTracker) || void 0 === _window$HdSdk2$shopTr ? void 0 : _window$HdSdk2$shopTr.collect({
-                products,
-                ...extra
-            });
-        };
         const reportCheckout = data => {
-            const {isCart, report, products: productsInfo, pageType} = data;
+            const {isCart, report, products} = data;
             if (isCart) {
-                var _window$HdSdk3, _window$HdSdk3$shopTr, _window$HdSdk4, _window$HdSdk4$shopTr, _window$HdSdk5, _window$HdSdk5$shopTr;
-                const cid = pageType === paypalPage.Cart ? 60006254 : 60006262;
-                null === (_window$HdSdk3 = window.HdSdk) || void 0 === _window$HdSdk3 ? void 0 : null === (_window$HdSdk3$shopTr = _window$HdSdk3.shopTracker) || void 0 === _window$HdSdk3$shopTr ? void 0 : _window$HdSdk3$shopTr.report(cid, {
+                const cid = "/cart" === window.location.pathname ? 60006254 : 60006262;
+                hdRpCheckout(products, cid);
+                hidooRp.event({
                     event_name: "proceed_to_checkout"
-                });
-                null === (_window$HdSdk4 = window.HdSdk) || void 0 === _window$HdSdk4 ? void 0 : null === (_window$HdSdk4$shopTr = _window$HdSdk4.shopTracker) || void 0 === _window$HdSdk4$shopTr ? void 0 : _window$HdSdk4$shopTr.report(cid, {
+                }, cid);
+                hidooRp.event({
                     event_name: "click_component",
                     custom_component: [ "proceed_to_checkout" ]
-                });
-                const products = setProducts(productsInfo);
-                null === (_window$HdSdk5 = window.HdSdk) || void 0 === _window$HdSdk5 ? void 0 : null === (_window$HdSdk5$shopTr = _window$HdSdk5.shopTracker) || void 0 === _window$HdSdk5$shopTr ? void 0 : _window$HdSdk5$shopTr.report(cid, {
-                    event_name: "105",
-                    page: "cart",
-                    products
-                });
-            } else if ("Checkout" === state_selector.SL_State.get("templateAlias")) hdPayReportV2(productsInfo, {
-                page: 1 * state_selector.SL_State.get("checkout.basicInfo.configPage") === 1 ? 109 : 110,
-                module: 112,
-                component: 129,
-                action_type: 102
-            });
+                }, cid);
+            }
             if (isFn(report)) report();
             sessionStorage.setItem(encode("checkout_track"), "[]");
         };
@@ -22191,7 +22274,7 @@
                 const isLogin = state_selector.SL_State.get("request.cookie.osudb_uid");
                 const {query = {}, onBeforeJump, report, needReport, abandonedOrderSeq, abandonedOrderMark} = extra;
                 const needLogin = "ONLY_LOGIN" === (null === settleConfig || void 0 === settleConfig ? void 0 : settleConfig.loginType);
-                const {associateCart = false, discountCode, pageType, ...rest} = extra;
+                const {associateCart = false, discountCode, ...rest} = extra;
                 let _discountCode = discountCode;
                 if (!associateCart) {
                     var _tradeExtraInfo$disco;
@@ -22199,12 +22282,6 @@
                     const tradeExtraInfo = isJsonParse(tradeExtraInfoStr) ? JSON.parse(tradeExtraInfoStr) : {};
                     _discountCode = null === tradeExtraInfo || void 0 === tradeExtraInfo ? void 0 : null === (_tradeExtraInfo$disco = tradeExtraInfo.discountCode) || void 0 === _tradeExtraInfo$disco ? void 0 : _tradeExtraInfo$disco.value;
                 }
-                if (associateCart && query && !(null !== query && void 0 !== query && query.spb)) hdPayReportV2(products, {
-                    page: "Cart" === pageType ? 106 : 108,
-                    module: 112,
-                    component: 101,
-                    action_type: 102
-                });
                 const response = abandonedOrderSeq ? await Promise.resolve({
                     data: {
                         seq: abandonedOrderSeq,
@@ -22237,12 +22314,11 @@
                     "function" === typeof onBeforeJump && onBeforeJump();
                     try {
                         reportCheckout({
-                            pageType,
                             products,
                             isCart: associateCart,
                             report
                         });
-                        if (associateCart && pageType === paypalPage.Cart) {
+                        if (associateCart) {
                             var _window$SL_EventBus;
                             null === (_window$SL_EventBus = window.SL_EventBus) || void 0 === _window$SL_EventBus ? void 0 : _window$SL_EventBus.emit("global:hdReport:exit", [ "60006254", {
                                 event_name: "999",
@@ -22836,21 +22912,6 @@
                 };
                 this.createOrderParams = orderParams;
                 const {products, ...extra} = orderParams;
-                try {
-                    if (null !== extra && void 0 !== extra && extra.associateCart) hdPayReportV2(products, {
-                        page: this.config.pageType === paypalPage.Cart ? 106 : 108,
-                        module: 112,
-                        component: 102,
-                        action_type: 102
-                    }); else if ("Checkout" === state_selector.SL_State.get("templateAlias")) hdPayReportV2(products, {
-                        page: 1 * state_selector.SL_State.get("checkout.basicInfo.configPage") === 1 ? 109 : 110,
-                        module: -999,
-                        component: 102,
-                        action_type: 102
-                    });
-                } catch (e) {
-                    console.error(e);
-                }
                 if (!products || products.length <= 0) {
                     this.onPayPalError({
                         message: `products empty, request aborted: ${products}`
@@ -22858,25 +22919,19 @@
                     return actions.reject();
                 }
                 if (!this.isContinueMode) return;
-                try {
-                    this.paypalEmit(products);
-                    this.products = products;
-                    const {url: returnUrl, needLogin, abandonedInfo} = await checkout.save(products, {
-                        ...extra,
-                        query: {
-                            ...extra.query,
-                            spb: true
-                        },
-                        pageType: this.config.pageType
-                    });
-                    this.createOrderParams.returnUrl = returnUrl;
-                    this.preparePayParams = abandonedInfo;
-                    if (needLogin) {
-                        window.location.href = returnUrl;
-                        return actions.reject();
+                this.paypalEmit(products);
+                this.products = products;
+                const {url: returnUrl, needLogin, abandonedInfo} = await checkout.save(products, {
+                    ...extra,
+                    query: {
+                        ...extra.query,
+                        spb: true
                     }
-                } catch (error) {
-                    this.onPayPalError(error);
+                });
+                this.createOrderParams.returnUrl = returnUrl;
+                this.preparePayParams = abandonedInfo;
+                if (needLogin) {
+                    window.location.href = returnUrl;
                     return actions.reject();
                 }
             }
@@ -22943,7 +22998,7 @@
                 const linearGradient = [ `90deg`, `hsla(0, 0%, 74.5%, 0.2) 25%`, `hsla(0, 0%, 50.6%, 0.24) 37%`, `hsla(0, 0%, 74.5%, 0.2) 63%` ].join(", ");
                 const skeletonAnimated = `\n      @keyframes skeleton {\n        0% {\n          background-position: 100% 50%;\n        }\n        100% {\n          background-position: 0 50%;\n        }\n      }\n    `;
                 styleTag.innerHTML = this.isContinueMode && !this.isVerticalLayout ? `\n      #${this.config.domId} {\n        overflow: hidden;\n        text-align: center;\n        height: ${this.style.height}px;\n      }\n      /** 背景底色 */\n      #${this.config.domId}.paypal__bg::before,\n      #${this.config.domId}.paypal__bg::after {\n        content:'';\n        position: absolute;\n        top: 0;\n        bottom: 0;\n        left: 0;\n        width: calc(50% - 3px);\n        border-radius: 4px;\n        background-color: #ffc439;\n      }\n      #${this.config.domId}.paypal__bg::after {\n        left: unset;\n        right: 0;\n      }\n      [data-button_style=square] .paypal__bg::before,\n      [data-button_style=square] .paypal__bg::after{\n        border-radius: 0 !important;\n      }\n      [data-button_style=rounded] .paypal__bg::before,\n      [data-button_style=rounded] .paypal__bg::after{\n        border-radius: 9999px !important;\n      }\n    ` : `\n      #${this.config.domId} {\n        min-height: ${this.style.height}px;\n      }\n      `;
-                styleTag.innerHTML += `\n\n    #${this.config.domId} {\n      position: relative;\n      user-select: none;\n      -moz-user-select: none;\n      -webkit-user-select: none;\n    }\n    #${this.config.domId} .paypal__skeleton--animated {\n      margin: 0 auto;\n      border-radius: 4px;\n      width: 100%;\n      height: ${this.style.height}px;\n      position: absolute;\n    }\n\n    .paypal__skeleton--animated {\n      background: linear-gradient(${linearGradient});\n      background-size: 400% 100%;\n      animation: skeleton 2s linear infinite;\n    }\n\n    ${skeletonAnimated}\n    `;
+                styleTag.innerHTML += `\n\n    #${this.config.domId} {\n      position: relative;\n    }\n    #${this.config.domId} .paypal__skeleton--animated {\n      margin: 0 auto;\n      border-radius: 4px;\n      width: 100%;\n      height: ${this.style.height}px;\n      position: absolute;\n    }\n\n    .paypal__skeleton--animated {\n      background: linear-gradient(${linearGradient});\n      background-size: 400% 100%;\n      animation: skeleton 2s linear infinite;\n    }\n\n    ${skeletonAnimated}\n    `;
                 if (!node) return;
                 if (this.wrapperClass) node.classList.add(this.wrapperClass);
                 if (this.wrapperStyle) {
@@ -33056,18 +33111,6 @@
             handleMobileScaleImage() {
                 $(`${this.mobileId} .paginationList div`).removeClass("active").eq(activeIndex).addClass("active");
             }
-            preLoadPrevNextSlideImg() {
-                const prevSlideLoadDom = document.querySelector(`${this.mobileId} .product_productImages .swiper-slide-prev .lozad`);
-                const nextSlideLoadDom = document.querySelector(`${this.mobileId} .product_productImages .swiper-slide-next .lozad`);
-                if (prevSlideLoadDom) {
-                    var _window$lozadObserver;
-                    null === (_window$lozadObserver = window.lozadObserver) || void 0 === _window$lozadObserver ? void 0 : _window$lozadObserver.triggerLoad(prevSlideLoadDom);
-                }
-                if (nextSlideLoadDom) {
-                    var _window$lozadObserver2;
-                    null === (_window$lozadObserver2 = window.lozadObserver) || void 0 === _window$lozadObserver2 ? void 0 : _window$lozadObserver2.triggerLoad(nextSlideLoadDom);
-                }
-            }
             initMobileProductImages(firstInit) {
                 const mobileProductImagesDom = $(`${this.mobileId}`);
                 const selector = `${this.mobileId} .product_productImages`;
@@ -33085,12 +33128,12 @@
                     autoHeight: true,
                     lazy: {
                         loadOnTransitionStart: true,
-                        loadPrevNext: true
+                        loadPrevNext: .75 === this.mobileWidthRatio ? true : false
                     },
                     on: {
                         init: swiper => {
                             if (firstInit) {
-                                var _window$lozadObserver3;
+                                var _window$lozadObserver;
                                 if (this.productImageScale) {
                                     this.initPhotoSwipe(this.mobileId, "mobile");
                                     this.initMobileSkuPhotoSwiper();
@@ -33103,11 +33146,8 @@
                                 }
                                 $(`${this.mobileId} .product_productImages .swiper-slide`).css("height", "auto");
                                 swiper.updateAutoHeight();
-                                null === (_window$lozadObserver3 = window.lozadObserver) || void 0 === _window$lozadObserver3 ? void 0 : _window$lozadObserver3.observe();
+                                null === (_window$lozadObserver = window.lozadObserver) || void 0 === _window$lozadObserver ? void 0 : _window$lozadObserver.observe();
                             }
-                        },
-                        afterInit: () => {
-                            this.preLoadPrevNextSlideImg();
                         },
                         slideChange: swiper => {
                             handleVideoPlayPause(this.videoMobilePlayer, "pause");
@@ -33119,7 +33159,6 @@
                         slideChangeTransitionEnd: () => {
                             const skuImageIndex = $(`${this.mobileId} .product_productImages`).attr("sku-image-index");
                             if (void 0 !== skuImageIndex) this.toggleMSkuImage(skuImageIndex, false);
-                            this.preLoadPrevNextSlideImg();
                         }
                     },
                     ...this.swiperConfig.mobile
