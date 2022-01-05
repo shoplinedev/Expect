@@ -1,7 +1,7 @@
-<div class="footer__custom">
+<div class="footer__custom is-close" {{#if this.mobile_auto_fold}}data-dropdown data-platform="mobile"{{/if}}>
     {{ snippet 'footer-block-header' }}
 
-    <div class="footer__block-wrapper">
+    <div class="footer__block-wrapper" data-dropdown-list data-animation-type="SlipIn">
         <div class="footer__block-content">
             {{#and this.settings.image this.settings.image.url}}
                 <div class="footer__custom-image">

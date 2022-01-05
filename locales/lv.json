@@ -61,9 +61,9 @@
         },
         "benefit9": {
           "threshold1": {
-            "step1": "Pirkt {{threshold}} gabalus iekļūt{{willSave}} gabalus par brīvu",
-            "step2": "Pievienot {{threshold}} gabalus iekļūt{{willSave}} gabalus par brīvu",
-            "step3": "Apsveicam! Jūs varat baudīt pirkumu {{threshold}} un saņemt {{saved}} bez maksas. Apmaksājiet rēķinu tagad!"
+            "step1": "Iegādājieties vēl {{threshold}} gabalu, no kuriem {{willSave}} gabali ir bezmaksas",
+            "step2": "Apsveicam! {{saved}} gabali iegūti par brīvu! Iegādājieties vēl {{threshold}} gabalu, no kuriem {{willSave}} gabalu ir bez maksas",
+            "step3": "Apsveicam! {{saved}} no tiem ir bez maksas"
           }
         }
       },
@@ -740,7 +740,8 @@
     "enter-correct-phone-number": "Lūdzu, ievadiet mobilā tālruņa numuru derīgā formātā",
     "phone-number-less-than-100": "Mobilā tālruņa numurs nedrīkst pārsniegt 100 rakstzīmes",
     "shipping_plan_unavailable": "Kupons {{discountCode}} ir derīgs nosūtīšanas metodei",
-    "mutual-excluded-by-time-limited": "Šim rīkojumam ir piemērots samazinājums. Jūs nevarat pievienot vēl vienu samazinājumu."
+    "mutual-excluded-by-time-limited": "Šim rīkojumam ir piemērots samazinājums. Jūs nevarat pievienot vēl vienu samazinājumu.",
+    "discount-code-can-not-accumulate": "Šim produktam jau ir atvieglota akcija, ko nevar izmantot kopā ar citiem atvieglotiem akcijām"
   },
   "subscription": {
     "subscript-via-line-facebook": "Reģistrējieties pasūtījuma paziņošanai, izmantojot LINE vai Facebook",

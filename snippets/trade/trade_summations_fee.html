@@ -30,7 +30,7 @@
       checked=memberPointInfo.use
       parentClass="cart-member-point-checkbox"
     }}
-    <div class="trade_summations_fee__desc {{#if memberPointInfo.use }} hide {{else}} {{/if}}">{{t 'trade.point-discount-desc' deductMemberPointNum=memberPointInfo.deductMemberPointNum}} <span class="deductMemberPointAmount">{{currency memberPointInfo.deductMemberPointAmount}}</span></div>
+    <div class="trade_summations_fee__desc {{#if memberPointInfo.use }} hide {{else}} {{/if}}">{{t 'trade.point-discount-desc' deductMemberPointNum=memberPointInfo.deductMemberPointNum}} <span class="deductMemberPointAmount">{{currency_convert memberPointInfo.deductMemberPointAmount}}</span></div>
   </div>
   {{/if}}
 

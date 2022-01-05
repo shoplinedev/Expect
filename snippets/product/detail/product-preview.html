@@ -50,7 +50,7 @@
 {{!-- 启用放大商品图功能 --}}
 {{ assign 'product_image_scale' (default theme.settings.product_image_scale false) }}
 
-<div class="product-preview-container">
+<div class="product-preview-container" data-ssr-plugin-product-detail-container data-product-spu-id={{ product.spu.spuSeq }}>
   <div class="product-preview-row product-detail-img-postion__{{ product_image_position }}">
     <div class="product-detail-col-img__{{ product_image_size }} product-detail-col-img">
       <div class="product-detail-sticky" id="product-detail-sticky_{{ id }}">
@@ -61,27 +61,33 @@
     {{!-- 询盘商品不显示倒计时 --}}
     {{#not product.spu.inquiry}}
     {{#if productSale}}
-      {{#filter salesPlugins 1 property='promotionSubType'}}
-        {{#if promotionSubType '==' '1'}}
-          {{#or salesPlugin.countDownTimerPlugin.showCountDownTime salesPlugin.progressPlugin.showProgressBar}}
-            <div class="d-md-none flash-sale-component sales__flashSale notranslate">
-            {{ snippet 'sales/flash-sale' }}
-            </div>
+      {{#if salesPlugins}}
+        {{#filter salesPlugins 1 property='promotionSubType'}}
+          {{#if promotionSubType '==' '1'}}
+            {{#or salesPlugin.countDownTimerPlugin.showCountDownTime salesPlugin.progressPlugin.showProgressBar}}
+              <div class="d-md-none flash-sale-component sales__flashSale notranslate">
+              {{ snippet 'sales/flash-sale' }}
+              </div>
+            {{else}}
+              <div class="d-md-none product-detail-countdown countdown-component">
+              {{ snippet 'sales/countdown-widget' spuSeq=product.spu.spuSeq sortationList=product.spu.sortationList }}
+              </div>
+            {{/or}}
           {{else}}
             <div class="d-md-none product-detail-countdown countdown-component">
             {{ snippet 'sales/countdown-widget' spuSeq=product.spu.spuSeq sortationList=product.spu.sortationList }}
             </div>
-          {{/or}}
-        {{else}}
-          <div class="d-md-none product-detail-countdown countdown-component">
-          {{ snippet 'sales/countdown-widget' spuSeq=product.spu.spuSeq sortationList=product.spu.sortationList }}
+          {{/if}}
+          {{else}}
+            <div class="d-md-none product-detail-countdown countdown-component">
+            {{ snippet 'sales/countdown-widget' spuSeq=product.spu.spuSeq sortationList=product.spu.sortationList }}
           </div>
-        {{/if}}
-        {{else}}
-          <div class="d-md-none product-detail-countdown countdown-component">
-          {{ snippet 'sales/countdown-widget' spuSeq=product.spu.spuSeq sortationList=product.spu.sortationList }}
+        {{/filter}}
+      {{else}}
+        <div class="d-md-none product-detail-countdown countdown-component">
+        {{ snippet 'sales/countdown-widget' spuSeq=product.spu.spuSeq sortationList=product.spu.sortationList }}
         </div>
-      {{/filter}}
+      {{/if}}
     {{else}}
       <div class="d-md-none product-detail-countdown countdown-component">
         {{ snippet 'sales/countdown-widget' spuSeq=product.spu.spuSeq sortationList=product.spu.sortationList }}
@@ -120,17 +126,17 @@
             {{#snippet 'product/commons/base-collapse'}}
               {{#if show_product_desc}}
                 <div class="product-detail-description">
-                  {{ snippet 'product/commons/base-collapse-item' title=(t 'productDetail.tabs.description') isSyncData=true content=(rich_editor_format description) customTitleClass='body2' fold=(isFalsey theme.settings.product_description_show) isDetail=true }}
+                  {{ snippet 'product/commons/base-collapse-item' title=(t 'productDetail.tabs.description') isSyncData=true content=(rich_editor_format description) customTitleClass='body2' fold=(isFalsey theme.settings.product_description_show) isDetail=true position='aside' }}
                 </div>
               {{/if}}
               {{#if theme.settings.product_custom_tab1}}
-                {{ snippet 'product/commons/base-collapse-item' customTitleClass='body2' id=theme.settings.product_custom_tab1 fold=theme.settings.product_custom_tab1_fold }}
+                {{ snippet 'product/commons/base-collapse-item' customTitleClass='body2' id=theme.settings.product_custom_tab1 fold=theme.settings.product_custom_tab1_fold position='aside' }}
               {{/if}}
               {{#if theme.settings.product_custom_tab2}}
-                {{ snippet 'product/commons/base-collapse-item' customTitleClass='body2' id=theme.settings.product_custom_tab2 fold=theme.settings.product_custom_tab2_fold }}
+                {{ snippet 'product/commons/base-collapse-item' customTitleClass='body2' id=theme.settings.product_custom_tab2 fold=theme.settings.product_custom_tab2_fold position='aside' }}
               {{/if}}
               {{#if theme.settings.product_custom_tab3}}
-                {{ snippet 'product/commons/base-collapse-item' customTitleClass='body2' id=theme.settings.product_custom_tab3 fold=theme.settings.product_custom_tab3_fold }}
+                {{ snippet 'product/commons/base-collapse-item' customTitleClass='body2' id=theme.settings.product_custom_tab3 fold=theme.settings.product_custom_tab3_fold position='aside' }}
               {{/if}}
             {{/snippet}}
           </div>
@@ -223,18 +229,18 @@
         <div class="product-detail-collapse product-detail-collapse_{{ id }}">
           {{#if show_product_desc}}
             <div class="product-detail-description">
-              {{ snippet 'product/commons/base-collapse-item' title=(t 'productDetail.tabs.description') isSyncData=true content=(rich_editor_format description) customTitleClass='body2' fold=(isFalsey theme.settings.product_description_show) isDetail=true }}
+              {{ snippet 'product/commons/base-collapse-item' title=(t 'productDetail.tabs.description') isSyncData=true content=(rich_editor_format description) customTitleClass='body2' fold=(isFalsey theme.settings.product_description_show) isDetail=true position='bottom' }}
             </div>
           {{/if}}
           {{#snippet 'product/commons/base-collapse'}}
             {{#if theme.settings.product_custom_tab1}}
-              {{ snippet 'product/commons/base-collapse-item' customTitleClass='body2' id=theme.settings.product_custom_tab1 fold=theme.settings.product_custom_tab1_fold }}
+              {{ snippet 'product/commons/base-collapse-item' customTitleClass='body2' id=theme.settings.product_custom_tab1 fold=theme.settings.product_custom_tab1_fold position='bottom' }}
             {{/if}}
             {{#if theme.settings.product_custom_tab2}}
-              {{ snippet 'product/commons/base-collapse-item' customTitleClass='body2' id=theme.settings.product_custom_tab2 fold=theme.settings.product_custom_tab2_fold }}
+              {{ snippet 'product/commons/base-collapse-item' customTitleClass='body2' id=theme.settings.product_custom_tab2 fold=theme.settings.product_custom_tab2_fold position='bottom' }}
             {{/if}}
             {{#if theme.settings.product_custom_tab3}}
-              {{ snippet 'product/commons/base-collapse-item' customTitleClass='body2' id=theme.settings.product_custom_tab3 fold=theme.settings.product_custom_tab3_fold }}
+              {{ snippet 'product/commons/base-collapse-item' customTitleClass='body2' id=theme.settings.product_custom_tab3 fold=theme.settings.product_custom_tab3_fold position='bottom' }}
             {{/if}}
           {{/snippet}}
         </div>

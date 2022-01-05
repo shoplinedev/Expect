@@ -624,6 +624,10 @@
           "en": "Header font in capital",
           "zh-hans-cn": "页头字体大写"
         },
+        "info": {
+          "en": "Once enabled, system will automatically increase the font spacing.",
+          "zh-hans-cn": "开启后文字会自动增加字体间距"
+        },
         "default": true
       }
     ]

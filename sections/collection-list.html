@@ -30,12 +30,34 @@ collection_products:
   {{assign 'marginItemClass' 'colletionlist__cagetegory--noMargin'}}
 {{/if}}
 
+{{#if section.settings.show_touch}}
+  {{assign 'mbCol' 3}}
+  {{assign 'mbClass' 'touch_co_list_box'}}
+{{else}}
+  {{assign 'mbClass' ''}}
+{{/if}}
+
 
 
 <div class="{{#if show_divider}}section--divider{{/if}} colletionlist container g-4 g-md-6">
-  <h2 class="section-title colletionlist__title title4">{{title}}</h2>
-
-  <div class="colletionlist__cagetegory  row row-cols-{{mbCol}} row-cols-lg-{{col}} row-cols-md-{{col}} {{marginItemClass}}">
+  {{#if (boolean title '||' section.settings.button_text)}}
+  <h2 class="section-title colletionlist__title title4">
+    <span class="title-content">
+      {{#isTruthy title}}
+          {{title}}
+      {{/isTruthy}}
+    </span>
+    {{#if (isTruthy section.settings.button_text)}}
+        <span class='colltionlist-btn'>
+            <a class='btn btn-link'
+              href="/collections-all">
+              {{section.settings.button_text}}
+            </a>
+        </span>
+    {{/if}}
+  </h2>
+  {{/if}}
+  <div class="colletionlist__cagetegory  row row-cols-{{mbCol}} row-cols-lg-{{col}} row-cols-md-{{col}} {{marginItemClass}} {{mbClass}}">
     {{#each blocks}}
       {{assign 'sortationData' (get settings.category_id ../all_collections)}}
       {{#if settings.title}}
@@ -124,6 +146,15 @@ collection_products:
       "default": 6
     },
     {
+      "id": "show_touch",
+      "type": "switch",
+      "label": {
+        "zh-hans-cn": "移动端左右滑动",
+        "en": "Mobile swipe left and right"
+      },
+      "default": false
+    },
+    {
       "type": "switch",
       "id": "add_margin",
       "label": {
@@ -140,6 +171,15 @@ collection_products:
         "en": "Dismay the split line"
       },
       "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": {
+        "zh-hans-cn": "按钮文案",
+        "en": "Button text"
+      },
+      "default": "View all"
     }
   ],
   "blocks": [

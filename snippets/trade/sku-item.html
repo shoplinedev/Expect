@@ -104,11 +104,11 @@
           {{else}}
             {{#if (toInt data.salePrice) '>' (toInt data.price)}}
               <span class="trade-cart-sku-item-info-amount-through notranslate" data-amount={{data.salePrice}}>
-                {{currency data.salePrice}}
+                {{currency_convert data.salePrice}}
               </span>
             {{/if}}
             <span class="notranslate {{cond (boolean data.priceType '===' 2) 'trade-cart-sku-item-info-amount-and-limited-discount' ''}}" data-amount={{data.price}}>
-                {{currency data.price}}{{#if (toInt data.priceType) '==' 1}}<span class="trade-cart-sku-item-info-tag" data-vip-tag="small"></span>{{/if}}
+                {{currency_convert data.price}}{{#if (toInt data.priceType) '==' 1}}<span class="trade-cart-sku-item-info-tag" data-vip-tag="small"></span>{{/if}}
             </span>
           {{/if}}
         </div>

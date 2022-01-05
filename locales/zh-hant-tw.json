@@ -61,9 +61,9 @@
         },
         "benefit9": {
           "threshold1": {
-            "step1": "購買{{threshold}}件可得{{willSave}}件免費",
-            "step2": "增加{{threshold}}件可得{{willSave}}件免費",
-            "step3": "恭喜！您可以享受買{{threshold}}送{{saved}}，現在結賬！"
+            "step1": "再買{{threshold}}件，其中{{willSave}}件免費",
+            "step2": "恭喜！已得{{saved}}件免費！再購買{{threshold}}件，其中{{willSave}}件免費",
+            "step3": "恭喜！其中{{saved}}件已免費"
           }
         }
       },
@@ -740,7 +740,8 @@
     "enter-correct-phone-number": "請輸入有效格式的行動電話號碼",
     "phone-number-less-than-100": "行動電話號碼長度不可超過 100 個字元",
     "shipping_plan_unavailable": "{{discountCode}} 優惠碼不適用當前物流方式",
-    "mutual-excluded-by-time-limited": "限時折扣和優惠碼活動互斥"
+    "mutual-excluded-by-time-limited": "限時折扣和優惠碼活動互斥",
+    "discount-code-can-not-accumulate": "商品已經存在一個優惠活動，不可與其他優惠疊加"
   },
   "subscription": {
     "subscript-via-line-facebook": "透過 LINE 或 Facebook 訂閱訂單通知",

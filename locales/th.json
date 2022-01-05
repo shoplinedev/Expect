@@ -61,9 +61,9 @@
         },
         "benefit9": {
           "threshold1": {
-            "step1": "ซื้อ{{threshold}}ชิ้นจะได้ฟรี{{willSave}}ชิ้น",
-            "step2": "เพิ่ม{{threshold}}ชิ้นจะได้ฟรี{{willSave}}ชิ้น",
-            "step3": "ยินดีด้วย คุณสามารถเพลิดเพลินกับการซื้อ {{threshold}} แถม {{saved}} ได้ เช็คบิลเดี๋ยวนี้เลย"
+            "step1": "ซื้ออีก{{threshold}}ชิ้น รับฟรี{{willSave}}ชิ้น",
+            "step2": "ยินดีด้วย ได้รับฟรี{{saved}}ชิ้น ซื้ออีก{{threshold}}ชิ้น รับฟรี{{willSave}}ชิ้น",
+            "step3": "ยินดีด้วย ได้รับฟรี{{saved}}ชิ้น"
           }
         }
       },
@@ -740,7 +740,8 @@
     "enter-correct-phone-number": "โปรดใส่หมายเลขโทรศัพท์มือถือที่มีรูปแบบที่ถูกต้อง",
     "phone-number-less-than-100": "หมายเลขโทรศัพท์มือถือต้องมีความยาวไม่เกิน 100 ตัวอักษร",
     "shipping_plan_unavailable": "รหัสคูปอง {{discountCode}} ใช้ไม่ได้กับวิธีการขนส่งในปัจจุบัน",
-    "mutual-excluded-by-time-limited": "กิจกรรมส่วนลดและรหัสคูปองในเวลาจำกัดไม่สามารถใช้ร่วมกันได้"
+    "mutual-excluded-by-time-limited": "กิจกรรมส่วนลดและรหัสคูปองในเวลาจำกัดไม่สามารถใช้ร่วมกันได้",
+    "discount-code-can-not-accumulate": "สินค้าได้เข้าร่วมโปรโมชั่นอยู่แล้ว ไม่สามารถใช้ร่วมกับโปรโมชั่นอื่นได้"
   },
   "subscription": {
     "subscript-via-line-facebook": "สมัครรับการแจ้งเตือนคำสั่งซื้อผ่านทาง LINE หรือ Facebook",

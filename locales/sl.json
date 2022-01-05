@@ -61,9 +61,9 @@
         },
         "benefit9": {
           "threshold1": {
-            "step1": "Kupite {{threshold}} kosov, da dobite {{willSave}} kosov brezplačno",
-            "step2": "Dodajte {{threshold}} kosov, da dobite {{willSave}} kosov brezplačno",
-            "step3": "Čestitamo! Uživate lahko v nakupu {{threshold}} in pridobite {{saved}} brezplačno. Plačajte račun zdaj!"
+            "step1": "Kupite še {{threshold}} kosov, od tega je {{willSave}} kosov brezplačnih",
+            "step2": "Čestitamo! {{saved}} kosov prejetih brezplačno! Kupite še {{threshold}} kosov, od tega je {{willSave}} kosov brezplačnih",
+            "step3": "Čestitamo! {{saved}} od njih je brezplačnih"
           }
         }
       },
@@ -740,7 +740,8 @@
     "enter-correct-phone-number": "Vnesite veljavno številke mobilnega telefona",
     "phone-number-less-than-100": "Dolžina številke mobilnega telefona ne sme presegati 100 znakov",
     "shipping_plan_unavailable": "{{discountCode}} kupon velja za način dostave",
-    "mutual-excluded-by-time-limited": "Za to naročilo je bil uporabljen popust. Ne morete dodati še enega popusta"
+    "mutual-excluded-by-time-limited": "Za to naročilo je bil uporabljen popust. Ne morete dodati še enega popusta",
+    "discount-code-can-not-accumulate": "Za izdelek že obstaja prednostni dogodek, ki ga ni mogoče uporabiti skupaj z drugimi prednostnimi dogodki"
   },
   "subscription": {
     "subscript-via-line-facebook": "Naročite se na obvestila o naročilu preko storitve LINE ali Facebook",

@@ -9,9 +9,6 @@
 	{{assign 'currency_selector' true}}
 {{/if}}
 {{#if (boolean section.settings.show_locale_selector '&&' storeInfo.languageSetting.enableSelector)}}
-	{{#partial 'gte'}}
-	{{snippet 'gte'}}
-	{{/partial}}
 	{{assign 'locale_selector' true}}
 {{/if}}
 

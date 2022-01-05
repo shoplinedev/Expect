@@ -1,5 +1,16 @@
 <div style="overflow: hidden;" data-node="shadow-content">
   <div class="mce-content-body">
+    {{!-- fix: 商品描述模块富文本图片首屏加载裂图问题 --}}
+    {{!-- 利用css变量，穿透 shadow-root 作用元素样式 --}}
+    <style>
+      .mce-content-body img {
+        opacity: 0;
+      }
+      .mce-content-body img[srcset],
+      .mce-content-body img[src] {
+        opacity: 1;
+      }
+    </style>
     {{{rich_editor_format description}}}
   </div>
 </div>

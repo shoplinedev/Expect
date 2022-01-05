@@ -51,8 +51,11 @@
 {{/switch}}
 
 {{#if showBox "===" true}}
-  <div 
-    class="large-image-with-text-box  large-image-with-text-box--{{ section.settings.image_height }} {{#if (isFalsey hasImage)}}large-image-with-text-box--no-image{{/if}} large-image-with-text-box__mobile--{{ section.settings.mobile_height }} parallax-container" 
+  <div
+    {{#if (isFalsey section.settings.button_text)}}
+      {{{linkObj.hrefAttr}}}
+    {{/if}}
+    class="global-a-nested large-image-with-text-box  large-image-with-text-box--{{ section.settings.image_height }} {{#if (isFalsey hasImage)}}large-image-with-text-box--no-image{{/if}} large-image-with-text-box__mobile--{{ section.settings.mobile_height }} parallax-container" 
     style="--large-image-with-text-body--pc-scale: {{pcImageScale}};--large-image-with-text-body--mobile-scale: {{mobileImageScale}}">
     <div class="large-image-with-text-box__wrapper">
       <div class="{{#if section.settings.parallax }}parallax{{else}}large-image-with-text-box__default{{/if}}">
@@ -301,6 +304,10 @@
       "label": {
         "zh-hans-cn": "按钮文案",
         "en": "Button text"
+      },
+      "info": {
+        "en": "Jumping the page by clicking the image if button texts are not configured",
+        "zh-hans-cn": "若没有配置按钮文案，则通过点击图片跳转"
       },
       "default": "Optional button"
     },

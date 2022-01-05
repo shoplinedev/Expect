@@ -102,7 +102,23 @@
                   }
                 {{/if}}
               {{/style}}
-              <div
+
+              {{assign 'link_item' (useLink this.settings.link global.request.uri.query)}}
+              {{assign 'link_2_item' (useLink this.settings.link_2 global.request.uri.query)}}
+              {{assign 'ele_link_item' (JSONparse '{}')}}
+              {{assign 'ele' 'div'}}
+              {{#and (and (and (isFalsey this.settings.link_text) (isFalsey this.settings.link_text_2)) (or this.settings.link this.settings.link_2))}}
+                {{assign 'ele' 'a'}}
+                {{assign 'ele_link_item' link_item}}
+                {{#if (isFalsey this.settings.link)}}
+                  {{assign 'ele_link_item' link_2_item}}
+                {{/if}}
+              {{/and}}
+
+              <{{ele}}
+                {{#eq ele 'a'}}
+                  {{{ele_link_item.hrefAttr}}}
+                {{/eq}}
                 class="slideshow__slide swiper-slide slideshow__slide--{{ @key }}"
               >
                 <div class="hero__image-wrapper">
@@ -219,12 +235,9 @@
                           {{#if has_link}}
                             <div class="hero__link">
                               {{#if this.settings.link_text}}
-
-                                {{assign 'link_item' (useLink this.settings.link global.request.uri.query)}}
                                 <a {{{ link_item.hrefAttr }}} class="btn btn-lg btn-primary body2 {{#contains this.settings.color_accent 'rgba(0,0,0,0)'}}btn--inverse{{/contains}}">{{ this.settings.link_text }}</a>
                               {{/if}}
                               {{#if this.settings.link_text_2}}
-                                {{assign 'link_2_item' (useLink this.settings.link_2 global.request.uri.query)}}
                                 <a {{{ link_2_item.hrefAttr }}} class="btn btn-lg btn-primary body2 {{#contains this.settings.color_accent 'rgba(0,0,0,0)'}}btn--inverse{{/contains}}">{{ this.settings.link_text_2 }}</a>
                               {{/if}}
                             </div>
@@ -234,7 +247,7 @@
                     </div>
                   </div>
                 {{/if}}
-              </div>
+              </{{ele}}>
             {{/forIn}}
           {{/with}}
 
@@ -280,8 +293,8 @@
     },
     "class": "index-section--hero",
     "block_info": {
-      "zh-hans-cn": "[查看模板图片的建议尺寸](https://shoplineapphelp.zendesk.com/hc/zh-cn/articles/4406422263577)",
-      "en": "[View the suggested sizes of image templates](https://shoplineapphelp.zendesk.com/hc/zh-cn/articles/4406422263577)"
+      "zh-hans-cn": "[查看模板图片的建议尺寸](https://shoplineapphelp.zendesk.com/hc/articles/4406422263577)",
+      "en": "[View the suggested sizes of image templates](https://shoplineapphelp.zendesk.com/hc/articles/4406422263577)"
     },
     "max_blocks": 5,
     "settings": [
@@ -660,8 +673,12 @@
           {
             "type": "group_header",
             "label": {
-              "zh-hans-cn": "按钮内容",
-              "en": "Button content"
+              "zh-hans-cn": "按钮或图片跳转",
+              "en": "Page jumping with button/image"
+            },
+            "info": {
+              "en": "Jumping the page by clicking the image if button texts are not configured",
+              "zh-hans-cn": "若没有配置按钮文案，则通过点击图片跳转"
             }
           },
           {

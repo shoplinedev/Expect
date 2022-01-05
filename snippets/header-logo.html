@@ -19,7 +19,7 @@
 			{{assign 'header_logo_size_mobile' this.settings.mobile_logo_width }}
       {{!-- 如果没有 logo 图片的时候，店铺名称的宽度不跟随 logo 宽度 --}}
       {{#unless has_logo_image}}
-        {{assign 'header_logo_size' '400' }}
+        {{assign 'header_logo_size' '200' }}
         {{assign 'header_logo_size_mobile' '200' }}
       {{/unless}}
 
@@ -51,6 +51,7 @@
 
         .header__logo a {
           width: {{ header_logo_size_mobile }}px;
+          display: inline-block;
         }
         .header--is-light .header_-logo .header__logo--inverted {
           width: {{ header_logo_size_mobile }}px;
@@ -61,12 +62,22 @@
         @media only screen and (min-width: 750px){
           .header__logo a {
             width: {{ header_logo_size }}px;
+            display: inline-block;
           }
           .header--is-light .header_-logo .header__logo--inverted {
             width: {{ header_logo_size }}px;
           }
           .header__layout--left-center .header__item--buttons {
             width: {{ header_logo_size }}px;
+          }
+        }
+
+        .header__layout--left-down .header__item--left .header__logo {
+          max-width: {{ header_logo_size_mobile }}px;
+        }
+        @media only screen and (min-width: 750px){
+          .header__layout--left-down .header__item--left .header__logo {
+            max-width: {{ header_logo_size }}px;
           }
         }
       {{/style}}
@@ -130,10 +141,15 @@
 {{/with}}
 
 {{#unless has_logo}}
+  {{!-- 如果没有 logo block ，店铺名称的宽度与存在logo block，但不存在图片的处理一致 --}}
 	{{#style}}
 		.header__item--logo {
-			max-width: 60%
+			max-width: 200px;
 		}
+    .header__logo a {
+      width: 200px;
+      display: inline-block;
+    }
 	{{/style}}
 
 	{{#if template '===' 'index'}}
@@ -144,7 +160,7 @@
 		<div class="header__logo title-font" itemscope itemtype="http://schema.org/Organization">
 	{{/if}}
 
-	<a href="{{ rootUrl }}" itemprop="url">
+	<a class="notranslate" href="{{ rootUrl }}" itemprop="url">
 		{{ storeInfo.name }}
 	</a>
 

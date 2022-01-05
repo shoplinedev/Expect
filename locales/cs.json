@@ -61,9 +61,9 @@
         },
         "benefit9": {
           "threshold1": {
-            "step1": "Kupte {{threshold}} kusů a dostanete {{willSave}} kusů zdarma",
-            "step2": "Přidejte {{threshold}} kusů a dostanete {{willSave}} kusů zdarma",
-            "step3": "Gratuluji! Můžete si užít při nákupu {{threshold}} a získat {{saved}}, Zaplaťte účet ihned!"
+            "step1": "Koupit {{threshold}} více kusů, z nichž {{willSave}} kusy jsou zdarma",
+            "step2": "Gratuluji! {{saved}} kusy získáte zdarma! Koupit {{threshold}} více kusů, z nichž {{willSave}} kusy jsou zdarma",
+            "step3": "Gratuluji! {{saved}} z nich máte zdarma"
           }
         }
       },
@@ -740,7 +740,8 @@
     "enter-correct-phone-number": "Zadejte prosím číslo mobilního telefonu v platném formátu",
     "phone-number-less-than-100": "Číslo mobilního telefonu nesmí přesáhnout 100 znaků",
     "shipping_plan_unavailable": "Kupón {{discountCode}} je platný pro daný způsob dopravy",
-    "mutual-excluded-by-time-limited": "Na tuto objednávku byla uplatněna sleva. Další slevu nelze přidat."
+    "mutual-excluded-by-time-limited": "Na tuto objednávku byla uplatněna sleva. Další slevu nelze přidat.",
+    "discount-code-can-not-accumulate": "Pro produkt již existuje preferenční událost, kterou nelze použít společně s jinými preferenčními akcemi"
   },
   "subscription": {
     "subscript-via-line-facebook": "Přihlaste se k odběru upozornění na objednávku přes LINE nebo Facebook",

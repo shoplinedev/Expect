@@ -61,9 +61,9 @@
         },
         "benefit9": {
           "threshold1": {
-            "step1": "Kupite {{threshold}} dijela/dijelova kako biste dobili {{willSave}} dijela/dijelova besplatno",
-            "step2": "Dodajte {{threshold}} dijela/dijelova kako biste dobili {{willSave}} dijela/dijelova besplatno",
-            "step3": "Čestitamo! Možete uživati u kupovini {{threshold}} i dobijanju {{saved}} besplatno. Platite račun sada!"
+            "step1": "Kupite {{threshold}} više dijela/dijelova, od kojih su {{willSave}} dijela/dijelova besplatna/besplatni",
+            "step2": "Čestitamo! Dobili ste {{saved}} dijela/dijelova besplatno! Kupite {{threshold}} više dijela/ dijelova od kojih su {{willSave}} dijela/dijelova besplatni",
+            "step3": "Čestitamo! {{saved}} njih su besplatni"
           }
         }
       },
@@ -740,7 +740,8 @@
     "enter-correct-phone-number": "Unesite broj mobilnog telefona valjanog formata",
     "phone-number-less-than-100": "Broj mobilnog telefona ne smije biti duži od 100 znakova",
     "shipping_plan_unavailable": "Kupon {{discountCode}} vrijedi za način dostave",
-    "mutual-excluded-by-time-limited": "Na ovu narudžbu primijenjen je popust. Ne možete dodati još jedan popust"
+    "mutual-excluded-by-time-limited": "Na ovu narudžbu primijenjen je popust. Ne možete dodati još jedan popust",
+    "discount-code-can-not-accumulate": "Ovo je već preferencijalni događaj za proizvod koji se ne može koristiti zajedno s drugim preferencijalnim događajima"
   },
   "subscription": {
     "subscript-via-line-facebook": "Pretplatite se na obavijest o narudžbi putem LINE ili Facebook-a",

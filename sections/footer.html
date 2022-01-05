@@ -6,15 +6,29 @@
 {{/if}}
 
 <div class="footer__wrapper">
-  <div class="footer__body container g-4 g-md-6">
-    <div class="footer__block-container row g-4">
+  <div class="footer__body {{#if section.settings.mobile_auto_fold}}footer__body--fold{{/if}} container g-4 g-md-6">
+    <div class="footer__tool-container footer__tool-container--mobile d-flex d-md-none">
+      {{snippet 'locale-currency-mobile'}}
+    </div>
 
+    {{#or section.settings.show_locale_selector section.settings.show_currency_selector}}
+      <div class="footer__tool-container footer__tool-container--pc d-none d-md-flex">
+        {{snippet 'locale-currency' position="footer"}}
+      </div>
+    {{/or}}
+
+    <div class="footer__block-container row g-4">
       {{#with section as |section|}}
         {{#eachIndex section.block_order}}
           {{#with (lookup ../blocks [item])}}
+            {{ assign 'mobile_auto_fold' section.settings.mobile_auto_fold }}
+            {{ assign 'itemClass' '' }}
+            {{#unless this.settings.title}}
+              {{assign 'itemClass' 'no-title'}}
+            {{/unless}}
 
             <div class="footer__block">
-              <div class="footer__block-item">
+              <div class="footer__block-item {{ itemClass }}">
 
                 {{#if type '===' 'social'}}
                   {{snippet 'footer-social'}}
@@ -36,21 +50,15 @@
             </div>
 
           {{/with}}
-          {{#ifOdd index}}
-            <div class="footer__block-divider d-md-none"></div>
-          {{/ifOdd}}
+
+          {{#if (isFalsey section.settings.mobile_auto_fold)}}
+            {{#ifOdd index}}
+              <div class="footer__block-divider d-md-none"></div>
+            {{/ifOdd}}
+          {{/if}}
         {{/eachIndex}}
       {{/with}}
 
-    </div>
-
-    {{#or section.settings.show_locale_selector section.settings.show_currency_selector}}
-      <div class="footer__tool-container d-none d-md-flex">
-        {{snippet 'locale-currency' position="footer"}}
-      </div>
-    {{/or}}
-    <div class="footer__tool-container d-flex d-md-none">
-      {{snippet 'locale-currency-mobile'}}
     </div>
   </div>
 
@@ -97,6 +105,24 @@
       "default": "Subscribe today and get 10% off your first purchase"
     },
     {
+      "id": "button_text",
+      "type": "text",
+      "label": {
+        "en": "Button texts",
+        "zh-hans-cn": "按钮文案"
+      },
+      "default": "Subscribe"
+    },
+    {
+      "id": "placeholder",
+      "type": "text",
+      "label": {
+        "en": "Prompt text in the input box",
+        "zh-hans-cn": "输入框提示文案"
+      },
+      "default": "Enter your email"
+    },
+    {
       "type": "group_header",
       "label": {
         "en": "Additional content",
@@ -138,6 +164,15 @@
         "zh-hans-cn": "展示版权信息"
       },
       "default": true
+    },
+    {
+      "type": "switch",
+      "id": "mobile_auto_fold",
+      "label": {
+        "en": "Collapsible footer on mobile device",
+        "zh-hans-cn": "移动端折叠页脚"
+      },
+      "default": false
     },
     {
       "type": "text",
@@ -396,7 +431,10 @@
     ],
     "settings": {
       "show_newsletter": true,
+      "mobile_auto_fold": false,
       "newsletter_title": "Subscribe today and get 10% off your first purchase",
+      "button_text": "Subscribe",
+      "placeholder": "Enter your email",
       "show_locale_selector": false,
       "show_currency_selector": false,
       "show_currency_flags": true,

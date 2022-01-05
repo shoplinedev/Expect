@@ -1,3 +1,7 @@
+{{assign 'settings' this.section.settings}}
+{{assign 'button_text' settings.button_text}}
+{{assign 'placeholder' settings.placeholder}}
+
 <div class="footer__newsletter">
 
   {{#if section.settings.newsletter_title}}
@@ -5,9 +9,13 @@
   {{/if}}
 
   <div class="footer__newsletter-input" data-button_style="{{theme.settings.button_style}}">
-    <input class="body4" type="text" placeholder="Enter your email">
+    <input class="body4" type="text" placeholder="{{placeholder}}">
     <div class="footer__newsletter-btn body3 pc">
-      Subscribe
+      {{#isFalsey button_text}}
+        {{ snippet 'icons/icon_footer_email' }}
+      {{else}}
+        {{button_text}}
+      {{/isFalsey}}
     </div>
     <div class="footer__newsletter-btn mobile">
       {{ snippet 'icons/icon_footer_email' }}

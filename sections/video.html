@@ -54,6 +54,7 @@
           data-autoplay="{{ section.settings.autoplay }}"
           data-slient="{{ section.settings.slient }}"
           data-aspect-ratio="{{ section.settings.ratio }}"
+          data-quiet="{{section.settings.quiet}}"
         >
         </div>
       {{else}}
@@ -69,6 +70,7 @@
             data-autoplay="{{ section.settings.autoplay }}"
             data-slient="{{ section.settings.slient }}"
             data-aspect-ratio="{{ section.settings.ratio }}"
+            data-quiet="{{section.settings.quiet}}"
           >
           </div>
         {{else}}
@@ -128,15 +130,20 @@
 		{
 			"type": "switch",
 			"id": "autoplay",
-      "info": {
-				"zh-hans-cn": "自动播放时，视频会默认调至静音",
-				"en": "The video will be muted by default when the autoplay is activated"
-      },
 			"label": {
 				"zh-hans-cn": "自动播放视频",
 				"en": "Video autoplay"
 			},
 			"default": false
+		},
+    {
+			"type": "switch",
+			"id": "quiet",
+			"label": {
+				"zh-hans-cn": "自动播放是否静音",
+				"en": "Mute autoplay sound?"
+			},
+			"default": true
 		},
 		{
 			"type": "select",

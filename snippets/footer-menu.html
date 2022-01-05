@@ -1,7 +1,7 @@
-<div class="footer__menu">
+<div class="footer__menu is-close" {{#if this.mobile_auto_fold}}data-dropdown data-platform="mobile"{{/if}}>
   {{ snippet 'footer-block-header' }}
 
-  <div class="footer__block-wrapper">
+  <div class="footer__block-wrapper" data-dropdown-list data-animation-type="SlipIn">
     <div class="footer__block-content">
       {{#with this as |global|}}
         {{ assign 'navigation' (get this.settings.menu navigations) }}

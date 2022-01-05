@@ -62,7 +62,7 @@
         <div class="swiper-wrapper">
           {{#each mediaList }}
             {{#if type '===' 'VIDEO' }}
-              <div class="swiper-slide videoItem">
+              <div class="swiper-slide firstInit videoItem" style="padding-bottom:{{#and ../coverImgObj.url (boolean @index '==' 0 )}}{{append (default (get 'ratio' (img_size ../coverImgObj.url)) 100) '%'}}{{else}}56.25%{{/and}}">
                 <div class="product_youTubeVideoContainer">
                   <div class="product_youTubeVideoBox" data-video-id="{{ get 'videoId' (getYouTubeCover resource) }}"></div>
                 </div>
@@ -77,7 +77,7 @@
                 {{/if}}
               </div>
             {{else if type '===' 'IMAGE'}}
-              <div class="swiper-slide imageItem">
+              <div class="swiper-slide firstInit imageItem" style="height:0;padding-bottom:{{#and ../coverImgObj.url (boolean @index '==' 0 )}}{{append (default (get 'ratio' (img_size ../coverImgObj.url)) 100) '%'}}{{else}}{{ append (default (get 'ratio' (img_size resource)) 100) '%'}}{{/and}}">
                 {{#if (isFalsey ../coverImgObj.url) }}
                   <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" data-photoswipe-src="{{ img_url resource width=1800 }}" data-src="{{ img_url resource width=../productWidth }}" alt="" class="swiper-lazy product_photoSwipe_image">
                 {{else}}
@@ -94,7 +94,7 @@
       {{else}}
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="product-detail-empty-image"></div>
+            <div class="product-detail-empty-image" style="padding-bottom:{{#if coverImgObj.url }}{{append (default (get 'ratio' (img_size coverImgObj.url)) 100) '%'}}{{else}}100%{{/if}}"></div>
           </div>
         </div>
       {{/if}}

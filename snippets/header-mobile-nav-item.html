@@ -1,6 +1,7 @@
 {{ assign 'has_child' (gt (length node.childNodes) 0) }}
-{{ assign 'nav_info' (navLink node request.uri.query request.locale all_collections)}}
-{{ assign 'image' (img_url nav_info.coverImg width=40) }}
+{{assign 'nav_info' (navLink node global.request.uri.query global.request.locale)}}
+
+{{ preload_state 'navigations' }}
 
 {{#with this as |global|}}
   <li class="mobile-nav__item">
@@ -9,9 +10,7 @@
 
       <button class="mobile-nav__btn" type="button" data-nav="{{global.node.id}}">
         <span class="mobile-nav__link">
-          {{#if image}}
-            <span class="mobile-nav__image" style="background-image: url('{{ image }}')" ></span>
-          {{/if}}
+          <span class="mobile-nav__image" data-nav-id="{{global.node.id}}"></span>
           <span class="mobile-nav__name">{{ nav_info.name }}</span>
           {{ snippet 'icons/icon_strong_arrow_r' class="mobile-nav__icon" }}
         </span>
@@ -34,9 +33,7 @@
     {{else}}
       <li class="mobile-nav__item">
         <a class="mobile-nav__link" {{{ nav_info.hrefAttr }}}>
-          {{#if image}}
-            <span class="mobile-nav__image" style="background-image: url('{{ image }}')" ></span>
-          {{/if}}
+          <span class="mobile-nav__image" data-nav-id="{{global.node.id}}"></span>
           <span class="mobile-nav__name">{{ nav_info.name }}</span>
           {{ snippet 'icons/icon_strong_arrow_r' class="mobile-nav__icon" }}
         </a>

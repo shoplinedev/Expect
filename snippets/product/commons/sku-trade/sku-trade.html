@@ -1,7 +1,8 @@
-{{#if productSkuStyle 'flatten'}}
-  {{ snippet 'product/commons/sku-trade/flatten' attr=attr id=(append 'product-detail-sku-trade_' id) }}
-{{else}}
-  {{ snippet 'product/commons/sku-trade/select' attr=attr id=(append 'product-detail-sku-trade_' id) }}
-{{/if}}
-
+<div data-ssr-plugin-sku-seat>
+  {{#if productSkuStyle 'flatten'}}
+    {{ snippet 'product/commons/sku-trade/flatten' attr=attr id=(append 'product-detail-sku-trade_' id) }}
+  {{else}}
+    {{ snippet 'product/commons/sku-trade/select' attr=attr id=(append 'product-detail-sku-trade_' id) }}
+  {{/if}}
+</div>
 <div id="product-sku-trade-data_{{id}}" data-selectsku="{{selectSkuSeq}}" data-skustyle="{{productSkuStyle}}" style="display: none;"></div>

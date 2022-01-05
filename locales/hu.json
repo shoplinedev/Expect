@@ -61,9 +61,9 @@
         },
         "benefit9": {
           "threshold1": {
-            "step1": "Vásároljon {{threshold}} darabot és {{willSave}} darabot ingyen kap",
-            "step2": "Adjon hozzá {{threshold}} darabot és {{willSave}} darabot ingyen kap",
-            "step3": "Gratulálunk! Élvezheti {{threshold}} vasalását és megszerezheti {{saved}}-t, nézze meg most!"
+            "step1": "Vegyen további {{threshold}} darabot, amelyből {{willSave}} darab ingyenes",
+            "step2": "Gratulálunk! {{saved}} darabot ingyen kapott! Vegyen további {{threshold}} darabot, amelyből {{willSave}} darab ingyenes",
+            "step3": "Gratulálunk! Ebből {{saved}} ingyenes"
           }
         }
       },
@@ -740,7 +740,8 @@
     "enter-correct-phone-number": "Kérjük, adjon meg egy érvényes formátumú mobiltelefonszámot",
     "phone-number-less-than-100": "A mobiltelefonszám hossza nem haladhatja meg a 100 karaktert",
     "shipping_plan_unavailable": "{{discountCode}} kupon érvényesíthető a szállítási módhoz",
-    "mutual-excluded-by-time-limited": "Kedvezményt adtunk erre a rendelésre. Nem adhat hozzá másik kedvezményt"
+    "mutual-excluded-by-time-limited": "Kedvezményt adtunk erre a rendelésre. Nem adhat hozzá másik kedvezményt",
+    "discount-code-can-not-accumulate": "A termékhez már tartozik egy kedvezmény, amely nem használható fel másik kedvezménnyel együtt."
   },
   "subscription": {
     "subscript-via-line-facebook": "Iratkozzon fel LINE-on vagy a Facebookon keresztüli megrendelés értesítésre",

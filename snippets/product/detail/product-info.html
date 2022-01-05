@@ -124,27 +124,33 @@
   {{!-- 询盘商品不显示倒计时和限时促销挂件 --}}
    {{#not product.spu.inquiry}}
    {{#if productSale}}
-      {{#filter salesPlugins 1 property="promotionSubType"}}
-        {{#if promotionSubType '==' '1'}}
-          {{#or salesPlugin.countDownTimerPlugin.showCountDownTime salesPlugin.progressPlugin.showProgressBar}}
-            <div class="d-none d-md-block flash-sale-component  sales__flashSale notranslate">
-            {{ snippet 'sales/flash-sale' }}
-            </div>
+      {{#if salesPlugins}}
+        {{#filter salesPlugins 1 property="promotionSubType"}}
+          {{#if promotionSubType '==' '1'}}
+            {{#or salesPlugin.countDownTimerPlugin.showCountDownTime salesPlugin.progressPlugin.showProgressBar}}
+              <div class="d-none d-md-block flash-sale-component  sales__flashSale notranslate">
+              {{ snippet 'sales/flash-sale' }}
+              </div>
+            {{else}}
+              <div class="d-none d-md-block countdown-component">
+              {{ snippet 'sales/countdown-widget' spuSeq=spuInfo.spuSeq sortationList=spuInfo.sortationList }}
+              </div>
+            {{/or}}
           {{else}}
             <div class="d-none d-md-block countdown-component">
             {{ snippet 'sales/countdown-widget' spuSeq=spuInfo.spuSeq sortationList=spuInfo.sortationList }}
             </div>
-          {{/or}}
-        {{else}}
-          <div class="d-none d-md-block countdown-component">
-          {{ snippet 'sales/countdown-widget' spuSeq=spuInfo.spuSeq sortationList=spuInfo.sortationList }}
-          </div>
-        {{/if}}
-        {{else}}
-          <div class="d-none d-md-block countdown-component">
-          {{ snippet 'sales/countdown-widget' spuSeq=spuInfo.spuSeq sortationList=spuInfo.sortationList }}
-          </div>
-      {{/filter}}
+          {{/if}}
+          {{else}}
+            <div class="d-none d-md-block countdown-component">
+            {{ snippet 'sales/countdown-widget' spuSeq=spuInfo.spuSeq sortationList=spuInfo.sortationList }}
+            </div>
+        {{/filter}}
+      {{else}}
+        <div class="d-none d-md-block countdown-component">
+            {{ snippet 'sales/countdown-widget' spuSeq=spuInfo.spuSeq sortationList=spuInfo.sortationList }}
+        </div>
+      {{/if}}
       {{else}}
         <div class="d-none d-md-block countdown-component">
         {{ snippet 'sales/countdown-widget' spuSeq=spuInfo.spuSeq sortationList=spuInfo.sortationList }}

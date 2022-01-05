@@ -4,7 +4,7 @@
     <span class="base-collapse-item__arrow">{{ snippet 'icons/icon_collapse_arrow'}}</span>
   </div>
   <div class="base-collapse-item__wrap">
-    <div class="base-collapse-item__content body3" {{#if isDetail}} data-plugin-ruler="detail-left" {{/if}}>
+    <div class="base-collapse-item__content body3 {{position}}" {{#if isDetail}} data-ssr-plugin-detail-description {{/if}}>
       {{{ content }}}
     </div>
   </div>

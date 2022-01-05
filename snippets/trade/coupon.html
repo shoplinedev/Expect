@@ -19,6 +19,9 @@
           {{else if discountCodeUnavailable '===' 'MUTUAL_EXCLUDED_BY_LEVEL_PRICE'}}
             {{!-- 输入正确，但商品价格或数量不符合要求 --}}
             {{t 'validate.discount-code-user-invalid' discountCode=discountCode}}
+          {{ else if discountCodeUnavailable '===' 'DISCOUNT_CODE_CAN_NOT_ACCUMULATE'}}
+          {{!-- 商品已经存在一个优惠活动，不可与其他优惠叠加 --}}
+            {{t 'validate.discount-code-can-not-accumulate' discountCode=discountCode}}
           {{else if discountCodeUnavailable '===' 'SHIPPING_PLAN_UNAVAILABLE'}}
             {{!-- 优惠码不适用当前物流方式 --}}
             {{t 'validate.shipping_plan_unavailable' discountCode=discountCode}}

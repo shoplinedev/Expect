@@ -40,7 +40,7 @@
     {{#with this as |global|}}
       <div class="split-slideshow__container split-slideshow__container--h{{ pc_image_height }} split-slideshow__container--m{{ mobile_image_height }} natural--{{section.id}} natural-mobile--{{section.id}}">
         <div class="split-slideshow__wrapper">
-          <ul class="split-slideshow__swiper loading">
+          <div class="split-slideshow__swiper loading">
             {{#each blocks as |block|}}
               {{#with block.settings as |blockSettings|}}
                 {{#style}}
@@ -57,7 +57,23 @@
                   }
                 {{/style}}
 
-                <li class="split-slideshow__slider split-slideshow__slider--{{blockSettings.text_position}} split-slideshow__slider--{{ @key }}">
+                {{assign 'link_item' (useLink blockSettings.link global.request.uri.query)}}
+                {{assign 'link_2_item' (useLink blockSettings.link2 global.request.uri.query)}}
+                {{assign 'ele_link_item' (JSONparse '{}')}}
+                {{assign 'ele' 'div'}}
+                {{#and (and (and (isFalsey blockSettings.link_text) (isFalsey blockSettings.link_text2)) (or blockSettings.link blockSettings.link2))}}
+                  {{assign 'ele' 'a'}}
+                  {{assign 'ele_link_item' link_item}}
+                  {{#if (isFalsey blockSettings.link)}}
+                    {{assign 'ele_link_item' link_2_item}}
+                  {{/if}}
+                {{/and}}
+
+                <{{ele}}
+                  {{#eq ele 'a'}}
+                    {{{ele_link_item.hrefAttr}}}
+                  {{/eq}}
+                  class="split-slideshow__slider split-slideshow__slider--{{blockSettings.text_position}} split-slideshow__slider--{{ @key }}">
                   <div class="slider__image-wrapper">
                     {{ assign 'mobile_image' blockSettings.image_mobile.url }}
                     {{ assign 'pc_image' blockSettings.image.url }}
@@ -125,21 +141,19 @@
                       {{#if (or blockSettings.link_text blockSettings.link_text2)}}
                         <div class="slider__btns">
                           {{# if blockSettings.link_text}}
-                            {{ assign 'link_item' (useLink blockSettings.link global.request.uri.query) }}
                             <a {{{ link_item.hrefAttr }}} class="btn btn-primary">{{ blockSettings.link_text }}</a>
                           {{/if}}
                           {{# if blockSettings.link_text2}}
-                            {{ assign 'link_item' (useLink blockSettings.link2 global.request.uri.query) }}
-                            <a {{{ link_item.hrefAttr }}} class="btn btn-primary">{{ blockSettings.link_text2 }}</a>
+                            <a {{{ link_2_item.hrefAttr }}} class="btn btn-primary">{{ blockSettings.link_text2 }}</a>
                           {{/if}}
                         </div>
                       {{/if}}
                     </div>
                   </div>
-                </li>
+                </{{ele}}>
               {{/with}}
             {{/each}}
-          </ul>
+          </div>
           {{#if has_pagination}}
             {{#if (boolean section.settings.autoplay '&&' (boolean section.settings.style '===' 'bars'))}}
               {{#style}}
@@ -350,8 +364,12 @@
           {
             "type": "group_header",
             "label": {
-              "zh-hans-cn": "按钮内容",
-              "en": "Button content"
+              "zh-hans-cn": "按钮或图片跳转",
+              "en": "Page jumping with button/image"
+            },
+            "info": {
+              "en": "Jumping the page by clicking the image if button texts are not configured",
+              "zh-hans-cn": "若没有配置按钮文案，则通过点击图片跳转"
             }
           },
           {

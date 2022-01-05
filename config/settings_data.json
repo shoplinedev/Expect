@@ -191,11 +191,14 @@
         "settings": {
           "show_newsletter": true,
           "newsletter_title": "Subscribe today and get 10% off your first purchase",
+          "button_text": "Subscribe",
+          "placeholder": "Enter your email",
           "show_locale_selector": false,
           "show_currency_selector": false,
           "show_currency_flags": true,
           "show_copyright": true,
-          "copyright_text": ""
+          "copyright_text": "",
+          "mobile_auto_fold": false
         },
         "disabled": false,
         "blocks": {
@@ -349,7 +352,8 @@
           "title": "Collection list",
           "col": 6,
           "add_margin": true,
-          "show_divider": false
+          "show_divider": false,
+          "show_touch":false
         },
         "blocks": {
           "collection-list1": {
@@ -634,6 +638,10 @@
           }
         },
         "block_order": ["icon-list-item1", "icon-list-item2", "icon-list-item3", "icon-list-item4", "icon-list-item5", "icon-list-item6"]
+      },
+      "header-nav-product-item": {
+        "type": "header-nav-product-item",
+        "settings": {}
       }
     },
     "content_for_index": [
@@ -842,11 +850,14 @@
           "settings": {
             "show_newsletter": true,
             "newsletter_title": "Subscribe today and get 10% off your first purchase",
+            "button_text": "Subscribe",
+            "placeholder": "Enter your email",
             "show_locale_selector": false,
             "show_currency_selector": false,
             "show_currency_flags": true,
             "show_copyright": true,
-            "copyright_text": ""
+            "copyright_text": "",
+            "mobile_auto_fold": false
           },
           "disabled": false,
           "blocks": {
@@ -1284,6 +1295,10 @@
             }
           },
           "block_order": ["icon-list-item1", "icon-list-item2", "icon-list-item3", "icon-list-item4", "icon-list-item5", "icon-list-item6"]
+        },
+        "header-nav-product-item": {
+          "type": "header-nav-product-item",
+          "settings": {}
         }
       },
       "content_for_index": [

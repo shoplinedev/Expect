@@ -6,7 +6,7 @@
 {{#with this as |global|}}
 <div class="header-menu__container">
   <div class="container g-4 g-md-6">
-    <nav class="header-menu__mobile-nav">
+    <nav class="header-menu__mobile-nav" data-main-menu-link-list="{{section.settings.main_menu_link_list}}">
       <ul class="mobile-nav__list">
         {{#each main_menu.nodeTree as |node|}}
           {{# snippet 'header-mobile-nav-item' node=node request=global.request all_collections=global.all_collections level=1 }}

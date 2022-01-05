@@ -1,5 +1,6 @@
 {{assign 'title' section.settings.title }}
 {{assign 'description' section.settings.description }}
+{{assign 'button_text' section.settings.button_text }}
 {{assign 'placeholder' section.settings.placeholder }}
 {{assign 'color_scheme' section.settings.color_scheme }}
 
@@ -14,10 +15,20 @@
         <div class="newsletter__btnGroup">
             <input type="email" class="newsletter__input" placeholder="{{placeholder}}"></input>
             <button class="newsletter__btn btn btn-primary fw-bold">
+              {{#isFalsey button_text}}
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="1.5" y="3.5" width="17" height="13" rx="0.5" />
-                    <path d="M1.5 6L8.98596 10.4035C9.61186 10.7717 10.3881 10.7717 11.014 10.4035L18.5 6" />
+                  <rect x="1.5" y="3.5" width="17" height="13" rx="0.5" />
+                  <path d="M1.5 6L8.98596 10.4035C9.61186 10.7717 10.3881 10.7717 11.014 10.4035L18.5 6" />
                 </svg>
+              {{else}}
+                {{button_text}}
+              {{/isFalsey}}
+            </button>
+            <button class="newsletter__btn btn btn-primary fw-bold mobile">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1.5" y="3.5" width="17" height="13" rx="0.5" />
+                <path d="M1.5 6L8.98596 10.4035C9.61186 10.7717 10.3881 10.7717 11.014 10.4035L18.5 6" />
+              </svg>
             </button>
         </div>
     </div>
@@ -46,6 +57,15 @@
         "en": "Subscription description",
         "zh-hans-cn": "订阅描述"
       }
+    },
+    {
+      "id": "button_text",
+      "type": "text",
+      "label": {
+        "en": "Button texts",
+        "zh-hans-cn": "按钮文案"
+      },
+      "default": ""
     },
     {
       "type": "text",
@@ -107,6 +127,7 @@
       "settings": {
         "title": "Sign up and save",
         "description": "Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.",
+        "button_text": "",
         "placeholder": "Enter your email",
         "color_style": "1",
         "color_scheme": "1"

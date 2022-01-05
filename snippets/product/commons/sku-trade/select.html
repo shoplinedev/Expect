@@ -1,9 +1,9 @@
 {{#if (length attr)}}
-<div class="product-sku-trade-select" id="{{ id }}">
+<div class="product-sku-trade-select" data-ssr-plugin-sku id="{{ id }}">
   {{#each attr}}
   {{#isFalsey hidden}}
-  <div class="spec-box" data-index="{{ @index }}" data-plugin-ruler="sku-bottom-right" data-plugin-rule-sku-name="{{specName}}">
-    <div class="spec-title"  data-plugin-ruler="sku-btn-right" data-plugin-rule-sku-name="{{specName}}">
+  <div class="spec-box" data-index="{{ @index }}" data-ssr-plugin-sku-item data-sku-item-name="{{specName}}">
+    <div class="spec-title"  data-ssr-plugin-sku-item-name>
       <div class="spec-name body6 ls-30p">{{ specName }}</div>
     </div>
     <div class="select-box" data-ssr-sku-value-list>

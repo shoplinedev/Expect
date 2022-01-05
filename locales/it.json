@@ -61,9 +61,9 @@
         },
         "benefit9": {
           "threshold1": {
-            "step1": "Acquista {{threshold}} pezzi per avere {{willSave}} pezzi gratuiti",
-            "step2": "Aggiungi {{threshold}} pezzi per avere {{willSave}} pezzi gratuiti",
-            "step3": "Congratulazioni! Puoi risparmiare{{saved}}se acquisti{{threshold}}, paga ora!"
+            "step1": "Acquista {{threshold}} pezzi in più, tra cui {{willSave}} pezzi sono gratuiti",
+            "step2": "Congratulazioni！{{saved}}pezzi sono già gratuiti！Acquista {{threshold}} pezzi in più, tra cui {{willSave}} pezzi sono gratuiti",
+            "step3": "Congratulazioni！{{saved}}pezzi sono già gratuiti"
           }
         }
       },
@@ -740,7 +740,8 @@
     "enter-correct-phone-number": "Inserisci il numero di cellulare in formato corretto",
     "phone-number-less-than-100": "Il numero di cellulare non può superare la lunghezza di 100 caratteri",
     "shipping_plan_unavailable": "Il codice di sconto {{discountCode}} non è applicabile a questo modo logistico",
-    "mutual-excluded-by-time-limited": "Sconto a tempo limitato incompatibile con l’offerta del codice di promozione"
+    "mutual-excluded-by-time-limited": "Sconto a tempo limitato incompatibile con l’offerta del codice di promozione",
+    "discount-code-can-not-accumulate": "Il prodotto è già in offerta con sconto, altri sconti non possono essere applicabili ancora."
   },
   "subscription": {
     "subscript-via-line-facebook": "Sottoscrivi le notifiche degli ordini tramite LINE o Facebook",

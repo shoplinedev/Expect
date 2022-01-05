@@ -18,7 +18,7 @@
 
 
 {{#with this as |global| }}
-<div class="toolkit-mobile__container">
+<div class="toolkit-mobile__container {{#if (or locale_selector currency_selector)}}toolkit-mobile__container--show{{/if}}">
   <span class="click body5 toolkit-item locale-currency notranslate j-currency-drawer-btn">
     <span class="currency-symbol">{{global.initialCurrency.currencySymbol}}</span>
     <span class="currency-code">{{global.initialCurrency.currencyCode}}</span>

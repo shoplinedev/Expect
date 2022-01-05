@@ -1,0 +1,741 @@
+{
+  "home": [
+    {
+      "id": "86a9b9b09",
+      "type": "Swiper",
+      "props": {
+        "duration": 5,
+        "imageSize": "auto",
+        "items": [
+          {
+            "image": {
+              "alt": "",
+              "url": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/7a6282cd8fd941309688484d5975207d-c7c3ed84-6407-48a7-966c-11a9b8771eb4.png"
+            },
+            "buttonText": "SHOP NOW",
+            "buttonColor": "#2B2B2B",
+            "buttonTextColor": "#FFFFFF",
+            "textColor": "#FFFFFF",
+            "textSize": "medium",
+            "textAlign": "center",
+            "maskOpacity": 20
+          },
+          {
+            "image": {
+              "alt": "",
+              "url": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/ecd465c5aceb45d3aa14a04997dd7e09-0a2d0251-29f0-4ef1-a8c7-f8dcd81ea96e.png"
+            },
+            "buttonText": "SHOP NOW",
+            "buttonColor": "#2B2B2B",
+            "buttonTextColor": "#FFFFFF",
+            "textColor": "#FFFFFF",
+            "textSize": "medium",
+            "textAlign": "center",
+            "maskOpacity": 20
+          }
+        ],
+        "autoplay": true,
+        "hidden": false
+      }
+    },
+    {
+      "id": "819bc8b2a",
+      "type": "Text",
+      "props": {
+        "title": "Brief Introduction",
+        "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+        "textAlign": "center",
+        "textSize": "medium",
+        "textWidth": "standard",
+        "hidden": false
+      }
+    },
+    {
+      "id": "a48baaadb",
+      "type": "ProductCategories",
+      "props": {
+        "maskOpacity": 20,
+        "maskColor": "#000000",
+        "title": "Collections",
+        "moreButtonText": "MORE",
+        "showNumberCount": 5,
+        "showMoreButton": true,
+        "imageRatio": "lv1",
+        "imageFit": "fill",
+        "openInNewTab": true,
+        "productCategories": [
+          {
+            "categoryId": "12248213212242145095742792"
+          },
+          {
+            "categoryId": "12248332191098350243912792"
+          },
+          {
+            "categoryId": "12248820561883541852812792"
+          },
+          {
+            "categoryId": "12248820580180438078012792"
+          },
+          {
+            "categoryId": "12248820594565055304562792"
+          }
+        ],
+        "hidden": false,
+        "items": [
+          {
+            "sortation": {
+              "title": "啊啊啊",
+              "description": null,
+              "sortationId": "12248213212242145095742792",
+              "sortationImg": "",
+              "sortationCoverImg": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/849419faadf44cd0bf67367fcc48fbb3.jpeg",
+              "sortationType": "NORMAL",
+              "uniqueKey": "wwwww"
+            },
+            "children": []
+          },
+          {
+            "sortation": {
+              "title": "aaa",
+              "description": null,
+              "sortationId": "12248332191098350243912792",
+              "sortationImg": "",
+              "sortationCoverImg": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/b1d1f861df8c4f3ab10fe40ea0e3f13f.jpeg",
+              "sortationType": "NORMAL",
+              "uniqueKey": "fenleiaaa"
+            },
+            "children": []
+          },
+          {
+            "sortation": {
+              "title": "Apple",
+              "description": "D",
+              "sortationId": "12248820561883541852812792",
+              "sortationImg": "",
+              "sortationCoverImg": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/3334a2fd6cab4e2fb93066afe85d0cfb.png",
+              "sortationType": "NORMAL",
+              "uniqueKey": "Apple"
+            },
+            "children": []
+          },
+          {
+            "sortation": {
+              "title": "HUAWEI",
+              "description": null,
+              "sortationId": "12248820580180438078012792",
+              "sortationImg": "",
+              "sortationCoverImg": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/ec5acb3472c8492e8d1cb250ef96b3af.jpeg",
+              "sortationType": "NORMAL",
+              "uniqueKey": "HUAWEI"
+            },
+            "children": []
+          },
+          {
+            "sortation": {
+              "title": "XIAOMI",
+              "description": null,
+              "sortationId": "12248820594565055304562792",
+              "sortationImg": "",
+              "sortationCoverImg": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/f770c999f022419c9043419e50841c1f.jpeg",
+              "sortationType": "NORMAL",
+              "uniqueKey": "XIAOMI"
+            },
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "98a9c9a1a",
+      "type": "Products",
+      "props": {
+        "col": 3,
+        "buyButtonText": "BUY",
+        "moreButtonText": "MORE",
+        "productCategoryId": "12248213212242145095742792",
+        "row": 2,
+        "showMoreButton": true,
+        "showBuyButton": true,
+        "showComparedPrice": true,
+        "textAlign": "center",
+        "title": "Featured Products",
+        "titleAlign": "left",
+        "hidden": false,
+        "items": {
+          "pageNum": 1,
+          "pageSize": 5,
+          "total": 5,
+          "lastPage": true,
+          "list": [
+            {
+              "storeId": "1608276731999",
+              "merchantId": "3300003680",
+              "spuSeq": "16048502085609393408632792",
+              "shelves": true,
+              "title": "55444",
+              "image": null,
+              "imageList": [],
+              "stock": 1231,
+              "soldOut": false,
+              "productMinPrice": 11100,
+              "productMaxPrice": 11100,
+              "originPrice": 22200,
+              "infiniteStock": false,
+              "version": null,
+              "vipPrice": null,
+              "spuCommentSummary": {
+                "total": 0,
+                "score": 0
+              },
+              "saleActivityList": [
+                {
+                  "activitySeq": "SL201SAS04803790666700161038",
+                  "startTime": 1616662801000,
+                  "endTime": null,
+                  "promotionType": 1,
+                  "promotionSubType": 0,
+                  "benefitType": 2,
+                  "activityBenefitConditionList": [
+                    {
+                      "benefitCondition": {
+                        "type": 1,
+                        "minThreshold": 2
+                      },
+                      "benefit": {
+                        "benefitAmount": null,
+                        "discount": 89
+                      },
+                      "sequenceNumber": 1
+                    },
+                    {
+                      "benefitCondition": {
+                        "type": 1,
+                        "minThreshold": 3
+                      },
+                      "benefit": {
+                        "benefitAmount": null,
+                        "discount": 80
+                      },
+                      "sequenceNumber": 2
+                    }
+                  ],
+                  "promotionProductList": null
+                }
+              ],
+              "uniqueKey": "55444",
+              "allowOversold": false,
+              "inquiry": false
+            },
+            {
+              "storeId": "1608276731999",
+              "merchantId": "3300003680",
+              "spuSeq": "16048023701307173970692792",
+              "shelves": true,
+              "title": "这是超级超级超级超级超级超级超级超级超级超级长的名字",
+              "image": null,
+              "imageList": [],
+              "stock": 100,
+              "soldOut": false,
+              "productMinPrice": 1000,
+              "productMaxPrice": 111100,
+              "originPrice": 10000,
+              "infiniteStock": false,
+              "version": null,
+              "vipPrice": null,
+              "spuCommentSummary": {
+                "total": 0,
+                "score": 0
+              },
+              "saleActivityList": [
+                {
+                  "activitySeq": "SL201SAS04803790666700161038",
+                  "startTime": 1616662801000,
+                  "endTime": null,
+                  "promotionType": 1,
+                  "promotionSubType": 0,
+                  "benefitType": 2,
+                  "activityBenefitConditionList": [
+                    {
+                      "benefitCondition": {
+                        "type": 1,
+                        "minThreshold": 2
+                      },
+                      "benefit": {
+                        "benefitAmount": null,
+                        "discount": 89
+                      },
+                      "sequenceNumber": 1
+                    },
+                    {
+                      "benefitCondition": {
+                        "type": 1,
+                        "minThreshold": 3
+                      },
+                      "benefit": {
+                        "benefitAmount": null,
+                        "discount": 80
+                      },
+                      "sequenceNumber": 2
+                    }
+                  ],
+                  "promotionProductList": null
+                }
+              ],
+              "uniqueKey": "aadasda",
+              "allowOversold": false,
+              "inquiry": false
+            },
+            {
+              "storeId": "1608276731999",
+              "merchantId": "3300003680",
+              "spuSeq": "16048502081845760542792792",
+              "shelves": true,
+              "title": "3242342",
+              "image": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/498e427cc2dd4ee39c4ef20cb9316d78.png",
+              "imageList": [
+                "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/498e427cc2dd4ee39c4ef20cb9316d78.png"
+              ],
+              "stock": 11,
+              "soldOut": false,
+              "productMinPrice": 2200,
+              "productMaxPrice": 2200,
+              "originPrice": 334400,
+              "infiniteStock": false,
+              "version": null,
+              "vipPrice": null,
+              "spuCommentSummary": {
+                "total": 0,
+                "score": 0
+              },
+              "saleActivityList": [
+                {
+                  "activitySeq": "SL201SAS04803790666700161038",
+                  "startTime": 1616662801000,
+                  "endTime": null,
+                  "promotionType": 1,
+                  "promotionSubType": 0,
+                  "benefitType": 2,
+                  "activityBenefitConditionList": [
+                    {
+                      "benefitCondition": {
+                        "type": 1,
+                        "minThreshold": 2
+                      },
+                      "benefit": {
+                        "benefitAmount": null,
+                        "discount": 89
+                      },
+                      "sequenceNumber": 1
+                    },
+                    {
+                      "benefitCondition": {
+                        "type": 1,
+                        "minThreshold": 3
+                      },
+                      "benefit": {
+                        "benefitAmount": null,
+                        "discount": 80
+                      },
+                      "sequenceNumber": 2
+                    }
+                  ],
+                  "promotionProductList": null
+                }
+              ],
+              "uniqueKey": "3242342",
+              "allowOversold": false,
+              "inquiry": false
+            },
+            {
+              "storeId": "1608276731999",
+              "merchantId": "3300003680",
+              "spuSeq": "16048502077509856840402792",
+              "shelves": true,
+              "title": "2222",
+              "image": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/4c3b66b2f687408f9b2ee3035f71ae5a.png",
+              "imageList": [
+                "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/4c3b66b2f687408f9b2ee3035f71ae5a.png"
+              ],
+              "stock": 433,
+              "soldOut": false,
+              "productMinPrice": 22200,
+              "productMaxPrice": 22200,
+              "originPrice": 33300,
+              "infiniteStock": false,
+              "version": null,
+              "vipPrice": null,
+              "spuCommentSummary": {
+                "total": 0,
+                "score": 0
+              },
+              "saleActivityList": [
+                {
+                  "activitySeq": "SL201SAS04803790666700161038",
+                  "startTime": 1616662801000,
+                  "endTime": null,
+                  "promotionType": 1,
+                  "promotionSubType": 0,
+                  "benefitType": 2,
+                  "activityBenefitConditionList": [
+                    {
+                      "benefitCondition": {
+                        "type": 1,
+                        "minThreshold": 2
+                      },
+                      "benefit": {
+                        "benefitAmount": null,
+                        "discount": 89
+                      },
+                      "sequenceNumber": 1
+                    },
+                    {
+                      "benefitCondition": {
+                        "type": 1,
+                        "minThreshold": 3
+                      },
+                      "benefit": {
+                        "benefitAmount": null,
+                        "discount": 80
+                      },
+                      "sequenceNumber": 2
+                    }
+                  ],
+                  "promotionProductList": null
+                }
+              ],
+              "uniqueKey": "2222123123",
+              "allowOversold": false,
+              "inquiry": false
+            },
+            {
+              "storeId": "1608276731999",
+              "merchantId": "3300003680",
+              "spuSeq": "16048502058410338601472792",
+              "shelves": true,
+              "title": "2222",
+              "image": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/abe63790ccc24c6082f8aeaede362982.png",
+              "imageList": [
+                "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/abe63790ccc24c6082f8aeaede362982.png"
+              ],
+              "stock": 111,
+              "soldOut": false,
+              "productMinPrice": 1100,
+              "productMaxPrice": 1100,
+              "originPrice": 2200,
+              "infiniteStock": false,
+              "version": null,
+              "vipPrice": null,
+              "spuCommentSummary": {
+                "total": 0,
+                "score": 0
+              },
+              "saleActivityList": [
+                {
+                  "activitySeq": "SL201SAS04803790666700161038",
+                  "startTime": 1616662801000,
+                  "endTime": null,
+                  "promotionType": 1,
+                  "promotionSubType": 0,
+                  "benefitType": 2,
+                  "activityBenefitConditionList": [
+                    {
+                      "benefitCondition": {
+                        "type": 1,
+                        "minThreshold": 2
+                      },
+                      "benefit": {
+                        "benefitAmount": null,
+                        "discount": 89
+                      },
+                      "sequenceNumber": 1
+                    },
+                    {
+                      "benefitCondition": {
+                        "type": 1,
+                        "minThreshold": 3
+                      },
+                      "benefit": {
+                        "benefitAmount": null,
+                        "discount": 80
+                      },
+                      "sequenceNumber": 2
+                    }
+                  ],
+                  "promotionProductList": null
+                }
+              ],
+              "uniqueKey": "2222",
+              "allowOversold": false,
+              "inquiry": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "a3b9faa68",
+      "type": "Image",
+      "props": {
+        "openInNewTab": false,
+        "image": {
+          "alt": "",
+          "url": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/7a6282cd8fd941309688484d5975207d-c7c3ed84-6407-48a7-966c-11a9b8771eb4.png"
+        },
+        "imageWidthSize": "medium",
+        "hidden": false
+      }
+    },
+    {
+      "id": "81aa08a98",
+      "type": "MediaLr",
+      "props": {
+        "image": {
+          "alt": "",
+          "url": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/ec5acb3472c8492e8d1cb250ef96b3af.jpeg"
+        },
+        "buttonText": "MORE",
+        "displayType": "TextImage",
+        "subtitle": "Use this text to share information about your brand with your customers.",
+        "title": "Add a title tagline",
+        "textAlign": "center",
+        "hidden": false
+      }
+    },
+    {
+      "id": "94ba49a4b",
+      "type": "Gallery",
+      "props": {
+        "maskOpacity": 20,
+        "maskColor": "#000000",
+        "items": [
+          {
+            "image": {
+              "alt": "",
+              "url": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/7a6282cd8fd941309688484d5975207d-c7c3ed84-6407-48a7-966c-11a9b8771eb4.png"
+            }
+          },
+          {
+            "image": {
+              "alt": "",
+              "url": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/ecd465c5aceb45d3aa14a04997dd7e09-0a2d0251-29f0-4ef1-a8c7-f8dcd81ea96e.png"
+            }
+          },
+          {
+            "image": {
+              "alt": "",
+              "url": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/d5d151c9c8d34c3f8a6b8c789c25e948.png"
+            }
+          }
+        ],
+        "col": 3,
+        "row": 1,
+        "title": "Grids",
+        "titleAlign": "center",
+        "textAlign": "center",
+        "imageRatio": "lv1",
+        "imageFit": "fill",
+        "hidden": false
+      }
+    },
+    {
+      "id": "ac9998a48",
+      "type": "Product",
+      "props": {
+        "productId": "16048502077509856840402792",
+        "showComparedPrice": true,
+        "showBuyButton": true,
+        "textAlign": "center",
+        "buttonText": "DETAILS",
+        "hidden": false,
+        "items": {
+          "spu": {
+            "storeId": "1608276731999",
+            "merchantId": "3300003680",
+            "spuSeq": "16048502077509856840402792",
+            "categoryId": "SL201CATE4389073274336870487",
+            "title": "2222",
+            "subTitle": null,
+            "productMinPrice": 22200,
+            "productMaxPrice": 22200,
+            "originPrice": 33300,
+            "discount": 33,
+            "brand": null,
+            "images": [
+              "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/4c3b66b2f687408f9b2ee3035f71ae5a.png"
+            ],
+            "video": [],
+            "shelves": true,
+            "upTime": 1619423023,
+            "downTime": 1619423019,
+            "saleMin": 0,
+            "saleMax": 0,
+            "weight": 0,
+            "weightUnit": "kg",
+            "shippingFilter": [],
+            "payFilter": [],
+            "soldOut": false,
+            "stock": 433,
+            "infiniteStock": false,
+            "version": "16348502078298721536712792",
+            "amazonCode": null,
+            "amazonUrl": null,
+            "yahooUrl": null,
+            "rakutenUrl": null,
+            "systemTime": 1621327984316,
+            "imageList": [
+              {
+                "url": "https://d2w9suv6wak03e.cloudfront.net/image/store/3300003680/1608276731999/4c3b66b2f687408f9b2ee3035f71ae5a.png",
+                "alt": null
+              }
+            ],
+            "sortationList": [
+              {
+                "sortationId": "12248213212242145095742792",
+                "sortationName": "啊啊啊",
+                "uniqueKey": "wwwww"
+              },
+              {
+                "sortationId": "12248332191098350243912792",
+                "sortationName": "aaa",
+                "uniqueKey": "fenleiaaa"
+              }
+            ],
+            "amazonLink": null,
+            "allowOversold": false,
+            "inquiry": false
+          },
+          "sku": {
+            "skuList": [
+              {
+                "skuSeq": "18048502077515896638232792",
+                "price": 22200,
+                "originPrice": 33300,
+                "stock": 433,
+                "weight": null,
+                "weightUnit": null,
+                "available": true,
+                "shelves": true,
+                "skuAttributeIds": [],
+                "videoList": null,
+                "imageList": [],
+                "soldOut": false,
+                "allowOversold": false,
+                "spuSeq": "16048502077509856840402792",
+                "discount": 33,
+                "saleActivityResponseList": null,
+                "matchVip": false,
+                "imageBeanList": null,
+                "skuPrice": 22200
+              }
+            ],
+            "skuAttributeMap": {}
+          },
+          "productSeo": {
+            "title": null,
+            "desc": "",
+            "key": null,
+            "url": "https://tlabs127.myshoplinedev.com/products/2222123123",
+            "mediaInfoList": null
+          },
+          "productSale": {
+            "saleActivityList": [
+              {
+                "activitySeq": null,
+                "startTime": null,
+                "endTime": null,
+                "promotionType": null,
+                "promotionSubType": null,
+                "benefitType": 2,
+                "activityBenefitConditionList": null,
+                "promotionProductList": null,
+                "skuPromotionProduct": null,
+                "benefitCondition": {
+                  "type": 1,
+                  "minThreshold": 2
+                },
+                "benefit": {
+                  "benefitAmount": null,
+                  "discount": 89
+                }
+              },
+              {
+                "activitySeq": null,
+                "startTime": null,
+                "endTime": null,
+                "promotionType": null,
+                "promotionSubType": null,
+                "benefitType": 2,
+                "activityBenefitConditionList": null,
+                "promotionProductList": null,
+                "skuPromotionProduct": null,
+                "benefitCondition": {
+                  "type": 1,
+                  "minThreshold": 3
+                },
+                "benefit": {
+                  "benefitAmount": null,
+                  "discount": 80
+                }
+              }
+            ],
+            "saleActivities": [
+              {
+                "activitySeq": "SL201SAS04803790666700161038",
+                "startTime": 1616662801000,
+                "endTime": null,
+                "promotionType": 1,
+                "promotionSubType": 0,
+                "benefitType": 2,
+                "activityBenefitConditionList": [
+                  {
+                    "benefitCondition": {
+                      "type": 1,
+                      "minThreshold": 2
+                    },
+                    "benefit": {
+                      "benefitAmount": null,
+                      "discount": 89
+                    },
+                    "sequenceNumber": 1
+                  },
+                  {
+                    "benefitCondition": {
+                      "type": 1,
+                      "minThreshold": 3
+                    },
+                    "benefit": {
+                      "benefitAmount": null,
+                      "discount": 80
+                    },
+                    "sequenceNumber": 2
+                  }
+                ],
+                "promotionProductList": null,
+                "skuPromotionProduct": null
+              }
+            ]
+          },
+          "productComment": {
+            "spuSeq": "16048502077509856840402792",
+            "total": 0,
+            "score": 0,
+            "scoreInfos": []
+          }
+        }
+      }
+    },
+    {
+      "id": "81a94897b",
+      "type": "Video",
+      "props": {
+        "autoplay": false,
+        "repeat": true,
+        "slient": true,
+        "title": "Video",
+        "url": "https://www.youtube.com/watch?v=xJO9QhFRil0",
+        "showTitle": true,
+        "hidden": false
+      }
+    }
+  ]
+}

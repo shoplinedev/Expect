@@ -61,9 +61,9 @@
         },
         "benefit9": {
           "threshold1": {
-            "step1": "{{threshold}} Stk kaufen, {{willSave}} Stk Gratis erhalten",
-            "step2": "{{threshold}} Stk mehr hinzufügen, {{willSave}} Stk Gratis erhalten",
-            "step3": "Herzliche Glückwünsche! Kaufen Sie {{threshold}} und erhalten Sie {{saved}} gratis, zahlen Sie jetzt!"
+            "step1": "Kaufen Sie weitere {{threshold}} Stücke, von denen {{willSave}} Stücke kostenlos sind",
+            "step2": "Herzlichen Glückwunsch! Sie habe bereits {{saved}} Stücke kostenlos bekommen! Kaufen Sie weitere {{threshold}} Stücke mehr, von denen {{willSave}} Stücke kostenlos sind",
+            "step3": "Herzlichen Glückwünsch! {{saved}} Stücke davon sind kostenlos"
           }
         }
       },
@@ -740,7 +740,8 @@
     "enter-correct-phone-number": "Bitte eine Mobiltelefonnummer mit einem gültigen Format eingeben",
     "phone-number-less-than-100": "Die Mobiltelefonnummer darf nicht länger als 100 Zeichen sein",
     "shipping_plan_unavailable": "{{discountCode}}Dieser Rabattcode ist für die aktuelle Versandart nicht anwendbar",
-    "mutual-excluded-by-time-limited": "befristete Rabattaktionen sind nicht mit anderen Gutscheincode kombinierbar"
+    "mutual-excluded-by-time-limited": "befristete Rabattaktionen sind nicht mit anderen Gutscheincode kombinierbar",
+    "discount-code-can-not-accumulate": "Für dieses Produkt gibt es bereits ein Angebot und kann nicht mit anderen Angeboten kombiniert werden"
   },
   "subscription": {
     "subscript-via-line-facebook": "Bestellbenachrichtigungen über LINE oder Facebook abonnieren",

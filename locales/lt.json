@@ -61,9 +61,9 @@
         },
         "benefit9": {
           "threshold1": {
-            "step1": "Įsigykite {{threshold}} vnt. ir gaukite {{willSave}} vnt. nemokamai",
-            "step2": "Pridėkite {{threshold}} vnt. ir gaukite {{willSave}} vnt. nemokamai",
-            "step3": "Sveikinimai! Galite įsigyti {{threshold}} ir gauti {{saved}} - išbandykite jau dabar!"
+            "step1": "Pirkite dar {{threshold}}, iš kurių {{willSave}} bus nemokamos",
+            "step2": "Sveikiname! Nemokamai gavote {{saved}} dalių (-is)! Pirkite dar {{threshold}}, iš kurių {{willSave}} bus nemokamos",
+            "step3": "Sveikiname! {{saved}} iš jų gausite nemokamai"
           }
         }
       },
@@ -740,7 +740,8 @@
     "enter-correct-phone-number": "Prašome įvesti mobiliojo telefono numerį galiojančiu formatu",
     "phone-number-less-than-100": "Mobiliojo telefono numeris negali viršyti 100 simbolių",
     "shipping_plan_unavailable": "{{discountCode}} kuponas galioja siuntimo būdui",
-    "mutual-excluded-by-time-limited": "Nuolaida taikoma šiam užsakymui. Negalite pridėti kitos nuolaidos"
+    "mutual-excluded-by-time-limited": "Nuolaida taikoma šiam užsakymui. Negalite pridėti kitos nuolaidos",
+    "discount-code-can-not-accumulate": "Jau yra pasirinktas renginys produktui, kurio negalima naudoti su kitais pasirenkamais renginiais."
   },
   "subscription": {
     "subscript-via-line-facebook": "Prenumeruoti užsakymo pranešimą LINE ar Facebook",

@@ -1,5 +1,10 @@
 {{#if this.settings.title}}
-  <div class="footer__block-header">
+  <div class="footer__block-header" data-dropdown-trigger>
     <p class="body3 footer_block-title">{{ this.settings.title}}</p>
+    {{#if this.mobile_auto_fold}}
+      <div class="footer__block-header-btn d-md-none d-block">
+        {{ snippet 'icons/icon_arrow_down' }}
+      </div>
+    {{/if}}
   </div>
 {{/if}}

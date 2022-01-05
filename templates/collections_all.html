@@ -103,6 +103,11 @@
   <meta name="twitter:card" content="{{twitterCard}}" />
 {{/if}}
 
+{{!-- meta hide product --}}
+{{#not product.spu.visible}}
+  <meta name='robots' content='noindex' />
+{{/not}}
+
 
 {{/partial}}
 
