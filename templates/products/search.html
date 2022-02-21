@@ -88,14 +88,14 @@
       <a href="/" title="{{t 'productSearch.search.backHome'}}">{{t 'common.home'}}</a>
       <span class="product-search__breadcrumbDivider">/</span>
       <span class="product-search__searchText">
-        Search
+        {{t "productSearch.title"}}
         {{#if (trim keyword)}}
           ：{{{t 'productSearch.search.resultsFoundFor' count=total keyword=keyword}}}
         {{/if}}
       </span>
     </nav>
     <header class="product-search__header">
-      <h2 class="product-search__headerTitle title2">Search</h2>
+      <h2 class="product-search__headerTitle title2">{{t "productSearch.title"}}</h2>
     </header>
     <section class="product-search__form">
       {{snippet 'product/search/search-input'}}

@@ -43,14 +43,14 @@
               {{!-- 空图展示 --}}
                   {{#each emptyImageList}}
                   <div class="{{../prefix}}-right-item">
-                      {{snippet 'promotion-grid/sale-collection-img' imageSrc=this imageSrcSet=(append this ' 1x, ' this ' 2x') imgWrapperClass=(append ../imgWrapperClass ' ' ../prefix '-empty-img') }}
+                      {{snippet 'promotion-grid/sale-collection-img' imageSrc=this imgWrapperClass=(append ../imgWrapperClass ' ' ../prefix '-empty-img') }}
                   </div>
                   {{/each}}
               {{else}}
                 {{#each productList}}
                 <div class="{{../prefix}}-right-item">
-                  {{assign 'productImage' (first imageList 1)}}
-                  {{snippet 'promotion-grid/sale-collection-img' imageSrc=productImage imageSrcSet=(append productImage ' 1x, ' productImage ' 2x') imgWrapperClass=../imgWrapperClass}}
+                  {{assign 'productImage' imageList.[0]}}
+                  {{snippet 'promotion-grid/sale-collection-img' imageSrc=productImage imgWrapperClass=../imgWrapperClass}}
                 </div>
                 {{/each}}
               {{/if}}

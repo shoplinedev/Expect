@@ -1,36 +1,761 @@
 {
-  "sales": {
-    "promotion": {
-      "tags": {
-        "benefit1": {
-          "threshold0": "Compre {{threshold}} para economizar {{save}}",
-          "threshold1": "Compre {{threshold}} unidades para economizar {{save}}"
-        },
-        "benefit2": {
-          "threshold0": "Compre {{threshold}} para economizar {{save}}",
-          "threshold1": "Compre {{threshold}} unidades para economizar {{save}}"
-        },
-        "benefit11": {
-          "threshold1": {
-            "normal": "Compre {{threshold}} unidades, aproveite {{save}} de desconto em um dos itens",
-            "free": "Compre {{threshold}} unidades, um dos itens será gratuito"
+  "address": {
+    "dropdown": {
+      "default-placeholder": "Selecione",
+      "no-item-tips": "Sem dados",
+      "no-search-result": "Sem conteúdo correspondente"
+    },
+    "mobile-errorMessage": "Insira um número de telefone válido",
+    "mobile-errorMessage-country-code": "Não preencha o código de área"
+  },
+  "blog": {
+    "container": {
+      "backTo": "Volte para {{{collectionTitle}}}"
+    }
+  },
+  "blogList": {
+    "container": {
+      "empty": {
+        "desc": "Não há posts neste blogue",
+        "title": "Blogue"
+      },
+      "readBtnText": "Leia mais"
+    }
+  },
+  "cart": {
+    "active-stock-limit": "Somente {{stock}} unidades restantes com o preço de desconto deste produto",
+    "active-stock-limit-1": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
+    "active-stock-limit-2": "O preço com desconto deste produto apenas suporta a compra de {{stock}} unidades",
+    "activity-price-limit": "O preço com desconto deste produto apenas suporta a compra de {{num}} unidades",
+    "activity-product-limit": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
+    "activity-title-limit": "Os seguintes produtos excedem o limite de compra e continua a fazer o checkout?",
+    "checkout-error": "Pelo menos um item no carrinho de compras não pode ser comprado. Por favor, ajuste os itens em seu carrinho para o checkout.",
+    "get": "Ganhe desconto",
+    "go-shopping": "Ir às compras",
+    "login-description": "Já é um membro? Entre para gerenciar os pedidos mais facilmente!",
+    "login-membership": "Membro grátis",
+    "most-100-sku": "Adicione até 100 produtos",
+    "most-buy-999": "Pode adicionar até 999 unidades ao carrinho",
+    "not-participation-offers": "Não participando da oferta",
+    "render-add-items": "O seu carrinho de compras está vazio.",
+    "render-empty-status": "Não existem produtos no seu carrinho de compras",
+    "shopping-fees": "Taxa de compra",
+    "shopping-money": "A próxima etapa será calcular os impostos e frete",
+    "shopping-money-step": "A próxima etapa será calcular os impostos e frete",
+    "stock-limit": "{{stock}} unidades restantes",
+    "view-link": "Clique para ver",
+    "view-pic": "Visualização personalizada",
+    "view-shopping-cart": "Ver o carrinho"
+  },
+  "checkout": {
+    "delivery-method": {
+      "store-pickup": "Escolher"
+    },
+    "info-preview": {
+      "store-pickup__info": "Retirada na loja • {{locationName}} • Gratuito",
+      "store-pickup__label": "Método"
+    },
+    "store-pickup": {
+      "label": "Local de retirada",
+      "list--empty": "Seu pedido não está disponível para retirada. Insira um endereço de entrega.",
+      "pickup-appointment--between": "Pronto em aproximadamente {{start}}-{{end}}",
+      "pickup-appointment--more-than": "Pronto em mais de {{start}}",
+      "pickup-appointment--within": "Pronto em {{end}}",
+      "pickup-appointment__value--day": "{{value}} dia",
+      "pickup-appointment__value--day-plural": "{{value}} dias",
+      "pickup-appointment__value--hour": "{{value}} hora",
+      "pickup-appointment__value--hour-plural": "{{value}} horas"
+    }
+  },
+  "collection": {
+    "all": {
+      "h1Title": "Kolekcje",
+      "title": "Todas as categorias"
+    }
+  },
+  "comment": {
+    "about-product": "Por favor insira pelo menos 1 texto",
+    "add-img": "Adicione imagens",
+    "all-reviews": "Ver todas as avaliações",
+    "bad": "Muito mau",
+    "best": "Muito bom",
+    "comment-count": "{{total}} unidades",
+    "customer-comment": "Avaliações de clientes",
+    "enter-comment": "Preencha as avaliações",
+    "experience-about": "Insira sua avaliação de produto",
+    "general": "Mediano",
+    "good": "Bom",
+    "image-only-2m": "Tamanho de imagem de até {{size}} MB",
+    "leave-a-review": "Publique uma avaliação",
+    "mobile-submit": "Enviar",
+    "more-images": "Adicione até {{total}} imagens",
+    "network-err-msg": "Houve um problema com o sistema, tente submeter novamente~",
+    "nickname": "Apelido",
+    "no-bought-msg": "Desculpe, você não comprou este produto e não pode publicar avaliações",
+    "no-comment-first-tip": "venha e publique a primeira avaliação",
+    "no-comment-title-tip": "Sem avaliações",
+    "no-login-msg": "Os usuários que compraram este produto podem avaliar, entrar primeiro",
+    "on-img-upload-tip": "A imagem está sendo carregada, favor enviar mais tarde",
+    "only-image": "Suporta apenas o upload de imagens no formato .jpg .jpeg .png .bmp",
+    "rate-score": "{{score}} estrelas",
+    "ratings": "Pontuação",
+    "read-more-comments": "Ver mais avaliações",
+    "shipping-information": "Informações sobre a entrega",
+    "sign-in": "Para entrar",
+    "text": "Avaliações",
+    "thanks-msg": "Obrigado pela sua avaliação",
+    "total": "{{total}} avaliações",
+    "worse": "Mau",
+    "write-review": "Publique uma avaliação"
+  },
+  "common": {
+    "address": "Endereço",
+    "amount": "Qtd",
+    "anonymous": "Anônimo",
+    "anonymous-evaluation": "Avaliação anônima",
+    "apply": "Aplicação",
+    "applyDate": "Data da requisição",
+    "audit": "Revisar",
+    "back-to-cart": "Volte ao carrinho",
+    "back-to-user-center": "Volte ao Centro do Usuário",
+    "backout": "Retirar",
+    "bank-Account": "Conta bancário",
+    "bank-Account2": "Conta bancário",
+    "bank-card-number": "Número do cartão bancário",
+    "bank-name": "Nome do Banco",
+    "buy-now": "Comprar agora",
+    "cancel": "Cancelar",
+    "cardholder-name": "Nome do titular do cartão",
+    "category": "Categorias",
+    "checkout": "Checkout",
+    "close": "Fechar",
+    "confirm": "Confirme",
+    "contact-information": "Informações de contato",
+    "contactUs": "Contate-nos",
+    "continue": "Continue",
+    "day": "Dia",
+    "days": "Dias",
+    "default-address": "Endereço padrão",
+    "descountPrice": "Valor de ofertas",
+    "discount": "Ofertas",
+    "discountDesc": "Descrição de oferta",
+    "discountOff": "Desconto",
+    "email": "Email",
+    "email2": "Email",
+    "enter-email": "Insira seu email",
+    "enter-mobile-phone": "Insira seu número de celular",
+    "enter-username": "Insira seu nome de usuário",
+    "error-stack": "Pilha errada",
+    "evaluation": "Avaliações",
+    "finish": "Concluído",
+    "free-shipping": "Frete grátis",
+    "freightDesc": "Descrição de frete",
+    "hasSelected": "Selecionado",
+    "home": "Página inicial",
+    "login": "Entre",
+    "logistics": "Logística",
+    "logistics-and-payment": "Logística e pagamento",
+    "member-login": "Entrada de Membros",
+    "meno": "Notas",
+    "mobile": "Celular",
+    "mobile-phone": "Número de celular",
+    "modify": "Alterar",
+    "ok": "Confirme",
+    "operation": "Operação",
+    "order": "Pedidos",
+    "order-evaluation": "Avaliação de pedidos",
+    "outOfStock": "Fora de estoque",
+    "package": "Pacote",
+    "page": "Folha",
+    "payment": "Pagamento",
+    "payment-2": "Pagar",
+    "piece": "Unidade",
+    "pieces": "Unidade",
+    "productError": "Sem dados de produto atual, tente novamente mais tarde",
+    "recommend": "Recomendado",
+    "remain": "Restante",
+    "remove": "Remover",
+    "returnInfo": "Informações de devolução",
+    "returnMoney": "Valor de devolução",
+    "returnProgress": "Progresso de devolução",
+    "rollback": "Retirar",
+    "selectProduct": "Selecione produto",
+    "settleMent": "Comprar agora",
+    "sign-out": "Sair",
+    "soldOut": "Esgotado",
+    "stock-limit": "{{stock}} em estoque",
+    "subTotal": "Subtotal",
+    "submit-evaluation": "Submeta avaliação",
+    "tax": "Impostos e taxas",
+    "taxDesc": "Descrição dos impostos e taxas",
+    "tel-phone": "Número de telefone",
+    "tips": "Dicas",
+    "title": "Título",
+    "total": "Total",
+    "upload": "Upload",
+    "upload-image": "Upload de imagens",
+    "use-address": "Endereço usado",
+    "use-new-address": "Use novo endereço",
+    "username": "Nome"
+  },
+  "contactForm": {
+    "sendSuccess": ""
+  },
+  "footer": {
+    "copyright": "Todos os direitos reservados",
+    "followus": "Siga-nos",
+    "subscribeBarPlaceholder": "Email",
+    "subscribeError": "Falha na inscrição",
+    "subscribeRegExpError": "Formato do endereço de e-mail errado",
+    "subscribeSuccess": "Inscrição com sucesso"
+  },
+  "header": {
+    "cart": "Carrinho",
+    "center": "Centro de conta",
+    "login": "Entre",
+    "logout": "Sair",
+    "navItemAll": "Todos",
+    "noCurrencyFallback": "Nenhuma moeda relevante encontrada",
+    "search": "Buscar",
+    "searchInputPlaceholder": "Insira aqui e clique em buscar",
+    "searchItems": "Buscar produtos"
+  },
+  "labelInput": {
+    "contact-error": "Insira seu email/número de celular no formato correto",
+    "email-error": "Insira seu email no formato correto",
+    "phone-error": "Insira seu número de celular no formato correto",
+    "phone-error-tips": "Preencha o nome real do destinatário para garantir o recebimento sem problemas"
+  },
+  "modal": {
+    "exceedCartContent": "Você pode comprar no carrinho ou remover alguns produtos e depois adicionar o produto ao carrinho",
+    "exceedCartTitle": "Desculpa! O número de produtos no carrinho excede o limite.",
+    "goCart": "Ao carrinho",
+    "iKnow": "Entendi"
+  },
+  "oneShop": {
+    "TCTD0108": "O método logístico não existe, selecione novamente",
+    "TCTD0112": "O produto que você selecionou é inválido para comprar, selecione novamente",
+    "TCTD0118": "A forma de pagamento não existe, selecione novamente",
+    "TCTD0121": "A atividade de marketing não existe, selecione novamente",
+    "bracket": "({{content}})",
+    "buyNow": "Comprar agora",
+    "buyPop": "{{name}} comprou este produto {{minutes}} atrás",
+    "comboFailure": "O pacote expirou",
+    "comboSelectFailure": "O produto que você selecionou é inválido para comprar, selecione novamente",
+    "comment": "Mensagem (Não essenciais)",
+    "country": "País",
+    "currentProductSoldOut": "Estoque insuficiente de produtos atuais",
+    "cutByAmount": "{{n}} de desconto em {{amount}}",
+    "cutByNum": "{{n}} de desconto em {{num}} unidades",
+    "defaultErrorCodeMsg": "Em caso de anomalia na rede, atualize a página e tente novamente",
+    "discountByAmount": "{{n}}% de desconto em {{amount}}",
+    "discountByNum": "{{n}}% de desconto em {{num}} unidades",
+    "freeShipping": "Frete grátis",
+    "noComment": "Sem avaliações",
+    "noProductDesc": "Sem descrição do produto",
+    "optional": "Não essenciais",
+    "orderAgain": "Faça o pedido novamente",
+    "overLength": "O comprimento inserido excede o limite, preencha corretamente",
+    "priceStart": "A partir de {{n}}",
+    "productCommentTitle": "Avaliação de produto ({{n}})",
+    "productDetail": "Detalhes do produto",
+    "productFailure": "O produto que você selecionou é inválido para comprar, selecione novamente",
+    "productNoSelect": "Selecione a especificação do produto",
+    "selectedProductSoldOut": "Estoque insuficiente de produtos selecionados",
+    "soleOutSelectAgain": "O estoque de produtos atual é insuficiente, selecione novamente",
+    "submit": "Submeter"
+  },
+  "order": {
+    "after-order-status": {
+      "cancelled": "Cancelado",
+      "completed": "Concluído",
+      "confirmed": "Confirmado",
+      "customer-canceled": "Cancelamento do cliente",
+      "customer-rejected": "Recusa do cliente",
+      "delivery-progress": "Confirmado",
+      "merchant-cancellation": "Cancelamento do vendedor",
+      "processing": "Em processo"
+    },
+    "after-sale-type": {
+      "refund": "Reembolso",
+      "return-and-refund": "Devolução e reembolso"
+    },
+    "breadcrumb": {
+      "order": "Pedidos",
+      "order-detail": "Detalhes do pedido",
+      "title": "Pedidos"
+    },
+    "customer-info": "Informações do cliente",
+    "delivery-statusType": {
+      "arrived": "Chegado",
+      "cancel-delivery": "Cancelamento da entrega",
+      "cancelled": "Cancelado",
+      "delivery-partial": "Entrega parcial",
+      "delivery-return": "Devolvida",
+      "picked-up": "Recebido",
+      "problem": "Itens problemáticos ou perdidos, etc., exigem um serviço humano",
+      "shipped": "Enviado",
+      "shipping": "Envio em andamento",
+      "stocking": "Preparando os produtos"
+    },
+    "detail": {
+      "cancel-btn": "Cancelar pedido",
+      "communication": {
+        "title": "Pedido de comunicação"
+      },
+      "coms": {
+        "operationLog": {
+          "PayDealLog": {
+            "amount": "Quantia",
+            "createTime": "Tempo de início do pagamento",
+            "dealId": "Número de série do pagamento",
+            "payName": "Canais de pagamento",
+            "status": "Status",
+            "title": "O pagamento de {amount} foi processado através de {payName}",
+            "updateTime": "Tempo de retorno do resultado"
           }
         }
       },
-      "reminder": {
-        "benefit1": {
-          "threshold0": {
-            "step1": "Compre {{threshold}} ou mais para economizar {{willSave}}",
-            "step2": "Economizou {{saved}} já! {{br}} compre mais {{threshold}} e economize {{willSave}}",
-            "step3": "Parabéns! Você economizou {{saved}}!"
+      "order-info": {
+        "canceled": "Cancelado",
+        "confirmed": "Confirmado",
+        "finished": "Concluído",
+        "processing": "Em processo"
+      },
+      "order-status": {
+        "button": {
+          "refresh": "Atualizar"
+        },
+        "cancel": {
+          "desc": "Seu pedido foi cancelado em {{cancelTime}}. Se você tiver alguma dúvida, entre em contato conosco.",
+          "title": "Seu pedido foi cancelado"
+        },
+        "pay": {
+          "go-pay": "<common>Pagamento </common><amount>{{orderAmount}}</amount>",
+          "title": "Pagamento pendente"
+        },
+        "pedding": {
+          "desc": "Sua solicitação de pagamento foi submetida, aguarde o {{- payChannelDesc}} para devolver o resultado do pagamento",
+          "title": "Pagamento em andamento..."
+        },
+        "pickedUp": {
+          "desc": "Seu pedido foi retirado em {{address1}} em {{weekDate}}.",
+          "title": "Seu pedido foi retirado"
+        },
+        "readyForPickup": {
+          "desc": "Por favor, traga a confirmação do seu pedido quando for retirar o seu pedido.",
+          "title": "Seu pedido está pronto para retirada"
+        },
+        "redirect": {
+          "desc": "Se não houver redirecionamento automático, atualize esta página",
+          "title": "Redirecionando, por favor aguarde"
+        },
+        "success": {
+          "desc": "As informações do pedido foram enviadas para {{buyerContact}} , por favor confirme",
+          "title": "Seu pedido foi confirmado"
+        }
+      },
+      "packages": {
+        "amount": {
+          "channel-surcharge": "Taxa de serviço de pagamento",
+          "deduct-voucher": "Valor do cupom",
+          "discount": "Desconto de código promocional",
+          "discount-amount-name": "Desconto personalizado do vendedor",
+          "express": "Frete",
+          "express-surcharge": "Taxa de frete",
+          "preferential": "Ofertas",
+          "subtotal": "Subtotal de produtos",
+          "tax": "Imposto sobre produto",
+          "tip": "Gorjeta",
+          "total": "Total"
+        },
+        "contact-us": "preciso de ajuda? Entre em contato conosco: {{email}}",
+        "contact-us-title": "Contate-nos",
+        "logistics": {
+          "blank-trace": "Clique no link a seguir para rastrear seu pacote:",
+          "detail": "Detalhes",
+          "no-data": "Nenhuma informação de logística no momento",
+          "no-data2": "Nenhuma informação de entrega ainda, verifique mais tarde.",
+          "tab-title": "Pacote {{index}}"
+        },
+        "order-note-title": "Notas de pedido",
+        "order-num": "({{num}}) pacotes",
+        "payment-deal": {
+          "amount": "Quantia",
+          "create-time": "Criado em",
+          "deal-id": "Número de série do pagamento",
+          "name": "Canais de pagamento",
+          "status": "Status",
+          "title": "Detalhes de pagamento",
+          "update-time": "Atualizado em"
+        },
+        "payment-info": {
+          "address": "Endereço de cobrança",
+          "detail": "Detalhes",
+          "method": "Método de pagamento",
+          "status": "Status de pagamento"
+        },
+        "payment-title": "Pagamento",
+        "send-to-Line": "Enviar para Line",
+        "send-to-Messenger": "Enviar para Messenger",
+        "shippings": {
+          "fee": "Frete",
+          "method": "Método de entrega",
+          "status": "Status de entrega"
+        },
+        "status": {
+          "pedding": {
+            "desc": "Estamos atualmente preparando estes itens para o embarque.",
+            "title": "Preparando para envio"
           },
-          "threshold1": {
-            "step1": "Compre mais de {{threshold}} unidades e economize {{willSave}}",
-            "step2": "Economizou {{saved}} já! {{br}} compre mais de {{threshold}} unidades e economize {{willSave}}",
-            "step3": "Parabéns! Você economizou {{saved}}!"
+          "success": {
+            "desc": "Aceitamos seu pedido e está pronto para partir. Volte a esta página para obter as últimas informações sobre o status de sua remessa."
           }
         },
-        "benefit2": {
+        "sub-title": "Rastreamento de pacotes",
+        "subscriptions-title": "Inscrever-se",
+        "title": "Informações",
+        "unshipped-order-num": "Processando ({{num}} itens)"
+      }
+    },
+    "help-tips": "preciso de ajuda? Entre em contato conosco: {{email}}",
+    "oms-status": {
+      "arrived": "Chegado na loja",
+      "cancelled": "Cancelamento da entrega",
+      "executing": "Executando",
+      "picked": "Assinado",
+      "prepare-pick": "Preparando para pegar",
+      "problem": "Item problemático",
+      "returned": "Devolvida",
+      "returning": "Devolução em andamento",
+      "shipped": "Enviado"
+    },
+    "order-at": "Tempo do pedido:",
+    "order-date": "Tempo de colocação do pedido",
+    "order-list": {
+      "empty-tip": "Atualmente não há registro de pedido, vá às compras",
+      "empty-title": "Imagem",
+      "item-total": "{{transPackages}} produtos no total",
+      "item-total-plural": "{{transPackages}} produtos no total",
+      "load-more": "Role para cima para carregar mais",
+      "no-more": "Sem mais informações",
+      "package-item": "Pacote {{num}} ({{item}} items)",
+      "package-more": "E acima de {{num}}",
+      "pay-now": "Pagar",
+      "sub-order": "Sub-pedido",
+      "track": "Rastreamento"
+    },
+    "order-status": {
+      "cancelled": "Cancelado",
+      "completed": "Concluído",
+      "confirmed": "Confirmado",
+      "customer-canceled": "Cancelamento do cliente",
+      "merchant-cancellation": "Cancelamento do vendedor",
+      "processing": "Em processo"
+    },
+    "pay-status": {
+      "abolished": "Anulado",
+      "already-paid": "Pago",
+      "failed": "Falha no pagamento",
+      "partial-payment": "Pagamento parcial",
+      "partial-refund": "Reembolso parcial",
+      "paying": "Pagamento em andamento",
+      "refund-failed": "Falha no reembolso",
+      "refunded": "Reembolsado",
+      "refunding": "Reembolso em andamento",
+      "timed-out": "O pagamento expirou",
+      "unpaid": "Não pago"
+    },
+    "refund-methods": {
+      "merchant": "Coleção por vendedor",
+      "self": "Enviar de volta por próprio"
+    },
+    "refund-type": {
+      "origin": "Retorno com rota original",
+      "other": "Outros"
+    },
+    "seq-no": "No. {{id}}"
+  },
+  "payments-name": {
+    "COD": "Pagamento na entrega",
+    "Paypal": "Paypal",
+    "third-part": "Cartão de crédito"
+  },
+  "paypal": {
+    "error-expired": "O produto expirou",
+    "error-login-limit": "Entre na sua conta antes de fazer um pedido",
+    "error-network-error": "Erro de rede",
+    "error-product-limit": "Exceder o limite do produto",
+    "error-shop-not-exit": "Loja não existe",
+    "error-sold-out": "Estoque de produto insuficiente"
+  },
+  "productDetail": {
+    "activityToast": {
+      "price-limit": "O preço com desconto deste produto apenas suporta a compra de {{num}} unidades",
+      "product-limit": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
+      "title-limit": "Os seguintes produtos excedem o limite de compra"
+    },
+    "addCart": "Adicionar",
+    "bulkDiscount": {
+      "title": "Compre mais economize mais"
+    },
+    "commentsTitle": "avaliações",
+    "default-placeholder": "Selecione {{attrName}}",
+    "goOtherChannels": "Outros canais de compra",
+    "goOutsideOfAmazon": "Faça compras fora da Amazon",
+    "goToAmazon": "Faça compras na Amazon",
+    "goToAmazonByLink": "Faça compras na Amazon",
+    "goToRakuten": "Lotte",
+    "goToRakutenByLink": "Faça compras na Lotte",
+    "goToYahoo": "Yahoo",
+    "goToYahooByLink": "Faça compras no Yahoo",
+    "inquiry": {
+      "cancel": "Cancelar",
+      "email": "Email",
+      "emailEmptyErr": "Preencha seu email",
+      "emailFormatErr": "Preencha seu email correto",
+      "inquiryTips1": "Deixe as mensagens com sua consulta e entraremos em contato o mais rápido possível",
+      "inquiryTips2": "Pode nos fornecer mais informações para que possamos fornecer serviços mais adequados",
+      "inquiryTitle": "Consulta de produto",
+      "message": "Mensagem",
+      "messageEmptyErr": "Preencha a mensagem",
+      "messageLengthErr": "O comprimento da mensagem não excede 1500 caracteres",
+      "mobile": "Número de telefone",
+      "name": "Nome",
+      "optional": "Opcional",
+      "region": "País/região",
+      "submit": "Submeter",
+      "submitFailed": "A submissão falhou, tente novamente",
+      "submitSuccess": "Submetido com sucesso"
+    },
+    "morePaymentOptions": "Mais opções de pagamento",
+    "network": {
+      "message2": "Sem informações do produto no momento, tente novamente mais tarde"
+    },
+    "no-logistics-and-payment-information": "Sem informações de logística e formas de pagamento",
+    "no-product-introduction": "Sem introdução de produto",
+    "previewLinkToast": "O link de visualização não suporta esta operação",
+    "recentlyViewedProducts": "Produtos vistos recentemente",
+    "recommendTitle": "Você também pode gostar",
+    "tabPanel": {
+      "comments": {
+        "empty": "Sem avaliação de produto",
+        "error": "Falha ao obter avaliações do produto, tente novamente mais tarde"
+      },
+      "desc": "Sem informações de descrição",
+      "descFs": "Falha ao obter dados, tente novamente mais tarde",
+      "pay": {
+        "text1": "Formas de pagamento",
+        "text2": "Sem forma de pagamento",
+        "text3": "Sem informações de logística de pagamento"
+      },
+      "ship": {
+        "sh": {
+          "text1": "Formas de entrega"
+        },
+        "text2": "Sem método logístico"
+      }
+    },
+    "tabs": {
+      "comments": "Avaliações",
+      "description": "Descrição",
+      "shippingPayment": "Logística e pagamento"
+    },
+    "thumbSwiper": {
+      "image": {
+        "alt": "Miniaturas de produto"
+      },
+      "share": {
+        "text": "Compartilhar para"
+      }
+    },
+    "toAmazon": "Amazon"
+  },
+  "productList": {
+    "all": {
+      "h1Title": "Produto"
+    },
+    "container": {
+      "empty": {
+        "desc": "Não há produtos na categoria atual",
+        "description": "Se necessário, entre em contato com o vendedor para consulta",
+        "title": "Desculpe, nenhum produto"
+      },
+      "from": "de {{price}}",
+      "listItem": {
+        "addToCart": "Adicionar ao carrinho",
+        "off": "- {{value}}%",
+        "sale": "oferta",
+        "save": "Salvar {{{priceDom}}}",
+        "saveByJs": "Salvar {{priceDom}}",
+        "saveRatio": "{{price}}% de desconto",
+        "sold": {
+          "out": "Esgotado"
+        },
+        "soldOut": "Esgotado",
+        "toDetail": "Ver detalhes"
+      },
+      "moreProductNum": "{{num}} Produtos",
+      "network": {
+        "message": "Sem dados de produto atuais, tente novamente mais tarde"
+      },
+      "oneProductNum": "{{num}} Produto",
+      "productsNum": "{{num}} produtos",
+      "show": "Exposição",
+      "sort": {
+        "newest": "Mais recente",
+        "option1": "Data de venda (novo para antigo)",
+        "option2": "Data de venda (antigo para novo)",
+        "option3": "Preço (alto para baixo)",
+        "option4": "Preço (baixo para alto)",
+        "priceHighToLow": "Preço de alto a baixo",
+        "priceLowToHigh": "Preço de baixo a alto",
+        "recommend": "Recomendado",
+        "sales": "Mais vendidos",
+        "text1": "Todos os produtos",
+        "text2": "Ordenar por"
+      },
+      "tradePopup": {
+        "addToCart": "Adicionar ao carrinho",
+        "error1": "Este produto tem apenas {{stock}} peças restantes, ajuste a quantidade",
+        "error2": "Este produto só pode ser comprado em {{saleMax}} peças, ajuste a quantidade!",
+        "error3": "Selecione a quantidade de compra!",
+        "error4": "Selecione as especificações do produto primeiro!",
+        "error5": "O produto atual está esgotado",
+        "error6": "O produto atual foi removido"
+      },
+      "viewAs": "Método de visualização"
+    },
+    "filterMenu": {
+      "filter": "Filtro",
+      "less": "Menos etiquetas",
+      "more": "Mais etiquetas",
+      "price": "Preço"
+    },
+    "gategoryMenu": {
+      "catalog": "Catálogo do produto",
+      "menuitem": "Todos os produtos"
+    },
+    "noProduct": "Não há produtos nesta categoria"
+  },
+  "productSearch": {
+    "container": {
+      "sort": {
+        "option1": "Data de venda (novo para antigo)",
+        "option2": "Data de venda (antigo para novo)",
+        "option3": "Preço (alto para baixo)",
+        "option4": "Preço (baixo para alto)"
+      }
+    },
+    "empty": {
+      "title1": "Recomendamos verificar se há erros de digitação,",
+      "title2": "Em seguida, use palavras-chave concisas para buscar novamente"
+    },
+    "search": {
+      "backHome": "Volte à página inicial",
+      "noRelatedResultFound": "Nenhum registro relevante encontrado",
+      "results": "{{count}} registros",
+      "resultsFoundFor": "{{count}} registros encontrados de \"{{keyword}}\"",
+      "searchNoResults": "Sua busca por \"{{keyword}}\" não tem registros"
+    },
+    "serachTitle": {
+      "text1": "Nenhum resultado relevante encontrado"
+    },
+    "sortName": "Ordenar por：",
+    "title": "Pesquisar"
+  },
+  "promotion": {
+    "activity-benefit": "Ofertas de atividades",
+    "activity-introduction": "Descrição de atividade",
+    "activity-scope": "Escopo de atividade",
+    "all-product": "Todos os produtos",
+    "all-user": "Todos os usuários",
+    "all-vip": "Todos os membros",
+    "bundle": {
+      "desc": "Adicione estes itens para um desconto <italic>{{value}}</italic>",
+      "title": "Produtos empacotados"
+    },
+    "buy-again": "Compre mais<0>{{value}}</0>",
+    "buy-again-piece": "Compre mais {{value}} unidades",
+    "coupon": "Cupom",
+    "discount-benefit": "{{discount}} de desconto",
+    "discounted": "Foi descontado<0>{{value}}</0>",
+    "flash-sale": "Promoção por tempo limitado",
+    "flash-sale-limit": "Limite de {{value}} unidades por pessoa",
+    "free-shipping": "Frete grátis",
+    "full-amount": "Alcance<0>{{value}}</0>",
+    "full-discount": "Porcentagem de desconto",
+    "full-discount-benefit": "Oferta de porcentagem de desconto",
+    "full-piece": "Alcance {{value}} unidades",
+    "full-reduction": "Desconto em dinheiro",
+    "full-reduction-benefit": "Oferta de desconto em dinheiro",
+    "get-discount-1": "Aproveite {{value}} de desconto",
+    "get-discount-2": "Aproveite {{value}}% de desconto",
+    "item-num": "Item {{value}}",
+    "label-vip": "{{label}} membro",
+    "level-vip": "Membro de nível {{level}}",
+    "member-price": "Preço de membro",
+    "more-combo": "Mais pacotes",
+    "only-one-sku": "O produto atual tem apenas uma especificação",
+    "other-customer": "Clientes (usuários que não fizeram um pedido)",
+    "percent-piece-step1": "<children> Compre mais de </children><more>{{price}}</more><children> unidades e economize </children><more>{{percent}}</more>",
+    "percent-piece-step2": "<children> Economizou </children><normal>{{percent}}</normal><children> já! </children><white /><children> Compre mais de </children><more>{{price}}</more><children> unidades e economize </children><more>{{morePercent}}</more>",
+    "percent-piece-step3": "<children> Parabéns! Você economizou </children><normal>{{percent}}</normal><children>！</children>",
+    "percent-price-step1": "<children> Compre </children><more>{{price}}</more><children> ou mais para economizar </children><more>{{percent}}</more>",
+    "percent-price-step2": "<children> Economizou </children><normal>{{percent}}</normal><children> já! </children><white /><children> Compre mais de </children><more>{{price}}</more><children> e economize </children><more>{{morePercent}}</more>",
+    "percent-price-step3": "<children> Parabéns! Você economizou </children><normal>{{percent}}</normal><children>！</children>!",
+    "permanent": "Permanente",
+    "piece-unit": "Unidade",
+    "price-piece-step1": "<children> Compre mais de </children><more>{{morePrice}}</more><children> unidades e economize </children><more>{{totalPrice}}</more>",
+    "price-piece-step2": "<children> Economizou </children><normal>{{price}}</normal><children> já! </children><white /><children> Compre mais de </children><more>{{morePrice}}</more><children> unidades e economize </children><more>{{totalPrice}}</more>",
+    "price-piece-step3": "<children> Parabéns! Você economizou </children><normal>{{price}}</normal><children>！</children>!",
+    "price-price-step1": "<children> Compre </children><more>{{morePrice}}</more><children> ou mais para economizar </children><more>{{totalPrice}}</more>",
+    "price-price-step2": "<children> Economizou </children><normal>{{price}}</normal><children> já! </children><white /><children> Compre mais </children><more>{{morePrice}}</more><children> e economize </children><more>{{totalPrice}}</more>",
+    "price-price-step3": "<children> Parabéns! Você economizou </children><normal>{{price}}</normal><children>！</children>!",
+    "price-unit": "Yuan",
+    "reduce": "Redução de <0>{{value}}</0>",
+    "reduce-again": "Redução mais de <0>{{value}}</0>",
+    "reduce1": "Redução de {{value}}",
+    "select-combo": "Selecione um pacote",
+    "select-product": "Selecione os produtos",
+    "select-sku": "Selecione a especificação do produto",
+    "selected-count-activity-product": "Selecionou {{selectCount}} protudos deste actividade",
+    "still-lacking": "Falta <0>{{value}}</0>",
+    "terms-and-conditions": "Termos e Condições",
+    "whole-full-amount-discount": "Compre <italic>{{condition}}</italic> para economizar<italic>{{content}}</italic>%",
+    "whole-full-amount-reduce": "Compre <italic>{{condition}}</italic> para economizar <italic>{{content}}</italic>",
+    "whole-full-piece-discount": "Compre <italic>{{condition}}</italic> unidades para economizar<italic>{{content}}</italic>%",
+    "whole-full-piece-reduce": "Compre <italic>{{condition}}</italic> unidades para economizar <italic>{{content}}</italic>"
+  },
+  "sales": {
+    "bundle": {
+      "saveTip": "Comprem juntos para economizar {{amount}}",
+      "title": "Comprados frequentemente juntos"
+    },
+    "customer-purchase-limit": "Limite de {{count}} unidades por pessoa",
+    "customer-purchase-limit-each-item": "Cada pessoa pode comprar apenas {{count}} peças de cada produto.",
+    "discount-coupon": {
+      "applied": "Aplicado",
+      "apply": "Aplicação",
+      "applyFail": "Falha na aplicação",
+      "applySuccess": "Código de desconto aplicado com sucesso",
+      "coupon-content": {
+        "discount1": "{discount} de desconto",
+        "discount2": "Frete grátis",
+        "shippingRateBelow": "Custo de frete abaixo de {value}",
+        "threshold": "Comprar {threshold}",
+        "until": "Válido até: {{endTime}}"
+      },
+      "coupon-label": "Oferta de código promocional:",
+      "couponNoFound": "O código promocional não existe",
+      "popupLabel": "Cupom de desconto da loja:"
+    },
+    "flash-sale-text": "Promoção por tempo limitado",
+    "flash-sale-tips": "Limite de compra: {{count}} unidade",
+    "hot-sale": "Venda quente",
+    "promotion": {
+      "reminder": {
+        "benefit1": {
           "threshold0": {
             "step1": "Compre {{threshold}} ou mais para economizar {{willSave}}",
             "step2": "Economizou {{saved}} já! {{br}} compre mais {{threshold}} e economize {{willSave}}",
@@ -45,18 +770,30 @@
         "benefit11": {
           "threshold1": {
             "step1": {
-              "normal": "Compre mais de {{threshold}} unidades, aproveite {{willSave}} de desconto em um dos itens",
-              "nextFree": "Compre mais de {{threshold}} unidades, um dos itens será gratuito"
+              "nextFree": "Compre mais de {{threshold}} unidades, um dos itens será gratuito",
+              "normal": "Compre mais de {{threshold}} unidades, aproveite {{willSave}} de desconto em um dos itens"
             },
             "step2": {
-              "normal": "Parabéns! Descontou {{saved}} já! {{br}} compre mais de {{threshold}} unidades, aproveite {{willSave}} de desconto em um dos itens",
               "free": "Parabéns! um dos itens será gratuito",
-              "nextFree": "Parabéns! Descontou {{saved}} já! {{br}} compre mais de {{threshold}} unidades, um dos itens será gratuito"
+              "nextFree": "Parabéns! Descontou {{saved}} já! {{br}} compre mais de {{threshold}} unidades, um dos itens será gratuito",
+              "normal": "Parabéns! Descontou {{saved}} já! {{br}} compre mais de {{threshold}} unidades, aproveite {{willSave}} de desconto em um dos itens"
             },
             "step3": {
-              "normal": "Parabéns! Aproveite {{saved}} de desconto em um dos itens",
-              "free": "Parabéns! um dos itens será gratuito"
+              "free": "Parabéns! um dos itens será gratuito",
+              "normal": "Parabéns! Aproveite {{saved}} de desconto em um dos itens"
             }
+          }
+        },
+        "benefit2": {
+          "threshold0": {
+            "step1": "Compre {{threshold}} ou mais para economizar {{willSave}}",
+            "step2": "Economizou {{saved}} já! {{br}} compre mais {{threshold}} e economize {{willSave}}",
+            "step3": "Parabéns! Você economizou {{saved}}!"
+          },
+          "threshold1": {
+            "step1": "Compre mais de {{threshold}} unidades e economize {{willSave}}",
+            "step2": "Economizou {{saved}} já! {{br}} compre mais de {{threshold}} unidades e economize {{willSave}}",
+            "step3": "Parabéns! Você economizou {{saved}}!"
           }
         },
         "benefit9": {
@@ -67,1218 +804,416 @@
           }
         }
       },
-      "tags-label": "Redução de:"
-    },
-    "bundle": {
-      "title": "Comprados frequentemente juntos",
-      "saveTip": "Comprem juntos para economizar {{amount}}"
+      "tags-label": "Redução de:",
+      "tags": {
+        "benefit1": {
+          "threshold0": "Compre {{threshold}} para economizar {{save}}",
+          "threshold1": "Compre {{threshold}} unidades para economizar {{save}}"
+        },
+        "benefit11": {
+          "threshold1": {
+            "free": "Compre {{threshold}} unidades, um dos itens será gratuito",
+            "normal": "Compre {{threshold}} unidades, aproveite {{save}} de desconto em um dos itens"
+          }
+        },
+        "benefit2": {
+          "threshold0": "Compre {{threshold}} para economizar {{save}}",
+          "threshold1": "Compre {{threshold}} unidades para economizar {{save}}"
+        }
+      }
     },
     "selected-count-activity-product": "Selecionou {{selectCount}} protudos deste atividade",
-    "customer-purchase-limit": "Limite de {{count}} unidades por pessoa",
-    "customer-purchase-limit-each-item": "Cada pessoa pode comprar apenas {{count}} peças de cada produto.",
-    "flash-sale-tips": "Limite de compra: {{count}} unidade",
-    "flash-sale-text": "Promoção por tempo limitado",
-    "hot-sale": "Venda quente",
-    "sold": "Vendido{{count}}",
-    "discount-coupon": {
-      "coupon-label": "Oferta de código promocional:",
-      "coupon-content": {
-        "threshold": "Comprar {threshold}",
-        "discount1": "{discount} de desconto",
-        "discount2": "Frete grátis",
-        "shippingRateBelow": "Custo de frete abaixo de {value}",
-        "until": "Válido até: {{endTime}}"
-      },
-      "couponNoFound": "O código promocional não existe",
-      "applySuccess": "Código de desconto aplicado com sucesso",
-      "applyFail": "Falha na aplicação",
-      "popupLabel": "Cupom de desconto da loja:",
-      "apply": "Aplicação",
-      "applied": "Aplicado"
-    }
+    "sold": "Vendido{{count}}"
   },
-  "header": {
-    "searchItems": "Buscar produtos",
-    "searchInputPlaceholder": "Insira aqui e clique em buscar",
-    "navItemAll": "Todos",
-    "search": "Buscar",
-    "cart": "Carrinho",
-    "center": "Centro de conta",
-    "login": "Entre",
-    "logout": "Sair",
-    "noCurrencyFallback": "Nenhuma moeda relevante encontrada"
+  "subscription": {
+    "not-subscript-via-line-facebook": "É temporariamente impossível inscrever-se para receber notificações de pedidos via LINE ou Facebook",
+    "subscript-via-line-facebook": "Inscreva-se para receber notificações de pedidos via LINE ou Facebook"
   },
-  "common": {
-    "title": "Título",
-    "category": "Categorias",
-    "outOfStock": "Fora de estoque",
-    "subTotal": "Subtotal",
-    "descountPrice": "Valor de ofertas",
-    "total": "Total",
-    "soldOut": "Esgotado",
-    "settleMent": "Comprar agora",
-    "selectProduct": "Selecione produto",
-    "hasSelected": "Selecionado",
-    "pieces": "Unidade",
-    "discount": "Ofertas",
-    "piece": "Unidade",
-    "remove": "Remover",
-    "cancel": "Cancelar",
-    "tips": "Dicas",
-    "checkout": "Checkout",
-    "finish": "Concluído",
-    "username": "Nome",
-    "mobile-phone": "Número de celular",
-    "tel-phone": "Número de telefone",
-    "meno": "Notas",
-    "package": "Pacote",
-    "login": "Entre",
-    "email": "Email",
-    "email2": "Email",
-    "order": "Pedidos",
-    "remain": "Restante",
-    "operation": "Operação",
-    "bank-name": "Nome do Banco",
-    "bank-card-number": "Número do cartão bancário",
-    "bank-Account": "Conta bancário",
-    "bank-Account2": "Conta bancário",
-    "close": "Fechar",
-    "audit": "Revisar",
-    "tax": "Impostos e taxas",
-    "mobile": "Celular",
-    "address": "Endereço",
-    "logistics": "Logística",
-    "backout": "Retirar",
-    "confirm": "Confirme",
-    "upload": "Upload",
-    "error-stack": "Pilha errada",
-    "amount": "Qtd",
-    "stock-limit": "{{stock}} em estoque",
-    "back-to-user-center": "Volte ao Centro do Usuário",
-    "member-login": "Entrada de Membros",
-    "contact-information": "Informações de contato",
-    "back-to-cart": "Volte ao carrinho",
-    "recommend": "Recomendado",
-    "free-shipping": "Frete grátis",
-    "apply": "Aplicação",
-    "anonymous": "Anônimo",
-    "logistics-and-payment": "Logística e pagamento",
-    "payment": "Pagamento",
-    "payment-2": "Pagar",
-    "modify": "Alterar",
-    "cardholder-name": "Nome do titular do cartão",
-    "use-address": "Endereço usado",
-    "default-address": "Endereço padrão",
-    "use-new-address": "Use novo endereço",
-    "sign-out": "Sair",
-    "enter-username": "Insira seu nome de usuário",
+  "tips": {
+    "address-no-logistics": "Nenhum método de logística disponível no endereço atual",
+    "and": "e",
+    "bind-change-email": "Vincular/alterar email",
+    "bind-change-mobile-phone-number": "Vincular/alterar um número de celular",
+    "bind-success": "Vincular com sucesso",
+    "cancel-apply-sent": "O pedido de cancelamento foi emitido",
+    "cancel-order-fail": "Falha ao cancelar o pedido, tente novamente",
+    "cancel-reason-feedback": "Por favor nos informe o motivo do cancelamento e tentaremos fazer melhor! Os reembolsos serão feitos após o cancelamento bem sucedido. Aguardamos sua visita novamente!",
+    "cancel-success-notice": "Você receberá uma notificação por e-mail após o cancelamento bem-sucedido, obrigado!",
+    "change-binding-after-verification": "Pode vincular/alterar {{value}} após completar a verificação",
+    "change-heart": "Mudança de opinião",
+    "change-item": "Quer alterar o item de compra",
+    "country-address-fail": "Os vendedores no país deste endereço não pagam mais pelo frete, selecione manualmente",
+    "enter-address-first": "Insira seu endereço",
+    "enter-bank-card-number": "Insira o número do cartão bancário!",
+    "enter-bank-name": "Insira o nome do banco!",
     "enter-email": "Insira seu email",
-    "enter-mobile-phone": "Insira seu número de celular",
-    "order-evaluation": "Avaliação de pedidos",
-    "submit-evaluation": "Submeta avaliação",
-    "anonymous-evaluation": "Avaliação anônima",
-    "discountOff": "Desconto",
-    "discountDesc": "Descrição de oferta",
-    "freightDesc": "Descrição de frete",
-    "taxDesc": "Descrição dos impostos e taxas",
-    "returnMoney": "Valor de devolução",
-    "returnProgress": "Progresso de devolução",
-    "returnInfo": "Informações de devolução",
-    "rollback": "Retirar",
-    "applyDate": "Data da requisição",
-    "evaluation": "Avaliações",
-    "upload-image": "Upload de imagens",
-    "page": "Folha",
-    "day": "Dia",
-    "days": "Dias",
-    "buy-now": "Comprar agora",
-    "ok": "Confirme",
-    "continue": "Continue",
-    "contactUs": "Contate-nos",
-    "productError": "Sem dados de produto atual, tente novamente mais tarde",
-    "home": "Página inicial"
+    "enter-name": "Insira o nome!",
+    "enter-tel-number": "Insira seu número de telefone",
+    "error-obtaining-support-logistics-country": "Erro de obtenção do país de logística de suporte",
+    "expand-order-summary": "Expandir o resumo do pedido",
+    "fail-contact": "Se a tentativa falhar, entre em contato conosco no \"Comunicação de pedidos do vendedor e do cliente\" abaixo",
+    "fill-cancel-reason": "Preencha o motivo do cancelamento do motivo",
+    "forget-password": "Esqueceu senha",
+    "get-checkout-config-fail": "Erro de obtenção de configuração de pagamento",
+    "get-checkout-detail-fail": "Erro de obtenção de detalhes de pagamento",
+    "i-agree-with-the-shop": "Eu concordo com",
+    "image-size-less-than": "O tamanho da imagem deve ser inferior a {{max}}mb",
+    "img-name-too-long": "O nome da imagem inserida é muito longo~",
+    "img-size-too-large": "Desculpa! O tamanho do arquivo de imagem excede o limite!",
+    "incorrect-delivery-or-payment-information": "Informações incorretas sobre entrega ou pagamento",
+    "login": "Entre",
+    "logistics-no-pre-selection": "A logística atual não suporta pré-seleção",
+    "logistics-pre-selection": "A logística atual suporta pré-seleção",
+    "max-upload-image": "Fazer upload de no máximo {{max}} imagens",
+    "max-upload-img": "Desculpe! Apenas um máximo de {{maxNum}} imagens podem ser uploaded!",
+    "more-than-0-int": "Insira um número inteiro maior que 0",
+    "need-phone-number-to-deliver": "Se necessário, entraremos em contato por telefone sobre as informações do pedido",
+    "no-logistics-available": "Nenhum método de logística disponível",
+    "no-order-information-please-confirm": "Falha ao obter informações do pedido, verifique se o número do pedido está correto",
+    "no-order-number-please-confirm": "Falha ao obter o número do pedido, verifique se o número do pedido está correto",
+    "or-use-the-following-method-to-log-in": "Ou entre usando os seguintes métodos",
+    "order-creation-exception": "Erro de criação de pedidos",
+    "other-reason": "Outros motivos",
+    "password-can-be-changed-after-verification": "A senha pode ser alterada após verificação",
+    "pay-params-error": "Falha em obter parâmetros de pagamento, pague novamente",
+    "paypal-country-fail": "O país da conta paypal não está incluído no país onde a entrega será paga, selecione manualmente.",
+    "please-complete-the-payment-method-content": "Preencha os detalhes completos do pagamento",
+    "please-read-and-agree-to-the-user-agreement-first": "Ler e concordar com o acordo do usuário primeiro",
+    "price-more-expensive": "Mais caro que outras lojas",
+    "product-abnormal-back-to-cart": "Erro de status do produto, volte ao carrinho para reeditar",
+    "put-up-order-summary": "Ocultar o resumo do pedido",
+    "register": "Inscreva-se",
+    "repeat-buy": "Compra repetida",
+    "reset-password": "Você está redefinindo a senha da conta {{account}}",
+    "sale-too-slow": "Muito lento para entregar",
+    "select-cancel-reason": "Selecione o motivo do cancelamento",
+    "select-return-product-first": "Selecione primeiro o produto a ser devolvido",
+    "set-new-password": "Definir uma nova senha",
+    "sku-change-tips": "Devido à mudança de status do produto, reconfirme a logística / forma de pagamento",
+    "sure-cancel-order": "Tem certeza que deseja cancelar o pedido?",
+    "update-password": "Alterar senha",
+    "update-success": "Alterado com sucesso",
+    "upload-image-fail": "Falha no upload de imagem {{name}}",
+    "user-agreement": "Acordo do Usuário",
+    "verification-code-has-been-sent-to-your-account": "O código de verificação foi enviado para sua conta",
+    "verify-account-to-reset-password": "Verifique sua conta para redefinir sua senha"
   },
-  "modal": {
-    "iKnow": "Entendi",
-    "goCart": "Ao carrinho",
-    "exceedCartTitle": "Desculpa! O número de produtos no carrinho excede o limite.",
-    "exceedCartContent": "Você pode comprar no carrinho ou remover alguns produtos e depois adicionar o produto ao carrinho"
-  },
-  "footer": {
-    "followus": "Siga-nos",
-    "subscribeBarPlaceholder": "Email",
-    "subscribeSuccess": "Inscrição com sucesso",
-    "subscribeError": "Falha na inscrição",
-    "subscribeRegExpError": "Formato do endereço de e-mail errado",
-    "copyright": "Todos os direitos reservados"
-  },
-  "productList": {
-    "gategoryMenu": {
-      "catalog": "Catálogo do produto",
-      "menuitem": "Todos os produtos"
-    },
-    "filterMenu": {
-      "filter": "Filtro",
-      "price": "Preço"
-    },
-    "container": {
-      "from": "de {{price}}",
-      "empty": {
-        "desc": "Não há produtos na categoria atual",
-        "title": "Desculpe, nenhum produto",
-        "description": "Se necessário, entre em contato com o vendedor para consulta"
-      },
-      "sort": {
-        "text1": "Todos os produtos",
-        "text2": "Ordenar por",
-        "recommend": "Recomendado",
-        "sales": "Mais vendidos",
-        "newest": "Mais recente",
-        "priceLowToHigh": "Preço de baixo a alto",
-        "priceHighToLow": "Preço de alto a baixo",
-        "option1": "Data de venda (novo para antigo)",
-        "option2": "Data de venda (antigo para novo)",
-        "option3": "Preço (alto para baixo)",
-        "option4": "Preço (baixo para alto)"
-      },
-      "network": {
-        "message": "Sem dados de produto atuais, tente novamente mais tarde"
-      },
-      "tradePopup": {
-        "error1": "Este produto tem apenas {{stock}} peças restantes, ajuste a quantidade",
-        "error2": "Este produto só pode ser comprado em {{saleMax}} peças, ajuste a quantidade!",
-        "error3": "Selecione a quantidade de compra!",
-        "error4": "Selecione as especificações do produto primeiro!",
-        "error5": "O produto atual está esgotado",
-        "error6": "O produto atual foi removido",
-        "addToCart": "Adicionar ao carrinho"
-      },
-      "listItem": {
-        "sold": {
-          "out": "Esgotado"
-        },
-        "off": "- {{value}}%",
-        "addToCart": "Adicionar ao carrinho",
-        "toDetail": "Ver detalhes"
-      },
-      "show": "Exposição",
-      "viewAs": "Método de visualização",
-      "productsNum": "{{num}} produtos"
-    }
-  },
-  "productSearch": {
-    "serachTitle": {
-      "text1": "Nenhum resultado relevante encontrado"
-    },
-    "search": {
-      "backHome": "Volte à página inicial",
-      "resultsFoundFor": "{{count}} registros encontrados de \"{{keyword}}\"",
-      "results": "{{count}} registros",
-      "noRelatedResultFound": "Nenhum registro relevante encontrado",
-      "searchNoResults": "Sua busca por \"{{keyword}}\" não tem registros"
-    },
-    "empty": {
-      "title1": "Recomendamos verificar se há erros de digitação,",
-      "title2": "Em seguida, use palavras-chave concisas para buscar novamente"
-    },
-    "sortName": "Ordenar por：",
-    "container": {
-      "sort": {
-        "option1": "Data de venda (novo para antigo)",
-        "option2": "Data de venda (antigo para novo)",
-        "option3": "Preço (alto para baixo)",
-        "option4": "Preço (baixo para alto)"
-      }
-    }
-  },
-  "collection": {
-    "all": {
-      "title": "Todas as categorias",
-      "h1Title": "Coleções"
-    }
-  },
-  "productDetail": {
-    "goToAmazon": "Faça compras na Amazon",
-    "goOutsideOfAmazon": "Faça compras fora da Amazon",
-    "goOtherChannels": "Outros canais de compra",
-    "toAmazon": "Amazon",
-    "goToRakuten": "Lotte",
-    "goToYahoo": "Yahoo",
-    "goToAmazonByLink": "Faça compras na Amazon",
-    "goToRakutenByLink": "Faça compras na Lotte",
-    "goToYahooByLink": "Faça compras no Yahoo",
-    "recentlyViewedProducts": "Produtos vistos recentemente",
-    "activityToast": {
-      "product-limit": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
-      "price-limit": "O preço com desconto deste produto apenas suporta a compra de {{num}} unidades",
-      "title-limit": "Os seguintes produtos excedem o limite de compra"
-    },
-    "tabs": {
-      "description": "Descrição",
-      "shippingPayment": "Logística e pagamento",
-      "comments": "Avaliações"
-    },
-    "recommendTitle": "Você também pode gostar",
-    "commentsTitle": "avaliações",
-    "network": {
-      "message2": "Sem informações do produto no momento, tente novamente mais tarde"
-    },
-    "thumbSwiper": {
-      "image": {
-        "alt": "Miniaturas de produto"
-      },
-      "share": {
-        "text": "Compartilhar para"
-      }
-    },
-    "tabPanel": {
-      "desc": "Sem informações de descrição",
-      "descFs": "Falha ao obter dados, tente novamente mais tarde",
-      "ship": {
-        "sh": {
-          "text1": "Formas de entrega"
-        },
-        "text2": "Sem método logístico"
-      },
-      "pay": {
-        "text1": "Formas de pagamento",
-        "text2": "Sem forma de pagamento",
-        "text3": "Sem informações de logística de pagamento"
-      },
-      "comments": {
-        "empty": "Sem avaliação de produto",
-        "error": "Falha ao obter avaliações do produto, tente novamente mais tarde"
-      }
-    },
-    "no-product-introduction": "Sem introdução de produto",
-    "no-logistics-and-payment-information": "Sem informações de logística e formas de pagamento",
-    "addCart": "Adicionar",
-    "default-placeholder": "Selecione {{attrName}}",
-    "inquiry": {
-      "inquiryTitle": "Consulta de produto",
-      "inquiryTips1": "Deixe as mensagens com sua consulta e entraremos em contato o mais rápido possível",
-      "email": "Email",
-      "message": "Mensagem",
-      "inquiryTips2": "Pode nos fornecer mais informações para que possamos fornecer serviços mais adequados",
-      "optional": "Opcional",
-      "name": "Nome",
-      "mobile": "Número de telefone",
-      "region": "País/região",
-      "cancel": "Cancelar",
-      "submit": "Submeter",
-      "emailEmptyErr": "Preencha seu email",
-      "messageEmptyErr": "Preencha a mensagem",
-      "emailFormatErr": "Preencha seu email correto",
-      "messageLengthErr": "O comprimento da mensagem não excede 1500 caracteres",
-      "submitSuccess": "Submetido com sucesso",
-      "submitFailed": "A submissão falhou, tente novamente"
-    },
-    "previewLinkToast": "O link de visualização não suporta esta operação",
-    "morePaymentOptions": "Mais opções de pagamento",
-    "bulkDiscount": {
-      "title": "Compre mais economize mais"
+  "title": {
+    "policy": {
+      "privacy": "política de privacidade do site",
+      "refund": "Politica de reembolso",
+      "service": "os termos de serviço",
+      "shipping": "Política de envio"
     }
   },
   "trade": {
-    "contact": "Informações de contato",
-    "can-not-submit-order": "Incapaz de submeter pedido",
-    "sorry-rechoose-longtips": "Desculpe, o produto que você selecionou é inválido para comprar, selecione novamente",
-    "product-amount": "Preço total",
-    "will-discount": "Oferta esperada",
-    "some-discount-limit-to-pay-and-delivery": "Alguns dos descontos são limitados aos métodos de logística/formas de pagamento disponíveis",
-    "total": "Total",
-    "go-on-shopping": "Continue comprando",
-    "man-piece-share": "Aproveite para {{count}} unidades ou mais",
-    "man-money-share": "Aproveite com uma compra de {{money}} ou mais",
-    "man-piece-reduce": "de desconto para {{count}} ou mais",
-    "man-money-reduce": "de desconto com uma compra de {{money}} ou mais",
-    "invalid-product": "Produtos vencidos",
-    "delete-invalid-product": "Excluir produtos inválidos",
-    "remove-product": "Remover produto",
-    "sure-remove-this-product": "Você tem certeza de que quer remover este produto?",
-    "order-created-but-data-fail": "Pedido criado com sucesso, mas dados devolvidos com erro...",
+    "activity-price-limit": "O preço com desconto deste produto apenas suporta a compra de X unidades",
+    "activity-product-limit": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
+    "activity-title-limit": "Os seguintes produtos excedem o limite de compra e continua a fazer o checkout?",
+    "add-to-cart-fail": "Desculpe! Falha ao adicionar ao carrinho, tente novamente!",
+    "after-sale-order": "Pedido pós-venda",
     "agree-user-terms-first": "Concorde com os termos do usuário primeiro",
-    "recieve-address-unavailable-rechoose": "Nenhum método de entrega está disponível para o endereço de entrega, volte e selecione novamente",
-    "please-fill-meno": "Preencha as notas",
-    "please-choose-delivery-way": "Selecione o método de entrega",
-    "please-choose-pay-way": "Selecione o método de pagamento",
-    "bad-userinfo-or-in-blocklist": "Erro de informações do usuário ou na lista negra",
-    "bad-userinfo": "Erro de informações do usuário",
-    "fail-get-product-back-cart": "Falha ao obter as informações do produto do pagamento, volte ao carrinho para submeter novamente",
-    "fill-info": "Preencha as informações",
+    "and": "e",
+    "apply-refund": "Pedir a devolução",
+    "apply-time": "Tempo de requisição",
+    "at-least-comment-one-before-submit": "Selecione pelo menos um item para avaliar antes de submeter",
+    "audit-refuse": "Não aprovado",
     "back-prev-step": "Volte para preencher as informações",
     "back-prev-step2": "Voltar para selecionar logística",
-    "next-step": "Avançar",
-    "next-step-shipment": "Para selecionar a logística",
-    "next-step-payment": "Para selecionar a forma de pagamento",
-    "submit-order": "Completar o pedido",
-    "i-agree-website": "Eu concordo com",
-    "service-terms": "os termos de serviço",
-    "and": "e",
-    "private-policy": "política de privacidade do site",
-    "fast-checkout": "Checkout expresso",
-    "or-fill-info": "Ou",
-    "not-support-paypal": "O PayPal não é suportado pelo vendedor atual",
-    "service-fee": "Taxa de serviço",
-    "pay-way": "Formas de pagamento",
-    "pay-way-logo-and-more": "Mais",
-    "jump-to-pay-longtips": "Clique em \"Complete Pedido\" e você será redirecionado para {{payChannel}} para pagamento seguro",
-    "reciever-info": "Informações de entrega",
-    "reciever-to": "Informações de entrega",
-    "use-customer-info": "Use as informações do cliente",
-    "please-input-field": "Insira{{field}}",
-    "reciever-name": "Sobrenome do destinatário",
-    "reciever-fullname": "Nome do destinatário",
-    "field-can-not-longer-than": "{{field}} não pode exceder o comprimento de {{length}} caracteres",
+    "backout-apply": "Retirar a requisição",
+    "backout-refund-apply": "Retirar a requisição de devolução",
+    "bad-userinfo": "Erro de informações do usuário",
+    "bad-userinfo-or-in-blocklist": "Erro de informações do usuário ou na lista negra",
+    "billing-address-abnormal": "Erro no endereço de cobrança",
+    "billing-address": {
+      "desc": "Insira o endereço que corresponda à sua forma de pagamento",
+      "input-email": "A forma de pagamento selecionada também precisa fornecer um endereço de email para enviar informações de faturamento",
+      "option-another": "Use outro endereço",
+      "option-same": "Igual ao endereço de envio",
+      "title": "Endereço de cobrança"
+    },
+    "buy-number-greater-then-stock": "A quantidade deve ser maior que 1 e menor que o estoque!",
+    "can-get": "Pode obter",
     "can-not-empty": "Não pode estar vazio",
-    "must-fill": "Deve preencher",
-    "must-choose": "Deve selecionar",
-    "must-select": "Deve selecionar",
-    "must-agree-policy": "Deve concordar com a política de devolução para continuar!",
-    "optional-fill": "Opcional",
-    "other-info": "Outras informações",
-    "need-choose-delivery-way": "É necessário escolher um método de entrega para todos os níveis de temperatura",
-    "your-delivery-need-choose-store": "O método de entrega selecionado requer a seleção de informações da loja",
-    "supermarket-self-pick": "Auto-coleta de supermercado",
+    "can-not-submit-order": "Incapaz de submeter pedido",
+    "can-refund-number": "Quantidade reembolsável",
+    "cancel-order": "Cancelar pedido",
+    "choose-refund-product": "Selecione o produto da devolução",
+    "choose-refund-reason": "Selecione o motivo da devolução",
+    "choose-store": "Altere a loja",
+    "come-way-return": "Retorno à conta de pagamento original",
+    "comment-order": "Avaliações do pedido",
+    "comment-product": "Avaliações do produto",
+    "complete-payment": "Pagamento completo",
+    "confirm-email-send-to-you": "Uma carta de confirmação foi enviada para o seu email",
+    "confirm-refund": "Confirme a devolução",
+    "contact": "Informações de contato",
+    "coupon": "Ofertas",
+    "coupon-code": "Código promocional",
+    "coupon-code-offer": "Oferta de código promocional",
+    "coupon-mutra-discount": "Este código promocional não pode ser usado em conjunto com outras promoções ou ofertas",
+    "create-order-time": "Tempo de colocação do pedido",
+    "customerInfo": {
+      "pickupLocation": {
+        "title": "Local de retirada"
+      }
+    },
+    "damage": "Produto danificado no transporte",
+    "delete-invalid-product": "Excluir produtos inválidos",
+    "delivery-address-abnormal": "Erro no endereço de entrega",
+    "delivery-fee": "Frete",
+    "delivery-tax": "Taxa de frete",
     "delivery-to-home": "Entrega ao domicílio",
-    "other-delivery": "Outros métodos de entrega",
     "delivery-way": "Método de entrega",
-    "please-choose-area": "Selecione a área",
-    "please-choose-store": "Selecione a loja",
-    "please-input-legal-passport-id-card": "Insira bilhete de identidade / passaporte válido",
+    "enter-a-tip-on-more-than": "Insira uma gorjeta que não exceda {{amount}}",
+    "express-bill-pic": "Imagem logística expressa",
+    "express-bills-sn": "Preencha o número da logística expressa",
+    "express-company": "Empresa de logística",
+    "fail-get-product-back-cart": "Falha ao obter as informações do produto do pagamento, volte ao carrinho para submeter novamente",
+    "fast-checkout": "Checkout expresso",
+    "field-can-not-longer-than": "{{field}} não pode exceder o comprimento de {{length}} caracteres",
+    "fill-info": "Preencha as informações",
+    "fill-logistics": "Preencha as informações de logística",
+    "fill-refund-info": "Preencha as informações de devolução",
+    "find-store": "Selecione a loja",
+    "footer-all-rights-reserved": "Copyright © {{year}} {{name}}. Todos os direitos reservados.",
+    "free": "Grátis",
+    "free-shipping": "Frete grátis",
+    "get-the-order": "Adicionar produtos",
+    "give-stars": "Avaliação",
+    "go-login": "Para entrar",
+    "go-on-shopping": "Continue comprando",
+    "go-pay": "Pagar",
+    "has-number-products": "{{number}} produtos restantes",
+    "has-removed": "Excluído",
+    "i-agree-website": "Eu concordo com",
+    "i-want-recieve-discount-info": "Eu gostaria de receber as últimas informações e ofertas especiais",
+    "invalid-product": "Produtos vencidos",
+    "is-paying": "Pagamento em andamento",
+    "item": "Produto",
+    "jump-to-pay-longtips": "Clique em \"Complete Pedido\" e você será redirecionado para {{payChannel}} para pagamento seguro",
+    "leave-your-words": "Deixe seus sentimentos de uso para referência a outros compradores ~",
+    "logistics-package": "Pacote logístico",
+    "man-money-reduce": "de desconto com uma compra de {{money}} ou mais",
+    "man-money-share": "Aproveite com uma compra de {{money}} ou mais",
+    "man-piece-reduce": "de desconto para {{count}} ou mais",
+    "man-piece-share": "Aproveite para {{count}} unidades ou mais",
+    "max-refund": "Valor máximo reembolsável",
+    "must-agree-policy": "Deve concordar com a política de devolução para continuar!",
+    "must-choose": "Deve selecionar",
+    "must-fill": "Deve preencher",
+    "must-select": "Deve selecionar",
+    "need-choose-delivery-way": "É necessário escolher um método de entrega para todos os níveis de temperatura",
+    "need-pay": "Deve pagar",
+    "next-step": "Avançar",
+    "next-step-calc": "Calculado na próxima etapa",
+    "next-step-payment": "Para selecionar a forma de pagamento",
+    "next-step-shipment": "Para selecionar a logística",
+    "next-time-use-shopping-money": "Pode ser dedutível na próxima compra",
+    "no-pay-way": "Sem forma de pagamento disponível",
+    "not-as-expected": "O produto não atende às expectativas",
+    "not-support-paypal": "O PayPal não é suportado pelo vendedor atual",
+    "now-can-not-comment": "Atualmente não pode comentar!",
+    "number-refund-product": "{{number}} produtos devolvidos",
+    "off-shelf": "Removido",
+    "only-refund": "Apenas reembolso",
+    "optional-fill": "Opcional",
+    "optional-support-jpg": "Opcional, suporte JPG/PNG",
+    "or-fill-info": "Ou",
+    "order-created-but-data-fail": "Pedido criado com sucesso, mas dados devolvidos com erro...",
+    "order-detail": "Detalhes do pedido",
+    "order-detail-query-fail": "Erro de consulta de detalhes do pedido",
+    "order-info": "Informações do pedido",
+    "order-meno": "Notas de pedido",
+    "order-status": "Status do pedido",
+    "other-delivery": "Outros métodos de entrega",
+    "other-info": "Outras informações",
+    "other-reason": "Outras razões",
+    "others": "Outros",
+    "over-limit-number": "Exceder o limite do produto",
     "passport-id-card-placeholder": "Bilhete de identidade / passaporte (opcional)",
     "passport-id-card-tip": "Insira a o número da identidade ou do passaporte real do destinatário para garantir a declaração alfandegária e entrega sem problemas",
-    "product-offline": "O produto foi removido",
-    "stock-not-enough": "Estoque de produto insuficiente",
-    "over-limit-number": "Exceder o limite do produto",
-    "product-removed": "O produto foi excluído",
-    "product-package": "Pacote de produto",
-    "product-fee": "Custo do produto",
-    "product-tax": "Imposto sobre produto",
-    "delivery-tax": "Taxa de frete",
-    "next-step-calc": "Calculado na próxima etapa",
-    "delivery-fee": "Frete",
+    "pay-failed-err-code": {
+      "3d-overtime": "A autenticação 3Ds não foi concluída, tente novamente.",
+      "buyer-account-abnormal": "Seu pagamento não pode ser processado devido a problemas de conta. Tente novamente ou use outro método de pagamento.",
+      "card-expired": "Seu pagamento não pode ser processado devido a um cartão expirado. Tente novamente com um cartão bancário diferente ou mude outro método de pagamento.",
+      "change-card": "Seu pagamento não pode ser processado neste momento. Tente novamente com um cartão bancário diferente ou mude outro método de pagamento.",
+      "default": "Seu pagamento não pode ser processado devido a algumas razões. Tente novamente ou use outro método de pagamento.",
+      "insufficient-balance": "Seu pagamento não pode ser processado devido a um saldo insuficiente. Tente novamente com um cartão bancário diferente ou mude outro método de pagamento.",
+      "invalid-card-number": "Seu pagamento não pode ser processado devido a um número de cartão inválido. Tente novamente com um cartão bancário diferente ou mude outro método de pagamento.",
+      "overpayment": "Seu pagamento não pode ser processado devido ao valor do pedido exceder o limite. Tente novamente com um cartão bancário diferente ou mude outro método de pagamento.",
+      "pin-over-times": "Seu pagamento não pode ser processado devido à ultrapassagem do limite de inserção de senha. Mude para outro método de pagamento e tentar novamente.",
+      "user-cancel": "O pagamento foi cancelado. Para continuar, tente novamente.",
+      "wrong-password": "Seu pagamento não pode ser processado devido a uma senha incorreta. Tente novamente ou use outro método de pagamento."
+    },
     "pay-fee": "Taxa de serviço de pagamento",
+    "pay-way": "Formas de pagamento",
+    "pay-way-logo-and-more": "Mais",
+    "payment-security-description": "Todas as transações são seguras e criptografadas.",
+    "pic-upload-fail": "Falha no upload de imagem {{name}}",
+    "pick-address": "Endereço de coleta",
+    "please-choose-area": "Selecione a área",
+    "please-choose-delivery-way": "Selecione o método de entrega",
+    "please-choose-pay-way": "Selecione o método de pagamento",
+    "please-choose-refund-account": "Selecione a conta de devolução!",
+    "please-choose-refund-express": "Selecione a logística de devolução!",
+    "please-choose-refund-type": "Selecione o tipo de devolução",
+    "please-choose-store": "Selecione a loja",
+    "please-fill-80charact-refund-reason": "Preencha o motivo da devolução em menos de 80 caracteres",
+    "please-fill-express-bills-sn": "Preencha um número expresso de logística",
+    "please-fill-express-company": "Preencha a empresa de logística",
+    "please-fill-meno": "Preencha as notas",
+    "please-fill-refund-reason": "Preencha o motivo da devolução",
+    "please-input-field": "Insira{{field}}",
+    "please-input-legal-passport-id-card": "Insira bilhete de identidade / passaporte válido",
+    "please-pay-within": "Limite de pagamento",
+    "pod-link": "Clique para ver",
+    "pod-pic": "Visualização personalizada",
     "point-discount": "Desconto de pontos",
     "point-discount-desc": "Pode usar {{deductMemberPointNum}} pontos para deduzir {{deductMemberPointAmount}}",
     "point-discount-remark": "Gastar {{value}} pontos",
-    "summary": "Total",
-    "use-member-account-can": "Faça checkout expresso como membro? Pode imediatamente",
-    "i-want-recieve-discount-info": "Eu gostaria de receber as últimas informações e ofertas especiais",
-    "order-detail-query-fail": "Erro de consulta de detalhes do pedido",
-    "your-order-created": "Seu pedido foi estabelecido",
-    "your-order-not-pay": "Seu pedido ainda não foi pago",
-    "go-pay": "Pagar",
-    "now-can-not-comment": "Atualmente não pode comentar!",
-    "order-detail": "Detalhes do pedido",
-    "order-info": "Informações do pedido",
-    "order-status": "Status do pedido",
-    "create-order-time": "Tempo de colocação do pedido",
-    "comment-product": "Avaliações do produto",
-    "give-stars": "Avaliação",
-    "at-least-comment-one-before-submit": "Selecione pelo menos um item para avaliar antes de submeter",
-    "leave-your-words": "Deixe seus sentimentos de uso para referência a outros compradores ~",
-    "is-paying": "Pagamento em andamento",
-    "you-are-paying-wait-result": "Seu pedido de pagamento foi enviada e está aguardando {{payChannel}} retornar o resultado do pagamento",
-    "need-pay": "Deve pagar",
-    "after-sale-order": "Pedido pós-venda",
-    "see-refund-progress": "Ver o progresso de devolução",
-    "has-number-products": "{{number}} produtos restantes",
-    "order-meno": "Notas de pedido",
-    "comment-order": "Avaliações do pedido",
-    "apply-refund": "Pedir a devolução",
-    "cancel-order": "Cancelar pedido",
+    "policy": {
+      "privacy-policy": "Política de Privacidade",
+      "refund-policy": "Politica de reembolso"
+    },
+    "private-policy": "política de privacidade do site",
+    "product-amount": "Preço total",
+    "product-fee": "Custo do produto",
+    "product-offline": "O produto foi removido",
+    "product-package": "Pacote de produto",
     "product-preview": "Visualização do produto",
-    "see-detail": "Ver detalhes",
-    "start-refund": "Iniciar a devolução",
-    "buy-number-greater-then-stock": "A quantidade deve ser maior que 1 e menor que o estoque!",
-    "can-refund-number": "Quantidade reembolsável",
-    "choose-refund-reason": "Selecione o motivo da devolução",
-    "please-fill-80charact-refund-reason": "Preencha o motivo da devolução em menos de 80 caracteres",
-    "please-fill-refund-reason": "Preencha o motivo da devolução",
-    "choose-refund-product": "Selecione o produto da devolução",
-    "refund-reason-less-60": "O motivo da devolução não pode ter mais de 60 caracteres!",
-    "refund-number": "Quantidade de devolução",
-    "sub-total": "Subtotal",
+    "product-remain-please-re-choose": "Apenas {{stock}} unidades restantes, selecione novamente a quantidade",
+    "product-removed": "O produto foi excluído",
+    "product-sold-out": "O produto está esgotado",
+    "product-tax": "Imposto sobre produto",
+    "quantity": "Qtd",
+    "recieve-address-unavailable-rechoose": "Nenhum método de entrega está disponível para o endereço de entrega, volte e selecione novamente",
+    "reciever-fullname": "Nome do destinatário",
+    "reciever-info": "Informações de entrega",
+    "reciever-name": "Sobrenome do destinatário",
+    "reciever-to": "Informações de entrega",
+    "refund-account": "Conta de devolução",
     "refund-amount": "Valor de reembolso",
     "refund-amount-bigger-zero": "O valor do reembolso deve ser maior que 0",
     "refund-amount-can-over": "O valor do reembolso não pode ser maior do que o valor máximo reembolsável",
-    "max-refund": "Valor máximo reembolsável",
-    "confirm-refund": "Confirme a devolução",
-    "refund-policy": "Políticas de devolução",
-    "fill-refund-info": "Preencha as informações de devolução",
-    "refund-way": "Método de devolução",
-    "refund-type": "Tipo de devolução",
-    "please-choose-refund-type": "Selecione o tipo de devolução",
-    "refund-express": "Logística de devolução",
-    "please-choose-refund-express": "Selecione a logística de devolução!",
-    "refund-person": "Devolvido por",
-    "pick-address": "Endereço de coleta",
-    "refund-account": "Conta de devolução",
-    "please-choose-refund-account": "Selecione a conta de devolução!",
-    "your-refund-order-created": "Seu pedido de devolução foi estabelecido",
-    "confirm-email-send-to-you": "Uma carta de confirmação foi enviada para o seu email",
-    "refunding": "Reembolso em andamento",
-    "user-cancel-apply": "O usuário retirou a requisição",
-    "audit-refuse": "Não aprovado",
-    "refund-order-stataus": "Status do pedido de devolução",
-    "refund-order-number": "Número do pedido de devolução",
-    "apply-time": "Tempo de requisição",
-    "number-refund-product": "{{number}} produtos devolvidos",
-    "refund-reason": "Motivo de devolução",
-    "refund-way-intro": "Introdução do método de devolução",
-    "fill-logistics": "Preencha as informações de logística",
-    "backout-apply": "Retirar a requisição",
-    "backout-refund-apply": "Retirar a requisição de devolução",
-    "your-apply-auditing-sure-backout": "Seu pedido de devolução está em análise, tem certeza de que deseja retirá-lo?",
-    "see-origin-order": "Ver pedido original",
-    "refund-logistics-info": "Informações logísticas de devolução",
-    "express-company": "Empresa de logística",
-    "please-fill-express-company": "Preencha a empresa de logística",
-    "please-fill-express-bills-sn": "Preencha um número expresso de logística",
-    "express-bills-sn": "Preencha o número da logística expressa",
-    "express-bill-pic": "Imagem logística expressa",
-    "optional-support-jpg": "Opcional, suporte JPG/PNG",
-    "pic-upload-fail": "Falha no upload de imagem {{name}}",
-    "shopping-gold-trade-off": "Dedução de vale-presente",
-    "coupon-code-offer": "Oferta de código promocional",
-    "product-sold-out": "O produto está esgotado",
-    "sorry-limit-re-choose": "Desculpe! Cada pedido é limitado a {{promotionRemainStock}}, ajuste a quantidade da compra",
-    "sorry-product-not-available-re-reorder": "Desculpa! Alguns dos produtos que você compra foram removidos e são inválidos, verifique e confirme antes de submeter",
-    "product-remain-please-re-choose": "Apenas {{stock}} unidades restantes, selecione novamente a quantidade",
-    "coupon-code": "Código promocional",
-    "shop-list": "Lista de compra {{count}}unidade）",
-    "add-to-cart-fail": "Desculpe! Falha ao adicionar ao carrinho, tente novamente!",
-    "go-login": "Para entrar",
-    "complete-payment": "Pagamento completo",
-    "shopping-money-deduction": "Dedução de vale-presente",
-    "use-shopping-deduction": "Pode usar {{num}} vales-presente a serem deduzidos",
-    "can-get": "Pode obter",
-    "shopping-money": "Vale-presente",
-    "next-time-use-shopping-money": "Pode ser dedutível na próxima compra",
-    "delivery-address-abnormal": "Erro no endereço de entrega",
-    "billing-address-abnormal": "Erro no endereço de cobrança",
-    "billing-address": {
-      "title": "Endereço de cobrança",
-      "desc": "Insira o endereço que corresponda à sua forma de pagamento",
-      "option-same": "Igual ao endereço de envio",
-      "option-another": "Use outro endereço",
-      "input-email": "A forma de pagamento selecionada também precisa fornecer um endereço de email para enviar informações de faturamento"
-    },
-    "ship-to": "Entregue para",
-    "self-mention": "Auto-coleta",
-    "logistics-package": "Pacote logístico",
-    "shopping-list": "Carrinho",
-    "item": "Produto",
-    "quantity": "Qtd",
-    "total-num": "Preço total",
-    "no-pay-way": "Sem forma de pagamento disponível",
     "refund-detail": "Detalhes de devolução",
-    "only-refund": "Apenas reembolso",
+    "refund-express": "Logística de devolução",
+    "refund-logistics-info": "Informações logísticas de devolução",
+    "refund-number": "Quantidade de devolução",
+    "refund-order-number": "Número do pedido de devolução",
+    "refund-order-stataus": "Status do pedido de devolução",
+    "refund-person": "Devolvido por",
+    "refund-policy": "Políticas de devolução",
+    "refund-reason": "Motivo de devolução",
+    "refund-reason-less-60": "O motivo da devolução não pode ter mais de 60 caracteres!",
+    "refund-type": "Tipo de devolução",
+    "refund-way": "Método de devolução",
+    "refund-way-intro": "Introdução do método de devolução",
+    "refunding": "Reembolso em andamento",
+    "remove-product": "Remover produto",
     "return-and-refund": "Devolução e reembolso",
-    "come-way-return": "Retorno à conta de pagamento original",
-    "others": "Outros",
-    "not-as-expected": "O produto não atende às expectativas",
-    "damage": "Produto danificado no transporte",
-    "sku-not-match": "A especificação do tamanho do produto não corresponde",
-    "wrong-product": "Envio errado",
-    "other-reason": "Outras razões",
-    "get-the-order": "Adicionar produtos",
-    "free": "Grátis",
-    "sku-changed-title": "{{num}}itens são alterados, você quer continuar o pagamento?",
-    "sku-limit-title": "Os seguintes produtos excedem o limite de compra, altere o número",
-    "sorry-all-sku-unusable": "Desculpe, todos os produtos não são mais válidos e o pedido não pode ser submetido",
-    "off-shelf": "Removido",
-    "sold-out": "Esgotado",
-    "has-removed": "Excluído",
-    "footer-all-rights-reserved": "Copyright © {{year}} {{name}}. Todos os direitos reservados.",
-    "return-to-selection-goods": "Seleção de produtos devolvidos",
     "return-apply-fail-SKU": "O número de produtos requisitados excede o limite!",
     "return-apply-fail-max-amount": "O valor do reembolso não pode exceder o valor máximo reembolsável",
     "return-apply-fail-min-amount": "Apenas para reembolsos, o valor do reembolso deve ser maior que 0 yuan",
+    "return-to-selection-goods": "Seleção de produtos devolvidos",
+    "see-detail": "Ver detalhes",
+    "see-origin-order": "Ver pedido original",
+    "see-refund-progress": "Ver o progresso de devolução",
+    "self-mention": "Auto-coleta",
+    "service-fee": "Taxa de serviço",
+    "service-terms": "os termos de serviço",
+    "ship-to": "Entregue para",
+    "shop-list": "Lista de compra {{count}}unidade）",
+    "shopping-gold-trade-off": "Dedução de vale-presente",
+    "shopping-list": "Carrinho",
+    "shopping-money": "Vale-presente",
+    "shopping-money-deduction": "Dedução de vale-presente",
+    "sku-changed-title": "{{num}}itens são alterados, você quer continuar o pagamento?",
+    "sku-limit-title": "Os seguintes produtos excedem o limite de compra, altere o número",
+    "sku-not-match": "A especificação do tamanho do produto não corresponde",
     "slpayment": {
+      "cardHolderNameErrorTips": "Verifique novamente.",
+      "cardHolderNamePlaceHolder": "Nome do titular do cartão",
       "cardNumber": {
-        "placeholder": "Número do cartão de crédito",
         "errorTips": "Insira o número do cartão correto.",
+        "placeholder": "Número do cartão de crédito",
         "tips": "Todas as transações são seguras e criptografadas"
+      },
+      "cardholdername": "Nome do titular do cartão",
+      "cvv": {
+        "errorTips": "Verifique novamente.",
+        "placeholder": "CVV",
+        "tips": "Geralmente localizado atrás do cartão"
       },
       "expiryDate": {
         "errorTips": "Insira a data de validade correta."
       },
-      "cvv": {
-        "placeholder": "CVV",
-        "errorTips": "Verifique novamente.",
-        "tips": "Geralmente localizado atrás do cartão"
-      },
       "footer": "Você está usando o SHOPLINE Payments para fazer o checkout. Ao concluir seu pagamento, você concorda com",
-      "service": "os Termos de Serviço de Pagamentos SHOPLINE.",
-      "cardholdername": "Nome do titular do cartão",
-      "cardHolderNamePlaceHolder": "Nome do titular do cartão",
-      "cardHolderNameErrorTips": "Verifique novamente."
+      "service": "os Termos de Serviço de Pagamentos SHOPLINE."
     },
-    "find-store": "Selecione a loja",
-    "choose-store": "Altere a loja",
-    "please-pay-within": "Limite de pagamento",
-    "enter-a-tip-on-more-than": "Insira uma gorjeta que não exceda {{amount}}",
-    "payment-security-description": "Todas as transações são seguras e criptografadas.",
-    "pay-failed-err-code": {
-      "default": "Seu pagamento não pode ser processado devido a algumas razões. Tente novamente ou use outro método de pagamento.",
-      "buyer-account-abnormal": "Seu pagamento não pode ser processado devido a problemas de conta. Tente novamente ou use outro método de pagamento.",
-      "wrong-password": "Seu pagamento não pode ser processado devido a uma senha incorreta. Tente novamente ou use outro método de pagamento.",
-      "overpayment": "Seu pagamento não pode ser processado devido ao valor do pedido exceder o limite. Tente novamente com um cartão bancário diferente ou mude outro método de pagamento.",
-      "insufficient-balance": "Seu pagamento não pode ser processado devido a um saldo insuficiente. Tente novamente com um cartão bancário diferente ou mude outro método de pagamento.",
-      "invalid-card-number": "Seu pagamento não pode ser processado devido a um número de cartão inválido. Tente novamente com um cartão bancário diferente ou mude outro método de pagamento.",
-      "card-expired": "Seu pagamento não pode ser processado devido a um cartão expirado. Tente novamente com um cartão bancário diferente ou mude outro método de pagamento.",
-      "change-card": "Seu pagamento não pode ser processado neste momento. Tente novamente com um cartão bancário diferente ou mude outro método de pagamento.",
-      "user-cancel": "O pagamento foi cancelado. Para continuar, tente novamente.",
-      "3d-overtime": "A autenticação 3Ds não foi concluída, tente novamente.",
-      "pin-over-times": "Seu pagamento não pode ser processado devido à ultrapassagem do limite de inserção de senha. Mude para outro método de pagamento e tentar novamente."
-    },
-    "coupon": "Ofertas",
-    "coupon-mutra-discount": "Este código promocional não pode ser usado em conjunto com outras promoções ou ofertas",
-    "activity-price-limit": "O preço com desconto deste produto apenas suporta a compra de X unidades",
-    "policy": {
-      "refund-policy": "Politica de reembolso",
-      "privacy-policy": "Política de Privacidade"
-    },
+    "sold-out": "Esgotado",
+    "some-discount-limit-to-pay-and-delivery": "Alguns dos descontos são limitados aos métodos de logística/formas de pagamento disponíveis",
+    "sorry-all-sku-unusable": "Desculpe, todos os produtos não são mais válidos e o pedido não pode ser submetido",
+    "sorry-limit-re-choose": "Desculpe! Cada pedido é limitado a {{promotionRemainStock}}, ajuste a quantidade da compra",
+    "sorry-product-not-available-re-reorder": "Desculpa! Alguns dos produtos que você compra foram removidos e são inválidos, verifique e confirme antes de submeter",
+    "sorry-rechoose-longtips": "Desculpe, o produto que você selecionou é inválido para comprar, selecione novamente",
+    "start-refund": "Iniciar a devolução",
+    "stock-not-enough": "Estoque de produto insuficiente",
+    "sub-total": "Subtotal",
+    "submit-order": "Completar o pedido",
+    "summary": "Total",
+    "supermarket-self-pick": "Auto-coleta de supermercado",
+    "sure-remove-this-product": "Você tem certeza de que quer remover este produto?",
     "tip": {
       "add-tip": "Adicionar uma gorjeta"
     },
-    "free-shipping": "Frete grátis",
-    "pod-link": "Clique para ver",
-    "pod-pic": "Visualização personalizada",
-    "activity-product-limit": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
-    "activity-title-limit": "Os seguintes produtos excedem o limite de compra e continua a fazer o checkout?"
-  },
-  "payments-name": {
-    "Paypal": "Paypal",
-    "COD": "Pagamento na entrega",
-    "third-part": "Cartão de crédito"
-  },
-  "paypal": {
-    "error-expired": "O produto expirou",
-    "error-sold-out": "Estoque de produto insuficiente",
-    "error-product-limit": "Exceder o limite do produto",
-    "error-network-error": "Erro de rede",
-    "error-shop-not-exit": "Loja não existe",
-    "error-login-limit": "Entre na sua conta antes de fazer um pedido"
-  },
-  "tips": {
-    "more-than-0-int": "Insira um número inteiro maior que 0",
-    "bind-change-mobile-phone-number": "Vincular/alterar um número de celular",
-    "bind-change-email": "Vincular/alterar email",
-    "verification-code-has-been-sent-to-your-account": "O código de verificação foi enviado para sua conta",
-    "change-binding-after-verification": "Pode vincular/alterar {{value}} após completar a verificação",
-    "set-new-password": "Definir uma nova senha",
-    "forget-password": "Esqueceu senha",
-    "update-password": "Alterar senha",
-    "reset-password": "Você está redefinindo a senha da conta {{account}}",
-    "verify-account-to-reset-password": "Verifique sua conta para redefinir sua senha",
-    "password-can-be-changed-after-verification": "A senha pode ser alterada após verificação",
-    "login": "Entre",
-    "register": "Inscreva-se",
-    "or-use-the-following-method-to-log-in": "Ou entre usando os seguintes métodos",
-    "i-agree-with-the-shop": "Eu concordo com",
-    "and": "e",
-    "user-agreement": "Acordo do Usuário",
-    "please-read-and-agree-to-the-user-agreement-first": "Ler e concordar com o acordo do usuário primeiro",
-    "no-order-information-please-confirm": "Falha ao obter informações do pedido, verifique se o número do pedido está correto",
-    "no-order-number-please-confirm": "Falha ao obter o número do pedido, verifique se o número do pedido está correto",
-    "error-obtaining-support-logistics-country": "Erro de obtenção do país de logística de suporte",
-    "please-complete-the-payment-method-content": "Preencha os detalhes completos do pagamento",
-    "order-creation-exception": "Erro de criação de pedidos",
-    "bind-success": "Vincular com sucesso",
-    "update-success": "Alterado com sucesso",
-    "pay-params-error": "Falha em obter parâmetros de pagamento, pague novamente",
-    "change-heart": "Mudança de opinião",
-    "price-more-expensive": "Mais caro que outras lojas",
-    "repeat-buy": "Compra repetida",
-    "sale-too-slow": "Muito lento para entregar",
-    "change-item": "Quer alterar o item de compra",
-    "incorrect-delivery-or-payment-information": "Informações incorretas sobre entrega ou pagamento",
-    "other-reason": "Outros motivos",
-    "select-cancel-reason": "Selecione o motivo do cancelamento",
-    "fill-cancel-reason": "Preencha o motivo do cancelamento do motivo",
-    "sure-cancel-order": "Tem certeza que deseja cancelar o pedido?",
-    "cancel-reason-feedback": "Por favor nos informe o motivo do cancelamento e tentaremos fazer melhor! Os reembolsos serão feitos após o cancelamento bem sucedido. Aguardamos sua visita novamente!",
-    "cancel-apply-sent": "O pedido de cancelamento foi emitido",
-    "cancel-order-fail": "Falha ao cancelar o pedido, tente novamente",
-    "cancel-success-notice": "Você receberá uma notificação por e-mail após o cancelamento bem-sucedido, obrigado!",
-    "fail-contact": "Se a tentativa falhar, entre em contato conosco no \"Comunicação de pedidos do vendedor e do cliente\" abaixo",
-    "max-upload-img": "Desculpe! Apenas um máximo de {{maxNum}} imagens podem ser uploaded!",
-    "img-name-too-long": "O nome da imagem inserida é muito longo~",
-    "img-size-too-large": "Desculpa! O tamanho do arquivo de imagem excede o limite!",
-    "get-checkout-detail-fail": "Erro de obtenção de detalhes de pagamento",
-    "product-abnormal-back-to-cart": "Erro de status do produto, volte ao carrinho para reeditar",
-    "get-checkout-config-fail": "Erro de obtenção de configuração de pagamento",
-    "country-address-fail": "Os vendedores no país deste endereço não pagam mais pelo frete, selecione manualmente",
-    "paypal-country-fail": "O país da conta paypal não está incluído no país onde a entrega será paga, selecione manualmente.",
-    "need-phone-number-to-deliver": "Se necessário, entraremos em contato por telefone sobre as informações do pedido",
-    "enter-tel-number": "Insira seu número de telefone",
-    "enter-email": "Insira seu email",
-    "no-logistics-available": "Nenhum método de logística disponível",
-    "logistics-no-pre-selection": "A logística atual não suporta pré-seleção",
-    "logistics-pre-selection": "A logística atual suporta pré-seleção",
-    "address-no-logistics": "Nenhum método de logística disponível no endereço atual",
-    "enter-address-first": "Insira seu endereço",
-    "expand-order-summary": "Expandir o resumo do pedido",
-    "put-up-order-summary": "Ocultar o resumo do pedido",
-    "select-return-product-first": "Selecione primeiro o produto a ser devolvido",
-    "enter-bank-name": "Insira o nome do banco!",
-    "enter-bank-card-number": "Insira o número do cartão bancário!",
-    "enter-name": "Insira o nome!",
-    "max-upload-image": "Fazer upload de no máximo {{max}} imagens",
-    "upload-image-fail": "Falha no upload de imagem {{name}}",
-    "image-size-less-than": "O tamanho da imagem deve ser inferior a {{max}}mb",
-    "sku-change-tips": "Devido à mudança de status do produto, reconfirme a logística / forma de pagamento"
-  },
-  "validate": {
-    "coupon-code-cannot-exceed-25-length": "O código promocional não pode exceder 25 caracteres.",
-    "discount-code-error": "O código promocional foi inserido incorretamente",
-    "discount-code-user-invalid": "{{discountCode}} foi inserido corretamente, mas o preço ou quantidade do produto não atende aos requisitos",
-    "enter-correct-email": "Insira seu e-mail no formato correto",
-    "enter-correct-phone-number": "Insira seu número de celular no formato correto",
-    "phone-number-less-than-100": "O número do celular não pode exceder 100 caracteres",
-    "shipping_plan_unavailable": "O código promocional {{discountCode}} não se aplica ao método logístico atual",
-    "mutual-excluded-by-time-limited": "Descontos por tempo limitado e atividades de código promocional não podem ser usados ao mesmo tempo",
-    "discount-code-can-not-accumulate": "Já existe uma oferta para este produto e não pode ser combinada com outras ofertas"
-  },
-  "subscription": {
-    "subscript-via-line-facebook": "Inscreva-se para receber notificações de pedidos via LINE ou Facebook",
-    "not-subscript-via-line-facebook": "É temporariamente impossível inscrever-se para receber notificações de pedidos via LINE ou Facebook"
-  },
-  "comment": {
-    "enter-comment": "Preencha as avaliações",
-    "customer-comment": "Avaliações de clientes",
-    "comment-count": "{{total}} unidades",
-    "read-more-comments": "Ver mais avaliações",
-    "rate-score": "{{score}} estrelas",
-    "text": "Avaliações",
-    "total": "{{total}} avaliações",
-    "bad": "Muito mau",
-    "worse": "Mau",
-    "general": "Mediano",
-    "good": "Bom",
-    "best": "Muito bom",
-    "shipping-information": "Informações sobre a entrega",
-    "all-reviews": "Ver todas as avaliações",
-    "leave-a-review": "Publique uma avaliação",
-    "no-login-msg": "Os usuários que compraram este produto podem avaliar, entrar primeiro",
-    "sign-in": "Para entrar",
-    "no-bought-msg": "Desculpe, você não comprou este produto e não pode publicar avaliações",
-    "ratings": "Pontuação",
-    "experience-about": "Insira sua avaliação de produto",
-    "add-img": "Adicione imagens",
-    "more-images": "Adicione até {{total}} imagens",
-    "write-review": "Publique uma avaliação",
-    "thanks-msg": "Obrigado pela sua avaliação",
-    "network-err-msg": "Houve um problema com o sistema, tente submeter novamente~",
-    "only-image": "Suporta apenas o upload de imagens no formato .jpg .jpeg .png .bmp",
-    "image-only-2m": "Tamanho de imagem de até {{size}} MB",
-    "about-product": "Por favor insira pelo menos 1 texto",
-    "no-comment-title-tip": "Sem avaliações",
-    "no-comment-first-tip": "venha e publique a primeira avaliação",
-    "on-img-upload-tip": "A imagem está sendo carregada, favor enviar mais tarde",
-    "mobile-submit": "Enviar",
-    "nickname": "Apelido"
-  },
-  "order": {
-    "refund-methods": {
-      "self": "Enviar de volta por próprio",
-      "merchant": "Coleção por vendedor"
-    },
-    "refund-type": {
-      "origin": "Retorno com rota original",
-      "other": "Outros"
-    },
-    "after-sale-type": {
-      "refund": "Reembolso",
-      "return-and-refund": "Devolução e reembolso"
-    },
-    "after-order-status": {
-      "processing": "Em processo",
-      "confirmed": "Confirmado",
-      "delivery-progress": "Confirmado",
-      "cancelled": "Cancelado",
-      "customer-canceled": "Cancelamento do cliente",
-      "customer-rejected": "Recusa do cliente",
-      "merchant-cancellation": "Cancelamento do vendedor",
-      "completed": "Concluído"
-    },
-    "order-status": {
-      "processing": "Em processo",
-      "confirmed": "Confirmado",
-      "cancelled": "Cancelado",
-      "customer-canceled": "Cancelamento do cliente",
-      "merchant-cancellation": "Cancelamento do vendedor",
-      "completed": "Concluído"
-    },
-    "pay-status": {
-      "unpaid": "Não pago",
-      "paying": "Pagamento em andamento",
-      "partial-payment": "Pagamento parcial",
-      "already-paid": "Pago",
-      "failed": "Falha no pagamento",
-      "timed-out": "O pagamento expirou",
-      "refunding": "Reembolso em andamento",
-      "refunded": "Reembolsado",
-      "refund-failed": "Falha no reembolso",
-      "partial-refund": "Reembolso parcial",
-      "abolished": "Anulado"
-    },
-    "delivery-statusType": {
-      "stocking": "Preparando os produtos",
-      "delivery-partial": "Entrega parcial",
-      "cancelled": "Cancelado",
-      "cancel-delivery": "Cancelamento da entrega",
-      "shipping": "Envio em andamento",
-      "shipped": "Enviado",
-      "arrived": "Chegado",
-      "picked-up": "Recebido",
-      "problem": "Itens problemáticos ou perdidos, etc., exigem um serviço humano",
-      "delivery-return": "Devolvida"
-    },
-    "oms-status": {
-      "executing": "Executando",
-      "prepare-pick": "Preparando para pegar",
-      "shipped": "Enviado",
-      "cancelled": "Cancelamento da entrega",
-      "arrived": "Chegado na loja",
-      "picked": "Assinado",
-      "returning": "Devolução em andamento",
-      "returned": "Devolvida",
-      "problem": "Item problemático"
-    },
-    "order-list": {
-      "empty-title": "Imagem",
-      "empty-tip": "Atualmente não há registro de pedido, vá às compras",
-      "no-more": "Sem mais informações",
-      "load-more": "Role para cima para carregar mais",
-      "pay-now": "Pagar",
-      "track": "Rastreamento",
-      "item-total": "{{transPackages}} produtos no total",
-      "item-total-plural": "{{transPackages}} produtos no total",
-      "package-item": "Pacote {{num}} ({{item}} items)",
-      "package-more": "E acima de {{num}}",
-      "sub-order": "Sub-pedido"
-    },
-    "breadcrumb": {
-      "title": "Pedidos",
-      "order": "Pedidos",
-      "order-detail": "Detalhes do pedido"
-    },
-    "detail": {
-      "packages": {
-        "title": "Informações",
-        "sub-title": "Rastreamento de pacotes",
-        "payment-info": {
-          "method": "Método de pagamento",
-          "status": "Status de pagamento",
-          "address": "Endereço de cobrança",
-          "detail": "Detalhes"
-        },
-        "payment-title": "Pagamento",
-        "subscriptions-title": "Inscrever-se",
-        "order-note-title": "Notas de pedido",
-        "shippings": {
-          "method": "Método de entrega",
-          "fee": "Frete",
-          "status": "Status de entrega"
-        },
-        "amount": {
-          "subtotal": "Subtotal de produtos",
-          "tax": "Imposto sobre produto",
-          "express": "Frete",
-          "express-surcharge": "Taxa de frete",
-          "channel-surcharge": "Taxa de serviço de pagamento",
-          "discount-amount-name": "Desconto personalizado do vendedor",
-          "tip": "Gorjeta",
-          "preferential": "Ofertas",
-          "discount": "Desconto de código promocional",
-          "deduct-voucher": "Valor do cupom",
-          "total": "Total"
-        },
-        "order-num": "({{num}}) pacotes",
-        "logistics": {
-          "no-data": "Nenhuma informação de logística no momento",
-          "detail": "Detalhes",
-          "tab-title": "Pacote {{index}}",
-          "blank-trace": "Clique no link a seguir para rastrear seu pacote:",
-          "no-data2": "Nenhuma informação de entrega ainda, verifique mais tarde."
-        },
-        "send-to-Messenger": "Enviar para Messenger",
-        "send-to-Line": "Enviar para Line",
-        "unshipped-order-num": "Processando ({{num}} itens)",
-        "payment-deal": {
-          "name": "Canais de pagamento",
-          "amount": "Quantia",
-          "deal-id": "Número de série do pagamento",
-          "create-time": "Criado em",
-          "update-time": "Atualizado em",
-          "status": "Status",
-          "title": "Detalhes de pagamento"
-        },
-        "status": {
-          "pedding": {
-            "title": "Preparando para envio",
-            "desc": "Estamos atualmente preparando estes itens para o embarque."
-          },
-          "success": {
-            "desc": "Aceitamos seu pedido e está pronto para partir. Volte a esta página para obter as últimas informações sobre o status de sua remessa."
-          }
-        },
-        "contact-us-title": "Contate-nos",
-        "contact-us": "preciso de ajuda? Entre em contato conosco: {{email}}"
-      },
-      "order-status": {
-        "cancel": {
-          "title": "Seu pedido foi cancelado",
-          "desc": "Seu pedido foi cancelado em {{cancelTime}}. Se você tiver alguma dúvida, entre em contato conosco."
-        },
-        "success": {
-          "title": "Seu pedido foi confirmado",
-          "desc": "As informações do pedido foram enviadas para {{buyerContact}} , por favor confirme"
-        },
-        "pedding": {
-          "title": "Pagamento em andamento...",
-          "desc": "Sua solicitação de pagamento foi submetida, aguarde o {{- payChannelDesc}} para devolver o resultado do pagamento"
-        },
-        "redirect": {
-          "title": "Redirecionando para o resultado do pagamento...",
-          "desc": "Se não houver redirecionamento automático, atualize esta página"
-        },
-        "pay": {
-          "title": "Pagamento pendente",
-          "go-pay": "<common>Pagamento </common><amount>{{orderAmount}}</amount>"
-        },
-        "button": {
-          "refresh": "Atualizar"
-        }
-      },
-      "order-info": {
-        "processing": "Em processo",
-        "confirmed": "Confirmado",
-        "finished": "Concluído",
-        "canceled": "Cancelado"
-      },
-      "cancel-btn": "Cancelar pedido",
-      "communication": {
-        "title": "Pedido de comunicação"
-      },
-      "coms": {
-        "operationLog": {
-          "PayDealLog": {
-            "title": "O pagamento de {amount} foi processado através de {payName}",
-            "payName": "Canais de pagamento",
-            "amount": "Quantia",
-            "dealId": "Número de série do pagamento",
-            "createTime": "Tempo de início do pagamento",
-            "updateTime": "Tempo de retorno do resultado",
-            "status": "Status"
-          }
-        }
-      }
-    },
-    "seq-no": "No. {{id}}",
-    "order-at": "Tempo do pedido:",
-    "customer-info": "Informações do cliente",
-    "help-tips": "preciso de ajuda? Entre em contato conosco: {{email}}",
-    "order-date": "Tempo de colocação do pedido"
-  },
-  "promotion": {
-    "full-reduction": "Desconto em dinheiro",
-    "full-reduction-benefit": "Oferta de desconto em dinheiro",
-    "full-discount": "Porcentagem de desconto",
-    "full-discount-benefit": "Oferta de porcentagem de desconto",
-    "free-shipping": "Frete grátis",
-    "flash-sale": "Promoção por tempo limitado",
-    "member-price": "Preço de membro",
-    "all-product": "Todos os produtos",
-    "permanent": "Permanente",
-    "all-user": "Todos os usuários",
-    "all-vip": "Todos os membros",
-    "level-vip": "Membro de nível {{level}}",
-    "label-vip": "{{label}} membro",
-    "other-customer": "Clientes (usuários que não fizeram um pedido)",
-    "activity-scope": "Escopo de atividade",
-    "activity-benefit": "Ofertas de atividades",
-    "activity-introduction": "Descrição de atividade",
-    "terms-and-conditions": "Termos e Condições",
-    "selected-count-activity-product": "Selecionou {{selectCount}} protudos deste actividade",
-    "price-unit": "Yuan",
-    "piece-unit": "Unidade",
-    "discount-benefit": "{{discount}} de desconto",
-    "full-amount": "Alcance<0>{{value}}</0>",
-    "full-piece": "Alcance {{value}} unidades",
-    "reduce": "Redução de <0>{{value}}</0>",
-    "reduce1": "Redução de {{value}}",
-    "reduce-again": "Redução mais de <0>{{value}}</0>",
-    "get-discount-1": "Aproveite {{value}} de desconto",
-    "get-discount-2": "Aproveite {{value}}% de desconto",
-    "flash-sale-limit": "Limite de {{value}} unidades por pessoa",
-    "buy-again": "Compre mais<0>{{value}}</0>",
-    "buy-again-piece": "Compre mais {{value}} unidades",
-    "still-lacking": "Falta <0>{{value}}</0>",
-    "discounted": "Foi descontado<0>{{value}}</0>",
-    "coupon": "Cupom",
-    "select-sku": "Selecione a especificação do produto",
-    "select-combo": "Selecione um pacote",
-    "more-combo": "Mais pacotes",
-    "item-num": "Item {{value}}",
-    "only-one-sku": "O produto atual tem apenas uma especificação",
-    "select-product": "Selecione os produtos",
-    "bundle": {
-      "title": "Produtos empacotados",
-      "desc": "Adicione estes itens para um desconto <italic>{{value}}</italic>"
-    },
-    "whole-full-piece-discount": "Compre <italic>{{condition}}</italic> unidades para economizar<italic>{{content}}</italic>%",
-    "whole-full-amount-discount": "Compre <italic>{{condition}}</italic> para economizar<italic>{{content}}</italic>%",
-    "whole-full-piece-reduce": "Compre <italic>{{condition}}</italic> unidades para economizar <italic>{{content}}</italic>",
-    "whole-full-amount-reduce": "Compre <italic>{{condition}}</italic> para economizar <italic>{{content}}</italic>",
-    "price-price-step1": "<children> Compre </children><more>{{morePrice}}</more><children> ou mais para economizar </children><more>{{totalPrice}}</more>",
-    "price-price-step2": "<children> Economizou </children><normal>{{price}}</normal><children> já! </children><white /><children> Compre mais </children><more>{{morePrice}}</more><children> e economize </children><more>{{totalPrice}}</more>",
-    "price-price-step3": "<children> Parabéns! Você economizou </children><normal>{{price}}</normal><children>！</children>!",
-    "price-piece-step1": "<children> Compre mais de </children><more>{{morePrice}}</more><children> unidades e economize </children><more>{{totalPrice}}</more>",
-    "price-piece-step2": "<children> Economizou </children><normal>{{price}}</normal><children> já! </children><white /><children> Compre mais de </children><more>{{morePrice}}</more><children> unidades e economize </children><more>{{totalPrice}}</more>",
-    "price-piece-step3": "<children> Parabéns! Você economizou </children><normal>{{price}}</normal><children>！</children>!",
-    "percent-price-step1": "<children> Compre </children><more>{{price}}</more><children> ou mais para economizar </children><more>{{percent}}</more>",
-    "percent-price-step2": "<children> Economizou </children><normal>{{percent}}</normal><children> já! </children><white /><children> Compre mais de </children><more>{{price}}</more><children> e economize </children><more>{{morePercent}}</more>",
-    "percent-price-step3": "<children> Parabéns! Você economizou </children><normal>{{percent}}</normal><children>！</children>!",
-    "percent-piece-step1": "<children> Compre mais de </children><more>{{price}}</more><children> unidades e economize </children><more>{{percent}}</more>",
-    "percent-piece-step2": "<children> Economizou </children><normal>{{percent}}</normal><children> já! </children><white /><children> Compre mais de </children><more>{{price}}</more><children> unidades e economize </children><more>{{morePercent}}</more>",
-    "percent-piece-step3": "<children> Parabéns! Você economizou </children><normal>{{percent}}</normal><children>！</children>"
-  },
-  "labelInput": {
-    "email-error": "Insira seu email no formato correto",
-    "phone-error": "Insira seu número de celular no formato correto",
-    "contact-error": "Insira seu email/número de celular no formato correto",
-    "phone-error-tips": "Preencha o nome real do destinatário para garantir o recebimento sem problemas"
-  },
-  "userCenter": {
-    "personal-info": "Informações pessoais",
-    "orders": "Pedidos",
-    "refunds": "Reembolso",
-    "sign-out": "Sair",
-    "edit": "Editar",
-    "cancel": "Cancelar",
-    "save": "Salvar",
-    "buy-record-entry": "Produtos comprados",
-    "account": {
-      "account-subscription-email": "Enviar para email",
-      "account-subscription-phone": "Enviar para celular",
-      "account-subscription-messenger": "Enviar para Messenger",
-      "account-subscription-line": "Enviar para a aplicação Line",
-      "reset-password-error": "Vincule o email ou celular primeiro",
-      "account-info": "Informações sobre a conta",
-      "member-level": "Nível de membro",
-      "memberLevelCom": {
-        "defaultLevel": "Membro comum",
-        "expire": "Tempo de expiração {{time}}",
-        "upgradeText1": "Com uma compra única de {{money}}, você pode atualizar para {{nextLevelName}}",
-        "upgradeText0": "Atualização para {{nextLevelName}} após gastar {{money}}",
-        "upgradeSuccessText": "Parabéns por sua promoção bem-sucedida para",
-        "modalTitle": "Descrição dos interesses de nível",
-        "tableTitleGrade": "Nível de membro",
-        "tableTitleInterest": "Benefícios de membro",
-        "discountInterest": "Ir às compras"
-      },
-      "general-member": "Membro comum",
-      "username": "Nome do usuário",
-      "username-message": "Insira seu nome de usuário!",
-      "username-placeholder": "Insira seu nome de usuário",
-      "email": "Email",
-      "bind": "Vincular",
-      "modify-email": "Alterar Email",
-      "phone": "Celular",
-      "modify-phone": "Celular",
-      "password": "Senha",
-      "change-password": "Alterar senha",
-      "subscription-notification": "Notificação de inscrição",
-      "unsubscribed": "Cancelar a inscrição",
-      "account-binding": "Vinculação de conta"
-    },
-    "address": {
-      "delete-address": "Excluir endereço",
-      "address": "Endereço",
-      "no-data": "Sem endereço de entrega atual",
-      "add": "Adicionar novo endereço",
-      "full-tip": "5 endereços foram salvos e não podem ser adicionados no momento",
-      "default": "Padrão",
-      "ok": "Confirme"
-    },
-    "subscription": {
-      "title": "Inscrever-se",
-      "line": "LINE",
-      "phone": "Celular",
-      "email": "Email",
-      "messenger": "Messenger",
-      "not-sub": "Não inscrito",
-      "subed": "Inscrição com sucesso",
-      "unsub": {
-        "title": "Cancelar a inscrição",
-        "content": "Ao cancelar a inscrição, você não receberá mais as últimas promoções.",
-        "ok-text": "Cancelar a inscrição"
-      },
-      "modal": {
-        "eamil-title": "Receber as promoções inscritas por email",
-        "ok-text": "Inscrever-se",
-        "cancel-text": "Cancelar a inscrição",
-        "phone-title": "Receber as promoções inscritas por celular",
-        "save": "Salvar"
-      }
-    },
-    "personal": {
-      "gender-male": "Masculino",
-      "gender-female": "Feminino",
-      "gender-secret": "Manter em segredo",
-      "personal-information": "Informações pessoais",
-      "birthday-date": "Data de nascimento",
-      "date": "Data",
-      "select-date": "Selecione a data",
-      "select-date-ok": "Confirme",
-      "select-date-placeholder": "Selecione",
-      "select-date-cancel": "Cancelar",
-      "gender": "Gênero",
-      "unknown": "Desconhecido"
-    },
-    "editAddress": {
-      "country-message": "Selecione seu país/região",
-      "province-message": "Selecione sua província",
-      "city-message": "Selecione sua cidade",
-      "district-message": "Selecione seu distrito",
-      "postcode-message": "Menos de 32 caracteres",
-      "address1-message": "Menos de 512 caracteres",
-      "address2-message": "Menos de 512 caracteres",
-      "edit": "Editar endereço de entrega",
-      "contact-message": "Insira seu nome de contato",
-      "lastName-message": "Insira seu sobrenome",
-      "phone-message": "Insira seu número de celular",
-      "default": "Definido como endereço padrão",
-      "name-placeholder": "Nome",
-      "firstName-placeholder": "Nome (opcional)",
-      "lastName-placeholder": "Sobrenome",
-      "phone-label": "Celular"
-    },
-    "message": {
-      "message": "Mensagens",
-      "send": "Enviar",
-      "inputPlaceholder": "Você tem alguma mensagem para nós?"
-    },
-    "point": {
-      "title": "Vale-presente",
-      "empty-mainText": "Você não recebeu nenhum vale-presente",
-      "empty-btn-link": "Como adquirir e usar vale presente",
-      "mainview-dedection": "O limite máximo de crédito atual é de <italic>{{money}}</italic>",
-      "mainview-link": "Entendendo as regras",
-      "mainview-save": "Ao utilizar a taxa de compra {{historyTotalUsedScore}}, você economizou <italic> {historyTotalUsedDeduction}} </italic>",
-      "modal-title": "Descrição de vale-presente",
-      "ok-btn": "Confirme",
-      "unuseHistoryScore": "Você não usou o vale-presente para economizar despesas",
-      "date": "{{date}} {{month}} {{year}}, {{day}}",
-      "day0": "Domingo",
-      "day1": "Segunda-feira",
-      "day2": "Terça-feira",
-      "day3": "Quarta-feira",
-      "day4": "Quinta-feira",
-      "day5": "Sexta-feira",
-      "day6": "Sábado",
-      "month1": "1",
-      "month2": "2",
-      "month3": "3",
-      "month4": "4",
-      "month5": "5",
-      "month6": "6",
-      "month7": "7",
-      "month8": "8",
-      "month9": "9",
-      "month10": "10",
-      "month11": "11",
-      "month12": "12",
-      "actionTypeDesc": {
-        "addPoint": "Vales-presente adicionados",
-        "deductPoint": "Vales-presente reduzidos",
-        "expirePoint": "Vales-presente expirados",
-        "freezePoint": "Vales-presente congelados",
-        "releaseFreezePoint": "Desbloqueio de vales-presente congelados",
-        "deductFreezePoint": "Cancelamento de vales-presente congelados",
-        "reverseAddPoint": "Reversão de vales-presente adicionais",
-        "reverseDeductPoint": "Cancelamento de vales-presente reduzidos"
-      }
-    },
-    "pointList": {
-      "empty": "Atualmente não há registro de pontos",
-      "breadcrumb1": "Informações",
-      "breadcrumb2": "Preço de compra",
-      "total": "Avaliações（{{total}}）",
-      "loading": "Carregando...",
-      "loaded": "Carregado",
-      "empty2": "Sem mais registros",
-      "order": "Ver pedido:"
-    }
-  },
-  "cart": {
-    "render-empty-status": "Não existem produtos no seu carrinho de compras",
-    "render-add-items": "O seu carrinho de compras está vazio.",
-    "go-shopping": "Ir às compras",
-    "login-description": "Já é um membro? Entre para gerenciar os pedidos mais facilmente!",
-    "login-membership": "Membro grátis",
-    "checkout-error": "Pelo menos um item no carrinho de compras não pode ser comprado. Por favor, ajuste os itens em seu carrinho para o checkout.",
-    "get": "Ganhe desconto",
-    "shopping-money": "A próxima etapa será calcular os impostos e frete",
-    "shopping-fees": "Taxa de compra",
-    "shopping-money-step": "A próxima etapa será calcular os impostos e frete",
-    "view-shopping-cart": "Ver o carrinho",
-    "most-100-sku": "Adicione até 100 produtos",
-    "most-buy-999": "Pode adicionar até 999 unidades ao carrinho",
-    "stock-limit": "{{stock}} unidades restantes",
-    "activity-title-limit": "Os seguintes produtos excedem o limite de compra e continua a fazer o checkout?",
-    "activity-price-limit": "O preço com desconto deste produto apenas suporta a compra de {{num}} unidades",
-    "active-stock-limit-2": "O preço com desconto deste produto apenas suporta a compra de {{stock}} unidades",
-    "active-stock-limit-1": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
-    "activity-product-limit": "Pode comprar até {{stock}} unidades com desconto ao mesmo tempo",
-    "view-link": "Clique para ver",
-    "view-pic": "Visualização personalizada",
-    "not-participation-offers": "Não participando da oferta",
-    "active-stock-limit": "Somente {{stock}} unidades restantes com o preço de desconto deste produto"
-  },
-  "widget": {
-    "order": {
-      "pending-order": "Pedido pendente"
-    }
+    "total": "Total",
+    "total-num": "Preço total",
+    "use-customer-info": "Use as informações do cliente",
+    "use-member-account-can": "Faça checkout expresso como membro? Pode imediatamente",
+    "use-shopping-deduction": "Pode usar {{num}} vales-presente a serem deduzidos",
+    "user-cancel-apply": "O usuário retirou a requisição",
+    "will-discount": "Oferta esperada",
+    "wrong-product": "Envio errado",
+    "you-are-paying-wait-result": "Seu pedido de pagamento foi enviada e está aguardando {{payChannel}} retornar o resultado do pagamento",
+    "your-apply-auditing-sure-backout": "Seu pedido de devolução está em análise, tem certeza de que deseja retirá-lo?",
+    "your-delivery-need-choose-store": "O método de entrega selecionado requer a seleção de informações da loja",
+    "your-order-created": "Seu pedido foi estabelecido",
+    "your-order-not-pay": "Seu pedido ainda não foi pago",
+    "your-refund-order-created": "Seu pedido de devolução foi estabelecido"
   },
   "user": {
-    "email": "Email",
-    "phone": "Número de celular",
-    "username": "Email/número de celular",
-    "password": "Senha",
-    "repeatPassword": "Repita a senha",
-    "primevalPassword": "Senha original",
+    "account": "CONTA",
     "code": "Código de verificação",
-    "signUp": "Inscreva-se",
-    "signIn": "Entre",
-    "confirm": "Confirme",
-    "emailError": "Insira seu email no formato correto e menos de 50 caracteres",
-    "phoneError": "Insira seu número de celular no formato correto",
     "codeError": "Insira o código de verificação",
-    "passwordError": "Defina uma senha de 8-20 caracteres, incluindo letras maiúsculas e minúsculas e números",
-    "repeatPasswordError": "As duas senhas inseridas não são iguais",
-    "repeatPasswordEmptyError": "Insira a senha novamente",
-    "primevalPasswordError": "Insira a senha original",
-    "send": "Enviar",
-    "resend": "Reenviar",
-    "sendError": "Envie o código de verificação primeiro",
-    "noData": "Sem dados",
-    "passwordEmptyError": "Insira a senha",
-    "passwordMemberError": "Defina uma senha de 6-18 caracteres",
+    "confirm": "Confirme",
+    "email": "Email",
     "emailEmptyError": "Insira seu email",
+    "emailError": "Insira seu email no formato correto e menos de 50 caracteres",
+    "noData": "Sem dados",
+    "password": "Senha",
+    "passwordEmptyError": "Insira a senha",
+    "passwordError": "Defina uma senha de 8-20 caracteres, incluindo letras maiúsculas e minúsculas e números",
+    "passwordMemberError": "Defina uma senha de 6-18 caracteres",
+    "phone": "Número de celular",
     "phoneEmptyError": "Insira seu número de celular",
-    "usernameEmptyError": "Insira seu email ou número de celular",
+    "phoneError": "Insira seu número de celular no formato correto",
     "primevalNewPasswordError": "A senha não pode ser igual à senha original",
+    "primevalPassword": "Senha original",
+    "primevalPasswordError": "Insira a senha original",
+    "repeatPassword": "Repita a senha",
+    "repeatPasswordEmptyError": "Insira a senha novamente",
+    "repeatPasswordError": "As duas senhas inseridas não são iguais",
+    "resend": "Reenviar",
+    "send": "Enviar",
+    "sendError": "Envie o código de verificação primeiro",
+    "signIn": "Entre",
+    "signUp": "Inscreva-se",
     "udbResponse": {
       "err-1": "Faltando parâmetro",
+      "err-13": "stoke expirou",
       "err-4": "Parâmetro inválido",
       "err-5": "Operação ilegal",
-      "err-13": "stoke expirou",
       "err-999": "Falha na chamada remota",
       "err1001": "Senha incorreta",
       "err1002": "Usuário não existe",
@@ -1310,70 +1245,185 @@
       "err3014": "Falha na renderização do modelo de SMS/email",
       "udbResponse": "Sua conta foi desativada devido a uma anormalidade, entre em contato com o vendedor para desbloqueá-la"
     },
-    "account": "CONTA"
+    "username": "Email/número de celular",
+    "usernameEmptyError": "Insira seu email ou número de celular"
   },
-  "address": {
-    "dropdown": {
-      "default-placeholder": "Selecione",
-      "no-item-tips": "Sem dados",
-      "no-search-result": "Sem conteúdo correspondente"
-    },
-    "mobile-errorMessage": "Insira um número de telefone válido",
-    "mobile-errorMessage-country-code": "Não preencha o código de área"
-  },
-  "oneShop": {
-    "noComment": "Sem avaliações",
-    "productCommentTitle": "Avaliação de produto ({{n}})",
-    "priceStart": "A partir de {{n}}",
-    "discountByAmount": "{{n}}% de desconto em {{amount}}",
-    "discountByNum": "{{n}}% de desconto em {{num}} unidades",
-    "cutByAmount": "{{n}} de desconto em {{amount}}",
-    "cutByNum": "{{n}} de desconto em {{num}} unidades",
-    "buyNow": "Comprar agora",
-    "productDetail": "Detalhes do produto",
-    "selectedProductSoldOut": "Estoque insuficiente de produtos selecionados",
-    "currentProductSoldOut": "Estoque insuficiente de produtos atuais",
-    "productNoSelect": "Selecione a especificação do produto",
-    "orderAgain": "Faça o pedido novamente",
-    "soleOutSelectAgain": "O estoque de produtos atual é insuficiente, selecione novamente",
-    "productFailure": "O produto que você selecionou é inválido para comprar, selecione novamente",
-    "comboSelectFailure": "O produto que você selecionou é inválido para comprar, selecione novamente",
-    "comboFailure": "O pacote expirou",
-    "freeShipping": "Frete grátis",
-    "buyPop": "{{name}} comprou este produto {{minutes}} atrás",
-    "noProductDesc": "Sem descrição do produto",
-    "TCTD0108": "O método logístico não existe, selecione novamente",
-    "TCTD0118": "A forma de pagamento não existe, selecione novamente",
-    "TCTD0121": "A atividade de marketing não existe, selecione novamente",
-    "TCTD0112": "O produto que você selecionou é inválido para comprar, selecione novamente",
-    "defaultErrorCodeMsg": "Em caso de anomalia na rede, atualize a página e tente novamente",
-    "comment": "Mensagem (Não essenciais)",
-    "country": "País",
-    "submit": "Submeter",
-    "overLength": "O comprimento inserido excede o limite, preencha corretamente",
-    "optional": "Não essenciais",
-    "bracket": "({{content}})"
-  },
-  "blogList": {
-    "container": {
-      "empty": {
-        "title": "Blogue",
-        "desc": "Não há posts neste blogue"
+  "userCenter": {
+    "account": {
+      "account-binding": "Vinculação de conta",
+      "account-info": "Informações sobre a conta",
+      "account-subscription-email": "Enviar para email",
+      "account-subscription-line": "Enviar para a aplicação Line",
+      "account-subscription-messenger": "Enviar para Messenger",
+      "account-subscription-phone": "Enviar para celular",
+      "bind": "Vincular",
+      "change-password": "Alterar senha",
+      "email": "Email",
+      "general-member": "Membro comum",
+      "member-level": "Nível de membro",
+      "memberLevelCom": {
+        "defaultLevel": "Membro comum",
+        "discountInterest": "Ir às compras",
+        "expire": "Tempo de expiração {{time}}",
+        "modalTitle": "Descrição dos interesses de nível",
+        "tableTitleGrade": "Nível de membro",
+        "tableTitleInterest": "Benefícios de membro",
+        "upgradeSuccessText": "Parabéns por sua promoção bem-sucedida para",
+        "upgradeText0": "Atualização para {{nextLevelName}} após gastar {{money}}",
+        "upgradeText1": "Com uma compra única de {{money}}, você pode atualizar para {{nextLevelName}}"
       },
-      "readBtnText": "Leia mais"
+      "modify-email": "Alterar Email",
+      "modify-phone": "Celular",
+      "password": "Senha",
+      "phone": "Celular",
+      "reset-password-error": "Vincule o email ou celular primeiro",
+      "subscription-notification": "Notificação de inscrição",
+      "unsubscribed": "Cancelar a inscrição",
+      "username": "Nome do usuário",
+      "username-message": "Insira seu nome de usuário!",
+      "username-placeholder": "Insira seu nome de usuário"
+    },
+    "address": {
+      "add": "Adicionar novo endereço",
+      "address": "Endereço",
+      "default": "Padrão",
+      "delete-address": "Excluir endereço",
+      "full-tip": "5 endereços foram salvos e não podem ser adicionados no momento",
+      "no-data": "Sem endereço de entrega atual",
+      "ok": "Confirme"
+    },
+    "buy-record-entry": "Produtos comprados",
+    "cancel": "Cancelar",
+    "edit": "Editar",
+    "editAddress": {
+      "address1-message": "Menos de 512 caracteres",
+      "address2-message": "Menos de 512 caracteres",
+      "city-message": "Selecione sua cidade",
+      "contact-message": "Insira seu nome de contato",
+      "country-message": "Selecione seu país/região",
+      "default": "Definido como endereço padrão",
+      "district-message": "Selecione seu distrito",
+      "edit": "Editar endereço de entrega",
+      "firstName-placeholder": "Nome (opcional)",
+      "lastName-message": "Insira seu sobrenome",
+      "lastName-placeholder": "Sobrenome",
+      "name-placeholder": "Nome",
+      "phone-label": "Celular",
+      "phone-message": "Insira seu número de celular",
+      "postcode-message": "Menos de 32 caracteres",
+      "province-message": "Selecione sua província"
+    },
+    "message": {
+      "inputPlaceholder": "Você tem alguma mensagem para nós?",
+      "message": "Mensagens",
+      "send": "Enviar"
+    },
+    "orders": "Pedidos",
+    "personal-info": "Informações pessoais",
+    "personal": {
+      "birthday-date": "Data de nascimento",
+      "date": "Data",
+      "gender": "Gênero",
+      "gender-female": "Feminino",
+      "gender-male": "Masculino",
+      "gender-secret": "Manter em segredo",
+      "personal-information": "Informações pessoais",
+      "select-date": "Selecione a data",
+      "select-date-cancel": "Cancelar",
+      "select-date-ok": "Confirme",
+      "select-date-placeholder": "Selecione",
+      "unknown": "Desconhecido"
+    },
+    "point": {
+      "actionTypeDesc": {
+        "addPoint": "Vales-presente adicionados",
+        "deductFreezePoint": "Cancelamento de vales-presente congelados",
+        "deductPoint": "Vales-presente reduzidos",
+        "expirePoint": "Vales-presente expirados",
+        "freezePoint": "Vales-presente congelados",
+        "releaseFreezePoint": "Desbloqueio de vales-presente congelados",
+        "reverseAddPoint": "Reversão de vales-presente adicionais",
+        "reverseDeductPoint": "Cancelamento de vales-presente reduzidos"
+      },
+      "date": "{{date}} {{month}} {{year}}, {{day}}",
+      "day0": "Domingo",
+      "day1": "Segunda-feira",
+      "day2": "Terça-feira",
+      "day3": "Quarta-feira",
+      "day4": "Quinta-feira",
+      "day5": "Sexta-feira",
+      "day6": "Sábado",
+      "empty-btn-link": "Como adquirir e usar vale presente",
+      "empty-mainText": "Você não recebeu nenhum vale-presente",
+      "mainview-dedection": "O limite máximo de crédito atual é de <italic>{{money}}</italic>",
+      "mainview-link": "Entendendo as regras",
+      "mainview-save": "Ao utilizar a taxa de compra {{historyTotalUsedScore}}, você economizou <italic> {historyTotalUsedDeduction}} </italic>",
+      "modal-title": "Descrição de vale-presente",
+      "month1": "1",
+      "month10": "10",
+      "month11": "11",
+      "month12": "12",
+      "month2": "2",
+      "month3": "3",
+      "month4": "4",
+      "month5": "5",
+      "month6": "6",
+      "month7": "7",
+      "month8": "8",
+      "month9": "9",
+      "ok-btn": "Confirme",
+      "title": "Vale-presente",
+      "unuseHistoryScore": "Você não usou o vale-presente para economizar despesas"
+    },
+    "pointList": {
+      "breadcrumb1": "Informações",
+      "breadcrumb2": "Preço de compra",
+      "empty": "Atualmente não há registro de pontos",
+      "empty2": "Sem mais registros",
+      "loaded": "Carregado",
+      "loading": "Carregando...",
+      "order": "Ver pedido:",
+      "total": "Avaliações（{{total}}）"
+    },
+    "refunds": "Reembolso",
+    "save": "Salvar",
+    "sign-out": "Sair",
+    "subscription": {
+      "email": "Email",
+      "line": "LINE",
+      "messenger": "Messenger",
+      "modal": {
+        "cancel-text": "Cancelar a inscrição",
+        "eamil-title": "Receber as promoções inscritas por email",
+        "ok-text": "Inscrever-se",
+        "phone-title": "Receber as promoções inscritas por celular",
+        "save": "Salvar"
+      },
+      "not-sub": "Não inscrito",
+      "phone": "Celular",
+      "subed": "Inscrição com sucesso",
+      "title": "Inscrever-se",
+      "unsub": {
+        "content": "Ao cancelar a inscrição, você não receberá mais as últimas promoções.",
+        "ok-text": "Cancelar a inscrição",
+        "title": "Cancelar a inscrição"
+      }
     }
   },
-  "blog": {
-    "container": {
-      "backTo": "Volte para {{{collectionTitle}}}"
-    }
+  "validate": {
+    "coupon-code-cannot-exceed-25-length": "O código promocional não pode exceder 25 caracteres.",
+    "discount-code-can-not-accumulate": "Já existe uma oferta para este produto e não pode ser combinada com outras ofertas",
+    "discount-code-error": "O código promocional foi inserido incorretamente",
+    "discount-code-user-invalid": "{{discountCode}} foi inserido corretamente, mas o preço ou quantidade do produto não atende aos requisitos",
+    "enter-correct-email": "Insira seu e-mail no formato correto",
+    "enter-correct-phone-number": "Insira seu número de celular no formato correto",
+    "mutual-excluded-by-time-limited": "Descontos por tempo limitado e atividades de código promocional não podem ser usados ao mesmo tempo",
+    "phone-number-less-than-100": "O número do celular não pode exceder 100 caracteres",
+    "shipping_plan_unavailable": "O código promocional {{discountCode}} não se aplica ao método logístico atual"
   },
-  "title": {
-    "policy": {
-      "privacy": "política de privacidade do site",
-      "refund": "Politica de reembolso",
-      "service": "os termos de serviço",
-      "shipping": "Política de envio"
+  "widget": {
+    "order": {
+      "pending-order": "Pedido pendente"
     }
   }
 }

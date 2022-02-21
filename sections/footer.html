@@ -64,7 +64,9 @@
 
   {{#if section.settings.show_copyright}}
     <div class="footer__copyright-container container g-4 g-md-6">
-        <p>© {{year}} {{storeInfo.name}} {{section.settings.copyright_text}}</p>
+      <div class="copy-box">
+          <p>© {{year}} {{storeInfo.name}}&nbsp;</p>{{{section.settings.copyright_text}}}
+      </div>
     </div>
   {{/if}}
 </div>
@@ -74,24 +76,39 @@
 {{#schema}}
 {
   "name": {
+    "zh-hans-cn": "页脚",
     "en": "Footer",
-    "zh-hans-cn": "页脚"
+    "id": "Halaman akhir",
+    "th": "ท้ายของหน้า",
+    "vi": "Chân trang",
+    "ms": "Pengaki",
+    "zh-hant-tw": "頁腳"
   },
   "max_blocks": 12,
   "settings": [
     {
       "type": "group_header",
       "label": {
+        "zh-hans-cn": "邮件订阅",
         "en": "Email subscription",
-        "zh-hans-cn": "邮件订阅"
+        "id": "Langganan email",
+        "th": "การสมัครอีเมล",
+        "vi": "Đăng ký Email",
+        "ms": "Langganan E-mel",
+        "zh-hant-tw": "郵件訂閱"
       }
     },
     {
       "type": "switch",
       "id": "show_newsletter",
       "label": {
+        "zh-hans-cn": "显示邮箱订阅",
         "en": "Display Email Subscription",
-        "zh-hans-cn": "显示邮箱订阅"
+        "id": "Tampilkan langganan email",
+        "th": "แสดงการสมัครรับอีเมล",
+        "vi": "Hiển thị email đăng ký",
+        "ms": "Tunjuk langganan emel",
+        "zh-hant-tw": "顯示郵箱訂閱"
       },
       "default": true
     },
@@ -99,8 +116,13 @@
       "type": "richtext",
       "id": "newsletter_title",
       "label": {
+        "zh-hans-cn": "邮箱订阅标题",
         "en": "Email subscription title",
-        "zh-hans-cn": "邮箱订阅标题"
+        "id": "Judul langganan email",
+        "th": "หัวข้อการสมัครอีเมล",
+        "vi": "Tiêu đề email đăng ký",
+        "ms": "Tajuk langganan emel",
+        "zh-hant-tw": "郵箱訂閱標題"
       },
       "default": "Subscribe today and get 10% off your first purchase"
     },
@@ -108,8 +130,13 @@
       "id": "button_text",
       "type": "text",
       "label": {
-        "en": "Button texts",
-        "zh-hans-cn": "按钮文案"
+        "zh-hans-cn": "按钮文案",
+        "en": "Button text",
+        "id": "Tulisan tombol",
+        "th": "ข้อความปุ่ม",
+        "vi": "Nội dung nút",
+        "ms": "Salinan butang",
+        "zh-hant-tw": "按鈕文案"
       },
       "default": "Subscribe"
     },
@@ -117,24 +144,39 @@
       "id": "placeholder",
       "type": "text",
       "label": {
+        "zh-hans-cn": "输入框提示文案",
         "en": "Prompt text in the input box",
-        "zh-hans-cn": "输入框提示文案"
+        "id": "Tulisan tip kotak masukan",
+        "th": "ข้อความแจ้งเตือนสำหรับกล่องใส่ข้อความ",
+        "vi": "Văn bản thông báo của khoanh nhập",
+        "ms": "Copywriting penunjuk ruangan input",
+        "zh-hant-tw": "輸入框提示文案"
       },
       "default": "Enter your email"
     },
     {
       "type": "group_header",
       "label": {
+        "zh-hans-cn": "附加内容",
         "en": "Additional content",
-        "zh-hans-cn": "附加内容"
+        "id": "Tambah isi",
+        "th": "เนื้อหาเพิ่มเติม",
+        "vi": "Thêm nội dung",
+        "ms": "Tambah kandungan",
+        "zh-hant-tw": "附加內容"
       }
     },
     {
       "type": "switch",
       "id": "show_locale_selector",
       "label": {
+        "zh-hans-cn": "展示语言选择器",
         "en": "Display the language selector",
-        "zh-hans-cn": "展示语言选择器"
+        "id": "Tampilkan pilihan bahasa",
+        "th": "แสดงตัวเลือกภาษา",
+        "vi": "Bày ra máy chọn ngôn ngữ",
+        "ms": "Tunjuk pemilih bahasa",
+        "zh-hant-tw": "展示語言選擇器"
       },
       "default": false
     },
@@ -142,8 +184,13 @@
       "type": "switch",
       "id": "show_currency_selector",
       "label": {
+        "zh-hans-cn": "展示货币选择器",
         "en": "Display the currency selector",
-        "zh-hans-cn": "展示货币选择器"
+        "id": "Tampilkan pilihan mata uang",
+        "th": "แสดงตัวเลือกสกุลเงิน",
+        "vi": "Bày ra máy chọn tiền tệ",
+        "ms": "Tunjuk pemilih mata wang",
+        "zh-hant-tw": "展示貨幣選擇器"
       },
       "default": false
     },
@@ -151,8 +198,13 @@
       "type": "switch",
       "id": "show_currency_flags",
       "label": {
+        "zh-hans-cn": "展示货币符号",
         "en": "Display the currency symbol",
-        "zh-hans-cn": "展示货币符号"
+        "id": "Tampilkan simbol mata uang",
+        "th": "แสดงสัญลักษณ์สกุลเงิน",
+        "vi": "Hiển thị ký hiệu tiền tệ",
+        "ms": "Tunjuk simbol mata wang",
+        "zh-hant-tw": "展示貨幣符號"
       },
       "default": false
     },
@@ -160,8 +212,13 @@
       "type": "switch",
       "id": "show_copyright",
       "label": {
+        "zh-hans-cn": "展示版权信息",
         "en": "Display the copyright information",
-        "zh-hans-cn": "展示版权信息"
+        "id": "Tampilkan Informasi Hak Cipta",
+        "th": "แสดงข้อมูลลิขสิทธิ์",
+        "vi": "Hiển thị thông tin bản quyền",
+        "ms": "Tunjuk maklumat hak cipta",
+        "zh-hant-tw": "展示版權信息"
       },
       "default": true
     },
@@ -169,17 +226,27 @@
       "type": "switch",
       "id": "mobile_auto_fold",
       "label": {
+        "zh-hans-cn": "移动端折叠页脚",
         "en": "Collapsible footer on mobile device",
-        "zh-hans-cn": "移动端折叠页脚"
+        "id": "Lipat catatan kaki di port seluler",
+        "th": "ส่วนท้ายของหน้าแบบซ่อนบนมือถือ",
+        "vi": "Chân trang gấp khúc trên điện thoại",
+        "ms": "Pengepala tindaan mudah alih",
+        "zh-hant-tw": "移動端折疊頁腳"
       },
       "default": false
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "copyright_text",
       "label": {
+        "zh-hans-cn": "附加版权文案",
         "en": "Additional copyright texts",
-        "zh-hans-cn": "附加版权文案"
+        "id": "Dokumen hak cipta tambahan",
+        "th": "ข้อความลิขสิทธิ์เพิ่มเติม",
+        "vi": "Kèm thêm hồ sơ bản quyền",
+        "ms": "Salinan hak cipta tambahan",
+        "zh-hant-tw": "附加版權文案"
       }
     }
   ],
@@ -189,27 +256,47 @@
       "type": "social",
       "icon": "image",
       "name": {
-        "en": "Social media",
-        "zh-hans-cn": "社交媒体"
+        "zh-hans-cn": "社交媒体",
+        "en": "Social Media",
+        "id": "Media sosial",
+        "th": "สื่อสังคม",
+        "vi": "Truyền thông xã hội",
+        "ms": "Media sosial",
+        "zh-hant-tw": "社交媒體"
       },
       "settings": [
         {
           "type": "group_header",
           "label": {
-            "en": "Social media",
-            "zh-hans-cn": "社交媒体"
+            "zh-hans-cn": "社交媒体",
+            "en": "Social Media",
+            "id": "Media sosial",
+            "th": "สื่อสังคม",
+            "vi": "Truyền thông xã hội",
+            "ms": "Media sosial",
+            "zh-hant-tw": "社交媒體"
           },
           "info": {
+            "zh-hans-cn": "在主题设置中配置社交媒体链接后可展示图标",
             "en": "Icons will be displayed once the social media link is configured in theme settings",
-            "zh-hans-cn": "在主题设置中配置社交媒体链接后可展示图标"
+            "id": "Ikon dapat ditampilkan setelah mengatur link media sosial ke pengaturan tema",
+            "th": "ไอคอนสามารถแสดงได้หลังจากตั้งค่าลิงก์โซเชียลมีเดียในการตั้งค่าธีม",
+            "vi": "Có thể hiển thị biểu tượng sau khi cài đặt liên kết truyền thông xã hội trong mục Cài đặt chủ đề",
+            "ms": "Ikon boleh dipaparkan selepas mengkonfigurasi pautan media sosial dalam tetapan tema",
+            "zh-hant-tw": "在主題設置中配置社交媒體鏈接後可展示圖標"
           }
         },
         {
           "type": "text",
           "id": "title",
           "label": {
+            "zh-hans-cn": "标题",
             "en": "Title",
-            "zh-hans-cn": "标题"
+            "id": "Judul",
+            "th": "หัวข้อ",
+            "vi": "Tiêu đề",
+            "ms": "Tajuk",
+            "zh-hant-tw": "標題"
           },
           "default": "FOLLOW US"
         }
@@ -219,24 +306,39 @@
       "type": "menu",
       "icon": "navigation",
       "name": {
+        "zh-hans-cn": "快速导航",
         "en": "Fast navigation",
-        "zh-hans-cn": "快速导航"
+        "id": "Navigasi cepat",
+        "th": "การนำทางอย่างรวดเร็ว",
+        "vi": "Hướng dẫn nhanh chóng",
+        "ms": "Navigasi pantas",
+        "zh-hant-tw": "快速導航"
       },
       "settings": [
         {
           "type": "text",
           "id": "title",
           "label": {
+            "zh-hans-cn": "导航标题",
             "en": "Navigation title",
-            "zh-hans-cn": "导航标题"
+            "id": "Judul navigasi",
+            "th": "หัวข้อการนำทาง",
+            "vi": "tiêu đề hướng dẫn",
+            "ms": "Tajuk navigasi",
+            "zh-hant-tw": "導航標題"
           }
         },
         {
           "type": "menu_picker",
           "id": "menu",
           "label": {
+            "zh-hans-cn": "导航菜单",
             "en": "Navigation menu",
-            "zh-hans-cn": "导航菜单"
+            "id": "Menu navigasi",
+            "th": "เมนูนำทาง",
+            "vi": "hướng dẫn trình đơn",
+            "ms": "Menu navigasi",
+            "zh-hant-tw": "導航菜單"
           }
         }
       ]
@@ -246,16 +348,26 @@
       "type": "payment",
       "icon": "image",
       "name": {
+        "zh-hans-cn": "支付图标",
         "en": "Payment icon",
-        "zh-hans-cn": "支付图标"
+        "id": "Ikon pembayaran",
+        "th": "ไอคอนการชำระเงิน",
+        "vi": "Biểu tượng thanh toán",
+        "ms": "Ikon pembayaran",
+        "zh-hant-tw": "支付圖標"
       },
       "settings": [
         {
           "type": "text",
           "id": "title",
           "label": {
+            "zh-hans-cn": "标题",
             "en": "Title",
-            "zh-hans-cn": "标题"
+            "id": "Judul",
+            "th": "หัวข้อ",
+            "vi": "Tiêu đề",
+            "ms": "Tajuk",
+            "zh-hant-tw": "標題"
           },
           "default": "We accept"
         },
@@ -266,80 +378,130 @@
             {
               "icon": "Visa",
               "label": {
+                "zh-hans-cn": "Visa",
                 "en": "Visa",
-                "zh-hans-cn": "Visa"
+                "id": "Visa",
+                "th": "Visa",
+                "vi": "Visa",
+                "ms": "Visa",
+                "zh-hant-tw": "Visa"
               },
               "value": "visa"
             },
             {
               "icon": "MasterCard1",
               "label": {
+                "zh-hans-cn": "Master Card",
                 "en": "Master Card",
-                "zh-hans-cn": "Master Card"
+                "id": "Master Card",
+                "th": "Master Card",
+                "vi": "Master Card",
+                "ms": "Master Card",
+                "zh-hant-tw": "Master Card"
               },
               "value": "master-card"
             },
             {
               "icon": "MasterCard2",
               "label": {
+                "zh-hans-cn": "Master Card",
                 "en": "Master Card",
-                "zh-hans-cn": "Master Card"
+                "id": "Master Card",
+                "th": "Master Card",
+                "vi": "Master Card",
+                "ms": "Master Card",
+                "zh-hant-tw": "Master Card"
               },
               "value": "master-card2"
             },
             {
               "icon": "VISA_Electron",
               "label": {
+                "zh-hans-cn": "VISA(Electron)",
                 "en": "VISA(Electron)",
-                "zh-hans-cn": "VISA(Electron)"
+                "id": "VISA(Electron)",
+                "th": "VISA(Electron)",
+                "vi": "VISA(Electron)",
+                "ms": "VISA(Electron)",
+                "zh-hant-tw": "VISA(Electron)"
               },
               "value": "visa-electron"
             },
             {
               "icon": "JCB",
               "label": {
+                "zh-hans-cn": "JCB",
                 "en": "JCB",
-                "zh-hans-cn": "JCB"
+                "id": "JCB",
+                "th": "JCB",
+                "vi": "JCB",
+                "ms": "JCB",
+                "zh-hant-tw": "JCB"
               },
               "value": "jcb"
             },
             {
               "icon": "AmeriacanExpress",
               "label": {
+                "zh-hans-cn": "Ameriacan Express",
                 "en": "Ameriacan Express",
-                "zh-hans-cn": "Ameriacan Express"
+                "id": "Ameriacan Express",
+                "th": "Ameriacan Express",
+                "vi": "Ameriacan Express",
+                "ms": "Ameriacan Express",
+                "zh-hant-tw": "Ameriacan Express"
               },
               "value": "american-express"
             },
             {
               "icon": "DinersClub",
               "label": {
+                "zh-hans-cn": "Diners Club",
                 "en": "Diners Club",
-                "zh-hans-cn": "Diners Club"
+                "id": "Diners Club",
+                "th": "Diners Club",
+                "vi": "Diners Club",
+                "ms": "Diners Club",
+                "zh-hant-tw": "Diners Club"
               },
               "value": "diners-club"
             },
             {
               "icon": "Discover",
               "label": {
+                "zh-hans-cn": "Discover",
                 "en": "Discover",
-                "zh-hans-cn": "Discover"
+                "id": "Discover",
+                "th": "Discover",
+                "vi": "Discover",
+                "ms": "Discover",
+                "zh-hant-tw": "Discover"
               },
               "value": "discover"
             },
             {
               "icon": "Paypal",
               "label": {
+                "zh-hans-cn": "Paypal",
                 "en": "Paypal",
-                "zh-hans-cn": "Paypal"
+                "id": "Paypal",
+                "th": "Paypal",
+                "vi": "Paypal",
+                "ms": "Paypal",
+                "zh-hant-tw": "Paypal"
               },
               "value": "paypal"
             },
             {
               "icon": "UnionPay",
               "label": {
+                "zh-hans-cn": "银联",
                 "en": "UnionPay",
-                "zh-hans-cn": "银联"
+                "id": "UnionPay",
+                "th": "UnionPay",
+                "vi": "UnionPay",
+                "ms": "UnionPay",
+                "zh-hant-tw": "銀聯"
               },
               "value": "union-pay"
             }
@@ -351,16 +513,26 @@
       "type": "custom",
       "icon": "image",
       "name": {
+        "zh-hans-cn": "自定义内容",
         "en": "Custom content",
-        "zh-hans-cn": "自定义内容"
+        "id": "Isi khusus",
+        "th": "เนื้อหาที่กำหนดเอง",
+        "vi": "Nội dung tùy chỉnh",
+        "ms": "Tetapan kandungan tersuai",
+        "zh-hant-tw": "自定義內容"
       },
       "settings": [
         {
           "type": "text",
           "id": "title",
           "label": {
+            "zh-hans-cn": "标题",
             "en": "Title",
-            "zh-hans-cn": "标题"
+            "id": "Judul",
+            "th": "หัวข้อ",
+            "vi": "Tiêu đề",
+            "ms": "Tajuk",
+            "zh-hant-tw": "標題"
           },
           "default": "Custom text"
         },
@@ -368,16 +540,26 @@
           "type": "image_picker",
           "id": "image",
           "label": {
+            "zh-hans-cn": "图片",
             "en": "Image",
-            "zh-hans-cn": "图片"
+            "id": "Gambar",
+            "th": "รูปภาพ",
+            "vi": "Hình ảnh",
+            "ms": "Gambar",
+            "zh-hant-tw": "圖片"
           }
         },
         {
           "type": "richtext",
           "id": "content",
           "label": {
+            "zh-hans-cn": "正文",
             "en": "Main text",
-            "zh-hans-cn": "正文"
+            "id": "Teks",
+            "th": "ข้อความ",
+            "vi": "Nội dung chính",
+            "ms": "Teks",
+            "zh-hant-tw": "正文"
           },
           "default": "Add your own custom text here."
         }

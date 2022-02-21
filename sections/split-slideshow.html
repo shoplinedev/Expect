@@ -4,7 +4,6 @@
 {{ assign 'blocks' (product_blocks_order_translate section 'blocks' 'block_order') }}
 {{ assign 'pagination_style' section.settings.style }}
 {{ assign 'has_pagination' (isFalsey (eq pagination_style 'minimal')) }}
-{{ assign 'srcset_w_list' (split '180,360,540,720,900,1080,1296,1512,1728,1944,2160,2376,2592') }}
 {{ assign 'pc_image_height' section.settings.section_height }}
 {{ assign 'mobile_image_height' section.settings.mobile_height }}
 {{ assign 'is_pc_image_natural_height' (boolean pc_image_height '==' 'auto') }}
@@ -21,11 +20,15 @@
         }
       }
     {{/if}}
-    {{#if (and is_mobile_image_natural_height first_block_settings.image_mobile.url)}}
-      {{ assign 'natural_height_ratio' (multiply (divide (add first_block_settings.image_mobile.height 150) first_block_settings.image_mobile.width) 100) }}
+    {{assign 'img_mobile' first_block_settings.image}}
+    {{#if first_block_settings.image_mobile.url}}
+      {{assign 'img_mobile' first_block_settings.image_mobile}}
+    {{/if}}
+    {{#if (and is_mobile_image_natural_height img_mobile.url)}}
+      {{ assign 'natural_height_ratio' (multiply (divide img_mobile.height img_mobile.width) 100) }}
       @media only screen and (max-width: 768px) {
         .natural-mobile--{{section.id}} {
-          padding-top: {{ natural_height_ratio }}% !important;
+          padding-top: calc({{ natural_height_ratio }}% + 150px) !important;
         }
       }
     {{/if}}
@@ -39,8 +42,8 @@
   {{#if (length blocks) '>' 0}}
     {{#with this as |global|}}
       <div class="split-slideshow__container split-slideshow__container--h{{ pc_image_height }} split-slideshow__container--m{{ mobile_image_height }} natural--{{section.id}} natural-mobile--{{section.id}}">
-        <div class="split-slideshow__wrapper">
-          <div class="split-slideshow__swiper loading">
+        <div class="split-slideshow__wrapper split-slideshow__wrapper--static">
+          <div class="split-slideshow__swiper">
             {{#each blocks as |block|}}
               {{#with block.settings as |blockSettings|}}
                 {{#style}}
@@ -73,40 +76,32 @@
                   {{#eq ele 'a'}}
                     {{{ele_link_item.hrefAttr}}}
                   {{/eq}}
-                  class="split-slideshow__slider split-slideshow__slider--{{blockSettings.text_position}} split-slideshow__slider--{{ @key }}">
-                  <div class="slider__image-wrapper">
-                    {{ assign 'mobile_image' blockSettings.image_mobile.url }}
-                    {{ assign 'pc_image' blockSettings.image.url }}
-                    {{ assign 'has_image' (or pc_image mobile_image ) }}
+                  class="split-slideshow__slider split-slideshow__slider--{{blockSettings.text_position}} split-slideshow__slider--{{ @key }} split-slideshow__slider--index{{ @index }}">
+                  {{ assign 'mobile_image' blockSettings.image_mobile.url }}
+                  {{ assign 'pc_image' blockSettings.image.url }}
+                  {{ assign 'has_image' (or pc_image mobile_image ) }}
 
+                  <div class="slider__image-wrapper {{#if has_image}}loading{{/if}}">
                     {{!-- pc 端图片 --}}
                     {{#if pc_image}}
-                      {{ assign 'image_srcset' '' }}
-                      {{#eachIndex global.srcset_w_list}}
-                        {{ assign 'image_srcset' (append image_srcset (img_url pc_image width=item) ' ' item 'w,') }}
-                      {{/eachIndex}}
-
                       <img
                         class="lozad {{#if mobile_image}}d-none d-md-block{{/if}}"
-                        data-src="{{ pc_image }}"
-                        data-srcset="{{ image_srcset }}"
-                        alt="{{ blockSettings.image.alt }}">
+                        {{{get 'responsiveAttr' (image_responsive pc_image pcSize='60vw' mSize=null)}}} 
+                        alt="{{ blockSettings.image.alt }}"
+                        onload="this.parentElement.classList.remove('loading');"
+                      >
                     {{else}}
                       {{ snippet 'icons/icon_slideshow_placeholder' class="d-none d-md-block" }}
                     {{/if}}
 
                     {{!-- 移动端图片 --}}
                     {{#if mobile_image}}
-                      {{ assign 'image_srcset' '' }}
-                      {{#eachIndex global.srcset_w_list}}
-                        {{ assign 'image_srcset' (append image_srcset (img_url mobile_image width=item) ' ' item 'w,') }}
-                      {{/eachIndex}}
-
                       <img
                         class="lozad d-md-none"
-                        data-src="{{ mobile_image }}"
-                        data-srcset="{{ image_srcset }}"
-                        alt="{{ blockSettings.image_mobile.alt }}">
+                        {{{get 'responsiveAttr' (image_responsive mobile_image pcSize=null mSize='100vw')}}} 
+                        alt="{{ blockSettings.image_mobile.alt }}"
+                        onload="this.parentElement.classList.remove('loading');"
+                      >
                     {{else}}
                       {{ snippet 'icons/icon_slideshow_mobile_placeholder' class="d-md-none" }}
                     {{/if}}
@@ -182,468 +177,775 @@
 </section>
 
 {{#schema}}
-  {
-    "name": {
-      "zh-hans-cn": "特色轮播图",
-      "en": "Split slideshow"
+{
+  "name": {
+    "zh-hans-cn": "特色轮播图",
+    "en": "Split slideshow",
+    "id": "Gambar Korsel Khas",
+    "th": "ภาพหมุนที่โดดเด่น",
+    "vi": "Băng chuyền hình ảnh đặc sắc",
+    "ms": "Gambar karusel khas",
+    "zh-hant-tw": "特色輪播圖"
+  },
+  "class": "index-section--mc",
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "image",
+      "icon": "image",
+      "name": {
+        "zh-hans-cn": "图片",
+        "en": "Image",
+        "id": "Gambar",
+        "th": "รูปภาพ",
+        "vi": "Hình ảnh",
+        "ms": "Gambar",
+        "zh-hant-tw": "圖片"
+      },
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": {
+            "zh-hans-cn": "电脑端图片",
+            "en": "Image on PC",
+            "id": "Gambar terminal komputer",
+            "th": "รูปภาพบนคอมพิวเตอร์",
+            "vi": "hình ảnh trên máy tính",
+            "ms": "Gambar computer",
+            "zh-hant-tw": "電腦端圖片"
+          }
+        },
+        {
+          "id": "image_mobile",
+          "type": "image_picker",
+          "label": {
+            "zh-hans-cn": "移动端图片",
+            "en": "Image on mobile device",
+            "id": "Gambar port seluler",
+            "th": "รูปภาพมือถือ",
+            "vi": "Hình ảnh trên điện thoại",
+            "ms": "Gambar mudah alih",
+            "zh-hant-tw": "移動端圖片"
+          }
+        },
+        {
+          "id": "focal_point",
+          "type": "select",
+          "label": {
+            "zh-hans-cn": "图片展示区域",
+            "en": "Image display area",
+            "id": "Area tampilan gambar",
+            "th": "พื้นที่แสดงรูปภาพ",
+            "vi": "Khu vực hiển thị ảnh",
+            "ms": "Kawasan paparan gambar",
+            "zh-hant-tw": "圖片展示區域"
+          },
+          "default": "center center",
+          "options": [
+            {
+              "value": "20% 0",
+              "label": {
+                "zh-hans-cn": "左上方",
+                "en": "Upper left",
+                "id": "Kiri atas",
+                "th": "บนซ้าย",
+                "vi": "Phía trên bên trái",
+                "ms": "Atas kiri",
+                "zh-hant-tw": "左上方"
+              }
+            },
+            {
+              "value": "top center",
+              "label": {
+                "zh-hans-cn": "正上方",
+                "en": "Right above",
+                "id": "Tepat di atas",
+                "th": "ด้านบนโดยตรง",
+                "vi": "Phía trên chính giữa",
+                "ms": "Atas tengah",
+                "zh-hant-tw": "正上方"
+              }
+            },
+            {
+              "value": "80% 0",
+              "label": {
+                "zh-hans-cn": "右上方",
+                "en": "Upper right",
+                "id": "Kanan atas",
+                "th": "บนขวา",
+                "vi": "Phía trên bên phải",
+                "ms": "Atas kanan",
+                "zh-hant-tw": "右上方"
+              }
+            },
+            {
+              "value": "20% 50%",
+              "label": {
+                "zh-hans-cn": "左侧",
+                "en": "Left side",
+                "id": "Bagian kiri",
+                "th": "ด้านซ้าย",
+                "vi": "Mặt phải",
+                "ms": "Sebelah kiri",
+                "zh-hant-tw": "左側"
+              }
+            },
+            {
+              "value": "center center",
+              "label": {
+                "zh-hans-cn": "正中",
+                "en": "Center",
+                "id": "Tengah",
+                "th": "กลาง",
+                "vi": "Chính giữa",
+                "ms": "Tengah",
+                "zh-hant-tw": "正中"
+              }
+            },
+            {
+              "value": "80% 50%",
+              "label": {
+                "zh-hans-cn": "右侧",
+                "en": "Right side",
+                "id": "Bagian kanan",
+                "th": "ด้านขวา",
+                "vi": "Bên phải",
+                "ms": "Sisi kanan",
+                "zh-hant-tw": "右側"
+              }
+            },
+            {
+              "value": "20% 100%",
+              "label": {
+                "zh-hans-cn": "左下方",
+                "en": "Bottom left",
+                "id": "Kiri awah",
+                "th": "ล่างซ้าย",
+                "vi": "Phía dưới bên trái",
+                "ms": "Bawah kiri",
+                "zh-hant-tw": "左下方"
+              }
+            },
+            {
+              "value": "bottom center",
+              "label": {
+                "zh-hans-cn": "正下方",
+                "en": "Below",
+                "id": "Tepat di bawah",
+                "th": "ด้านล่างโดยตรง",
+                "vi": "Phía dưới chính giữa",
+                "ms": "Bawah tengah",
+                "zh-hant-tw": "正下方"
+              }
+            },
+            {
+              "value": "80% 100%",
+              "label": {
+                "zh-hans-cn": "右下方",
+                "en": "Bottom right",
+                "id": "Kanan Bawah",
+                "th": "ล่างขวา",
+                "vi": "Phía dưới bên phải",
+                "ms": "Bawah kanan",
+                "zh-hant-tw": "右下方"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group_header",
+          "label": {
+            "zh-hans-cn": "文本内容",
+            "en": "Text content",
+            "id": "Isi teks",
+            "th": "เนื้อหาข้อความ",
+            "vi": "Nội dung phần chữ",
+            "ms": "Kandungan teks",
+            "zh-hant-tw": "文本內容"
+          }
+        },
+        {
+          "id": "sub_title",
+          "type": "text",
+          "label": {
+            "zh-hans-cn": "副标题",
+            "en": "Subtitle",
+            "id": "Subtitle",
+            "th": "หัวข้อรอง",
+            "vi": "Dề phụ",
+            "ms": "Sari kata",
+            "zh-hant-tw": "副標題"
+          }
+        },
+        {
+          "id": "title",
+          "type": "textarea",
+          "label": {
+            "zh-hans-cn": "主标题",
+            "en": "Main title",
+            "id": "Judul utama",
+            "th": "หัวข้อหลัก",
+            "vi": "Chủ đề",
+            "ms": "Tajuk utama",
+            "zh-hant-tw": "主標題"
+          },
+          "default": "Side by Side Slide",
+          "limit": 500
+        },
+        {
+          "id": "title_size",
+          "type": "range",
+          "label": {
+            "zh-hans-cn": "主标题文字大小",
+            "en": "Text size of main title",
+            "id": "Ukuran teks judul utama",
+            "th": "ขนาดตัวอักษรของหัวข้อหลัก",
+            "vi": "Độ lớn nhỏ của chữ chủ đề",
+            "ms": "Saiz tajuk utama",
+            "zh-hant-tw": "主標題文字大小"
+          },
+          "default": 50,
+          "min": 40,
+          "max": 100,
+          "unit": "px"
+        },
+        {
+          "id": "main_text",
+          "type": "text",
+          "label": {
+            "zh-hans-cn": "正文",
+            "en": "Main text",
+            "id": "Teks",
+            "th": "ข้อความ",
+            "vi": "Nội dung chính",
+            "ms": "Teks",
+            "zh-hant-tw": "正文"
+          },
+          "default": "And optional subtext"
+        },
+        {
+          "id": "text_position",
+          "type": "select",
+          "label": {
+            "zh-hans-cn": "文本位置",
+            "en": "Text position",
+            "id": "Posisi teks",
+            "th": "ตำแหน่งข้อความ",
+            "vi": "Vị trí văn bản",
+            "ms": "Kedudukan teks",
+            "zh-hant-tw": "文本位置"
+          },
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": {
+                "zh-hans-cn": "文本靠左",
+                "en": "Text on the left",
+                "id": "Teks dekati kiri",
+                "th": "ข้อความชิดซ้าย",
+                "vi": "Chữ sát lề trái",
+                "ms": "Teks sebelah kiri",
+                "zh-hant-tw": "文本靠左"
+              }
+            },
+            {
+              "value": "right",
+              "label": {
+                "zh-hans-cn": "文本靠右",
+                "en": "Text on the right",
+                "id": "Teks dekati kanan",
+                "th": "ข้อความชิดขวา",
+                "vi": "Chữ sát lề phải",
+                "ms": "Teks sebelah kanan",
+                "zh-hant-tw": "文本靠右"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group_header",
+          "label": {
+            "zh-hans-cn": "按钮或图片跳转",
+            "en": "Button or image redirect",
+            "id": "Tombol atau lompat gambar",
+            "th": "ปุ่มหรือเปลี่ยนรูปภาพ",
+            "vi": "Chuyển nhanh hình ảnh hoặc nút ấn",
+            "ms": "Butang atau lompat gambar",
+            "zh-hant-tw": "按鈕或圖片跳轉"
+          },
+          "info": {
+            "zh-hans-cn": "若没有配置按钮文案，则通过点击图片跳转",
+            "en": "If the text button is not configured, click on the image to redirect",
+            "id": "Jika teks tombol tidak dikonfigurasi, klik pada gambar untuk melompat",
+            "th": "หากไม่ได้กำหนดข้อความปุ่ม ให้คลิกที่รูปภาพเพื่อข้าม",
+            "vi": "Nếu không có dòng chữ nút ấn cài đặt, thì nhấn vào hình ảnh để chuyển nhanh",
+            "ms": "Jika salianan butang tidak dikonfigurasikan, klik pada gambar untuk melompat",
+            "zh-hant-tw": "若沒有配置按鈕文案，則通過點擊圖片跳轉"
+          }
+        },
+        {
+          "id": "link_text",
+          "type": "text",
+          "label": {
+            "zh-hans-cn": "按钮文案",
+            "en": "Button text",
+            "id": "Tulisan tombol",
+            "th": "ข้อความปุ่ม",
+            "vi": "Nội dung nút",
+            "ms": "Salinan butang",
+            "zh-hant-tw": "按鈕文案"
+          },
+          "default": "Optional button"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": {
+            "zh-hans-cn": "跳转链接",
+            "en": "Jump link",
+            "id": "lompat link",
+            "th": "ลิงก์กระโดดข้าม",
+            "vi": "Link chuyển đổi",
+            "ms": "Pautan lompat",
+            "zh-hant-tw": "跳轉鏈接"
+          }
+        },
+        {
+          "id": "link_text2",
+          "type": "text",
+          "label": {
+            "zh-hans-cn": "按钮文案2",
+            "en": "Button text 2",
+            "id": "Teks tombol 2",
+            "th": "เนื้อหาปุ่ม2",
+            "vi": "Nút ấn chữ 2",
+            "ms": "Salinan butang 2",
+            "zh-hant-tw": "按鈕文案2"
+          }
+        },
+        {
+          "id": "link2",
+          "type": "url",
+          "label": {
+            "zh-hans-cn": "跳转链接2",
+            "en": "Jump link 2",
+            "id": "Melompat link 2",
+            "th": "ข้ามลิงก์2",
+            "vi": "Chuyển đổi liên kết 2",
+            "ms": "Lompat pautan 2",
+            "zh-hant-tw": "跳轉鏈接2"
+          }
+        },
+        {
+          "type": "select",
+          "id": "color_scheme",
+          "label": {
+            "zh-hans-cn": "颜色风格",
+            "en": "Color scheme",
+            "id": "Gaya warna",
+            "th": "สไตล์สี",
+            "vi": "Phong cách màu sắc",
+            "ms": "Gaya warna",
+            "zh-hant-tw": "顏色風格"
+          },
+          "default": "1",
+          "options": [
+            {
+              "value": "none",
+              "label": {
+                "zh-hans-cn": "无",
+                "en": "None",
+                "id": "Tidak ada",
+                "th": "ไม่มี",
+                "vi": "Không",
+                "ms": "Tiada",
+                "zh-hant-tw": "無"
+              }
+            },
+            {
+              "value": "1",
+              "label": {
+                "zh-hans-cn": "风格1",
+                "en": "Style 1",
+                "id": "Gaya 1",
+                "th": "สไตล์ 1",
+                "vi": "Phong cách 1",
+                "ms": "Gaya 1",
+                "zh-hant-tw": "風格1"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "zh-hans-cn": "风格2",
+                "en": "Style 2",
+                "id": "Gaya 2",
+                "th": "สไตล์2",
+                "vi": "Phong cách 2",
+                "ms": "Gaya 2",
+                "zh-hant-tw": "風格2"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "zh-hans-cn": "风格3",
+                "en": "Style 3",
+                "id": "Gaya 3",
+                "th": "สไตล์ 3",
+                "vi": "Phong cách 3",
+                "ms": "Gaya 3",
+                "zh-hant-tw": "風格3"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "id": "section_height",
+      "type": "select",
+      "label": {
+        "zh-hans-cn": "电脑端高度",
+        "en": "Height on PC",
+        "id": "Tinggi port PC",
+        "th": "ความสูงบนคอมพิวเตอร์",
+        "vi": "Cao độ trên máy tính",
+        "ms": "Ketinggian versi komputer",
+        "zh-hant-tw": "電腦端高度"
+      },
+      "default": "650",
+      "options": [
+        {
+          "label": {
+            "zh-hans-cn": "适应图片",
+            "en": "Auto",
+            "id": "Sesuaikan gambar",
+            "th": "ปรับให้เข้ากับภาพ",
+            "vi": "thích hợp với hình ảnh",
+            "ms": "Sesuaikan dengan gambar",
+            "zh-hant-tw": "適應圖片"
+          },
+          "value": "auto"
+        },
+        {
+          "label": {
+            "zh-hans-cn": "450px",
+            "en": "450px",
+            "id": "450px",
+            "th": "450px",
+            "vi": "450px",
+            "ms": "450px",
+            "zh-hant-tw": "450px"
+          },
+          "value": "450"
+        },
+        {
+          "label": {
+            "zh-hans-cn": "550px",
+            "en": "550px",
+            "id": "550px",
+            "th": "550px",
+            "vi": "550px",
+            "ms": "550px",
+            "zh-hant-tw": "550px"
+          },
+          "value": "550"
+        },
+        {
+          "label": {
+            "zh-hans-cn": "650px",
+            "en": "650px",
+            "id": "650px",
+            "th": "650px",
+            "vi": "650px",
+            "ms": "650px",
+            "zh-hant-tw": "650px"
+          },
+          "value": "650"
+        },
+        {
+          "label": {
+            "zh-hans-cn": "750px",
+            "en": "750px",
+            "id": "750px",
+            "th": "750px",
+            "vi": "750px",
+            "ms": "750px",
+            "zh-hant-tw": "750px"
+          },
+          "value": "750"
+        },
+        {
+          "label": {
+            "zh-hans-cn": "全屏",
+            "en": "Full screen",
+            "id": "Layar penuh",
+            "th": "เต็มจอ",
+            "vi": "Toàn màn",
+            "ms": "Skrin penuh",
+            "zh-hant-tw": "全屏"
+          },
+          "value": "100vh"
+        }
+      ]
     },
-    "class": "index-section--mc",
-    "max_blocks": 5,
-    "blocks": [
-      {
-        "type": "image",
-        "icon": "image",
-        "name": {
-          "zh-hans-cn": "图片",
-          "en": "Slide"
-        },
-        "settings": [
-          {
-            "id": "image",
-            "type": "image_picker",
-            "label": {
-              "zh-hans-cn": "电脑端图片",
-              "en": "Image on PC"
-            }
-          },
-          {
-            "id": "image_mobile",
-            "type": "image_picker",
-            "label": {
-              "zh-hans-cn": "移动端图片",
-              "en": "Image on mobile device"
-            }
-          },
-          {
-            "id": "focal_point",
-            "type": "select",
-            "label": {
-              "zh-hans-cn": "图片展示区域",
-              "en": "Image display area"
-            },
-            "default": "center center",
-            "options": [
-              {
-                "value": "20% 0",
-                "label": {
-                  "zh-hans-cn": "左上方",
-                  "en": "Top left"
-                }
-              },
-              {
-                "value": "top center",
-                "label": {
-                  "zh-hans-cn": "正上方",
-                  "en": "Top center"
-                }
-              },
-              {
-                "value": "80% 0",
-                "label": {
-                  "zh-hans-cn": "右上方",
-                  "en": "Top right"
-                }
-              },
-              {
-                "value": "20% 50%",
-                "label": {
-                  "zh-hans-cn": "左侧",
-                  "en": "Left"
-                }
-              },
-              {
-                "value": "center center",
-                "label": {
-                  "zh-hans-cn": "正中",
-                  "en": "Center"
-                }
-              },
-              {
-                "value": "80% 50%",
-                "label": {
-                  "zh-hans-cn": "右侧",
-                  "en": "Right"
-                }
-              },
-              {
-                "value": "20% 100%",
-                "label": {
-                  "zh-hans-cn": "左下方",
-                  "en": "Bottom left"
-                }
-              },
-              {
-                "value": "bottom center",
-                "label": {
-                  "zh-hans-cn": "正下方",
-                  "en": "Bottom center"
-                }
-              },
-              {
-                "value": "80% 100%",
-                "label": {
-                  "zh-hans-cn": "右下方",
-                  "en": "Bottom right"
-                }
-              }
-            ]
-          },
-
-          {
-            "type": "group_header",
-            "label": {
-              "zh-hans-cn": "文本内容",
-              "en": "Text content"
-            }
-          },
-          {
-            "id": "sub_title",
-            "type": "text",
-            "label": {
-              "zh-hans-cn": "副标题",
-              "en": "Subtitle"
-            }
-          },
-          {
-            "id": "title",
-            "type": "textarea",
-            "label": {
-              "zh-hans-cn": "主标题",
-              "en": "Main title"
-            },
-            "default": "Side by Side Slide",
-            "limit": 500
-          },
-          {
-            "id": "title_size",
-            "type": "range",
-            "label": {
-              "zh-hans-cn": "主标题文字大小",
-              "en": "Text size of main title"
-            },
-            "default": 50,
-            "min": 40,
-            "max": 100,
-            "unit": "px"
-          },
-          {
-            "id": "main_text",
-            "type": "text",
-            "label": {
-              "zh-hans-cn": "正文",
-              "en": "Main text"
-            },
-            "default": "And optional subtext"
-          },
-          {
-            "id": "text_position",
-            "type": "select",
-            "label": {
-              "zh-hans-cn": "文本位置",
-              "en": "Text position"
-            },
-            "default": "left",
-            "options": [
-              {
-                "value": "left",
-                "label": {
-                  "zh-hans-cn": "文本靠左",
-                  "en": "Left text"
-                }
-              },
-              {
-                "value": "right",
-                "label": {
-                  "zh-hans-cn": "文本靠右",
-                  "en": "Right text"
-                }
-              }
-            ]
-          },
-          
-          {
-            "type": "group_header",
-            "label": {
-              "zh-hans-cn": "按钮或图片跳转",
-              "en": "Page jumping with button/image"
-            },
-            "info": {
-              "en": "Jumping the page by clicking the image if button texts are not configured",
-              "zh-hans-cn": "若没有配置按钮文案，则通过点击图片跳转"
-            }
-          },
-          {
-            "id": "link_text",
-            "type": "text",
-            "label": {
-              "zh-hans-cn": "按钮文案",
-              "en": "Button text"
-            },
-            "default": "Optional button"
-          },
-          {
-            "id": "link",
-            "type": "url",
-            "label": {
-              "zh-hans-cn": "跳转链接",
-              "en": "Jump link"
-            }
-          },
-          {
-            "id": "link_text2",
-            "type": "text",
-            "label": {
-              "zh-hans-cn": "按钮文案2",
-              "en": "Button text 2"
-            }
-          },
-          {
-            "id": "link2",
-            "type": "url",
-            "label": {
-              "zh-hans-cn": "跳转链接2",
-              "en": "Jump link 2"
-            }
-          },
-          {
-            "type": "select",
-            "id": "color_scheme",
-            "label": {
-              "zh-hans-cn": "颜色风格",
-              "en": "Color scheme"
-            },
-            "default": "1",
-            "options": [
-              {
-                "value": "none",
-                "label": {
-                  "zh-hans-cn": "无",
-                  "en": "None"
-                }
-              },
-              {
-                "value": "1",
-                "label": {
-                  "zh-hans-cn": "风格1",
-                  "en": "Style 1"
-                }
-              },
-              {
-                "value": "2",
-                "label": {
-                  "zh-hans-cn": "风格2",
-                  "en": "Style 2"
-                }
-              },
-              {
-                "value": "3",
-                "label": {
-                  "zh-hans-cn": "风格3",
-                  "en": "Style 3"
-                }
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "settings": [
-      {
-        "id": "section_height",
-        "type": "select",
-        "label": {
-          "zh-hans-cn": "电脑端高度",
-          "en": "Height on PC"
-        },
-        "default": "650",
-        "options": [
-          {
-            "label": {
-              "zh-hans-cn": "适应图片",
-              "en": "Auto"
-            },
-            "value": "auto"
-          },
-          {
-            "label": "450px",
-            "value": "450"
-          },
-          {
-            "label": "550px",
-            "value": "550"
-          },
-          {
-            "label": "650px",
-            "value": "650"
-          },
-          {
-            "label": "750px",
-            "value": "750"
-          },
-          {
-            "label": {
-              "zh-hans-cn": "全屏",
-              "en": "Full screen"
-            },
-            "value": "100vh"
-          }
-        ]
+    {
+      "id": "mobile_height",
+      "type": "select",
+      "label": {
+        "zh-hans-cn": "移动端高度",
+        "en": "Height on mobile device",
+        "id": "Tinggi port seluler",
+        "th": "ความสูงบนมือถือ",
+        "vi": "Cao độ trên điện thoại",
+        "ms": "Ketinggian versi mudah alih",
+        "zh-hant-tw": "移動端高度"
       },
-      {
-        "id": "mobile_height",
-        "type": "select",
-        "label": {
-          "zh-hans-cn": "移动端高度",
-          "en": "Height on mobile device"
+      "default": "auto",
+      "options": [
+        {
+          "label": {
+            "zh-hans-cn": "适应图片",
+            "en": "Auto",
+            "id": "Sesuaikan gambar",
+            "th": "ปรับให้เข้ากับภาพ",
+            "vi": "thích hợp với hình ảnh",
+            "ms": "Sesuaikan dengan gambar",
+            "zh-hant-tw": "適應圖片"
+          },
+          "value": "auto"
         },
-        "default": "auto",
-        "options": [
-          {
-            "label": {
-              "zh-hans-cn": "适应图片",
-              "en": "Auto"
-            },
-            "value": "auto"
+        {
+          "label": {
+            "zh-hans-cn": "250px",
+            "en": "250px",
+            "id": "250px",
+            "th": "250px",
+            "vi": "250px",
+            "ms": "250px",
+            "zh-hant-tw": "250px"
           },
-          {
-            "label": "250px",
-            "value": "250"
-          },
-          {
-            "label": "300px",
-            "value": "300"
-          },
-          {
-            "label": "400px",
-            "value": "400"
-          },
-          {
-            "label": "500px",
-            "value": "500"
-          },
-          {
-            "label": {
-              "zh-hans-cn": "全屏",
-              "en": "Full screen"
-            },
-            "value": "100vh"
-          }
-        ]
-      },
-      {
-        "id": "style",
-        "type": "select",
-        "label": {
-          "zh-hans-cn": "翻页样式",
-          "en": "Style of turning pages"
+          "value": "250"
         },
-        "default": "arrows",
-        "options": [
-          {
-            "value": "minimal",
-            "label": {
-              "zh-hans-cn": "简单",
-              "en": "Minimal"
-            }
+        {
+          "label": {
+            "zh-hans-cn": "300px",
+            "en": "300px",
+            "id": "300px",
+            "th": "300px",
+            "vi": "300px",
+            "ms": "300px",
+            "zh-hant-tw": "300px"
           },
-          {
-            "value": "arrows",
-            "label": {
-              "zh-hans-cn": "箭头",
-              "en": "Arrows"
-            }
+          "value": "300"
+        },
+        {
+          "label": {
+            "zh-hans-cn": "400px",
+            "en": "400px",
+            "id": "400px",
+            "th": "400px",
+            "vi": "400px",
+            "ms": "400px",
+            "zh-hant-tw": "400px"
           },
-          {
-            "value": "bars",
-            "label": {
-              "zh-hans-cn": "进度条",
-              "en": "Bars"
-            }
+          "value": "400"
+        },
+        {
+          "label": {
+            "zh-hans-cn": "500px",
+            "en": "500px",
+            "id": "500px",
+            "th": "500px",
+            "vi": "500px",
+            "ms": "500px",
+            "zh-hant-tw": "500px"
           },
-          {
-            "value": "dots",
-            "label": {
-              "zh-hans-cn": "小圆点",
-              "en": "Dots"
-            }
-          }
-        ]
-      },
-      {
-        "id": "autoplay",
-        "type": "switch",
-        "label": {
-          "zh-hans-cn": "启用自动切换",
-          "en": "Enable the auto-switching"
+          "value": "500"
+        },
+        {
+          "label": {
+            "zh-hans-cn": "全屏",
+            "en": "Full screen",
+            "id": "Layar penuh",
+            "th": "เต็มจอ",
+            "vi": "Toàn màn",
+            "ms": "Skrin penuh",
+            "zh-hant-tw": "全屏"
+          },
+          "value": "100vh"
         }
+      ]
+    },
+    {
+      "id": "style",
+      "type": "select",
+      "label": {
+        "zh-hans-cn": "翻页样式",
+        "en": "Style of turning pages",
+        "id": "Gaya membalik halaman",
+        "th": "รูปแบบการเปลี่ยนหน้า",
+        "vi": "Dạng lật trang",
+        "ms": "Selak sempel",
+        "zh-hant-tw": "翻頁樣式"
       },
-      {
-        "id": "autoplay_speed",
-        "type": "range",
-        "label": {
-          "zh-hans-cn": "切换间隔",
-          "en": "Switching interval"
-        },
-        "default": 7,
-        "min": 5,
-        "max": 10,
-        "step": 1,
-        "unit": {
-          "zh-hans-cn": "秒",
-          "en": "s"
-        }
-      }
-    ],
-    "presets": [
-      {
-        "name": {
-          "zh-hans-cn": "特色轮播图",
-          "en": "Split slideshow"
-        },
-        "category": {
-          "zh-hans-cn": "内容展示",
-          "en": "Content display"
-        },
-        "settings": {
-          "section_height": "650",
-          "mobile_height": "auto",
-          "style": "arrows",
-          "autoplay": true,
-          "autoplay_speed": 9
-        },
-        "blocks": [
-          {
-            "type": "image",
-            "icon": "image",
-            "settings": {
-              "image": {},
-              "image_mobile": {},
-              "focal_point": "center center",
-              "title": "Side by Side Slide",
-              "title_size": 50,
-              "main_text": "And optional subtext",
-              "text_position": "left",
-              "link_text": "Optional button",
-              "color_scheme": "1"
-            }
-          },
-          {
-            "type": "image",
-            "icon": "image",
-            "settings": {
-              "image": {},
-              "image_mobile": {},
-              "focal_point": "center center",
-              "title": "Side by Side Slide",
-              "title_size": 50,
-              "main_text": "And optional subtext",
-              "text_position": "right",
-              "link_text": "Optional button",
-              "color_scheme": "2"
-            }
+      "default": "arrows",
+      "options": [
+        {
+          "value": "minimal",
+          "label": {
+            "zh-hans-cn": "简单",
+            "en": "Minimal",
+            "id": "Mudah",
+            "th": "เรียบง่าย",
+            "vi": "Đơn giản",
+            "ms": "Mudah",
+            "zh-hant-tw": "簡單"
           }
-        ]
+        },
+        {
+          "value": "arrows",
+          "label": {
+            "zh-hans-cn": "箭头",
+            "en": "Arrows",
+            "id": "anak panah",
+            "th": "ลูกศร",
+            "vi": "Mũi tên",
+            "ms": "Anak panah",
+            "zh-hant-tw": "箭頭"
+          }
+        },
+        {
+          "value": "bars",
+          "label": {
+            "zh-hans-cn": "进度条",
+            "en": "Bars",
+            "id": "bilah kemajuan",
+            "th": "แถบความคืบหน้า",
+            "vi": "Thanh tiến độ",
+            "ms": "Bar kemajuan",
+            "zh-hant-tw": "進度條"
+          }
+        },
+        {
+          "value": "dots",
+          "label": {
+            "zh-hans-cn": "小圆点",
+            "en": "Dots",
+            "id": "Titik bulat kecil",
+            "th": "จุดเล็ก",
+            "vi": "Điểm tròn nhỏ",
+            "ms": "Titik kecil",
+            "zh-hant-tw": "小圓點"
+          }
+        }
+      ]
+    },
+    {
+      "id": "autoplay",
+      "type": "switch",
+      "label": {
+        "zh-hans-cn": "启用自动切换",
+        "en": "Enable the auto-switching",
+        "id": "Aktifkan peralihan otomatis",
+        "th": "เปิดใช้งานการสลับอัตโนมัติ",
+        "vi": "Khởi động dạng tự động chuyển đổi",
+        "ms": "Dayakan pensuisan automatik",
+        "zh-hant-tw": "啟用自動切換"
       }
-    ]
-  }  
+    },
+    {
+      "id": "autoplay_speed",
+      "type": "range",
+      "label": {
+        "zh-hans-cn": "切换间隔",
+        "en": "Switching interval",
+        "id": "Interval peralihan",
+        "th": "ช่วงการสลับ",
+        "vi": "Thời gian chuyển đổi",
+        "ms": "Tukar selang",
+        "zh-hant-tw": "切換間隔"
+      },
+      "default": 7,
+      "min": 5,
+      "max": 10,
+      "step": 1,
+      "unit": {
+        "zh-hans-cn": "秒",
+        "en": "s",
+        "id": "detik",
+        "th": "วินาที",
+        "vi": "Giây",
+        "ms": "Saat",
+        "zh-hant-tw": "秒"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "zh-hans-cn": "特色轮播图",
+        "en": "Split slideshow",
+        "id": "Gambar Korsel Khas",
+        "th": "ภาพหมุนที่โดดเด่น",
+        "vi": "Băng chuyền hình ảnh đặc sắc",
+        "ms": "Gambar karusel khas",
+        "zh-hant-tw": "特色輪播圖"
+      },
+      "category": {
+        "zh-hans-cn": "内容展示",
+        "en": "Content display",
+        "id": "Tampilan Isi",
+        "th": "การแสดงเนื้อหา",
+        "vi": "Hiển thị nội dung",
+        "ms": "Paparan kandungan",
+        "zh-hant-tw": "內容展示"
+      },
+      "settings": {
+        "section_height": "650",
+        "mobile_height": "auto",
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 9
+      },
+      "blocks": [
+        {
+          "type": "image",
+          "icon": "image",
+          "settings": {
+            "image": {},
+            "image_mobile": {},
+            "focal_point": "center center",
+            "title": "Side by Side Slide",
+            "title_size": 50,
+            "main_text": "And optional subtext",
+            "text_position": "left",
+            "link_text": "Optional button",
+            "color_scheme": "1"
+          }
+        },
+        {
+          "type": "image",
+          "icon": "image",
+          "settings": {
+            "image": {},
+            "image_mobile": {},
+            "focal_point": "center center",
+            "title": "Side by Side Slide",
+            "title_size": 50,
+            "main_text": "And optional subtext",
+            "text_position": "right",
+            "link_text": "Optional button",
+            "color_scheme": "2"
+          }
+        }
+      ]
+    }
+  ]
+}
 {{/schema}}

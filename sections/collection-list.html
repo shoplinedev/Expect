@@ -63,7 +63,7 @@ collection_products:
       {{#if settings.title}}
         {{assign 'showTitle' settings.title}}
       {{/if}}
-      {{snippet 'product/commons/collection-item' imgRealWidth=../real_product_img_width title=showTitle bgDisplayPosition=settings.image_display_area colNum=col sortationData=sortationData }}
+      {{snippet 'product/commons/collection-item' imgRealWidth=../real_product_img_width title=showTitle bgDisplayPosition=settings.image_display_area sortationData=sortationData pcSize=(append '1/' ../col) mSize=(append '1/' ../mbCol)}}
     {{/each}}
   </div>
 </div>
@@ -73,18 +73,33 @@ collection_products:
 {
   "name": {
     "zh-hans-cn": "商品分类",
-    "en": "Collection list"
+    "en": "Collection list",
+    "id": "Klasifikasi produk",
+    "th": "หมวดหมู่",
+    "vi": "Phân loại sản phẩm",
+    "ms": "Produk kategori",
+    "zh-hant-tw": "商品分類"
   },
   "class": "index-section--gap",
   "presets": [
     {
       "category": {
         "zh-hans-cn": "商品",
-        "en": "Product"
+        "en": "Product",
+        "id": "Produk",
+        "th": "สินค้า",
+        "vi": "Sản phẩm",
+        "ms": "Produk",
+        "zh-hant-tw": "商品"
       },
       "name": {
         "zh-hans-cn": "商品分类",
-        "en": "Collections list"
+        "en": "Collection list",
+        "id": "Klasifikasi produk",
+        "th": "หมวดหมู่",
+        "vi": "Phân loại sản phẩm",
+        "ms": "Produk kategori",
+        "zh-hant-tw": "商品分類"
       },
       "settings": {
         "title": "Collection list",
@@ -131,7 +146,12 @@ collection_products:
       "id": "title",
       "label": {
         "zh-hans-cn": "标题",
-        "en": "Title"
+        "en": "Title",
+        "id": "Judul",
+        "th": "หัวข้อ",
+        "vi": "Tiêu đề",
+        "ms": "Tajuk",
+        "zh-hant-tw": "標題"
       }
     },
     {
@@ -139,7 +159,12 @@ collection_products:
       "id": "col",
       "label": {
         "zh-hans-cn": "列数",
-        "en": "Number of columns"
+        "en": "Number of columns",
+        "id": "Jumlah kolom",
+        "th": "จำนวนคอลัมน์",
+        "vi": "Số cột",
+        "ms": "Bilangan lajur",
+        "zh-hant-tw": "列數"
       },
       "min": 2,
       "max": 6,
@@ -150,7 +175,12 @@ collection_products:
       "type": "switch",
       "label": {
         "zh-hans-cn": "移动端左右滑动",
-        "en": "Mobile swipe left and right"
+        "en": "Mobile swipe left and right",
+        "id": "Geser ke kiri dan kanan di port seluler",
+        "th": "ปัดไปทางซ้ายและขวาบนมือถือ",
+        "vi": "Lướt trái phải trên ứng dụng điện thoại",
+        "ms": "Leret ke kiri dan kanan di versi mudah alih",
+        "zh-hant-tw": "移動端左右滑動"
       },
       "default": false
     },
@@ -159,7 +189,12 @@ collection_products:
       "id": "add_margin",
       "label": {
         "zh-hans-cn": "增加分类间间距",
-        "en": "Increase the spacing for collections"
+        "en": "Increase the spacing for collections",
+        "id": "Tambahkan jarak antar kategori",
+        "th": "เพิ่มระยะห่างระหว่างหมวดหมู่",
+        "vi": "Thêm khoảng cahcs gian phân loại",
+        "ms": "Tingkat jarak antara kategori",
+        "zh-hant-tw": "增加分類間間距"
       },
       "default": true
     },
@@ -168,7 +203,12 @@ collection_products:
       "id": "show_divider",
       "label": {
         "zh-hans-cn": "展示分割线",
-        "en": "Dismay the split line"
+        "en": "Dismay the split line",
+        "id": "Tampilkan garis pemisah",
+        "th": "แสดงเส้นแบ่ง",
+        "vi": "Thể hiện tuyến phân cách",
+        "ms": "Tunjuk garis pemisah",
+        "zh-hant-tw": "展示分割線"
       },
       "default": false
     },
@@ -177,7 +217,12 @@ collection_products:
       "id": "button_text",
       "label": {
         "zh-hans-cn": "按钮文案",
-        "en": "Button text"
+        "en": "Button text",
+        "id": "Tulisan tombol",
+        "th": "ข้อความปุ่ม",
+        "vi": "Nội dung nút",
+        "ms": "Salinan butang",
+        "zh-hant-tw": "按鈕文案"
       },
       "default": "View all"
     }
@@ -188,7 +233,12 @@ collection_products:
       "icon": "productCategories",
       "name": {
         "zh-hans-cn": "商品分类",
-        "en": "Collection"
+        "en": "Collection list",
+        "id": "Klasifikasi produk",
+        "th": "หมวดหมู่",
+        "vi": "Phân loại sản phẩm",
+        "ms": "Produk kategori",
+        "zh-hant-tw": "商品分類"
       },
       "settings": [
         {
@@ -196,7 +246,12 @@ collection_products:
           "id": "category_id",
           "label": {
             "zh-hans-cn": "商品分类",
-            "en": "Collection"
+            "en": "Collection list",
+            "id": "Klasifikasi produk",
+            "th": "หมวดหมู่",
+            "vi": "Phân loại sản phẩm",
+            "ms": "Produk kategori",
+            "zh-hant-tw": "商品分類"
           }
         },
         {
@@ -204,7 +259,12 @@ collection_products:
           "id": "title",
           "label": {
             "zh-hans-cn": "标题",
-            "en": "Title"
+            "en": "Title",
+            "id": "Judul",
+            "th": "หัวข้อ",
+            "vi": "Tiêu đề",
+            "ms": "Tajuk",
+            "zh-hant-tw": "標題"
           }
         },
         {
@@ -212,11 +272,21 @@ collection_products:
           "id": "image_display_area",
           "label": {
             "zh-hans-cn": "图片展示区域",
-            "en": "Image display area"
+            "en": "Image display area",
+            "id": "Area tampilan gambar",
+            "th": "พื้นที่แสดงรูปภาพ",
+            "vi": "Khu vực hiển thị ảnh",
+            "ms": "Kawasan paparan gambar",
+            "zh-hant-tw": "圖片展示區域"
           },
           "info": {
             "zh-hans-cn": "调整商品图展示的区域",
-            "en": "Adjust the display area of the product map"
+            "en": "Adjust the display area of the product map",
+            "id": "Sesuaikan area tampilan gambar produk",
+            "th": "ปรับพื้นที่แสดงรูปภาพสินค้า",
+            "vi": "Khu vực điển chỉnh ảnh hiển thị của sản phẩm",
+            "ms": "Laraskan Kawasan paparan peta produk",
+            "zh-hant-tw": "調整商品圖展示的區域"
           },
           "default": "center_center",
           "options": [
@@ -224,63 +294,108 @@ collection_products:
               "value": "left_top",
               "label": {
                 "zh-hans-cn": "左上方",
-                "en": "Upper left"
+                "en": "Upper left",
+                "id": "Kiri atas",
+                "th": "บนซ้าย",
+                "vi": "Phía trên bên trái",
+                "ms": "Atas kiri",
+                "zh-hant-tw": "左上方"
               }
             },
             {
               "value": "center_top",
               "label": {
                 "zh-hans-cn": "正上方",
-                "en": "Right above"
+                "en": "Right above",
+                "id": "Tepat di atas",
+                "th": "ด้านบนโดยตรง",
+                "vi": "Phía trên chính giữa",
+                "ms": "Atas tengah",
+                "zh-hant-tw": "正上方"
               }
             },
             {
               "value": "right_top",
               "label": {
                 "zh-hans-cn": "右上方",
-                "en": "Upper right"
+                "en": "Upper right",
+                "id": "Kanan atas",
+                "th": "บนขวา",
+                "vi": "Phía trên bên phải",
+                "ms": "Atas kanan",
+                "zh-hant-tw": "右上方"
               }
             },
             {
               "value": "center_left",
               "label": {
                 "zh-hans-cn": "左侧",
-                "en": "Left side"
+                "en": "Left side",
+                "id": "Bagian kiri",
+                "th": "ด้านซ้าย",
+                "vi": "Mặt phải",
+                "ms": "Sebelah kiri",
+                "zh-hant-tw": "左側"
               }
             },
             {
               "value": "center_center",
               "label": {
                 "zh-hans-cn": "正中",
-                "en": "Center"
+                "en": "Center",
+                "id": "Tengah",
+                "th": "กลาง",
+                "vi": "Chính giữa",
+                "ms": "Tengah",
+                "zh-hant-tw": "正中"
               }
             },
             {
               "value": "center_right",
               "label": {
                 "zh-hans-cn": "右侧",
-                "en": "Right side"
+                "en": "Right side",
+                "id": "Bagian kanan",
+                "th": "ด้านขวา",
+                "vi": "Bên phải",
+                "ms": "Sisi kanan",
+                "zh-hant-tw": "右側"
               }
             },
             {
               "value": "left_bottom",
               "label": {
                 "zh-hans-cn": "左下方",
-                "en": "Bottom left"
+                "en": "Bottom left",
+                "id": "Kiri awah",
+                "th": "ล่างซ้าย",
+                "vi": "Phía dưới bên trái",
+                "ms": "Bawah kiri",
+                "zh-hant-tw": "左下方"
               }
             },
             {
               "value": "center_bottom",
               "label": {
                 "zh-hans-cn": "正下方",
-                "en": "Below"
+                "en": "Below",
+                "id": "Tepat di bawah",
+                "th": "ด้านล่างโดยตรง",
+                "vi": "Phía dưới chính giữa",
+                "ms": "Bawah tengah",
+                "zh-hant-tw": "正下方"
               }
             },
             {
               "value": "right_bottom",
               "label": {
                 "zh-hans-cn": "右下方",
-                "en": "Bottom right"
+                "en": "Bottom right",
+                "id": "Kanan Bawah",
+                "th": "ล่างขวา",
+                "vi": "Phía dưới bên phải",
+                "ms": "Bawah kanan",
+                "zh-hant-tw": "右下方"
               }
             }
           ]

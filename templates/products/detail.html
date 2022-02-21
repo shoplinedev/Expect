@@ -8,6 +8,11 @@ product_comment_config:
 {{ preload_state 'theme' }}
 {{ preload_state 'productComment' }}
 
+{{!--判断是否要默认不选中sku--}}
+{{ assign 'notChooseSku' (boolean product.spu.inquiry '||' (boolean (boolean product.sku.skuList.length '>' 1) '&&' (isFalsey theme.settings.sku_selected_default))) }}
+{{!-- sku选中相关数据 --}}
+{{ assign 'initSku' (product_default_sku product.sku.skuList product.spu.soldOut request.uri.query.sku (if theme.settings.product_sku_style 'select') notChooseSku isPreviewProduct) }}
+
 {{ assign 'shareInfo' (product_share_info product.productSeo product.spu request.uri storeInfo) }}
 {{ assign 'microdata' (product_microdata initSku.selectSku product.sku product.spu request.uri storeInfo.currency) }}
 
@@ -115,6 +120,12 @@ product_comment_config:
   <meta name="twitter:card" content="{{twitterCard}}" />
 {{/if}}
 
+{{!-- meta hide product --}}
+{{#and  (boolean templateAlias '===' 'ProductsDetail')  (isFalsey product.spu.visible)}}
+  <meta name='robots' content='noindex' />
+{{/and}}
+
+
 
 {{/partial}}
 
@@ -196,7 +207,7 @@ product_comment_config:
           content_category: '',
           content_type: 'product_group',
           currency: {{{ JSONstringify (default storeInfo.currency '') }}},
-          value: {{{ JSONstringify (default (currency_format initSku.selectSku.price) '') }}},
+          value: {{{ JSONstringify (currency_format (default initSku.selectSku.price initSku.firstSku.price '')) }}},
         },
         {
           eventID: 'viewContent{{ serverEventId }}'
@@ -219,9 +230,6 @@ product_comment_config:
 </script>
 {{/partial}}
 
-{{!-- sku选中相关数据 --}}
-{{ assign 'initSku' (product_default_sku product.sku.skuList product.spu.soldOut request.uri.query.sku (if theme.settings.product_sku_style 'select') product.spu.inquiry isPreviewProduct) }}
-
 {{#partial 'script'}}
   {{#is_modern_browser}}
   <script src="{{ assets_url 'product/detail/index.min.modern.js' }}"></script>
@@ -230,20 +238,13 @@ product_comment_config:
   {{/is_modern_browser}}
 {{/partial}}
 
-{{ preload_state 'productBundled' }}
-
 <div id="page-product-detail" data-ssr-product-detail>
 {{!-- 商品信息 --}}
 <div class="product-detail-block-space d-none d-md-block"></div>
 {{ section 'product/detail/product-preview' }}
 
 {{!-- 捆绑销售 --}}
-{{#if productBundled}}
-<div class="product-detail-block-space"></div>
-<div class="container">
-  {{ snippet 'sales/productBundled' productBundled=productBundled }}
-</div>
-{{/if}}
+<div class="container g-4 g-md-6" id="bundle-detail_down"></div>
 
 {{!-- 评论受总开关影响 --}}
 {{#if productCommentConfig.disable_comment '===' '0'}}

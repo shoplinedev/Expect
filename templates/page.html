@@ -15,11 +15,11 @@
 
 {{ preload_state 'pageInfo.originalPath' }}
 {{ assign 'prefix' 'stage__custom__page' }}
-<div class='container g-4 g-md-8 g-lg-2 {{ prefix }}--container'>
+  <div class='container g-4 g-md-6 {{ prefix }}--container'>
   <h1 class='title3 __sl-custom-track-page-title'>{{{ pageInfo.name.default }}}</h1>
   <div class="body3 __sl-custom-track-page-content">
     <div class="render-by-page">
-      {{ snippet 'custom-page-render' pageConfig=pageInfo.htmlConfig }}
+      {{ snippet 'custom-page-render' pageConfig=pageInfo.htmlConfig forPage=true class='bottom' }}
     </div>
   </div>
 </div>
@@ -133,6 +133,12 @@
 {{#if card}}
   <meta name="twitter:card" content="{{twitterCard}}" />
 {{/if}}
+
+{{!-- meta hide product --}}
+{{#and  (boolean templateAlias '===' 'ProductsDetail')  (isFalsey product.spu.visible)}}
+  <meta name='robots' content='noindex' />
+{{/and}}
+
 
 
 {{/partial}}

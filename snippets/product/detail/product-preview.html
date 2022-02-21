@@ -26,8 +26,10 @@
   {{ assign 'isPreviewProduct' false }}
 {{/if}}
 
+{{!--判断是否要默认不选中sku--}}
+{{ assign 'notChooseSku' (boolean product.spu.inquiry '||' (boolean (boolean product.sku.skuList.length '>' 1) '&&' (isFalsey theme.settings.sku_selected_default))) }}
 {{!-- sku选中相关数据 --}}
-{{ assign 'initSku' (product_default_sku product.sku.skuList product.spu.soldOut request.uri.query.sku (if theme.settings.product_sku_style 'select') product.spu.inquiry isPreviewProduct) }}
+{{ assign 'initSku' (product_default_sku product.sku.skuList product.spu.soldOut request.uri.query.sku (if theme.settings.product_sku_style 'select') notChooseSku isPreviewProduct) }}
 
 {{!-- 图片大小 --}}
 {{ assign 'product_image_size' (default section.settings.product_image_size 'large') }}
@@ -110,6 +112,8 @@
         {{/if}}
 
         {{ snippet 'product/detail/product-button' isSoldOut=(or product.spu.soldOut initSku.selectSku.soldOut) id=id }}
+        {{!-- 捆绑销售挂载点 --}}
+        <div id="bundle-add_to_cart"></div>
 
         {{ assign 'saleActivity' (itemAt product.productSale.saleActivities 0) }}
         {{#not product.spu.inquiry}}

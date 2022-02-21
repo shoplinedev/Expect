@@ -39,7 +39,7 @@
     {{else}}
       {{ assign 'image' theme.settings.checkout_image.url }}
     {{/if}}
-    {{ assign 'seoTitle' (append 'Products' ' - ' storeInfo.name) }}
+    {{ assign 'seoTitle' 'Products' }}
     {{ assign 'seoDescription' '' }}
     {{ assign 'keywords' '' }}
     {{ assign 'card' 'summary_large_image' }}
@@ -128,6 +128,12 @@
   <meta name="twitter:card" content="{{twitterCard}}" />
 {{/if}}
 
+{{!-- meta hide product --}}
+{{#and  (boolean templateAlias '===' 'ProductsDetail')  (isFalsey product.spu.visible)}}
+  <meta name='robots' content='noindex' />
+{{/and}}
+
+
 
 {{/partial}}
 
@@ -149,7 +155,12 @@
     {{else}}
       {{!-- 如果没有banner，加入一个特殊的div给header作为标识 --}}
       <div id="CollectionHeaderSection" data-section-id="shopline-section-product/collections/collection-header"
-        data-section-type="shopline-section-product/collections/collection-header">
+        data-section-type="shopline-section-product/collections/collection-header" class="product-list-header">
+        <!-- 全部商品列表页标题 -->
+        <div class="product-list-header-title container gx-4 gx-md-6">
+          <a href="/" class="product-list-header-title-url custom-body4">{{ t 'common.home' }} /</a>
+          <h1 class="product-list-header-title-productsTitle custom-title2 title2">{{ t 'productList.all.h1Title' }}</h1>
+        </div>
       </div>
     {{/if}}
   </div>

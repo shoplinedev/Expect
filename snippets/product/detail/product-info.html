@@ -24,7 +24,7 @@
   {{else}}
     <div class="title title-font title4 text-left">{{ spuInfo.title }}</div>
   {{/if}}
-  <div class="subTitle body-font body3 text-left" style="white-space: pre-wrap;">{{ spuInfo.subTitle }}</div>
+  <div class="subTitle body-font body3 text-left">{{ spuInfo.subTitle }}</div>
   {{!-- 商品评价信息 --}}
   {{#and (boolean comment.total '>' 0) (not product.spu.inquiry) (if id 'productDetail') }}
     <div class="comments">
@@ -64,22 +64,20 @@
             product_discount_style={{theme.settings.product_discount_style}}>
             {{#if (and (and (is (typeOf productPrice.originPrice) 'number') (is (typeOf productPrice.salesPrice) 'number')) discount_text)}}
               {{#if theme.settings.product_discount_style '===' 'number'}}
-                Save
                 {{#currency_convert_price discount_text}}
                   {{#if fraction '===' '00'}}
                     {{#if symbolOrder '==' 'prefix'}}
-                      <span class="notranslate">{{currencySymbol}}{{ integer }}</span>
+                      {{assign 'priceVal' (append currencySymbol integer) }}
                     {{else}}
-                      <span class="notranslate">{{ integer }}{{currencySymbol}}</span>
+                      {{assign 'priceVal' (append integer currencySymbol) }}
                     {{/if}}
                   {{else}}
-                    <span class="notranslate">
-                      {{currency_convert discount_text }}
-                    </span>
+                    {{assign 'priceVal' (currency_convert discount_text) }}
                   {{/if}}
+                  {{{t 'productList.container.listItem.save'  priceDom=(append '<span class="notranslate" >' priceVal '</span>') }}}
                 {{/currency_convert_price}}
               {{else}}
-                {{ discount_text }}% OFF
+                 {{t 'productList.container.listItem.saveRatio' price=discount_text }}
               {{/if}}
             {{/if}}
           </div>
@@ -93,13 +91,11 @@
             class="body2 product-price-discount discount product-price-discount_{{id}} {{#or (boolean productPrice.originPrice '<=' productPrice.salesPrice) spuInfo.soldOut (boolean productPrice.discount_text '<=' 0)}}hide{{/or}}"
             product_discount_style={{theme.settings.product_discount_style}}>
             {{#if (and (and (is (typeOf productPrice.originPrice) 'number') (is (typeOf productPrice.salesPrice) 'number')) discount_text)}}
-              Save <span class="notranslate">
-                {{#if theme.settings.product_discount_style '===' 'number'}}
-                  {{ currency_convert discount_text }}
-                {{else}}
-                  {{ discount_text }}% OFF
-                {{/if}}
-              </span>
+              {{#if theme.settings.product_discount_style '===' 'number'}}
+                {{{t 'productList.container.listItem.save'  priceDom=(append '<span class="notranslate">' (currency_convert discount_text) '</span>')}}}
+              {{else}}
+                {{{t 'productList.container.listItem.save'  priceDom=(append '<span class="notranslate">' discount_text '% ' '</span>')}}}
+              {{/if}}
             {{/if}}
           </span>
         {{/if}}

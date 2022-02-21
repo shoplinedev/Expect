@@ -81,13 +81,21 @@
     {{/if}}
   </div>
   <div class="product-list-product-number body3">
-    {{t 'productList.container.productsNum' num=products.realTotal}}
+     {{#if products.realTotal '>' 1}}
+          {{t 'productList.container.moreProductNum' num=products.realTotal}}
+        {{else}}
+          {{t 'productList.container.oneProductNum' num=products.realTotal}}
+        {{/if}}
   </div>
   <div class="product-list-filter-line"></div>
   <div class="product-list-list-container" id="js-product-collections_filter_container">
     <div class="product-list-list-header">
       <div class="product-list-list-header-left body3" id="product-list-list-header-left">
-        {{t 'productList.container.productsNum' num=products.realTotal}}
+         {{#if products.realTotal '>' 1}}
+          {{t 'productList.container.moreProductNum' num=products.realTotal}}
+        {{else}}
+          {{t 'productList.container.oneProductNum' num=products.realTotal}}
+        {{/if}}
       </div>
       <div class="product-list-list-header-right">
         <div class="product-list-list-header-filter" id="product-list-list-header-filter">
@@ -123,7 +131,7 @@
     {{#if (boolean products.list.length '>' 0)}}
       {{snippet 'product/commons/product-item-list' effectPage="productList" gripType=gripType className='__sl-custom-track-product-list-item' colNum=itemNumByRow listData=slice_products_list pageSize=calc_page_size pageNum=products.pageNum total=products.total }}
     {{else}}
-      <span class="body3">Sorry, there are no products in this collection.</span>
+      <span class="body3">{{t "productList.noProduct"}}</span>
     {{/if}}
   </div>
   <div class="product-list-description-category">
@@ -144,7 +152,12 @@
 {
   "name": {
     "zh-hans-cn": "商品列表",
-    "en": "Product list"
+    "en": "Product list",
+    "id": "Daftar barang",
+    "th": "รายการสินค้า",
+    "vi": "Danh sách sản phẩm",
+    "ms": "Senarai produk",
+    "zh-hant-tw": "商品列表"
   },
   "settings": [
     {
@@ -152,27 +165,47 @@
       "id": "category_desc_position",
       "label": {
         "zh-hans-cn": "分类描述位置",
-        "en": "Collection description position"
+        "en": "Collection description",
+        "id": "Klasifikasi menjelaskan posisi",
+        "th": "ตำแหน่งคำอธิบายการจัดหมวดหมู่",
+        "vi": "Phân loại vị trí mô tả",
+        "ms": "Lokasi penerangan klasifikasi",
+        "zh-hant-tw": "分類描述位置"
       },
       "options": [
         {
           "value": "top",
           "label": {
             "zh-hans-cn": "商品列表上方",
-            "en": "Above the product list"
+            "en": "Above the product list",
+            "id": "Di atas daftar produk",
+            "th": "เหนือรายการสินค้า",
+            "vi": "Phía trên danh sách sản phẩm",
+            "ms": "Bahagian atas senarai produk",
+            "zh-hant-tw": "商品列表上方"
           }
         },
         {
           "value": "bottom",
           "label": {
             "zh-hans-cn": "商品列表下方",
-            "en": "Below the product list"
+            "en": "Below the product list",
+            "id": "Di bawah daftar produk",
+            "th": "ใต้รายการสินค้า",
+            "vi": "Phía dưới danh sách sản phẩm",
+            "ms": "Bahagian bawah senarai produk",
+            "zh-hant-tw": "商品列表下方"
           }
         }
       ],
       "info": {
         "zh-hans-cn": "如需设置分类描述，可前往商品分类管理进行配置。[立即前往](/admin/categories)",
-        "en": "If you need to set a collection description, you can go to the product collection management and complete the configuration.[Go now](/admin/categories)"
+        "en": "If you need to set a collection description, you can go to the product collection management and complete the configuration.[Go now](/admin/categories)",
+        "id": "Jika Anda ingin mengatur deskripsi klasifikasi, pergilah ke manajemen klasifikasi produk untuk konfigurasi. [lanjutkan segera](# admin/categories)",
+        "th": "หากคุณต้องการตั้งค่าคำอธิบายหมวดหมู่ คุณสามารถไปที่การจัดการหมวดหมู่สินค้าเพื่อกำหนดค่า [ไปเดี๋ยวนี้](/admin/categories)",
+        "vi": "Nếu cần cài đặt mô tả phân loại, có thể đến mục Quản lý phân loại sản phẩm để tiến hành cài đặt. [Đi đến ngay](/admin/categories)",
+        "ms": "Jika anda perlu menetapkan pperihalan klasifikasi, anda boleh pergi ke pengurusan klasifikasi produk untuk membuat konsifgurasi.[Pergi sekarang] (/admin/categories)",
+        "zh-hant-tw": "如需設置分類描述，可前往商品分類管理進行配置。 [立即前往](/admin/categories)"
       },
       "default": "top"
     },
@@ -181,28 +214,48 @@
       "id": "list_layout",
       "label": {
         "zh-hans-cn": "列表布局",
-        "en": "List layout"
+        "en": "List layout",
+        "id": "Tata letak daftar",
+        "th": "เลย์เอาต์รายการ",
+        "vi": "Bố trí danh sách",
+        "ms": "Susun atur senarai",
+        "zh-hant-tw": "列表佈局"
       },
       "options": [
         {
           "value": "large_grid",
           "label": {
             "zh-hans-cn": "大网格",
-            "en": "Large grids"
+            "en": "Large grids",
+            "id": "kisi besar",
+            "th": "ตะแกรงขนาดใหญ่",
+            "vi": "Kẻ ô lớn",
+            "ms": "Grid besar",
+            "zh-hant-tw": "大網格"
           }
         },
         {
           "value": "small_grid",
           "label": {
             "zh-hans-cn": "小网格",
-            "en": "Small grids"
+            "en": "Small grids",
+            "id": "Kisi kecil",
+            "th": "ตะแกรงขนาดเล็ก",
+            "vi": "Kẻ ô nhỏ",
+            "ms": "Gird kecil",
+            "zh-hant-tw": "小網格"
           }
         },
         {
           "value": "list",
           "label": {
             "zh-hans-cn": "列表",
-            "en": "List"
+            "en": "List",
+            "id": "Daftar",
+            "th": "รายการ",
+            "vi": "Xếp hàng",
+            "ms": "Senarai",
+            "zh-hant-tw": "列表"
           }
         }
       ],
@@ -213,21 +266,36 @@
       "id": "child_category_position",
       "label": {
         "zh-hans-cn": "子分类位置",
-        "en": "Subcollection position"
+        "en": "Subcollection position",
+        "id": "Posisi subklasifikasi",
+        "th": "ตำแหน่งหมวดย่อย",
+        "vi": "Vị trí phân loại con",
+        "ms": "Lokasi subkategori",
+        "zh-hant-tw": "子分類位置"
       },
       "options": [
         {
           "value": "top",
           "label": {
             "zh-hans-cn": "商品列表上方",
-            "en": "Above the product list"
+            "en": "Above the product list",
+            "id": "Di atas daftar produk",
+            "th": "เหนือรายการสินค้า",
+            "vi": "Phía trên danh sách sản phẩm",
+            "ms": "Bahagian atas senarai produk",
+            "zh-hant-tw": "商品列表上方"
           }
         },
         {
           "value": "bottom",
           "label": {
             "zh-hans-cn": "商品列表下方",
-            "en": "Below the product list"
+            "en": "Below the product list",
+            "id": "Di bawah daftar produk",
+            "th": "ใต้รายการสินค้า",
+            "vi": "Phía dưới danh sách sản phẩm",
+            "ms": "Bahagian bawah senarai produk",
+            "zh-hant-tw": "商品列表下方"
           }
         }
       ],
@@ -238,7 +306,12 @@
       "id": "sorter_enable",
       "label": {
         "zh-hans-cn": "启用商品排序",
-        "en": "Enable product sort"
+        "en": "Enable product sort",
+        "id": "Aktifkan urutan produk",
+        "th": "เปิดใช้งานการจัดเรียงสินค้า",
+        "vi": "Sử dụng sắp xếp sản phẩm",
+        "ms": "Dayakan pengisihan produk",
+        "zh-hant-tw": "啟用商品排序"
       },
       "default": true
     }

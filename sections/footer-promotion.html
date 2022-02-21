@@ -7,7 +7,7 @@
       {{#with section as |section|}}
           {{#each block_order as |blockId|}}
               {{#with (lookup ../blocks [blockId])}}
-                  {{snippet 'footer-promotion/block' ratio=../../settings.img_ratio query=../../../request.uri.query item=settings}}
+                  {{snippet 'footer-promotion/block' pcSize=(append '1/' section.block_order.length) mSize="100vw" ratio=../../settings.img_ratio query=../../../request.uri.query item=settings}}
               {{/with}}
           {{/each}}
       {{/with}}
@@ -18,86 +18,136 @@
 {{/if}}
 {{#schema}}
 {
-  "name":{
-    "en":"Footer promotion",
-    "zh-hans-cn":"页脚推广"
+  "name": {
+    "zh-hans-cn": "页脚推广",
+    "en": "Footer promotion",
+    "id": "Promosi footer",
+    "th": "โปรโมตส่วนท้าย",
+    "vi": "Quảng cáo chân trang",
+    "ms": "Promosi pengaki",
+    "zh-hant-tw": "頁腳推廣"
   },
-  "max_blocks":3,
-  "settings":[
+  "max_blocks": 3,
+  "settings": [
     {
-      "type":"select",
-      "id":"img_ratio",
+      "type": "select",
+      "id": "img_ratio",
       "default": "56.25%",
-      "label":{
-        "en":"Image scale",
-        "zh-hans-cn":"图片比例"
+      "label": {
+        "zh-hans-cn": "图片比例",
+        "en": "Image scale",
+        "id": "Proporsi gambar produk",
+        "th": "อัตราส่วนของรูปภาพ",
+        "vi": "Tỷ lệ hình ảnh",
+        "ms": "Nisbah gambar",
+        "zh-hant-tw": "圖片比例"
       },
       "options": [
         {
           "value": "0",
           "label": {
-            "en":"Original scale",
-            "zh-hans-cn":"原比例"
+            "zh-hans-cn": "原比例",
+            "en": "Original scale",
+            "id": "Rasio asli",
+            "th": "อัตราส่วนเดิม",
+            "vi": "Tỉ lệ gốc",
+            "ms": "Nisbah asal",
+            "zh-hant-tw": "原比例"
           }
         },
         {
           "value": "100%",
           "label": {
-            "en":"Square(1:1)",
-            "zh-hans-cn":"方形(1:1)"
+            "zh-hans-cn": "方形(1:1)",
+            "en": "Square(1:1)",
+            "id": "Persegi (1:1)",
+            "th": "สแควร์ (1:1)",
+            "vi": "Hình vuông (1:1)",
+            "ms": "Segi empat (1:1)",
+            "zh-hant-tw": "方形(1:1)"
           }
         },
         {
           "value": "75%",
           "label": {
-            "en":"Horizontal(4:3)",
-            "zh-hans-cn":"横版（4:3）"
+            "zh-hans-cn": "横版（4:3）",
+            "en": "Horizontal(4:3)",
+            "id": "Horizontal (4:3)",
+            "th": "แนวนอน (4:3)",
+            "vi": "Bản ngang (4:3)",
+            "ms": "Versi mendatar (4:3)",
+            "zh-hant-tw": "橫版（4:3）"
           }
         },
         {
           "value": "150%",
           "label": {
-            "en":"Vertical(2:3)",
-            "zh-hans-cn":"竖版（2:3）"
+            "zh-hans-cn": "竖版（2:3）",
+            "en": "Vertical(2:3)",
+            "id": "Vertikal (2:3)",
+            "th": "แนวตั้ง (2:3)",
+            "vi": "Bản dọc (2:3)",
+            "ms": "Versi menegak (2:3)",
+            "zh-hant-tw": "豎版（2:3）"
           }
         },
         {
           "value": "56.25%",
           "label": {
-            "en":"Wide(16:9)",
-            "zh-hans-cn":"宽幅（16:9）"
+            "zh-hans-cn": "宽幅（16:9）",
+            "en": "Wide(16:9)",
+            "id": "Lebar (16:9)",
+            "th": "แบบกว้าง (16:9)",
+            "vi": "Độ rộng (16:9)",
+            "ms": "Lebar (16:9)",
+            "zh-hant-tw": "寬幅（16:9）"
           }
         }
       ]
     },
     {
-      "type":"showpage",
-      "id":"show_pages",
+      "type": "showpage",
+      "id": "show_pages",
       "default": {
         "showType": "all",
         "customPages": []
       },
-      "label":{
-        "en":"Display page",
-        "zh-hans-cn":"展示页面"
+      "label": {
+        "zh-hans-cn": "展示页面",
+        "en": "Display page",
+        "id": "halaman tampilan",
+        "th": "แสดงหน้า",
+        "vi": "Trang hiển thị",
+        "ms": "Tunjukkan halaman",
+        "zh-hant-tw": "展示頁面"
       }
     }
   ],
-  "blocks":[
+  "blocks": [
     {
       "type": "richText",
       "icon": "image",
       "name": {
-        "en":"All-station promotion",
-        "zh-hans-cn":"全站推广"
+        "zh-hans-cn": "全站推广",
+        "en": "All-station promotion",
+        "id": "Promosi di seluruh situs web",
+        "th": "โปรโมตทั้งเว็บไซต์",
+        "vi": "Quảng cáo toàn mạng",
+        "ms": "Promosi seluruh stesen",
+        "zh-hant-tw": "全站推廣"
       },
       "settings": [
         {
           "id": "show_img",
           "type": "switch",
           "label": {
-            "en":"Display the image",
-            "zh-hans-cn":"展示图片"
+            "zh-hans-cn": "展示图片",
+            "en": "Display the image",
+            "id": "Tampilkan gambar",
+            "th": "แสดงรูปภาพ",
+            "vi": "Hiển thị hình ảnh",
+            "ms": "Tunjuk gambar",
+            "zh-hant-tw": "展示圖片"
           },
           "default": true
         },
@@ -105,8 +155,13 @@
           "id": "image_url",
           "type": "image_picker",
           "label": {
-            "en":"Image",
-            "zh-hans-cn":"图片"
+            "zh-hans-cn": "图片",
+            "en": "Image",
+            "id": "Gambar",
+            "th": "รูปภาพ",
+            "vi": "Hình ảnh",
+            "ms": "Gambar",
+            "zh-hant-tw": "圖片"
           }
         },
         {
@@ -114,8 +169,13 @@
           "type": "text",
           "default": "Site-wide promotion",
           "label": {
-            "en":"Title",
-            "zh-hans-cn":"标题"
+            "zh-hans-cn": "标题",
+            "en": "Title",
+            "id": "Judul",
+            "th": "หัวข้อ",
+            "vi": "Tiêu đề",
+            "ms": "Tajuk",
+            "zh-hant-tw": "標題"
           }
         },
         {
@@ -123,8 +183,13 @@
           "type": "richtext",
           "default": "Use this section to promote content throughout every page of your site. Add images for further impact",
           "label": {
-            "en":"Main text",
-            "zh-hans-cn":"正文"
+            "zh-hans-cn": "正文",
+            "en": "Main text",
+            "id": "Teks",
+            "th": "ข้อความ",
+            "vi": "Nội dung chính",
+            "ms": "Teks",
+            "zh-hant-tw": "正文"
           }
         },
         {
@@ -132,16 +197,26 @@
           "type": "text",
           "default": "Optional button",
           "label": {
-            "en":"Button text",
-            "zh-hans-cn":"按钮文案"
+            "zh-hans-cn": "按钮文案",
+            "en": "Button text",
+            "id": "Tulisan tombol",
+            "th": "ข้อความปุ่ม",
+            "vi": "Nội dung nút",
+            "ms": "Salinan butang",
+            "zh-hant-tw": "按鈕文案"
           }
         },
         {
           "id": "url",
           "type": "url",
           "label": {
-            "en":"Jump link",
-            "zh-hans-cn":"跳转链接"
+            "zh-hans-cn": "跳转链接",
+            "en": "Jump link",
+            "id": "lompat link",
+            "th": "ลิงก์กระโดดข้าม",
+            "vi": "Link chuyển đổi",
+            "ms": "Pautan lompat",
+            "zh-hant-tw": "跳轉鏈接"
           }
         },
         {
@@ -150,35 +225,60 @@
           "default": "1",
           "label": {
             "zh-hans-cn": "颜色风格",
-            "en": "Color scheme"
+            "en": "Color scheme",
+            "id": "Gaya warna",
+            "th": "สไตล์สี",
+            "vi": "Phong cách màu sắc",
+            "ms": "Gaya warna",
+            "zh-hant-tw": "顏色風格"
           },
           "options": [
             {
               "value": "none",
               "label": {
                 "zh-hans-cn": "无",
-                "en": "None"
+                "en": "None",
+                "id": "Tidak ada",
+                "th": "ไม่มี",
+                "vi": "Không",
+                "ms": "Tiada",
+                "zh-hant-tw": "無"
               }
             },
             {
               "value": "1",
               "label": {
                 "zh-hans-cn": "风格1",
-                "en": "Style 1"
+                "en": "Style 1",
+                "id": "Gaya 1",
+                "th": "สไตล์ 1",
+                "vi": "Phong cách 1",
+                "ms": "Gaya 1",
+                "zh-hant-tw": "風格1"
               }
             },
             {
               "value": "2",
               "label": {
                 "zh-hans-cn": "风格2",
-                "en": "Style 2"
+                "en": "Style 2",
+                "id": "Gaya 2",
+                "th": "สไตล์2",
+                "vi": "Phong cách 2",
+                "ms": "Gaya 2",
+                "zh-hant-tw": "風格2"
               }
             },
             {
               "value": "3",
               "label": {
                 "zh-hans-cn": "风格3",
-                "en": "Style 3"
+                "en": "Style 3",
+                "id": "Gaya 3",
+                "th": "สไตล์ 3",
+                "vi": "Phong cách 3",
+                "ms": "Gaya 3",
+                "zh-hant-tw": "風格3"
               }
             }
           ]

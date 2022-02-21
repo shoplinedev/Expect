@@ -8,7 +8,7 @@
         {{#if showImg}}
             <a {{{linkObj.hrefAttr}}}  style="{{#if hasImgRatio}}padding-top: {{imgRatio}}{{/if}}" class="footer__promotion-imgwrap">
                 {{#if image_url.url}}
-                    <img class="footer__promotion-img lozad" data-src="{{image_url.url}}" alt="{{image_url.alt}}">
+                    <img class="footer__promotion-img lozad" {{{get 'responsiveAttr' (image_responsive image_url.url pcSize=../pcSize mSize=../mSize)}}} alt="{{image_url.alt}}"/>
                 {{else}}
                     {{ snippet 'icons/icon_image' class="footer__promotion-img" }}
                 {{/if}}

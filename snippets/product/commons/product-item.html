@@ -32,25 +32,17 @@ imgRealWidth 图片真实占位宽度
     {{ assign 'finalRatio' (append (default (get 'ratio' (img_size imageList.[0])) 0) '')}}
   {{/if}}
 
-  {{assign 'product_item_image_srcset_1' (append (img_url imageList.[0] width=360) ' 360w,') }}
-  {{assign 'product_item_image_srcset_2' (append (img_url imageList.[0] width=540) ' 540w,') }}
-  {{assign 'product_item_image_srcset_3' (append (img_url imageList.[0] width=720) ' 720w,') }}
-  {{assign 'product_item_image_srcset_4' (append (img_url imageList.[0] width=1000) ' 1000w') }}
-  {{assign 'product_item_image_srcset' (append  product_item_image_srcset_1 product_item_image_srcset_2 product_item_image_srcset_3 product_item_image_srcset_4) }}
+  {{assign 'product_item_image_src' imageList.[0] }}
 
 {{else}}
   {{!-- 如果图片为空 --}}
-  {{assign 'product_item_image_srcset' false }}
+  {{assign 'product_item_image_src' false }}
 {{/if}}
 {{!-- 下一张图片链接,如果没有下一张图片,不去处理 --}}
 {{#if imageList.[1]}}
-  {{assign 'product_item_next_srcset_1' (append (img_url imageList.[1] width=360) ' 360w,') }}
-  {{assign 'product_item_next_srcset_2' (append (img_url imageList.[1] width=540) ' 540w,') }}
-  {{assign 'product_item_next_srcset_3' (append (img_url imageList.[1] width=720) ' 720w,') }}
-  {{assign 'product_item_next_srcset_4' (append (img_url imageList.[1] width=1000) ' 1000w') }}
-  {{assign 'product_item_next_srcset' (append  product_item_next_srcset_1 product_item_next_srcset_2 product_item_next_srcset_3 product_item_next_srcset_4) }}
+  {{assign 'product_item_next_image_src' imageList.[1] }} 
 {{else}}
-  {{assign 'product_item_next_srcset' false }}
+  {{assign 'product_item_next_image_src' false }} 
 {{/if}}
 
 {{assign 'discount_text' null}}
@@ -110,24 +102,40 @@ imgRealWidth 图片真实占位宽度
     <div class="product-item-image-wrapper {{#if isImageRounded}}rounded{{/if}}">
       <div class="product-item__image-content">
         {{!-- 如果没有下一张图片，不展示hover效果 --}}
-        {{#if (boolean imageList.[1] '&&' theme.settings.product_hover_show_next) }}
+        {{#if (boolean product_item_next_image_src '&&' theme.settings.product_hover_show_next) }}
           <div class="product-item-next-image" data-plugin-product-item-next-img-box>
-            {{ snippet 'product/commons/product-process-image' sizes=imgRealWidth   imageRatio=theme.settings.product_image_ratio imageFit=theme.settings.product_fill_type  srcSet=product_item_next_srcset placeholderHeight=placeholderHeight }}
+            {{ snippet 'product/commons/product-process-image' 
+              imageRatio=theme.settings.product_image_ratio 
+              imageFit=theme.settings.product_fill_type 
+              src=product_item_next_image_src 
+              placeholderHeight=placeholderHeight 
+              pcSize=pcSize 
+              mSize=mSize 
+              containerMaxWidth=containerMaxWidth
+            }}
           </div>
         {{/if}}
         <div class="product-item-image" data-plugin-product-item-img-box>
-          {{ snippet 'product/commons/product-process-image' sizes=imgRealWidth  imageRatio=finalRatio imageFit=theme.settings.product_fill_type  srcSet=product_item_image_srcset placeholderHeight=placeholderHeight }}
+          {{ snippet 'product/commons/product-process-image' 
+            imageRatio=finalRatio 
+            imageFit=theme.settings.product_fill_type  
+            src=product_item_image_src 
+            placeholderHeight=placeholderHeight 
+            pcSize=pcSize 
+            mSize=mSize 
+            containerMaxWidth=containerMaxWidth
+          }}
         </div>
         {{!-- 没有soldout字段时不展示tag --}}
         {{#if soldOut '!==' undefined}}
           {{!-- 询盘（inquiry）不展示tag --}}
           {{#if (isFalsey inquiry) }}
             {{#if soldOut}}
-              <span class="product-item-soldout-tag body4">Sold Out</span>
+              <span class="product-item-soldout-tag body4">{{t 'productList.container.listItem.soldOut'}}</span>
             {{else}}
               {{!-- 没有优惠不展示sale tag --}}
               {{#if (boolean originPrice '&&' (boolean discount_text '>' 0))}}
-                <span class="product-item-sale-tag body4">Sale</span>
+                <span class="product-item-sale-tag body4">{{t 'productList.container.listItem.sale' }}</span>
               {{/if}}
             {{/if}}
           {{/if}}
@@ -198,22 +206,20 @@ imgRealWidth 图片真实占位宽度
             {{#if (boolean originPrice '&&' (boolean discount_text '>' 0)) }}
               <span class="product-item-save-price body4">
                 {{#if theme.settings.product_discount_style '===' 'number'}}
-                  Save
                   {{#currency_convert_price discount_text}}
                     {{#if fraction '===' '00'}}
                       {{#if symbolOrder '==' 'prefix'}}
-                        <span data-product-item-price="{{discount_text}}" data-product-item-save-price="true" class="notranslate">{{currencySymbol}}{{ integer }}</span>
+                        {{assign 'priceVal' (append currencySymbol integer) }}
                       {{else}}
-                        <span data-product-item-price="{{discount_text}}" data-product-item-save-price="true" class="notranslate">{{ integer }}{{currencySymbol}}</span>
+                        {{assign 'priceVal' (append integer currencySymbol) }}
                       {{/if}}
                     {{else}}
-                      <span data-product-item-price="{{discount_text}}" data-product-item-save-price="true" class="notranslate">
-                        {{currency_convert discount_text }}
-                      </span>
+                      {{assign 'priceVal' (currency_convert discount_text) }}
                     {{/if}}
+                    {{{t 'productList.container.listItem.save'  priceDom=(append '<span class="notranslate"  data-product-item-price="' discount_text '" data-product-item-save-price="true">' priceVal '</span>') }}}
                   {{/currency_convert_price}}
                 {{else}}
-                  {{ discount_text }}% OFF
+                   {{t 'productList.container.listItem.saveRatio' price=discount_text }}
                 {{/if}}
               </span>
             {{/if}}

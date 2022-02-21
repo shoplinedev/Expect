@@ -6,8 +6,10 @@
 
 {{assign 'realImgWidth' (cond request.is_mobile 300 (divide 1200 _col))}}
 
+{{assign 'mSizeNumber' (cond (is _col 6) 3 (cond (lt _col 3) 1 2)) }}
+
 <div class="row g-4 row-cols-{{cond (is _col 6) 3 (cond (lt _col 3) 1 2)}} row-cols-md-{{_col}}">
   {{#each _collections}}
-    {{snippet 'product/commons/collection-item' imgRealWidth=../_realImgWidth sortationData=this}}
+    {{snippet 'product/commons/collection-item' mSize=(append '1/' ../mSizeNumber) pcSize=(append '1/' ../_col) imgRealWidth=../_realImgWidth sortationData=this}}
   {{/each}}
 </div>

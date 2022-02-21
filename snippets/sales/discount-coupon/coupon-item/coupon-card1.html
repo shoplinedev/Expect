@@ -1,3 +1,5 @@
+{{ assign 'currentActivityInfoStr' (get activitySeq product.productSale.activityCustomInfo)}}
+
 {{! 优惠券样式1}}
 <div class="d-flex sales-discount-coupon-card1__container sales-discount-coupon-hook" data-discount-code="{{discountCode}}">
   <div class="sales-discount-coupon-card1__left d-felx">
@@ -15,6 +17,22 @@
       <div class="sales-discount-coupon-card1__below">
         {{noTranslationHTML __customShippingPriceRangeText}}
       </div>
+    {{/if}}
+    {{#if currentActivityInfoStr}}
+      {{assign 'currentActivityInfo' (JSONparse currentActivityInfoStr)}}
+      {{assign 'targetUserType' (get "targetUserType" currentActivityInfo) }}
+      {{#if targetUserType '==' 6}}
+        <div class="sales-discount-coupon-card1__customers">{{t 'sales.discount-coupon.coupon-content.specified'}}</div>
+      {{else}}
+        {{#if targetUserType '==' 5}}
+          <div class="sales-discount-coupon-card1__customers">{{t 'sales.discount-coupon.coupon-content.specified'}}</div>
+        {{else}}
+          {{#if targetUserType '==' 2}}
+            {{assign 'level' (get "level" (itemAt (get "targetUserInfoList" currentActivityInfo) 0))}}
+            <div class="sales-discount-coupon-card1__customers">{{t 'sales.discount-coupon.coupon-content.level' level=level}}</div>
+          {{/if}}
+        {{/if}}
+      {{/if}}
     {{/if}}
     {{#if endTime}}
       <div class="sales-discount-coupon-card1__expire">

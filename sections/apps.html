@@ -1,0 +1,39 @@
+<div class="{{#if section.settings.include_margins}}container g-4 g-md-6{{/if}}">
+  {{#with section as |section|}} 
+    {{#each block_order as |blockId|}} 
+      {{#with (lookup ../blocks [blockId])}} 
+        {{render this}} 
+      {{/with}} 
+    {{/each}} 
+  {{/with}}
+</div>
+
+{{#schema}}
+{
+  "name": "app-block-section",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "switch",
+      "id": "include_margins",
+      "label": {
+        "zh-hans-cn": "使模块页边距与主题一致",
+        "en": "Make section margins the same as theme",
+        "id": "Buat margin bagian sama dengan tema",
+        "th": "ทำให้ระยะขอบของส่วนเหมือนกับธีม",
+        "vi": "Đặt lề của phần giống như chủ đề",
+        "ms": "Jadikan margin bahagian sama dengan tema",
+        "zh-hant-tw": "使節邊距與主題相同"
+      },
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": []
+}
+{{/schema}}

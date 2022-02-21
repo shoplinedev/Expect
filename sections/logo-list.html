@@ -21,7 +21,7 @@
 
     <div class="iconlist iconlist__{{width}} iconlist__{{mobile_rendermode}} {{widthClass}} g-4 g-md-6" style="{{#if layout '===' 'horizontal'}}align-items: center;{{/if}}">
       {{#if mobile_rendermode '===' 'scroll'}}
-        <div class="iconlist__shadow" style="background:linear-gradient(-90deg, {{background_color}} 0%, rgba(255, 255, 255, 0) 100%)"></div>
+        <div class="iconlist__shadow Jmask-icolist"></div>
       {{/if}}
       {{#each blocks}}
         {{assign 'icon' settings.icon}}
@@ -32,7 +32,10 @@
         {{#if ../layout '===' 'vertical'}}
           <a class="iconlist__iconItem__vertical" {{#if (boolean (isTruthy image.url) '||' (boolean (boolean icon '!=' 'none') '||' (boolean (isTruthy title) '||' (isTruthy sub_title))))}} {{{link_item.hrefAttr}}} {{/if}}>
             {{#if image.url}}
-              <img alt="{{ image.alt }}" class="lozad iconlist__iconItem__vertical__icon" data-src="{{ image.url }}" data-srcset="{{ image.url }} 1x, {{ image.url }} 2x" />
+              <img 
+                alt="{{ image.alt }}" 
+                class="lozad iconlist__iconItem__vertical__icon" 
+                {{{get 'responsiveAttr' (image_responsive image.url pcSize='48px' mSize="48px")}}} />
             {{else}}
               {{snippet 'logo-list-icon' icon=icon}}
             {{/if}}
@@ -45,7 +48,11 @@
         {{else}}
           <a class="iconlist__iconItem__horizontal" {{#if (boolean (isTruthy image.url) '||' (boolean (boolean icon '!=' 'none') '||' (boolean (isTruthy title) '||' (isTruthy sub_title))))}} {{{link_item.hrefAttr}}} {{/if}}>
             {{#if image.url}}
-              <img alt="{{ image.alt }}" class="lozad iconlist__iconItem__horizontal__icon" data-src="{{ image.url }}" data-srcset="{{ image.url }} 1x, {{ image.url }} 2x" />
+              <img 
+                alt="{{ image.alt }}" 
+                class="lozad iconlist__iconItem__horizontal__icon" 
+                {{{get 'responsiveAttr' (image_responsive image.url pcSize='48px' mSize="48px")}}} 
+                />
             {{else}}
               {{snippet 'logo-list-icon'}}
             {{/if}}
@@ -65,7 +72,12 @@
 {
   "name": {
     "zh-hans-cn": "图标申明",
-    "en": "Logo list"
+    "en": "Logo list",
+    "id": "Deklarasi ikon",
+    "th": "ประกาศไอคอน",
+    "vi": "Trình bày rõ biểu tượng",
+    "ms": "Penerangan ikon",
+    "zh-hant-tw": "圖標申明"
   },
   "type": "logo-list",
   "max_blocks": 4,
@@ -74,7 +86,12 @@
       "type": "icon",
       "name": {
         "zh-hans-cn": "图标",
-        "en": "Logo"
+        "en": "Logo",
+        "id": "Ikon",
+        "th": "ไอคอน",
+        "vi": "icon",
+        "ms": "Ikon",
+        "zh-hant-tw": "圖標"
       },
       "icon": "image",
       "settings": [
@@ -83,91 +100,156 @@
           "type": "select",
           "label": {
             "zh-hans-cn": "图标",
-            "en": "Logo"
+            "en": "Logo",
+            "id": "Ikon",
+            "th": "ไอคอน",
+            "vi": "icon",
+            "ms": "Ikon",
+            "zh-hant-tw": "圖標"
           },
           "default": "logistics",
           "options": [
             {
               "label": {
                 "zh-hans-cn": "不显示",
-                "en": "Don't display"
+                "en": "Don't display",
+                "id": "Tidak tampilkan",
+                "th": "ไม่แสดง",
+                "vi": "Không hiển thị",
+                "ms": "Tidak tunjuk",
+                "zh-hant-tw": "不顯示"
               },
               "value": "none"
             },
             {
               "label": {
                 "zh-hans-cn": "安全支付",
-                "en": "Secure payment"
+                "en": "Secure payment",
+                "id": "Pembayaran aman",
+                "th": "การชำระเงินที่ปลอดภัย",
+                "vi": "Thanh toán an toàn",
+                "ms": "Pembayaran selamat",
+                "zh-hant-tw": "安全支付"
               },
               "value": "pay"
             },
             {
               "label": {
                 "zh-hans-cn": "包裹",
-                "en": "Package"
+                "en": "Package",
+                "id": "Paket",
+                "th": "พัสดุ",
+                "vi": "Đóng gói",
+                "ms": "Kurier",
+                "zh-hant-tw": "包裹"
               },
               "value": "package"
             },
             {
               "label": {
                 "zh-hans-cn": "电子邮箱",
-                "en": "Email"
+                "en": "Email",
+                "id": "Email",
+                "th": "อีเมล",
+                "vi": "E-mail",
+                "ms": "E-mel",
+                "zh-hant-tw": "電子郵箱"
               },
               "value": "email"
             },
             {
               "label": {
                 "zh-hans-cn": "定位",
-                "en": "Locate"
+                "en": "Locate",
+                "id": "Pemosisian",
+                "th": "ตำแหน่ง",
+                "vi": "Định vị",
+                "ms": "Dilokasikan",
+                "zh-hant-tw": "定位"
               },
               "value": "position"
             },
             {
               "label": {
                 "zh-hans-cn": "顾客",
-                "en": "Customer"
+                "en": "Customer",
+                "id": "Pelanggan",
+                "th": "ลูกค้า",
+                "vi": "Khách hàng",
+                "ms": "Pelanggan",
+                "zh-hant-tw": "顧客"
               },
               "value": "customer"
             },
             {
               "label": {
                 "zh-hans-cn": "聊天",
-                "en": "Chat"
+                "en": "Chat",
+                "id": "Obrol",
+                "th": "สนทนา",
+                "vi": "Nói chuyện",
+                "ms": "Bualan",
+                "zh-hant-tw": "聊天"
               },
               "value": "chat"
             },
             {
               "label": {
                 "zh-hans-cn": "礼物",
-                "en": "Gifts"
+                "en": "Gifts",
+                "id": "Hadiah",
+                "th": "ของขวัญ",
+                "vi": "Qùa tặng",
+                "ms": "Hadiah",
+                "zh-hant-tw": "禮物"
               },
               "value": "gift"
             },
             {
               "label": {
                 "zh-hans-cn": "手机",
-                "en": "Mobile Phone"
+                "en": "Mobile phone No.",
+                "id": "HP",
+                "th": "โทรศัพท์มือถือ",
+                "vi": "Điện thoại di động",
+                "ms": "Telefon bimbit",
+                "zh-hant-tw": "手機"
               },
               "value": "phone"
             },
             {
               "label": {
                 "zh-hans-cn": "帮助信息",
-                "en": "Question mark"
+                "en": "Question mark",
+                "id": "informasi bantuan",
+                "th": "ข้อมูลช่วยเหลือ",
+                "vi": "Thông tin hữu ích",
+                "ms": "Maklumat bantuan",
+                "zh-hant-tw": "幫助信息"
               },
               "value": "faq"
             },
             {
               "label": {
                 "zh-hans-cn": "物流",
-                "en": "Logistics"
+                "en": "Logistics",
+                "id": "Pengiriman",
+                "th": "โลจิสติกส์",
+                "vi": "Vận chuyển",
+                "ms": "Logistik",
+                "zh-hant-tw": "物流"
               },
               "value": "logistics"
             },
             {
               "label": {
                 "zh-hans-cn": "折扣标签",
-                "en": "Discount tag"
+                "en": "Discount tag",
+                "id": "Label diskon",
+                "th": "ป้ายส่วนลด",
+                "vi": "Nhãn chiết khấu",
+                "ms": "Label diskuan",
+                "zh-hant-tw": "折扣標籤"
               },
               "value": "discount"
             }
@@ -178,7 +260,12 @@
           "type": "image_picker",
           "label": {
             "zh-hans-cn": "图片",
-            "en": "Image"
+            "en": "Image",
+            "id": "Gambar",
+            "th": "รูปภาพ",
+            "vi": "Hình ảnh",
+            "ms": "Gambar",
+            "zh-hant-tw": "圖片"
           }
         },
         {
@@ -186,7 +273,12 @@
           "type": "text",
           "label": {
             "zh-hans-cn": "标题",
-            "en": "Title"
+            "en": "Title",
+            "id": "Judul",
+            "th": "หัวข้อ",
+            "vi": "Tiêu đề",
+            "ms": "Tajuk",
+            "zh-hant-tw": "標題"
           },
           "default": "Free Shipping"
         },
@@ -195,7 +287,12 @@
           "type": "text",
           "label": {
             "zh-hans-cn": "副标题",
-            "en": "Subtitle"
+            "en": "Subtitle",
+            "id": "Subtitle",
+            "th": "หัวข้อรอง",
+            "vi": "Dề phụ",
+            "ms": "Sari kata",
+            "zh-hant-tw": "副標題"
           },
           "default": "Free Capped at $50 per order"
         },
@@ -203,8 +300,13 @@
           "id": "jump_link",
           "type": "url",
           "label": {
+            "zh-hans-cn": "跳转链接",
             "en": "Jump link",
-            "zh-hans-cn": "跳转链接"
+            "id": "lompat link",
+            "th": "ลิงก์กระโดดข้าม",
+            "vi": "Link chuyển đổi",
+            "ms": "Pautan lompat",
+            "zh-hant-tw": "跳轉鏈接"
           }
         }
       ]
@@ -216,21 +318,36 @@
       "id": "width",
       "label": {
         "zh-hans-cn": "组件宽度",
-        "en": "Component width"
+        "en": "Component width",
+        "id": "Lebar komponen",
+        "th": "ความกว้างของส่วนประกอบ",
+        "vi": "Độ rộng mô đun",
+        "ms": "Lebar komponen",
+        "zh-hant-tw": "組件寬度"
       },
       "options": [
         {
           "value": "full",
           "label": {
             "zh-hans-cn": "全屏",
-            "en": "Wide screen"
+            "en": "Full screen",
+            "id": "Layar penuh",
+            "th": "เต็มจอ",
+            "vi": "Toàn màn",
+            "ms": "Skrin penuh",
+            "zh-hant-tw": "全屏"
           }
         },
         {
           "value": "normal",
           "label": {
             "zh-hans-cn": "标准宽屏",
-            "en": "Standard"
+            "en": "Standard",
+            "id": "Layar dengan lebar standar",
+            "th": "จอไวด์สกรีนมาตรฐาน",
+            "vi": "Màn hình rộng tiêu chuẩn",
+            "ms": "Skrin lebar standard",
+            "zh-hant-tw": "標準寬屏"
           }
         }
       ]
@@ -240,20 +357,35 @@
       "id": "layout",
       "label": {
         "zh-hans-cn": "布局",
-        "en": "Layout"
+        "en": "Layout",
+        "id": "tata letak",
+        "th": "เลย์เอาต์",
+        "vi": "Bố cục",
+        "ms": "susun atur",
+        "zh-hant-tw": "佈局"
       },
       "options": [
         {
           "label": {
             "zh-hans-cn": "上下布局",
-            "en": "Vertical layout"
+            "en": "Vertical layout",
+            "id": "Tata letak atas dan bawah",
+            "th": "เลย์เอาต์ด้านบนและด้านล่าง",
+            "vi": "Bố cục trên dưới",
+            "ms": "Susun atur atas dan bawah",
+            "zh-hant-tw": "上下佈局"
           },
           "value": "vertical"
         },
         {
           "label": {
             "zh-hans-cn": "左右布局",
-            "en": "Horizontal layout"
+            "en": "Horizontal layout",
+            "id": "Tata letak kiri dan kanan",
+            "th": "เลย์เอาต์ซ้ายและขวา",
+            "vi": "Bố cục trái phải",
+            "ms": "Susun atur kiri dan kanan",
+            "zh-hant-tw": "左右佈局"
           },
           "value": "horizontal"
         }
@@ -264,7 +396,12 @@
       "id": "font_color",
       "label": {
         "zh-hans-cn": "字体颜色",
-        "en": "Font color"
+        "en": "Font color",
+        "id": "warna huruf",
+        "th": "สีตัวอักษร",
+        "vi": "Màu sắc thể chữ",
+        "ms": "Warna fon",
+        "zh-hant-tw": "字體顏色"
       }
     },
     {
@@ -272,7 +409,12 @@
       "id": "icon_color",
       "label": {
         "zh-hans-cn": "ICON颜色",
-        "en": "ICON color"
+        "en": "ICON color",
+        "id": "warna ICON",
+        "th": "สี ICON",
+        "vi": "Màu sắc ICON",
+        "ms": "Warna ICON",
+        "zh-hant-tw": "ICON顏色"
       }
     },
     {
@@ -280,7 +422,12 @@
       "id": "background_color",
       "label": {
         "zh-hans-cn": "背景颜色",
-        "en": "Background color"
+        "en": "Background color",
+        "id": "Warna latar belakang",
+        "th": "สีพื้นหลัง",
+        "vi": "Màu sắc nền",
+        "ms": "Warna latar belakang",
+        "zh-hant-tw": "背景顏色"
       }
     },
     {
@@ -288,21 +435,36 @@
       "id": "mobile_rendermode",
       "label": {
         "zh-hans-cn": "移动端样式",
-        "en": "Styles on mobile device"
+        "en": "Styles on mobile device",
+        "id": "Gaya port seluler",
+        "th": "รูปแบบบนมือถือ",
+        "vi": "Dạng trên điện thoại",
+        "ms": "Sempel versi mudah alih",
+        "zh-hant-tw": "移動端樣式"
       },
       "options": [
         {
           "value": "scroll",
           "label": {
             "zh-hans-cn": "左右滑动",
-            "en": "Slide the screen left or right"
+            "en": "Slide the screen left or right",
+            "id": "Geser ke kiri dan kanan",
+            "th": "ปัดไปทางซ้ายและขวา",
+            "vi": "Lướt trái phải",
+            "ms": "Leret ke kiri dan kanan",
+            "zh-hant-tw": "左右滑動"
           }
         },
         {
           "value": "grid",
           "label": {
             "zh-hans-cn": "网格",
-            "en": "Grid"
+            "en": "Grid",
+            "id": "kisi-kisi",
+            "th": "ตะแกรง",
+            "vi": "Lưới",
+            "ms": "Grid",
+            "zh-hant-tw": "網格"
           }
         }
       ]
@@ -312,11 +474,21 @@
     {
       "name": {
         "zh-hans-cn": "图标申明",
-        "en": "Logo list"
+        "en": "Logo list",
+        "id": "Deklarasi ikon",
+        "th": "ประกาศไอคอน",
+        "vi": "Trình bày rõ biểu tượng",
+        "ms": "Penerangan ikon",
+        "zh-hant-tw": "圖標申明"
       },
       "category": {
         "zh-hans-cn": "内容展示",
-        "en": "Content display"
+        "en": "Content display",
+        "id": "Tampilan Isi",
+        "th": "การแสดงเนื้อหา",
+        "vi": "Hiển thị nội dung",
+        "ms": "Paparan kandungan",
+        "zh-hant-tw": "內容展示"
       },
       "settings": {
         "background_color": "#F8F8F8",

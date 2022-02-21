@@ -15,7 +15,7 @@
   {{else}}
     {{ assign 'image' theme.settings.checkout_image.url }}
   {{/if}}
-  {{ assign 'seoTitle' (append 'Collections' ' - ' storeInfo.name) }}
+  {{ assign 'seoTitle' 'Collections' }}
   {{ assign 'seoDescription' '' }}
   {{ assign 'keywords' '' }}
   {{ assign 'card' 'summary_large_image' }}
@@ -102,6 +102,12 @@
 {{#if card}}
   <meta name="twitter:card" content="{{twitterCard}}" />
 {{/if}}
+
+{{!-- meta hide product --}}
+{{#and  (boolean templateAlias '===' 'ProductsDetail')  (isFalsey product.spu.visible)}}
+  <meta name='robots' content='noindex' />
+{{/and}}
+
 
 
 {{/partial}}

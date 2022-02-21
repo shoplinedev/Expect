@@ -22,6 +22,13 @@ forbiddenBtn:禁止加购按钮
 {{ assign 'listLayoutObj' (JSONparse '{"large_grid": "row-cols-1 row-cols-md-2 product-list-large-grid", "small_grid": "row-cols-2 row-cols-md-4 product-list-small-grid", "list": "row-cols-1 row-cols-md-1 product-list-single-grid"}')  }}
 
 {{ assign 'productListCls' ( default (get gripType listLayoutObj) (get 'small_grid' listLayoutObj) ) }}
+{{assign 'containerMaxWidth' (default containerMaxWidth theme.settings.page_width)}}
+{{ assign 'pcListLayoutSizeObj' (JSONparse '{"large_grid": "2", "small_grid": "4", "list": "1"}')  }}
+{{ assign 'mListLayoutSizeObj' (JSONparse '{"large_grid": "1", "small_grid": "2", "list": "1"}')  }}
+{{ assign 'pcSizeNum' ( default (get gripType pcListLayoutSizeObj) (get 'small_grid' pcListLayoutSizeObj) )}}
+{{ assign 'mSizeNum' ( default (get gripType mListLayoutSizeObj) (get 'small_grid' mListLayoutSizeObj) )}}
+
+
 
 {{#if effectPage '==' 'productList'}}
 <div class="{{ append 'product-list-item-parent-controller row g-4 ' productListCls }}" id="product-list-container">
@@ -29,8 +36,8 @@ forbiddenBtn:禁止加购按钮
 <div class="product-list-item-parent-controller row g-4 row-cols-2 row-cols-md-{{_colNum}}">
 {{/if}}
   {{#each listData as |item|}}
-    <div class="col product-item-list">
-      {{snippet 'product/commons/product-item' previewQuery=../previewQuery imgRealWidth=../real_product_img_width spu=item forbiddenBtn=../forbiddenBtn index=@index className=../className }}
+    <div class="col product-item-list" data-a="{{ ../gripType }}">
+      {{snippet 'product/commons/product-item' containerMaxWidth=../containerMaxWidth pcSize=(cond (boolean ../effectPage '==' 'productList') (cond (boolean ../gripType '==' 'list') '200px' (append '1/' ../pcSizeNum)) (append '1/' ../_colNum)) mSize=(cond (boolean ../effectPage '==' 'productList') (append '1/' ../mSizeNum) '1/2')  previewQuery=../previewQuery imgRealWidth=../real_product_img_width spu=item forbiddenBtn=../forbiddenBtn index=@index className=../className }}
     </div>
   {{/each}}
 </div>

@@ -1,22 +1,759 @@
 {
-  "sales": {
-    "promotion": {
-      "tags": {
-        "benefit1": {
-          "threshold0": "Mua {{threshold}} tiết kiệm {{save}}",
-          "threshold1": "Mua {{threshold}} Nhận ngay {{save}}"
-        },
-        "benefit2": {
-          "threshold0": "Mua {{threshold}} tiết kiệm {{save}}",
-          "threshold1": "Mua {{threshold}} Nhận ngay {{save}}"
-        },
-        "benefit11": {
-          "threshold1": {
-            "normal": "Mua {{threshold}} sản phẩm, hưởng ngay ưu đãi {{save}} trên một sản phẩm trong danh sách mua",
-            "free": "Mua {{threshold}} sản phẩm, nhận ngay một sản phẩm miễn phí trong danh sách mua"
+  "address": {
+    "dropdown": {
+      "default-placeholder": "Vui lòng chọn",
+      "no-item-tips": "Không có dữ liệu",
+      "no-search-result": "Không tìm được kết quả phù hợp"
+    },
+    "mobile-errorMessage": "Vui lòng điền số điện thoại cố định hợp lệ",
+    "mobile-errorMessage-country-code": "Vui lòng không nhập mã vùng"
+  },
+  "blog": {
+    "container": {
+      "backTo": "Trả lại {{{collectionTitle}}}"
+    }
+  },
+  "blogList": {
+    "container": {
+      "empty": {
+        "desc": "Không có bài đăng trên blog nào trong blog này.",
+        "title": "Blog"
+      },
+      "readBtnText": "Đọc thêm"
+    }
+  },
+  "cart": {
+    "active-stock-limit": "Chỉ còn {{stock}} chiếc áp dụng giá chiết khấu",
+    "active-stock-limit-1": "Bạn có thể mua tối đa {{stock}} sản phẩm với giá chiết khấu",
+    "active-stock-limit-2": "Bạn chỉ có thể mua {{stock}} chiếc của sản phẩm này với mức giá khuyến mại",
+    "activity-price-limit": "Bạn chỉ có thể mua {{num}} chiếc của sản phẩm này với mức giá khuyến mại",
+    "activity-product-limit": "Bạn có thể mua tối đa {{stock}} sản phẩm với giá chiết khấu",
+    "activity-title-limit": "Sản phẩm bên dưới vượt quá giới hạn số lượng mua, bạn có muốn tiến hành thanh toán không?",
+    "checkout-error": "Có ít nhất một sản phẩm không khả dụng trong giỏ hàng. Vui lòng điều chỉnh mặt hàng trong giỏ hàng để chuyển sang bước thanh toán.",
+    "get": "Nhận giảm giá",
+    "go-shopping": "TIẾP TỤC MUA SẮM",
+    "login-description": "Bạn đã là hội viên chưa? Đăng nhập để thuận tiện hơn trong việc kiểm soát các đơn hàng!",
+    "login-membership": "Miễn phí hội viên",
+    "most-100-sku": "Thêm tới 100 mặt hàng",
+    "most-buy-999": "Số lượng tối đa của một sản phẩm là 999 chiếc",
+    "not-participation-offers": "Không tham gia chương trình giảm giá",
+    "render-add-items": "Hiện giỏ hàng của bạn còn trống.",
+    "render-empty-status": "Không có mặt hàng nào trong giỏ hàng của bạn",
+    "shopping-fees": "Phí mua sắm",
+    "shopping-money": "chiết khấu và thuế phí vận chuyển được tính ở bước tiếp theo",
+    "shopping-money-step": "Thuế và phí giao hàng được tính toán ở bước thực hiện thanh toán",
+    "stock-limit": "Chỉ còn {{stock}} chiếc",
+    "view-link": "Nhấp để xem",
+    "view-pic": "Tùy chỉnh xem trước",
+    "view-shopping-cart": "Xem Giỏ Hàng"
+  },
+  "checkout": {
+    "delivery-method": {
+      "store-pickup": "Lấy hàng"
+    },
+    "info-preview": {
+      "store-pickup__info": "Lấy hàng ở cửa hàng • {{locationName}} • Miễn phí",
+      "store-pickup__label": "Phương pháp"
+    },
+    "store-pickup": {
+      "label": "Địa điểm lấy hàng",
+      "list--empty": "Đơn hàng của bạn không thể lấy hàng. Nhập địa chỉ gửi hàng",
+      "pickup-appointment--between": "Chuẩn bị khoảng {{start}}-{{end}}",
+      "pickup-appointment--more-than": "Chuẩn bị sẵn sàng hơn {{start}}",
+      "pickup-appointment--within": "Sẵn sàng trong vòng {{end}}",
+      "pickup-appointment__value--day": "{{value}} ngày",
+      "pickup-appointment__value--day-plural": "{{value}} ngày",
+      "pickup-appointment__value--hour": "{{value}} giờ",
+      "pickup-appointment__value--hour-plural": "{{value}} giờ"
+    }
+  },
+  "collection": {
+    "all": {
+      "h1Title": "Loại",
+      "title": "Bộ Sưu Tập"
+    }
+  },
+  "comment": {
+    "about-product": "Vui lòng nhập ít nhất một từ",
+    "add-img": "Thêm một hình ảnh",
+    "all-reviews": "Xem tất cả đánh giá",
+    "bad": "Rất tệ",
+    "best": "Xuất sắc",
+    "comment-count": "{{total}} đánh giá",
+    "customer-comment": "Đánh giá từ khách hàng",
+    "enter-comment": "Viết đánh giá về sản phẩm",
+    "experience-about": "Vui lòng đánh giá sản phẩm này",
+    "general": "Tạm được",
+    "good": "Tốt",
+    "image-only-2m": "Kích cỡ tối đa của hình ảnh là {{size}} MB",
+    "leave-a-review": "Đánh giá",
+    "mobile-submit": "Gửi",
+    "more-images": "Bạn có thể thêm tối đa {{total}} hình ảnh",
+    "network-err-msg": "Đánh giá của bạn chưa được xử lý thành công do lỗi của hệ thống, xin vui lòng thử lại~",
+    "nickname": "Biệt hiệu",
+    "no-bought-msg": "Xin lỗi, bạn chưa từng mua sản phẩm này nên không thể thực hiện đánh giá",
+    "no-comment-first-tip": "hãy là người đầu tiên bình luận",
+    "no-comment-title-tip": "Chưa có bình luận",
+    "no-login-msg": "Khách hàng có thể để lại đánh giá sau khi đã mua sản phẩm này, vui lòng đăng nhập để thực hiện đánh giá",
+    "on-img-upload-tip": "Đang tải lên, vui lòng gửi đi sau",
+    "only-image": "Chỉ hỗ trợ định dạng .jpg .jpeg .png .bmp",
+    "rate-score": "Xếp hạng {{score}}",
+    "ratings": "Xếp hạng",
+    "read-more-comments": "Xem thêm",
+    "shipping-information": "Thông tin giao hàng",
+    "sign-in": "Đăng ký",
+    "text": "Đánh giá",
+    "thanks-msg": "Cám ơn bạn đã để lại đánh giá",
+    "total": "{{total}} đánh giá",
+    "worse": "Tệ",
+    "write-review": "Viết đánh giá"
+  },
+  "common": {
+    "address": "Địa chỉ",
+    "amount": "Số lượng",
+    "anonymous": "Ẩn Danh",
+    "anonymous-evaluation": "Đánh Giá Ẩn Danh",
+    "apply": "Áp Dụng",
+    "applyDate": "Ngày Yêu Cầu",
+    "audit": "Đánh giá",
+    "back-to-cart": "Trở về giỏ hàng",
+    "back-to-user-center": "Trở về Trung Tâm Người Dùng",
+    "backout": "Hoàn tác",
+    "bank-Account": "Số tài khoản",
+    "bank-Account2": "Số tài khoản",
+    "bank-card-number": "Số thẻ ngân hàng",
+    "bank-name": "Tên ngân hàng",
+    "buy-now": "MUA NGAY",
+    "cancel": "Hủy",
+    "cardholder-name": "Tên chủ thẻ",
+    "category": "Danh mục",
+    "checkout": "THANH TOÁN",
+    "close": "Đóng",
+    "confirm": "OK",
+    "contact-information": "Thông tin liên hệ",
+    "contactUs": "LIÊN HỆ CHÚNG TÔI",
+    "continue": "Tiếp tục",
+    "day": "ngày",
+    "days": "ngày",
+    "default-address": "Địa chỉ mặc định",
+    "descountPrice": "Giá Sale",
+    "discount": "Giảm giá",
+    "discountDesc": "Mô Tả Hàng Hóa",
+    "discountOff": "Giảm giá",
+    "email": "Địa Chỉ Email",
+    "email2": "Thư điện tử",
+    "enter-email": "Nhập email của bạn",
+    "enter-mobile-phone": "Nhập số điện thoại di động",
+    "enter-username": "Nhập tên người dùng",
+    "error-stack": "Sắp xếp sai",
+    "evaluation": "Đánh giá",
+    "finish": "Hoàn thành",
+    "free-shipping": "Miễn phí giao hàng",
+    "freightDesc": "Mô tả phí giao hàng",
+    "hasSelected": "Đã chọn",
+    "home": "Trang chủ",
+    "login": "Đăng nhập",
+    "logistics": "Giao hàng",
+    "logistics-and-payment": "Giao nhận và thanh toán",
+    "member-login": "Đăng nhập dành cho hội viên",
+    "meno": "Ghi chú",
+    "mobile": "Số điện thoại cố định",
+    "mobile-phone": "Số điện thoại di động",
+    "modify": "Thay đổi",
+    "ok": "OK",
+    "operation": "Thực hiện",
+    "order": "Đơn hàng",
+    "order-evaluation": "Đánh giá đơn hàng",
+    "outOfStock": "Hết hàng trong kho",
+    "package": "Gói hàng",
+    "page": "trang",
+    "payment": "Thanh toán",
+    "payment-2": "Thanh Toán Ngay",
+    "piece": "chiếc",
+    "pieces": "Chiếc",
+    "productError": "Không tìm thấy sản phẩm phù hợp. Vui lòng thử lại sau",
+    "recommend": "Có thể bạn sẽ thích",
+    "remain": "Nhắc nhở",
+    "remove": "Xóa",
+    "returnInfo": "Thông tin hoàn tiền",
+    "returnMoney": "Hoàn tiền",
+    "returnProgress": "Quá trình hoàn tiền",
+    "rollback": "Rút tiền",
+    "selectProduct": "Chọn sản phẩm",
+    "settleMent": "Mua ngay",
+    "sign-out": "Thoát",
+    "soldOut": "Đã Hết Hàng",
+    "stock-limit": "Chỉ còn {{stock}}",
+    "subTotal": "Cộng",
+    "submit-evaluation": "Gửi đánh giá",
+    "tax": "Các loại thuế và phí",
+    "taxDesc": "Mô tả các khoản thuế và phí",
+    "tel-phone": "Số điện thoại cố định",
+    "tips": "Nhắc nhở",
+    "title": "Tiêu đề",
+    "total": "Tổng cộng",
+    "upload": "Tải lên",
+    "upload-image": "Tải lên một hình ảnh",
+    "use-address": "Địa Chỉ Được Sử Dụng",
+    "use-new-address": "Sử dụng địa chỉ mới",
+    "username": "Tên"
+  },
+  "contactForm": {
+    "sendSuccess": ""
+  },
+  "footer": {
+    "copyright": "Đã Được Đăng Ký Bản Quyền",
+    "followus": "THEO DÕI CHÚNG TÔI",
+    "subscribeBarPlaceholder": "Điền địa chỉ Email của bạn vào đây",
+    "subscribeError": "Đăng ký theo dõi không thành công",
+    "subscribeRegExpError": "Lỗi định dạng địa chỉ Email",
+    "subscribeSuccess": "Đăng ký theo dõi thành công"
+  },
+  "header": {
+    "cart": "Giỏ Hàng Của Bạn",
+    "center": "Trung tâm",
+    "login": "Đăng nhập",
+    "logout": "Thoát",
+    "navItemAll": "Tất cả",
+    "noCurrencyFallback": "Không tìm thấy loại tiền tệ liên quan",
+    "search": "Tìm kiếm",
+    "searchInputPlaceholder": "Gõ từ khóa tìm kiếm vào đây và nhấp vào tìm kiếm",
+    "searchItems": "Tìm kiếm sản phẩm"
+  },
+  "labelInput": {
+    "contact-error": "Vui lòng nhập đúng định dạng email/số điện thoại di động",
+    "email-error": "Vui lòng nhập đúng định dạng email",
+    "phone-error": "Vui lòng nhập đúng định dạng số điện thoại di động",
+    "phone-error-tips": "Vui lòng nhập chính xác họ tên của người nhận để việc giao hàng được thuận lợi"
+  },
+  "modal": {
+    "exceedCartContent": "Bạn có thể thêm sản phẩm này vào giỏ hàng bằng cách mua trước hoặc xóa bớt các sản phẩm khác trong giỏ hàng",
+    "exceedCartTitle": "Xin lỗi! Số lượng sản phẩm trong giỏ hàng vượt quá số lượng giới hạn mua.",
+    "goCart": "Đến giỏ hàng",
+    "iKnow": "Tôi đã hiểu"
+  },
+  "oneShop": {
+    "TCTD0108": "Phương thức giao hàng không tồn tại, vui lòng chọn lại",
+    "TCTD0112": "Sản phẩm bạn chọn không hợp lệ, vui lòng chọn lại",
+    "TCTD0118": "Phương thức thanh toán không tồn tại, vui lòng chọn lại",
+    "TCTD0121": "Chiến dịch tiếp thị đã thay đổi, vui lòng chọn lại",
+    "bracket": "({{content}})",
+    "buyNow": "Mua ngay",
+    "buyPop": "{{name}} mua sản phẩm này {{minutes}} phút trước",
+    "comboFailure": "Gói sản phẩm không hợp lệ",
+    "comboSelectFailure": "Gói ản phẩm bạn chọn không hợp lệ, vui lòng chọn lại",
+    "comment": "Viết tin nhắn (Không bắt buộc)",
+    "country": "Quốc gia",
+    "currentProductSoldOut": "Sản phẩm hiện tại không còn đủ hàng",
+    "cutByAmount": "Giảm {{n}} CNY với {{amount}} CNY",
+    "cutByNum": "Giảm {{n}} CNY cho {{num}} chiếc",
+    "defaultErrorCodeMsg": "Mạng không ổn định, vui lòng làm mới trang và thử lại",
+    "discountByAmount": "Giảm {{n}}% với {{amount}} CNY",
+    "discountByNum": "Giảm {{n}}% cho {{num}} chiếc",
+    "freeShipping": "Miễn phí giao hàng",
+    "noComment": "Chưa có bất kỳ nhận xét nào",
+    "noProductDesc": "Không có mô tả sản phẩm",
+    "optional": "Không bắt buộc",
+    "orderAgain": "Vui lòng thực hiện đặt hàng lại",
+    "overLength": "Độ dài ký tự nhập vào vượt quá giới hạn cho phép, bạn vui lòng chỉnh sửa nội dung và thử lại",
+    "priceStart": "Từ CNY {{n}}",
+    "productCommentTitle": "Đánh Giá Sản Phẩm ({{n}})",
+    "productDetail": "Chi tiết sản phẩm",
+    "productFailure": "Sản phẩm bạn chọn không hợp lệ, vui lòng chọn lại",
+    "productNoSelect": "Vui lòng chọn thông số sản phẩm",
+    "selectedProductSoldOut": "Sản phẩm đã chọn không còn đủ hàng",
+    "soleOutSelectAgain": "Sản phẩm hiện tại không còn đủ hàng, vui lòng chọn lại",
+    "submit": "Gửi"
+  },
+  "order": {
+    "after-order-status": {
+      "cancelled": "Đã hủy",
+      "completed": "Hoàn tất",
+      "confirmed": "Đã xác nhận",
+      "customer-canceled": "Khách hàng đã hủy",
+      "customer-rejected": "Khánh hàng đã từ chối",
+      "delivery-progress": "Đã xác nhận",
+      "merchant-cancellation": "Người bán đã hủy",
+      "processing": "Đang xử lý"
+    },
+    "after-sale-type": {
+      "refund": "Hoàn tiền",
+      "return-and-refund": "Trả hàng và hoàn tiền"
+    },
+    "breadcrumb": {
+      "order": "Đơn hàng",
+      "order-detail": "Đơn hàng chi tiết",
+      "title": "Đơn hàng"
+    },
+    "customer-info": "Thông tin khách hàng",
+    "delivery-statusType": {
+      "arrived": "Đã đến",
+      "cancel-delivery": "Hủy giao hàng",
+      "cancelled": "Đã hủy",
+      "delivery-partial": "Giao hàng theo đợt",
+      "delivery-return": "Đã trả hàng",
+      "picked-up": "Đã nhận",
+      "problem": "Hỗ trợ thủ công khi có vấn đề phát sinh liên quan tới đơn đặt hàng và thất lạc đơn hàng",
+      "shipped": "Đã giao",
+      "shipping": "Đang giao",
+      "stocking": "Chuẩn bị sản phẩm"
+    },
+    "detail": {
+      "cancel-btn": "HỦY ĐƠN HÀNG",
+      "communication": {
+        "title": "Thôn tin trao đổi đơn hàng"
+      },
+      "coms": {
+        "operationLog": {
+          "PayDealLog": {
+            "amount": "Số tiền",
+            "createTime": "Thời gian bắt đầu thanh toán",
+            "dealId": "Mã số thanh toán",
+            "payName": "Kênh Thanh Toán",
+            "status": "Trạng thái",
+            "title": "Thanh toán cho {amount} đã được xử lý bởi {payName}",
+            "updateTime": "Thời gian trả kết quả trả hàng"
           }
         }
       },
+      "order-info": {
+        "canceled": "Đã hủy",
+        "confirmed": "Đã xác nhận",
+        "finished": "Hoàn thành",
+        "processing": "Đang xử lý"
+      },
+      "order-status": {
+        "button": {
+          "refresh": "Làm mới"
+        },
+        "cancel": {
+          "desc": "Đơn hàng của bạn đã được hủy vào lúc {{cancelTime}}. Nếu bạn có bất cứ câu hỏi nào hãy liên hệ với chúng tôi.",
+          "title": "Đơn hàng của bạn đã được hủy"
+        },
+        "pay": {
+          "go-pay": "THANH TOÁN <0>{{orderAmount}}</0>",
+          "title": "Chờ Thanh Toán"
+        },
+        "pedding": {
+          "desc": "Yêu cầu thanh toán của bạn đã được gửi đi, xin vui lòng đợi {{payChannelDesc}} phản hồi kết quả thanh toán",
+          "title": "Đang xử lý thanh toán..."
+        },
+        "pickedUp": {
+          "desc": "Đơn hàng của bạn đã được lấy tại {{address1}} vào ngày {{weekDate}}",
+          "title": "Đơn hàng của bạn đã được lấy đi"
+        },
+        "readyForPickup": {
+          "desc": "Vui lòng mang theo phiếu xác nhận đơn hàng khi nhận hàng",
+          "title": "Đơn hàng của bạn đã sẵn sàng để lấy"
+        },
+        "redirect": {
+          "desc": "Nếu không có tái chuyển hướng tự động, hãy làm mới trang này",
+          "title": "Đang tái chuyển hướng, xin vui lòng chờ"
+        },
+        "success": {
+          "desc": "Thông tin đơn hàng đã được gửi đến {{buyerContact}}, xin vui lòng kiểm tra",
+          "title": "Đơn hàng của bạn đã được xác nhận"
+        }
+      },
+      "packages": {
+        "amount": {
+          "channel-surcharge": "Hoa hồng thanh toán",
+          "deduct-voucher": "Số tiền phiếu thưởng",
+          "discount": "Mã phiếu ưu đãi giảm giá",
+          "discount-amount-name": "Chiết khấu thêm từ người bán",
+          "express": "Vận tải",
+          "express-surcharge": "Thuế vận tải",
+          "preferential": "ưu đãi",
+          "subtotal": "Tổng số mặt hàng",
+          "tax": "Thuế xuất hàng hóa",
+          "tip": "Tiền boa",
+          "total": "Tổng cộng"
+        },
+        "contact-us": "Bạn có cần trợ giúp gì không? Vui lòng liên hệ cho chúng tôi:{{email}}",
+        "contact-us-title": "Liên hệ với chúng tôi",
+        "logistics": {
+          "blank-trace": "Bạn có thể theo dõi kiện hàng của mình bằng cách nhấp vào liên kết dưới đây:",
+          "detail": "Chi tiết",
+          "no-data": "Hiện tại chưa có thông tin kho vận",
+          "no-data2": "Không có thông tin giao nhận, vui lòng thử lại sau.",
+          "tab-title": "Kiện hàng {{index}}"
+        },
+        "order-note-title": "Ghi chú cho đơn hàng",
+        "order-num": "Kiện hàng số ({{num}})",
+        "payment-deal": {
+          "amount": "Số tiền",
+          "create-time": "Đã tạo",
+          "deal-id": "Số tham chiếu của giao dịch",
+          "name": "Kênh thanh toán",
+          "status": "Trạng thái",
+          "title": "Chi tiết Thanh toán",
+          "update-time": "Đã cập nhật"
+        },
+        "payment-info": {
+          "address": "Địa chỉ trên hóa đơn",
+          "detail": "Chi tiết",
+          "method": "Phương thức thanh toán",
+          "status": "Trạng thái thanh toán"
+        },
+        "payment-title": "Thanh toán",
+        "send-to-Line": "Gửi tới Line",
+        "send-to-Messenger": "Gửi tới Messenger",
+        "shippings": {
+          "fee": "Phí giao nhận",
+          "method": "Phương thức giao nhận",
+          "status": "Trạng thái giao nhận"
+        },
+        "status": {
+          "pedding": {
+            "desc": "Hiện chúng tôi đã chuẩn bị xong các mặt hàng để giao.",
+            "title": "Chuẩn bị giao hàng"
+          },
+          "success": {
+            "desc": "Chúng tôi đã tiếp nhận đơn hàng của bạn, và chúng tôi sẽ chuẩn bị các mặt hàng đầy đủ. Trở về trang này để cập nhật trạng thái giao hàng cho đơn hàng của bạn."
+          }
+        },
+        "sub-title": "Theo Dõi Kiện Hàng",
+        "subscriptions-title": "Đăng ký",
+        "title": "Đơn hàng chi tiết",
+        "unshipped-order-num": "Đang xử lý ({{num}} mặt hàng)"
+      }
+    },
+    "help-tips": "Bạn có cần trợ giúp gì không? Vui lòng liên hệ chúng tôi: {{email}}",
+    "oms-status": {
+      "arrived": "Đã đến",
+      "cancelled": "Hủy giao hàng",
+      "executing": "Đang thực hiện",
+      "picked": "Đã ký",
+      "prepare-pick": "Hàng đã sẵn sàng để lấy",
+      "problem": "Vấn đề giao hàng",
+      "returned": "Đã trả hàng",
+      "returning": "Được trả hàng",
+      "shipped": "Đã giao"
+    },
+    "order-at": "Đặt hàng tại:",
+    "order-date": "Ngày đặt hàng",
+    "order-list": {
+      "empty-tip": "Hiện tại chưa có đơn hàng, tiếp tục mua sắm",
+      "empty-title": "img",
+      "item-total": "Tổng cộng {{transPackages}} mặt hàng",
+      "item-total-plural": "Tổng cộng {{transPackages}} mặt hàng",
+      "load-more": "Kéo lên để xem thêm",
+      "no-more": "Không có thông tin",
+      "package-item": "{{num}} Kiện hàng ({{item}} mặt hàng)",
+      "package-more": "còn {{num}}",
+      "pay-now": "Thanh toán Ngay",
+      "sub-order": "đơn phụ",
+      "track": "Theo dõi"
+    },
+    "order-status": {
+      "cancelled": "Đã hủy",
+      "completed": "Hoàn tất",
+      "confirmed": "Đã xác nhận",
+      "customer-canceled": "Khách hàng đã hủy",
+      "merchant-cancellation": "Người bán đã hủy",
+      "processing": "Đang xử lý"
+    },
+    "pay-status": {
+      "abolished": "Vô hiệu hóa",
+      "already-paid": "Đã thanh toán",
+      "failed": "Thanh toán không thành công",
+      "partial-payment": "Thanh toán từng phần",
+      "partial-refund": "Hoàn tiền từng phần",
+      "paying": "Đang thanh toán",
+      "refund-failed": "Hoàn tiền không thành công",
+      "refunded": "Đã hoàn tiền",
+      "refunding": "Đang tiến hành hoàn trả",
+      "timed-out": "Hết thời gian thực hiện thanh toán",
+      "unpaid": "Chưa thanh toán"
+    },
+    "refund-methods": {
+      "merchant": "Người bán lấy hàng",
+      "self": "Gửi lại bởi chính tôi"
+    },
+    "refund-type": {
+      "origin": "Hoàn tiền vào tài khoản đã dùng để thực hiện thanh toán",
+      "other": "Khác"
+    },
+    "seq-no": "Số {{id}}"
+  },
+  "payments-name": {
+    "COD": "Thanh toán khi giao hàng",
+    "Paypal": "Paypal",
+    "third-part": "Thẻ Tín Dụng"
+  },
+  "paypal": {
+    "error-expired": "Sản phẩm hết hạn",
+    "error-login-limit": "Bạn cần đăng nhập vào tài khoản để tiếp tục đặt hàng",
+    "error-network-error": "Mạng Lỗi",
+    "error-product-limit": "Đã vượt quá giới hạn số lượng mua của sản phẩm",
+    "error-shop-not-exit": "Cửa hàng này không tồn tại",
+    "error-sold-out": "Không đủ hàng tồn kho"
+  },
+  "productDetail": {
+    "activityToast": {
+      "price-limit": "Được phép mua tối đa {{num}} sản phẩm này",
+      "product-limit": "Chỉ mua {{stock}} đối với mặt hàng khuyến mại",
+      "title-limit": "Các sản phẩm dưới đây vượt quá giới hạn số lượng mua"
+    },
+    "addCart": "THÊM",
+    "bulkDiscount": {
+      "title": "Mua nhiều hơn tiết kiệm nhiều hơn!"
+    },
+    "commentsTitle": "đánh giá",
+    "default-placeholder": "Vui lòng chọn {{attrName}}",
+    "goOtherChannels": "Những kênh mua hàng khác",
+    "goOutsideOfAmazon": "Mua bên ngoài Amazon",
+    "goToAmazon": "Mua tại Amazon",
+    "goToAmazonByLink": "Mua tại Amazon",
+    "goToRakuten": "LOTTE",
+    "goToRakutenByLink": "Mua tại LOTTE",
+    "goToYahoo": "Yahoo",
+    "goToYahooByLink": "Mau tại Yahoo",
+    "inquiry": {
+      "cancel": "Hủy",
+      "email": "Email",
+      "emailEmptyErr": "Nhập email của bạn",
+      "emailFormatErr": "Vui lòng nhập email hợp lệ",
+      "inquiryTips1": "Vui lòng để lại tin nhắn cho chúng tôi, chúng tôi sẽ cố gắng liên hệ lại cho bạn trong thời gian sớm nhất",
+      "inquiryTips2": "Vui lòng cung cấp cho chúng tôi thêm thông tin của bạn để chúng tôi có thể cung cấp những dịch vụ thích hợp dành cho bạn",
+      "inquiryTitle": "Yêu cầu về sản phẩm",
+      "message": "Nội dung tin nhắn",
+      "messageEmptyErr": "Vui lòng nhập nội dung tin nhắn",
+      "messageLengthErr": "Tin nhắn của bạn có độ dài tối đa là 1500 từ",
+      "mobile": "Số điện thoại cố định",
+      "name": "Tên",
+      "optional": "Tùy chọn",
+      "region": "Quốc gia/Vùng Lãnh Thổ",
+      "submit": "Gửi",
+      "submitFailed": "Gửi tin nhắn thất bại, vui lòng gửi lại",
+      "submitSuccess": "Gửi tin nhắn thành công"
+    },
+    "morePaymentOptions": "Thêm phương thức thanh toán",
+    "network": {
+      "message2": "Truy xuất thông tin sản phẩm không thành công. Vui lòng thử lại sau"
+    },
+    "no-logistics-and-payment-information": "Chưa có phương thức giao vận và thành toán",
+    "no-product-introduction": "Chưa có thông tin giới thiệu sản phẩm",
+    "previewLinkToast": "Không hỗ trợ liên kết xem trước",
+    "recentlyViewedProducts": "Sản Phẩm Đã Xem Gần Đây",
+    "recommendTitle": "Bạn có thể thích",
+    "tabPanel": {
+      "comments": {
+        "empty": "Chưa có đánh giá",
+        "error": "Truy xuất đánh giá sản phẩm không thành công. Vui lòng thử lại sau"
+      },
+      "desc": "Không có mô tả",
+      "descFs": "Truy xuất dữ liệu không thành công. Vui lòng thử lại sau",
+      "pay": {
+        "text1": "Phương thức thanh toán",
+        "text2": "Chưa có phương thức thanh toán",
+        "text3": "Chưa có thông tin thanh toán giao vận"
+      },
+      "ship": {
+        "sh": {
+          "text1": "Phương thức"
+        },
+        "text2": "Chưa có phương thức giao hàng"
+      }
+    },
+    "tabs": {
+      "comments": "Đánh giá",
+      "description": "Mô tả",
+      "shippingPayment": "Giao hàng và thanh toán"
+    },
+    "thumbSwiper": {
+      "image": {
+        "alt": "Hình ảnh thu nhỏ của sản phẩm"
+      },
+      "share": {
+        "text": "Chia sẻ"
+      }
+    },
+    "toAmazon": "Amazon"
+  },
+  "productList": {
+    "all": {
+      "h1Title": "sản phẩm"
+    },
+    "container": {
+      "empty": {
+        "desc": "Trong danh mục này không có sản phẩm nào",
+        "description": "Hãy liên hệ nhân viên kinh doanh để được tư vấn",
+        "title": "Xin lỗi, sản phẩm này đã hết hàng"
+      },
+      "from": "Từ {{price}}",
+      "listItem": {
+        "addToCart": "THÊM VÀO GIỎ HÀNG",
+        "off": "Giảm {{value}}%",
+        "sale": "Buôn bán",
+        "save": "Giảm giá {{{priceDom}}}",
+        "saveByJs": "Giảm giá {{priceDom}}",
+        "saveRatio": "Giảm {{price}}%",
+        "sold": {
+          "out": "ĐÃ HẾT HÀNG"
+        },
+        "soldOut": "Đã hết hàng",
+        "toDetail": "Xem chi tiết"
+      },
+      "moreProductNum": "{{num}} sản phẩm",
+      "network": {
+        "message": "Không tìm thấy sản phẩm phù hợp. Vui lòng thử lại sau"
+      },
+      "oneProductNum": "{{num}} sản phẩm",
+      "productsNum": "{{num}} sản phẩm",
+      "show": "Hiện thị",
+      "sort": {
+        "newest": "Hàng mới về",
+        "option1": "Ngày Bán (từ mới nhất tới cũ nhất)",
+        "option2": "Ngày Bán (từ cũ nhất tới mới nhất)",
+        "option3": "Giá (cao tới thấp)",
+        "option4": "Giá (thấp tới cao)",
+        "priceHighToLow": "Giá từ cao tới thấp",
+        "priceLowToHigh": "Giá từ thấp tới cao",
+        "recommend": "Có thể bạn sẽ thích",
+        "sales": "Hàng bán chạy nhất",
+        "text1": "Tất cả sản phẩm",
+        "text2": "Sắp xếp theo"
+      },
+      "tradePopup": {
+        "addToCart": "THÊM VÀO GIỎ HÀNG",
+        "error1": "Còn lại {{stock}} chiếc. Vui lòng chọn lại số lượng phù hợp",
+        "error2": "Chỉ được mua tối đa {{saleMax}} chiếc. Vui lòng chọn lại số lượng phù hợp!",
+        "error3": "Vui lòng chọn số lượng!",
+        "error4": "Vui lòng chọn kích cỡ của sản phẩm đầu tiên!",
+        "error5": "Sản phẩm đã bán hết",
+        "error6": "Sản phẩm đã được di chuyển khỏi giá"
+      },
+      "viewAs": "Xem với vai trò"
+    },
+    "filterMenu": {
+      "filter": "Lọc",
+      "less": "bớt",
+      "more": "thêm",
+      "price": "Giá"
+    },
+    "gategoryMenu": {
+      "catalog": "DANH MỤC SẢN PHẨM",
+      "menuitem": "Tất cả sản phẩm"
+    },
+    "noProduct": "xin lỗi, không có sản phẩm nào trong bộ sưu tập này"
+  },
+  "productSearch": {
+    "container": {
+      "sort": {
+        "option1": "Thời gian lên kệ (từ mới nhất đến cũ nhất)",
+        "option2": "Thời gian lên kệ (từ cũ nhất đến mới nhất)",
+        "option3": "Giá (cao tới thấp)",
+        "option4": "Giá (thấp tới cao)"
+      }
+    },
+    "empty": {
+      "title1": "Chúng tôi khuyên bạn nên kiểm tra lại để tránh lỗi đánh máy,",
+      "title2": "và thử tìm kiếm lần nữa với các từ khóa ngắn"
+    },
+    "search": {
+      "backHome": "Trở về trang chủ",
+      "noRelatedResultFound": "Không tìm thấy kết quả phù hợp",
+      "results": "{{count}} kết quả",
+      "resultsFoundFor": "Tìm thấy {{count}} kết quả cho từ khóa \"{{keyword}}\"",
+      "searchNoResults": "Không tìm thấy kết quả phù hợp cho từ khóa \"{{keyword}}\" bạn đang tìm kiếm"
+    },
+    "serachTitle": {
+      "text1": "Không tìm thấy kết quả phù hợp"
+    },
+    "sortName": "Sắp xếp theo:",
+    "title": "Tìm kiếm"
+  },
+  "promotion": {
+    "activity-benefit": "Ưu đãi trong Sự kiện",
+    "activity-introduction": "Giới thiệu sự kiện",
+    "activity-scope": "Phạm vi Sự Kiện",
+    "all-product": "Tất cả sản phẩm",
+    "all-user": "Toàn bộ người dùng",
+    "all-vip": "Toàn bộ hội viên",
+    "bundle": {
+      "desc": "Thêm những mặt hàng này vào giỏ hàng để được chiết khấu <italic> {{value}} </italic>",
+      "title": "Mua theo gói"
+    },
+    "buy-again": "Mua thêm <0>{{value}}</0>",
+    "buy-again-piece": "Mua thêm {{value}} chiếc",
+    "coupon": "Phiếu ưu đãi",
+    "discount-benefit": "{{discount}} giảm",
+    "discounted": "Bạn đã tiết kiệm <0>{{value}}</0>",
+    "flash-sale": "Flash Sale",
+    "flash-sale-limit": "{{value}} là giới hạn mua của mỗi người",
+    "free-shipping": "Miễn phí giao hàng",
+    "full-amount": "<0>{{value}}</0> hoặc nhiều hơn",
+    "full-discount": "Khuyến Mại Giảm Giá",
+    "full-discount-benefit": "Khuyến Mại Giảm Giá",
+    "full-piece": "{{value}} chiếc hoạc nhiều hơn",
+    "full-reduction": "Khuyến Mãi",
+    "full-reduction-benefit": "Hoàn Phí Giao Dịch",
+    "get-discount-1": "Hưởng chiết khấu {{value}}",
+    "get-discount-2": "Hưởng {{value}}% ưu đãi",
+    "item-num": "{{value}} mặt hàng",
+    "label-vip": "Hội viên {{label}}",
+    "level-vip": "Hội viên cấp {{level}}",
+    "member-price": "Giá hội viên",
+    "more-combo": "Nhiều kiện hàng",
+    "only-one-sku": "Hiện sản phẩm chỉ có một thông số kỹ thuật",
+    "other-customer": "Khách hàng (người dùng chưa đặt hàng)",
+    "percent-piece-step1": "Mua càng nhiều <more>{{price}}</more> được giảm càng nhiều <more>{{percent}}</more>",
+    "percent-piece-step2": "Tiết kiệm <normal>{{percent}}</normal> already!<white /> Mua càng nhiều <more>{{price}}</more> được giảm càng nhiều <more>{{morePercent}}</more>",
+    "percent-piece-step3": "Xin chúc mừng! Bạn đã tiết kiệm được <normal>{{percent}}</normal> !",
+    "percent-price-step1": "Mua càng nhiều <more>{{price}}</more> được giảm càng nhiều <more>{{percent}}</more>",
+    "percent-price-step2": "Tiết kiệm <normal>{{percent}}</normal> already!<white /> Mua càng nhiều <more>{{price}}</more> được giảm càng nhiều <more>{{morePercent}}</more>",
+    "percent-price-step3": "Xin chúc mừng! Bạn đã tiết kiệm được <normal>{{percent}}</normal> !",
+    "permanent": "Dài hạn",
+    "piece-unit": "Chiếc",
+    "price-piece-step1": "Mua nhiều hơn <more>{{morePrice}}</more> tiết kiệm nhiều hơn <more>{{totalPrice}}</more>",
+    "price-piece-step2": "Tiết kiệm <normal>{{price}}</normal> already!<white /> Càng mua nhiều <more>{{morePrice}}</more> càng tiết kiệm nhiều <more>{{totalPrice}}</more>",
+    "price-piece-step3": "Xin chúc mừng! Bạn đã tiết kiệm được <normal>{{price}}</normal> !",
+    "price-price-step1": "Mua nhiều hơn <more>{{morePrice}}</more> tiết kiệm nhiều hơn <more>{{totalPrice}}</more>",
+    "price-price-step2": "Tiết kiệm <normal>{{price}}</normal> already!<white /> Càng mua nhiều <more>{{morePrice}}</more> càng tiết kiệm nhiều <more>{{totalPrice}}</more>",
+    "price-price-step3": "Xin chúc mừng! Bạn đã tiết kiệm được <normal>{{price}}</normal> !",
+    "price-unit": "YUAN",
+    "reduce": "Giảm <0>{{value}}</0>",
+    "reduce-again": "Giảm thêm <0>{{value}}</0>",
+    "reduce1": "Chiết khấu {{value}}",
+    "select-combo": "Chọn kiện hàng",
+    "select-product": "Mua hàng",
+    "select-sku": "Chọn thông số của sản phẩm",
+    "selected-count-activity-product": "Số {{selectCount}} sản phẩm được lựa chọn cho sự kiện",
+    "still-lacking": "Cần <0>{{value}}</0>",
+    "terms-and-conditions": "Điều Khoản và Điều Kiện",
+    "whole-full-amount-discount": "Giảm <italic>{{content}}</italic>% với <italic>{{condition}}</italic>",
+    "whole-full-amount-reduce": "Giảm <italic>{{content}}</italic> với <italic>{{condition}}</italic>",
+    "whole-full-piece-discount": "Giảm <italic>{{content}}</italic>% khi <italic>{{condition}}</italic> chiếc",
+    "whole-full-piece-reduce": "Giảm <italic>{{content}}</italic> với <italic>{{condition}}</italic> chiếc"
+  },
+  "sales": {
+    "bundle": {
+      "saveTip": "Tiết kiệm {{amount}} khi mua chung",
+      "title": "Cùng mua chung"
+    },
+    "customer-purchase-limit": "{{count}} là giới hạn số lượng mua cho mỗi người dùng",
+    "customer-purchase-limit-each-item": "Giới hạn mua {{count}} mỗi sản phẩm mỗi người",
+    "discount-coupon": {
+      "applied": "Đã áp dụng",
+      "apply": "Áp Dụng",
+      "applyFail": "Đăng ký không thành công.",
+      "applySuccess": "Áp dụng mã giảm giá thành công.",
+      "coupon-content": {
+        "discount1": "{discount} giảm",
+        "discount2": "Miễn phí giao hàng",
+        "shippingRateBelow": "Cước vận chuyển dưới {value}",
+        "threshold": "Mua {threshold}",
+        "until": "Hợp lệ cho đến: {{endTime}}"
+      },
+      "coupon-label": "Phiếu ưu đãi:",
+      "couponNoFound": "Mã giảm giá không tồn tại.",
+      "popupLabel": "Phiếu giảm giá cửa hàng:"
+    },
+    "flash-sale-text": "Giảm giá thần tốc",
+    "flash-sale-tips": "Giới hạn mua: Số lượng {{count}}",
+    "hot-sale": "Hàng Hot!",
+    "promotion": {
       "reminder": {
         "benefit1": {
           "threshold0": {
@@ -30,6 +767,23 @@
             "step3": "Xin chúc mừng! Bạn đã tiết kiệm được {{saved}}!"
           }
         },
+        "benefit11": {
+          "threshold1": {
+            "step1": {
+              "nextFree": "Mua thêm {{threshold}} sản phẩm, nhận ngay một sản phẩm miễn phí trong danh sách mua",
+              "normal": "Mua thêm {{threshold}} sản phẩm, hưởng ngay {{willSave}} ưu đãi trên một sản phẩm trong danh sách mua"
+            },
+            "step2": {
+              "free": "Xin chúc mừng! Nhận ngay một sản phẩm miễn phí trong danh sách mua",
+              "nextFree": "Xin chúc mừng! Tiết kiệm {{saved}}, {{br}}Mua thêm {{threshold}} sản phẩm, nhận ngay một sản phẩm miễn phí trong danh sách mua",
+              "normal": "Xin chúc mừng! Tiết kiệm {{saved}}, {{br}}Mua thêm {{threshold}} sản phẩm, hưởng ngay ưu đãi {{willSave}} trên một sản phẩm trong danh sách mua"
+            },
+            "step3": {
+              "free": "Xin chúc mừng! Nhận ngay một sản phẩm miễn phí trong danh sách mua",
+              "normal": "Xin chúc mừng! Nhận ngay ưu đãi {{saved}} trên một sản phẩm trong danh sách mua"
+            }
+          }
+        },
         "benefit2": {
           "threshold0": {
             "step1": "Mua thêm {{threshold}} để tiết kiệm thêm {{willSave}}",
@@ -42,23 +796,6 @@
             "step3": "Xin chúc mừng! Bạn đã tiết kiệm được {{saved}}!"
           }
         },
-        "benefit11": {
-          "threshold1": {
-            "step1": {
-              "normal": "Mua thêm {{threshold}} sản phẩm, hưởng ngay {{willSave}} ưu đãi trên một sản phẩm trong danh sách mua",
-              "nextFree": "Mua thêm {{threshold}} sản phẩm, nhận ngay một sản phẩm miễn phí trong danh sách mua"
-            },
-            "step2": {
-              "normal": "Xin chúc mừng! Tiết kiệm {{saved}}, {{br}}Mua thêm {{threshold}} sản phẩm, hưởng ngay ưu đãi {{willSave}} trên một sản phẩm trong danh sách mua",
-              "free": "Xin chúc mừng! Nhận ngay một sản phẩm miễn phí trong danh sách mua",
-              "nextFree": "Xin chúc mừng! Tiết kiệm {{saved}}, {{br}}Mua thêm {{threshold}} sản phẩm, nhận ngay một sản phẩm miễn phí trong danh sách mua"
-            },
-            "step3": {
-              "normal": "Xin chúc mừng! Nhận ngay ưu đãi {{saved}} trên một sản phẩm trong danh sách mua",
-              "free": "Xin chúc mừng! Nhận ngay một sản phẩm miễn phí trong danh sách mua"
-            }
-          }
-        },
         "benefit9": {
           "threshold1": {
             "step1": "Mua {{threshold}} mảnh nữa, trong đó {{willSave}} mảnh là miễn phí",
@@ -67,1218 +804,416 @@
           }
         }
       },
-      "tags-label": "Chiết khấu:"
-    },
-    "bundle": {
-      "title": "Cùng mua chung",
-      "saveTip": "Tiết kiệm {{amount}} khi mua chung"
+      "tags-label": "Chiết khấu:",
+      "tags": {
+        "benefit1": {
+          "threshold0": "Mua {{threshold}} tiết kiệm {{save}}",
+          "threshold1": "Mua {{threshold}} Nhận ngay {{save}}"
+        },
+        "benefit11": {
+          "threshold1": {
+            "free": "Mua {{threshold}} sản phẩm, nhận ngay một sản phẩm miễn phí trong danh sách mua",
+            "normal": "Mua {{threshold}} sản phẩm, hưởng ngay ưu đãi {{save}} trên một sản phẩm trong danh sách mua"
+          }
+        },
+        "benefit2": {
+          "threshold0": "Mua {{threshold}} tiết kiệm {{save}}",
+          "threshold1": "Mua {{threshold}} Nhận ngay {{save}}"
+        }
+      }
     },
     "selected-count-activity-product": "Số {{selectCount}} sản phẩm được lựa chọn cho sự kiện",
-    "customer-purchase-limit": "{{count}} là giới hạn số lượng mua cho mỗi người dùng",
-    "customer-purchase-limit-each-item": "Giới hạn mua {{count}} mỗi sản phẩm mỗi người",
-    "flash-sale-tips": "Giới hạn mua: Số lượng {{count}}",
-    "flash-sale-text": "Giảm giá thần tốc",
-    "hot-sale": "Hàng Hot!",
-    "sold": "Đã bán {{count}}",
-    "discount-coupon": {
-      "coupon-label": "Phiếu ưu đãi:",
-      "coupon-content": {
-        "threshold": "Mua {threshold}",
-        "discount1": "{discount} giảm",
-        "discount2": "Miễn phí giao hàng",
-        "shippingRateBelow": "Cước vận chuyển dưới {value}",
-        "until": "Hợp lệ cho đến: {{endTime}}"
-      },
-      "couponNoFound": "Mã giảm giá không tồn tại.",
-      "applySuccess": "Áp dụng mã giảm giá thành công.",
-      "applyFail": "Đăng ký không thành công.",
-      "popupLabel": "Phiếu giảm giá cửa hàng:",
-      "apply": "Áp Dụng",
-      "applied": "Đã áp dụng"
-    }
+    "sold": "Đã bán {{count}}"
   },
-  "header": {
-    "searchItems": "Tìm kiếm sản phẩm",
-    "searchInputPlaceholder": "Gõ từ khóa tìm kiếm vào đây và nhấp vào tìm kiếm",
-    "navItemAll": "Tất cả",
-    "search": "Tìm kiếm",
-    "cart": "Giỏ Hàng Của Bạn",
-    "center": "Trung tâm",
-    "login": "Đăng nhập",
-    "logout": "Thoát",
-    "noCurrencyFallback": "Không tìm thấy loại tiền tệ liên quan"
+  "subscription": {
+    "not-subscript-via-line-facebook": "Không thể đăng ký nhận thông báo về đơn hàng qua LINE hoặc Facebook",
+    "subscript-via-line-facebook": "Đăng ký nhận thông báo về đơn hàng qua LINE hoặc Facebook"
   },
-  "common": {
-    "title": "Tiêu đề",
-    "category": "Danh mục",
-    "outOfStock": "Hết hàng trong kho",
-    "subTotal": "Cộng",
-    "descountPrice": "Giá Sale",
-    "total": "Tổng cộng",
-    "soldOut": "Đã Hết Hàng",
-    "settleMent": "Mua ngay",
-    "selectProduct": "Chọn sản phẩm",
-    "hasSelected": "Đã chọn",
-    "pieces": "Chiếc",
-    "discount": "Giảm giá",
-    "piece": "chiếc",
-    "remove": "Xóa",
-    "cancel": "Hủy",
-    "tips": "Nhắc nhở",
-    "checkout": "THANH TOÁN",
-    "finish": "Hoàn thành",
-    "username": "Tên",
-    "mobile-phone": "Số điện thoại di động",
-    "tel-phone": "Số điện thoại cố định",
-    "meno": "Ghi chú",
-    "package": "Gói hàng",
-    "login": "Đăng nhập",
-    "email": "Địa Chỉ Email",
-    "email2": "Thư điện tử",
-    "order": "Đơn hàng",
-    "remain": "Nhắc nhở",
-    "operation": "Thực hiện",
-    "bank-name": "Tên ngân hàng",
-    "bank-card-number": "Số thẻ ngân hàng",
-    "bank-Account": "Số tài khoản",
-    "bank-Account2": "Số tài khoản",
-    "close": "Đóng",
-    "audit": "Đánh giá",
-    "tax": "Các loại thuế và phí",
-    "mobile": "Số điện thoại cố định",
-    "address": "Địa chỉ",
-    "logistics": "Giao hàng",
-    "backout": "Hoàn tác",
-    "confirm": "OK",
-    "upload": "Tải lên",
-    "error-stack": "Sắp xếp sai",
-    "amount": "Số lượng",
-    "stock-limit": "Chỉ còn {{stock}}",
-    "back-to-user-center": "Trở về Trung Tâm Người Dùng",
-    "member-login": "Đăng nhập dành cho hội viên",
-    "contact-information": "Thông tin liên hệ",
-    "back-to-cart": "Trở về giỏ hàng",
-    "recommend": "Có thể bạn sẽ thích",
-    "free-shipping": "Miễn phí giao hàng",
-    "apply": "Áp Dụng",
-    "anonymous": "Ẩn Danh",
-    "logistics-and-payment": "Giao nhận và thanh toán",
-    "payment": "Thanh toán",
-    "payment-2": "Thanh Toán Ngay",
-    "modify": "Thay đổi",
-    "cardholder-name": "Tên chủ thẻ",
-    "use-address": "Địa Chỉ Được Sử Dụng",
-    "default-address": "Địa chỉ mặc định",
-    "use-new-address": "Sử dụng địa chỉ mới",
-    "sign-out": "Thoát",
-    "enter-username": "Nhập tên người dùng",
-    "enter-email": "Nhập email của bạn",
-    "enter-mobile-phone": "Nhập số điện thoại di động",
-    "order-evaluation": "Đánh giá đơn hàng",
-    "submit-evaluation": "Gửi đánh giá",
-    "anonymous-evaluation": "Đánh Giá Ẩn Danh",
-    "discountOff": "Giảm giá",
-    "discountDesc": "Mô Tả Hàng Hóa",
-    "freightDesc": "Mô tả phí giao hàng",
-    "taxDesc": "Mô tả các khoản thuế và phí",
-    "returnMoney": "Hoàn tiền",
-    "returnProgress": "Quá trình hoàn tiền",
-    "returnInfo": "Thông tin hoàn tiền",
-    "rollback": "Rút tiền",
-    "applyDate": "Ngày Yêu Cầu",
-    "evaluation": "Đánh giá",
-    "upload-image": "Tải lên một hình ảnh",
-    "page": "trang",
-    "day": "ngày",
-    "days": "ngày",
-    "buy-now": "MUA NGAY",
-    "ok": "OK",
-    "continue": "Tiếp tục",
-    "contactUs": "LIÊN HỆ CHÚNG TÔI",
-    "productError": "Không tìm thấy sản phẩm phù hợp. Vui lòng thử lại sau",
-    "home": "Trang chủ"
+  "tips": {
+    "address-no-logistics": "Không có phương thức giao hàng nào áp dụng cho địa chỉ hiện tại",
+    "and": "và",
+    "bind-change-email": "Kết nối/Thay đổi email",
+    "bind-change-mobile-phone-number": "Kết nối/Thay đổi số điện thoại di động",
+    "bind-success": "Đã kết nối",
+    "cancel-apply-sent": "Yêu cầu hủy đã được gửi đi",
+    "cancel-order-fail": "Lệnh hủy đơn hàng không thành công, vui lòng thử lại",
+    "cancel-reason-feedback": "Hãy cho chúng tôi biết lý do bạn hủy đơn hàng để chúng tôi có thể phục vụ bạn tốt hơn trong tương lai. Ngay khi đơn hàng được hủy thành công, bạn sẽ được hoàn tiền. Chúng tôi mong bạn sẽ ghé thăm cửa hàng vào lần sau!",
+    "cancel-success-notice": "Bạn sẽ nhận được email thông báo sau khi yêu cầu hủy đơn hàng của bạn được xử lý thành công, xin cảm ơn!",
+    "change-binding-after-verification": "Sau khi xác minh, bạn có thể thực hiện kết nối/thay đổi {{value}}",
+    "change-heart": "Tôi đã thay đổi ý định",
+    "change-item": "Tôi muốn thay đổi (những) mặt hàng đã mua",
+    "country-address-fail": "Người bán có trụ sở tại quốc gia theo địa chỉ đã nhập không chịu trách nhiệm thanh toán phí giao hàng. Vui lòng lựa chọn thủ công",
+    "enter-address-first": "Vui lòng điền địa chỉ trước",
+    "enter-bank-card-number": "Vui lòng nhập số thẻ ngân hàng!",
+    "enter-bank-name": "Vui lòng nhập tên ngân hàng!",
+    "enter-email": "Vui lòng điền email",
+    "enter-name": "Vui lòng nhập tên!",
+    "enter-tel-number": "Vui lòng điền số điện thoại cố định",
+    "error-obtaining-support-logistics-country": "Phát sinh lỗi khi truy xuất các quốc gia hỗ trợ giao vận",
+    "expand-order-summary": "Hiển thị đơn hàng",
+    "fail-contact": "Nếu yêu cầu hủy đơn hàng của bạn không thành công, vui lòng tham khảo mục Phản hồi Đơn hàng giữa Người bán/Người mua bên dưới",
+    "fill-cancel-reason": "Vui lòng nhập lý do hủy đơn hàng",
+    "forget-password": "Quên mật khẩu",
+    "get-checkout-config-fail": "Lỗi truy xuất cấu hình thanh toán",
+    "get-checkout-detail-fail": "Lỗi truy xuất chi tiết thanh toán",
+    "i-agree-with-the-shop": "Tôi đồng ý với",
+    "image-size-less-than": "Các hình ảnh có kích thước nhỏ hơn {{max}} MB",
+    "img-name-too-long": "Tên của hình ảnh quá dài",
+    "img-size-too-large": "Xin lỗi! Kích thước hình ảnh vượt quá giới hạn cho phép!",
+    "incorrect-delivery-or-payment-information": "Sai thông tin giao hàng hoặc thông tin thanh toán",
+    "login": "ĐĂNG KÝ",
+    "logistics-no-pre-selection": "Không được chọn trước khi giao hàng",
+    "logistics-pre-selection": "Được chọn trước khi giao hàng",
+    "max-upload-image": "Bạn có thể tải tối đa {{max}} hình ảnh lên",
+    "max-upload-img": "Xin lỗi! Số hình ảnh bạn tải lên đã đạt mức giới hạn {{maxNum}} hình ảnh được phép tải lên!",
+    "more-than-0-int": "Vui lòng nhập một số lớn hơn 0",
+    "need-phone-number-to-deliver": "Trong trường hợp chúng tôi cần liên hệ với bạn để xử lý công việc liên quan tới đơn hàng của bạn",
+    "no-logistics-available": "Không có phương thức giao hàng khả dụng",
+    "no-order-information-please-confirm": "Truy xuất thông tin đơn hàng không thành công. Vui lòng kiểm tra để đảm bảo rằng bạn đã điền đúng số đơn đặt hàng",
+    "no-order-number-please-confirm": "Truy xuất số đơn hàng không thành công. Vui lòng kiểm tra để đảm bảo rằng bạn đã điền đúng số đơn đặt hàng",
+    "or-use-the-following-method-to-log-in": "Hoặc đăng ký bằng các cách sau",
+    "order-creation-exception": "Đặt hàng không thành công",
+    "other-reason": "Lý do khác",
+    "password-can-be-changed-after-verification": "Sau khi xác minh, bạn có thể thực hiện thay đổi mật khẩu",
+    "pay-params-error": "Truy xuất các thông số thanh toán không thành công, vui lòng thử lại",
+    "paypal-country-fail": "Quốc gia kèm theo tài khoản Paypal này không nằm trong danh sách những quốc gia thanh toán phí giao hàng. Vui lòng lựa chọn thủ công",
+    "please-complete-the-payment-method-content": "Vui lòng hoàn tất phương thức thanh toán",
+    "please-read-and-agree-to-the-user-agreement-first": "Vui lòng đọc và đồng ý với thỏa thuận dành cho người dùng trước",
+    "price-more-expensive": "Tìm thấy giá thấp hơn ở những nơi khác",
+    "product-abnormal-back-to-cart": "Tình trạng sản phẩm bị lỗi, vui lòng trở về giỏ hàng và thử lại",
+    "put-up-order-summary": "Ẩn đơn hàng",
+    "register": "Đăng ký",
+    "repeat-buy": "Mua tiếp",
+    "reset-password": "Bạn đang thực hiện đặt lại mật khẩu cho tài khoản {{account}}",
+    "sale-too-slow": "Trì hoãn giao hàng",
+    "select-cancel-reason": "Vui lòng chọn lý do hủy",
+    "select-return-product-first": "Vui lòng chọn sản phẩm hoàn trả trước",
+    "set-new-password": "Đặt lại mật khẩu",
+    "sku-change-tips": "Có sự thay đổi trạng thái đơn hàng, vui lòng xác nhận lại phương thức giao hàng/phương thức thanh toán của bạn",
+    "sure-cancel-order": "Bạn có chắc rằng bạn muốn hủy đơn hàng này không?",
+    "update-password": "Thay đổi mật khẩu",
+    "update-success": "Đã thay đổi",
+    "upload-image-fail": "Tải hình ảnh {{name}} lên không thành công",
+    "user-agreement": "Điều khoản Người dùng của cửa hàng",
+    "verification-code-has-been-sent-to-your-account": "Mã xác minh đã được gửi tới tài khoản của bạn",
+    "verify-account-to-reset-password": "Vui lòng xác minh tài khoản và cài lại mật khẩu"
   },
-  "modal": {
-    "iKnow": "Tôi đã hiểu",
-    "goCart": "Đến giỏ hàng",
-    "exceedCartTitle": "Xin lỗi! Số lượng sản phẩm trong giỏ hàng vượt quá số lượng giới hạn mua.",
-    "exceedCartContent": "Bạn có thể thêm sản phẩm này vào giỏ hàng bằng cách mua trước hoặc xóa bớt các sản phẩm khác trong giỏ hàng"
-  },
-  "footer": {
-    "followus": "THEO DÕI CHÚNG TÔI",
-    "subscribeBarPlaceholder": "Điền địa chỉ Email của bạn vào đây",
-    "subscribeSuccess": "Đăng ký theo dõi thành công",
-    "subscribeError": "Đăng ký theo dõi không thành công",
-    "subscribeRegExpError": "Lỗi định dạng địa chỉ Email",
-    "copyright": "Đã Được Đăng Ký Bản Quyền"
-  },
-  "productList": {
-    "gategoryMenu": {
-      "catalog": "DANH MỤC SẢN PHẨM",
-      "menuitem": "Tất cả sản phẩm"
-    },
-    "filterMenu": {
-      "filter": "Lọc",
-      "price": "Giá"
-    },
-    "container": {
-      "from": "Từ {{price}}",
-      "empty": {
-        "desc": "Trong danh mục này không có sản phẩm nào",
-        "title": "Xin lỗi, sản phẩm này đã hết hàng",
-        "description": "Hãy liên hệ nhân viên kinh doanh để được tư vấn"
-      },
-      "sort": {
-        "text1": "Tất cả sản phẩm",
-        "text2": "Sắp xếp theo",
-        "recommend": "Có thể bạn sẽ thích",
-        "sales": "Hàng bán chạy nhất",
-        "newest": "Hàng mới về",
-        "priceLowToHigh": "Giá từ thấp tới cao",
-        "priceHighToLow": "Giá từ cao tới thấp",
-        "option1": "Ngày Bán (từ mới nhất tới cũ nhất)",
-        "option2": "Ngày Bán (từ cũ nhất tới mới nhất)",
-        "option3": "Giá (cao tới thấp)",
-        "option4": "Giá (thấp tới cao)"
-      },
-      "network": {
-        "message": "Không tìm thấy sản phẩm phù hợp. Vui lòng thử lại sau"
-      },
-      "tradePopup": {
-        "error1": "Còn lại {{stock}} chiếc. Vui lòng chọn lại số lượng phù hợp",
-        "error2": "Chỉ được mua tối đa {{saleMax}} chiếc. Vui lòng chọn lại số lượng phù hợp!",
-        "error3": "Vui lòng chọn số lượng!",
-        "error4": "Vui lòng chọn kích cỡ của sản phẩm đầu tiên!",
-        "error5": "Sản phẩm đã bán hết",
-        "error6": "Sản phẩm đã được di chuyển khỏi giá",
-        "addToCart": "THÊM VÀO GIỎ HÀNG"
-      },
-      "listItem": {
-        "sold": {
-          "out": "ĐÃ HẾT HÀNG"
-        },
-        "off": "Giảm {{value}}%",
-        "addToCart": "THÊM VÀO GIỎ HÀNG",
-        "toDetail": "Xem chi tiết"
-      },
-      "show": "Hiện thị",
-      "viewAs": "Xem với vai trò",
-      "productsNum": "{{num}} sản phẩm"
-    }
-  },
-  "productSearch": {
-    "serachTitle": {
-      "text1": "Không tìm thấy kết quả phù hợp"
-    },
-    "search": {
-      "backHome": "Trở về trang chủ",
-      "resultsFoundFor": "Tìm thấy {{count}} kết quả cho từ khóa \"{{keyword}}\"",
-      "results": "{{count}} kết quả",
-      "noRelatedResultFound": "Không tìm thấy kết quả phù hợp",
-      "searchNoResults": "Không tìm thấy kết quả phù hợp cho từ khóa \"{{keyword}}\" bạn đang tìm kiếm"
-    },
-    "empty": {
-      "title1": "Chúng tôi khuyên bạn nên kiểm tra lại để tránh lỗi đánh máy,",
-      "title2": "và thử tìm kiếm lần nữa với các từ khóa ngắn"
-    },
-    "sortName": "Sắp xếp theo:",
-    "container": {
-      "sort": {
-        "option1": "Thời gian lên kệ (từ mới nhất đến cũ nhất)",
-        "option2": "Thời gian lên kệ (từ cũ nhất đến mới nhất)",
-        "option3": "Giá (cao tới thấp)",
-        "option4": "Giá (thấp tới cao)"
-      }
-    }
-  },
-  "collection": {
-    "all": {
-      "title": "Bộ Sưu Tập",
-      "h1Title": "Loại"
-    }
-  },
-  "productDetail": {
-    "goToAmazon": "Mua tại Amazon",
-    "goOutsideOfAmazon": "Mua bên ngoài Amazon",
-    "goOtherChannels": "Những kênh mua hàng khác",
-    "toAmazon": "Amazon",
-    "goToRakuten": "LOTTE",
-    "goToYahoo": "Yahoo",
-    "goToAmazonByLink": "Mua tại Amazon",
-    "goToRakutenByLink": "Mua tại LOTTE",
-    "goToYahooByLink": "Mau tại Yahoo",
-    "recentlyViewedProducts": "Sản Phẩm Đã Xem Gần Đây",
-    "activityToast": {
-      "product-limit": "Chỉ mua {{stock}} đối với mặt hàng khuyến mại",
-      "price-limit": "Được phép mua tối đa {{num}} sản phẩm này",
-      "title-limit": "Các sản phẩm dưới đây vượt quá giới hạn số lượng mua"
-    },
-    "tabs": {
-      "description": "Mô tả",
-      "shippingPayment": "Giao hàng và thanh toán",
-      "comments": "Đánh giá"
-    },
-    "recommendTitle": "Bạn có thể thích",
-    "commentsTitle": "đánh giá",
-    "network": {
-      "message2": "Truy xuất thông tin sản phẩm không thành công. Vui lòng thử lại sau"
-    },
-    "thumbSwiper": {
-      "image": {
-        "alt": "Hình ảnh thu nhỏ của sản phẩm"
-      },
-      "share": {
-        "text": "Chia sẻ"
-      }
-    },
-    "tabPanel": {
-      "desc": "Không có mô tả",
-      "descFs": "Truy xuất dữ liệu không thành công. Vui lòng thử lại sau",
-      "ship": {
-        "sh": {
-          "text1": "Phương thức"
-        },
-        "text2": "Chưa có phương thức giao hàng"
-      },
-      "pay": {
-        "text1": "Phương thức thanh toán",
-        "text2": "Chưa có phương thức thanh toán",
-        "text3": "Chưa có thông tin thanh toán giao vận"
-      },
-      "comments": {
-        "empty": "Chưa có đánh giá",
-        "error": "Truy xuất đánh giá sản phẩm không thành công. Vui lòng thử lại sau"
-      }
-    },
-    "no-product-introduction": "Chưa có thông tin giới thiệu sản phẩm",
-    "no-logistics-and-payment-information": "Chưa có phương thức giao vận và thành toán",
-    "addCart": "THÊM",
-    "default-placeholder": "Vui lòng chọn {{attrName}}",
-    "inquiry": {
-      "inquiryTitle": "Yêu cầu về sản phẩm",
-      "inquiryTips1": "Vui lòng để lại tin nhắn cho chúng tôi, chúng tôi sẽ cố gắng liên hệ lại cho bạn trong thời gian sớm nhất",
-      "email": "Email",
-      "message": "Nội dung tin nhắn",
-      "inquiryTips2": "Vui lòng cung cấp cho chúng tôi thêm thông tin của bạn để chúng tôi có thể cung cấp những dịch vụ thích hợp dành cho bạn",
-      "optional": "Tùy chọn",
-      "name": "Tên",
-      "mobile": "Số điện thoại cố định",
-      "region": "Quốc gia/Vùng Lãnh Thổ",
-      "cancel": "Hủy",
-      "submit": "Gửi",
-      "emailEmptyErr": "Nhập email của bạn",
-      "messageEmptyErr": "Vui lòng nhập nội dung tin nhắn",
-      "emailFormatErr": "Vui lòng nhập email hợp lệ",
-      "messageLengthErr": "Tin nhắn của bạn có độ dài tối đa là 1500 từ",
-      "submitSuccess": "Gửi tin nhắn thành công",
-      "submitFailed": "Gửi tin nhắn thất bại, vui lòng gửi lại"
-    },
-    "previewLinkToast": "Không hỗ trợ liên kết xem trước",
-    "morePaymentOptions": "Thêm phương thức thanh toán",
-    "bulkDiscount": {
-      "title": "Mua nhiều hơn tiết kiệm nhiều hơn!"
+  "title": {
+    "policy": {
+      "privacy": "Chính Sách Bảo Mật Của Trang Web",
+      "refund": "Chính sách hoàn tiền",
+      "service": "Điều Khoản Dịch Vụ",
+      "shipping": "Chính sách giao hàng"
     }
   },
   "trade": {
-    "contact": "Liên hệ",
-    "can-not-submit-order": "Không thể gửi đơn hàng",
-    "sorry-rechoose-longtips": "Xin lỗi, bạn đã chọn mua một sản phẩm không hợp lệ. Vui lòng chọn lại",
-    "product-amount": "Cộng",
-    "will-discount": "Giảm giá",
-    "some-discount-limit-to-pay-and-delivery": "Một số chiết khấu chỉ dành cho một phương thức giao vận/phương thức thanh toán nhất định",
-    "total": "Tổng cộng",
-    "go-on-shopping": "Tiếp Tục Mua Hàng",
-    "man-piece-share": "Khuyến khích mua {{count}} chiếc hoặc nhiều hơn nữa",
-    "man-money-share": "Khuyến khích mua {{money}} tiền hàng và nhiều hơn nữa",
-    "man-piece-reduce": "Áp dụng chiết khấu khi mua từ {{count}} chiếc",
-    "man-money-reduce": "Áp dụng chiết khấu cho đơn hàng trị giá từ {{money}}",
-    "invalid-product": "Sản phẩm không hợp lệ",
-    "delete-invalid-product": "Xóa những sản phẩm không hợp lệ",
-    "remove-product": "Xóa sản phẩm",
-    "sure-remove-this-product": "Bạn có chắc rằng bạn muốn xóa những sản phẩm này không?",
-    "order-created-but-data-fail": "Đã khởi tạo đơn đặt hàng nhưng có lỗi trong việc trả về dữ liệu ...",
+    "activity-price-limit": "Bạn chỉ có thể mua {{num}} chiếc của sản phẩm này với mức giá khuyến mại",
+    "activity-product-limit": "Bạn có thể mua nhiều nhất {{stock}} sản phẩm với mức chiết khấu cùng một lúc",
+    "activity-title-limit": "Sản phẩm bên dưới vượt quá giới hạn mua, vẫn tiến hành thanh toán?",
+    "add-to-cart-fail": "Xin lỗi! Thêm hàng vào giỏ hàng không thành công. Vui lòng thử lại!",
+    "after-sale-order": "Đơn hàng sau bán",
     "agree-user-terms-first": "Vui lòng đồng ý với Điều khoản dành cho Người dùng đầu tiên",
-    "recieve-address-unavailable-rechoose": "Không có phương thức giao nhận nào khả dụng đến địa chỉ của người nhận. Vui lòng Trở về thao tác chọn lại",
-    "please-fill-meno": "Vui lòng nhập các ghi chú",
-    "please-choose-delivery-way": "Vui lòng lựa chọn phương thức giao nhận",
-    "please-choose-pay-way": "Vui lòng lựa chọn phương thức thanh toán",
-    "bad-userinfo-or-in-blocklist": "Thông tin người dung bị lỗi hoặc người dùng bị chặn",
-    "bad-userinfo": "Thông tin người dung bị lỗi",
-    "fail-get-product-back-cart": "Lỗi không truy xuất được thông tin sản phẩm đã kiểm tra. Vui lòng Trở về giỏ hàng và thử gửi lại",
-    "fill-info": "Thông tin",
+    "and": "và",
+    "apply-refund": "Áp dụng cho việc trả hàng",
+    "apply-time": "Thời gian yêu cầu",
+    "at-least-comment-one-before-submit": "Vui lòng dành thời gian của bạn để đánh giá ít nhất một sản phẩm trước khi gửi đơn hàng",
+    "audit-refuse": "Không phê duyệt",
     "back-prev-step": "Trở về thông tin",
     "back-prev-step2": "Trở về giao hàng",
-    "next-step": "Tiếp tục",
-    "next-step-shipment": "Tiếp tục giao hàng",
-    "next-step-payment": "Đến thanh toán được chọn",
-    "submit-order": "Hoàn thành đơn hàng",
-    "i-agree-website": "Tôi đồng ý với trang web của",
-    "service-terms": "Điều Khoản Dịch Vụ",
-    "and": "và",
-    "private-policy": "Chính Sách Bảo Mật Của Trang Web",
-    "fast-checkout": "Thanh Toán Nhanh",
-    "or-fill-info": "HOẶC",
-    "not-support-paypal": "Bên bán hàng không hỗ trợ PayPal",
-    "service-fee": "Phí dịch vụ",
-    "pay-way": "Phương thức thanh toán",
-    "pay-way-logo-and-more": "và hơn thế",
-    "jump-to-pay-longtips": "Sau khi nhấp vào “Hoàn thành đơn hàng”, bạn sẽ được chuyển hướng đến {{payChannel}} để hoàn tất giao dịch mua của mình một cách an toàn",
-    "reciever-info": "Địa chỉ giao hàng",
-    "reciever-to": "Địa chỉ nhận hàng",
-    "use-customer-info": "Sử dụng thông tin khách hàng",
-    "please-input-field": "Vui lòng nhập {{field}}",
-    "reciever-name": "Họ của người nhận",
-    "reciever-fullname": "Tên đầy đủ của người nhận",
-    "field-can-not-longer-than": "Không thể nhập quá {{length}} ký tự vào trường {{field}}",
+    "backout-apply": "Thu hồi yêu cầu",
+    "backout-refund-apply": "Thu hồi yêu cầu hoàn trả",
+    "bad-userinfo": "Thông tin người dung bị lỗi",
+    "bad-userinfo-or-in-blocklist": "Thông tin người dung bị lỗi hoặc người dùng bị chặn",
+    "billing-address-abnormal": "Lỗi địa chỉ trên hóa đơn",
+    "billing-address": {
+      "desc": "Chọn địa chỉ phù hợp với thông tin trên thẻ hoặc thông tin trong phương thức thanh toán của bạn",
+      "input-email": "Bạn cần cung cấp địa chỉ email trong phương thức thanh toán để nhận thông tin thanh toán",
+      "option-another": "Sử dụng một địa chỉ khác để ghi trên hóa đơn",
+      "option-same": "Giống như địa chỉ giao hàng",
+      "title": "Địa chỉ trên hóa đơn"
+    },
+    "buy-number-greater-then-stock": "Vui lòng chọn số lượng lớn hơn 1 và nhỏ hơn số lượng hàng tồn kho!",
+    "can-get": "Còn hàng",
     "can-not-empty": "Không được để trống",
-    "must-fill": "Bắt buộc",
-    "must-choose": "Bắt buộc chọn",
-    "must-select": "Tùy chọn bắt buộc",
-    "must-agree-policy": "Bạn phải đồng ý với chính sách đổi trả để tiếp tục!",
-    "optional-fill": "Tùy chọn",
-    "other-info": "Thông tin khác",
-    "need-choose-delivery-way": "Yêu cầu bắt buộc chọn một phương thức giao nhận phù hợp cho tất cả các phần",
-    "your-delivery-need-choose-store": "Yêu cầu bắt buộc nhập thông tin cửa hàng cho tất cả các phương thức giao nhận",
-    "supermarket-self-pick": "Tự lấy hàng tại kho",
+    "can-not-submit-order": "Không thể gửi đơn hàng",
+    "can-refund-number": "Số lượng hàng có thể hoàn trả",
+    "cancel-order": "Hủy đơn hàng",
+    "choose-refund-product": "Chọn sản phẩm để tiến hành hoàn trả",
+    "choose-refund-reason": "Vui lòng chọn lý do trả hàng",
+    "choose-store": "Thay đổi cửa hàng",
+    "come-way-return": "Hoàn tiền vào tài khoản đã dùng để thực hiện thanh toán",
+    "comment-order": "Đánh giá đơn hàng",
+    "comment-product": "Đánh giá sản phẩm",
+    "complete-payment": "Hoàn thành thanh toán",
+    "confirm-email-send-to-you": "Thư xác nhận về việc hoàn trả đã được gửi đến email của bạn",
+    "confirm-refund": "Xác nhận việc hoàn trả",
+    "contact": "Liên hệ",
+    "coupon": "Phiếu ưu đãi",
+    "coupon-code": "Mã Phiếu Ưu Đãi",
+    "coupon-code-offer": "Phiếu ưu đãi",
+    "coupon-mutra-discount": "Mã phiếu ưu đãi này không được sử dụng cùng với các khuyến mại hoặc chương trình giảm giá khác",
+    "create-order-time": "Thời gian đặt hàng",
+    "customerInfo": {
+      "pickupLocation": {
+        "title": "Chọn địa điểm"
+      }
+    },
+    "damage": "Sản phẩm bị hư hại trong quá trình giao nhận",
+    "delete-invalid-product": "Xóa những sản phẩm không hợp lệ",
+    "delivery-address-abnormal": "Lỗi địa chỉ người nhận",
+    "delivery-fee": "Giao hàng",
+    "delivery-tax": "Thuế vận tải",
     "delivery-to-home": "Giao nhận tại nhà",
-    "other-delivery": "Phương thức giao nhận khác",
     "delivery-way": "Phương thức giao nhận",
-    "please-choose-area": "Vui lòng chọn vùng",
-    "please-choose-store": "Vui lòng chọn của hàng",
-    "please-input-legal-passport-id-card": "Vui lòng nhập số CMND/hộ chiếu hợp lệ",
+    "enter-a-tip-on-more-than": "Nhập số tiền boa không quá {{amount}}",
+    "express-bill-pic": "Hình ảnh vận đơn",
+    "express-bills-sn": "Số vận đơn",
+    "express-company": "Công ty chịu trách nhiệm giao vận",
+    "fail-get-product-back-cart": "Lỗi không truy xuất được thông tin sản phẩm đã kiểm tra. Vui lòng Trở về giỏ hàng và thử gửi lại",
+    "fast-checkout": "Thanh Toán Nhanh",
+    "field-can-not-longer-than": "Không thể nhập quá {{length}} ký tự vào trường {{field}}",
+    "fill-info": "Thông tin",
+    "fill-logistics": "Nhập thông tin giao vận",
+    "fill-refund-info": "Nhập thông tin hoàn trả",
+    "find-store": "Chọn cửa hàng",
+    "footer-all-rights-reserved": "Bản quyền © {{year}} {{name}}. Đã được đăng ký bản quyền.",
+    "free": "Miễn phí",
+    "free-shipping": "Miễn phí giao hàng",
+    "get-the-order": "Chọn sản phẩm đi kèm",
+    "give-stars": "Xếp hạng",
+    "go-login": "Chuyển tới màn hình đăng ký",
+    "go-on-shopping": "Tiếp Tục Mua Hàng",
+    "go-pay": "Thanh toán ngay",
+    "has-number-products": "Còn {{number}} sản phẩm",
+    "has-removed": "KHÔNG HỢP LỆ",
+    "i-agree-website": "Tôi đồng ý với trang web của",
+    "i-want-recieve-discount-info": "Cập nhật cho tôi những tin tức và ưu đãi độc quyền kịp thời",
+    "invalid-product": "Sản phẩm không hợp lệ",
+    "is-paying": "Đang thanh toán",
+    "item": "MẶT HÀNG",
+    "jump-to-pay-longtips": "Sau khi nhấp vào “Hoàn thành đơn hàng”, bạn sẽ được chuyển hướng đến {{payChannel}} để hoàn tất giao dịch mua của mình một cách an toàn",
+    "leave-your-words": "Hãy chia sẻ với chúng tôi và những khác hàng khác về trải nghiệm của bạn!",
+    "logistics-package": "Phương thức giao hàng",
+    "man-money-reduce": "Áp dụng chiết khấu cho đơn hàng trị giá từ {{money}}",
+    "man-money-share": "Khuyến khích mua {{money}} tiền hàng và nhiều hơn nữa",
+    "man-piece-reduce": "Áp dụng chiết khấu khi mua từ {{count}} chiếc",
+    "man-piece-share": "Khuyến khích mua {{count}} chiếc hoặc nhiều hơn nữa",
+    "max-refund": "Số tiền tối đa sẽ được hoàn trả",
+    "must-agree-policy": "Bạn phải đồng ý với chính sách đổi trả để tiếp tục!",
+    "must-choose": "Bắt buộc chọn",
+    "must-fill": "Bắt buộc",
+    "must-select": "Tùy chọn bắt buộc",
+    "need-choose-delivery-way": "Yêu cầu bắt buộc chọn một phương thức giao nhận phù hợp cho tất cả các phần",
+    "need-pay": "Cần phải thanh toán",
+    "next-step": "Tiếp tục",
+    "next-step-calc": "Tính toán ở bước tiếp theo",
+    "next-step-payment": "Đến thanh toán được chọn",
+    "next-step-shipment": "Tiếp tục giao hàng",
+    "next-time-use-shopping-money": "Ước tính mức chiết khấu khi mua ở cửa hàng tiếp theo",
+    "no-pay-way": "Phương Thức Thanh Toán Không Khả Dụng",
+    "not-as-expected": "Sản phẩm không đạt mong đợi",
+    "not-support-paypal": "Bên bán hàng không hỗ trợ PayPal",
+    "now-can-not-comment": "Không thể thực hiện đánh giá tại thời điểm hiện tại!",
+    "number-refund-product": "Có {{number}} sản phẩm được hoàn trả",
+    "off-shelf": "KHÔNG HỢP LỆ",
+    "only-refund": "Chỉ hoàn tiền",
+    "optional-fill": "Tùy chọn",
+    "optional-support-jpg": "Không bắt buộc. Hỗ trợ định dạng JPG/PNG",
+    "or-fill-info": "HOẶC",
+    "order-created-but-data-fail": "Đã khởi tạo đơn đặt hàng nhưng có lỗi trong việc trả về dữ liệu ...",
+    "order-detail": "Đơn hàng chi tiết",
+    "order-detail-query-fail": "Lỗi truy vấn chi tiết đơn hàng",
+    "order-info": "Thông tin đơn hàng",
+    "order-meno": "Ghi chú cho đơn hàng",
+    "order-status": "Trạng thái đơn hàng",
+    "other-delivery": "Phương thức giao nhận khác",
+    "other-info": "Thông tin khác",
+    "other-reason": "Lý do khác",
+    "others": "Khác",
+    "over-limit-number": "Quá số lượng giới hạn mua",
     "passport-id-card-placeholder": "Số CMND/hộ chiếu (Không bắt buộc)",
     "passport-id-card-tip": "Vui lòng nhập số CMND hoặc hộ chiếu của người nhận để đảm bảo việc khai báo hải quan và giao nhận diễn ra thuận lợi",
-    "product-offline": "Sản phẩm đã được di chuyển khỏi giá",
-    "stock-not-enough": "Thiếu sản phẩm",
-    "over-limit-number": "Quá số lượng giới hạn mua",
-    "product-removed": "Đã xóa sản phẩm",
-    "product-package": "Gói hàng",
-    "product-fee": "Cộng",
-    "product-tax": "Thuế xuất hàng hóa",
-    "delivery-tax": "Thuế vận tải",
-    "next-step-calc": "Tính toán ở bước tiếp theo",
-    "delivery-fee": "Giao hàng",
+    "pay-failed-err-code": {
+      "3d-overtime": "Xác thực 3DS không thành công, vui lòng thử lại.",
+      "buyer-account-abnormal": "Phát sinh lỗi ở tài khoản khiến thanh toán của bạn không được xử lý. Vui lòng thử lại hoặc sử dụng các phương thức thanh toán khác.",
+      "card-expired": "Không thể tiến hành thanh toán do thẻ đã hết hạn. Vui lòng chọn một thẻ hoặc một phương thức thanh toán khác và tiến hành thử lại.",
+      "change-card": "Khổng thể xử lý thanh toán, bạn vui lòng chọn một thẻ hoặc một phương thức thanh toán khác và tiến hành thử lại.",
+      "default": "Vì một vài lý do khiến thanh toán của bạn bị lỗi khi xử lý. Vui lòng thử lại hoặc sử dụng các phương thức thanh toán khác.",
+      "insufficient-balance": "Số dư không đủ để tiến hành thanh toán. Vui lòng chọn một thẻ hoặc một phương thức thanh toán khác và tiến hành thử lại.",
+      "invalid-card-number": "Số thẻ không hợp lệ để tiến hành thanh toán. Vui lòng chọn một thẻ hoặc một phương thức thanh toán khác và tiến hành thử lại.",
+      "overpayment": "Số lượng đơn đặt hàng vượt quá giới hạn số lượng mua, không thể xử lý thanh toán của bạn. Vui lòng chọn một thẻ hoặc một phương thức thanh toán khác và tiến hành thử lại.",
+      "pin-over-times": "Bạn đã nhập mật khẩu vượt quá số lần tối đa cho phép, thanh toán của bạn không được xử lý. Vui lòng chọn một phương thức thanh toán khác và tiến hành thử lại.",
+      "user-cancel": "Thanh toán đã được hủy. Vui lòng thử lại nếu bạn vẫn muốn tiếp tục.",
+      "wrong-password": "Thanh toán của bạn không được xử lý do nhập sai mật khẩu. Vui lòng thử lại hoặc sử dụng các phương thức thanh toán khác."
+    },
     "pay-fee": "Số tiền phải thành toán",
+    "pay-way": "Phương thức thanh toán",
+    "pay-way-logo-and-more": "và hơn thế",
+    "payment-security-description": "Tất cả mọi giao dịch đều được bảo mật và mã hóa.",
+    "pic-upload-fail": "Tải hình ảnh {{name}} lên không thành công",
+    "pick-address": "Địa điểm thu nhận",
+    "please-choose-area": "Vui lòng chọn vùng",
+    "please-choose-delivery-way": "Vui lòng lựa chọn phương thức giao nhận",
+    "please-choose-pay-way": "Vui lòng lựa chọn phương thức thanh toán",
+    "please-choose-refund-account": "Vui lòng chọn tài khoản để tiến hành hoàn trả!",
+    "please-choose-refund-express": "Vui lòng chọn một chế độ giao vận cho việc hoàn trả!",
+    "please-choose-refund-type": "Chọn loại hoàn trả",
+    "please-choose-store": "Vui lòng chọn của hàng",
+    "please-fill-80charact-refund-reason": "Vui lòng nhập lý do trả hàng không dài quá 80 ký tự",
+    "please-fill-express-bills-sn": "Nhập số vận đơn",
+    "please-fill-express-company": "Nhập tên công ty chịu trách nhiệm giao vận",
+    "please-fill-meno": "Vui lòng nhập các ghi chú",
+    "please-fill-refund-reason": "Vui lòng nhập lý do trả hàng",
+    "please-input-field": "Vui lòng nhập {{field}}",
+    "please-input-legal-passport-id-card": "Vui lòng nhập số CMND/hộ chiếu hợp lệ",
+    "please-pay-within": "Vui lòng thanh toán trong",
+    "pod-link": "Nhấp để xem",
+    "pod-pic": "Tùy chỉnh xem trước",
     "point-discount": "Điểm thưởng chiết khấu",
     "point-discount-desc": "Bạn có thể sử dụng {{deductMemberPointNum}} điểm thưởng để tiết kiệm {{deductMemberPointAmount}}",
     "point-discount-remark": "Chi phí {{value}} Điểm Thưởng",
-    "summary": "Tổng cộng",
-    "use-member-account-can": "Thanh toán nhanh với tư cách là thành viên? Bạn có thể làm vậy ngay",
-    "i-want-recieve-discount-info": "Cập nhật cho tôi những tin tức và ưu đãi độc quyền kịp thời",
-    "order-detail-query-fail": "Lỗi truy vấn chi tiết đơn hàng",
-    "your-order-created": "Bạn đã đặt hàng",
-    "your-order-not-pay": "Bạn chưa hoàn thành thanh toán cho đơn đặt hàng",
-    "go-pay": "Thanh toán ngay",
-    "now-can-not-comment": "Không thể thực hiện đánh giá tại thời điểm hiện tại!",
-    "order-detail": "Đơn hàng chi tiết",
-    "order-info": "Thông tin đơn hàng",
-    "order-status": "Trạng thái đơn hàng",
-    "create-order-time": "Thời gian đặt hàng",
-    "comment-product": "Đánh giá sản phẩm",
-    "give-stars": "Xếp hạng",
-    "at-least-comment-one-before-submit": "Vui lòng dành thời gian của bạn để đánh giá ít nhất một sản phẩm trước khi gửi đơn hàng",
-    "leave-your-words": "Hãy chia sẻ với chúng tôi và những khác hàng khác về trải nghiệm của bạn!",
-    "is-paying": "Đang thanh toán",
-    "you-are-paying-wait-result": "Yêu cầu thanh toán của bạn đã được gửi đi. Yêu cầu thanh toán {{payChannel}} đang chờ xử lý",
-    "need-pay": "Cần phải thanh toán",
-    "after-sale-order": "Đơn hàng sau bán",
-    "see-refund-progress": "Xem quá trinh trả hàng",
-    "has-number-products": "Còn {{number}} sản phẩm",
-    "order-meno": "Ghi chú cho đơn hàng",
-    "comment-order": "Đánh giá đơn hàng",
-    "apply-refund": "Áp dụng cho việc trả hàng",
-    "cancel-order": "Hủy đơn hàng",
+    "policy": {
+      "privacy-policy": "Chính sách bảo mật của trang web",
+      "refund-policy": "Chính sách hoàn tiền"
+    },
+    "private-policy": "Chính Sách Bảo Mật Của Trang Web",
+    "product-amount": "Cộng",
+    "product-fee": "Cộng",
+    "product-offline": "Sản phẩm đã được di chuyển khỏi giá",
+    "product-package": "Gói hàng",
     "product-preview": "Xem trước sản phẩm",
-    "see-detail": "Xem chi tiết",
-    "start-refund": "Trạng thái ban đầu trả hàng",
-    "buy-number-greater-then-stock": "Vui lòng chọn số lượng lớn hơn 1 và nhỏ hơn số lượng hàng tồn kho!",
-    "can-refund-number": "Số lượng hàng có thể hoàn trả",
-    "choose-refund-reason": "Vui lòng chọn lý do trả hàng",
-    "please-fill-80charact-refund-reason": "Vui lòng nhập lý do trả hàng không dài quá 80 ký tự",
-    "please-fill-refund-reason": "Vui lòng nhập lý do trả hàng",
-    "choose-refund-product": "Chọn sản phẩm để tiến hành hoàn trả",
-    "refund-reason-less-60": "Nhập lý do hoàn trả không quá 60 ký tự!",
-    "refund-number": "Số lượng sản phẩm hoàn trả",
-    "sub-total": "Cộng",
+    "product-remain-please-re-choose": "Chỉ còn {{stock}} chiếc. Vui lòng chọn lại số lượng phù hợp",
+    "product-removed": "Đã xóa sản phẩm",
+    "product-sold-out": "Sản phẩm đã hết hàng",
+    "product-tax": "Thuế xuất hàng hóa",
+    "quantity": "SỐ LƯỢNG",
+    "recieve-address-unavailable-rechoose": "Không có phương thức giao nhận nào khả dụng đến địa chỉ của người nhận. Vui lòng Trở về thao tác chọn lại",
+    "reciever-fullname": "Tên đầy đủ của người nhận",
+    "reciever-info": "Địa chỉ giao hàng",
+    "reciever-name": "Họ của người nhận",
+    "reciever-to": "Địa chỉ nhận hàng",
+    "refund-account": "Tài khoản hoàn trả",
     "refund-amount": "Số tiền được hoàn trả",
     "refund-amount-bigger-zero": "Số tiền hoàn trả phải lớn hơn 0",
     "refund-amount-can-over": "Số tiền được hoàn trả không được vượt quá số tiền tối đa sẽ được hoàn trả theo quy định",
-    "max-refund": "Số tiền tối đa sẽ được hoàn trả",
-    "confirm-refund": "Xác nhận việc hoàn trả",
-    "refund-policy": "Quy định hoàn trả",
-    "fill-refund-info": "Nhập thông tin hoàn trả",
-    "refund-way": "Phương thức hoàn trả",
-    "refund-type": "Loại hoàn trả",
-    "please-choose-refund-type": "Chọn loại hoàn trả",
-    "refund-express": "Giao vận phục vụ đơn hàng hoàn trả",
-    "please-choose-refund-express": "Vui lòng chọn một chế độ giao vận cho việc hoàn trả!",
-    "refund-person": "Người thực hiện hoàn trả",
-    "pick-address": "Địa điểm thu nhận",
-    "refund-account": "Tài khoản hoàn trả",
-    "please-choose-refund-account": "Vui lòng chọn tài khoản để tiến hành hoàn trả!",
-    "your-refund-order-created": "Yêu cầu hoàn trả đơn hàng của bạn đang được thực hiện",
-    "confirm-email-send-to-you": "Thư xác nhận về việc hoàn trả đã được gửi đến email của bạn",
-    "refunding": "Đang tiến hành hoàn trả",
-    "user-cancel-apply": "Người dùng đã thu hồi yêu cầu",
-    "audit-refuse": "Không phê duyệt",
-    "refund-order-stataus": "Trạng thái đơn hàng hoàn trả",
-    "refund-order-number": "Mã số của đơn hàng hoàn trả",
-    "apply-time": "Thời gian yêu cầu",
-    "number-refund-product": "Có {{number}} sản phẩm được hoàn trả",
-    "refund-reason": "Lý do hoàn trả",
-    "refund-way-intro": "Giới thiệu phương thức hoàn trả",
-    "fill-logistics": "Nhập thông tin giao vận",
-    "backout-apply": "Thu hồi yêu cầu",
-    "backout-refund-apply": "Thu hồi yêu cầu hoàn trả",
-    "your-apply-auditing-sure-backout": "Yêu cầu hoàn trả của bạn đang được xem xét. Bạn có muốn thu hồi yêu cầu không?",
-    "see-origin-order": "Xem đơn hàng gốc",
-    "refund-logistics-info": "Thông tin giao vận của đơn hàng hoàn trả",
-    "express-company": "Công ty chịu trách nhiệm giao vận",
-    "please-fill-express-company": "Nhập tên công ty chịu trách nhiệm giao vận",
-    "please-fill-express-bills-sn": "Nhập số vận đơn",
-    "express-bills-sn": "Số vận đơn",
-    "express-bill-pic": "Hình ảnh vận đơn",
-    "optional-support-jpg": "Không bắt buộc. Hỗ trợ định dạng JPG/PNG",
-    "pic-upload-fail": "Tải hình ảnh {{name}} lên không thành công",
-    "shopping-gold-trade-off": "Mua hàng trợ giá",
-    "coupon-code-offer": "Phiếu ưu đãi",
-    "product-sold-out": "Sản phẩm đã hết hàng",
-    "sorry-limit-re-choose": "Xin lỗi! Mỗi đơn hàng chỉ được mua {{promotionRemainStock}} chiếc. Vui lòng chọn lại số lượng phù hợp",
-    "sorry-product-not-available-re-reorder": "Xin lỗi! Một số sản phẩm bạn muốn mua đã bị xóa khỏi giá hàng và không hợp lệ để tiếp tục. Vui lòng kiểm tra và xác nhận thông tin trước khi tiến hành gửi lại",
-    "product-remain-please-re-choose": "Chỉ còn {{stock}} chiếc. Vui lòng chọn lại số lượng phù hợp",
-    "coupon-code": "Mã Phiếu Ưu Đãi",
-    "shop-list": "Giỏ hàng ({{count}} )",
-    "add-to-cart-fail": "Xin lỗi! Thêm hàng vào giỏ hàng không thành công. Vui lòng thử lại!",
-    "go-login": "Chuyển tới màn hình đăng ký",
-    "complete-payment": "Hoàn thành thanh toán",
-    "shopping-money-deduction": "Mua hàng trợ giá",
-    "use-shopping-deduction": "Hàng trợ giá được giảm xấp xỉ {{num}}",
-    "can-get": "Còn hàng",
-    "shopping-money": "Trợ giá",
-    "next-time-use-shopping-money": "Ước tính mức chiết khấu khi mua ở cửa hàng tiếp theo",
-    "delivery-address-abnormal": "Lỗi địa chỉ người nhận",
-    "billing-address-abnormal": "Lỗi địa chỉ trên hóa đơn",
-    "billing-address": {
-      "title": "Địa chỉ trên hóa đơn",
-      "desc": "Chọn địa chỉ phù hợp với thông tin trên thẻ hoặc thông tin trong phương thức thanh toán của bạn",
-      "option-same": "Giống như địa chỉ giao hàng",
-      "option-another": "Sử dụng một địa chỉ khác để ghi trên hóa đơn",
-      "input-email": "Bạn cần cung cấp địa chỉ email trong phương thức thanh toán để nhận thông tin thanh toán"
-    },
-    "ship-to": "Giao đến",
-    "self-mention": "Tự Lấy Hàng",
-    "logistics-package": "Phương thức giao hàng",
-    "shopping-list": "Giỏ Hàng Của Bạn",
-    "item": "MẶT HÀNG",
-    "quantity": "SỐ LƯỢNG",
-    "total-num": "TỔNG CỘNG",
-    "no-pay-way": "Phương Thức Thanh Toán Không Khả Dụng",
     "refund-detail": "Chi Tiết Hoàn Tiền",
-    "only-refund": "Chỉ hoàn tiền",
+    "refund-express": "Giao vận phục vụ đơn hàng hoàn trả",
+    "refund-logistics-info": "Thông tin giao vận của đơn hàng hoàn trả",
+    "refund-number": "Số lượng sản phẩm hoàn trả",
+    "refund-order-number": "Mã số của đơn hàng hoàn trả",
+    "refund-order-stataus": "Trạng thái đơn hàng hoàn trả",
+    "refund-person": "Người thực hiện hoàn trả",
+    "refund-policy": "Quy định hoàn trả",
+    "refund-reason": "Lý do hoàn trả",
+    "refund-reason-less-60": "Nhập lý do hoàn trả không quá 60 ký tự!",
+    "refund-type": "Loại hoàn trả",
+    "refund-way": "Phương thức hoàn trả",
+    "refund-way-intro": "Giới thiệu phương thức hoàn trả",
+    "refunding": "Đang tiến hành hoàn trả",
+    "remove-product": "Xóa sản phẩm",
     "return-and-refund": "Trả hàng và hoàn tiền",
-    "come-way-return": "Hoàn tiền vào tài khoản đã dùng để thực hiện thanh toán",
-    "others": "Khác",
-    "not-as-expected": "Sản phẩm không đạt mong đợi",
-    "damage": "Sản phẩm bị hư hại trong quá trình giao nhận",
-    "sku-not-match": "Kích thước và thông số của sản phẩm khác với mô tả",
-    "wrong-product": "Giao sai sản phẩm",
-    "other-reason": "Lý do khác",
-    "get-the-order": "Chọn sản phẩm đi kèm",
-    "free": "Miễn phí",
-    "sku-changed-title": "Các mặt hàng đã được thay đổi{{num}}, bạn có muốn tiếp tục thực hiện thanh toán không?",
-    "sku-limit-title": "Sản phẩm bên dưới vượt quá giới hạn số lượng mua, vui lòng chọn số lượng phù hợp",
-    "sorry-all-sku-unusable": "Xin lỗi, tất cả các mặt hàng đều không hợp lệ, bạn không thể gửi đơn đặt hàng",
-    "off-shelf": "KHÔNG HỢP LỆ",
-    "sold-out": "ĐÃ HẾT HÀNG",
-    "has-removed": "KHÔNG HỢP LỆ",
-    "footer-all-rights-reserved": "Bản quyền © {{year}} {{name}}. Đã được đăng ký bản quyền.",
-    "return-to-selection-goods": "Lựa Chọn Hàng hóa bị hoàn trả",
     "return-apply-fail-SKU": "Số lượng hàng hóa yêu cầu vượt quá số lượng giới hạn mua!",
     "return-apply-fail-max-amount": "Số tiền được hoàn trả không được vượt quá số tiền tối đa sẽ được hoàn trả theo quy định",
     "return-apply-fail-min-amount": "Chỉ hoàn trả tiền, số tiền hoàn trả phải lớn hơn 0 CNY",
+    "return-to-selection-goods": "Lựa Chọn Hàng hóa bị hoàn trả",
+    "see-detail": "Xem chi tiết",
+    "see-origin-order": "Xem đơn hàng gốc",
+    "see-refund-progress": "Xem quá trinh trả hàng",
+    "self-mention": "Tự Lấy Hàng",
+    "service-fee": "Phí dịch vụ",
+    "service-terms": "Điều Khoản Dịch Vụ",
+    "ship-to": "Giao đến",
+    "shop-list": "Giỏ hàng ({{count}} )",
+    "shopping-gold-trade-off": "Mua hàng trợ giá",
+    "shopping-list": "Giỏ Hàng Của Bạn",
+    "shopping-money": "Trợ giá",
+    "shopping-money-deduction": "Mua hàng trợ giá",
+    "sku-changed-title": "Các mặt hàng đã được thay đổi{{num}}, bạn có muốn tiếp tục thực hiện thanh toán không?",
+    "sku-limit-title": "Sản phẩm bên dưới vượt quá giới hạn số lượng mua, vui lòng chọn số lượng phù hợp",
+    "sku-not-match": "Kích thước và thông số của sản phẩm khác với mô tả",
     "slpayment": {
+      "cardHolderNameErrorTips": "Vui lòng kiểm tra lại.",
+      "cardHolderNamePlaceHolder": "Tên chủ thẻ",
       "cardNumber": {
-        "placeholder": "Số Thẻ Tín dụng",
         "errorTips": "Vui lòng nhập số thẻ chính xác.",
+        "placeholder": "Số Thẻ Tín dụng",
         "tips": "Tất cả mọi giao dịch đều được bảo mật và mã hóa"
+      },
+      "cardholdername": "Tên chủ thẻ",
+      "cvv": {
+        "errorTips": "Vui lòng kiểm tra lại.",
+        "placeholder": "CVV",
+        "tips": "Mã số này nằm ở mặt sau của thẻ"
       },
       "expiryDate": {
         "errorTips": "Vui lòng nhập thời gian chính xác."
       },
-      "cvv": {
-        "placeholder": "CVV",
-        "errorTips": "Vui lòng kiểm tra lại.",
-        "tips": "Mã số này nằm ở mặt sau của thẻ"
-      },
       "footer": "Bạn đang sử dụng Thanh toán SHOPLINE để tiến hành thanh toán ngay. Khi tiến hành hoàn tất thanh toán, bạn đồng ý với",
-      "service": "Điều khoản dịch vụ của Thanh toán SHOPLINE.",
-      "cardholdername": "Tên chủ thẻ",
-      "cardHolderNamePlaceHolder": "Tên chủ thẻ",
-      "cardHolderNameErrorTips": "Vui lòng kiểm tra lại."
+      "service": "Điều khoản dịch vụ của Thanh toán SHOPLINE."
     },
-    "find-store": "Chọn cửa hàng",
-    "choose-store": "Thay đổi cửa hàng",
-    "please-pay-within": "Vui lòng thanh toán trong",
-    "enter-a-tip-on-more-than": "Nhập số tiền boa không quá {{amount}}",
-    "payment-security-description": "Tất cả mọi giao dịch đều được bảo mật và mã hóa.",
-    "pay-failed-err-code": {
-      "default": "Vì một vài lý do khiến thanh toán của bạn bị lỗi khi xử lý. Vui lòng thử lại hoặc sử dụng các phương thức thanh toán khác.",
-      "buyer-account-abnormal": "Phát sinh lỗi ở tài khoản khiến thanh toán của bạn không được xử lý. Vui lòng thử lại hoặc sử dụng các phương thức thanh toán khác.",
-      "wrong-password": "Thanh toán của bạn không được xử lý do nhập sai mật khẩu. Vui lòng thử lại hoặc sử dụng các phương thức thanh toán khác.",
-      "overpayment": "Số lượng đơn đặt hàng vượt quá giới hạn số lượng mua, không thể xử lý thanh toán của bạn. Vui lòng chọn một thẻ hoặc một phương thức thanh toán khác và tiến hành thử lại.",
-      "insufficient-balance": "Số dư không đủ để tiến hành thanh toán. Vui lòng chọn một thẻ hoặc một phương thức thanh toán khác và tiến hành thử lại.",
-      "invalid-card-number": "Số thẻ không hợp lệ để tiến hành thanh toán. Vui lòng chọn một thẻ hoặc một phương thức thanh toán khác và tiến hành thử lại.",
-      "card-expired": "Không thể tiến hành thanh toán do thẻ đã hết hạn. Vui lòng chọn một thẻ hoặc một phương thức thanh toán khác và tiến hành thử lại.",
-      "change-card": "Khổng thể xử lý thanh toán, bạn vui lòng chọn một thẻ hoặc một phương thức thanh toán khác và tiến hành thử lại.",
-      "user-cancel": "Thanh toán đã được hủy. Vui lòng thử lại nếu bạn vẫn muốn tiếp tục.",
-      "3d-overtime": "Xác thực 3DS không thành công, vui lòng thử lại.",
-      "pin-over-times": "Bạn đã nhập mật khẩu vượt quá số lần tối đa cho phép, thanh toán của bạn không được xử lý. Vui lòng chọn một phương thức thanh toán khác và tiến hành thử lại."
-    },
-    "coupon": "Phiếu ưu đãi",
-    "coupon-mutra-discount": "Mã phiếu ưu đãi này không được sử dụng cùng với các khuyến mại hoặc chương trình giảm giá khác",
-    "activity-price-limit": "Bạn chỉ có thể mua {{num}} chiếc của sản phẩm này với mức giá khuyến mại",
-    "policy": {
-      "refund-policy": "Chính sách hoàn tiền",
-      "privacy-policy": "Chính sách bảo mật của trang web"
-    },
+    "sold-out": "ĐÃ HẾT HÀNG",
+    "some-discount-limit-to-pay-and-delivery": "Một số chiết khấu chỉ dành cho một phương thức giao vận/phương thức thanh toán nhất định",
+    "sorry-all-sku-unusable": "Xin lỗi, tất cả các mặt hàng đều không hợp lệ, bạn không thể gửi đơn đặt hàng",
+    "sorry-limit-re-choose": "Xin lỗi! Mỗi đơn hàng chỉ được mua {{promotionRemainStock}} chiếc. Vui lòng chọn lại số lượng phù hợp",
+    "sorry-product-not-available-re-reorder": "Xin lỗi! Một số sản phẩm bạn muốn mua đã bị xóa khỏi giá hàng và không hợp lệ để tiếp tục. Vui lòng kiểm tra và xác nhận thông tin trước khi tiến hành gửi lại",
+    "sorry-rechoose-longtips": "Xin lỗi, bạn đã chọn mua một sản phẩm không hợp lệ. Vui lòng chọn lại",
+    "start-refund": "Trạng thái ban đầu trả hàng",
+    "stock-not-enough": "Thiếu sản phẩm",
+    "sub-total": "Cộng",
+    "submit-order": "Hoàn thành đơn hàng",
+    "summary": "Tổng cộng",
+    "supermarket-self-pick": "Tự lấy hàng tại kho",
+    "sure-remove-this-product": "Bạn có chắc rằng bạn muốn xóa những sản phẩm này không?",
     "tip": {
       "add-tip": "Thêm tiền boa"
     },
-    "free-shipping": "Miễn phí giao hàng",
-    "pod-link": "Nhấp để xem",
-    "pod-pic": "Tùy chỉnh xem trước",
-    "activity-product-limit": "Bạn có thể mua nhiều nhất {{stock}} sản phẩm với mức chiết khấu cùng một lúc",
-    "activity-title-limit": "Sản phẩm bên dưới vượt quá giới hạn mua, vẫn tiến hành thanh toán?"
-  },
-  "payments-name": {
-    "Paypal": "Paypal",
-    "COD": "Thanh toán khi giao hàng",
-    "third-part": "Thẻ Tín Dụng"
-  },
-  "paypal": {
-    "error-expired": "Sản phẩm hết hạn",
-    "error-sold-out": "Không đủ hàng tồn kho",
-    "error-product-limit": "Đã vượt quá giới hạn số lượng mua của sản phẩm",
-    "error-network-error": "Mạng Lỗi",
-    "error-shop-not-exit": "Cửa hàng này không tồn tại",
-    "error-login-limit": "Bạn cần đăng nhập vào tài khoản để tiếp tục đặt hàng"
-  },
-  "tips": {
-    "more-than-0-int": "Vui lòng nhập một số lớn hơn 0",
-    "bind-change-mobile-phone-number": "Kết nối/Thay đổi số điện thoại di động",
-    "bind-change-email": "Kết nối/Thay đổi email",
-    "verification-code-has-been-sent-to-your-account": "Mã xác minh đã được gửi tới tài khoản của bạn",
-    "change-binding-after-verification": "Sau khi xác minh, bạn có thể thực hiện kết nối/thay đổi {{value}}",
-    "set-new-password": "Đặt lại mật khẩu",
-    "forget-password": "Quên mật khẩu",
-    "update-password": "Thay đổi mật khẩu",
-    "reset-password": "Bạn đang thực hiện đặt lại mật khẩu cho tài khoản {{account}}",
-    "verify-account-to-reset-password": "Vui lòng xác minh tài khoản và cài lại mật khẩu",
-    "password-can-be-changed-after-verification": "Sau khi xác minh, bạn có thể thực hiện thay đổi mật khẩu",
-    "login": "ĐĂNG KÝ",
-    "register": "Đăng ký",
-    "or-use-the-following-method-to-log-in": "Hoặc đăng ký bằng các cách sau",
-    "i-agree-with-the-shop": "Tôi đồng ý với",
-    "and": "và",
-    "user-agreement": "Điều khoản Người dùng của cửa hàng",
-    "please-read-and-agree-to-the-user-agreement-first": "Vui lòng đọc và đồng ý với thỏa thuận dành cho người dùng trước",
-    "no-order-information-please-confirm": "Truy xuất thông tin đơn hàng không thành công. Vui lòng kiểm tra để đảm bảo rằng bạn đã điền đúng số đơn đặt hàng",
-    "no-order-number-please-confirm": "Truy xuất số đơn hàng không thành công. Vui lòng kiểm tra để đảm bảo rằng bạn đã điền đúng số đơn đặt hàng",
-    "error-obtaining-support-logistics-country": "Phát sinh lỗi khi truy xuất các quốc gia hỗ trợ giao vận",
-    "please-complete-the-payment-method-content": "Vui lòng hoàn tất phương thức thanh toán",
-    "order-creation-exception": "Đặt hàng không thành công",
-    "bind-success": "Đã kết nối",
-    "update-success": "Đã thay đổi",
-    "pay-params-error": "Truy xuất các thông số thanh toán không thành công, vui lòng thử lại",
-    "change-heart": "Tôi đã thay đổi ý định",
-    "price-more-expensive": "Tìm thấy giá thấp hơn ở những nơi khác",
-    "repeat-buy": "Mua tiếp",
-    "sale-too-slow": "Trì hoãn giao hàng",
-    "change-item": "Tôi muốn thay đổi (những) mặt hàng đã mua",
-    "incorrect-delivery-or-payment-information": "Sai thông tin giao hàng hoặc thông tin thanh toán",
-    "other-reason": "Lý do khác",
-    "select-cancel-reason": "Vui lòng chọn lý do hủy",
-    "fill-cancel-reason": "Vui lòng nhập lý do hủy đơn hàng",
-    "sure-cancel-order": "Bạn có chắc rằng bạn muốn hủy đơn hàng này không?",
-    "cancel-reason-feedback": "Hãy cho chúng tôi biết lý do bạn hủy đơn hàng để chúng tôi có thể phục vụ bạn tốt hơn trong tương lai. Ngay khi đơn hàng được hủy thành công, bạn sẽ được hoàn tiền. Chúng tôi mong bạn sẽ ghé thăm cửa hàng vào lần sau!",
-    "cancel-apply-sent": "Yêu cầu hủy đã được gửi đi",
-    "cancel-order-fail": "Lệnh hủy đơn hàng không thành công, vui lòng thử lại",
-    "cancel-success-notice": "Bạn sẽ nhận được email thông báo sau khi yêu cầu hủy đơn hàng của bạn được xử lý thành công, xin cảm ơn!",
-    "fail-contact": "Nếu yêu cầu hủy đơn hàng của bạn không thành công, vui lòng tham khảo mục Phản hồi Đơn hàng giữa Người bán/Người mua bên dưới",
-    "max-upload-img": "Xin lỗi! Số hình ảnh bạn tải lên đã đạt mức giới hạn {{maxNum}} hình ảnh được phép tải lên!",
-    "img-name-too-long": "Tên của hình ảnh quá dài",
-    "img-size-too-large": "Xin lỗi! Kích thước hình ảnh vượt quá giới hạn cho phép!",
-    "get-checkout-detail-fail": "Lỗi truy xuất chi tiết thanh toán",
-    "product-abnormal-back-to-cart": "Tình trạng sản phẩm bị lỗi, vui lòng trở về giỏ hàng và thử lại",
-    "get-checkout-config-fail": "Lỗi truy xuất cấu hình thanh toán",
-    "country-address-fail": "Người bán có trụ sở tại quốc gia theo địa chỉ đã nhập không chịu trách nhiệm thanh toán phí giao hàng. Vui lòng lựa chọn thủ công",
-    "paypal-country-fail": "Quốc gia kèm theo tài khoản Paypal này không nằm trong danh sách những quốc gia thanh toán phí giao hàng. Vui lòng lựa chọn thủ công",
-    "need-phone-number-to-deliver": "Trong trường hợp chúng tôi cần liên hệ với bạn để xử lý công việc liên quan tới đơn hàng của bạn",
-    "enter-tel-number": "Vui lòng điền số điện thoại cố định",
-    "enter-email": "Vui lòng điền email",
-    "no-logistics-available": "Không có phương thức giao hàng khả dụng",
-    "logistics-no-pre-selection": "Không được chọn trước khi giao hàng",
-    "logistics-pre-selection": "Được chọn trước khi giao hàng",
-    "address-no-logistics": "Không có phương thức giao hàng nào áp dụng cho địa chỉ hiện tại",
-    "enter-address-first": "Vui lòng điền địa chỉ trước",
-    "expand-order-summary": "Hiển thị đơn hàng",
-    "put-up-order-summary": "Ẩn đơn hàng",
-    "select-return-product-first": "Vui lòng chọn sản phẩm hoàn trả trước",
-    "enter-bank-name": "Vui lòng nhập tên ngân hàng!",
-    "enter-bank-card-number": "Vui lòng nhập số thẻ ngân hàng!",
-    "enter-name": "Vui lòng nhập tên!",
-    "max-upload-image": "Bạn có thể tải tối đa {{max}} hình ảnh lên",
-    "upload-image-fail": "Tải hình ảnh {{name}} lên không thành công",
-    "image-size-less-than": "Các hình ảnh có kích thước nhỏ hơn {{max}} MB",
-    "sku-change-tips": "Có sự thay đổi trạng thái đơn hàng, vui lòng xác nhận lại phương thức giao hàng/phương thức thanh toán của bạn"
-  },
-  "validate": {
-    "coupon-code-cannot-exceed-25-length": "Mã phiếu ưu đãi không được vượt quá 25 ký tự",
-    "discount-code-error": "Nhập mã giảm giá không chính xác",
-    "discount-code-user-invalid": "Nhập mã {{discountCode}} chính xác, nhưng giá hoặc số lượng hàng hóa không đáp ứng yêu cầu",
-    "enter-correct-email": "Vui lòng nhập đúng định dạng email",
-    "enter-correct-phone-number": "Vui lòng nhập đúng định dạng số điện thoại di động",
-    "phone-number-less-than-100": "Độ dài của số điện thoại di động không được vượt quá 100 ký tự",
-    "shipping_plan_unavailable": "Mã phiếu ưu đãi {{discountCode}} được áp dụng cho phương thức giao hàng này",
-    "mutual-excluded-by-time-limited": "Đơn hàng này được áp dụng giá chiết khấu. Bạn không thể nhập thêm chương trình chiết khấu khác.",
-    "discount-code-can-not-accumulate": "Sản phẩm có sự kiện ưu đãi không thể kết hợp với các sự kiện ưu đãi khác"
-  },
-  "subscription": {
-    "subscript-via-line-facebook": "Đăng ký nhận thông báo về đơn hàng qua LINE hoặc Facebook",
-    "not-subscript-via-line-facebook": "Không thể đăng ký nhận thông báo về đơn hàng qua LINE hoặc Facebook"
-  },
-  "comment": {
-    "enter-comment": "Viết đánh giá về sản phẩm",
-    "customer-comment": "Đánh giá từ khách hàng",
-    "comment-count": "{{total}} đánh giá",
-    "read-more-comments": "Xem thêm",
-    "rate-score": "Xếp hạng {{score}}",
-    "text": "Đánh giá",
-    "total": "{{total}} đánh giá",
-    "bad": "Rất tệ",
-    "worse": "Tệ",
-    "general": "Tạm được",
-    "good": "Tốt",
-    "best": "Xuất sắc",
-    "shipping-information": "Thông tin giao hàng",
-    "all-reviews": "Xem tất cả đánh giá",
-    "leave-a-review": "Đánh giá",
-    "no-login-msg": "Khách hàng có thể để lại đánh giá sau khi đã mua sản phẩm này, vui lòng đăng nhập để thực hiện đánh giá",
-    "sign-in": "Đăng ký",
-    "no-bought-msg": "Xin lỗi, bạn chưa từng mua sản phẩm này nên không thể thực hiện đánh giá",
-    "ratings": "Xếp hạng",
-    "experience-about": "Vui lòng đánh giá sản phẩm này",
-    "add-img": "Thêm một hình ảnh",
-    "more-images": "Bạn có thể thêm tối đa {{total}} hình ảnh",
-    "write-review": "Viết đánh giá",
-    "thanks-msg": "Cám ơn bạn đã để lại đánh giá",
-    "network-err-msg": "Đánh giá của bạn chưa được xử lý thành công do lỗi của hệ thống, xin vui lòng thử lại~",
-    "only-image": "Chỉ hỗ trợ định dạng .jpg .jpeg .png .bmp",
-    "image-only-2m": "Kích cỡ tối đa của hình ảnh là {{size}} MB",
-    "about-product": "Vui lòng nhập ít nhất một từ",
-    "no-comment-title-tip": "Chưa có bình luận",
-    "no-comment-first-tip": "hãy là người đầu tiên bình luận",
-    "on-img-upload-tip": "Đang tải lên, vui lòng gửi đi sau",
-    "mobile-submit": "Gửi",
-    "nickname": "Biệt hiệu"
-  },
-  "order": {
-    "refund-methods": {
-      "self": "Gửi lại bởi chính tôi",
-      "merchant": "Người bán lấy hàng"
-    },
-    "refund-type": {
-      "origin": "Hoàn tiền vào tài khoản đã dùng để thực hiện thanh toán",
-      "other": "Khác"
-    },
-    "after-sale-type": {
-      "refund": "Hoàn tiền",
-      "return-and-refund": "Trả hàng và hoàn tiền"
-    },
-    "after-order-status": {
-      "processing": "Đang xử lý",
-      "confirmed": "Đã xác nhận",
-      "delivery-progress": "Đã xác nhận",
-      "cancelled": "Đã hủy",
-      "customer-canceled": "Khách hàng đã hủy",
-      "customer-rejected": "Khánh hàng đã từ chối",
-      "merchant-cancellation": "Người bán đã hủy",
-      "completed": "Hoàn tất"
-    },
-    "order-status": {
-      "processing": "Đang xử lý",
-      "confirmed": "Đã xác nhận",
-      "cancelled": "Đã hủy",
-      "customer-canceled": "Khách hàng đã hủy",
-      "merchant-cancellation": "Người bán đã hủy",
-      "completed": "Hoàn tất"
-    },
-    "pay-status": {
-      "unpaid": "Chưa thanh toán",
-      "paying": "Đang thanh toán",
-      "partial-payment": "Thanh toán từng phần",
-      "already-paid": "Đã thanh toán",
-      "failed": "Thanh toán không thành công",
-      "timed-out": "Hết thời gian thực hiện thanh toán",
-      "refunding": "Đang tiến hành hoàn trả",
-      "refunded": "Đã hoàn tiền",
-      "refund-failed": "Hoàn tiền không thành công",
-      "partial-refund": "Hoàn tiền từng phần",
-      "abolished": "Vô hiệu hóa"
-    },
-    "delivery-statusType": {
-      "stocking": "Chuẩn bị sản phẩm",
-      "delivery-partial": "Giao hàng theo đợt",
-      "cancelled": "Đã hủy",
-      "cancel-delivery": "Hủy giao hàng",
-      "shipping": "Đang giao",
-      "shipped": "Đã giao",
-      "arrived": "Đã đến",
-      "picked-up": "Đã nhận",
-      "problem": "Hỗ trợ thủ công khi có vấn đề phát sinh liên quan tới đơn đặt hàng và thất lạc đơn hàng",
-      "delivery-return": "Đã trả hàng"
-    },
-    "oms-status": {
-      "executing": "Đang thực hiện",
-      "prepare-pick": "Hàng đã sẵn sàng để lấy",
-      "shipped": "Đã giao",
-      "cancelled": "Hủy giao hàng",
-      "arrived": "Đã đến",
-      "picked": "Đã ký",
-      "returning": "Được trả hàng",
-      "returned": "Đã trả hàng",
-      "problem": "Vấn đề giao hàng"
-    },
-    "order-list": {
-      "empty-title": "img",
-      "empty-tip": "Hiện tại chưa có đơn hàng, tiếp tục mua sắm",
-      "no-more": "Không có thông tin",
-      "load-more": "Kéo lên để xem thêm",
-      "pay-now": "Thanh toán Ngay",
-      "track": "Theo dõi",
-      "item-total": "Tổng cộng {{transPackages}} mặt hàng",
-      "item-total-plural": "Tổng cộng {{transPackages}} mặt hàng",
-      "package-item": "{{num}} Kiện hàng ({{item}} mặt hàng)",
-      "package-more": "còn {{num}}",
-      "sub-order": "đơn phụ"
-    },
-    "breadcrumb": {
-      "title": "Đơn hàng",
-      "order": "Đơn hàng",
-      "order-detail": "Đơn hàng chi tiết"
-    },
-    "detail": {
-      "packages": {
-        "title": "Đơn hàng chi tiết",
-        "sub-title": "Theo Dõi Kiện Hàng",
-        "payment-info": {
-          "method": "Phương thức thanh toán",
-          "status": "Trạng thái thanh toán",
-          "address": "Địa chỉ trên hóa đơn",
-          "detail": "Chi tiết"
-        },
-        "payment-title": "Thanh toán",
-        "subscriptions-title": "Đăng ký",
-        "order-note-title": "Ghi chú cho đơn hàng",
-        "shippings": {
-          "method": "Phương thức giao nhận",
-          "fee": "Phí giao nhận",
-          "status": "Trạng thái giao nhận"
-        },
-        "amount": {
-          "subtotal": "Tổng số mặt hàng",
-          "tax": "Thuế xuất hàng hóa",
-          "express": "Vận tải",
-          "express-surcharge": "Thuế vận tải",
-          "channel-surcharge": "Hoa hồng thanh toán",
-          "discount-amount-name": "Chiết khấu thêm từ người bán",
-          "tip": "Tiền boa",
-          "preferential": "ưu đãi",
-          "discount": "Mã phiếu ưu đãi giảm giá",
-          "deduct-voucher": "Số tiền phiếu thưởng",
-          "total": "Tổng cộng"
-        },
-        "order-num": "Kiện hàng số ({{num}})",
-        "logistics": {
-          "no-data": "Hiện tại chưa có thông tin kho vận",
-          "detail": "Chi tiết",
-          "tab-title": "Kiện hàng {{index}}",
-          "blank-trace": "Bạn có thể theo dõi kiện hàng của mình bằng cách nhấp vào liên kết dưới đây:",
-          "no-data2": "Không có thông tin giao nhận, vui lòng thử lại sau."
-        },
-        "send-to-Messenger": "Gửi tới Messenger",
-        "send-to-Line": "Gửi tới Line",
-        "unshipped-order-num": "Đang xử lý ({{num}} mặt hàng)",
-        "payment-deal": {
-          "name": "Kênh thanh toán",
-          "amount": "Số tiền",
-          "deal-id": "Số tham chiếu của giao dịch",
-          "create-time": "Đã tạo",
-          "update-time": "Đã cập nhật",
-          "status": "Trạng thái",
-          "title": "Chi tiết Thanh toán"
-        },
-        "status": {
-          "pedding": {
-            "title": "Chuẩn bị giao hàng",
-            "desc": "Hiện chúng tôi đã chuẩn bị xong các mặt hàng để giao."
-          },
-          "success": {
-            "desc": "Chúng tôi đã tiếp nhận đơn hàng của bạn, và chúng tôi sẽ chuẩn bị các mặt hàng đầy đủ. Trở về trang này để cập nhật trạng thái giao hàng cho đơn hàng của bạn."
-          }
-        },
-        "contact-us-title": "Liên hệ với chúng tôi",
-        "contact-us": "Bạn có cần trợ giúp gì không? Vui lòng liên hệ cho chúng tôi:{{email}}"
-      },
-      "order-status": {
-        "cancel": {
-          "title": "Đơn hàng của bạn đã được hủy",
-          "desc": "Đơn hàng của bạn đã được hủy vào lúc {{cancelTime}}. Nếu bạn có bất cứ câu hỏi nào hãy liên hệ với chúng tôi."
-        },
-        "success": {
-          "title": "Đơn hàng của bạn đã được xác nhận",
-          "desc": "Thông tin đơn hàng đã được gửi đến {{buyerContact}}, xin vui lòng kiểm tra"
-        },
-        "pedding": {
-          "title": "Đang xử lý thanh toán...",
-          "desc": "Yêu cầu thanh toán của bạn đã được gửi đi, xin vui lòng đợi {{payChannelDesc}} phản hồi kết quả thanh toán"
-        },
-        "redirect": {
-          "title": "Chuyển hướng tới kết quả thanh toán...",
-          "desc": "Nếu trang này không tự động cập nhật kết quả thanh toán, vui lòng làm mới trang"
-        },
-        "pay": {
-          "title": "Chờ Thanh Toán",
-          "go-pay": "THANH TOÁN <0>{{orderAmount}}</0>"
-        },
-        "button": {
-          "refresh": "Làm mới"
-        }
-      },
-      "order-info": {
-        "processing": "Đang xử lý",
-        "confirmed": "Đã xác nhận",
-        "finished": "Hoàn thành",
-        "canceled": "Đã hủy"
-      },
-      "cancel-btn": "HỦY ĐƠN HÀNG",
-      "communication": {
-        "title": "Thôn tin trao đổi đơn hàng"
-      },
-      "coms": {
-        "operationLog": {
-          "PayDealLog": {
-            "title": "Thanh toán cho {amount} đã được xử lý bởi {payName}",
-            "payName": "Kênh Thanh Toán",
-            "amount": "Số tiền",
-            "dealId": "Mã số thanh toán",
-            "createTime": "Thời gian bắt đầu thanh toán",
-            "updateTime": "Thời gian trả kết quả trả hàng",
-            "status": "Trạng thái"
-          }
-        }
-      }
-    },
-    "seq-no": "Số {{id}}",
-    "order-at": "Đặt hàng tại:",
-    "customer-info": "Thông tin khách hàng",
-    "help-tips": "Bạn có cần trợ giúp gì không? Vui lòng liên hệ chúng tôi: {{email}}",
-    "order-date": "Ngày đặt hàng"
-  },
-  "promotion": {
-    "full-reduction": "Khuyến Mãi",
-    "full-reduction-benefit": "Hoàn Phí Giao Dịch",
-    "full-discount": "Khuyến Mại Giảm Giá",
-    "full-discount-benefit": "Khuyến Mại Giảm Giá",
-    "free-shipping": "Miễn phí giao hàng",
-    "flash-sale": "Flash Sale",
-    "member-price": "Giá hội viên",
-    "all-product": "Tất cả sản phẩm",
-    "permanent": "Dài hạn",
-    "all-user": "Toàn bộ người dùng",
-    "all-vip": "Toàn bộ hội viên",
-    "level-vip": "Hội viên cấp {{level}}",
-    "label-vip": "Hội viên {{label}}",
-    "other-customer": "Khách hàng (người dùng chưa đặt hàng)",
-    "activity-scope": "Phạm vi Sự Kiện",
-    "activity-benefit": "Ưu đãi trong Sự kiện",
-    "activity-introduction": "Giới thiệu sự kiện",
-    "terms-and-conditions": "Điều Khoản và Điều Kiện",
-    "selected-count-activity-product": "Số {{selectCount}} sản phẩm được lựa chọn cho sự kiện",
-    "price-unit": "YUAN",
-    "piece-unit": "Chiếc",
-    "discount-benefit": "{{discount}} giảm",
-    "full-amount": "<0>{{value}}</0> hoặc nhiều hơn",
-    "full-piece": "{{value}} chiếc hoạc nhiều hơn",
-    "reduce": "Giảm <0>{{value}}</0>",
-    "reduce1": "Chiết khấu {{value}}",
-    "reduce-again": "Giảm thêm <0>{{value}}</0>",
-    "get-discount-1": "Hưởng chiết khấu {{value}}",
-    "get-discount-2": "Hưởng {{value}}% ưu đãi",
-    "flash-sale-limit": "{{value}} là giới hạn mua của mỗi người",
-    "buy-again": "Mua thêm <0>{{value}}</0>",
-    "buy-again-piece": "Mua thêm {{value}} chiếc",
-    "still-lacking": "Cần <0>{{value}}</0>",
-    "discounted": "Bạn đã tiết kiệm <0>{{value}}</0>",
-    "coupon": "Phiếu ưu đãi",
-    "select-sku": "Chọn thông số của sản phẩm",
-    "select-combo": "Chọn kiện hàng",
-    "more-combo": "Nhiều kiện hàng",
-    "item-num": "{{value}} mặt hàng",
-    "only-one-sku": "Hiện sản phẩm chỉ có một thông số kỹ thuật",
-    "select-product": "Mua hàng",
-    "bundle": {
-      "title": "Mua theo gói",
-      "desc": "Thêm những mặt hàng này vào giỏ hàng để được chiết khấu <italic> {{value}} </italic>"
-    },
-    "whole-full-piece-discount": "Giảm <italic>{{content}}</italic>% khi <italic>{{condition}}</italic> chiếc",
-    "whole-full-amount-discount": "Giảm <italic>{{content}}</italic>% với <italic>{{condition}}</italic>",
-    "whole-full-piece-reduce": "Giảm <italic>{{content}}</italic> với <italic>{{condition}}</italic> chiếc",
-    "whole-full-amount-reduce": "Giảm <italic>{{content}}</italic> với <italic>{{condition}}</italic>",
-    "price-price-step1": "Mua nhiều hơn <more>{{morePrice}}</more> tiết kiệm nhiều hơn <more>{{totalPrice}}</more>",
-    "price-price-step2": "Tiết kiệm <normal>{{price}}</normal> already!<white /> Càng mua nhiều <more>{{morePrice}}</more> càng tiết kiệm nhiều <more>{{totalPrice}}</more>",
-    "price-price-step3": "Xin chúc mừng! Bạn đã tiết kiệm được <normal>{{price}}</normal> !",
-    "price-piece-step1": "Mua nhiều hơn <more>{{morePrice}}</more> tiết kiệm nhiều hơn <more>{{totalPrice}}</more>",
-    "price-piece-step2": "Tiết kiệm <normal>{{price}}</normal> already!<white /> Càng mua nhiều <more>{{morePrice}}</more> càng tiết kiệm nhiều <more>{{totalPrice}}</more>",
-    "price-piece-step3": "Xin chúc mừng! Bạn đã tiết kiệm được <normal>{{price}}</normal> !",
-    "percent-price-step1": "Mua càng nhiều <more>{{price}}</more> được giảm càng nhiều <more>{{percent}}</more>",
-    "percent-price-step2": "Tiết kiệm <normal>{{percent}}</normal> already!<white /> Mua càng nhiều <more>{{price}}</more> được giảm càng nhiều <more>{{morePercent}}</more>",
-    "percent-price-step3": "Xin chúc mừng! Bạn đã tiết kiệm được <normal>{{percent}}</normal> !",
-    "percent-piece-step1": "Mua càng nhiều <more>{{price}}</more> được giảm càng nhiều <more>{{percent}}</more>",
-    "percent-piece-step2": "Tiết kiệm <normal>{{percent}}</normal> already!<white /> Mua càng nhiều <more>{{price}}</more> được giảm càng nhiều <more>{{morePercent}}</more>",
-    "percent-piece-step3": "Xin chúc mừng! Bạn đã tiết kiệm được <normal>{{percent}}</normal> !"
-  },
-  "labelInput": {
-    "email-error": "Vui lòng nhập đúng định dạng email",
-    "phone-error": "Vui lòng nhập đúng định dạng số điện thoại di động",
-    "contact-error": "Vui lòng nhập đúng định dạng email/số điện thoại di động",
-    "phone-error-tips": "Vui lòng nhập chính xác họ tên của người nhận để việc giao hàng được thuận lợi"
-  },
-  "userCenter": {
-    "personal-info": "Thông Tin Cá Nhâ",
-    "orders": "Đơn hàng",
-    "refunds": "Hoàn tiền",
-    "sign-out": "Thoát",
-    "edit": "Chỉnh sửa",
-    "cancel": "HỦY",
-    "save": "LƯU",
-    "buy-record-entry": "Sản phẩm đã mua",
-    "account": {
-      "account-subscription-email": "Gửi tới địa chỉ email",
-      "account-subscription-phone": "Gửi tới số điện thoại di động",
-      "account-subscription-messenger": "Gửi tới Messenger",
-      "account-subscription-line": "Gửi tới Ứng Dụng Line",
-      "reset-password-error": "Vui lòng liên kết email hoặc số điện thoại di động trước",
-      "account-info": "Thông Tin Tài Khoản",
-      "member-level": "Cấp hội viên",
-      "memberLevelCom": {
-        "defaultLevel": "Hội viên thường",
-        "expire": "{{time}} đến hạn",
-        "upgradeText1": "Với đơn lẻ <italic>{{money}}</italic>, bạn có thể được nâng lên cấp {{nextLevelName}}",
-        "upgradeText0": "Nâng cấp {{nextLevelName}} sau khi gửi <italic>{{money}}</italic>",
-        "upgradeSuccessText": "Xin chúc mừng, bạn đã được nâng cấp thành công",
-        "modalTitle": "Mô tả các lớp yêu thích",
-        "tableTitleGrade": "Điểm hội viên",
-        "tableTitleInterest": "Sở thích của hội viên",
-        "discountInterest": "Mua sắm trực tiếp"
-      },
-      "general-member": "Hội viên thường",
-      "username": "Tên người dùng",
-      "username-message": "Vui lòng nhập tên người dùng!",
-      "username-placeholder": "Vui lòng nhập tên người dùng",
-      "email": "E-mail",
-      "bind": "Liên kết",
-      "modify-email": "Chỉnh sửa Email",
-      "phone": "Số Điện Thoại cố Định",
-      "modify-phone": "Chỉnh Sửa số Điện Thoại cố Định",
-      "password": "Mật khẩu",
-      "change-password": "Thay đổi mật khẩu",
-      "subscription-notification": "Thông Báo Đăng Ký",
-      "unsubscribed": "Hủy đăng ký",
-      "account-binding": "Liên Kết Tài Khoản"
-    },
-    "address": {
-      "delete-address": "Xóa Địa Chỉ",
-      "address": "Địa chỉ",
-      "no-data": "Hiện không có địa chỉ giao nhận nào",
-      "add": "Thêm Địa Chỉ Mới",
-      "full-tip": "Đã thêm mới 5 địa chỉ và tạm thời không thể thêm mới một địa chỉ khác",
-      "default": "Mặc Định",
-      "ok": "Ok"
-    },
-    "subscription": {
-      "title": "Đăng ký",
-      "line": "LINE",
-      "phone": "Số Điện Thoại Cố Định",
-      "email": "E-mail",
-      "messenger": "Messenger",
-      "not-sub": "Không đăng ký",
-      "subed": "Đã đăng ký",
-      "unsub": {
-        "title": "Hủy đăng ký",
-        "content": "Sau khi hủy đăng ký bạn sẽ không nhận được các chương trình ưu đãi mới nhất.",
-        "ok-text": "Hủy đăng ký"
-      },
-      "modal": {
-        "eamil-title": "Nhận thông tin khuyến mãi của đăng ký qua email",
-        "ok-text": "ĐĂNG KÝ",
-        "cancel-text": "HỦY ĐĂNG KÝ",
-        "phone-title": "Đăng ký nhận ưu đãi qua điện thoại",
-        "save": "LƯU"
-      }
-    },
-    "personal": {
-      "gender-male": "Nam",
-      "gender-female": "Nữ",
-      "gender-secret": "Bí mật",
-      "personal-information": "Thông tin cá nhâ",
-      "birthday-date": "Ngày Sinh Nhật",
-      "date": "Ngày",
-      "select-date": "Chọn Ngày",
-      "select-date-ok": "Ok",
-      "select-date-placeholder": "Chọn",
-      "select-date-cancel": "hủy",
-      "gender": "Giới tính",
-      "unknown": "Không biết"
-    },
-    "editAddress": {
-      "country-message": "Vui lòng chọn quốc gia của bạn!",
-      "province-message": "Vui lòng chọn tỉnh của bạn!",
-      "city-message": "Vui lòng chọn thành phố của bạn!",
-      "district-message": "Vui lòng chọn huyện của bạn!",
-      "postcode-message": "Ít hơn 32 ký tự!",
-      "address1-message": "Ít hơn 512 ký tự!",
-      "address2-message": "Ít hơn 512 ký tự!",
-      "edit": "SỬA ĐỊA CHỈ GIAO HÀNG",
-      "contact-message": "Vui lòng nhập tên của bạn!",
-      "lastName-message": "Vui lòng nhập họ của bạn!",
-      "phone-message": "Vui lòng nhập số điện thoại di động của bạn!",
-      "default": "Cài đặt giống với địa chỉ mặc định",
-      "name-placeholder": "Tên",
-      "firstName-placeholder": "Tên (không bắt buộc)",
-      "lastName-placeholder": "Họ",
-      "phone-label": "Điện thoại"
-    },
-    "message": {
-      "message": "Tin nhắn",
-      "send": "Gửi",
-      "inputPlaceholder": "Bạn có muốn viết gì trong phần tin nhắn không?"
-    },
-    "point": {
-      "title": "Thời điểm vàng mua sắm",
-      "empty-mainText": "Bạn chưa có tiền đi mua sắm",
-      "empty-btn-link": "Làm sao để nhận được và sử dụng tiền đi mua sắm?",
-      "mainview-dedection": "Số tín dụng tối đa hiện tại là <italic> {{money}} </italic>",
-      "mainview-link": "Hiểu luật",
-      "mainview-save": "Bạn đã tiết kiệm được <italic>{{historyTotalUsedDeduction}}</italic> nhờ sử dụng phí mua sắm {{historyTotalUsedScore}}",
-      "modal-title": "Mô tả phiếu mua sắm",
-      "ok-btn": "OK",
-      "unuseHistoryScore": "Bạn chưa sử dụng phiếu mua sắm để tiết kiệm chi tiêu",
-      "date": "{{day}}, {{month}} {{date}}, {{year}}",
-      "day0": "Chủ nhật",
-      "day1": "Thứ hai",
-      "day2": "Thứ ba",
-      "day3": "Thứ tư",
-      "day4": "Thứ năm",
-      "day5": "Thứ sáu",
-      "day6": "Thứ bảy",
-      "month1": "Tháng một",
-      "month2": "Tháng hai",
-      "month3": "Tháng ba",
-      "month4": "Tháng tư",
-      "month5": "Tháng năm",
-      "month6": "Tháng sáu",
-      "month7": "Tháng bảy",
-      "month8": "Tháng tám",
-      "month9": "Tháng chín",
-      "month10": "Tháng mười",
-      "month11": "Tháng mười một",
-      "month12": "Tháng mười hai",
-      "actionTypeDesc": {
-        "addPoint": "cộng điểm thưởng",
-        "deductPoint": "trừ điểm thưởng",
-        "expirePoint": "điểm thưởng hết hạn",
-        "freezePoint": "điểm thưởng bị giữ",
-        "releaseFreezePoint": "giải phóng điểm thưởng bị giữ",
-        "deductFreezePoint": "trừ điểm thưởng bị giữ",
-        "reverseAddPoint": "đảo cộng điểm thưởng",
-        "reverseDeductPoint": "đảo trừ điểm thưởng"
-      }
-    },
-    "pointList": {
-      "empty": "Hiện không có bản ghi về điểm thưởng",
-      "breadcrumb1": "Thông tin",
-      "breadcrumb2": "Giá mua",
-      "total": "Đánh giá ({{total}})",
-      "loading": "Đang tải...",
-      "loaded": "Đã tải",
-      "empty2": "Không còn bản ghi để hiển thị",
-      "order": "Xem đơn hàng:"
-    }
-  },
-  "cart": {
-    "render-empty-status": "Không có mặt hàng nào trong giỏ hàng của bạn",
-    "render-add-items": "Hiện giỏ hàng của bạn còn trống.",
-    "go-shopping": "TIẾP TỤC MUA SẮM",
-    "login-description": "Bạn đã là hội viên chưa? Đăng nhập để thuận tiện hơn trong việc kiểm soát các đơn hàng!",
-    "login-membership": "Miễn phí hội viên",
-    "checkout-error": "Có ít nhất một sản phẩm không khả dụng trong giỏ hàng. Vui lòng điều chỉnh mặt hàng trong giỏ hàng để chuyển sang bước thanh toán.",
-    "get": "Nhận giảm giá",
-    "shopping-money": "chiết khấu và thuế phí vận chuyển được tính ở bước tiếp theo",
-    "shopping-fees": "Phí mua sắm",
-    "shopping-money-step": "Thuế và phí giao hàng được tính toán ở bước thực hiện thanh toán",
-    "view-shopping-cart": "Xem Giỏ Hàng",
-    "most-100-sku": "Thêm tới 100 mặt hàng",
-    "most-buy-999": "Số lượng tối đa của một sản phẩm là 999 chiếc",
-    "stock-limit": "Chỉ còn {{stock}} chiếc",
-    "activity-title-limit": "Sản phẩm bên dưới vượt quá giới hạn số lượng mua, bạn có muốn tiến hành thanh toán không?",
-    "activity-price-limit": "Bạn chỉ có thể mua {{num}} chiếc của sản phẩm này với mức giá khuyến mại",
-    "active-stock-limit-2": "Bạn chỉ có thể mua {{stock}} chiếc của sản phẩm này với mức giá khuyến mại",
-    "active-stock-limit-1": "Bạn có thể mua tối đa {{stock}} sản phẩm với giá chiết khấu",
-    "activity-product-limit": "Bạn có thể mua tối đa {{stock}} sản phẩm với giá chiết khấu",
-    "view-link": "Nhấp để xem",
-    "view-pic": "Tùy chỉnh xem trước",
-    "not-participation-offers": "Không tham gia chương trình giảm giá",
-    "active-stock-limit": "Chỉ còn {{stock}} chiếc áp dụng giá chiết khấu"
-  },
-  "widget": {
-    "order": {
-      "pending-order": "Đơn hàng chờ"
-    }
+    "total": "Tổng cộng",
+    "total-num": "TỔNG CỘNG",
+    "use-customer-info": "Sử dụng thông tin khách hàng",
+    "use-member-account-can": "Thanh toán nhanh với tư cách là thành viên? Bạn có thể làm vậy ngay",
+    "use-shopping-deduction": "Hàng trợ giá được giảm xấp xỉ {{num}}",
+    "user-cancel-apply": "Người dùng đã thu hồi yêu cầu",
+    "will-discount": "Giảm giá",
+    "wrong-product": "Giao sai sản phẩm",
+    "you-are-paying-wait-result": "Yêu cầu thanh toán của bạn đã được gửi đi. Yêu cầu thanh toán {{payChannel}} đang chờ xử lý",
+    "your-apply-auditing-sure-backout": "Yêu cầu hoàn trả của bạn đang được xem xét. Bạn có muốn thu hồi yêu cầu không?",
+    "your-delivery-need-choose-store": "Yêu cầu bắt buộc nhập thông tin cửa hàng cho tất cả các phương thức giao nhận",
+    "your-order-created": "Bạn đã đặt hàng",
+    "your-order-not-pay": "Bạn chưa hoàn thành thanh toán cho đơn đặt hàng",
+    "your-refund-order-created": "Yêu cầu hoàn trả đơn hàng của bạn đang được thực hiện"
   },
   "user": {
-    "email": "Địa chỉ email",
-    "phone": "Số điện thoại di động",
-    "username": "Email/số điện thoại di động",
-    "password": "Mật khẩu",
-    "repeatPassword": "Nhập lại mật khẩu",
-    "primevalPassword": "Mật khẩu hiện tại",
+    "account": "TÀI KHOẢN",
     "code": "Mã xác nhận",
-    "signUp": "ĐĂNG KÝ",
-    "signIn": "ĐĂNG KÝ",
-    "confirm": "OK",
-    "emailError": "Vui lòng nhập đúng định dạng email và độ dài ít hơn 50 ký tự",
-    "phoneError": "Vui lòng nhập đúng định dạng số điện thoại di động",
     "codeError": "Vui lòng nhập mã xác nhận",
-    "passwordError": "Vui lòng đặt mật khẩu có độ dài tối thiểu là 8 ký tự và độ dài tối đa là 20 ký tự. Mật khẩu phải chứa ít nhất một ký tự viết hoa, một ký tự viết thường và một chữ số",
-    "repeatPasswordError": "Mật khẩu không trùng khớp",
-    "repeatPasswordEmptyError": "Vui lòng nhập lại mật khẩu",
-    "primevalPasswordError": "Vui lòng nhập mật khẩu hiện tại của bạn",
-    "send": "Gửi",
-    "resend": "Gửi lại",
-    "sendError": "Vui lòng gửi mã xác nhận trước",
-    "noData": "Không có dữ liệu",
-    "passwordEmptyError": "Vui lòng nhập mật khẩu",
-    "passwordMemberError": "Vui lòng đặt mật khẩu có độ dài tối thiểu là 6 ký tự và độ dài tối đa là 18 ký tự",
+    "confirm": "OK",
+    "email": "Địa chỉ email",
     "emailEmptyError": "Vui lòng điền email",
+    "emailError": "Vui lòng nhập đúng định dạng email và độ dài ít hơn 50 ký tự",
+    "noData": "Không có dữ liệu",
+    "password": "Mật khẩu",
+    "passwordEmptyError": "Vui lòng nhập mật khẩu",
+    "passwordError": "Vui lòng đặt mật khẩu có độ dài tối thiểu là 8 ký tự và độ dài tối đa là 20 ký tự. Mật khẩu phải chứa ít nhất một ký tự viết hoa, một ký tự viết thường và một chữ số",
+    "passwordMemberError": "Vui lòng đặt mật khẩu có độ dài tối thiểu là 6 ký tự và độ dài tối đa là 18 ký tự",
+    "phone": "Số điện thoại di động",
     "phoneEmptyError": "Nhập số điện thoại di động",
-    "usernameEmptyError": "Vui lòng nhập emai hoặc số điện thoại di động",
+    "phoneError": "Vui lòng nhập đúng định dạng số điện thoại di động",
     "primevalNewPasswordError": "Mật khẩu mới của bạn không được trùng với mật khẩu hiện tại",
+    "primevalPassword": "Mật khẩu hiện tại",
+    "primevalPasswordError": "Vui lòng nhập mật khẩu hiện tại của bạn",
+    "repeatPassword": "Nhập lại mật khẩu",
+    "repeatPasswordEmptyError": "Vui lòng nhập lại mật khẩu",
+    "repeatPasswordError": "Mật khẩu không trùng khớp",
+    "resend": "Gửi lại",
+    "send": "Gửi",
+    "sendError": "Vui lòng gửi mã xác nhận trước",
+    "signIn": "ĐĂNG KÝ",
+    "signUp": "ĐĂNG KÝ",
     "udbResponse": {
       "err-1": "Tham số trống",
+      "err-13": "stoken Mã hết hạn",
       "err-4": "Tham số không hợp lệ",
       "err-5": "Hoạt động bất hợp pháp",
-      "err-13": "stoken Mã hết hạn",
       "err-999": "Gọi từ xa không thành công",
       "err1001": "Mật khẩu sai",
       "err1002": "Người dùng không tồn tại",
@@ -1310,70 +1245,185 @@
       "err3014": "Tìm nạp mẫu thư/tin nhắn không thành công",
       "udbResponse": "Tài khoản của bạn bị hủy kích hoạt do bất thường; hãy liên hệ người bán để bỏ lệnh cấm"
     },
-    "account": "TÀI KHOẢN"
+    "username": "Email/số điện thoại di động",
+    "usernameEmptyError": "Vui lòng nhập emai hoặc số điện thoại di động"
   },
-  "address": {
-    "dropdown": {
-      "default-placeholder": "Vui lòng chọn",
-      "no-item-tips": "Không có dữ liệu",
-      "no-search-result": "Không tìm được kết quả phù hợp"
-    },
-    "mobile-errorMessage": "Vui lòng điền số điện thoại cố định hợp lệ",
-    "mobile-errorMessage-country-code": "Vui lòng không nhập mã vùng"
-  },
-  "oneShop": {
-    "noComment": "Chưa có bất kỳ nhận xét nào",
-    "productCommentTitle": "Đánh Giá Sản Phẩm ({{n}})",
-    "priceStart": "Từ CNY {{n}}",
-    "discountByAmount": "Giảm {{n}}% với {{amount}} CNY",
-    "discountByNum": "Giảm {{n}}% cho {{num}} chiếc",
-    "cutByAmount": "Giảm {{n}} CNY với {{amount}} CNY",
-    "cutByNum": "Giảm {{n}} CNY cho {{num}} chiếc",
-    "buyNow": "Mua ngay",
-    "productDetail": "Chi tiết sản phẩm",
-    "selectedProductSoldOut": "Sản phẩm đã chọn không còn đủ hàng",
-    "currentProductSoldOut": "Sản phẩm hiện tại không còn đủ hàng",
-    "productNoSelect": "Vui lòng chọn thông số sản phẩm",
-    "orderAgain": "Vui lòng thực hiện đặt hàng lại",
-    "soleOutSelectAgain": "Sản phẩm hiện tại không còn đủ hàng, vui lòng chọn lại",
-    "productFailure": "Sản phẩm bạn chọn không hợp lệ, vui lòng chọn lại",
-    "comboSelectFailure": "Gói ản phẩm bạn chọn không hợp lệ, vui lòng chọn lại",
-    "comboFailure": "Gói sản phẩm không hợp lệ",
-    "freeShipping": "Miễn phí giao hàng",
-    "buyPop": "{{name}} mua sản phẩm này {{minutes}} phút trước",
-    "noProductDesc": "Không có mô tả sản phẩm",
-    "TCTD0108": "Phương thức giao hàng không tồn tại, vui lòng chọn lại",
-    "TCTD0118": "Phương thức thanh toán không tồn tại, vui lòng chọn lại",
-    "TCTD0121": "Chiến dịch tiếp thị đã thay đổi, vui lòng chọn lại",
-    "TCTD0112": "Sản phẩm bạn chọn không hợp lệ, vui lòng chọn lại",
-    "defaultErrorCodeMsg": "Mạng không ổn định, vui lòng làm mới trang và thử lại",
-    "comment": "Viết tin nhắn (Không bắt buộc)",
-    "country": "Quốc gia",
-    "submit": "Gửi",
-    "overLength": "Độ dài ký tự nhập vào vượt quá giới hạn cho phép, bạn vui lòng chỉnh sửa nội dung và thử lại",
-    "optional": "Không bắt buộc",
-    "bracket": "({{content}})"
-  },
-  "blogList": {
-    "container": {
-      "empty": {
-        "title": "Blog",
-        "desc": "Không có bài đăng trên blog nào trong blog này."
+  "userCenter": {
+    "account": {
+      "account-binding": "Liên Kết Tài Khoản",
+      "account-info": "Thông Tin Tài Khoản",
+      "account-subscription-email": "Gửi tới địa chỉ email",
+      "account-subscription-line": "Gửi tới Ứng Dụng Line",
+      "account-subscription-messenger": "Gửi tới Messenger",
+      "account-subscription-phone": "Gửi tới số điện thoại di động",
+      "bind": "Liên kết",
+      "change-password": "Thay đổi mật khẩu",
+      "email": "E-mail",
+      "general-member": "Hội viên thường",
+      "member-level": "Cấp hội viên",
+      "memberLevelCom": {
+        "defaultLevel": "Hội viên thường",
+        "discountInterest": "Mua sắm trực tiếp",
+        "expire": "{{time}} đến hạn",
+        "modalTitle": "Mô tả các lớp yêu thích",
+        "tableTitleGrade": "Điểm hội viên",
+        "tableTitleInterest": "Sở thích của hội viên",
+        "upgradeSuccessText": "Xin chúc mừng, bạn đã được nâng cấp thành công",
+        "upgradeText0": "Nâng cấp {{nextLevelName}} sau khi gửi <italic>{{money}}</italic>",
+        "upgradeText1": "Với đơn lẻ <italic>{{money}}</italic>, bạn có thể được nâng lên cấp {{nextLevelName}}"
       },
-      "readBtnText": "Đọc thêm"
+      "modify-email": "Chỉnh sửa Email",
+      "modify-phone": "Chỉnh Sửa số Điện Thoại cố Định",
+      "password": "Mật khẩu",
+      "phone": "Số Điện Thoại cố Định",
+      "reset-password-error": "Vui lòng liên kết email hoặc số điện thoại di động trước",
+      "subscription-notification": "Thông Báo Đăng Ký",
+      "unsubscribed": "Hủy đăng ký",
+      "username": "Tên người dùng",
+      "username-message": "Vui lòng nhập tên người dùng!",
+      "username-placeholder": "Vui lòng nhập tên người dùng"
+    },
+    "address": {
+      "add": "Thêm Địa Chỉ Mới",
+      "address": "Địa chỉ",
+      "default": "Mặc Định",
+      "delete-address": "Xóa Địa Chỉ",
+      "full-tip": "Đã thêm mới 5 địa chỉ và tạm thời không thể thêm mới một địa chỉ khác",
+      "no-data": "Hiện không có địa chỉ giao nhận nào",
+      "ok": "Ok"
+    },
+    "buy-record-entry": "Sản phẩm đã mua",
+    "cancel": "HỦY",
+    "edit": "Chỉnh sửa",
+    "editAddress": {
+      "address1-message": "Ít hơn 512 ký tự!",
+      "address2-message": "Ít hơn 512 ký tự!",
+      "city-message": "Vui lòng chọn thành phố của bạn!",
+      "contact-message": "Vui lòng nhập tên của bạn!",
+      "country-message": "Vui lòng chọn quốc gia của bạn!",
+      "default": "Cài đặt giống với địa chỉ mặc định",
+      "district-message": "Vui lòng chọn huyện của bạn!",
+      "edit": "SỬA ĐỊA CHỈ GIAO HÀNG",
+      "firstName-placeholder": "Tên (không bắt buộc)",
+      "lastName-message": "Vui lòng nhập họ của bạn!",
+      "lastName-placeholder": "Họ",
+      "name-placeholder": "Tên",
+      "phone-label": "Điện thoại",
+      "phone-message": "Vui lòng nhập số điện thoại di động của bạn!",
+      "postcode-message": "Ít hơn 32 ký tự!",
+      "province-message": "Vui lòng chọn tỉnh của bạn!"
+    },
+    "message": {
+      "inputPlaceholder": "Bạn có muốn viết gì trong phần tin nhắn không?",
+      "message": "Tin nhắn",
+      "send": "Gửi"
+    },
+    "orders": "Đơn hàng",
+    "personal-info": "Thông Tin Cá Nhâ",
+    "personal": {
+      "birthday-date": "Ngày Sinh Nhật",
+      "date": "Ngày",
+      "gender": "Giới tính",
+      "gender-female": "Nữ",
+      "gender-male": "Nam",
+      "gender-secret": "Bí mật",
+      "personal-information": "Thông tin cá nhâ",
+      "select-date": "Chọn Ngày",
+      "select-date-cancel": "hủy",
+      "select-date-ok": "Ok",
+      "select-date-placeholder": "Chọn",
+      "unknown": "Không biết"
+    },
+    "point": {
+      "actionTypeDesc": {
+        "addPoint": "cộng điểm thưởng",
+        "deductFreezePoint": "trừ điểm thưởng bị giữ",
+        "deductPoint": "trừ điểm thưởng",
+        "expirePoint": "điểm thưởng hết hạn",
+        "freezePoint": "điểm thưởng bị giữ",
+        "releaseFreezePoint": "giải phóng điểm thưởng bị giữ",
+        "reverseAddPoint": "đảo cộng điểm thưởng",
+        "reverseDeductPoint": "đảo trừ điểm thưởng"
+      },
+      "date": "{{day}}, {{month}} {{date}}, {{year}}",
+      "day0": "Chủ nhật",
+      "day1": "Thứ hai",
+      "day2": "Thứ ba",
+      "day3": "Thứ tư",
+      "day4": "Thứ năm",
+      "day5": "Thứ sáu",
+      "day6": "Thứ bảy",
+      "empty-btn-link": "Làm sao để nhận được và sử dụng tiền đi mua sắm?",
+      "empty-mainText": "Bạn chưa có tiền đi mua sắm",
+      "mainview-dedection": "Số tín dụng tối đa hiện tại là <italic> {{money}} </italic>",
+      "mainview-link": "Hiểu luật",
+      "mainview-save": "Bạn đã tiết kiệm được <italic>{{historyTotalUsedDeduction}}</italic> nhờ sử dụng phí mua sắm {{historyTotalUsedScore}}",
+      "modal-title": "Mô tả phiếu mua sắm",
+      "month1": "Tháng một",
+      "month10": "Tháng mười",
+      "month11": "Tháng mười một",
+      "month12": "Tháng mười hai",
+      "month2": "Tháng hai",
+      "month3": "Tháng ba",
+      "month4": "Tháng tư",
+      "month5": "Tháng năm",
+      "month6": "Tháng sáu",
+      "month7": "Tháng bảy",
+      "month8": "Tháng tám",
+      "month9": "Tháng chín",
+      "ok-btn": "OK",
+      "title": "Thời điểm vàng mua sắm",
+      "unuseHistoryScore": "Bạn chưa sử dụng phiếu mua sắm để tiết kiệm chi tiêu"
+    },
+    "pointList": {
+      "breadcrumb1": "Thông tin",
+      "breadcrumb2": "Giá mua",
+      "empty": "Hiện không có bản ghi về điểm thưởng",
+      "empty2": "Không còn bản ghi để hiển thị",
+      "loaded": "Đã tải",
+      "loading": "Đang tải...",
+      "order": "Xem đơn hàng:",
+      "total": "Đánh giá ({{total}})"
+    },
+    "refunds": "Hoàn tiền",
+    "save": "LƯU",
+    "sign-out": "Thoát",
+    "subscription": {
+      "email": "E-mail",
+      "line": "LINE",
+      "messenger": "Messenger",
+      "modal": {
+        "cancel-text": "HỦY ĐĂNG KÝ",
+        "eamil-title": "Nhận thông tin khuyến mãi của đăng ký qua email",
+        "ok-text": "ĐĂNG KÝ",
+        "phone-title": "Đăng ký nhận ưu đãi qua điện thoại",
+        "save": "LƯU"
+      },
+      "not-sub": "Không đăng ký",
+      "phone": "Số Điện Thoại Cố Định",
+      "subed": "Đã đăng ký",
+      "title": "Đăng ký",
+      "unsub": {
+        "content": "Sau khi hủy đăng ký bạn sẽ không nhận được các chương trình ưu đãi mới nhất.",
+        "ok-text": "Hủy đăng ký",
+        "title": "Hủy đăng ký"
+      }
     }
   },
-  "blog": {
-    "container": {
-      "backTo": "Trả lại {{{collectionTitle}}}"
-    }
+  "validate": {
+    "coupon-code-cannot-exceed-25-length": "Mã phiếu ưu đãi không được vượt quá 25 ký tự",
+    "discount-code-can-not-accumulate": "Sản phẩm có sự kiện ưu đãi không thể kết hợp với các sự kiện ưu đãi khác",
+    "discount-code-error": "Nhập mã giảm giá không chính xác",
+    "discount-code-user-invalid": "Nhập mã {{discountCode}} chính xác, nhưng giá hoặc số lượng hàng hóa không đáp ứng yêu cầu",
+    "enter-correct-email": "Vui lòng nhập đúng định dạng email",
+    "enter-correct-phone-number": "Vui lòng nhập đúng định dạng số điện thoại di động",
+    "mutual-excluded-by-time-limited": "Đơn hàng này được áp dụng giá chiết khấu. Bạn không thể nhập thêm chương trình chiết khấu khác.",
+    "phone-number-less-than-100": "Độ dài của số điện thoại di động không được vượt quá 100 ký tự",
+    "shipping_plan_unavailable": "Mã phiếu ưu đãi {{discountCode}} được áp dụng cho phương thức giao hàng này"
   },
-  "title": {
-    "policy": {
-      "privacy": "Chính Sách Bảo Mật Của Trang Web",
-      "refund": "Chính sách hoàn tiền",
-      "service": "Điều Khoản Dịch Vụ",
-      "shipping": "Chính sách giao hàng"
+  "widget": {
+    "order": {
+      "pending-order": "Đơn hàng chờ"
     }
   }
 }

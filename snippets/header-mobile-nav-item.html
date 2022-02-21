@@ -1,7 +1,6 @@
 {{ assign 'has_child' (gt (length node.childNodes) 0) }}
 {{assign 'nav_info' (navLink node global.request.uri.query global.request.locale)}}
 
-{{ preload_state 'navigations' }}
 
 {{#with this as |global|}}
   <li class="mobile-nav__item">

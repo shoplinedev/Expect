@@ -9,7 +9,7 @@
   <div class="image-with-text image-with-text__position-{{position}} container g-4 g-md-6">
       <a {{{linkObj.hrefAttr}}} class="image-with-text__imgwrap {{#if (isFalsey image.url)}}image-with-text__noimg{{/if}}">
           {{#if image.url}}
-              <img style="width: {{settings.image_width}}px" class="image-with-text__img lozad" data-src="{{image.url}}" alt="{{image.alt}}">
+              <img style="width: {{settings.image_width}}px" {{{get 'responsiveAttr' (image_responsive image.url pcSize=(append settings.image_width 'px') mSize='100vw')}}} class="image-with-text__img lozad" alt="{{image.alt}}"/>
           {{else}}
               {{assign 'styleP' (append "width:" settings.image_width "px;height:auto" )}}
               {{ snippet 'icons/icon_image' styleParam=styleP  class="image-with-text__img" }}
@@ -38,7 +38,12 @@
 {
   "name": {
     "zh-hans-cn": "图文模块",
-    "en": "Image with text"
+    "en": "Image with text",
+    "id": "modul grafis",
+    "th": "โมดูลกราฟิก",
+    "vi": "Mô đun đồ hoạ",
+    "ms": "Modul grafik",
+    "zh-hant-tw": "圖文模塊"
   },
   "class": "index-section--gap",
   "settings": [
@@ -47,7 +52,12 @@
       "type": "image_picker",
       "label": {
         "zh-hans-cn": "添加图片",
-        "en": "Image"
+        "en": "Image",
+        "id": "Tambah gambar",
+        "th": "เพิ่มรูปภาพ",
+        "vi": "Thêm hình ảnh",
+        "ms": "Penambahan gambar",
+        "zh-hant-tw": "添加圖片"
       }
     },
     {
@@ -55,7 +65,12 @@
       "type": "range",
       "label": {
         "zh-hans-cn": "图片宽度",
-        "en": "Image width"
+        "en": "Image width",
+        "id": "Lebar gambar",
+        "th": "ความกว้างของภาพ",
+        "vi": "Độ rộng hình ảnh",
+        "ms": "Lebar gambar",
+        "zh-hant-tw": "圖片寬度"
       },
       "min": 100,
       "max": 500,
@@ -68,7 +83,12 @@
       "type": "text",
       "label": {
         "zh-hans-cn": "副标题",
-        "en": "Subtitle"
+        "en": "Subtitle",
+        "id": "Subtitle",
+        "th": "หัวข้อรอง",
+        "vi": "Dề phụ",
+        "ms": "Sari kata",
+        "zh-hant-tw": "副標題"
       },
       "default": "Improved"
     },
@@ -77,25 +97,40 @@
       "type": "text",
       "label": {
         "zh-hans-cn": "标题",
-        "en": "Title"
+        "en": "Title",
+        "id": "Judul",
+        "th": "หัวข้อ",
+        "vi": "Tiêu đề",
+        "ms": "Tajuk",
+        "zh-hant-tw": "標題"
       },
-      "default":"Image with text"
+      "default": "Image with text"
     },
     {
       "id": "text",
       "type": "richtext",
       "label": {
         "zh-hans-cn": "文本",
-        "en": "Texts"
+        "en": "Texts",
+        "id": "Teks",
+        "th": "ข้อความ",
+        "vi": "Văn bản",
+        "ms": "Teks",
+        "zh-hant-tw": "文本"
       },
-      "default":"Pair large text with a full-width image to draw attention to an important detail of your brand or product line."
+      "default": "Pair large text with a full-width image to draw attention to an important detail of your brand or product line."
     },
     {
       "id": "button_text",
       "type": "text",
       "label": {
         "zh-hans-cn": "按钮文案",
-        "en": "Button text"
+        "en": "Button text",
+        "id": "Tulisan tombol",
+        "th": "ข้อความปุ่ม",
+        "vi": "Nội dung nút",
+        "ms": "Salinan butang",
+        "zh-hant-tw": "按鈕文案"
       },
       "default": "Optional button"
     },
@@ -104,7 +139,12 @@
       "type": "url",
       "label": {
         "zh-hans-cn": "跳转链接",
-        "en": "Jump link"
+        "en": "Jump link",
+        "id": "lompat link",
+        "th": "ลิงก์กระโดดข้าม",
+        "vi": "Link chuyển đổi",
+        "ms": "Pautan lompat",
+        "zh-hant-tw": "跳轉鏈接"
       }
     },
     {
@@ -112,21 +152,36 @@
       "type": "select",
       "label": {
         "zh-hans-cn": "文本位置",
-        "en": "Text position"
+        "en": "Text position",
+        "id": "Posisi teks",
+        "th": "ตำแหน่งข้อความ",
+        "vi": "Vị trí văn bản",
+        "ms": "Kedudukan teks",
+        "zh-hant-tw": "文本位置"
       },
-      "options" : [
+      "options": [
         {
           "value": "left",
           "label": {
+            "zh-hans-cn": "左文右图",
             "en": "Image on right",
-            "zh-hans-cn": "左文右图"
+            "id": "teks di sebelah kiri,gambar di sebelah kanan",
+            "th": "ข้อความซ้ายและภาพขวา",
+            "vi": "Chữ bên trái, hình ảnh bên phải",
+            "ms": "Teks di kiri dan gambar di kanan",
+            "zh-hant-tw": "左文右圖"
           }
         },
         {
           "value": "right",
           "label": {
+            "zh-hans-cn": "左图右文",
             "en": "Image on left",
-            "zh-hans-cn": "左图右文"
+            "id": "gambar di sebelah kiri,teks di sebelah kanan",
+            "th": "ภาพซ้ายและข้อความขวา",
+            "vi": "Hình ảnh bên trái, chữ bên phải",
+            "ms": "Gambar di kiri teks di kanan",
+            "zh-hant-tw": "左圖右文"
           }
         }
       ],
@@ -137,7 +192,12 @@
       "type": "switch",
       "label": {
         "zh-hans-cn": "展示模块分割线",
-        "en": "Show section divider"
+        "en": "Show section divider",
+        "id": "Tampilkan garis pemisah modul",
+        "th": "แสดงเส้นแบ่งโมดูล",
+        "vi": "Hiển thị đường phân cách mô đun",
+        "ms": "Paparkan garis pembahagi modul",
+        "zh-hant-tw": "展示模塊分割線"
       },
       "default": false
     }
@@ -146,18 +206,28 @@
     {
       "name": {
         "zh-hans-cn": "图文模块",
-        "en": "Image with text"
+        "en": "Image with text",
+        "id": "modul grafis",
+        "th": "โมดูลกราฟิก",
+        "vi": "Mô đun đồ hoạ",
+        "ms": "Modul grafik",
+        "zh-hant-tw": "圖文模塊"
       },
       "category": {
         "zh-hans-cn": "内容展示",
-        "en": "Content display"
+        "en": "Content display",
+        "id": "Tampilan Isi",
+        "th": "การแสดงเนื้อหา",
+        "vi": "Hiển thị nội dung",
+        "ms": "Paparan kandungan",
+        "zh-hant-tw": "內容展示"
       },
       "settings": {
         "image": {},
         "image_width": 500,
         "sub_title": "Improved",
         "title": "Image with text",
-        "text":"Pair large text with a full-width image to draw attention to an important detail of your brand or product line.",
+        "text": "Pair large text with a full-width image to draw attention to an important detail of your brand or product line.",
         "button_text": "Optional button",
         "jump_link": "",
         "text_position": "right",

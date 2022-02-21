@@ -6,31 +6,50 @@
     "theme_author": "Shopline",
     "theme_documentation_url": "",
     "theme_support_url": "",
-    "theme_cover_img": "https://img.myshopline.com/image/shopline/f6e2e82eb18d427bbcf2616f147a26ed.png",
-    "theme_home_pc_preview_img": "https://img.myshopline.com/image/shopline/f6e2e82eb18d427bbcf2616f147a26ed.png",
-    "theme_home_mobile_preview_img": "https://img.myshopline.com/image/shopline/2f776e76132d4a9fa21239f1cf57460f.png",
-    "theme_pdp_pc_preview_img": "https://img.myshopline.com/image/shopline/5c27451b4a4c4af0805627a44e272e9a.png",
-    "theme_pdp_mobile_preview_img": "https://img.myshopline.com/image/shopline/8f41e2efdd3c472aa6c0e6f0e88104e6.png"
+    "theme_cover_img": "https://img.myshopline.com/image/shopline/efd8a65e449441c9ac9b5ad981cd19af.jpeg",
+    "theme_home_pc_preview_img": "https://img.myshopline.com/image/shopline/efd8a65e449441c9ac9b5ad981cd19af.jpeg",
+    "theme_home_mobile_preview_img": "https://img.myshopline.com/image/shopline/a2971a28534c4d709fd3f923892fa57c.jpeg",
+    "theme_pdp_pc_preview_img": "https://img.myshopline.com/image/shopline/67ba1989dd5f43959a8e0f6309c3b189.jpeg",
+    "theme_pdp_mobile_preview_img": "https://img.myshopline.com/image/shopline/28e22b50f9c347f4b750384c41b8e080.jpeg"
   },
   {
     "name": {
-      "en": "Colors",
-      "zh-hans-cn": "颜色"
+      "zh-hans-cn": "颜色",
+      "en": "Color",
+      "id": "warna",
+      "th": "สี",
+      "vi": "Màu sắc",
+      "ms": "warna",
+      "zh-hant-tw": "顏色"
     },
     "settings": [
       {
+        "id": "page_width",
+        "default": 1500
+      },
+      {
         "type": "group_header",
         "label": {
+          "zh-hans-cn": "基础",
           "en": "Basics",
-          "zh-hans-cn": "基础"
+          "id": "Dasar",
+          "th": "พื้นฐาน",
+          "vi": "Cơ bản",
+          "ms": "Pangkalan",
+          "zh-hant-tw": "基礎"
         }
       },
       {
         "id": "color_page_background",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "背景",
           "en": "Background",
-          "zh-hans-cn": "背景"
+          "id": "latar",
+          "th": "พื้นหลัง",
+          "vi": "Nền",
+          "ms": "latar belakang",
+          "zh-hant-tw": "背景"
         },
         "default": "#FFFFFF"
       },
@@ -38,8 +57,13 @@
         "id": "color_text",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "文字",
           "en": "Texts",
-          "zh-hans-cn": "文字"
+          "id": "Kata-kata",
+          "th": "ข้อความ",
+          "vi": "Chữ viết",
+          "ms": "teks",
+          "zh-hant-tw": "文字"
         },
         "default": "#000000"
       },
@@ -47,8 +71,13 @@
         "id": "color_sale",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "售价",
           "en": "Selling price",
-          "zh-hans-cn": "售价"
+          "id": "Harga jual",
+          "th": "ราคาขาย",
+          "vi": "Giá bán",
+          "ms": "Harga jualan",
+          "zh-hant-tw": "售價"
         },
         "default": "#c20000"
       },
@@ -56,8 +85,13 @@
         "id": "color_discount",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "优惠金额",
           "en": "Discount amount",
-          "zh-hans-cn": "优惠金额"
+          "id": "jumlah uang penawaran",
+          "th": "ราคาที่ลด",
+          "vi": "Số tiền ưu đãi",
+          "ms": "Jumlah wang yang ditawarkan",
+          "zh-hant-tw": "優惠金額"
         },
         "default": "#1c1d1d"
       },
@@ -65,8 +99,13 @@
         "id": "color_entry_line",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "线条与边框",
           "en": "Lines and borders",
-          "zh-hans-cn": "线条与边框"
+          "id": "Garis dan batas",
+          "th": "เส้นและเส้นขอบ",
+          "vi": "Đường nét và đường viền",
+          "ms": "Garisan dan tepi bingkai",
+          "zh-hant-tw": "線條與邊框"
         },
         "default": "#e8e8e1"
       },
@@ -74,8 +113,13 @@
         "id": "color_btn_background",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "按钮背景",
           "en": "Button background",
-          "zh-hans-cn": "按钮背景"
+          "id": "latar tombol",
+          "th": "พื้นหลังปุ่ม",
+          "vi": "Nền nút",
+          "ms": "Latar belakang butang",
+          "zh-hant-tw": "按鈕背景"
         },
         "default": "#111111"
       },
@@ -83,8 +127,13 @@
         "id": "color_btn_text",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "按钮文字",
           "en": "Button texts",
-          "zh-hans-cn": "按钮文字"
+          "id": "kata tombol",
+          "th": "ข้อความปุ่ม",
+          "vi": "Nội dung nút",
+          "ms": "Teks butang",
+          "zh-hant-tw": "按鈕文字"
         },
         "default": "#ffffff"
       },
@@ -92,8 +141,13 @@
         "id": "color_tag_background",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "折扣标签",
           "en": "Discount tag",
-          "zh-hans-cn": "折扣标签"
+          "id": "Label diskon",
+          "th": "ป้ายส่วนลด",
+          "vi": "Nhãn chiết khấu",
+          "ms": "Label diskuan",
+          "zh-hant-tw": "折扣標籤"
         },
         "default": "#1c1d1d"
       },
@@ -101,8 +155,13 @@
         "id": "color_tag_text",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "折扣标签文字",
           "en": "Texts for discount tag",
-          "zh-hans-cn": "折扣标签文字"
+          "id": "Teks label diskon",
+          "th": "ข้อความบนแท็กส่วนลด",
+          "vi": "Chữ ký hiệu chiết khấu",
+          "ms": "Teks label diskaun",
+          "zh-hant-tw": "折扣標籤文字"
         },
         "default": "#ffffff"
       },
@@ -110,8 +169,13 @@
         "id": "color_cart_dot",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "购物车提示点",
           "en": "Shopping cart prompt points",
-          "zh-hans-cn": "购物车提示点"
+          "id": "Titik pengingat troli",
+          "th": "จุดเตือนตะกร้าสินค้า",
+          "vi": "Điểm nhắc nhở giỏ hàng",
+          "ms": "Isyarat troli beli-belah",
+          "zh-hant-tw": "購物車提示點"
         },
         "default": "#ff4f33"
       },
@@ -119,8 +183,13 @@
         "id": "color_cart_dot_text",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "购物车提示文字",
           "en": "Shopping cart prompt text",
-          "zh-hans-cn": "购物车提示文字"
+          "id": "Teks tips troli",
+          "th": "ข้อความเตือนตะกร้าสินค้า",
+          "vi": "Dòng chữ nhắc nhở ở gior hàng",
+          "ms": "Teks isyarat troli beli-belah",
+          "zh-hant-tw": "購物車提示文字"
         },
         "default": "#ffffff"
       },
@@ -128,8 +197,13 @@
         "id": "color_image_background",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "图片背景",
           "en": "Image background",
-          "zh-hans-cn": "图片背景"
+          "id": "Latar belakang gambar",
+          "th": "พื้นหลังรูปภาพ",
+          "vi": "Nền ảnh",
+          "ms": "Latar belakang gambar",
+          "zh-hant-tw": "圖片背景"
         },
         "default": "#ffffff"
       },
@@ -137,8 +211,13 @@
         "id": "color_section_background",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "图片加载背景",
           "en": "Image loading background",
-          "zh-hans-cn": "图片加载背景"
+          "id": "Latar belakang pemuatan gambar",
+          "th": "โหลดพื้นหลังสำหรับรูปภาพ",
+          "vi": "Nền tải ảnh",
+          "ms": "Latar belakang memuatkan gambar",
+          "zh-hant-tw": "圖片加載背景"
         },
         "default": "#0f0f0f"
       },
@@ -146,24 +225,39 @@
         "id": "color_mask",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "弹窗遮罩背景",
           "en": "Pop-up window matte background",
-          "zh-hans-cn": "弹窗遮罩背景"
+          "id": "Latar belakang penutup pop-up",
+          "th": "พื้นหลัง mask layer ของหน้าต่างป๊อปอัป",
+          "vi": "Nền che cửa sổ bật lên",
+          "ms": "Latar belakang penutup tetingkap timbul",
+          "zh-hant-tw": "彈窗遮罩背景"
         },
         "default": "#737373"
       },
       {
         "type": "group_header",
         "label": {
+          "zh-hans-cn": "页头",
           "en": "Header",
-          "zh-hans-cn": "页头"
+          "id": "Halaman awal",
+          "th": "หัวของหน้า",
+          "vi": "Đầu trang",
+          "ms": "Tajuk",
+          "zh-hant-tw": "頁頭"
         }
       },
       {
         "id": "color_header_background",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "背景颜色",
           "en": "Background color",
-          "zh-hans-cn": "背景颜色"
+          "id": "Warna latar belakang",
+          "th": "สีพื้นหลัง",
+          "vi": "Màu sắc nền",
+          "ms": "Warna latar belakang",
+          "zh-hant-tw": "背景顏色"
         },
         "default": "#ffffff"
       },
@@ -171,8 +265,13 @@
         "id": "color_header_text",
         "type": "color_picker",
         "label": {
-          "en": "Text color",
-          "zh-hans-cn": "文字颜色"
+          "zh-hans-cn": "文字颜色",
+          "en": "Font color",
+          "id": "Warna kata",
+          "th": "สีข้อความ",
+          "vi": "Màu sắc chữ viết",
+          "ms": "Warna teks",
+          "zh-hant-tw": "文字顏色"
         },
         "default": "#000000"
       },
@@ -180,8 +279,13 @@
         "id": "color_header_announcement_bar",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "公告栏背景",
           "en": "Notice board background",
-          "zh-hans-cn": "公告栏背景"
+          "id": "latar papan buletin",
+          "th": "พื้นหลังกระดานข่าว",
+          "vi": "Nền cột thông báo",
+          "ms": "Latar belakang papan pengumuman",
+          "zh-hant-tw": "公告欄背景"
         },
         "default": "#0f0f0f"
       },
@@ -189,8 +293,13 @@
         "id": "color_header_announcement_bar_text",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "公告栏文字",
           "en": "Notice board text",
-          "zh-hans-cn": "公告栏文字"
+          "id": "Teks papan pengumuman",
+          "th": "ข้อความกระดานข่าว",
+          "vi": "Chữ bảng công bố",
+          "ms": "Teks papan buletin",
+          "zh-hant-tw": "公告欄文字"
         },
         "default": "#ffffff"
       },
@@ -198,24 +307,39 @@
         "id": "color_header_search",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "搜索输入框颜色",
           "en": "Search bar background",
-          "zh-hans-cn": "搜索输入框颜色"
+          "id": "Cari warna kotak masukan",
+          "th": "สีเส้นขอบของช่องค้นหา",
+          "vi": "Tìm kiếm màu khung nhập nội dung",
+          "ms": "Cari warna kotak input",
+          "zh-hant-tw": "搜索輸入框顏色"
         },
         "default": "#ffffff"
       },
       {
         "type": "group_header",
         "label": {
+          "zh-hans-cn": "页脚",
           "en": "Footer",
-          "zh-hans-cn": "页脚"
+          "id": "Halaman akhir",
+          "th": "ท้ายของหน้า",
+          "vi": "Chân trang",
+          "ms": "Pengaki",
+          "zh-hant-tw": "頁腳"
         }
       },
       {
         "id": "color_footer_background",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "背景颜色",
           "en": "Background color",
-          "zh-hans-cn": "背景颜色"
+          "id": "Warna latar belakang",
+          "th": "สีพื้นหลัง",
+          "vi": "Màu sắc nền",
+          "ms": "Warna latar belakang",
+          "zh-hant-tw": "背景顏色"
         },
         "default": "#f1eef5"
       },
@@ -223,8 +347,13 @@
         "id": "color_footer_border",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "边框与线条",
           "en": "Border color",
-          "zh-hans-cn": "边框与线条"
+          "id": "Batas dan garis",
+          "th": "เส้นขอบและเส้น",
+          "vi": "Khung viền và đường viền",
+          "ms": "Tepi bingkai dan garisan",
+          "zh-hant-tw": "邊框與線條"
         },
         "default": "#e8e1e1"
       },
@@ -232,24 +361,39 @@
         "id": "color_footer_text",
         "type": "color_picker",
         "label": {
-          "en": "Text color",
-          "zh-hans-cn": "文字颜色"
+          "zh-hans-cn": "文字颜色",
+          "en": "Font color",
+          "id": "Warna kata",
+          "th": "สีข้อความ",
+          "vi": "Màu sắc chữ viết",
+          "ms": "Warna teks",
+          "zh-hant-tw": "文字顏色"
         },
         "default": "#66a091"
       },
       {
         "type": "group_header",
         "label": {
+          "zh-hans-cn": "颜色风格1",
           "en": "Color style 1",
-          "zh-hans-cn": "颜色风格1"
+          "id": "Gaya warna 1",
+          "th": "สไตล์สี 1",
+          "vi": "Phong cách màu 1",
+          "ms": "Gaya warna 1",
+          "zh-hant-tw": "顏色風格1"
         }
       },
       {
         "id": "color_scheme_1_bg",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "背景颜色",
           "en": "Background color",
-          "zh-hans-cn": "背景颜色"
+          "id": "Warna latar belakang",
+          "th": "สีพื้นหลัง",
+          "vi": "Màu sắc nền",
+          "ms": "Warna latar belakang",
+          "zh-hant-tw": "背景顏色"
         },
         "default": "#ffffff"
       },
@@ -257,8 +401,13 @@
         "id": "color_scheme_1_text",
         "type": "color_picker",
         "label": {
-          "en": "Text color",
-          "zh-hans-cn": "文字颜色"
+          "zh-hans-cn": "文字颜色",
+          "en": "Font color",
+          "id": "Warna kata",
+          "th": "สีข้อความ",
+          "vi": "Màu sắc chữ viết",
+          "ms": "Warna teks",
+          "zh-hant-tw": "文字顏色"
         },
         "default": "#000000"
       },
@@ -266,43 +415,73 @@
         "id": "color_scheme_1_texture",
         "type": "select",
         "label": {
+          "zh-hans-cn": "纹理",
           "en": "Background texture",
-          "zh-hans-cn": "纹理"
+          "id": "Tekstur",
+          "th": "ลวดลาย",
+          "vi": "Đường vân",
+          "ms": "Tekstur",
+          "zh-hant-tw": "紋理"
         },
         "options": [
           {
             "value": "none",
             "label": {
+              "zh-hans-cn": "无",
               "en": "None",
-              "zh-hans-cn": "无"
+              "id": "Tidak ada",
+              "th": "ไม่มี",
+              "vi": "Không",
+              "ms": "Tiada",
+              "zh-hant-tw": "無"
             }
           },
           {
             "value": "paper",
             "label": {
+              "zh-hans-cn": "纸张",
               "en": "Paper",
-              "zh-hans-cn": "纸张"
+              "id": "Kertas",
+              "th": "กระดาษ",
+              "vi": "Trang giấy",
+              "ms": "Kertas",
+              "zh-hant-tw": "紙張"
             }
           },
           {
             "value": "swirl",
             "label": {
+              "zh-hans-cn": "漩涡",
               "en": "Swirl",
-              "zh-hans-cn": "漩涡"
+              "id": "Pusaran",
+              "th": "น้ำวน",
+              "vi": "Dạng xoáy",
+              "ms": "Olakan",
+              "zh-hant-tw": "漩渦"
             }
           },
           {
             "value": "marble",
             "label": {
+              "zh-hans-cn": "大理石",
               "en": "Marble",
-              "zh-hans-cn": "大理石"
+              "id": "Marmer",
+              "th": "หินอ่อน",
+              "vi": "Đá hoa",
+              "ms": "Marmar",
+              "zh-hant-tw": "大理石"
             }
           },
           {
             "value": "darken",
             "label": {
+              "zh-hans-cn": "变暗",
               "en": "Darken",
-              "zh-hans-cn": "变暗"
+              "id": "Menggelap",
+              "th": "ทำให้มืดลง",
+              "vi": "Làm đậm thêm",
+              "ms": "Tukar gelap",
+              "zh-hant-tw": "變暗"
             }
           }
         ],
@@ -311,16 +490,26 @@
       {
         "type": "group_header",
         "label": {
+          "zh-hans-cn": "颜色风格2",
           "en": "Color style 2",
-          "zh-hans-cn": "颜色风格2"
+          "id": "Gaya warna 2",
+          "th": "สีสไตล์2",
+          "vi": "Phong cách màu 2",
+          "ms": "Gaya warna 2",
+          "zh-hant-tw": "顏色風格2"
         }
       },
       {
         "id": "color_scheme_2_bg",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "背景颜色",
           "en": "Background color",
-          "zh-hans-cn": "背景颜色"
+          "id": "Warna latar belakang",
+          "th": "สีพื้นหลัง",
+          "vi": "Màu sắc nền",
+          "ms": "Warna latar belakang",
+          "zh-hant-tw": "背景顏色"
         },
         "default": "#acc6c3"
       },
@@ -328,8 +517,13 @@
         "id": "color_scheme_2_text",
         "type": "color_picker",
         "label": {
-          "en": "Text color",
-          "zh-hans-cn": "文字颜色"
+          "zh-hans-cn": "文字颜色",
+          "en": "Font color",
+          "id": "Warna kata",
+          "th": "สีข้อความ",
+          "vi": "Màu sắc chữ viết",
+          "ms": "Warna teks",
+          "zh-hant-tw": "文字顏色"
         },
         "default": "#812f2b"
       },
@@ -337,43 +531,73 @@
         "id": "color_scheme_2_texture",
         "type": "select",
         "label": {
+          "zh-hans-cn": "纹理",
           "en": "Background texture",
-          "zh-hans-cn": "纹理"
+          "id": "Tekstur",
+          "th": "ลวดลาย",
+          "vi": "Đường vân",
+          "ms": "Tekstur",
+          "zh-hant-tw": "紋理"
         },
         "options": [
           {
             "value": "none",
             "label": {
+              "zh-hans-cn": "无",
               "en": "None",
-              "zh-hans-cn": "无"
+              "id": "Tidak ada",
+              "th": "ไม่มี",
+              "vi": "Không",
+              "ms": "Tiada",
+              "zh-hant-tw": "無"
             }
           },
           {
             "value": "paper",
             "label": {
+              "zh-hans-cn": "纸张",
               "en": "Paper",
-              "zh-hans-cn": "纸张"
+              "id": "Kertas",
+              "th": "กระดาษ",
+              "vi": "Trang giấy",
+              "ms": "Kertas",
+              "zh-hant-tw": "紙張"
             }
           },
           {
             "value": "swirl",
             "label": {
+              "zh-hans-cn": "漩涡",
               "en": "Swirl",
-              "zh-hans-cn": "漩涡"
+              "id": "Pusaran",
+              "th": "น้ำวน",
+              "vi": "Dạng xoáy",
+              "ms": "Olakan",
+              "zh-hant-tw": "漩渦"
             }
           },
           {
             "value": "marble",
             "label": {
+              "zh-hans-cn": "大理石",
               "en": "Marble",
-              "zh-hans-cn": "大理石"
+              "id": "Marmer",
+              "th": "หินอ่อน",
+              "vi": "Đá hoa",
+              "ms": "Marmar",
+              "zh-hant-tw": "大理石"
             }
           },
           {
             "value": "darken",
             "label": {
+              "zh-hans-cn": "变暗",
               "en": "Darken",
-              "zh-hans-cn": "变暗"
+              "id": "Menggelap",
+              "th": "ทำให้มืดลง",
+              "vi": "Làm đậm thêm",
+              "ms": "Tukar gelap",
+              "zh-hant-tw": "變暗"
             }
           }
         ],
@@ -382,16 +606,26 @@
       {
         "type": "group_header",
         "label": {
+          "zh-hans-cn": "颜色风格3",
           "en": "Color style 3",
-          "zh-hans-cn": "颜色风格3"
+          "id": "Gaya warna 3",
+          "th": "สีสไตล์3",
+          "vi": "Phong cách màu 3",
+          "ms": "Gaya warna 3",
+          "zh-hant-tw": "顏色風格3"
         }
       },
       {
         "id": "color_scheme_3_bg",
         "type": "color_picker",
         "label": {
+          "zh-hans-cn": "背景颜色",
           "en": "Background color",
-          "zh-hans-cn": "背景颜色"
+          "id": "Warna latar belakang",
+          "th": "สีพื้นหลัง",
+          "vi": "Màu sắc nền",
+          "ms": "Warna latar belakang",
+          "zh-hant-tw": "背景顏色"
         },
         "default": "#f2f2ef"
       },
@@ -399,8 +633,13 @@
         "id": "color_scheme_3_text",
         "type": "color_picker",
         "label": {
-          "en": "Text color",
-          "zh-hans-cn": "文字颜色"
+          "zh-hans-cn": "文字颜色",
+          "en": "Font color",
+          "id": "Warna kata",
+          "th": "สีข้อความ",
+          "vi": "Màu sắc chữ viết",
+          "ms": "Warna teks",
+          "zh-hant-tw": "文字顏色"
         },
         "default": "#000000"
       },
@@ -408,43 +647,73 @@
         "id": "color_scheme_3_texture",
         "type": "select",
         "label": {
+          "zh-hans-cn": "纹理",
           "en": "Background texture",
-          "zh-hans-cn": "纹理"
+          "id": "Tekstur",
+          "th": "ลวดลาย",
+          "vi": "Đường vân",
+          "ms": "Tekstur",
+          "zh-hant-tw": "紋理"
         },
         "options": [
           {
             "value": "none",
             "label": {
+              "zh-hans-cn": "无",
               "en": "None",
-              "zh-hans-cn": "无"
+              "id": "Tidak ada",
+              "th": "ไม่มี",
+              "vi": "Không",
+              "ms": "Tiada",
+              "zh-hant-tw": "無"
             }
           },
           {
             "value": "paper",
             "label": {
+              "zh-hans-cn": "纸张",
               "en": "Paper",
-              "zh-hans-cn": "纸张"
+              "id": "Kertas",
+              "th": "กระดาษ",
+              "vi": "Trang giấy",
+              "ms": "Kertas",
+              "zh-hant-tw": "紙張"
             }
           },
           {
             "value": "swirl",
             "label": {
+              "zh-hans-cn": "漩涡",
               "en": "Swirl",
-              "zh-hans-cn": "漩涡"
+              "id": "Pusaran",
+              "th": "น้ำวน",
+              "vi": "Dạng xoáy",
+              "ms": "Olakan",
+              "zh-hant-tw": "漩渦"
             }
           },
           {
             "value": "marble",
             "label": {
+              "zh-hans-cn": "大理石",
               "en": "Marble",
-              "zh-hans-cn": "大理石"
+              "id": "Marmer",
+              "th": "หินอ่อน",
+              "vi": "Đá hoa",
+              "ms": "Marmar",
+              "zh-hant-tw": "大理石"
             }
           },
           {
             "value": "darken",
             "label": {
+              "zh-hans-cn": "变暗",
               "en": "Darken",
-              "zh-hans-cn": "变暗"
+              "id": "Menggelap",
+              "th": "ทำให้มืดลง",
+              "vi": "Làm đậm thêm",
+              "ms": "Tukar gelap",
+              "zh-hant-tw": "變暗"
             }
           }
         ],
@@ -454,23 +723,38 @@
   },
   {
     "name": {
+      "zh-hans-cn": "字体",
       "en": "Typography",
-      "zh-hans-cn": "字体"
+      "id": "Fonta",
+      "th": "ฟอนต์",
+      "vi": "Kiểu chữ",
+      "ms": "Fon",
+      "zh-hant-tw": "字體"
     },
     "settings": [
       {
         "type": "group_header",
         "label": {
+          "zh-hans-cn": "标题",
           "en": "Title",
-          "zh-hans-cn": "标题"
+          "id": "Judul",
+          "th": "หัวข้อ",
+          "vi": "Tiêu đề",
+          "ms": "Tajuk",
+          "zh-hant-tw": "標題"
         }
       },
       {
         "id": "type_title_font",
         "type": "font_picker",
         "label": {
-          "en": "Font",
-          "zh-hans-cn": "字体"
+          "zh-hans-cn": "字体",
+          "en": "Typography",
+          "id": "Fonta",
+          "th": "ฟอนต์",
+          "vi": "Kiểu chữ",
+          "ms": "Fon",
+          "zh-hant-tw": "字體"
         },
         "default": "Libre Baskerville"
       },
@@ -478,8 +762,13 @@
         "id": "type_title_letter_spacing",
         "type": "range",
         "label": {
+          "zh-hans-cn": "字体间距",
           "en": "Font-spacing",
-          "zh-hans-cn": "字体间距"
+          "id": "Spasi huruf",
+          "th": "ระยะห่างตัวอักษร",
+          "vi": "Khoảng cách giữa các chữ",
+          "ms": "Jarak fon",
+          "zh-hant-tw": "字體間距"
         },
         "default": "0",
         "min": -75,
@@ -491,8 +780,13 @@
         "id": "type_title_size",
         "type": "range",
         "label": {
+          "zh-hans-cn": "字体大小",
           "en": "Font size",
-          "zh-hans-cn": "字体大小"
+          "id": "Ukuran huruf",
+          "th": "ขนาดของตัวอักษร",
+          "vi": "Độ lớn của chữ",
+          "ms": "Saiz fon",
+          "zh-hant-tw": "字體大小"
         },
         "default": "36",
         "min": 22,
@@ -503,8 +797,13 @@
         "id": "type_title_line_height",
         "type": "range",
         "label": {
+          "zh-hans-cn": "字体行高",
           "en": "Font line height",
-          "zh-hans-cn": "字体行高"
+          "id": "Tinggi baris huruf",
+          "th": "ความสูงของบรรทัด",
+          "vi": "Độ cao của chữ",
+          "ms": "Ketinggian fon",
+          "zh-hant-tw": "字體行高"
         },
         "default": "1.2",
         "min": 0.8,
@@ -515,24 +814,39 @@
         "id": "type_title_uppercase",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "文字全部大写",
           "en": "All Caps for texts",
-          "zh-hans-cn": "文字全部大写"
+          "id": "Semua huruf besar",
+          "th": "ตัวพิมพ์ใหญ่ทั้งหมด",
+          "vi": "Viết hoa tất cả các chữ",
+          "ms": "Semua perkataan huruf besar",
+          "zh-hant-tw": "文字全部大寫"
         },
         "default": true
       },
       {
         "type": "group_header",
         "label": {
+          "zh-hans-cn": "正文",
           "en": "Main text",
-          "zh-hans-cn": "正文"
+          "id": "Teks",
+          "th": "ข้อความ",
+          "vi": "Nội dung chính",
+          "ms": "Teks",
+          "zh-hant-tw": "正文"
         }
       },
       {
         "id": "type_body_font",
         "type": "font_picker",
         "label": {
-          "en": "Font",
-          "zh-hans-cn": "字体"
+          "zh-hans-cn": "字体",
+          "en": "Typography",
+          "id": "Fonta",
+          "th": "ฟอนต์",
+          "vi": "Kiểu chữ",
+          "ms": "Fon",
+          "zh-hant-tw": "字體"
         },
         "default": "Poppins"
       },
@@ -540,8 +854,13 @@
         "id": "type_body_letter_spacing",
         "type": "range",
         "label": {
+          "zh-hans-cn": "字体间距",
           "en": "Font-spacing",
-          "zh-hans-cn": "字体间距"
+          "id": "Spasi huruf",
+          "th": "ระยะห่างตัวอักษร",
+          "vi": "Khoảng cách giữa các chữ",
+          "ms": "Jarak fon",
+          "zh-hant-tw": "字體間距"
         },
         "default": "25",
         "min": -75,
@@ -553,8 +872,13 @@
         "id": "type_body_size",
         "type": "range",
         "label": {
+          "zh-hans-cn": "字体大小",
           "en": "Font size",
-          "zh-hans-cn": "字体大小"
+          "id": "Ukuran huruf",
+          "th": "ขนาดของตัวอักษร",
+          "vi": "Độ lớn của chữ",
+          "ms": "Saiz fon",
+          "zh-hant-tw": "字體大小"
         },
         "default": "16",
         "min": 12,
@@ -565,8 +889,13 @@
         "id": "type_body_line_height",
         "type": "range",
         "label": {
+          "zh-hans-cn": "字体行高",
           "en": "Font line height",
-          "zh-hans-cn": "字体行高"
+          "id": "Tinggi baris huruf",
+          "th": "ความสูงของบรรทัด",
+          "vi": "Độ cao của chữ",
+          "ms": "Ketinggian fon",
+          "zh-hant-tw": "字體行高"
         },
         "default": "1.6",
         "min": 1,
@@ -576,30 +905,50 @@
       {
         "type": "group_header",
         "label": {
+          "zh-hans-cn": "其他",
           "en": "Other",
-          "zh-hans-cn": "其他"
+          "id": "lain",
+          "th": "อื่น ๆ",
+          "vi": "Mục khác",
+          "ms": "Lain",
+          "zh-hant-tw": "其他"
         }
       },
       {
         "id": "type_navigation_font",
         "type": "select",
         "label": {
+          "zh-hans-cn": "页头字体",
           "en": "Header font",
-          "zh-hans-cn": "页头字体"
+          "id": "Huruf tajak",
+          "th": "แบบอักษรส่วนหัวของหน้า",
+          "vi": "Thể chữ đầu trang",
+          "ms": "Fon pengepala",
+          "zh-hant-tw": "頁頭字體"
         },
         "options": [
           {
             "value": "title",
             "label": {
+              "zh-hans-cn": "与标题相同",
               "en": "Same as the title",
-              "zh-hans-cn": "与标题相同"
+              "id": "Sama dengan judul",
+              "th": "เช่นเดียวกับหัวข้อ",
+              "vi": "Giống với tiêu đề",
+              "ms": "Sama dengan tajuk",
+              "zh-hant-tw": "與標題相同"
             }
           },
           {
             "value": "body",
             "label": {
+              "zh-hans-cn": "与正文相同",
               "en": "Same as the main text",
-              "zh-hans-cn": "与正文相同"
+              "id": "Sama dengan tajuk",
+              "th": "เช่นเดียวกับข้อความ",
+              "vi": "Giống với đoạn chữ chính",
+              "ms": "Sama dengan kandungan",
+              "zh-hant-tw": "與正文相同"
             }
           }
         ],
@@ -609,8 +958,13 @@
         "id": "type_navigation_size",
         "type": "range",
         "label": {
+          "zh-hans-cn": "页头字体大小",
           "en": "Header font size",
-          "zh-hans-cn": "页头字体大小"
+          "id": "Sama dengan huruf tajak",
+          "th": "ขนาดของตัวอักษรส่วนหัวของหน้า",
+          "vi": "Độ lớn chữ đầu trang",
+          "ms": "Saiz fon pengepala",
+          "zh-hant-tw": "頁頭字體大小"
         },
         "default": "13",
         "min": 12,
@@ -621,12 +975,22 @@
         "id": "type_navigation_uppercase",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "页头字体大写",
           "en": "Header font in capital",
-          "zh-hans-cn": "页头字体大写"
+          "id": "Huruf tajak harus adalah huruf besar",
+          "th": "ตัวอักษรส่วนหัวของหน้าเป็นตัวพิมพ์ใหญ่",
+          "vi": "Viết hoa chữ đầu trang",
+          "ms": "Huruf besar fon pengelapa",
+          "zh-hant-tw": "頁頭字體大寫"
         },
         "info": {
+          "zh-hans-cn": "开启后文字会自动增加字体间距",
           "en": "Once enabled, system will automatically increase the font spacing.",
-          "zh-hans-cn": "开启后文字会自动增加字体间距"
+          "id": "Setelah dibuka, teks akan menambah jarak huruf otomatis",
+          "th": "หลังจากเปิดแล้ว ข้อความจะเพิ่มระยะห่างตัวอักษรโดยอัตโนมัติ",
+          "vi": "Sau khi bật, chữ sẽ tự động thêm khoảng cách chữ",
+          "ms": "Selepas dibuka, teks akan meningkatkan jarak fon secara automatik",
+          "zh-hant-tw": "開啟後文字會自動增加字體間距"
         },
         "default": true
       }
@@ -634,37 +998,62 @@
   },
   {
     "name": {
+      "zh-hans-cn": "设计",
       "en": "Design",
-      "zh-hans-cn": "设计"
+      "id": "Desain",
+      "th": "ออกแบบ",
+      "vi": "Thiết kế",
+      "ms": "Reka",
+      "zh-hant-tw": "設計"
     },
     "settings": [
       {
         "type": "group_header",
         "label": {
-          "en": "Basic",
-          "zh-hans-cn": "基础"
+          "zh-hans-cn": "基础",
+          "en": "Basics",
+          "id": "Dasar",
+          "th": "พื้นฐาน",
+          "vi": "Cơ bản",
+          "ms": "Pangkalan",
+          "zh-hant-tw": "基礎"
         }
       },
       {
         "id": "edges",
         "type": "select",
         "label": {
-          "en": "Edges ",
-          "zh-hans-cn": "边缘"
+          "zh-hans-cn": "边缘",
+          "en": "Edges",
+          "id": "Tepian",
+          "th": "ขอบ",
+          "vi": "Viền",
+          "ms": "Tepi",
+          "zh-hant-tw": "邊緣"
         },
         "options": [
           {
             "value": "square",
             "label": {
+              "zh-hans-cn": "直角",
               "en": "Right angle",
-              "zh-hans-cn": "直角"
+              "id": "Sudut kanan",
+              "th": "มุมฉาก",
+              "vi": "Góc vuông",
+              "ms": "Sudut tepat",
+              "zh-hant-tw": "直角"
             }
           },
           {
             "value": "rounded",
             "label": {
+              "zh-hans-cn": "圆角",
               "en": "rounded corner",
-              "zh-hans-cn": "圆角"
+              "id": "Sudut bulat",
+              "th": "รูปร่างกลม",
+              "vi": "Góc tròn",
+              "ms": "Sudut bulat",
+              "zh-hant-tw": "圓角"
             }
           }
         ],
@@ -674,29 +1063,49 @@
         "id": "button_style",
         "type": "select",
         "label": {
+          "zh-hans-cn": "按钮风格",
           "en": "Button style",
-          "zh-hans-cn": "按钮风格"
+          "id": "Gaya tombol",
+          "th": "สไตล์ปุ่ม",
+          "vi": "Phong cách nút ấn",
+          "ms": "Gaya butang",
+          "zh-hant-tw": "按鈕風格"
         },
         "options": [
           {
             "value": "square",
             "label": {
+              "zh-hans-cn": "直角",
               "en": "Right angle",
-              "zh-hans-cn": "直角"
+              "id": "Sudut kanan",
+              "th": "มุมฉาก",
+              "vi": "Góc vuông",
+              "ms": "Sudut tepat",
+              "zh-hant-tw": "直角"
             }
           },
           {
             "value": "radius",
             "label": {
+              "zh-hans-cn": "小圆角",
               "en": "Small rounded corner",
-              "zh-hans-cn": "小圆角"
+              "id": "Sudut bulat kecil",
+              "th": "รูปร่างกลมเล็ก",
+              "vi": "Góc tròn nhỏ",
+              "ms": "Sudut bulat kecil",
+              "zh-hant-tw": "小圓角"
             }
           },
           {
             "value": "rounded",
             "label": {
+              "zh-hans-cn": "全圆角",
               "en": "Full round",
-              "zh-hans-cn": "全圆角"
+              "id": "Sudut bulat penuh",
+              "th": "รูปร่างกลมเต็ม",
+              "vi": "Góc tròn hết",
+              "ms": "Sudut bulat penuh",
+              "zh-hant-tw": "全圓角"
             }
           }
         ],
@@ -705,16 +1114,26 @@
       {
         "type": "group_header",
         "label": {
-          "en": "Products",
-          "zh-hans-cn": "商品"
+          "zh-hans-cn": "商品",
+          "en": "Product",
+          "id": "Produk",
+          "th": "สินค้า",
+          "vi": "Sản phẩm",
+          "ms": "Produk",
+          "zh-hant-tw": "商品"
         }
       },
       {
         "id": "superscript_decimals",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "售价小数位缩小展示",
           "en": "Zoom out display for decimals of the selling price",
-          "zh-hans-cn": "售价小数位缩小展示"
+          "id": "Tampilan desimal dari harga jual",
+          "th": "แสดงการทำให้ทศนิยมของราคาขายให้เล็กลง",
+          "vi": "Hiển thị thu nhỏ số thập phân giá bán lẻ",
+          "ms": "Paparan perpuluhan harga jualan",
+          "zh-hant-tw": "售價小數位縮小展示"
         },
         "default": true
       },
@@ -722,8 +1141,13 @@
         "id": "product_grid_image_margin",
         "type": "range",
         "label": {
+          "zh-hans-cn": "商品图留白",
           "en": "Image margin",
-          "zh-hans-cn": "商品图留白"
+          "id": "Gambar produk dibiarkan kosong",
+          "th": "รูปภาพสินค้าเว้นว่างไว้",
+          "vi": "Ảnh sản phẩm để trắng",
+          "ms": "Gambar produk dibiarkan kosong",
+          "zh-hant-tw": "商品圖留白"
         },
         "default": 10,
         "min": 0,
@@ -734,44 +1158,74 @@
       {
         "type": "group_header",
         "label": {
-          "en": "Collections",
-          "zh-hans-cn": "商品分类"
+          "zh-hans-cn": "商品分类",
+          "en": "Collection list",
+          "id": "Klasifikasi produk",
+          "th": "หมวดหมู่",
+          "vi": "Phân loại sản phẩm",
+          "ms": "Produk kategori",
+          "zh-hant-tw": "商品分類"
         }
       },
       {
         "id": "collection_grid_shape",
         "type": "select",
         "label": {
+          "zh-hans-cn": "分类图片形状",
           "en": "Shape of collection image",
-          "zh-hans-cn": "分类图片形状"
+          "id": "Bentuk gambar kategori",
+          "th": "รูปร่างรูปภาพหมวดหมู่",
+          "vi": "Phân loại hình dạng ảnh",
+          "ms": "Klasifikasi bentuk gambar",
+          "zh-hant-tw": "分類圖片形狀"
         },
         "options": [
           {
             "value": "circle",
             "label": {
-              "en": "Circle",
-              "zh-hans-cn": "圆形"
+              "zh-hans-cn": "圆形",
+              "en": "Round",
+              "id": "Bentuk lingkaran",
+              "th": "ทรงกลม",
+              "vi": "Hình tròn",
+              "ms": "Bentuk bulat",
+              "zh-hant-tw": "圓形"
             }
           },
           {
             "value": "square",
             "label": {
+              "zh-hans-cn": "方形",
               "en": "Square",
-              "zh-hans-cn": "方形"
+              "id": "Bentuk persegi",
+              "th": "สี่เหลี่ยม",
+              "vi": "Hình vuông",
+              "ms": "Segi empat",
+              "zh-hant-tw": "方形"
             }
           },
           {
             "value": "landscape",
             "label": {
+              "zh-hans-cn": "横向(4:3)",
               "en": "Landscape",
-              "zh-hans-cn": "横向(4:3)"
+              "id": "Lanskap (4:3)",
+              "th": "แนวนอน (4:3)",
+              "vi": "Dạng ngang (4:3)",
+              "ms": "Mendatar (4:3)",
+              "zh-hant-tw": "橫向(4:3)"
             }
           },
           {
             "value": "portrait",
             "label": {
+              "zh-hans-cn": "纵向(2:3)",
               "en": "Portrait",
-              "zh-hans-cn": "纵向(2:3)"
+              "id": "Potret (2:3)",
+              "th": "แนวตั้ง (2:3)",
+              "vi": "Dạng dọc (2:3)",
+              "ms": "Menegak (2:3)",
+              "zh-hant-tw": "縱向(2:3)"
             }
           }
         ],
@@ -781,22 +1235,37 @@
         "id": "collection_grid_image",
         "type": "select",
         "label": {
+          "zh-hans-cn": "分类图片",
           "en": "Collection image",
-          "zh-hans-cn": "分类图片"
+          "id": "Kategori Gambar",
+          "th": "รูปภาพหมวดหมู่",
+          "vi": "Phân loại ảnh",
+          "ms": "Klasifikasi gambar",
+          "zh-hant-tw": "分類圖片"
         },
         "options": [
           {
             "value": "collection",
             "label": {
+              "zh-hans-cn": "使用分类封面图",
               "en": "Collection Image",
-              "zh-hans-cn": "使用分类封面图"
+              "id": "Gunakan gambar sampul kategori",
+              "th": "ใช้ภาพหน้าปกหมวดหมู่",
+              "vi": "Sử dụng ảnh trang bìa phân loại",
+              "ms": "Gunakan gambar muka depan kategori",
+              "zh-hant-tw": "使用分類封面圖"
             }
           },
           {
             "value": "product",
             "label": {
+              "zh-hans-cn": "使用分类下首个商品图",
               "en": "First Product",
-              "zh-hans-cn": "使用分类下首个商品图"
+              "id": "Gunakan gambar produk pertama kategori",
+              "th": "ใช้ภาพสินค้าภาพแรกภายใต้หมวดหมู่",
+              "vi": "Sử dụng ảnh sản phẩm đầu tiên phân loại tiếp theo",
+              "ms": "Gunakan gambar produk pertama di bawah kategori",
+              "zh-hant-tw": "使用分類下首個商品圖"
             }
           }
         ],
@@ -806,8 +1275,13 @@
         "id": "collection_grid_image_margin",
         "type": "range",
         "label": {
+          "zh-hans-cn": "分类图片留白",
           "en": "Collection image margin",
-          "zh-hans-cn": "分类图片留白"
+          "id": "Gambar kategori dibiarkan kosong",
+          "th": "รูปภาพหมวดหมู่เว้นว่างไว้",
+          "vi": "Ảnh phân loại để trống",
+          "ms": "Gambar kategori dibiarkan kosong",
+          "zh-hant-tw": "分類圖片留白"
         },
         "default": 10,
         "min": 0,
@@ -819,16 +1293,26 @@
   },
   {
     "name": {
-      "en": "Products",
-      "zh-hans-cn": "商品"
+      "zh-hans-cn": "商品",
+      "en": "Product",
+      "id": "Produk",
+      "th": "สินค้า",
+      "vi": "Sản phẩm",
+      "ms": "Produk",
+      "zh-hant-tw": "商品"
     },
     "settings": [
       {
         "id": "product_discount",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "展示优惠",
           "en": "Display the discount",
-          "zh-hans-cn": "展示优惠"
+          "id": "Tampilkan diskon",
+          "th": "แสดงส่วนลด",
+          "vi": "Hiển thị ưu đãi",
+          "ms": "Paparkan diskaun",
+          "zh-hant-tw": "展示優惠"
         },
         "default": true
       },
@@ -836,22 +1320,37 @@
         "id": "product_discount_style",
         "type": "select",
         "label": {
+          "zh-hans-cn": "优惠样式",
           "en": "Discount style",
-          "zh-hans-cn": "优惠样式"
+          "id": "Gaya diskon",
+          "th": "รูปแบบส่วนลด",
+          "vi": "Hình thức ưu đãi",
+          "ms": "Gaya diskaun",
+          "zh-hant-tw": "優惠樣式"
         },
         "options": [
           {
             "value": "number",
             "label": {
+              "zh-hans-cn": "显示优惠金额",
               "en": "Display the discount amount",
-              "zh-hans-cn": "显示优惠金额"
+              "id": "Tampilkan jumlah diskon",
+              "th": "แสดงยอดเงินส่วนลด",
+              "vi": "Hiển thị số tiền ưu đãi",
+              "ms": "Paparkan nilai diskaun",
+              "zh-hant-tw": "顯示優惠金額"
             }
           },
           {
             "value": "ratio",
             "label": {
+              "zh-hans-cn": "显示优惠比例",
               "en": "Display the discount ratio",
-              "zh-hans-cn": "显示优惠比例"
+              "id": "Tampilkan persentase diskon",
+              "th": "แสดงเปอร์เซ็นต์ส่วนลด",
+              "vi": "Hiển thị tỉ lệ ưu đãi",
+              "ms": "Paparkan nisbah diskaun",
+              "zh-hant-tw": "顯示優惠比例"
             }
           }
         ],
@@ -860,16 +1359,26 @@
       {
         "type": "group_header",
         "label": {
+          "zh-hans-cn": "商品列表",
           "en": "Product list",
-          "zh-hans-cn": "商品列表"
+          "id": "Daftar barang",
+          "th": "รายการสินค้า",
+          "vi": "Danh sách sản phẩm",
+          "ms": "Senarai produk",
+          "zh-hant-tw": "商品列表"
         }
       },
       {
         "id": "product_add_to_cart",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "支持快速加购",
           "en": "Supports fast purchase",
-          "zh-hans-cn": "支持快速加购"
+          "id": "Mendukung pembelian cepat",
+          "th": "รองรับการซื้ออย่างรวดเร็ว",
+          "vi": "Ủng hộ nhanh chóng cho vào giỏ hàng",
+          "ms": "Sokong pembelian pantas",
+          "zh-hant-tw": "支持快速加購"
         },
         "default": false
       },
@@ -877,8 +1386,13 @@
         "id": "product_quick_view",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "支持快速查看",
           "en": "Supports for Quick View",
-          "zh-hans-cn": "支持快速查看"
+          "id": "Mendukung lihat cepat",
+          "th": "รองรับการดูอย่างรวดเร็ว",
+          "vi": "Ủng hộ tra xem nhanh",
+          "ms": "Sokong lihat dengan pantas",
+          "zh-hant-tw": "支持快速查看"
         },
         "default": false
       },
@@ -886,28 +1400,66 @@
         "id": "product_image_ratio",
         "type": "select",
         "label": {
+          "zh-hans-cn": "商品图比例",
           "en": "Product image scale",
-          "zh-hans-cn": "商品图比例"
+          "id": "Proporsi gambar produk",
+          "th": "อัตราส่วนภาพสินค้า",
+          "vi": "Tỷ lệ hình ảnh hàng hóa",
+          "ms": "Nisbah gambar komoditi",
+          "zh-hant-tw": "商品圖比例"
         },
         "options": [
           {
             "value": "0",
             "label": {
+              "zh-hans-cn": "原始比例",
               "en": "Original scale",
-              "zh-hans-cn": "原始比例"
+              "id": "Proporsi asli",
+              "th": "อัตราส่วนเดิม",
+              "vi": "Tỷ lệ ban đầu",
+              "ms": "Nisbah asal",
+              "zh-hant-tw": "原始比例"
             }
           },
           {
             "value": "100",
-            "label": "1:1"
+            "label": {
+              "zh-hans-cn": "1:1",
+              "en": "1:1",
+              "id": "1:1",
+              "th": "1:1",
+              "vi": "1:1",
+              "ms": "1:1",
+              "zh-hant-tw": "1:1"
+            }
+          },
+          {
+            "value": "133.33",
+            "label": "3:4"
           },
           {
             "value": "75",
-            "label": "4:3"
+            "label": {
+              "zh-hans-cn": "4:3",
+              "en": "4:3",
+              "id": "4:3",
+              "th": "4:3",
+              "vi": "4:3",
+              "ms": "4:3",
+              "zh-hant-tw": "4:3"
+            }
           },
           {
             "value": "150",
-            "label": "2:3"
+            "label": {
+              "zh-hans-cn": "2:3",
+              "en": "2:3",
+              "id": "2:3",
+              "th": "2:3",
+              "vi": "2:3",
+              "ms": "2:3",
+              "zh-hant-tw": "2:3"
+            }
           }
         ],
         "default": "0"
@@ -916,22 +1468,37 @@
         "id": "product_fill_type",
         "type": "select",
         "label": {
+          "zh-hans-cn": "商品图填充方式",
           "en": "Product image filling style",
-          "zh-hans-cn": "商品图填充方式"
+          "id": "Mode pengisian gambar produk",
+          "th": "วิธีการเติมภาพสินค้า",
+          "vi": "Cách lấp đầy hình ảnh hàng hóa",
+          "ms": "Kaedah pengisian peta komoditi",
+          "zh-hant-tw": "商品圖填充方式"
         },
         "options": [
           {
             "value": "contain",
             "label": {
+              "zh-hans-cn": "适应",
               "en": "Adjust",
-              "zh-hans-cn": "适应"
+              "id": "Sesuai",
+              "th": "ปรับ",
+              "vi": "thích hợp",
+              "ms": "Menyesuaikan",
+              "zh-hant-tw": "適應"
             }
           },
           {
             "value": "cover",
             "label": {
+              "zh-hans-cn": "填充",
               "en": "Fill",
-              "zh-hans-cn": "填充"
+              "id": "Boneka",
+              "th": "การกรอก",
+              "vi": "Bổ sung",
+              "ms": "Isi",
+              "zh-hant-tw": "填充"
             }
           }
         ],
@@ -941,8 +1508,13 @@
         "id": "product_hover_show_next",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "鼠标悬停时显示下一张商品图",
           "en": "Display next product image when mouse hovers over the screen",
-          "zh-hans-cn": "鼠标悬停时显示下一张商品图"
+          "id": "Tampilkan gambar produk berikutnya ketika mouse melayang",
+          "th": "แสดงรูปภาพสินค้ารูปถัดไปเมื่อวางเมาส์ไว้",
+          "vi": "Khi chuột dừng, hiển thị tấm ảnh sản phẩm tiếp theo",
+          "ms": "Paparkan gambar produk seterusnya apabila tetikus berhenti",
+          "zh-hant-tw": "鼠標懸停時顯示下一張商品圖"
         },
         "default": false
       },
@@ -950,29 +1522,49 @@
         "id": "product_title_show_type",
         "type": "select",
         "label": {
+          "zh-hans-cn": "商品标题展示规则",
           "en": "Display rule for product title",
-          "zh-hans-cn": "商品标题展示规则"
+          "id": "Aturan tampilan judul produk",
+          "th": "กฎการแสดงหัวข้อสินค้า",
+          "vi": "Quy tắc bày ra tiêu đề sản phẩm",
+          "ms": "Peraturan paparan tajuk produk",
+          "zh-hant-tw": "商品標題展示規則"
         },
         "options": [
           {
             "value": "full_display",
             "label": {
+              "zh-hans-cn": "完整展示",
               "en": "Full display",
-              "zh-hans-cn": "完整展示"
+              "id": "Tampilan penuh",
+              "th": "แสดงทั้วหมด",
+              "vi": "Bày ra hoàn chỉnh",
+              "ms": "Tunjuk semua",
+              "zh-hant-tw": "完整展示"
             }
           },
           {
             "value": "display_up_to_1_rows",
             "label": {
+              "zh-hans-cn": "最多展示1行",
               "en": "Display at most 1 line",
-              "zh-hans-cn": "最多展示1行"
+              "id": "Tampilkan hingga 1 baris",
+              "th": "แสดงไม่เกิน 1 แถว",
+              "vi": "Bày ra tối đa 1 hàng",
+              "ms": "Tunjukkan paling banyak 1 baris",
+              "zh-hant-tw": "最多展示1行"
             }
           },
           {
             "value": "display_up_to_2_rows",
             "label": {
+              "zh-hans-cn": "最多展示2行",
               "en": "Display at most 2 lines",
-              "zh-hans-cn": "最多展示2行"
+              "id": "Tampilkan hingga 2 baris",
+              "th": "แสดงได้ถึง 2 แถว",
+              "vi": "Bày ra tối đa 2 hàng",
+              "ms": "Tunjukkan paling banyak 2 baris",
+              "zh-hant-tw": "最多展示2行"
             }
           }
         ],
@@ -982,42 +1574,72 @@
         "id": "product_mobile_title_show",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "手机端展示商品标题",
           "en": "Display of product title on mobile phones",
-          "zh-hans-cn": "手机端展示商品标题"
+          "id": "Judul produk tampilan port seluler",
+          "th": "แสดงหัวข้อสินค้าบนโทรศัพท์มือถือ",
+          "vi": "bày ratiêu đề sản phẩm trên điện thoại di động",
+          "ms": "Paparkan tajuk produk pada versi mudah alih",
+          "zh-hant-tw": "手機端展示商品標題"
         },
         "default": true
       },
       {
         "type": "group_header",
         "label": {
-          "en": "Product details",
-          "zh-hans-cn": "商品详情"
+          "zh-hans-cn": "商品详情",
+          "en": "Product",
+          "id": "Rincian barang dagangan",
+          "th": "รายละเอียดสินค้า",
+          "vi": "Chi tiết sản phẩm",
+          "ms": "Maklumat produk",
+          "zh-hant-tw": "商品詳情"
         },
         "info": {
+          "zh-hans-cn": "影响范围包括商品详情页、首页的单个商品组件",
           "en": "It will influence the range includes product detail page and the single product component of the homepage",
-          "zh-hans-cn": "影响范围包括商品详情页、首页的单个商品组件"
+          "id": "Cakupan pengaruh mencakup halaman detail produk, halaman beranda komponen produk tunggal",
+          "th": "ขอบเขตของอิทธิพลรวมถึงส่วนประกอบสินค้าเดียวในหน้ารายละเอียดสินค้าและหน้าแรก",
+          "vi": "Phạm vi ảnh hưởng bao gồm trang chi tiết sản phẩm,t thành phần của sản phẩm đơn trang đầu",
+          "ms": "Skop dipengaruhi termasuk halaman butiran produl dan komponen produk tunggal di halaman utama",
+          "zh-hant-tw": "影響範圍包括商品詳情頁、首頁的單個商品組件"
         }
       },
       {
         "id": "product_sku_style",
         "type": "select",
         "label": {
-          "en": "Display style of multiattribute",
-          "zh-hans-cn": "多属性展示方式"
+          "zh-hans-cn": "多属性展示方式",
+          "en": "Product SKU style",
+          "id": "Mode tampilan multi-atribut",
+          "th": "จอแสดงผลหลายคุณลักษณะ",
+          "vi": "Phương thức hiển thị đa thuộc tính",
+          "ms": "Paparan berbilang atribut",
+          "zh-hant-tw": "多屬性展示方式"
         },
         "options": [
           {
             "value": "flatten",
             "label": {
+              "zh-hans-cn": "平铺",
               "en": "Tiled",
-              "zh-hans-cn": "平铺"
+              "id": "Tebaran",
+              "th": "เรียงต่อกัน",
+              "vi": "Bình dị",
+              "ms": "Berjubin",
+              "zh-hant-tw": "平鋪"
             }
           },
           {
             "value": "select",
             "label": {
-              "en": "Drop-down list",
-              "zh-hans-cn": "下拉框"
+              "zh-hans-cn": "下拉框",
+              "en": "Select",
+              "id": "Jatuhkan kotak",
+              "th": "กล่องลากลง",
+              "vi": "Khung kéo xuống",
+              "ms": "Bingkai tarik bawah",
+              "zh-hant-tw": "下拉框"
             }
           }
         ],
@@ -1027,8 +1649,13 @@
         "id": "product_count_​selector",
         "type": "switch",
         "label": {
-          "en": "Display the quantity selector",
-          "zh-hans-cn": "展示数量选择器"
+          "zh-hans-cn": "展示数量选择器",
+          "en": "Enable product count selector",
+          "id": "Pemilih kuantitas tayangan",
+          "th": "ตัวเลือกหมายเลขการแสดง",
+          "vi": "Hiển thị công cụ lựa chọn số lượng",
+          "ms": "Tunjuk pemilih bilangan",
+          "zh-hant-tw": "展示數量選擇器"
         },
         "default": false
       },
@@ -1036,8 +1663,13 @@
         "id": "product_image_scale",
         "type": "switch",
         "label": {
-          "en": "Supports for magnifying the image",
-          "zh-hans-cn": "支持图片放大"
+          "zh-hans-cn": "支持图片放大",
+          "en": "Enable Product image scale",
+          "id": "Mendukung pembesaran gambar",
+          "th": "รองรับการขยายภาพ",
+          "vi": "Hỗ trợ phóng to hình ảnh",
+          "ms": "Sokong membesar gambar",
+          "zh-hant-tw": "支持圖片放大"
         },
         "default": false
       },
@@ -1045,70 +1677,134 @@
         "id": "product_description_show",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "展开商品描述",
           "en": "Display of product description",
-          "zh-hans-cn": "展开商品描述"
+          "id": "Perluas deskripsi produk",
+          "th": "ขยายรายละเอียดสินค้า",
+          "vi": "Mở rộng mô tả sản phẩm",
+          "ms": "Kembangkan penerangan produk",
+          "zh-hant-tw": "展開商品描述"
+        },
+        "default": true
+      },
+      {
+        "id": "sku_selected_default",
+        "type": "switch",
+        "label": {
+          "zh-hans-cn": "默认选中SKU",
+          "en": "SKU selected by default",
+          "id": "SKU dipilih secara default",
+          "th": "SKU ถูกเลือกโดยค่าเริ่มต้น",
+          "vi": "SKU được chọn theo mặc định",
+          "ms": "SKU dipilih secara piawaian",
+          "zh-hant-tw": "默認選中SKU"
         },
         "default": true
       },
       {
         "type": "group_header",
         "label": {
+          "zh-hans-cn": "销售信息",
           "en": "Sale information",
-          "zh-hans-cn": "销售信息"
+          "id": "Informasi penjualan",
+          "th": "ข้อมูลการขาย",
+          "vi": "Thông tin tiêu thụ",
+          "ms": "Maklumat jualan",
+          "zh-hant-tw": "銷售信息"
         },
         "info": {
-          "en": "It will effect the single product component on product detail page, homepage, etc.",
-          "zh-hans-cn": "影响范围包括商品详情页、首页的单个商品组件"
+          "zh-hans-cn": "影响范围包括商品详情页、首页的单个商品组件",
+          "en": "It will influence the range includes product detail page and the single product component of the homepage",
+          "id": "Cakupan pengaruh mencakup halaman detail produk, halaman beranda komponen produk tunggal",
+          "th": "ขอบเขตของอิทธิพลรวมถึงส่วนประกอบสินค้าเดียวในหน้ารายละเอียดสินค้าและหน้าแรก",
+          "vi": "Phạm vi ảnh hưởng bao gồm trang chi tiết sản phẩm,t thành phần của sản phẩm đơn trang đầu",
+          "ms": "Skop dipengaruhi termasuk halaman butiran produl dan komponen produk tunggal di halaman utama",
+          "zh-hant-tw": "影響範圍包括商品詳情頁、首頁的單個商品組件"
         }
       },
       {
         "id": "product_sales_point_1_icon",
         "type": "select",
         "label": {
+          "zh-hans-cn": "销售信息1图标",
           "en": "Sale information 1 icon",
-          "zh-hans-cn": "销售信息1图标"
+          "id": "Label informasi penjualan 1",
+          "th": "ข้อมูลการขาย 1 ไอคอน",
+          "vi": "Biểu tượng thông tin tiêu thụ 1",
+          "ms": "Ikon maklumat jualan 1",
+          "zh-hant-tw": "銷售信息1圖標"
         },
         "options": [
           {
             "value": "checkmark",
             "label": {
+              "zh-hans-cn": "复选框",
               "en": "Checkmark",
-              "zh-hans-cn": "复选框"
+              "id": "Kotak centang",
+              "th": "กล่องเลือก",
+              "vi": "Khung chọn lại",
+              "ms": "Kotak semak",
+              "zh-hant-tw": "複選框"
             }
           },
           {
             "value": "globe",
             "label": {
+              "zh-hans-cn": "地球",
               "en": "Globe",
-              "zh-hans-cn": "地球"
+              "id": "Bumi",
+              "th": "โลก",
+              "vi": "Thế giới",
+              "ms": "Bumi",
+              "zh-hant-tw": "地球"
             }
           },
           {
             "value": "leaf",
             "label": {
-              "en": "Leaf",
-              "zh-hans-cn": "环保"
+              "zh-hans-cn": "环保",
+              "en": "green",
+              "id": "perlindungan lingkungan",
+              "th": "การคุ้มครองสิ่งแวดล้อม",
+              "vi": "Bảo vệ môi trường",
+              "ms": "Perlindungan alam sekita",
+              "zh-hant-tw": "環保"
             }
           },
           {
             "value": "package",
             "label": {
+              "zh-hans-cn": "包裹",
               "en": "Package",
-              "zh-hans-cn": "包裹"
+              "id": "Paket",
+              "th": "พัสดุ",
+              "vi": "Đóng gói",
+              "ms": "Kurier",
+              "zh-hant-tw": "包裹"
             }
           },
           {
             "value": "lock",
             "label": {
+              "zh-hans-cn": "安全锁",
               "en": "Lock",
-              "zh-hans-cn": "安全锁"
+              "id": "Kunci keamanan",
+              "th": "ล็อกนิรภัย",
+              "vi": "Khoá an toàn",
+              "ms": "Kunci keselamatan",
+              "zh-hant-tw": "安全鎖"
             }
           },
           {
             "value": "truck",
             "label": {
+              "zh-hans-cn": "货车",
               "en": "Truck",
-              "zh-hans-cn": "货车"
+              "id": "Truk",
+              "th": "รถบรรทุก",
+              "vi": "Xe hàng",
+              "ms": "Lori",
+              "zh-hant-tw": "貨車"
             }
           }
         ],
@@ -1118,8 +1814,13 @@
         "id": "product_sales_point_1",
         "type": "text",
         "label": {
+          "zh-hans-cn": "销售信息1文案",
           "en": "Sale information 1 text",
-          "zh-hans-cn": "销售信息1文案"
+          "id": "Informasi Penjualan 1 Teks",
+          "th": "ข้อมูลการขาย 1 ข้อความ",
+          "vi": "Văn tự thông tin tiêu thụ 1",
+          "ms": "Maklumat jualan 1 dokumen",
+          "zh-hant-tw": "銷售信息1文案"
         },
         "default": "Free worldwide shipping"
       },
@@ -1127,50 +1828,85 @@
         "id": "product_sales_point_2_icon",
         "type": "select",
         "label": {
+          "zh-hans-cn": "销售信息2图标",
           "en": "Sale information 2 icon",
-          "zh-hans-cn": "销售信息2图标"
+          "id": "Informasi Penjualan 2 Label",
+          "th": "ข้อมูลการขาย 2 ไอคอน",
+          "vi": "Biểu tượng thông tin tiêu thụ 2",
+          "ms": "Maklumat jualan 2 ikon",
+          "zh-hant-tw": "銷售信息2圖標"
         },
         "options": [
           {
             "value": "checkmark",
             "label": {
+              "zh-hans-cn": "复选框",
               "en": "Checkmark",
-              "zh-hans-cn": "复选框"
+              "id": "Kotak centang",
+              "th": "กล่องเลือก",
+              "vi": "Khung chọn lại",
+              "ms": "Kotak semak",
+              "zh-hant-tw": "複選框"
             }
           },
           {
             "value": "globe",
             "label": {
+              "zh-hans-cn": "地球",
               "en": "Globe",
-              "zh-hans-cn": "地球"
+              "id": "Bumi",
+              "th": "โลก",
+              "vi": "Thế giới",
+              "ms": "Bumi",
+              "zh-hant-tw": "地球"
             }
           },
           {
             "value": "leaf",
             "label": {
-              "en": "Leaf",
-              "zh-hans-cn": "环保"
+              "zh-hans-cn": "环保",
+              "en": "green",
+              "id": "perlindungan lingkungan",
+              "th": "การคุ้มครองสิ่งแวดล้อม",
+              "vi": "Bảo vệ môi trường",
+              "ms": "Perlindungan alam sekita",
+              "zh-hant-tw": "環保"
             }
           },
           {
             "value": "package",
             "label": {
+              "zh-hans-cn": "包裹",
               "en": "Package",
-              "zh-hans-cn": "包裹"
+              "id": "Paket",
+              "th": "พัสดุ",
+              "vi": "Đóng gói",
+              "ms": "Kurier",
+              "zh-hant-tw": "包裹"
             }
           },
           {
             "value": "lock",
             "label": {
+              "zh-hans-cn": "安全锁",
               "en": "Lock",
-              "zh-hans-cn": "安全锁"
+              "id": "Kunci keamanan",
+              "th": "ล็อกนิรภัย",
+              "vi": "Khoá an toàn",
+              "ms": "Kunci keselamatan",
+              "zh-hant-tw": "安全鎖"
             }
           },
           {
             "value": "truck",
             "label": {
+              "zh-hans-cn": "货车",
               "en": "Truck",
-              "zh-hans-cn": "货车"
+              "id": "Truk",
+              "th": "รถบรรทุก",
+              "vi": "Xe hàng",
+              "ms": "Lori",
+              "zh-hant-tw": "貨車"
             }
           }
         ],
@@ -1180,8 +1916,13 @@
         "id": "product_sales_point_2",
         "type": "text",
         "label": {
+          "zh-hans-cn": "销售信息2文案",
           "en": "Sale information 2 text",
-          "zh-hans-cn": "销售信息2文案"
+          "id": "Informasi Penjualan 2 Teks",
+          "th": "ข้อมูลการขาย 2 ข้อความ",
+          "vi": "Văn tự thông tin tiêu thụ 2",
+          "ms": "Maklumat jualan 2 dokumen",
+          "zh-hant-tw": "銷售信息2文案"
         },
         "default": "Free returns"
       },
@@ -1189,50 +1930,85 @@
         "id": "product_sales_point_3_icon",
         "type": "select",
         "label": {
+          "zh-hans-cn": "销售信息3图标",
           "en": "Sale information 3 icon",
-          "zh-hans-cn": "销售信息3图标"
+          "id": "Informasi Penjualan 3 Label",
+          "th": "ข้อมูลการขาย 3 ไอคอน",
+          "vi": "Biểu tượng thông tin tiêu thụ 3",
+          "ms": "Maklumat jualan 3 ikon",
+          "zh-hant-tw": "銷售信息3圖標"
         },
         "options": [
           {
             "value": "checkmark",
             "label": {
+              "zh-hans-cn": "复选框",
               "en": "Checkmark",
-              "zh-hans-cn": "复选框"
+              "id": "Kotak centang",
+              "th": "กล่องเลือก",
+              "vi": "Khung chọn lại",
+              "ms": "Kotak semak",
+              "zh-hant-tw": "複選框"
             }
           },
           {
             "value": "globe",
             "label": {
+              "zh-hans-cn": "地球",
               "en": "Globe",
-              "zh-hans-cn": "地球"
+              "id": "Bumi",
+              "th": "โลก",
+              "vi": "Thế giới",
+              "ms": "Bumi",
+              "zh-hant-tw": "地球"
             }
           },
           {
             "value": "leaf",
             "label": {
-              "en": "Leaf",
-              "zh-hans-cn": "环保"
+              "zh-hans-cn": "环保",
+              "en": "green",
+              "id": "perlindungan lingkungan",
+              "th": "การคุ้มครองสิ่งแวดล้อม",
+              "vi": "Bảo vệ môi trường",
+              "ms": "Perlindungan alam sekita",
+              "zh-hant-tw": "環保"
             }
           },
           {
             "value": "package",
             "label": {
+              "zh-hans-cn": "包裹",
               "en": "Package",
-              "zh-hans-cn": "包裹"
+              "id": "Paket",
+              "th": "พัสดุ",
+              "vi": "Đóng gói",
+              "ms": "Kurier",
+              "zh-hant-tw": "包裹"
             }
           },
           {
             "value": "lock",
             "label": {
+              "zh-hans-cn": "安全锁",
               "en": "Lock",
-              "zh-hans-cn": "安全锁"
+              "id": "Kunci keamanan",
+              "th": "ล็อกนิรภัย",
+              "vi": "Khoá an toàn",
+              "ms": "Kunci keselamatan",
+              "zh-hant-tw": "安全鎖"
             }
           },
           {
             "value": "truck",
             "label": {
+              "zh-hans-cn": "货车",
               "en": "Truck",
-              "zh-hans-cn": "货车"
+              "id": "Truk",
+              "th": "รถบรรทุก",
+              "vi": "Xe hàng",
+              "ms": "Lori",
+              "zh-hant-tw": "貨車"
             }
           }
         ],
@@ -1242,8 +2018,13 @@
         "id": "product_sales_point_3",
         "type": "text",
         "label": {
+          "zh-hans-cn": "销售信息3文案",
           "en": "Sale information 3 text",
-          "zh-hans-cn": "销售信息3文案"
+          "id": "Informasi Penjualan 3 Teks",
+          "th": "ข้อมูลการขาย 3 ข้อความ",
+          "vi": "Văn tự thông tin tiêu thụ 3",
+          "ms": "Maklumat jualan 3 dokumen",
+          "zh-hant-tw": "銷售信息3文案"
         },
         "default": "Carbon neutral"
       },
@@ -1251,50 +2032,85 @@
         "id": "product_sales_point_4_icon",
         "type": "select",
         "label": {
+          "zh-hans-cn": "销售信息4图标",
           "en": "Sale information 4 icon",
-          "zh-hans-cn": "销售信息4图标"
+          "id": "Informasi Penjualan 4 Label",
+          "th": "ข้อมูลการขาย 4 ไอคอน",
+          "vi": "Biểu tượng thông tin tiêu thụ 4",
+          "ms": "Maklumat jualan 4 ikon",
+          "zh-hant-tw": "銷售信息4圖標"
         },
         "options": [
           {
             "value": "checkmark",
             "label": {
+              "zh-hans-cn": "复选框",
               "en": "Checkmark",
-              "zh-hans-cn": "复选框"
+              "id": "Kotak centang",
+              "th": "กล่องเลือก",
+              "vi": "Khung chọn lại",
+              "ms": "Kotak semak",
+              "zh-hant-tw": "複選框"
             }
           },
           {
             "value": "globe",
             "label": {
+              "zh-hans-cn": "地球",
               "en": "Globe",
-              "zh-hans-cn": "地球"
+              "id": "Bumi",
+              "th": "โลก",
+              "vi": "Thế giới",
+              "ms": "Bumi",
+              "zh-hant-tw": "地球"
             }
           },
           {
             "value": "leaf",
             "label": {
-              "en": "Leaf",
-              "zh-hans-cn": "环保"
+              "zh-hans-cn": "环保",
+              "en": "green",
+              "id": "perlindungan lingkungan",
+              "th": "การคุ้มครองสิ่งแวดล้อม",
+              "vi": "Bảo vệ môi trường",
+              "ms": "Perlindungan alam sekita",
+              "zh-hant-tw": "環保"
             }
           },
           {
             "value": "package",
             "label": {
+              "zh-hans-cn": "包裹",
               "en": "Package",
-              "zh-hans-cn": "包裹"
+              "id": "Paket",
+              "th": "พัสดุ",
+              "vi": "Đóng gói",
+              "ms": "Kurier",
+              "zh-hant-tw": "包裹"
             }
           },
           {
             "value": "lock",
             "label": {
+              "zh-hans-cn": "安全锁",
               "en": "Lock",
-              "zh-hans-cn": "安全锁"
+              "id": "Kunci keamanan",
+              "th": "ล็อกนิรภัย",
+              "vi": "Khoá an toàn",
+              "ms": "Kunci keselamatan",
+              "zh-hant-tw": "安全鎖"
             }
           },
           {
             "value": "truck",
             "label": {
+              "zh-hans-cn": "货车",
               "en": "Truck",
-              "zh-hans-cn": "货车"
+              "id": "Truk",
+              "th": "รถบรรทุก",
+              "vi": "Xe hàng",
+              "ms": "Lori",
+              "zh-hant-tw": "貨車"
             }
           }
         ],
@@ -1304,28 +2120,48 @@
         "id": "product_sales_point_4",
         "type": "text",
         "label": {
+          "zh-hans-cn": "销售信息4文案",
           "en": "Sale information 4 text",
-          "zh-hans-cn": "销售信息4文案"
+          "id": "Informasi Penjualan 4 Teks",
+          "th": "ข้อมูลการขาย 4 ข้อความ",
+          "vi": "Văn tự thông tin tiêu thụ 4",
+          "ms": "Maklumat jualan 4 dokumen",
+          "zh-hant-tw": "銷售信息4文案"
         },
         "default": "Secure payments"
       },
       {
         "type": "group_header",
         "label": {
-          "en": "Additional contents",
-          "zh-hans-cn": "附加内容"
+          "zh-hans-cn": "附加内容",
+          "en": "Additional content",
+          "id": "Tambah isi",
+          "th": "เนื้อหาเพิ่มเติม",
+          "vi": "Thêm nội dung",
+          "ms": "Tambah kandungan",
+          "zh-hant-tw": "附加內容"
         },
         "info": {
+          "zh-hans-cn": "影响范围包括商品详情页、首页的单个商品组件",
           "en": "It will influence the range includes product detail page and the single product component of the homepage",
-          "zh-hans-cn": "影响范围包括商品详情页、首页的单个商品组件"
+          "id": "Cakupan pengaruh mencakup halaman detail produk, halaman beranda komponen produk tunggal",
+          "th": "ขอบเขตของอิทธิพลรวมถึงส่วนประกอบสินค้าเดียวในหน้ารายละเอียดสินค้าและหน้าแรก",
+          "vi": "Phạm vi ảnh hưởng bao gồm trang chi tiết sản phẩm,t thành phần của sản phẩm đơn trang đầu",
+          "ms": "Skop dipengaruhi termasuk halaman butiran produl dan komponen produk tunggal di halaman utama",
+          "zh-hant-tw": "影響範圍包括商品詳情頁、首頁的單個商品組件"
         }
       },
       {
         "id": "product_custom_tab1",
         "type": "page_picker",
         "label": {
+          "zh-hans-cn": "自定义内容1",
           "en": "Custom content 1",
-          "zh-hans-cn": "自定义内容1"
+          "id": "Konten kustom 1",
+          "th": "เนื้อหาที่กำหนดเอง 1",
+          "vi": "Nội dung tuỳ chỉnh 1",
+          "ms": "Tetapkan kandungan tersuai 1",
+          "zh-hant-tw": "自定義內容1"
         },
         "default": ""
       },
@@ -1333,8 +2169,13 @@
         "id": "product_custom_tab1_fold",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "折叠展示",
           "en": "Folded display",
-          "zh-hans-cn": "折叠展示"
+          "id": "Tampilan lipat",
+          "th": "แสดงแบบเก็บ",
+          "vi": "Hiển thị dạng gấp",
+          "ms": "Paparan lipat",
+          "zh-hant-tw": "折疊展示"
         },
         "default": true
       },
@@ -1342,8 +2183,13 @@
         "id": "product_custom_tab2",
         "type": "page_picker",
         "label": {
+          "zh-hans-cn": "自定义内容2",
           "en": "Custom content 2",
-          "zh-hans-cn": "自定义内容2"
+          "id": "Konten kustom 2",
+          "th": "เนื้อหาที่กำหนดเอง2",
+          "vi": "Nội dung tuỳ chỉnh 2",
+          "ms": "Tetapkan kandungan tersuai 2",
+          "zh-hant-tw": "自定義內容2"
         },
         "default": ""
       },
@@ -1351,8 +2197,13 @@
         "id": "product_custom_tab2_fold",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "折叠展示",
           "en": "Folded display",
-          "zh-hans-cn": "折叠展示"
+          "id": "Tampilan lipat",
+          "th": "แสดงแบบเก็บ",
+          "vi": "Hiển thị dạng gấp",
+          "ms": "Paparan lipat",
+          "zh-hant-tw": "折疊展示"
         },
         "default": true
       },
@@ -1360,8 +2211,13 @@
         "id": "product_custom_tab3",
         "type": "page_picker",
         "label": {
+          "zh-hans-cn": "自定义内容3",
           "en": "Custom content 3",
-          "zh-hans-cn": "自定义内容3"
+          "id": "Konten kustom 3",
+          "th": "เนื้อหาที่กำหนดเอง3",
+          "vi": "Nội dung tuỳ chỉnh 3",
+          "ms": "Tetapkan kandungan tersuai 3",
+          "zh-hant-tw": "自定義內容3"
         },
         "default": ""
       },
@@ -1369,8 +2225,13 @@
         "id": "product_custom_tab3_fold",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "折叠展示",
           "en": "Folded display",
-          "zh-hans-cn": "折叠展示"
+          "id": "Tampilan lipat",
+          "th": "แสดงแบบเก็บ",
+          "vi": "Hiển thị dạng gấp",
+          "ms": "Paparan lipat",
+          "zh-hant-tw": "折疊展示"
         },
         "default": true
       }
@@ -1378,30 +2239,50 @@
   },
   {
     "name": {
+      "zh-hans-cn": "购物车",
       "en": "Cart",
-      "zh-hans-cn": "购物车"
+      "id": "Troli",
+      "th": "ตะกร้าสินค้า",
+      "vi": "Giỏ hàng",
+      "ms": "Kart",
+      "zh-hant-tw": "購物車"
     },
     "settings": [
       {
         "id": "cart_open_type",
         "type": "select",
         "label": {
+          "zh-hans-cn": "打开购物车方式",
           "en": "Open mode of the shopping cart",
-          "zh-hans-cn": "打开购物车方式"
+          "id": "Cara membuka troli",
+          "th": "ช่องทางการเปิดตะกร้าสินค้า",
+          "vi": "Mở hình thức giỏ hàng",
+          "ms": "Cara pembukaan troli beli-belah",
+          "zh-hant-tw": "打開購物車方式"
         },
         "options": [
           {
             "value": "select",
             "label": {
+              "zh-hans-cn": "打开下拉框",
               "en": "Open the drop-down list",
-              "zh-hans-cn": "打开下拉框"
+              "id": "Buka kotak tarik-turun",
+              "th": "เปิดกล่องแบบเลื่อนลง",
+              "vi": "Mở khung kéo xuống",
+              "ms": "Buka kotak lungsur",
+              "zh-hant-tw": "打開下拉框"
             }
           },
           {
             "value": "newpage",
             "label": {
+              "zh-hans-cn": "进入页面",
               "en": "Enter the page",
-              "zh-hans-cn": "进入页面"
+              "id": "Masuki halaman",
+              "th": "เข้าสู่หน้าเพจ",
+              "vi": "Vào trang",
+              "ms": "Masuk ke halaman",
+              "zh-hant-tw": "進入頁面"
             }
           }
         ],
@@ -1411,51 +2292,601 @@
   },
   {
     "name": {
-      "en": "CHECKOUT",
-      "zh-hans-cn": "结账"
+      "zh-hans-cn": "结账",
+      "en": "Checkout",
+      "id": "Pembayaran",
+      "th": "ชำระเงิน",
+      "vi": "Thanh toán",
+      "ms": "Bayar",
+      "zh-hant-tw": "結賬"
     },
     "settings": [
       {
         "type": "group_header",
         "label": {
-          "en": "Logo",
-          "zh-hans-cn": "Logo"
+          "zh-hans-cn": "Banner",
+          "en": "Banner",
+          "id": "Banner",
+          "th": "Banner",
+          "vi": "Banner",
+          "ms": "Banner",
+          "zh-hant-tw": "Banner"
         }
       },
       {
-        "id": "checkout_image",
+        "id": "co_banner_pc_img",
         "type": "image_picker",
         "label": {
-          "en": "Custom image",
-          "zh-hans-cn": "自定义图片"
+          "zh-hans-cn": "电脑端图片",
+          "en": "Image on PC",
+          "id": "Gambar terminal komputer",
+          "th": "รูปภาพบนคอมพิวเตอร์",
+          "vi": "hình ảnh trên máy tính",
+          "ms": "Gambar computer",
+          "zh-hant-tw": "電腦端圖片"
         },
         "default": {}
+      },
+      {
+        "id": "co_banner_phone_img",
+        "type": "image_picker",
+        "label": {
+          "zh-hans-cn": "移动端图片",
+          "en": "Image on mobile device",
+          "id": "Gambar port seluler",
+          "th": "รูปภาพมือถือ",
+          "vi": "Hình ảnh trên điện thoại",
+          "ms": "Gambar mudah alih",
+          "zh-hant-tw": "移動端圖片"
+        },
+        "info": {
+          "zh-hans-cn": "若未上传移动端图片，则移动端显示电脑端图片",
+          "en": "Display the image of PC size on mobile device if there aren't any images uploaded for mobiles.",
+          "id": "Jika belum mengunggah gambar port seluler, port seluler menampilkan gambar port PC",
+          "th": "หากไม่ได้อัปโหลดภาพเทอร์มินัลมือถือ เทอร์มินัลมือถือจะแสดงรูปภาพเทอร์มินัลคอมพิวเตอร์",
+          "vi": "Nếu chưa tải ảnh lên ứng dụng điện thoại, thì trên ứng dụng điện thoại sẽ hiển thị ảnh trên máy tính",
+          "ms": "Jika gambar terminal mudah alih tidak dimuat naik, terminal mudah alih akan memaparkan gambar terminal komputer",
+          "zh-hant-tw": "若未上傳移動端圖片，則移動端顯示電腦端圖片"
+        },
+        "default": {}
+      },
+      {
+        "id": "co_banner_pc_height",
+        "type": "select",
+        "label": {
+          "zh-hans-cn": "电脑端图片高度",
+          "en": "Height on PC",
+          "id": "Tinggi gambar port PC",
+          "th": "ความสูงของภาพบนคอมพิวเตอร์",
+          "vi": "Độ cao ảnh trên máy tính",
+          "ms": "Ketinggian gambar komputer",
+          "zh-hant-tw": "電腦端圖片高度"
+        },
+        "options": [
+          {
+            "label": {
+              "zh-hans-cn": "适应图片",
+              "en": "Auto",
+              "id": "Sesuaikan gambar",
+              "th": "ปรับให้เข้ากับภาพ",
+              "vi": "thích hợp với hình ảnh",
+              "ms": "Sesuaikan dengan gambar",
+              "zh-hant-tw": "適應圖片"
+            },
+            "value": "natural"
+          },
+          {
+            "value": "high",
+            "label": {
+              "zh-hans-cn": "高",
+              "en": "High",
+              "id": "Tinggi",
+              "th": "สูง",
+              "vi": "Cao",
+              "ms": "Tinggi",
+              "zh-hant-tw": "高"
+            }
+          },
+          {
+            "value": "low",
+            "label": {
+              "zh-hans-cn": "低",
+              "en": "Low",
+              "id": "Rendah",
+              "th": "ต่ำ",
+              "vi": "Thấp",
+              "ms": "Rendah",
+              "zh-hant-tw": "低"
+            }
+          }
+        ],
+        "default": "low"
+      },
+      {
+        "id": "co_banner_phone_height",
+        "type": "select",
+        "label": {
+          "zh-hans-cn": "移动端图片高度",
+          "en": "Height on mobile device",
+          "id": "Tinggi gambar port seluler",
+          "th": "ความสูงของภาพบนมือถือ",
+          "vi": "Độ cao của ảnh trên điện thoại",
+          "ms": "Ketinggian gambar mudah alih",
+          "zh-hant-tw": "移動端圖片高度"
+        },
+        "options": [
+          {
+            "label": {
+              "zh-hans-cn": "适应图片",
+              "en": "Auto",
+              "id": "Sesuaikan gambar",
+              "th": "ปรับให้เข้ากับภาพ",
+              "vi": "thích hợp với hình ảnh",
+              "ms": "Sesuaikan dengan gambar",
+              "zh-hant-tw": "適應圖片"
+            },
+            "value": "natural"
+          },
+          {
+            "value": "high",
+            "label": {
+              "zh-hans-cn": "高",
+              "en": "High",
+              "id": "Tinggi",
+              "th": "สูง",
+              "vi": "Cao",
+              "ms": "Tinggi",
+              "zh-hant-tw": "高"
+            }
+          },
+          {
+            "value": "low",
+            "label": {
+              "zh-hans-cn": "低",
+              "en": "Low",
+              "id": "Rendah",
+              "th": "ต่ำ",
+              "vi": "Thấp",
+              "ms": "Rendah",
+              "zh-hant-tw": "低"
+            }
+          }
+        ],
+        "default": "low"
+      },
+      {
+        "id": "co_banner_img_show",
+        "type": "select",
+        "label": {
+          "zh-hans-cn": "图片展示区域",
+          "en": "Image display area",
+          "id": "Area tampilan gambar",
+          "th": "พื้นที่แสดงรูปภาพ",
+          "vi": "Khu vực hiển thị ảnh",
+          "ms": "Kawasan paparan gambar",
+          "zh-hant-tw": "圖片展示區域"
+        },
+        "options": [
+          {
+            "label": {
+              "zh-hans-cn": "上",
+              "en": "Top",
+              "id": "Atas",
+              "th": "บน",
+              "vi": "trên",
+              "ms": "Atas",
+              "zh-hant-tw": "上"
+            },
+            "value": "top"
+          },
+          {
+            "value": "center",
+            "label": {
+              "zh-hans-cn": "中",
+              "en": "Center",
+              "id": "Sedang",
+              "th": "กลาง",
+              "vi": "vừa",
+              "ms": "Tengah",
+              "zh-hant-tw": "中"
+            }
+          },
+          {
+            "value": "bottom",
+            "label": {
+              "zh-hans-cn": "下",
+              "en": "Bottom",
+              "id": "Bawah",
+              "th": "ล่าง",
+              "vi": "dưới",
+              "ms": "bawah",
+              "zh-hant-tw": "下"
+            }
+          }
+        ],
+        "default": "center"
+      },
+      {
+        "id": "co_full_screen",
+        "type": "switch",
+        "label": {
+          "zh-hans-cn": "电脑端宽度铺满屏幕",
+          "en": "Full-screen width on PC",
+          "id": "Lebar port PC tutupi penuh layar",
+          "th": "ความกว้างเต็มหน้าจอบนคอมพิวเตอร์",
+          "vi": "Độ rộng toàn màn hình trên máy tính",
+          "ms": "Skrin komputer lebar penuh",
+          "zh-hant-tw": "電腦端寬度鋪滿屏幕"
+        },
+        "default": true
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "zh-hans-cn": "Logo",
+          "en": "Logo",
+          "id": "Logo",
+          "th": "Logo",
+          "vi": "Logo",
+          "ms": "Logo",
+          "zh-hant-tw": "Logo"
+        }
+      },
+      {
+        "id": "co_checkout_image",
+        "type": "image_picker",
+        "label": {
+          "zh-hans-cn": "自定义图片",
+          "en": "Custom image",
+          "id": "Gambar kustom",
+          "th": "รูปภาพที่กำหนดเอง",
+          "vi": "Ảnh tuỳ chọn",
+          "ms": "Gambar tersuai",
+          "zh-hant-tw": "自定義圖片"
+        },
+        "default": {}
+      },
+      {
+        "id": "co_logo_size",
+        "type": "select",
+        "label": {
+          "zh-hans-cn": "Logo尺寸",
+          "en": "Logo size",
+          "id": "Ukuran Logo",
+          "th": "ขนาดLogo",
+          "vi": "Kích thước Logo",
+          "ms": "Saiz Logo",
+          "zh-hant-tw": "Logo尺寸"
+        },
+        "options": [
+          {
+            "label": {
+              "zh-hans-cn": "小",
+              "en": "Small",
+              "id": "Kecil",
+              "th": "เล็ก",
+              "vi": "nhỏ",
+              "ms": "Kecil",
+              "zh-hant-tw": "小"
+            },
+            "value": "small"
+          },
+          {
+            "value": "medium",
+            "label": {
+              "zh-hans-cn": "中",
+              "en": "Medium",
+              "id": "Sedang",
+              "th": "กลาง",
+              "vi": "vừa",
+              "ms": "Tengah",
+              "zh-hant-tw": "中"
+            }
+          },
+          {
+            "value": "large",
+            "label": {
+              "zh-hans-cn": "大",
+              "en": "Large",
+              "id": "Besar",
+              "th": "ใหญ่",
+              "vi": "to",
+              "ms": "Besar",
+              "zh-hant-tw": "大"
+            }
+          }
+        ],
+        "default": "medium"
+      },
+      {
+        "id": "co_logo_position",
+        "type": "select",
+        "label": {
+          "zh-hans-cn": "Logo位置",
+          "en": "Logo position",
+          "id": "Posisi Logo",
+          "th": "ตำแหน่งLogo",
+          "vi": "Vị trí Logo",
+          "ms": "Kedudukan Logo",
+          "zh-hant-tw": "Logo位置"
+        },
+        "options": [
+          {
+            "label": {
+              "zh-hans-cn": "左",
+              "en": "Left",
+              "id": "Kiri",
+              "th": "ซ้าย",
+              "vi": "Trái",
+              "ms": "Kiri",
+              "zh-hant-tw": "左"
+            },
+            "value": "left"
+          },
+          {
+            "value": "center",
+            "label": {
+              "zh-hans-cn": "中",
+              "en": "Center",
+              "id": "Sedang",
+              "th": "กลาง",
+              "vi": "vừa",
+              "ms": "Tengah",
+              "zh-hant-tw": "中"
+            }
+          },
+          {
+            "value": "right",
+            "label": {
+              "zh-hans-cn": "右",
+              "en": "Right",
+              "id": "Kanan",
+              "th": "ขวา",
+              "vi": "Phải",
+              "ms": "Kanan",
+              "zh-hant-tw": "右"
+            }
+          }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "zh-hans-cn": "内容信息",
+          "en": "Content",
+          "id": "Informasi konten",
+          "th": "ข้อมูลเนื้อหา",
+          "vi": "Thông tin nội dung",
+          "ms": "Kandungan mesej",
+          "zh-hant-tw": "內容信息"
+        }
+      },
+      {
+        "id": "co_bg_image",
+        "type": "image_picker",
+        "label": {
+          "zh-hans-cn": "背景图片",
+          "en": "Background image",
+          "id": "Gambar latar belakang",
+          "th": "ภาพพื้นหลัง",
+          "vi": "Hình nền",
+          "ms": "Latar belakang gambar",
+          "zh-hant-tw": "背景圖片"
+        },
+        "default": {}
+      },
+      {
+        "id": "co_background_color",
+        "type": "color_picker",
+        "label": {
+          "zh-hans-cn": "背景颜色",
+          "en": "Background color",
+          "id": "Warna latar belakang",
+          "th": "สีพื้นหลัง",
+          "vi": "Màu sắc nền",
+          "ms": "Warna latar belakang",
+          "zh-hant-tw": "背景顏色"
+        },
+        "default": "#FFFFFF"
+      },
+      {
+        "id": "co_form_bg_color",
+        "type": "select",
+        "label": {
+          "zh-hans-cn": "表单背景颜色",
+          "en": "Background color of sheet",
+          "id": "Warna latar belakang formulir",
+          "th": "สีพื้นหลังแบบฟอร์ม",
+          "vi": "Màu nền bảng danh sách",
+          "ms": "Warna borang latar belakang",
+          "zh-hant-tw": "表單背景顏色"
+        },
+        "options": [
+          {
+            "label": {
+              "zh-hans-cn": "白色",
+              "en": "White",
+              "id": "Putih",
+              "th": "สีขาว",
+              "vi": "Màu trắng",
+              "ms": "Warna putih",
+              "zh-hant-tw": "白色"
+            },
+            "value": "white"
+          },
+          {
+            "value": "transparent",
+            "label": {
+              "zh-hans-cn": "透明",
+              "en": "Transparent",
+              "id": "Transparan",
+              "th": "โปร่งใส",
+              "vi": "Trong suốt",
+              "ms": "Lutsinar",
+              "zh-hant-tw": "透明"
+            }
+          }
+        ],
+        "default": "white"
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "zh-hans-cn": "订单摘要",
+          "en": "Order summary",
+          "id": "Abstrak pesanan",
+          "th": "สรุปคำสั่งซื้อ",
+          "vi": "Giới thiệu đơn hàng",
+          "ms": "Ringkasan pesanan",
+          "zh-hant-tw": "訂單摘要"
+        }
+      },
+      {
+        "id": "co_order_bg_image",
+        "type": "image_picker",
+        "label": {
+          "zh-hans-cn": "背景图片",
+          "en": "Background image",
+          "id": "Gambar latar belakang",
+          "th": "ภาพพื้นหลัง",
+          "vi": "Hình nền",
+          "ms": "Latar belakang gambar",
+          "zh-hant-tw": "背景圖片"
+        },
+        "default": {}
+      },
+      {
+        "id": "co_order_background_color",
+        "type": "color_picker",
+        "label": {
+          "zh-hans-cn": "背景颜色",
+          "en": "Background color",
+          "id": "Warna latar belakang",
+          "th": "สีพื้นหลัง",
+          "vi": "Màu sắc nền",
+          "ms": "Warna latar belakang",
+          "zh-hant-tw": "背景顏色"
+        },
+        "default": "#F8FAFB"
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "zh-hans-cn": "颜色",
+          "en": "Color",
+          "id": "warna",
+          "th": "สี",
+          "vi": "Màu sắc",
+          "ms": "warna",
+          "zh-hant-tw": "顏色"
+        }
+      },
+      {
+        "id": "co_color_btn_bg",
+        "type": "color_picker",
+        "label": {
+          "zh-hans-cn": "按钮背景",
+          "en": "Button background",
+          "id": "latar tombol",
+          "th": "พื้นหลังปุ่ม",
+          "vi": "Nền nút",
+          "ms": "Latar belakang butang",
+          "zh-hant-tw": "按鈕背景"
+        },
+        "default": "#276EAF"
+      },
+      {
+        "id": "co_color_err_color",
+        "type": "color_picker",
+        "label": {
+          "zh-hans-cn": "报错信息",
+          "en": "Error reporting",
+          "id": "Pesan eror",
+          "th": "ข้อความแจ้งข้อผิดพลาด",
+          "vi": "Tin báo lỗi",
+          "ms": "Salah lapor mesej",
+          "zh-hant-tw": "報錯信息"
+        },
+        "info": {
+          "zh-hans-cn": "错误信息提示和高亮边框",
+          "en": "Error notification & highlighted border",
+          "id": "Tips informasi salah dan batas disorot",
+          "th": "ข้อความแจ้งข้อผิดพลาดและไฮไลท์เส้นขอบ",
+          "vi": "Lời nhắc tin báo lỗi và khung sáng cao",
+          "ms": "Petunjuk ralat mesej dan kecerahan bingkai",
+          "zh-hant-tw": "錯誤信息提示和高亮邊框"
+        },
+        "default": "#F04949"
+      },
+      {
+        "id": "co_color_msg_color",
+        "type": "color_picker",
+        "label": {
+          "zh-hans-cn": "强调信息",
+          "en": "Highlighted information",
+          "id": "Menekankan informasi",
+          "th": "ข้อมูลเน้นให้เด่น",
+          "vi": "Thông tin nhấn mạnh",
+          "ms": "Utamakan mesej",
+          "zh-hant-tw": "強調信息"
+        },
+        "info": {
+          "zh-hans-cn": "链接、复选框、输入框边框和下拉菜单",
+          "en": "Link, checkbox, input box border & drop-down menu",
+          "id": "link, kotak centang, batas kotak masukan, dan menu tarik-turun",
+          "th": "ลิงก์ กล่องเลือก เส้นขอบของช่องป้อนข้อมูล และเมนูแบบเลื่อนลง",
+          "vi": "Link liên kết, khung chọn lại, khung nhập nội dung và menu kéo xuống",
+          "ms": "Pautan, kotak semak, sempadan kotak input dan menu lungsur",
+          "zh-hant-tw": "鏈接、複選框、輸入框邊框和下拉菜單"
+        },
+        "default": "#276EAF"
       }
     ]
   },
   {
     "name": {
-      "en": "Social media",
-      "zh-hans-cn": "社交媒体"
+      "zh-hans-cn": "社交媒体",
+      "en": "Social Media",
+      "id": "Media sosial",
+      "th": "สื่อสังคม",
+      "vi": "Truyền thông xã hội",
+      "ms": "Media sosial",
+      "zh-hant-tw": "社交媒體"
     },
     "settings": [
       {
         "type": "group_header",
         "label": {
+          "zh-hans-cn": "账号",
           "en": "Account",
-          "zh-hans-cn": "账号"
+          "id": "Akun",
+          "th": "บัญชีผู้ใช้",
+          "vi": "Tài khoản",
+          "ms": "Akaun",
+          "zh-hant-tw": "賬號"
         },
         "info": {
+          "zh-hans-cn": "用于客户访问你的社交媒体账号",
           "en": "Used to let customers visit your social media account",
-          "zh-hans-cn": "用于客户访问你的社交媒体账号"
+          "id": "Pelanggan menggunakan untuk mengakses akun media sosial Anda",
+          "th": "ใช้สำหรับลูกค้าเข้าถึงบัญชีโซเชียลมีเดียของคุณ",
+          "vi": "Do người dùng ghé thăm tài khoản xã giao truyền thông của bạn",
+          "ms": "Digunakan oleh pelanggan untuk mengakses akaun media sosial anda",
+          "zh-hant-tw": "用於客戶訪問你的社交媒體賬號"
         }
       },
       {
         "id": "social_facebook_link",
         "type": "text",
         "label": {
+          "zh-hans-cn": "Facebook",
           "en": "Facebook",
-          "zh-hans-cn": "Facebook"
+          "id": "Facebook",
+          "th": "Facebook",
+          "vi": "Facebook",
+          "ms": "Facebook",
+          "zh-hant-tw": "Facebook"
         },
         "default": "https://shoplineapp.cn/",
         "placeholder": "http://",
@@ -1465,8 +2896,13 @@
         "id": "social_twitter_link",
         "type": "text",
         "label": {
+          "zh-hans-cn": "Twitter",
           "en": "Twitter",
-          "zh-hans-cn": "Twitter"
+          "id": "Twitter",
+          "th": "Twitter",
+          "vi": "Twitter",
+          "ms": "Twitter",
+          "zh-hant-tw": "Twitter"
         },
         "default": "https://shoplineapp.cn/",
         "placeholder": "http://",
@@ -1476,8 +2912,13 @@
         "id": "social_pinterest_link",
         "type": "text",
         "label": {
+          "zh-hans-cn": "Pinterest",
           "en": "Pinterest",
-          "zh-hans-cn": "Pinterest"
+          "id": "Pinterest",
+          "th": "Pinterest",
+          "vi": "Pinterest",
+          "ms": "Pinterest",
+          "zh-hant-tw": "Pinterest"
         },
         "default": "https://shoplineapp.cn/",
         "placeholder": "http://",
@@ -1487,8 +2928,13 @@
         "id": "social_instagram_link",
         "type": "text",
         "label": {
+          "zh-hans-cn": "Instagram",
           "en": "Instagram",
-          "zh-hans-cn": "Instagram"
+          "id": "Instagram",
+          "th": "Instagram",
+          "vi": "Instagram",
+          "ms": "Instagram",
+          "zh-hant-tw": "Instagram"
         },
         "default": "https://shoplineapp.cn/",
         "placeholder": "http://",
@@ -1498,8 +2944,13 @@
         "id": "social_snapchat_link",
         "type": "text",
         "label": {
+          "zh-hans-cn": "Snapchat",
           "en": "Snapchat",
-          "zh-hans-cn": "Snapchat"
+          "id": "Snapchat",
+          "th": "Snapchat",
+          "vi": "Snapchat",
+          "ms": "Snapchat",
+          "zh-hant-tw": "Snapchat"
         },
         "default": "https://shoplineapp.cn/",
         "placeholder": "http://",
@@ -1509,8 +2960,13 @@
         "id": "social_tiktok_link",
         "type": "text",
         "label": {
+          "zh-hans-cn": "TikTok",
           "en": "TikTok",
-          "zh-hans-cn": "TikTok"
+          "id": "TikTok",
+          "th": "TikTok",
+          "vi": "TikTok",
+          "ms": "TikTok",
+          "zh-hant-tw": "TikTok"
         },
         "default": "https://shoplineapp.cn/",
         "placeholder": "http://",
@@ -1520,8 +2976,13 @@
         "id": "social_youtube_link",
         "type": "text",
         "label": {
+          "zh-hans-cn": "Youtube",
           "en": "Youtube",
-          "zh-hans-cn": "Youtube"
+          "id": "Youtube",
+          "th": "Youtube",
+          "vi": "Youtube",
+          "ms": "Youtube",
+          "zh-hant-tw": "Youtube"
         },
         "default": "https://shoplineapp.cn/",
         "placeholder": "http://",
@@ -1530,20 +2991,35 @@
       {
         "type": "group_header",
         "label": {
+          "zh-hans-cn": "分享",
           "en": "Share",
-          "zh-hans-cn": "分享"
+          "id": "Bagikan",
+          "th": "แบ่งปัน",
+          "vi": "Chia sẻ",
+          "ms": "Kongsi",
+          "zh-hant-tw": "分享"
         },
         "info": {
+          "zh-hans-cn": "在商品详情页、博客页提供分享操作",
           "en": "Enable sharing on the product detail page and blog page",
-          "zh-hans-cn": "在商品详情页、博客页提供分享操作"
+          "id": "Bagikan operasi berbagi pada halaman detail produk dan halaman blog",
+          "th": "จัดให้มีการดำเนินการแบ่งปันในหน้ารายละเอียดสินค้าและหน้าบล็อก",
+          "vi": "Cung cấp thao tác chia sẻ ở trang chi tiết sản phẩm và trang blog",
+          "ms": "Menyediakan operasi perkongsian pada halaman butiran produk dan halaman blog",
+          "zh-hant-tw": "在商品詳情頁、博客頁提供分享操作"
         }
       },
       {
         "id": "share_to_facebock",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "分享到Facebook",
           "en": "Share to Facebook",
-          "zh-hans-cn": "分享到Facebook"
+          "id": "Bagikan Facebook",
+          "th": "แชร์ไปที่ Facebook",
+          "vi": "Chia sẻ đến Facebook",
+          "ms": "Kongsi ke Facebook",
+          "zh-hant-tw": "分享到Facebook"
         },
         "default": true
       },
@@ -1551,8 +3027,13 @@
         "id": "share_to_twitter",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "分享到Twitter",
           "en": "Share to Twitter",
-          "zh-hans-cn": "分享到Twitter"
+          "id": "Bagikan ke Twitter",
+          "th": "แบ่งปันไปที่ Twitter",
+          "vi": "Chia sẻ đến Twitter",
+          "ms": "Kongsi ke Twitter",
+          "zh-hant-tw": "分享到Twitter"
         },
         "default": true
       },
@@ -1560,8 +3041,13 @@
         "id": "share_to_pinterest",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "分享到Pinterest",
           "en": "Share to Pinterest",
-          "zh-hans-cn": "分享到Pinterest"
+          "id": "Bagikan ke Pinterest",
+          "th": "แบ่งปันไปที่ Pinterest",
+          "vi": "Chia sẻ đến Pinterest",
+          "ms": "Kongsi ke Pinterest",
+          "zh-hant-tw": "分享到Pinterest"
         },
         "default": true
       },
@@ -1569,8 +3055,13 @@
         "id": "share_to_line",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "分享到LINE",
           "en": "Share to LINE",
-          "zh-hans-cn": "分享到LINE"
+          "id": "Bagikan ke LINE",
+          "th": "แบ่งปันไปที่ LINE",
+          "vi": "Chia sẻ đến LINE",
+          "ms": "Kongsi ke LINE",
+          "zh-hant-tw": "分享到LINE"
         },
         "default": true
       },
@@ -1578,8 +3069,13 @@
         "id": "share_to_whatsapp",
         "type": "switch",
         "label": {
+          "zh-hans-cn": "分享到Whatsapp",
           "en": "Share to Whatsapp",
-          "zh-hans-cn": "分享到Whatsapp"
+          "id": "Bagikan ke Whatsapp",
+          "th": "แบ่งปันไปที่ Whatsapp",
+          "vi": "Chia sẻ đến Whatsapp",
+          "ms": "Kongsi ke Whatsapp",
+          "zh-hant-tw": "分享到Whatsapp"
         },
         "default": true
       }
@@ -1587,20 +3083,35 @@
   },
   {
     "name": {
+      "zh-hans-cn": "网站图标",
       "en": "Favicon",
-      "zh-hans-cn": "网站图标"
+      "id": "Label situs web",
+      "th": "ไอคอนเว็บไซต์",
+      "vi": "Biểu tượng trang web",
+      "ms": "Ikon tapak web",
+      "zh-hant-tw": "網站圖標"
     },
     "settings": [
       {
         "id": "favicon_image",
         "type": "favicon_picker",
         "label": {
+          "zh-hans-cn": "浏览器标签icon",
           "en": "Browser tag icon",
-          "zh-hans-cn": "浏览器标签icon"
+          "id": "Label peramban icon",
+          "th": "iconป้ายแท็บเบราว์เซอร์",
+          "vi": "Nhãn trình duyệt icon",
+          "ms": "Icon tab penyemak imbas",
+          "zh-hant-tw": "瀏覽器標籤icon"
         },
         "info": {
+          "zh-hans-cn": "尺寸：32x32px",
           "en": "Size: 32 x 32px",
-          "zh-hans-cn": "尺寸：32x32px"
+          "id": "Ukuran: 32x32px",
+          "th": "ขนาด: 32x32px",
+          "vi": "Kích thước: 32 × 32 px",
+          "ms": "Saiz: 32x32px",
+          "zh-hant-tw": "尺寸：32x32px"
         },
         "default": ""
       }

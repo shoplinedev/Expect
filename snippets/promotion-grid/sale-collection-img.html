@@ -8,9 +8,10 @@
 <div class="{{imgWrapperClass}}"  style="padding-bottom: {{img_ratio}}%">
     {{#if (isTruthy imageSrc)}}
     {{!-- 空图兜底 --}}
-    <img class="lozad" data-src="{{imageSrc}}"
-        data-srcset="{{imageSrcSet}}"
-        alt="" />
+    <img 
+      class="lozad" 
+      {{{get 'responsiveAttr' (image_responsive imageSrc pcSize='2/5' mSize='50vw')}}}
+      alt="" />
     {{else}}
     <div class="{{prefix}}-right-placeholder-image"></div>
     {{/if}}

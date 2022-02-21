@@ -753,7 +753,7 @@ button.swiper-pagination-bullet{
 }
 @media (min-width:960px){
   .container,.container-lg,.container-md{
-    max-width:1500px;
+    max-width:{{ append (default theme.settings.page_width 1500) 'px' }};
   }
 }
 .row{
@@ -2782,6 +2782,20 @@ button.swiper-pagination-bullet{
   padding-bottom:30px;
   padding-top:30px;
   width:100%;
+}
+.footer__copyright-container .copy-box{
+  text-align:center;
+}
+.footer__copyright-container .copy-box p{
+  display:inline;
+  word-break:break-all;
+}
+.footer__copyright-container .copy-box a{
+  color:inherit !important;
+  font-size:inherit !important;
+}
+.footer__copyright-container .copy-box a:after{
+  background-color:{{ theme.settings.color_footer_text }} !important;
 }
 .footer__copyright-container p{
   font-size:12px;
@@ -7416,7 +7430,7 @@ body[data-open_topDrawer]{
   border-color:{{ theme.settings.color_scheme_1_text }};
   color:{{ theme.settings.color_scheme_1_bg }};
 }
-.color-scheme-1 .btn-link:after,.color-scheme-1 .sl-richtext a:after,.color-scheme-1 .trade-cart-continue-btn:after,.sl-richtext .color-scheme-1 a:after{
+.color-scheme-1 .btn-link:after,.color-scheme-1 .footer__copyright-container .copy-box a:after,.color-scheme-1 .sl-richtext a:after,.color-scheme-1 .trade-cart-continue-btn:after,.footer__copyright-container .copy-box .color-scheme-1 a:after,.sl-richtext .color-scheme-1 a:after{
   background-color:{{ theme.settings.color_scheme_1_text }};
 }
 
@@ -7429,7 +7443,7 @@ body[data-open_topDrawer]{
   border-color:{{ theme.settings.color_scheme_2_text }};
   color:{{ theme.settings.color_scheme_2_bg }};
 }
-.color-scheme-2 .btn-link:after,.color-scheme-2 .sl-richtext a:after,.color-scheme-2 .trade-cart-continue-btn:after,.sl-richtext .color-scheme-2 a:after{
+.color-scheme-2 .btn-link:after,.color-scheme-2 .footer__copyright-container .copy-box a:after,.color-scheme-2 .sl-richtext a:after,.color-scheme-2 .trade-cart-continue-btn:after,.footer__copyright-container .copy-box .color-scheme-2 a:after,.sl-richtext .color-scheme-2 a:after{
   background-color:{{ theme.settings.color_scheme_2_text }};
 }
 
@@ -7442,7 +7456,7 @@ body[data-open_topDrawer]{
   border-color:{{ theme.settings.color_scheme_3_text }};
   color:{{ theme.settings.color_scheme_3_bg }};
 }
-.color-scheme-3 .btn-link:after,.color-scheme-3 .sl-richtext a:after,.color-scheme-3 .trade-cart-continue-btn:after,.sl-richtext .color-scheme-3 a:after{
+.color-scheme-3 .btn-link:after,.color-scheme-3 .footer__copyright-container .copy-box a:after,.color-scheme-3 .sl-richtext a:after,.color-scheme-3 .trade-cart-continue-btn:after,.footer__copyright-container .copy-box .color-scheme-3 a:after,.sl-richtext .color-scheme-3 a:after{
   background-color:{{ theme.settings.color_scheme_3_text }};
 }
 .scheme-image{
@@ -7541,7 +7555,14 @@ body{
   top:0 !important;
 }
 
-#google_translate_element,.goog-tooltip,.skiptranslate{
+img.lozad{
+  visibility:hidden;
+}
+img.lozad[src],img.lozad[srcset]{
+  visibility:visible;
+}
+
+#google_translate_element,.goog-te-spinner-pos,.goog-tooltip,.skiptranslate{
   display:none !important;
 }
 
@@ -7869,22 +7890,22 @@ body{
   top:0;
 }
 
-.btn-link,.sl-richtext a,.trade-cart-continue-btn{
+.btn-link,.footer__copyright-container .copy-box a,.sl-richtext a,.trade-cart-continue-btn{
   border-radius:0;
   color:{{ theme.settings.color_text }};
   padding-bottom:0;
   padding-top:0;
 }
-.btn-link:focus,.btn-link:hover,.sl-richtext a:focus,.sl-richtext a:hover,.trade-cart-continue-btn:focus,.trade-cart-continue-btn:hover{
+.btn-link:focus,.btn-link:hover,.footer__copyright-container .copy-box a:focus,.footer__copyright-container .copy-box a:hover,.sl-richtext a:focus,.sl-richtext a:hover,.trade-cart-continue-btn:focus,.trade-cart-continue-btn:hover{
   color:{{ theme.settings.color_text }};
 }
-.btn-link,.sl-richtext a,.trade-cart-continue-btn{
+.btn-link,.footer__copyright-container .copy-box a,.sl-richtext a,.trade-cart-continue-btn{
   font-size:{{ transFontsize  theme.settings.type_body_size  0.875 }};
   padding-left:1px;
   padding-right:1px;
   position:relative;
 }
-.btn-link:after,.sl-richtext a:after,.trade-cart-continue-btn:after{
+.btn-link:after,.footer__copyright-container .copy-box a:after,.sl-richtext a:after,.trade-cart-continue-btn:after{
   background-color:{{ theme.settings.color_text }};
   border-bottom-right-radius:1px;
   border-top-right-radius:1px;
@@ -7895,7 +7916,7 @@ body{
   position:absolute;
   right:0;
 }
-.btn--loading.trade-cart-continue-btn:after,.btn-extra.btn--loading:after,.btn-link.btn--loading:after,.sl-richtext a.btn--loading:after{
+.btn--loading.trade-cart-continue-btn:after,.btn-extra.btn--loading:after,.btn-link.btn--loading:after,.footer__copyright-container .copy-box a.btn--loading:after,.sl-richtext a.btn--loading:after{
   -webkit-animation-name:btn-loading-sm;
           animation-name:btn-loading-sm;
   background-color:transparent;
@@ -7905,7 +7926,7 @@ body{
 
 @media (min-width:750px){
 
-  .btn,.btn-link,.sl-richtext a,.trade-cart-continue-btn{
+  .btn,.btn-link,.footer__copyright-container .copy-box a,.sl-richtext a,.trade-cart-continue-btn{
     font-size:{{ transFontsize  theme.settings.type_body_size  1 }};
   }
   .btn-lg{
@@ -8808,6 +8829,23 @@ body{
 .product-list-description-category-top div:last-child.product-list-description-top{
   margin-bottom:15px;
 }
+.product-list-header{
+  padding-top:75px;
+}
+.product-list-header-title{
+  color:{{ theme.settings.color_text }};
+}
+.product-list-header-title-url{
+  font-size:14px;
+  font-style:normal;
+  font-weight:400;
+  line-height:160%;
+  text-decoration:none;
+}
+.product-list-header-title-productsTitle{
+  margin-top:10px;
+  word-break:break-word;
+}
 .product-list-main{
   margin-bottom:75px;
   padding-top:45px;
@@ -8821,6 +8859,8 @@ body{
           justify-content:space-between;
   margin-bottom:20px;
   position:relative;
+  -webkit-transition:top .15s linear;
+  transition:top .15s linear;
   z-index:2;
 }
 .product-list-main-box,.product-list-main .product-list-list-header{
@@ -8874,6 +8914,9 @@ body{
   }
   .product-list-description-category div:first-child.product-list-child-category-list{
     margin-top:20px;
+  }
+  .product-list-header{
+    padding-top:20px;
   }
   .product-list-main{
     margin-bottom:40px;
@@ -9991,11 +10034,14 @@ body .pswp__ui--hidden{
   -webkit-justify-content:center;
           justify-content:center;
   margin:14px 0 0;
+  overflow:hidden;
   padding:0;
 }
 .product_mobile_productImageContainer .paginationList>div{
   background-color:{{ rgba  theme.settings.color_text  0.4 }};
   border-radius:50%;
+  -webkit-flex-shrink:0;
+          flex-shrink:0;
   height:6px;
   margin:0 5px;
   width:6px;
@@ -10005,22 +10051,18 @@ body .pswp__ui--hidden{
   height:9px;
   width:9px;
 }
+.product_mobile_productImageContainer.middleWidth .swiper-wrapper.hasVideoFl{
+  -webkit-transform:translate3d(12.5%, 0, 0);
+          transform:translate3d(12.5%, 0, 0);
+}
+.product_mobile_productImageContainer.middleWidth .swiper-wrapper:not(.hasVideoFl) .swiper-slide:first-child{
+  margin-left:12.5%;
+}
 .product_mobile_productImageContainer.middleWidth .product_productImages .swiper-slide{
   width:75%;
 }
 .product_mobile_productImageContainer.middleWidth .product_productImages .swiper-slide.videoItem .product_youTubeVideoContainer>iframe{
   padding:1px;
-}
-
-@media (min-width:768px){
-  .product_mobile_productImageContainer{
-    display:none !important;
-  }
-}
-@media (max-width:767.98px){
-  .product_pc_productImageContainer{
-    display:none !important;
-  }
 }
 .product-sku-trade-flatten .spec-box{
   margin-bottom:16px;
@@ -10886,7 +10928,11 @@ body .pswp__ui--hidden{
   z-index:4;
 }
 
+.base-input-area.is-textarea{
+  padding-top:24px;
+}
 .base-input-area.is-textarea textarea{
+  padding-top:0;
   resize:vertical;
 }
 .base-input-area.is-textarea .placeholder{
@@ -11803,6 +11849,9 @@ body .pswp__ui--hidden{
     padding-top:20px;
   }
 }
+.product-info .subTitle{
+  white-space:pre-wrap;
+}
 .product-sell-info{
   margin-bottom:0 !important;
   margin-top:35px;
@@ -12104,7 +12153,7 @@ body .pswp__ui--hidden{
 }
 .product-preview-container{
   margin:0 auto;
-  max-width:1500px;
+  max-width:{{ append (default theme.settings.page_width 1500) 'px' }};
   padding:0 29px;
 }
 .product-preview-container .product-preview-row{
@@ -12215,7 +12264,7 @@ body .pswp__ui--hidden{
     top:100%;
     -webkit-transform:translateX(-50%);
             transform:translateX(-50%);
-    z-index:1000;
+    z-index:120;
   }
   .sales-coupon-modal__container.sales-coupon-modal__container--show{
     display:block;
@@ -12240,7 +12289,7 @@ body .pswp__ui--hidden{
   background:{{ rgba  theme.settings.color_discount  0.1 }};
   border-radius:4px;
   cursor:pointer;
-  height:96px;
+  min-height:96px;
   width:335px;
 }
 .sales-discount-coupon-card1__container:hover .sales-discount-coupon-card1__button{
@@ -12258,7 +12307,7 @@ body .pswp__ui--hidden{
           flex-direction:column;
   -webkit-justify-content:center;
           justify-content:center;
-  padding-left:20px;
+  padding:0 10px 0 20px;
   word-break:break-all;
 }
 
@@ -12282,11 +12331,11 @@ body .pswp__ui--hidden{
   font-weight:600;
 }
 
-.sales-discount-coupon-card1__below,.sales-discount-coupon-card1__expire{
+.sales-discount-coupon-card1__below,.sales-discount-coupon-card1__customers,.sales-discount-coupon-card1__expire{
   color:{{ rgba  theme.settings.color_text  0.5 }};
   font-size:12px;
   font-weight:400;
-  line-height:12px;
+  line-height:14px;
 }
 
 .sales-discount-coupon-card1__below{
@@ -12354,7 +12403,7 @@ body .pswp__ui--hidden{
   -webkit-align-items:center;
           align-items:center;
   cursor:pointer;
-  height:96px;
+  min-height:96px;
   position:relative;
   width:335px;
 }
@@ -12386,7 +12435,8 @@ body .pswp__ui--hidden{
   height:100%;
   -webkit-justify-content:center;
           justify-content:center;
-  padding-left:20px;
+  min-height:96px;
+  padding:0 10px 0 20px;
   position:relative;
   width:199px;
   word-break:break-all;
@@ -12422,11 +12472,15 @@ body .pswp__ui--hidden{
   font-weight:600;
 }
 
-.sales-discount-coupon-card2__below,.sales-discount-coupon-card2__expire{
+.sales-discount-coupon-card2__below,.sales-discount-coupon-card2__customers,.sales-discount-coupon-card2__expire{
   color:hsla(0, 0%, 100%, .8);
   font-size:12px;
   font-weight:400;
   line-height:12px;
+}
+
+.sales-discount-coupon-card2__customers,.sales-discount-coupon-card2__expire{
+  line-height:14px;
 }
 
 .sales-discount-coupon-card2__below{

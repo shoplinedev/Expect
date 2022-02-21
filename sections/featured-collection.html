@@ -42,7 +42,7 @@ collection_products:
         {{/if}}
       <div class='product-list-item-parent-controller g-4 row row-cols-2 row-cols-md-{{section.settings.col}} row-cols-lg-{{section.settings.col}} {{#if section.settings.slice_in_mobile}}{{prefix}}--scroll-container{{/if}} {{#if (boolean (boolean theme.settings.product_image_ratio '==' 0 ) '&&' section.settings.slice_in_mobile)}}{{prefix}}--ratio-free{{/if}}'>
         {{#each (sliceListByGrid productList section.settings.row section.settings.col)}}
-          <div class='col{{#if ../forbiddenBtn}} {{../prefix}}--empty-product-item{{/if}}'>{{snippet 'product/commons/product-item' forbiddenBtn=../forbiddenBtn imgRealWidth=../real_product_img_width }} </div>
+          <div class='col{{#if ../forbiddenBtn}} {{../prefix}}--empty-product-item{{/if}}'>{{snippet 'product/commons/product-item' forbiddenBtn=../forbiddenBtn imgRealWidth=../real_product_img_width pcSize=(append '1/' ../section.settings.col) mSize="50vw" }} </div>
         {{/each}}
       </div>
     </div>
@@ -52,7 +52,12 @@ collection_products:
 {
   "name": {
     "zh-hans-cn": "精选商品",
-    "en": "Featured collection"
+    "en": "Featured collection",
+    "id": "Barang halus",
+    "th": "สินค้าแนะนำ",
+    "vi": "Hàng hóa nổi bật",
+    "ms": "Produk pilihan khas",
+    "zh-hant-tw": "精選商品"
   },
   "class": "index-section--gap",
   "settings": [
@@ -61,7 +66,12 @@ collection_products:
       "id": "title",
       "label": {
         "zh-hans-cn": "标题",
-        "en": "Title"
+        "en": "Title",
+        "id": "Judul",
+        "th": "หัวข้อ",
+        "vi": "Tiêu đề",
+        "ms": "Tajuk",
+        "zh-hant-tw": "標題"
       },
       "default": "Featured collection"
     },
@@ -70,7 +80,12 @@ collection_products:
       "id": "product_categories",
       "label": {
         "zh-hans-cn": "商品分类",
-        "en": "Collection list"
+        "en": "Collection list",
+        "id": "Klasifikasi produk",
+        "th": "หมวดหมู่",
+        "vi": "Phân loại sản phẩm",
+        "ms": "Produk kategori",
+        "zh-hant-tw": "商品分類"
       }
     },
     {
@@ -78,7 +93,12 @@ collection_products:
       "id": "col",
       "label": {
         "zh-hans-cn": "列数",
-        "en": "Number of columns"
+        "en": "Number of columns",
+        "id": "Jumlah kolom",
+        "th": "จำนวนคอลัมน์",
+        "vi": "Số cột",
+        "ms": "Bilangan lajur",
+        "zh-hant-tw": "列數"
       },
       "default": 5,
       "max": 5,
@@ -89,7 +109,12 @@ collection_products:
       "id": "row",
       "label": {
         "zh-hans-cn": "行数",
-        "en": "Number of rows"
+        "en": "Number of rows",
+        "id": "Jumlah baris",
+        "th": "จำนวนแถว",
+        "vi": "Số hàng",
+        "ms": "Baris",
+        "zh-hant-tw": "行數"
       },
       "default": 1,
       "max": 5,
@@ -100,7 +125,12 @@ collection_products:
       "id": "slice_in_mobile",
       "label": {
         "zh-hans-cn": "移动端左右滑动查看",
-        "en": "Slide the screen left or right to view"
+        "en": "Slide the screen left or right to view",
+        "id": "Geser ke kiri dan kanan di port seluler untuk melihat",
+        "th": "ปัดไปทางซ้ายและขวาบนมือถือเพื่อดู",
+        "vi": "Lướt trái phạm trên mạng di động để xem",
+        "ms": "Leret ke kiri dan kanan pada versi mudah alih untuk melihat",
+        "zh-hant-tw": "移動端左右滑動查看"
       },
       "default": false
     },
@@ -109,16 +139,26 @@ collection_products:
       "id": "button_text",
       "label": {
         "zh-hans-cn": "按钮文案",
-        "en": "Button text"
+        "en": "Button text",
+        "id": "Tulisan tombol",
+        "th": "ข้อความปุ่ม",
+        "vi": "Nội dung nút",
+        "ms": "Salinan butang",
+        "zh-hant-tw": "按鈕文案"
       },
-      "default": "View ALL"
+      "default": "View all"
     },
     {
       "type": "switch",
       "id": "show_divider",
       "label": {
         "zh-hans-cn": "展示分割线",
-        "en": "Dismay the split line"
+        "en": "Dismay the split line",
+        "id": "Tampilkan garis pemisah",
+        "th": "แสดงเส้นแบ่ง",
+        "vi": "Thể hiện tuyến phân cách",
+        "ms": "Tunjuk garis pemisah",
+        "zh-hant-tw": "展示分割線"
       },
       "default": false
     }
@@ -127,11 +167,21 @@ collection_products:
     {
       "name": {
         "zh-hans-cn": "精选商品",
-        "en": "Featured collection"
+        "en": "Featured collection",
+        "id": "Barang halus",
+        "th": "สินค้าแนะนำ",
+        "vi": "Hàng hóa nổi bật",
+        "ms": "Produk pilihan khas",
+        "zh-hant-tw": "精選商品"
       },
       "category": {
         "zh-hans-cn": "商品",
-        "en": "Product"
+        "en": "Product",
+        "id": "Produk",
+        "th": "สินค้า",
+        "vi": "Sản phẩm",
+        "ms": "Produk",
+        "zh-hant-tw": "商品"
       }
     }
   ]

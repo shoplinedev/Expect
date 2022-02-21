@@ -93,31 +93,62 @@
 {
   "name": {
     "zh-hans-cn": "页头",
-    "en": "Header"
+    "en": "Header",
+    "id": "Halaman awal",
+    "th": "หัวของหน้า",
+    "vi": "Đầu trang",
+    "ms": "Tajuk",
+    "zh-hant-tw": "頁頭"
   },
   "max_blocks": 4,
   "blocks": [
     {
       "type": "logo",
-      "name": "Logo",
+      "name": {
+        "zh-hans-cn": "Logo",
+        "en": "Logo",
+        "id": "Logo",
+        "th": "Logo",
+        "vi": "Logo",
+        "ms": "Logo",
+        "zh-hant-tw": "Logo"
+      },
       "icon": "image",
       "limit": 1,
       "settings": [
         {
           "type": "image_picker",
           "id": "logo",
-          "label": "Logo"
+          "label": {
+            "zh-hans-cn": "Logo",
+            "en": "Logo",
+            "id": "Logo",
+            "th": "Logo",
+            "vi": "Logo",
+            "ms": "Logo",
+            "zh-hant-tw": "Logo"
+          }
         },
         {
           "type": "image_picker",
           "id": "logo-inverted",
           "label": {
             "zh-hans-cn": "白色LOGO",
-            "en": "White logo"
+            "en": "White logo",
+            "id": "LOGO Putih",
+            "th": "LOGO สีขาว",
+            "vi": "LOGO màu trắng",
+            "ms": "LOGO putih",
+            "zh-hant-tw": "白色LOGO"
           },
           "info": {
             "zh-hans-cn": "当开启透明页头时显示",
-            "en": "Used when on top of an image"
+            "en": "Used when on top of an image",
+            "id": "Saat header transparan diaktifkan akan tampilkan",
+            "th": "แสดงเมื่อเปิดส่วนหัวโปร่งใส",
+            "vi": "Hiển thị khi khởi động đầu trang trong suốt",
+            "ms": "Tunjuk apabila pengepala lutsinar dihidupkan",
+            "zh-hant-tw": "當開啟透明頁頭時顯示"
           }
         },
         {
@@ -125,7 +156,12 @@
           "id": "desktop_logo_width",
           "label": {
             "zh-hans-cn": "电脑端LOGO宽度",
-            "en": "Desktop logo width"
+            "en": "Desktop logo width",
+            "id": "Lebar LOGO Port PC",
+            "th": "ความกว้างของ LOGO บนคอมพิวเตอร์",
+            "vi": "Chiều rộng LOGO trên máy tính",
+            "ms": "LOGO lebar pada computer",
+            "zh-hant-tw": "電腦端LOGO寬度"
           },
           "default": 200,
           "min": 100,
@@ -137,8 +173,13 @@
           "type": "range",
           "id": "mobile_logo_width",
           "label": {
+            "zh-hans-cn": "移动端LOGO宽度",
             "en": "Mobile logo width",
-            "zh-hans-cn": "移动端LOGO宽度"
+            "id": "Lebar LOGO Port Seluler",
+            "th": "ความกว้าง LOGO บนมือถือ",
+            "vi": "Chiều rộng LOGO trên điện thoại",
+            "ms": "LOGO lebar pada mudah alih",
+            "zh-hant-tw": "移動端LOGO寬度"
           },
           "default": 140,
           "min": 60,
@@ -147,7 +188,12 @@
           "unit": "px",
           "info": {
             "zh-hans-cn": "此设置为最大可展示宽度，实际根据屏幕大小适应显示",
-            "en": "This setting is the maximum displayable width, the width will be adjusted according to the actual screen size"
+            "en": "This setting is the maximum displayable width, the width will be adjusted according to the actual screen size",
+            "id": "Lebar maksimum pengaturan ini, sebenarnya menyesuaikan dengan tampilan sesuai dengan ukuran layar",
+            "th": "การตั้งค่านี้เป็นความกว้างสูงสุดที่แสดงผลได้ ซึ่งจริง ๆ แล้วปรับให้เข้ากับการแสดงผลตามขนาดหน้าจอ",
+            "vi": "Cài đặt này là độ dài lớn nhất có thể hiển thị, thực tế sẽ điều chỉnh hiển thị phù hợp theo độ to nhỏ của màn hình",
+            "ms": "Tetepan ini adalah lebar maksimum yang boleh dipaparkan, ini akan menyesuaikan dengan paparan mengikut saiz skrin",
+            "zh-hant-tw": "此設置為最大可展示寬度，實際根據屏幕大小適應顯示"
           }
         }
       ]
@@ -157,7 +203,12 @@
       "icon": "post",
       "name": {
         "zh-hans-cn": "公告栏",
-        "en": "Notice board"
+        "en": "Notice board",
+        "id": "Papan buletin",
+        "th": "กระดานข่าว",
+        "vi": "Cột thông báo",
+        "ms": "Papan pengumumann",
+        "zh-hant-tw": "公告欄"
       },
       "limit": 3,
       "settings": [
@@ -166,7 +217,12 @@
           "id": "link_text",
           "label": {
             "zh-hans-cn": "正文",
-            "en": "Main text"
+            "en": "Main text",
+            "id": "Teks",
+            "th": "ข้อความ",
+            "vi": "Nội dung chính",
+            "ms": "Teks",
+            "zh-hant-tw": "正文"
           },
           "default": "30-day postage paid returns"
         },
@@ -175,7 +231,12 @@
           "id": "link_text_mobile",
           "label": {
             "zh-hans-cn": "手机端正文",
-            "en": "Main text on mobile devices"
+            "en": "Main text on mobile devices",
+            "id": "Teks port seluler",
+            "th": "ข้อความบนมือถือ",
+            "vi": "Chữ trên ứng dụng điện thoại",
+            "ms": "Teks versi mudah alih",
+            "zh-hant-tw": "手機端正文"
           },
           "default": ""
         },
@@ -184,7 +245,12 @@
           "id": "link",
           "label": {
             "zh-hans-cn": "跳转链接",
-            "en": "Jump link"
+            "en": "Jump link",
+            "id": "lompat link",
+            "th": "ลิงก์กระโดดข้าม",
+            "vi": "Link chuyển đổi",
+            "ms": "Pautan lompat",
+            "zh-hant-tw": "跳轉鏈接"
           }
         }
       ]
@@ -196,7 +262,12 @@
       "id": "main_menu_link_list",
       "label": {
         "zh-hans-cn": "导航菜单",
-        "en": "Navigation menu"
+        "en": "Navigation menu",
+        "id": "Menu navigasi",
+        "th": "เมนูนำทาง",
+        "vi": "hướng dẫn trình đơn",
+        "ms": "Menu navigasi",
+        "zh-hant-tw": "導航菜單"
       },
       "default": "head"
     },
@@ -205,10 +276,21 @@
       "id": "mega_menu_images",
       "label": {
         "zh-hans-cn": "显示超级菜单图片",
-        "en": "Show the mega menu image"
+        "en": "Show the mega menu image",
+        "id": "Tampilkan gambar super-menu",
+        "th": "แสดงภาพเมนูสุดยอด",
+        "vi": "Hiển thị hình ảnh siêu menu",
+        "ms": "Tunjuk gambar menu super",
+        "zh-hant-tw": "顯示超級菜單圖片"
       },
       "info": {
-        "zh-hans-cn": "[查看如何设置超级菜单教程](https://shoplineapphelp.zendesk.com/hc/articles/4404157592217)"
+        "zh-hans-cn": "[查看如何设置超级菜单教程](https://shoplineapphelp.zendesk.com/hc/articles/4404157592217)",
+        "en": "[How to set up the Super Menu](https://shoplineapphelp.zendesk.com/hc/articles/4404157592217)",
+        "id": "[Lihat cara menyiapkan tutorial Super-Menu](https://shoplineapphelp.zendesk.com/hc/articles/4404157592217)",
+        "th": "[ดูวิธีตั้งค่าบทแนะนำเมนูสุดยอด](https://shoplineapphelp.zendesk.com/hc/articles/4404157592217)",
+        "vi": "[Xem hướng dẫn cài đặt siêu menu như thế nào](https://shoplineapphelp.zendesk.com/hc/articles/4404157592217)",
+        "ms": "[lihat tutorial untuk menetapkan menu super](https://shoplineapphelp.zendesk.com/hc/articles/4404157592217)",
+        "zh-hant-tw": "[查看如何設置超級菜單教程](https://shoplineapphelp.zendesk.com/hc/articles/4404157592217)"
       },
       "default": true
     },
@@ -217,7 +299,12 @@
       "id": "main_menu_alignment",
       "label": {
         "zh-hans-cn": "导航布局",
-        "en": "Navigation layout"
+        "en": "Navigation layout",
+        "id": "Tata letak navigasi",
+        "th": "รูปแบบการนำทาง",
+        "vi": "Bố cục chỉ hướng",
+        "ms": "Susun atur navigasi",
+        "zh-hant-tw": "導航佈局"
       },
       "default": "left",
       "options": [
@@ -225,28 +312,48 @@
           "value": "left-down",
           "label": {
             "zh-hans-cn": "LOGO居左，菜单居下",
-            "en": "Logo left, menu below"
+            "en": "Logo left, menu below",
+            "id": "LOGO di sebelah kiri, menu di bawah",
+            "th": "LOGO ด้านซ้าย เมนูด้านล่าง",
+            "vi": "LOGO bên trái, menu ở dưới",
+            "ms": "LOGO di sebelah kiri, menu di bahagian bawah",
+            "zh-hant-tw": "LOGO居左，菜單居下"
           }
         },
         {
           "value": "left-left",
           "label": {
             "zh-hans-cn": "LOGO居左，菜单居左",
-            "en": "Logo left, menu left"
+            "en": "Logo left, menu left",
+            "id": "LOGO berada di sebelah kiri，menu berada di sebelah kiri",
+            "th": "LOGO ด้านซ้าย เมนูด้านซ้าย",
+            "vi": "LOGO bên trái, menu bên phải",
+            "ms": "LOGO di sebelah kiri, menu di sebelah kiri",
+            "zh-hant-tw": "LOGO居左，菜單居左"
           }
         },
         {
           "value": "left-center",
           "label": {
             "zh-hans-cn": "LOGO居左，菜单居中",
-            "en": "Logo left, menu center"
+            "en": "Logo left, menu center",
+            "id": "LOGO berada di sebelah kiri，menu berada di tengah",
+            "th": "LOGO ด้านซ้าย เมนูตรงกลาง",
+            "vi": "LOGO bên trái, menu ở giữa",
+            "ms": "LOGO di sebelah kiri, menu di sebelah tengah",
+            "zh-hant-tw": "LOGO居左，菜單居中"
           }
         },
         {
           "value": "center-down",
           "label": {
             "zh-hans-cn": "LOGO居中，菜单居下",
-            "en": "Logo center, menu below"
+            "en": "Logo center, menu below",
+            "id": "LOGO di tengah, menu di bawah",
+            "th": "LOGO ตรงกลาง เมนูด้านล่าง",
+            "vi": "LOGO ở giữa, menu ở dưới",
+            "ms": "LOGO di tengah, menu di bahagian bawah",
+            "zh-hant-tw": "LOGO居中，菜單居下"
           }
         }
       ]
@@ -256,7 +363,12 @@
       "id": "header_style",
       "label": {
         "zh-hans-cn": "页头固定在顶部",
-        "en": "Header fixed on the top"
+        "en": "Header fixed on the top",
+        "id": "Tajuk tetap di atas",
+        "th": "ส่วนหัวได้รับการปักหมุดที่ด้านบน",
+        "vi": "Đầu trang cố định ở trên cùng",
+        "ms": "Pengepala ditetapkan di bahagian atas",
+        "zh-hant-tw": "頁頭固定在頂部"
       },
       "default": true
     },
@@ -265,7 +377,12 @@
       "id": "sticky_index",
       "label": {
         "zh-hans-cn": "首页启用透明页头",
-        "en": "Transparent header for homepage"
+        "en": "Transparent header for homepage",
+        "id": "Aktifkan tajuk transparan di beranda",
+        "th": "เปิดใช้งานส่วนหัวโปร่งใสในหน้าแรก",
+        "vi": "Trang chủ sử dụng hiệu ứng đầu trang trong suốt",
+        "ms": "Dayakan pengepala lutsinar pada halaman utama",
+        "zh-hant-tw": "首頁啟用透明頁頭"
       },
       "default": false
     },
@@ -274,11 +391,21 @@
       "id": "sticky_collection",
       "label": {
         "zh-hans-cn": "分类启用透明页头",
-        "en": "Transparent header for category page"
+        "en": "Transparent header for category page",
+        "id": "Kategori aktifkan tajuk transparan",
+        "th": "หมวดหมู่เปิดใช้งานส่วนหัวโปร่งใส",
+        "vi": "Phân loại sử dụng hiệu ứng đầu trang trong suốt",
+        "ms": "Kategori membolehkan pengepala lutsinar",
+        "zh-hant-tw": "分類啟用透明頁頭"
       },
       "info": {
         "zh-hans-cn": "配置分类页封面后生效",
-        "en": "It will be effective once the cover of collection page is configured"
+        "en": "It will be effective once the cover of collection page is configured",
+        "id": "Berlaku setelah mengonfigurasi sampul halaman kategori",
+        "th": "มีผลหลังจากกำหนดค่าหน้าปกหมวดหมู่",
+        "vi": "Có hiệu lực sau khi bố trí phân loại trang bìa xong",
+        "ms": "Berkuat kuasa selepas mengkonfigurasi kulit halaman kategori",
+        "zh-hant-tw": "配置分類頁封面後生效"
       },
       "default": false
     },
@@ -287,7 +414,12 @@
       "id": "show_search",
       "label": {
         "zh-hans-cn": "展示搜索入口",
-        "en": "Display the search entrance"
+        "en": "Display the search entrance",
+        "id": "Tampilkan pintu masuk pencarian",
+        "th": "แสดงทางเข้าการค้นหา",
+        "vi": "Bày ra cửa vào tìm kiếm",
+        "ms": "Tunjuk portal carian",
+        "zh-hant-tw": "展示搜索入口"
       },
       "default": true
     },
@@ -296,7 +428,12 @@
       "id": "show_user_center",
       "label": {
         "zh-hans-cn": "展示个人中心入口",
-        "en": "Display the personal center entrance"
+        "en": "Display the personal center entrance",
+        "id": "Tampilkan pintu masuk pusat pribadi",
+        "th": "แสดงทางเข้าศูนย์ส่วนบุคคล",
+        "vi": "Bày ra cửa vào trung tâm cá nhân",
+        "ms": "Tunjuk pintu masuk pusat peribadi",
+        "zh-hant-tw": "展示個人中心入口"
       },
       "default": true
     },
@@ -305,7 +442,12 @@
       "id": "show_cart",
       "label": {
         "zh-hans-cn": "展示购物车入口",
-        "en": "Display the shopping cart entrance"
+        "en": "Display the shopping cart entrance",
+        "id": "Tampilkan pintu masuk troli",
+        "th": "แสดงทางเข้าตะกร้าสินค้า",
+        "vi": "Bày ra cửa vào túi mua",
+        "ms": "Tunjuk pintu masuk troli beli-belah",
+        "zh-hant-tw": "展示購物車入口"
       },
       "default": true
     },
@@ -314,10 +456,21 @@
       "id": "show_locale_selector",
       "label": {
         "zh-hans-cn": "展示语言选择器",
-        "en": "Display the language selector"
+        "en": "Display the language selector",
+        "id": "Tampilkan pilihan bahasa",
+        "th": "แสดงตัวเลือกภาษา",
+        "vi": "Bày ra máy chọn ngôn ngữ",
+        "ms": "Tunjuk pemilih bahasa",
+        "zh-hant-tw": "展示語言選擇器"
       },
       "info": {
-        "zh-hans-cn": "若要添加语言，可前往[语言设置](/admin/settings/lang)"
+        "zh-hans-cn": "若要添加语言，可前往[语言设置](/admin/settings/lang)",
+        "en": "Go to [language setting](/admin/settings/lang) for setup",
+        "id": "Jika perlu menambahkan bahasa, silahkan buka [Pengaturan Bahasa](/admin/settings/lang)",
+        "th": "หากต้องการเพิ่มภาษา ให้ไปที่ [การตั้งค่าภาษา](/admin/settings/lang)",
+        "vi": "Nếu cần thêm ngôn ngữ, có thể vào phần [Cài đặt ngôn ngữ](/admin/settings/lang)",
+        "ms": "Jika anda ingin menambah bahasa, anda boleh pergi ke [tetapan bahasa](/admin/settings/lang)",
+        "zh-hant-tw": "若要添加語言，可前往[語言設置](/admin/settings/lang)"
       },
       "default": false
     },
@@ -326,10 +479,21 @@
       "id": "show_currency_selector",
       "label": {
         "zh-hans-cn": "展示货币选择器",
-        "en": "Display the currency selector"
+        "en": "Display the currency selector",
+        "id": "Tampilkan pilihan mata uang",
+        "th": "แสดงตัวเลือกสกุลเงิน",
+        "vi": "Bày ra máy chọn tiền tệ",
+        "ms": "Tunjuk pemilih mata wang",
+        "zh-hant-tw": "展示貨幣選擇器"
       },
       "info": {
-        "zh-hans-cn": "若要添加货币，可前往[货币设置](/admin/settings/base)"
+        "zh-hans-cn": "若要添加货币，可前往[货币设置](/admin/settings/base)",
+        "en": "Go to [currency setting](/admin/settings/base) for setup",
+        "id": "Jika perlu menambahkan mata uang, silahkan buka [Pengaturan Mata Uang](/admin/settings/base)",
+        "th": "หากต้องการเพิ่มสกุลเงิน ให้ไปที่ [การตั้งค่าสกุลเงิน](/admin/settings/base)",
+        "vi": "Nếu cần thêm tiền tệ, có thể vào phần [Cài đặt tiền tệ](/admin/settings/base)",
+        "ms": "Jika anda ingin menambah mata wang, anda boleh pergi ke [tetapan mata wang](/admin/settings/base)",
+        "zh-hant-tw": "若要添加貨幣，可前往[貨幣設置](/admin/settings/base)"
       },
       "default": false
     },
@@ -338,7 +502,12 @@
       "id": "show_currency_flags",
       "label": {
         "zh-hans-cn": "展示货币符号",
-        "en": "Display the currency symbol"
+        "en": "Display the currency symbol",
+        "id": "Tampilkan simbol mata uang",
+        "th": "แสดงสัญลักษณ์สกุลเงิน",
+        "vi": "Hiển thị ký hiệu tiền tệ",
+        "ms": "Tunjuk simbol mata wang",
+        "zh-hant-tw": "展示貨幣符號"
       },
       "default": true
     }

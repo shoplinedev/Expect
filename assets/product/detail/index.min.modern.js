@@ -10164,10 +10164,12 @@
                     const debugMode = "staging" === APP_ENV || "develop" === APP_ENV;
                     const Shopline = window.Shopline || {};
                     const pid = null === (_window$__PRELOAD_STA = window.__PRELOAD_STATE__) || void 0 === _window$__PRELOAD_STA ? void 0 : _window$__PRELOAD_STA.serverEventId;
+                    const timeOffset = Shopline.systemTimestamp ? +new Date - Shopline.systemTimestamp : 0;
                     null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : null === (_window$HdSdk$shopTra = _window$HdSdk.shopTracker) || void 0 === _window$HdSdk$shopTra ? void 0 : _window$HdSdk$shopTra.setOptions({
                         env,
                         timezoneOffset: null !== (_SL_State$get = state_selector.SL_State.get("storeInfo.timezoneOffset")) && void 0 !== _SL_State$get ? _SL_State$get : 0,
                         disableIframeId: true,
+                        timeOffset,
                         beforeSend: async data => {
                             var _Shopline$updateMode;
                             const warpData = {
@@ -10180,6 +10182,7 @@
                                 is_admin: js_cookie_default().get("r_b_ined") || "0",
                                 pid,
                                 update_mode: (null === (_Shopline$updateMode = Shopline.updateMode) || void 0 === _Shopline$updateMode ? void 0 : _Shopline$updateMode.toString()) || "",
+                                time_offset: timeOffset,
                                 ...data
                             };
                             if (!Object.prototype.hasOwnProperty.call(data, "iframe_id") || 1 === Number(data.iframe_id)) warpData.iframe_id = js_cookie_default().get("n_u") || js_cookie_default().get("sl_iframe_id");
@@ -10248,15 +10251,16 @@
                     let params = data || {};
                     Hidoo.fbChecker();
                     let event = null;
+                    const {hdEventId, ...rest} = extra || {};
                     const fbParams = Hidoo.getFbParams();
                     switch (type) {
                       case "Purchase":
-                        null === (_window$HdSdk2 = window.HdSdk) || void 0 === _window$HdSdk2 ? void 0 : _window$HdSdk2.shopTracker.report((null === extra || void 0 === extra ? void 0 : extra.hdEventId) || "80000101", {
+                        null === (_window$HdSdk2 = window.HdSdk) || void 0 === _window$HdSdk2 ? void 0 : _window$HdSdk2.shopTracker.report(hdEventId || "80000101", {
                             iframe_id: 1,
                             ...eventID,
                             ...params,
                             ...fbParams,
-                            main_order_seq: null === extra || void 0 === extra ? void 0 : extra.main_order_seq
+                            ...rest
                         });
                         return this;
 
@@ -10913,201 +10917,6 @@
                     configurable: false
                 });
             }
-        },
-        "../shared/node_modules/@funnyecho/logger-sentry/dist/index.js": function(__unused_webpack_module, exports, __webpack_require__) {
-            "use strict";
-            var __assign = this && this.__assign || function() {
-                __assign = Object.assign || function(t) {
-                    for (var s, i = 1, n = arguments.length; i < n; i++) {
-                        s = arguments[i];
-                        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-                    }
-                    return t;
-                };
-                return __assign.apply(this, arguments);
-            };
-            var __createBinding = this && this.__createBinding || (Object.create ? function(o, m, k, k2) {
-                if (void 0 === k2) k2 = k;
-                Object.defineProperty(o, k2, {
-                    enumerable: true,
-                    get: function() {
-                        return m[k];
-                    }
-                });
-            } : function(o, m, k, k2) {
-                if (void 0 === k2) k2 = k;
-                o[k2] = m[k];
-            });
-            var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function(o, v) {
-                Object.defineProperty(o, "default", {
-                    enumerable: true,
-                    value: v
-                });
-            } : function(o, v) {
-                o["default"] = v;
-            });
-            var __importStar = this && this.__importStar || function(mod) {
-                if (mod && mod.__esModule) return mod;
-                var result = {};
-                if (null != mod) for (var k in mod) if ("default" !== k && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-                __setModuleDefault(result, mod);
-                return result;
-            };
-            var __importDefault = this && this.__importDefault || function(mod) {
-                return mod && mod.__esModule ? mod : {
-                    default: mod
-                };
-            };
-            Object.defineProperty(exports, "__esModule", {
-                value: true
-            });
-            var Sentry = __importStar(__webpack_require__("../shared/node_modules/@sentry/browser/esm/index.js"));
-            var valuerConfig_1 = __importDefault(__webpack_require__("../shared/node_modules/@funnyecho/logger-sentry/dist/valuerConfig.js"));
-            var valuerOnTag_1 = __importDefault(__webpack_require__("../shared/node_modules/@funnyecho/logger-sentry/dist/valuerOnTag.js"));
-            var logger_1 = __importDefault(__webpack_require__("../shared/node_modules/@funnyecho/logger/dist/index.js"));
-            function withSentryConfig() {
-                return function(ctx, entry) {
-                    return [ valuerConfig_1.default.withSentryTransportConfig(ctx), entry ];
-                };
-            }
-            function withSentryOnTag(onTag) {
-                return function(ctx, entry) {
-                    return [ valuerOnTag_1.default.withSentryOnTag(ctx, onTag), entry ];
-                };
-            }
-            function withSentryPort() {
-                return {
-                    bubble: function(ctx, entry) {
-                        var config = valuerConfig_1.default.takeSentryTransportConfig(ctx);
-                        var onTag = valuerOnTag_1.default.takeSentryOnTag(ctx);
-                        var owner = entry.owner, level = entry.level, fields = entry.fields;
-                        var message = "" + entry.message;
-                        var fieldMap = logger_1.default.mapFieldList(fields);
-                        var tagged = {};
-                        if ("function" === typeof onTag) Object.keys(fieldMap).forEach((function(key) {
-                            var shouldTag = onTag(key);
-                            if (!shouldTag) return;
-                            var field = fieldMap[key];
-                            if ("function" === typeof field || "object" === typeof field) return;
-                            var tagName = true === shouldTag ? key : shouldTag;
-                            tagged[tagName] = field;
-                            delete fieldMap[key];
-                        }));
-                        switch (level) {
-                          case logger_1.default.LevelEnum.error:
-                          case logger_1.default.LevelEnum.fatal:
-                            Sentry.captureException(message, {
-                                tags: __assign({
-                                    "event.owner": owner
-                                }, tagged),
-                                extra: flat(fieldMap, config.exceptionExtraFlatDepth)
-                            });
-                            break;
-
-                          case logger_1.default.LevelEnum.info:
-                            Sentry.captureMessage(message, {
-                                level: Sentry.Severity.Info,
-                                tags: __assign({
-                                    "event.owner": owner
-                                }, tagged),
-                                extra: flat(fieldMap, config.messageExtraFlatDepth)
-                            });
-                            break;
-
-                          case logger_1.default.LevelEnum.debug:
-                          default:
-                            Sentry.addBreadcrumb({
-                                type: "Debug",
-                                level: Sentry.Severity.Log,
-                                category: owner,
-                                message: message + " " + JSON.stringify(fieldMap, null, 2),
-                                data: tagged
-                            });
-                        }
-                    }
-                };
-            }
-            exports["default"] = {
-                withSentryConfig,
-                withSentryOnTag,
-                withSentryPort
-            };
-            function flat(obj, depth) {
-                if (!obj) return {};
-                if ("object" === typeof obj) {
-                    if (depth <= 0) return JSON.stringify(obj, void 0, 3);
-                    return Object.keys(obj).reduce((function(prev, key) {
-                        prev[key] = flat(obj[key], depth - 1);
-                        return prev;
-                    }), {});
-                }
-                if (Array.isArray(obj)) {
-                    if (depth <= 0) return JSON.stringify(obj, void 0, 3);
-                    return obj.map((function(sub) {
-                        return flat(sub, depth - 1);
-                    }));
-                }
-                return obj;
-            }
-        },
-        "../shared/node_modules/@funnyecho/logger-sentry/dist/valuerConfig.js": function(__unused_webpack_module, exports, __webpack_require__) {
-            "use strict";
-            var __importDefault = this && this.__importDefault || function(mod) {
-                return mod && mod.__esModule ? mod : {
-                    default: mod
-                };
-            };
-            Object.defineProperty(exports, "__esModule", {
-                value: true
-            });
-            var context_1 = __importDefault(__webpack_require__("../shared/node_modules/@funnyecho/context/dist/index.js"));
-            function newSentryTransportConfig() {
-                return {
-                    exceptionExtraFlatDepth: 4,
-                    messageExtraFlatDepth: 3
-                };
-            }
-            var valuer = context_1.default.newValuer();
-            function withSentryTransportConfig(ctx, config) {
-                return context_1.default.withValue(ctx, valuer, config || newSentryTransportConfig());
-            }
-            function takeSentryTransportConfig(ctx) {
-                return ctx.value(valuer);
-            }
-            exports["default"] = {
-                withSentryTransportConfig,
-                takeSentryTransportConfig,
-                newSentryTransportConfig
-            };
-        },
-        "../shared/node_modules/@funnyecho/logger-sentry/dist/valuerOnTag.js": function(__unused_webpack_module, exports, __webpack_require__) {
-            "use strict";
-            var __importDefault = this && this.__importDefault || function(mod) {
-                return mod && mod.__esModule ? mod : {
-                    default: mod
-                };
-            };
-            Object.defineProperty(exports, "__esModule", {
-                value: true
-            });
-            var context_1 = __importDefault(__webpack_require__("../shared/node_modules/@funnyecho/context/dist/index.js"));
-            function newSentryOnTag() {
-                return function() {
-                    return false;
-                };
-            }
-            var valuer = context_1.default.newValuerWithGetter(newSentryOnTag);
-            function withSentryOnTag(ctx, onTag) {
-                return context_1.default.withValue(ctx, valuer, onTag || newSentryOnTag());
-            }
-            function takeSentryOnTag(ctx) {
-                return ctx.value(valuer);
-            }
-            exports["default"] = {
-                withSentryOnTag,
-                takeSentryOnTag,
-                newSentryOnTag
-            };
         },
         "../shared/node_modules/@funnyecho/logger/dist/entry.js": (__unused_webpack_module, exports) => {
             "use strict";
@@ -13668,4165 +13477,6 @@
                     value: !0
                 });
             }));
-        },
-        "../shared/node_modules/@sentry/browser/esm/index.js": (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            __webpack_require__.d(__webpack_exports__, {
-                BrowserClient: () => BrowserClient,
-                Hub: () => Hub,
-                Integrations: () => INTEGRATIONS,
-                SDK_NAME: () => SDK_NAME,
-                SDK_VERSION: () => SDK_VERSION,
-                Scope: () => Scope,
-                Severity: () => Severity,
-                Status: () => Status,
-                Transports: () => transports_namespaceObject,
-                addBreadcrumb: () => addBreadcrumb,
-                addGlobalEventProcessor: () => addGlobalEventProcessor,
-                captureEvent: () => captureEvent,
-                captureException: () => captureException,
-                captureMessage: () => captureMessage,
-                close: () => sdk_close,
-                configureScope: () => configureScope,
-                defaultIntegrations: () => defaultIntegrations,
-                eventFromException: () => eventFromException,
-                eventFromMessage: () => eventFromMessage,
-                flush: () => flush,
-                forceLoad: () => forceLoad,
-                getCurrentHub: () => getCurrentHub,
-                getHubFromCarrier: () => getHubFromCarrier,
-                init: () => init,
-                injectReportDialog: () => injectReportDialog,
-                lastEventId: () => lastEventId,
-                makeMain: () => makeMain,
-                onLoad: () => onLoad,
-                setContext: () => setContext,
-                setExtra: () => setExtra,
-                setExtras: () => setExtras,
-                setTag: () => setTag,
-                setTags: () => setTags,
-                setUser: () => setUser,
-                showReportDialog: () => showReportDialog,
-                startTransaction: () => startTransaction,
-                withScope: () => withScope,
-                wrap: () => sdk_wrap
-            });
-            var integrations_namespaceObject = {};
-            __webpack_require__.r(integrations_namespaceObject);
-            __webpack_require__.d(integrations_namespaceObject, {
-                FunctionToString: () => FunctionToString,
-                InboundFilters: () => InboundFilters
-            });
-            var esm_integrations_namespaceObject = {};
-            __webpack_require__.r(esm_integrations_namespaceObject);
-            __webpack_require__.d(esm_integrations_namespaceObject, {
-                Breadcrumbs: () => Breadcrumbs,
-                Dedupe: () => Dedupe,
-                GlobalHandlers: () => GlobalHandlers,
-                LinkedErrors: () => LinkedErrors,
-                TryCatch: () => TryCatch,
-                UserAgent: () => UserAgent
-            });
-            var transports_namespaceObject = {};
-            __webpack_require__.r(transports_namespaceObject);
-            __webpack_require__.d(transports_namespaceObject, {
-                BaseTransport: () => BaseTransport,
-                FetchTransport: () => FetchTransport,
-                XHRTransport: () => XHRTransport
-            });
-            var extendStatics = function(d, b) {
-                extendStatics = Object.setPrototypeOf || {
-                    __proto__: []
-                } instanceof Array && function(d, b) {
-                    d.__proto__ = b;
-                } || function(d, b) {
-                    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-                };
-                return extendStatics(d, b);
-            };
-            function __extends(d, b) {
-                extendStatics(d, b);
-                function __() {
-                    this.constructor = d;
-                }
-                d.prototype = null === b ? Object.create(b) : (__.prototype = b.prototype, new __);
-            }
-            var __assign = function() {
-                __assign = Object.assign || function(t) {
-                    for (var s, i = 1, n = arguments.length; i < n; i++) {
-                        s = arguments[i];
-                        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-                    }
-                    return t;
-                };
-                return __assign.apply(this, arguments);
-            };
-            function __rest(s, e) {
-                var t = {};
-                for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-                if (null != s && "function" === typeof Object.getOwnPropertySymbols) {
-                    var i = 0;
-                    for (p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-                }
-                return t;
-            }
-            function __values(o) {
-                var s = "function" === typeof Symbol && Symbol.iterator, m = s && o[s], i = 0;
-                if (m) return m.call(o);
-                if (o && "number" === typeof o.length) return {
-                    next: function() {
-                        if (o && i >= o.length) o = void 0;
-                        return {
-                            value: o && o[i++],
-                            done: !o
-                        };
-                    }
-                };
-                throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-            }
-            function __read(o, n) {
-                var m = "function" === typeof Symbol && o[Symbol.iterator];
-                if (!m) return o;
-                var r, e, i = m.call(o), ar = [];
-                try {
-                    while ((void 0 === n || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-                } catch (error) {
-                    e = {
-                        error
-                    };
-                } finally {
-                    try {
-                        if (r && !r.done && (m = i["return"])) m.call(i);
-                    } finally {
-                        if (e) throw e.error;
-                    }
-                }
-                return ar;
-            }
-            function tslib_es6_spread() {
-                for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
-                return ar;
-            }
-            var Severity;
-            (function(Severity) {
-                Severity["Fatal"] = "fatal";
-                Severity["Error"] = "error";
-                Severity["Warning"] = "warning";
-                Severity["Log"] = "log";
-                Severity["Info"] = "info";
-                Severity["Debug"] = "debug";
-                Severity["Critical"] = "critical";
-            })(Severity || (Severity = {}));
-            (function(Severity) {
-                function fromString(level) {
-                    switch (level) {
-                      case "debug":
-                        return Severity.Debug;
-
-                      case "info":
-                        return Severity.Info;
-
-                      case "warn":
-                      case "warning":
-                        return Severity.Warning;
-
-                      case "error":
-                        return Severity.Error;
-
-                      case "fatal":
-                        return Severity.Fatal;
-
-                      case "critical":
-                        return Severity.Critical;
-
-                      default:
-                        return Severity.Log;
-                    }
-                }
-                Severity.fromString = fromString;
-            })(Severity || (Severity = {}));
-            var Status;
-            (function(Status) {
-                Status["Unknown"] = "unknown";
-                Status["Skipped"] = "skipped";
-                Status["Success"] = "success";
-                Status["RateLimit"] = "rate_limit";
-                Status["Invalid"] = "invalid";
-                Status["Failed"] = "failed";
-            })(Status || (Status = {}));
-            (function(Status) {
-                function fromHttpCode(code) {
-                    if (code >= 200 && code < 300) return Status.Success;
-                    if (429 === code) return Status.RateLimit;
-                    if (code >= 400 && code < 500) return Status.Invalid;
-                    if (code >= 500) return Status.Failed;
-                    return Status.Unknown;
-                }
-                Status.fromHttpCode = fromHttpCode;
-            })(Status || (Status = {}));
-            function isError(wat) {
-                switch (Object.prototype.toString.call(wat)) {
-                  case "[object Error]":
-                  case "[object Exception]":
-                  case "[object DOMException]":
-                    return true;
-
-                  default:
-                    return isInstanceOf(wat, Error);
-                }
-            }
-            function isErrorEvent(wat) {
-                return "[object ErrorEvent]" === Object.prototype.toString.call(wat);
-            }
-            function isDOMError(wat) {
-                return "[object DOMError]" === Object.prototype.toString.call(wat);
-            }
-            function isDOMException(wat) {
-                return "[object DOMException]" === Object.prototype.toString.call(wat);
-            }
-            function isString(wat) {
-                return "[object String]" === Object.prototype.toString.call(wat);
-            }
-            function is_isPrimitive(wat) {
-                return null === wat || "object" !== typeof wat && "function" !== typeof wat;
-            }
-            function isPlainObject(wat) {
-                return "[object Object]" === Object.prototype.toString.call(wat);
-            }
-            function isEvent(wat) {
-                return "undefined" !== typeof Event && isInstanceOf(wat, Event);
-            }
-            function isElement(wat) {
-                return "undefined" !== typeof Element && isInstanceOf(wat, Element);
-            }
-            function isRegExp(wat) {
-                return "[object RegExp]" === Object.prototype.toString.call(wat);
-            }
-            function isThenable(wat) {
-                return Boolean(wat && wat.then && "function" === typeof wat.then);
-            }
-            function isSyntheticEvent(wat) {
-                return isPlainObject(wat) && "nativeEvent" in wat && "preventDefault" in wat && "stopPropagation" in wat;
-            }
-            function isInstanceOf(wat, base) {
-                try {
-                    return wat instanceof base;
-                } catch (_e) {
-                    return false;
-                }
-            }
-            var time = __webpack_require__("../shared/node_modules/@sentry/utils/esm/time.js");
-            var States;
-            (function(States) {
-                States["PENDING"] = "PENDING";
-                States["RESOLVED"] = "RESOLVED";
-                States["REJECTED"] = "REJECTED";
-            })(States || (States = {}));
-            var SyncPromise = function() {
-                function SyncPromise(executor) {
-                    var _this = this;
-                    this._state = States.PENDING;
-                    this._handlers = [];
-                    this._resolve = function(value) {
-                        _this._setResult(States.RESOLVED, value);
-                    };
-                    this._reject = function(reason) {
-                        _this._setResult(States.REJECTED, reason);
-                    };
-                    this._setResult = function(state, value) {
-                        if (_this._state !== States.PENDING) return;
-                        if (isThenable(value)) {
-                            void value.then(_this._resolve, _this._reject);
-                            return;
-                        }
-                        _this._state = state;
-                        _this._value = value;
-                        _this._executeHandlers();
-                    };
-                    this._attachHandler = function(handler) {
-                        _this._handlers = _this._handlers.concat(handler);
-                        _this._executeHandlers();
-                    };
-                    this._executeHandlers = function() {
-                        if (_this._state === States.PENDING) return;
-                        var cachedHandlers = _this._handlers.slice();
-                        _this._handlers = [];
-                        cachedHandlers.forEach((function(handler) {
-                            if (handler.done) return;
-                            if (_this._state === States.RESOLVED) if (handler.onfulfilled) handler.onfulfilled(_this._value);
-                            if (_this._state === States.REJECTED) if (handler.onrejected) handler.onrejected(_this._value);
-                            handler.done = true;
-                        }));
-                    };
-                    try {
-                        executor(this._resolve, this._reject);
-                    } catch (e) {
-                        this._reject(e);
-                    }
-                }
-                SyncPromise.resolve = function(value) {
-                    return new SyncPromise((function(resolve) {
-                        resolve(value);
-                    }));
-                };
-                SyncPromise.reject = function(reason) {
-                    return new SyncPromise((function(_, reject) {
-                        reject(reason);
-                    }));
-                };
-                SyncPromise.all = function(collection) {
-                    return new SyncPromise((function(resolve, reject) {
-                        if (!Array.isArray(collection)) {
-                            reject(new TypeError("Promise.all requires an array as input."));
-                            return;
-                        }
-                        if (0 === collection.length) {
-                            resolve([]);
-                            return;
-                        }
-                        var counter = collection.length;
-                        var resolvedCollection = [];
-                        collection.forEach((function(item, index) {
-                            void SyncPromise.resolve(item).then((function(value) {
-                                resolvedCollection[index] = value;
-                                counter -= 1;
-                                if (0 !== counter) return;
-                                resolve(resolvedCollection);
-                            })).then(null, reject);
-                        }));
-                    }));
-                };
-                SyncPromise.prototype.then = function(onfulfilled, onrejected) {
-                    var _this = this;
-                    return new SyncPromise((function(resolve, reject) {
-                        _this._attachHandler({
-                            done: false,
-                            onfulfilled: function(result) {
-                                if (!onfulfilled) {
-                                    resolve(result);
-                                    return;
-                                }
-                                try {
-                                    resolve(onfulfilled(result));
-                                    return;
-                                } catch (e) {
-                                    reject(e);
-                                    return;
-                                }
-                            },
-                            onrejected: function(reason) {
-                                if (!onrejected) {
-                                    reject(reason);
-                                    return;
-                                }
-                                try {
-                                    resolve(onrejected(reason));
-                                    return;
-                                } catch (e) {
-                                    reject(e);
-                                    return;
-                                }
-                            }
-                        });
-                    }));
-                };
-                SyncPromise.prototype.catch = function(onrejected) {
-                    return this.then((function(val) {
-                        return val;
-                    }), onrejected);
-                };
-                SyncPromise.prototype.finally = function(onfinally) {
-                    var _this = this;
-                    return new SyncPromise((function(resolve, reject) {
-                        var val;
-                        var isRejected;
-                        return _this.then((function(value) {
-                            isRejected = false;
-                            val = value;
-                            if (onfinally) onfinally();
-                        }), (function(reason) {
-                            isRejected = true;
-                            val = reason;
-                            if (onfinally) onfinally();
-                        })).then((function() {
-                            if (isRejected) {
-                                reject(val);
-                                return;
-                            }
-                            resolve(val);
-                        }));
-                    }));
-                };
-                SyncPromise.prototype.toString = function() {
-                    return "[object SyncPromise]";
-                };
-                return SyncPromise;
-            }();
-            var esm_global = __webpack_require__("../shared/node_modules/@sentry/utils/esm/global.js");
-            var MAX_BREADCRUMBS = 100;
-            var Scope = function() {
-                function Scope() {
-                    this._notifyingListeners = false;
-                    this._scopeListeners = [];
-                    this._eventProcessors = [];
-                    this._breadcrumbs = [];
-                    this._user = {};
-                    this._tags = {};
-                    this._extra = {};
-                    this._contexts = {};
-                }
-                Scope.clone = function(scope) {
-                    var newScope = new Scope;
-                    if (scope) {
-                        newScope._breadcrumbs = tslib_es6_spread(scope._breadcrumbs);
-                        newScope._tags = __assign({}, scope._tags);
-                        newScope._extra = __assign({}, scope._extra);
-                        newScope._contexts = __assign({}, scope._contexts);
-                        newScope._user = scope._user;
-                        newScope._level = scope._level;
-                        newScope._span = scope._span;
-                        newScope._session = scope._session;
-                        newScope._transactionName = scope._transactionName;
-                        newScope._fingerprint = scope._fingerprint;
-                        newScope._eventProcessors = tslib_es6_spread(scope._eventProcessors);
-                        newScope._requestSession = scope._requestSession;
-                    }
-                    return newScope;
-                };
-                Scope.prototype.addScopeListener = function(callback) {
-                    this._scopeListeners.push(callback);
-                };
-                Scope.prototype.addEventProcessor = function(callback) {
-                    this._eventProcessors.push(callback);
-                    return this;
-                };
-                Scope.prototype.setUser = function(user) {
-                    this._user = user || {};
-                    if (this._session) this._session.update({
-                        user
-                    });
-                    this._notifyScopeListeners();
-                    return this;
-                };
-                Scope.prototype.getUser = function() {
-                    return this._user;
-                };
-                Scope.prototype.getRequestSession = function() {
-                    return this._requestSession;
-                };
-                Scope.prototype.setRequestSession = function(requestSession) {
-                    this._requestSession = requestSession;
-                    return this;
-                };
-                Scope.prototype.setTags = function(tags) {
-                    this._tags = __assign(__assign({}, this._tags), tags);
-                    this._notifyScopeListeners();
-                    return this;
-                };
-                Scope.prototype.setTag = function(key, value) {
-                    var _a;
-                    this._tags = __assign(__assign({}, this._tags), (_a = {}, _a[key] = value, _a));
-                    this._notifyScopeListeners();
-                    return this;
-                };
-                Scope.prototype.setExtras = function(extras) {
-                    this._extra = __assign(__assign({}, this._extra), extras);
-                    this._notifyScopeListeners();
-                    return this;
-                };
-                Scope.prototype.setExtra = function(key, extra) {
-                    var _a;
-                    this._extra = __assign(__assign({}, this._extra), (_a = {}, _a[key] = extra, _a));
-                    this._notifyScopeListeners();
-                    return this;
-                };
-                Scope.prototype.setFingerprint = function(fingerprint) {
-                    this._fingerprint = fingerprint;
-                    this._notifyScopeListeners();
-                    return this;
-                };
-                Scope.prototype.setLevel = function(level) {
-                    this._level = level;
-                    this._notifyScopeListeners();
-                    return this;
-                };
-                Scope.prototype.setTransactionName = function(name) {
-                    this._transactionName = name;
-                    this._notifyScopeListeners();
-                    return this;
-                };
-                Scope.prototype.setTransaction = function(name) {
-                    return this.setTransactionName(name);
-                };
-                Scope.prototype.setContext = function(key, context) {
-                    var _a;
-                    if (null === context) delete this._contexts[key]; else this._contexts = __assign(__assign({}, this._contexts), (_a = {}, 
-                    _a[key] = context, _a));
-                    this._notifyScopeListeners();
-                    return this;
-                };
-                Scope.prototype.setSpan = function(span) {
-                    this._span = span;
-                    this._notifyScopeListeners();
-                    return this;
-                };
-                Scope.prototype.getSpan = function() {
-                    return this._span;
-                };
-                Scope.prototype.getTransaction = function() {
-                    var _a, _b, _c, _d;
-                    var span = this.getSpan();
-                    if (null === (_a = span) || void 0 === _a ? void 0 : _a.transaction) return null === (_b = span) || void 0 === _b ? void 0 : _b.transaction;
-                    if (null === (_d = null === (_c = span) || void 0 === _c ? void 0 : _c.spanRecorder) || void 0 === _d ? void 0 : _d.spans[0]) return span.spanRecorder.spans[0];
-                    return;
-                };
-                Scope.prototype.setSession = function(session) {
-                    if (!session) delete this._session; else this._session = session;
-                    this._notifyScopeListeners();
-                    return this;
-                };
-                Scope.prototype.getSession = function() {
-                    return this._session;
-                };
-                Scope.prototype.update = function(captureContext) {
-                    if (!captureContext) return this;
-                    if ("function" === typeof captureContext) {
-                        var updatedScope = captureContext(this);
-                        return updatedScope instanceof Scope ? updatedScope : this;
-                    }
-                    if (captureContext instanceof Scope) {
-                        this._tags = __assign(__assign({}, this._tags), captureContext._tags);
-                        this._extra = __assign(__assign({}, this._extra), captureContext._extra);
-                        this._contexts = __assign(__assign({}, this._contexts), captureContext._contexts);
-                        if (captureContext._user && Object.keys(captureContext._user).length) this._user = captureContext._user;
-                        if (captureContext._level) this._level = captureContext._level;
-                        if (captureContext._fingerprint) this._fingerprint = captureContext._fingerprint;
-                        if (captureContext._requestSession) this._requestSession = captureContext._requestSession;
-                    } else if (isPlainObject(captureContext)) {
-                        captureContext = captureContext;
-                        this._tags = __assign(__assign({}, this._tags), captureContext.tags);
-                        this._extra = __assign(__assign({}, this._extra), captureContext.extra);
-                        this._contexts = __assign(__assign({}, this._contexts), captureContext.contexts);
-                        if (captureContext.user) this._user = captureContext.user;
-                        if (captureContext.level) this._level = captureContext.level;
-                        if (captureContext.fingerprint) this._fingerprint = captureContext.fingerprint;
-                        if (captureContext.requestSession) this._requestSession = captureContext.requestSession;
-                    }
-                    return this;
-                };
-                Scope.prototype.clear = function() {
-                    this._breadcrumbs = [];
-                    this._tags = {};
-                    this._extra = {};
-                    this._user = {};
-                    this._contexts = {};
-                    this._level = void 0;
-                    this._transactionName = void 0;
-                    this._fingerprint = void 0;
-                    this._requestSession = void 0;
-                    this._span = void 0;
-                    this._session = void 0;
-                    this._notifyScopeListeners();
-                    return this;
-                };
-                Scope.prototype.addBreadcrumb = function(breadcrumb, maxBreadcrumbs) {
-                    var maxCrumbs = "number" === typeof maxBreadcrumbs ? Math.min(maxBreadcrumbs, MAX_BREADCRUMBS) : MAX_BREADCRUMBS;
-                    if (maxCrumbs <= 0) return this;
-                    var mergedBreadcrumb = __assign({
-                        timestamp: (0, time.dateTimestampInSeconds)()
-                    }, breadcrumb);
-                    this._breadcrumbs = tslib_es6_spread(this._breadcrumbs, [ mergedBreadcrumb ]).slice(-maxCrumbs);
-                    this._notifyScopeListeners();
-                    return this;
-                };
-                Scope.prototype.clearBreadcrumbs = function() {
-                    this._breadcrumbs = [];
-                    this._notifyScopeListeners();
-                    return this;
-                };
-                Scope.prototype.applyToEvent = function(event, hint) {
-                    var _a;
-                    if (this._extra && Object.keys(this._extra).length) event.extra = __assign(__assign({}, this._extra), event.extra);
-                    if (this._tags && Object.keys(this._tags).length) event.tags = __assign(__assign({}, this._tags), event.tags);
-                    if (this._user && Object.keys(this._user).length) event.user = __assign(__assign({}, this._user), event.user);
-                    if (this._contexts && Object.keys(this._contexts).length) event.contexts = __assign(__assign({}, this._contexts), event.contexts);
-                    if (this._level) event.level = this._level;
-                    if (this._transactionName) event.transaction = this._transactionName;
-                    if (this._span) {
-                        event.contexts = __assign({
-                            trace: this._span.getTraceContext()
-                        }, event.contexts);
-                        var transactionName = null === (_a = this._span.transaction) || void 0 === _a ? void 0 : _a.name;
-                        if (transactionName) event.tags = __assign({
-                            transaction: transactionName
-                        }, event.tags);
-                    }
-                    this._applyFingerprint(event);
-                    event.breadcrumbs = tslib_es6_spread(event.breadcrumbs || [], this._breadcrumbs);
-                    event.breadcrumbs = event.breadcrumbs.length > 0 ? event.breadcrumbs : void 0;
-                    return this._notifyEventProcessors(tslib_es6_spread(getGlobalEventProcessors(), this._eventProcessors), event, hint);
-                };
-                Scope.prototype._notifyEventProcessors = function(processors, event, hint, index) {
-                    var _this = this;
-                    if (void 0 === index) index = 0;
-                    return new SyncPromise((function(resolve, reject) {
-                        var processor = processors[index];
-                        if (null === event || "function" !== typeof processor) resolve(event); else {
-                            var result = processor(__assign({}, event), hint);
-                            if (isThenable(result)) void result.then((function(final) {
-                                return _this._notifyEventProcessors(processors, final, hint, index + 1).then(resolve);
-                            })).then(null, reject); else void _this._notifyEventProcessors(processors, result, hint, index + 1).then(resolve).then(null, reject);
-                        }
-                    }));
-                };
-                Scope.prototype._notifyScopeListeners = function() {
-                    var _this = this;
-                    if (!this._notifyingListeners) {
-                        this._notifyingListeners = true;
-                        this._scopeListeners.forEach((function(callback) {
-                            callback(_this);
-                        }));
-                        this._notifyingListeners = false;
-                    }
-                };
-                Scope.prototype._applyFingerprint = function(event) {
-                    event.fingerprint = event.fingerprint ? Array.isArray(event.fingerprint) ? event.fingerprint : [ event.fingerprint ] : [];
-                    if (this._fingerprint) event.fingerprint = event.fingerprint.concat(this._fingerprint);
-                    if (event.fingerprint && !event.fingerprint.length) delete event.fingerprint;
-                };
-                return Scope;
-            }();
-            function getGlobalEventProcessors() {
-                var global = (0, esm_global.getGlobalObject)();
-                global.__SENTRY__ = global.__SENTRY__ || {};
-                global.__SENTRY__.globalEventProcessors = global.__SENTRY__.globalEventProcessors || [];
-                return global.__SENTRY__.globalEventProcessors;
-            }
-            function addGlobalEventProcessor(callback) {
-                getGlobalEventProcessors().push(callback);
-            }
-            var SessionStatus;
-            (function(SessionStatus) {
-                SessionStatus["Ok"] = "ok";
-                SessionStatus["Exited"] = "exited";
-                SessionStatus["Crashed"] = "crashed";
-                SessionStatus["Abnormal"] = "abnormal";
-            })(SessionStatus || (SessionStatus = {}));
-            var RequestSessionStatus;
-            (function(RequestSessionStatus) {
-                RequestSessionStatus["Ok"] = "ok";
-                RequestSessionStatus["Errored"] = "errored";
-                RequestSessionStatus["Crashed"] = "crashed";
-            })(RequestSessionStatus || (RequestSessionStatus = {}));
-            function uuid4() {
-                var global = (0, esm_global.getGlobalObject)();
-                var crypto = global.crypto || global.msCrypto;
-                if (!(void 0 === crypto) && crypto.getRandomValues) {
-                    var arr = new Uint16Array(8);
-                    crypto.getRandomValues(arr);
-                    arr[3] = 4095 & arr[3] | 16384;
-                    arr[4] = 16383 & arr[4] | 32768;
-                    var pad = function(num) {
-                        var v = num.toString(16);
-                        while (v.length < 4) v = "0" + v;
-                        return v;
-                    };
-                    return pad(arr[0]) + pad(arr[1]) + pad(arr[2]) + pad(arr[3]) + pad(arr[4]) + pad(arr[5]) + pad(arr[6]) + pad(arr[7]);
-                }
-                return "xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx".replace(/[xy]/g, (function(c) {
-                    var r = 16 * Math.random() | 0;
-                    var v = "x" === c ? r : 3 & r | 8;
-                    return v.toString(16);
-                }));
-            }
-            function parseUrl(url) {
-                if (!url) return {};
-                var match = url.match(/^(([^:/?#]+):)?(\/\/([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?$/);
-                if (!match) return {};
-                var query = match[6] || "";
-                var fragment = match[8] || "";
-                return {
-                    host: match[4],
-                    path: match[5],
-                    protocol: match[2],
-                    relative: match[5] + query + fragment
-                };
-            }
-            function getEventDescription(event) {
-                if (event.message) return event.message;
-                if (event.exception && event.exception.values && event.exception.values[0]) {
-                    var exception = event.exception.values[0];
-                    if (exception.type && exception.value) return exception.type + ": " + exception.value;
-                    return exception.type || exception.value || event.event_id || "<unknown>";
-                }
-                return event.event_id || "<unknown>";
-            }
-            function addExceptionTypeValue(event, value, type) {
-                event.exception = event.exception || {};
-                event.exception.values = event.exception.values || [];
-                event.exception.values[0] = event.exception.values[0] || {};
-                event.exception.values[0].value = event.exception.values[0].value || value || "";
-                event.exception.values[0].type = event.exception.values[0].type || type || "Error";
-            }
-            function addExceptionMechanism(event, newMechanism) {
-                var _a;
-                if (!event.exception || !event.exception.values) return;
-                var exceptionValue0 = event.exception.values[0];
-                var defaultMechanism = {
-                    type: "generic",
-                    handled: true
-                };
-                var currentMechanism = exceptionValue0.mechanism;
-                exceptionValue0.mechanism = __assign(__assign(__assign({}, defaultMechanism), currentMechanism), newMechanism);
-                if (newMechanism && "data" in newMechanism) {
-                    var mergedData = __assign(__assign({}, null === (_a = currentMechanism) || void 0 === _a ? void 0 : _a.data), newMechanism.data);
-                    exceptionValue0.mechanism.data = mergedData;
-                }
-            }
-            var defaultRetryAfter = 60 * 1e3;
-            function parseRetryAfterHeader(now, header) {
-                if (!header) return defaultRetryAfter;
-                var headerDelay = parseInt("" + header, 10);
-                if (!isNaN(headerDelay)) return 1e3 * headerDelay;
-                var headerDate = Date.parse("" + header);
-                if (!isNaN(headerDate)) return headerDate - now;
-                return defaultRetryAfter;
-            }
-            function checkOrSetAlreadyCaught(exception) {
-                var _a;
-                if (null === (_a = exception) || void 0 === _a ? void 0 : _a.__sentry_captured__) return true;
-                try {
-                    Object.defineProperty(exception, "__sentry_captured__", {
-                        value: true
-                    });
-                } catch (err) {}
-                return false;
-            }
-            var global = (0, esm_global.getGlobalObject)();
-            var PREFIX = "Sentry Logger ";
-            function consoleSandbox(callback) {
-                var global = (0, esm_global.getGlobalObject)();
-                var levels = [ "debug", "info", "warn", "error", "log", "assert" ];
-                if (!("console" in global)) return callback();
-                var originalConsole = global.console;
-                var wrappedLevels = {};
-                levels.forEach((function(level) {
-                    if (level in global.console && originalConsole[level].__sentry_original__) {
-                        wrappedLevels[level] = originalConsole[level];
-                        originalConsole[level] = originalConsole[level].__sentry_original__;
-                    }
-                }));
-                var result = callback();
-                Object.keys(wrappedLevels).forEach((function(level) {
-                    originalConsole[level] = wrappedLevels[level];
-                }));
-                return result;
-            }
-            var Logger = function() {
-                function Logger() {
-                    this._enabled = false;
-                }
-                Logger.prototype.disable = function() {
-                    this._enabled = false;
-                };
-                Logger.prototype.enable = function() {
-                    this._enabled = true;
-                };
-                Logger.prototype.log = function() {
-                    var args = [];
-                    for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                    if (!this._enabled) return;
-                    consoleSandbox((function() {
-                        global.console.log(PREFIX + "[Log]: " + args.join(" "));
-                    }));
-                };
-                Logger.prototype.warn = function() {
-                    var args = [];
-                    for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                    if (!this._enabled) return;
-                    consoleSandbox((function() {
-                        global.console.warn(PREFIX + "[Warn]: " + args.join(" "));
-                    }));
-                };
-                Logger.prototype.error = function() {
-                    var args = [];
-                    for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                    if (!this._enabled) return;
-                    consoleSandbox((function() {
-                        global.console.error(PREFIX + "[Error]: " + args.join(" "));
-                    }));
-                };
-                return Logger;
-            }();
-            global.__SENTRY__ = global.__SENTRY__ || {};
-            var logger_logger = global.__SENTRY__.logger || (global.__SENTRY__.logger = new Logger);
-            var node = __webpack_require__("../shared/node_modules/@sentry/utils/esm/node.js");
-            function htmlTreeAsString(elem, keyAttrs) {
-                try {
-                    var currentElem = elem;
-                    var MAX_TRAVERSE_HEIGHT = 5;
-                    var MAX_OUTPUT_LEN = 80;
-                    var out = [];
-                    var height = 0;
-                    var len = 0;
-                    var separator = " > ";
-                    var sepLength = separator.length;
-                    var nextStr = void 0;
-                    while (currentElem && height++ < MAX_TRAVERSE_HEIGHT) {
-                        nextStr = _htmlElementAsString(currentElem, keyAttrs);
-                        if ("html" === nextStr || height > 1 && len + out.length * sepLength + nextStr.length >= MAX_OUTPUT_LEN) break;
-                        out.push(nextStr);
-                        len += nextStr.length;
-                        currentElem = currentElem.parentNode;
-                    }
-                    return out.reverse().join(separator);
-                } catch (_oO) {
-                    return "<unknown>";
-                }
-            }
-            function _htmlElementAsString(el, keyAttrs) {
-                var _a, _b;
-                var elem = el;
-                var out = [];
-                var className;
-                var classes;
-                var key;
-                var attr;
-                var i;
-                if (!elem || !elem.tagName) return "";
-                out.push(elem.tagName.toLowerCase());
-                var keyAttrPairs = (null === (_a = keyAttrs) || void 0 === _a ? void 0 : _a.length) ? keyAttrs.filter((function(keyAttr) {
-                    return elem.getAttribute(keyAttr);
-                })).map((function(keyAttr) {
-                    return [ keyAttr, elem.getAttribute(keyAttr) ];
-                })) : null;
-                if (null === (_b = keyAttrPairs) || void 0 === _b ? void 0 : _b.length) keyAttrPairs.forEach((function(keyAttrPair) {
-                    out.push("[" + keyAttrPair[0] + '="' + keyAttrPair[1] + '"]');
-                })); else {
-                    if (elem.id) out.push("#" + elem.id);
-                    className = elem.className;
-                    if (className && isString(className)) {
-                        classes = className.split(/\s+/);
-                        for (i = 0; i < classes.length; i++) out.push("." + classes[i]);
-                    }
-                }
-                var allowedAttrs = [ "type", "name", "title", "alt" ];
-                for (i = 0; i < allowedAttrs.length; i++) {
-                    key = allowedAttrs[i];
-                    attr = elem.getAttribute(key);
-                    if (attr) out.push("[" + key + '="' + attr + '"]');
-                }
-                return out.join("");
-            }
-            function getLocationHref() {
-                var global = (0, esm_global.getGlobalObject)();
-                try {
-                    return global.document.location.href;
-                } catch (oO) {
-                    return "";
-                }
-            }
-            var Memo = function() {
-                function Memo() {
-                    this._hasWeakSet = "function" === typeof WeakSet;
-                    this._inner = this._hasWeakSet ? new WeakSet : [];
-                }
-                Memo.prototype.memoize = function(obj) {
-                    if (this._hasWeakSet) {
-                        if (this._inner.has(obj)) return true;
-                        this._inner.add(obj);
-                        return false;
-                    }
-                    for (var i = 0; i < this._inner.length; i++) {
-                        var value = this._inner[i];
-                        if (value === obj) return true;
-                    }
-                    this._inner.push(obj);
-                    return false;
-                };
-                Memo.prototype.unmemoize = function(obj) {
-                    if (this._hasWeakSet) this._inner.delete(obj); else for (var i = 0; i < this._inner.length; i++) if (this._inner[i] === obj) {
-                        this._inner.splice(i, 1);
-                        break;
-                    }
-                };
-                return Memo;
-            }();
-            var defaultFunctionName = "<anonymous>";
-            function getFunctionName(fn) {
-                try {
-                    if (!fn || "function" !== typeof fn) return defaultFunctionName;
-                    return fn.name || defaultFunctionName;
-                } catch (e) {
-                    return defaultFunctionName;
-                }
-            }
-            function truncate(str, max) {
-                if (void 0 === max) max = 0;
-                if ("string" !== typeof str || 0 === max) return str;
-                return str.length <= max ? str : str.substr(0, max) + "...";
-            }
-            function safeJoin(input, delimiter) {
-                if (!Array.isArray(input)) return "";
-                var output = [];
-                for (var i = 0; i < input.length; i++) {
-                    var value = input[i];
-                    try {
-                        output.push(String(value));
-                    } catch (e) {
-                        output.push("[value cannot be serialized]");
-                    }
-                }
-                return output.join(delimiter);
-            }
-            function isMatchingPattern(value, pattern) {
-                if (!isString(value)) return false;
-                if (isRegExp(pattern)) return pattern.test(value);
-                if ("string" === typeof pattern) return -1 !== value.indexOf(pattern);
-                return false;
-            }
-            function fill(source, name, replacementFactory) {
-                if (!(name in source)) return;
-                var original = source[name];
-                var wrapped = replacementFactory(original);
-                if ("function" === typeof wrapped) try {
-                    wrapped.prototype = wrapped.prototype || {};
-                    Object.defineProperties(wrapped, {
-                        __sentry_original__: {
-                            enumerable: false,
-                            value: original
-                        }
-                    });
-                } catch (_Oo) {}
-                source[name] = wrapped;
-            }
-            function urlEncode(object) {
-                return Object.keys(object).map((function(key) {
-                    return encodeURIComponent(key) + "=" + encodeURIComponent(object[key]);
-                })).join("&");
-            }
-            function getWalkSource(value) {
-                if (isError(value)) {
-                    var error = value;
-                    var err = {
-                        message: error.message,
-                        name: error.name,
-                        stack: error.stack
-                    };
-                    for (var i in error) if (Object.prototype.hasOwnProperty.call(error, i)) err[i] = error[i];
-                    return err;
-                }
-                if (isEvent(value)) {
-                    var event_1 = value;
-                    var source = {};
-                    source.type = event_1.type;
-                    try {
-                        source.target = isElement(event_1.target) ? htmlTreeAsString(event_1.target) : Object.prototype.toString.call(event_1.target);
-                    } catch (_oO) {
-                        source.target = "<unknown>";
-                    }
-                    try {
-                        source.currentTarget = isElement(event_1.currentTarget) ? htmlTreeAsString(event_1.currentTarget) : Object.prototype.toString.call(event_1.currentTarget);
-                    } catch (_oO) {
-                        source.currentTarget = "<unknown>";
-                    }
-                    if ("undefined" !== typeof CustomEvent && isInstanceOf(value, CustomEvent)) source.detail = event_1.detail;
-                    for (var attr in event_1) if (Object.prototype.hasOwnProperty.call(event_1, attr)) source[attr] = event_1[attr];
-                    return source;
-                }
-                return value;
-            }
-            function utf8Length(value) {
-                return ~-encodeURI(value).split(/%..|./).length;
-            }
-            function jsonSize(value) {
-                return utf8Length(JSON.stringify(value));
-            }
-            function normalizeToSize(object, depth, maxSize) {
-                if (void 0 === depth) depth = 3;
-                if (void 0 === maxSize) maxSize = 100 * 1024;
-                var serialized = normalize(object, depth);
-                if (jsonSize(serialized) > maxSize) return normalizeToSize(object, depth - 1, maxSize);
-                return serialized;
-            }
-            function serializeValue(value) {
-                var type = Object.prototype.toString.call(value);
-                if ("string" === typeof value) return value;
-                if ("[object Object]" === type) return "[Object]";
-                if ("[object Array]" === type) return "[Array]";
-                var normalized = normalizeValue(value);
-                return is_isPrimitive(normalized) ? normalized : type;
-            }
-            function normalizeValue(value, key) {
-                if ("domain" === key && value && "object" === typeof value && value._events) return "[Domain]";
-                if ("domainEmitter" === key) return "[DomainEmitter]";
-                if ("undefined" !== typeof __webpack_require__.g && value === __webpack_require__.g) return "[Global]";
-                if ("undefined" !== typeof window && value === window) return "[Window]";
-                if ("undefined" !== typeof document && value === document) return "[Document]";
-                if (isSyntheticEvent(value)) return "[SyntheticEvent]";
-                if ("number" === typeof value && value !== value) return "[NaN]";
-                if (void 0 === value) return "[undefined]";
-                if ("function" === typeof value) return "[Function: " + getFunctionName(value) + "]";
-                if ("symbol" === typeof value) return "[" + String(value) + "]";
-                if ("bigint" === typeof value) return "[BigInt: " + String(value) + "]";
-                return value;
-            }
-            function walk(key, value, depth, memo) {
-                if (void 0 === depth) depth = +1 / 0;
-                if (void 0 === memo) memo = new Memo;
-                if (0 === depth) return serializeValue(value);
-                if (null !== value && void 0 !== value && "function" === typeof value.toJSON) return value.toJSON();
-                var normalized = normalizeValue(value, key);
-                if (is_isPrimitive(normalized)) return normalized;
-                var source = getWalkSource(value);
-                var acc = Array.isArray(value) ? [] : {};
-                if (memo.memoize(value)) return "[Circular ~]";
-                for (var innerKey in source) {
-                    if (!Object.prototype.hasOwnProperty.call(source, innerKey)) continue;
-                    acc[innerKey] = walk(innerKey, source[innerKey], depth - 1, memo);
-                }
-                memo.unmemoize(value);
-                return acc;
-            }
-            function normalize(input, depth) {
-                try {
-                    return JSON.parse(JSON.stringify(input, (function(key, value) {
-                        return walk(key, value, depth);
-                    })));
-                } catch (_oO) {
-                    return "**non-serializable**";
-                }
-            }
-            function extractExceptionKeysForMessage(exception, maxLength) {
-                if (void 0 === maxLength) maxLength = 40;
-                var keys = Object.keys(getWalkSource(exception));
-                keys.sort();
-                if (!keys.length) return "[object has no keys]";
-                if (keys[0].length >= maxLength) return truncate(keys[0], maxLength);
-                for (var includedKeys = keys.length; includedKeys > 0; includedKeys--) {
-                    var serialized = keys.slice(0, includedKeys).join(", ");
-                    if (serialized.length > maxLength) continue;
-                    if (includedKeys === keys.length) return serialized;
-                    return truncate(serialized, maxLength);
-                }
-                return "";
-            }
-            function dropUndefinedKeys(val) {
-                var e_1, _a;
-                if (isPlainObject(val)) {
-                    var obj = val;
-                    var rv = {};
-                    try {
-                        for (var _b = __values(Object.keys(obj)), _c = _b.next(); !_c.done; _c = _b.next()) {
-                            var key = _c.value;
-                            if ("undefined" !== typeof obj[key]) rv[key] = dropUndefinedKeys(obj[key]);
-                        }
-                    } catch (e_1_1) {
-                        e_1 = {
-                            error: e_1_1
-                        };
-                    } finally {
-                        try {
-                            if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
-                        } finally {
-                            if (e_1) throw e_1.error;
-                        }
-                    }
-                    return rv;
-                }
-                if (Array.isArray(val)) return val.map(dropUndefinedKeys);
-                return val;
-            }
-            var Session = function() {
-                function Session(context) {
-                    this.errors = 0;
-                    this.sid = uuid4();
-                    this.duration = 0;
-                    this.status = SessionStatus.Ok;
-                    this.init = true;
-                    this.ignoreDuration = false;
-                    var startingTime = (0, time.timestampInSeconds)();
-                    this.timestamp = startingTime;
-                    this.started = startingTime;
-                    if (context) this.update(context);
-                }
-                Session.prototype.update = function(context) {
-                    if (void 0 === context) context = {};
-                    if (context.user) {
-                        if (!this.ipAddress && context.user.ip_address) this.ipAddress = context.user.ip_address;
-                        if (!this.did && !context.did) this.did = context.user.id || context.user.email || context.user.username;
-                    }
-                    this.timestamp = context.timestamp || (0, time.timestampInSeconds)();
-                    if (context.ignoreDuration) this.ignoreDuration = context.ignoreDuration;
-                    if (context.sid) this.sid = 32 === context.sid.length ? context.sid : uuid4();
-                    if (void 0 !== context.init) this.init = context.init;
-                    if (!this.did && context.did) this.did = "" + context.did;
-                    if ("number" === typeof context.started) this.started = context.started;
-                    if (this.ignoreDuration) this.duration = void 0; else if ("number" === typeof context.duration) this.duration = context.duration; else {
-                        var duration = this.timestamp - this.started;
-                        this.duration = duration >= 0 ? duration : 0;
-                    }
-                    if (context.release) this.release = context.release;
-                    if (context.environment) this.environment = context.environment;
-                    if (!this.ipAddress && context.ipAddress) this.ipAddress = context.ipAddress;
-                    if (!this.userAgent && context.userAgent) this.userAgent = context.userAgent;
-                    if ("number" === typeof context.errors) this.errors = context.errors;
-                    if (context.status) this.status = context.status;
-                };
-                Session.prototype.close = function(status) {
-                    if (status) this.update({
-                        status
-                    }); else if (this.status === SessionStatus.Ok) this.update({
-                        status: SessionStatus.Exited
-                    }); else this.update();
-                };
-                Session.prototype.toJSON = function() {
-                    return dropUndefinedKeys({
-                        sid: "" + this.sid,
-                        init: this.init,
-                        started: new Date(1e3 * this.started).toISOString(),
-                        timestamp: new Date(1e3 * this.timestamp).toISOString(),
-                        status: this.status,
-                        errors: this.errors,
-                        did: "number" === typeof this.did || "string" === typeof this.did ? "" + this.did : void 0,
-                        duration: this.duration,
-                        attrs: dropUndefinedKeys({
-                            release: this.release,
-                            environment: this.environment,
-                            ip_address: this.ipAddress,
-                            user_agent: this.userAgent
-                        })
-                    });
-                };
-                return Session;
-            }();
-            var API_VERSION = 4;
-            var DEFAULT_BREADCRUMBS = 100;
-            var Hub = function() {
-                function Hub(client, scope, _version) {
-                    if (void 0 === scope) scope = new Scope;
-                    if (void 0 === _version) _version = API_VERSION;
-                    this._version = _version;
-                    this._stack = [ {} ];
-                    this.getStackTop().scope = scope;
-                    if (client) this.bindClient(client);
-                }
-                Hub.prototype.isOlderThan = function(version) {
-                    return this._version < version;
-                };
-                Hub.prototype.bindClient = function(client) {
-                    var top = this.getStackTop();
-                    top.client = client;
-                    if (client && client.setupIntegrations) client.setupIntegrations();
-                };
-                Hub.prototype.pushScope = function() {
-                    var scope = Scope.clone(this.getScope());
-                    this.getStack().push({
-                        client: this.getClient(),
-                        scope
-                    });
-                    return scope;
-                };
-                Hub.prototype.popScope = function() {
-                    if (this.getStack().length <= 1) return false;
-                    return !!this.getStack().pop();
-                };
-                Hub.prototype.withScope = function(callback) {
-                    var scope = this.pushScope();
-                    try {
-                        callback(scope);
-                    } finally {
-                        this.popScope();
-                    }
-                };
-                Hub.prototype.getClient = function() {
-                    return this.getStackTop().client;
-                };
-                Hub.prototype.getScope = function() {
-                    return this.getStackTop().scope;
-                };
-                Hub.prototype.getStack = function() {
-                    return this._stack;
-                };
-                Hub.prototype.getStackTop = function() {
-                    return this._stack[this._stack.length - 1];
-                };
-                Hub.prototype.captureException = function(exception, hint) {
-                    var eventId = this._lastEventId = uuid4();
-                    var finalHint = hint;
-                    if (!hint) {
-                        var syntheticException = void 0;
-                        try {
-                            throw new Error("Sentry syntheticException");
-                        } catch (exception) {
-                            syntheticException = exception;
-                        }
-                        finalHint = {
-                            originalException: exception,
-                            syntheticException
-                        };
-                    }
-                    this._invokeClient("captureException", exception, __assign(__assign({}, finalHint), {
-                        event_id: eventId
-                    }));
-                    return eventId;
-                };
-                Hub.prototype.captureMessage = function(message, level, hint) {
-                    var eventId = this._lastEventId = uuid4();
-                    var finalHint = hint;
-                    if (!hint) {
-                        var syntheticException = void 0;
-                        try {
-                            throw new Error(message);
-                        } catch (exception) {
-                            syntheticException = exception;
-                        }
-                        finalHint = {
-                            originalException: message,
-                            syntheticException
-                        };
-                    }
-                    this._invokeClient("captureMessage", message, level, __assign(__assign({}, finalHint), {
-                        event_id: eventId
-                    }));
-                    return eventId;
-                };
-                Hub.prototype.captureEvent = function(event, hint) {
-                    var eventId = uuid4();
-                    if ("transaction" !== event.type) this._lastEventId = eventId;
-                    this._invokeClient("captureEvent", event, __assign(__assign({}, hint), {
-                        event_id: eventId
-                    }));
-                    return eventId;
-                };
-                Hub.prototype.lastEventId = function() {
-                    return this._lastEventId;
-                };
-                Hub.prototype.addBreadcrumb = function(breadcrumb, hint) {
-                    var _a = this.getStackTop(), scope = _a.scope, client = _a.client;
-                    if (!scope || !client) return;
-                    var _b = client.getOptions && client.getOptions() || {}, _c = _b.beforeBreadcrumb, beforeBreadcrumb = void 0 === _c ? null : _c, _d = _b.maxBreadcrumbs, maxBreadcrumbs = void 0 === _d ? DEFAULT_BREADCRUMBS : _d;
-                    if (maxBreadcrumbs <= 0) return;
-                    var timestamp = (0, time.dateTimestampInSeconds)();
-                    var mergedBreadcrumb = __assign({
-                        timestamp
-                    }, breadcrumb);
-                    var finalBreadcrumb = beforeBreadcrumb ? consoleSandbox((function() {
-                        return beforeBreadcrumb(mergedBreadcrumb, hint);
-                    })) : mergedBreadcrumb;
-                    if (null === finalBreadcrumb) return;
-                    scope.addBreadcrumb(finalBreadcrumb, maxBreadcrumbs);
-                };
-                Hub.prototype.setUser = function(user) {
-                    var scope = this.getScope();
-                    if (scope) scope.setUser(user);
-                };
-                Hub.prototype.setTags = function(tags) {
-                    var scope = this.getScope();
-                    if (scope) scope.setTags(tags);
-                };
-                Hub.prototype.setExtras = function(extras) {
-                    var scope = this.getScope();
-                    if (scope) scope.setExtras(extras);
-                };
-                Hub.prototype.setTag = function(key, value) {
-                    var scope = this.getScope();
-                    if (scope) scope.setTag(key, value);
-                };
-                Hub.prototype.setExtra = function(key, extra) {
-                    var scope = this.getScope();
-                    if (scope) scope.setExtra(key, extra);
-                };
-                Hub.prototype.setContext = function(name, context) {
-                    var scope = this.getScope();
-                    if (scope) scope.setContext(name, context);
-                };
-                Hub.prototype.configureScope = function(callback) {
-                    var _a = this.getStackTop(), scope = _a.scope, client = _a.client;
-                    if (scope && client) callback(scope);
-                };
-                Hub.prototype.run = function(callback) {
-                    var oldHub = makeMain(this);
-                    try {
-                        callback(this);
-                    } finally {
-                        makeMain(oldHub);
-                    }
-                };
-                Hub.prototype.getIntegration = function(integration) {
-                    var client = this.getClient();
-                    if (!client) return null;
-                    try {
-                        return client.getIntegration(integration);
-                    } catch (_oO) {
-                        logger_logger.warn("Cannot retrieve integration " + integration.id + " from the current Hub");
-                        return null;
-                    }
-                };
-                Hub.prototype.startSpan = function(context) {
-                    return this._callExtensionMethod("startSpan", context);
-                };
-                Hub.prototype.startTransaction = function(context, customSamplingContext) {
-                    return this._callExtensionMethod("startTransaction", context, customSamplingContext);
-                };
-                Hub.prototype.traceHeaders = function() {
-                    return this._callExtensionMethod("traceHeaders");
-                };
-                Hub.prototype.captureSession = function(endSession) {
-                    if (void 0 === endSession) endSession = false;
-                    if (endSession) return this.endSession();
-                    this._sendSessionUpdate();
-                };
-                Hub.prototype.endSession = function() {
-                    var _a, _b, _c, _d, _e;
-                    null === (_c = null === (_b = null === (_a = this.getStackTop()) || void 0 === _a ? void 0 : _a.scope) || void 0 === _b ? void 0 : _b.getSession()) || void 0 === _c ? void 0 : _c.close();
-                    this._sendSessionUpdate();
-                    null === (_e = null === (_d = this.getStackTop()) || void 0 === _d ? void 0 : _d.scope) || void 0 === _e ? void 0 : _e.setSession();
-                };
-                Hub.prototype.startSession = function(context) {
-                    var _a = this.getStackTop(), scope = _a.scope, client = _a.client;
-                    var _b = client && client.getOptions() || {}, release = _b.release, environment = _b.environment;
-                    var global = (0, esm_global.getGlobalObject)();
-                    var userAgent = (global.navigator || {}).userAgent;
-                    var session = new Session(__assign(__assign(__assign({
-                        release,
-                        environment
-                    }, scope && {
-                        user: scope.getUser()
-                    }), userAgent && {
-                        userAgent
-                    }), context));
-                    if (scope) {
-                        var currentSession = scope.getSession && scope.getSession();
-                        if (currentSession && currentSession.status === SessionStatus.Ok) currentSession.update({
-                            status: SessionStatus.Exited
-                        });
-                        this.endSession();
-                        scope.setSession(session);
-                    }
-                    return session;
-                };
-                Hub.prototype._sendSessionUpdate = function() {
-                    var _a = this.getStackTop(), scope = _a.scope, client = _a.client;
-                    if (!scope) return;
-                    var session = scope.getSession && scope.getSession();
-                    if (session) if (client && client.captureSession) client.captureSession(session);
-                };
-                Hub.prototype._invokeClient = function(method) {
-                    var _a;
-                    var args = [];
-                    for (var _i = 1; _i < arguments.length; _i++) args[_i - 1] = arguments[_i];
-                    var _b = this.getStackTop(), scope = _b.scope, client = _b.client;
-                    if (client && client[method]) (_a = client)[method].apply(_a, tslib_es6_spread(args, [ scope ]));
-                };
-                Hub.prototype._callExtensionMethod = function(method) {
-                    var args = [];
-                    for (var _i = 1; _i < arguments.length; _i++) args[_i - 1] = arguments[_i];
-                    var carrier = getMainCarrier();
-                    var sentry = carrier.__SENTRY__;
-                    if (sentry && sentry.extensions && "function" === typeof sentry.extensions[method]) return sentry.extensions[method].apply(this, args);
-                    logger_logger.warn("Extension method " + method + " couldn't be found, doing nothing.");
-                };
-                return Hub;
-            }();
-            function getMainCarrier() {
-                var carrier = (0, esm_global.getGlobalObject)();
-                carrier.__SENTRY__ = carrier.__SENTRY__ || {
-                    extensions: {},
-                    hub: void 0
-                };
-                return carrier;
-            }
-            function makeMain(hub) {
-                var registry = getMainCarrier();
-                var oldHub = getHubFromCarrier(registry);
-                setHubOnCarrier(registry, hub);
-                return oldHub;
-            }
-            function getCurrentHub() {
-                var registry = getMainCarrier();
-                if (!hasHubOnCarrier(registry) || getHubFromCarrier(registry).isOlderThan(API_VERSION)) setHubOnCarrier(registry, new Hub);
-                if ((0, node.isNodeEnv)()) return getHubFromActiveDomain(registry);
-                return getHubFromCarrier(registry);
-            }
-            function getHubFromActiveDomain(registry) {
-                var _a, _b, _c;
-                try {
-                    var activeDomain = null === (_c = null === (_b = null === (_a = getMainCarrier().__SENTRY__) || void 0 === _a ? void 0 : _a.extensions) || void 0 === _b ? void 0 : _b.domain) || void 0 === _c ? void 0 : _c.active;
-                    if (!activeDomain) return getHubFromCarrier(registry);
-                    if (!hasHubOnCarrier(activeDomain) || getHubFromCarrier(activeDomain).isOlderThan(API_VERSION)) {
-                        var registryHubTopStack = getHubFromCarrier(registry).getStackTop();
-                        setHubOnCarrier(activeDomain, new Hub(registryHubTopStack.client, Scope.clone(registryHubTopStack.scope)));
-                    }
-                    return getHubFromCarrier(activeDomain);
-                } catch (_Oo) {
-                    return getHubFromCarrier(registry);
-                }
-            }
-            function hasHubOnCarrier(carrier) {
-                return !!(carrier && carrier.__SENTRY__ && carrier.__SENTRY__.hub);
-            }
-            function getHubFromCarrier(carrier) {
-                if (carrier && carrier.__SENTRY__ && carrier.__SENTRY__.hub) return carrier.__SENTRY__.hub;
-                carrier.__SENTRY__ = carrier.__SENTRY__ || {};
-                carrier.__SENTRY__.hub = new Hub;
-                return carrier.__SENTRY__.hub;
-            }
-            function setHubOnCarrier(carrier, hub) {
-                if (!carrier) return false;
-                carrier.__SENTRY__ = carrier.__SENTRY__ || {};
-                carrier.__SENTRY__.hub = hub;
-                return true;
-            }
-            function callOnHub(method) {
-                var args = [];
-                for (var _i = 1; _i < arguments.length; _i++) args[_i - 1] = arguments[_i];
-                var hub = getCurrentHub();
-                if (hub && hub[method]) return hub[method].apply(hub, tslib_es6_spread(args));
-                throw new Error("No hub defined or " + method + " was not found on the hub, please open a bug report.");
-            }
-            function captureException(exception, captureContext) {
-                var syntheticException;
-                try {
-                    throw new Error("Sentry syntheticException");
-                } catch (exception) {
-                    syntheticException = exception;
-                }
-                return callOnHub("captureException", exception, {
-                    captureContext,
-                    originalException: exception,
-                    syntheticException
-                });
-            }
-            function captureMessage(message, captureContext) {
-                var syntheticException;
-                try {
-                    throw new Error(message);
-                } catch (exception) {
-                    syntheticException = exception;
-                }
-                var level = "string" === typeof captureContext ? captureContext : void 0;
-                var context = "string" !== typeof captureContext ? {
-                    captureContext
-                } : void 0;
-                return callOnHub("captureMessage", message, level, __assign({
-                    originalException: message,
-                    syntheticException
-                }, context));
-            }
-            function captureEvent(event) {
-                return callOnHub("captureEvent", event);
-            }
-            function configureScope(callback) {
-                callOnHub("configureScope", callback);
-            }
-            function addBreadcrumb(breadcrumb) {
-                callOnHub("addBreadcrumb", breadcrumb);
-            }
-            function setContext(name, context) {
-                callOnHub("setContext", name, context);
-            }
-            function setExtras(extras) {
-                callOnHub("setExtras", extras);
-            }
-            function setTags(tags) {
-                callOnHub("setTags", tags);
-            }
-            function setExtra(key, extra) {
-                callOnHub("setExtra", key, extra);
-            }
-            function setTag(key, value) {
-                callOnHub("setTag", key, value);
-            }
-            function setUser(user) {
-                callOnHub("setUser", user);
-            }
-            function withScope(callback) {
-                callOnHub("withScope", callback);
-            }
-            function startTransaction(context, customSamplingContext) {
-                return callOnHub("startTransaction", __assign({}, context), customSamplingContext);
-            }
-            var SDK_VERSION = "6.15.0";
-            var Outcome;
-            (function(Outcome) {
-                Outcome["BeforeSend"] = "before_send";
-                Outcome["EventProcessor"] = "event_processor";
-                Outcome["NetworkError"] = "network_error";
-                Outcome["QueueOverflow"] = "queue_overflow";
-                Outcome["RateLimitBackoff"] = "ratelimit_backoff";
-                Outcome["SampleRate"] = "sample_rate";
-            })(Outcome || (Outcome = {}));
-            var setPrototypeOf = Object.setPrototypeOf || ({
-                __proto__: []
-            } instanceof Array ? setProtoOf : mixinProperties);
-            function setProtoOf(obj, proto) {
-                obj.__proto__ = proto;
-                return obj;
-            }
-            function mixinProperties(obj, proto) {
-                for (var prop in proto) if (!Object.prototype.hasOwnProperty.call(obj, prop)) obj[prop] = proto[prop];
-                return obj;
-            }
-            var SentryError = function(_super) {
-                __extends(SentryError, _super);
-                function SentryError(message) {
-                    var _newTarget = this.constructor;
-                    var _this = _super.call(this, message) || this;
-                    _this.message = message;
-                    _this.name = _newTarget.prototype.constructor.name;
-                    setPrototypeOf(_this, _newTarget.prototype);
-                    return _this;
-                }
-                return SentryError;
-            }(Error);
-            var DSN_REGEX = /^(?:(\w+):)\/\/(?:(\w+)(?::(\w+))?@)([\w.-]+)(?::(\d+))?\/(.+)/;
-            var ERROR_MESSAGE = "Invalid Dsn";
-            var Dsn = function() {
-                function Dsn(from) {
-                    if ("string" === typeof from) this._fromString(from); else this._fromComponents(from);
-                    this._validate();
-                }
-                Dsn.prototype.toString = function(withPassword) {
-                    if (void 0 === withPassword) withPassword = false;
-                    var _a = this, host = _a.host, path = _a.path, pass = _a.pass, port = _a.port, projectId = _a.projectId, protocol = _a.protocol, publicKey = _a.publicKey;
-                    return protocol + "://" + publicKey + (withPassword && pass ? ":" + pass : "") + "@" + host + (port ? ":" + port : "") + "/" + (path ? path + "/" : path) + projectId;
-                };
-                Dsn.prototype._fromString = function(str) {
-                    var match = DSN_REGEX.exec(str);
-                    if (!match) throw new SentryError(ERROR_MESSAGE);
-                    var _a = __read(match.slice(1), 6), protocol = _a[0], publicKey = _a[1], _b = _a[2], pass = void 0 === _b ? "" : _b, host = _a[3], _c = _a[4], port = void 0 === _c ? "" : _c, lastPath = _a[5];
-                    var path = "";
-                    var projectId = lastPath;
-                    var split = projectId.split("/");
-                    if (split.length > 1) {
-                        path = split.slice(0, -1).join("/");
-                        projectId = split.pop();
-                    }
-                    if (projectId) {
-                        var projectMatch = projectId.match(/^\d+/);
-                        if (projectMatch) projectId = projectMatch[0];
-                    }
-                    this._fromComponents({
-                        host,
-                        pass,
-                        path,
-                        projectId,
-                        port,
-                        protocol,
-                        publicKey
-                    });
-                };
-                Dsn.prototype._fromComponents = function(components) {
-                    if ("user" in components && !("publicKey" in components)) components.publicKey = components.user;
-                    this.user = components.publicKey || "";
-                    this.protocol = components.protocol;
-                    this.publicKey = components.publicKey || "";
-                    this.pass = components.pass || "";
-                    this.host = components.host;
-                    this.port = components.port || "";
-                    this.path = components.path || "";
-                    this.projectId = components.projectId;
-                };
-                Dsn.prototype._validate = function() {
-                    var _this = this;
-                    [ "protocol", "publicKey", "host", "projectId" ].forEach((function(component) {
-                        if (!_this[component]) throw new SentryError(ERROR_MESSAGE + ": " + component + " missing");
-                    }));
-                    if (!this.projectId.match(/^\d+$/)) throw new SentryError(ERROR_MESSAGE + ": Invalid projectId " + this.projectId);
-                    if ("http" !== this.protocol && "https" !== this.protocol) throw new SentryError(ERROR_MESSAGE + ": Invalid protocol " + this.protocol);
-                    if (this.port && isNaN(parseInt(this.port, 10))) throw new SentryError(ERROR_MESSAGE + ": Invalid port " + this.port);
-                };
-                return Dsn;
-            }();
-            var installedIntegrations = [];
-            function filterDuplicates(integrations) {
-                return integrations.reduce((function(acc, integrations) {
-                    if (acc.every((function(accIntegration) {
-                        return integrations.name !== accIntegration.name;
-                    }))) acc.push(integrations);
-                    return acc;
-                }), []);
-            }
-            function getIntegrationsToSetup(options) {
-                var defaultIntegrations = options.defaultIntegrations && tslib_es6_spread(options.defaultIntegrations) || [];
-                var userIntegrations = options.integrations;
-                var integrations = tslib_es6_spread(filterDuplicates(defaultIntegrations));
-                if (Array.isArray(userIntegrations)) integrations = tslib_es6_spread(integrations.filter((function(integrations) {
-                    return userIntegrations.every((function(userIntegration) {
-                        return userIntegration.name !== integrations.name;
-                    }));
-                })), filterDuplicates(userIntegrations)); else if ("function" === typeof userIntegrations) {
-                    integrations = userIntegrations(integrations);
-                    integrations = Array.isArray(integrations) ? integrations : [ integrations ];
-                }
-                var integrationsNames = integrations.map((function(i) {
-                    return i.name;
-                }));
-                var alwaysLastToRun = "Debug";
-                if (-1 !== integrationsNames.indexOf(alwaysLastToRun)) integrations.push.apply(integrations, tslib_es6_spread(integrations.splice(integrationsNames.indexOf(alwaysLastToRun), 1)));
-                return integrations;
-            }
-            function setupIntegration(integration) {
-                if (-1 !== installedIntegrations.indexOf(integration.name)) return;
-                integration.setupOnce(addGlobalEventProcessor, getCurrentHub);
-                installedIntegrations.push(integration.name);
-                logger_logger.log("Integration installed: " + integration.name);
-            }
-            function setupIntegrations(options) {
-                var integrations = {};
-                getIntegrationsToSetup(options).forEach((function(integration) {
-                    integrations[integration.name] = integration;
-                    setupIntegration(integration);
-                }));
-                Object.defineProperty(integrations, "initialized", {
-                    value: true
-                });
-                return integrations;
-            }
-            var ALREADY_SEEN_ERROR = "Not capturing exception because it's already been captured.";
-            var BaseClient = function() {
-                function BaseClient(backendClass, options) {
-                    this._integrations = {};
-                    this._numProcessing = 0;
-                    this._backend = new backendClass(options);
-                    this._options = options;
-                    if (options.dsn) this._dsn = new Dsn(options.dsn);
-                }
-                BaseClient.prototype.captureException = function(exception, hint, scope) {
-                    var _this = this;
-                    if (checkOrSetAlreadyCaught(exception)) {
-                        logger_logger.log(ALREADY_SEEN_ERROR);
-                        return;
-                    }
-                    var eventId = hint && hint.event_id;
-                    this._process(this._getBackend().eventFromException(exception, hint).then((function(event) {
-                        return _this._captureEvent(event, hint, scope);
-                    })).then((function(result) {
-                        eventId = result;
-                    })));
-                    return eventId;
-                };
-                BaseClient.prototype.captureMessage = function(message, level, hint, scope) {
-                    var _this = this;
-                    var eventId = hint && hint.event_id;
-                    var promisedEvent = is_isPrimitive(message) ? this._getBackend().eventFromMessage(String(message), level, hint) : this._getBackend().eventFromException(message, hint);
-                    this._process(promisedEvent.then((function(event) {
-                        return _this._captureEvent(event, hint, scope);
-                    })).then((function(result) {
-                        eventId = result;
-                    })));
-                    return eventId;
-                };
-                BaseClient.prototype.captureEvent = function(event, hint, scope) {
-                    var _a;
-                    if ((null === (_a = hint) || void 0 === _a ? void 0 : _a.originalException) && checkOrSetAlreadyCaught(hint.originalException)) {
-                        logger_logger.log(ALREADY_SEEN_ERROR);
-                        return;
-                    }
-                    var eventId = hint && hint.event_id;
-                    this._process(this._captureEvent(event, hint, scope).then((function(result) {
-                        eventId = result;
-                    })));
-                    return eventId;
-                };
-                BaseClient.prototype.captureSession = function(session) {
-                    if (!this._isEnabled()) {
-                        logger_logger.warn("SDK not enabled, will not capture session.");
-                        return;
-                    }
-                    if (!("string" === typeof session.release)) logger_logger.warn("Discarded session because of missing or non-string release"); else {
-                        this._sendSession(session);
-                        session.update({
-                            init: false
-                        });
-                    }
-                };
-                BaseClient.prototype.getDsn = function() {
-                    return this._dsn;
-                };
-                BaseClient.prototype.getOptions = function() {
-                    return this._options;
-                };
-                BaseClient.prototype.getTransport = function() {
-                    return this._getBackend().getTransport();
-                };
-                BaseClient.prototype.flush = function(timeout) {
-                    var _this = this;
-                    return this._isClientDoneProcessing(timeout).then((function(clientFinished) {
-                        return _this.getTransport().close(timeout).then((function(transportFlushed) {
-                            return clientFinished && transportFlushed;
-                        }));
-                    }));
-                };
-                BaseClient.prototype.close = function(timeout) {
-                    var _this = this;
-                    return this.flush(timeout).then((function(result) {
-                        _this.getOptions().enabled = false;
-                        return result;
-                    }));
-                };
-                BaseClient.prototype.setupIntegrations = function() {
-                    if (this._isEnabled() && !this._integrations.initialized) this._integrations = setupIntegrations(this._options);
-                };
-                BaseClient.prototype.getIntegration = function(integration) {
-                    try {
-                        return this._integrations[integration.id] || null;
-                    } catch (_oO) {
-                        logger_logger.warn("Cannot retrieve integration " + integration.id + " from the current Client");
-                        return null;
-                    }
-                };
-                BaseClient.prototype._updateSessionFromEvent = function(session, event) {
-                    var e_1, _a;
-                    var crashed = false;
-                    var errored = false;
-                    var exceptions = event.exception && event.exception.values;
-                    if (exceptions) {
-                        errored = true;
-                        try {
-                            for (var exceptions_1 = __values(exceptions), exceptions_1_1 = exceptions_1.next(); !exceptions_1_1.done; exceptions_1_1 = exceptions_1.next()) {
-                                var ex = exceptions_1_1.value;
-                                var mechanism = ex.mechanism;
-                                if (mechanism && false === mechanism.handled) {
-                                    crashed = true;
-                                    break;
-                                }
-                            }
-                        } catch (e_1_1) {
-                            e_1 = {
-                                error: e_1_1
-                            };
-                        } finally {
-                            try {
-                                if (exceptions_1_1 && !exceptions_1_1.done && (_a = exceptions_1.return)) _a.call(exceptions_1);
-                            } finally {
-                                if (e_1) throw e_1.error;
-                            }
-                        }
-                    }
-                    var sessionNonTerminal = session.status === SessionStatus.Ok;
-                    var shouldUpdateAndSend = sessionNonTerminal && 0 === session.errors || sessionNonTerminal && crashed;
-                    if (shouldUpdateAndSend) {
-                        session.update(__assign(__assign({}, crashed && {
-                            status: SessionStatus.Crashed
-                        }), {
-                            errors: session.errors || Number(errored || crashed)
-                        }));
-                        this.captureSession(session);
-                    }
-                };
-                BaseClient.prototype._sendSession = function(session) {
-                    this._getBackend().sendSession(session);
-                };
-                BaseClient.prototype._isClientDoneProcessing = function(timeout) {
-                    var _this = this;
-                    return new SyncPromise((function(resolve) {
-                        var ticked = 0;
-                        var tick = 1;
-                        var interval = setInterval((function() {
-                            if (0 == _this._numProcessing) {
-                                clearInterval(interval);
-                                resolve(true);
-                            } else {
-                                ticked += tick;
-                                if (timeout && ticked >= timeout) {
-                                    clearInterval(interval);
-                                    resolve(false);
-                                }
-                            }
-                        }), tick);
-                    }));
-                };
-                BaseClient.prototype._getBackend = function() {
-                    return this._backend;
-                };
-                BaseClient.prototype._isEnabled = function() {
-                    return false !== this.getOptions().enabled && void 0 !== this._dsn;
-                };
-                BaseClient.prototype._prepareEvent = function(event, scope, hint) {
-                    var _this = this;
-                    var _a = this.getOptions().normalizeDepth, normalizeDepth = void 0 === _a ? 3 : _a;
-                    var prepared = __assign(__assign({}, event), {
-                        event_id: event.event_id || (hint && hint.event_id ? hint.event_id : uuid4()),
-                        timestamp: event.timestamp || (0, time.dateTimestampInSeconds)()
-                    });
-                    this._applyClientOptions(prepared);
-                    this._applyIntegrationsMetadata(prepared);
-                    var finalScope = scope;
-                    if (hint && hint.captureContext) finalScope = Scope.clone(finalScope).update(hint.captureContext);
-                    var result = SyncPromise.resolve(prepared);
-                    if (finalScope) result = finalScope.applyToEvent(prepared, hint);
-                    return result.then((function(evt) {
-                        if ("number" === typeof normalizeDepth && normalizeDepth > 0) return _this._normalizeEvent(evt, normalizeDepth);
-                        return evt;
-                    }));
-                };
-                BaseClient.prototype._normalizeEvent = function(event, depth) {
-                    if (!event) return null;
-                    var normalized = __assign(__assign(__assign(__assign(__assign({}, event), event.breadcrumbs && {
-                        breadcrumbs: event.breadcrumbs.map((function(b) {
-                            return __assign(__assign({}, b), b.data && {
-                                data: normalize(b.data, depth)
-                            });
-                        }))
-                    }), event.user && {
-                        user: normalize(event.user, depth)
-                    }), event.contexts && {
-                        contexts: normalize(event.contexts, depth)
-                    }), event.extra && {
-                        extra: normalize(event.extra, depth)
-                    });
-                    if (event.contexts && event.contexts.trace) normalized.contexts.trace = event.contexts.trace;
-                    var _a = this.getOptions()._experiments, _experiments = void 0 === _a ? {} : _a;
-                    if (_experiments.ensureNoCircularStructures) return normalize(normalized);
-                    return normalized;
-                };
-                BaseClient.prototype._applyClientOptions = function(event) {
-                    var options = this.getOptions();
-                    var environment = options.environment, release = options.release, dist = options.dist, _a = options.maxValueLength, maxValueLength = void 0 === _a ? 250 : _a;
-                    if (!("environment" in event)) event.environment = "environment" in options ? environment : "production";
-                    if (void 0 === event.release && void 0 !== release) event.release = release;
-                    if (void 0 === event.dist && void 0 !== dist) event.dist = dist;
-                    if (event.message) event.message = truncate(event.message, maxValueLength);
-                    var exception = event.exception && event.exception.values && event.exception.values[0];
-                    if (exception && exception.value) exception.value = truncate(exception.value, maxValueLength);
-                    var request = event.request;
-                    if (request && request.url) request.url = truncate(request.url, maxValueLength);
-                };
-                BaseClient.prototype._applyIntegrationsMetadata = function(event) {
-                    var integrationsArray = Object.keys(this._integrations);
-                    if (integrationsArray.length > 0) {
-                        event.sdk = event.sdk || {};
-                        event.sdk.integrations = tslib_es6_spread(event.sdk.integrations || [], integrationsArray);
-                    }
-                };
-                BaseClient.prototype._sendEvent = function(event) {
-                    this._getBackend().sendEvent(event);
-                };
-                BaseClient.prototype._captureEvent = function(event, hint, scope) {
-                    return this._processEvent(event, hint, scope).then((function(finalEvent) {
-                        return finalEvent.event_id;
-                    }), (function(reason) {
-                        logger_logger.error(reason);
-                        return;
-                    }));
-                };
-                BaseClient.prototype._processEvent = function(event, hint, scope) {
-                    var _this = this;
-                    var _a, _b;
-                    var _c = this.getOptions(), beforeSend = _c.beforeSend, sampleRate = _c.sampleRate;
-                    var transport = this.getTransport();
-                    if (!this._isEnabled()) return SyncPromise.reject(new SentryError("SDK not enabled, will not capture event."));
-                    var isTransaction = "transaction" === event.type;
-                    if (!isTransaction && "number" === typeof sampleRate && Math.random() > sampleRate) {
-                        null === (_b = (_a = transport).recordLostEvent) || void 0 === _b ? void 0 : _b.call(_a, Outcome.SampleRate, "event");
-                        return SyncPromise.reject(new SentryError("Discarding event because it's not included in the random sample (sampling rate = " + sampleRate + ")"));
-                    }
-                    return this._prepareEvent(event, scope, hint).then((function(prepared) {
-                        var _a, _b;
-                        if (null === prepared) {
-                            null === (_b = (_a = transport).recordLostEvent) || void 0 === _b ? void 0 : _b.call(_a, Outcome.EventProcessor, event.type || "event");
-                            throw new SentryError("An event processor returned null, will not send event.");
-                        }
-                        var isInternalException = hint && hint.data && true === hint.data.__sentry__;
-                        if (isInternalException || isTransaction || !beforeSend) return prepared;
-                        var beforeSendResult = beforeSend(prepared, hint);
-                        return _this._ensureBeforeSendRv(beforeSendResult);
-                    })).then((function(processedEvent) {
-                        var _a, _b;
-                        if (null === processedEvent) {
-                            null === (_b = (_a = transport).recordLostEvent) || void 0 === _b ? void 0 : _b.call(_a, Outcome.BeforeSend, event.type || "event");
-                            throw new SentryError("`beforeSend` returned `null`, will not send event.");
-                        }
-                        var session = scope && scope.getSession && scope.getSession();
-                        if (!isTransaction && session) _this._updateSessionFromEvent(session, processedEvent);
-                        _this._sendEvent(processedEvent);
-                        return processedEvent;
-                    })).then(null, (function(reason) {
-                        if (reason instanceof SentryError) throw reason;
-                        _this.captureException(reason, {
-                            data: {
-                                __sentry__: true
-                            },
-                            originalException: reason
-                        });
-                        throw new SentryError("Event processing pipeline threw an error, original event will not be sent. Details have been sent as a new event.\nReason: " + reason);
-                    }));
-                };
-                BaseClient.prototype._process = function(promise) {
-                    var _this = this;
-                    this._numProcessing += 1;
-                    void promise.then((function(value) {
-                        _this._numProcessing -= 1;
-                        return value;
-                    }), (function(reason) {
-                        _this._numProcessing -= 1;
-                        return reason;
-                    }));
-                };
-                BaseClient.prototype._ensureBeforeSendRv = function(rv) {
-                    var nullErr = "`beforeSend` method has to return `null` or a valid event.";
-                    if (isThenable(rv)) return rv.then((function(event) {
-                        if (!(isPlainObject(event) || null === event)) throw new SentryError(nullErr);
-                        return event;
-                    }), (function(e) {
-                        throw new SentryError("beforeSend rejected with " + e);
-                    })); else if (!(isPlainObject(rv) || null === rv)) throw new SentryError(nullErr);
-                    return rv;
-                };
-                return BaseClient;
-            }();
-            var NoopTransport = function() {
-                function NoopTransport() {}
-                NoopTransport.prototype.sendEvent = function(_) {
-                    return SyncPromise.resolve({
-                        reason: "NoopTransport: Event has been skipped because no Dsn is configured.",
-                        status: Status.Skipped
-                    });
-                };
-                NoopTransport.prototype.close = function(_) {
-                    return SyncPromise.resolve(true);
-                };
-                return NoopTransport;
-            }();
-            var BaseBackend = function() {
-                function BaseBackend(options) {
-                    this._options = options;
-                    if (!this._options.dsn) logger_logger.warn("No DSN provided, backend will not do anything.");
-                    this._transport = this._setupTransport();
-                }
-                BaseBackend.prototype.eventFromException = function(_exception, _hint) {
-                    throw new SentryError("Backend has to implement `eventFromException` method");
-                };
-                BaseBackend.prototype.eventFromMessage = function(_message, _level, _hint) {
-                    throw new SentryError("Backend has to implement `eventFromMessage` method");
-                };
-                BaseBackend.prototype.sendEvent = function(event) {
-                    void this._transport.sendEvent(event).then(null, (function(reason) {
-                        logger_logger.error("Error while sending event: " + reason);
-                    }));
-                };
-                BaseBackend.prototype.sendSession = function(session) {
-                    if (!this._transport.sendSession) {
-                        logger_logger.warn("Dropping session because custom transport doesn't implement sendSession");
-                        return;
-                    }
-                    void this._transport.sendSession(session).then(null, (function(reason) {
-                        logger_logger.error("Error while sending session: " + reason);
-                    }));
-                };
-                BaseBackend.prototype.getTransport = function() {
-                    return this._transport;
-                };
-                BaseBackend.prototype._setupTransport = function() {
-                    return new NoopTransport;
-                };
-                return BaseBackend;
-            }();
-            function supportsFetch() {
-                if (!("fetch" in (0, esm_global.getGlobalObject)())) return false;
-                try {
-                    new Headers;
-                    new Request("");
-                    new Response;
-                    return true;
-                } catch (e) {
-                    return false;
-                }
-            }
-            function isNativeFetch(func) {
-                return func && /^function fetch\(\)\s+\{\s+\[native code\]\s+\}$/.test(func.toString());
-            }
-            function supportsNativeFetch() {
-                if (!supportsFetch()) return false;
-                var global = (0, esm_global.getGlobalObject)();
-                if (isNativeFetch(global.fetch)) return true;
-                var result = false;
-                var doc = global.document;
-                if (doc && "function" === typeof doc.createElement) try {
-                    var sandbox = doc.createElement("iframe");
-                    sandbox.hidden = true;
-                    doc.head.appendChild(sandbox);
-                    if (sandbox.contentWindow && sandbox.contentWindow.fetch) result = isNativeFetch(sandbox.contentWindow.fetch);
-                    doc.head.removeChild(sandbox);
-                } catch (err) {
-                    logger_logger.warn("Could not create sandbox iframe for pure fetch check, bailing to window.fetch: ", err);
-                }
-                return result;
-            }
-            function supportsReferrerPolicy() {
-                if (!supportsFetch()) return false;
-                try {
-                    new Request("_", {
-                        referrerPolicy: "origin"
-                    });
-                    return true;
-                } catch (e) {
-                    return false;
-                }
-            }
-            function supportsHistory() {
-                var global = (0, esm_global.getGlobalObject)();
-                var chrome = global.chrome;
-                var isChromePackagedApp = chrome && chrome.app && chrome.app.runtime;
-                var hasHistoryApi = "history" in global && !!global.history.pushState && !!global.history.replaceState;
-                return !isChromePackagedApp && hasHistoryApi;
-            }
-            var UNKNOWN_FUNCTION = "?";
-            var chrome = /^\s*at (?:(.*?) ?\()?((?:file|https?|blob|chrome-extension|address|native|eval|webpack|<anonymous>|[-a-z]+:|.*bundle|\/).*?)(?::(\d+))?(?::(\d+))?\)?\s*$/i;
-            var gecko = /^\s*(.*?)(?:\((.*?)\))?(?:^|@)?((?:file|https?|blob|chrome|webpack|resource|moz-extension|capacitor).*?:\/.*?|\[native code\]|[^@]*(?:bundle|\d+\.js)|\/[\w\-. /=]+)(?::(\d+))?(?::(\d+))?\s*$/i;
-            var winjs = /^\s*at (?:((?:\[object object\])?.+) )?\(?((?:file|ms-appx|https?|webpack|blob):.*?):(\d+)(?::(\d+))?\)?\s*$/i;
-            var geckoEval = /(\S+) line (\d+)(?: > eval line \d+)* > eval/i;
-            var chromeEval = /\((\S*)(?::(\d+))(?::(\d+))\)/;
-            var reactMinifiedRegexp = /Minified React error #\d+;/i;
-            function computeStackTrace(ex) {
-                var stack = null;
-                var popSize = 0;
-                if (ex) if ("number" === typeof ex.framesToPop) popSize = ex.framesToPop; else if (reactMinifiedRegexp.test(ex.message)) popSize = 1;
-                try {
-                    stack = computeStackTraceFromStacktraceProp(ex);
-                    if (stack) return popFrames(stack, popSize);
-                } catch (e) {}
-                try {
-                    stack = computeStackTraceFromStackProp(ex);
-                    if (stack) return popFrames(stack, popSize);
-                } catch (e) {}
-                return {
-                    message: extractMessage(ex),
-                    name: ex && ex.name,
-                    stack: [],
-                    failed: true
-                };
-            }
-            function computeStackTraceFromStackProp(ex) {
-                var _a, _b;
-                if (!ex || !ex.stack) return null;
-                var stack = [];
-                var lines = ex.stack.split("\n");
-                var isEval;
-                var submatch;
-                var parts;
-                var element;
-                for (var i = 0; i < lines.length; ++i) {
-                    if (parts = chrome.exec(lines[i])) {
-                        var isNative = parts[2] && 0 === parts[2].indexOf("native");
-                        isEval = parts[2] && 0 === parts[2].indexOf("eval");
-                        if (isEval && (submatch = chromeEval.exec(parts[2]))) {
-                            parts[2] = submatch[1];
-                            parts[3] = submatch[2];
-                            parts[4] = submatch[3];
-                        }
-                        var url = parts[2] && 0 === parts[2].indexOf("address at ") ? parts[2].substr("address at ".length) : parts[2];
-                        var func = parts[1] || UNKNOWN_FUNCTION;
-                        _a = __read(extractSafariExtensionDetails(func, url), 2), func = _a[0], url = _a[1];
-                        element = {
-                            url,
-                            func,
-                            args: isNative ? [ parts[2] ] : [],
-                            line: parts[3] ? +parts[3] : null,
-                            column: parts[4] ? +parts[4] : null
-                        };
-                    } else if (parts = winjs.exec(lines[i])) element = {
-                        url: parts[2],
-                        func: parts[1] || UNKNOWN_FUNCTION,
-                        args: [],
-                        line: +parts[3],
-                        column: parts[4] ? +parts[4] : null
-                    }; else if (parts = gecko.exec(lines[i])) {
-                        isEval = parts[3] && parts[3].indexOf(" > eval") > -1;
-                        if (isEval && (submatch = geckoEval.exec(parts[3]))) {
-                            parts[1] = parts[1] || "eval";
-                            parts[3] = submatch[1];
-                            parts[4] = submatch[2];
-                            parts[5] = "";
-                        } else if (0 === i && !parts[5] && void 0 !== ex.columnNumber) stack[0].column = ex.columnNumber + 1;
-                        url = parts[3];
-                        func = parts[1] || UNKNOWN_FUNCTION;
-                        _b = __read(extractSafariExtensionDetails(func, url), 2), func = _b[0], url = _b[1];
-                        element = {
-                            url,
-                            func,
-                            args: parts[2] ? parts[2].split(",") : [],
-                            line: parts[4] ? +parts[4] : null,
-                            column: parts[5] ? +parts[5] : null
-                        };
-                    } else continue;
-                    if (!element.func && element.line) element.func = UNKNOWN_FUNCTION;
-                    stack.push(element);
-                }
-                if (!stack.length) return null;
-                return {
-                    message: extractMessage(ex),
-                    name: ex.name,
-                    stack
-                };
-            }
-            function computeStackTraceFromStacktraceProp(ex) {
-                if (!ex || !ex.stacktrace) return null;
-                var stacktrace = ex.stacktrace;
-                var opera10Regex = / line (\d+).*script (?:in )?(\S+)(?:: in function (\S+))?$/i;
-                var opera11Regex = / line (\d+), column (\d+)\s*(?:in (?:<anonymous function: ([^>]+)>|([^)]+))\((.*)\))? in (.*):\s*$/i;
-                var lines = stacktrace.split("\n");
-                var stack = [];
-                var parts;
-                for (var line = 0; line < lines.length; line += 2) {
-                    var element = null;
-                    if (parts = opera10Regex.exec(lines[line])) element = {
-                        url: parts[2],
-                        func: parts[3],
-                        args: [],
-                        line: +parts[1],
-                        column: null
-                    }; else if (parts = opera11Regex.exec(lines[line])) element = {
-                        url: parts[6],
-                        func: parts[3] || parts[4],
-                        args: parts[5] ? parts[5].split(",") : [],
-                        line: +parts[1],
-                        column: +parts[2]
-                    };
-                    if (element) {
-                        if (!element.func && element.line) element.func = UNKNOWN_FUNCTION;
-                        stack.push(element);
-                    }
-                }
-                if (!stack.length) return null;
-                return {
-                    message: extractMessage(ex),
-                    name: ex.name,
-                    stack
-                };
-            }
-            var extractSafariExtensionDetails = function(func, url) {
-                var isSafariExtension = -1 !== func.indexOf("safari-extension");
-                var isSafariWebExtension = -1 !== func.indexOf("safari-web-extension");
-                return isSafariExtension || isSafariWebExtension ? [ -1 !== func.indexOf("@") ? func.split("@")[0] : UNKNOWN_FUNCTION, isSafariExtension ? "safari-extension:" + url : "safari-web-extension:" + url ] : [ func, url ];
-            };
-            function popFrames(stacktrace, popSize) {
-                try {
-                    return __assign(__assign({}, stacktrace), {
-                        stack: stacktrace.stack.slice(popSize)
-                    });
-                } catch (e) {
-                    return stacktrace;
-                }
-            }
-            function extractMessage(ex) {
-                var message = ex && ex.message;
-                if (!message) return "No error message";
-                if (message.error && "string" === typeof message.error.message) return message.error.message;
-                return message;
-            }
-            var STACKTRACE_LIMIT = 50;
-            function exceptionFromStacktrace(stacktrace) {
-                var frames = prepareFramesForEvent(stacktrace.stack);
-                var exception = {
-                    type: stacktrace.name,
-                    value: stacktrace.message
-                };
-                if (frames && frames.length) exception.stacktrace = {
-                    frames
-                };
-                if (void 0 === exception.type && "" === exception.value) exception.value = "Unrecoverable error caught";
-                return exception;
-            }
-            function eventFromPlainObject(exception, syntheticException, rejection) {
-                var event = {
-                    exception: {
-                        values: [ {
-                            type: isEvent(exception) ? exception.constructor.name : rejection ? "UnhandledRejection" : "Error",
-                            value: "Non-Error " + (rejection ? "promise rejection" : "exception") + " captured with keys: " + extractExceptionKeysForMessage(exception)
-                        } ]
-                    },
-                    extra: {
-                        __serialized__: normalizeToSize(exception)
-                    }
-                };
-                if (syntheticException) {
-                    var stacktrace = computeStackTrace(syntheticException);
-                    var frames_1 = prepareFramesForEvent(stacktrace.stack);
-                    event.stacktrace = {
-                        frames: frames_1
-                    };
-                }
-                return event;
-            }
-            function eventFromStacktrace(stacktrace) {
-                var exception = exceptionFromStacktrace(stacktrace);
-                return {
-                    exception: {
-                        values: [ exception ]
-                    }
-                };
-            }
-            function prepareFramesForEvent(stack) {
-                if (!stack || !stack.length) return [];
-                var localStack = stack;
-                var firstFrameFunction = localStack[0].func || "";
-                var lastFrameFunction = localStack[localStack.length - 1].func || "";
-                if (-1 !== firstFrameFunction.indexOf("captureMessage") || -1 !== firstFrameFunction.indexOf("captureException")) localStack = localStack.slice(1);
-                if (-1 !== lastFrameFunction.indexOf("sentryWrapped")) localStack = localStack.slice(0, -1);
-                return localStack.slice(0, STACKTRACE_LIMIT).map((function(frame) {
-                    return {
-                        colno: null === frame.column ? void 0 : frame.column,
-                        filename: frame.url || localStack[0].url,
-                        function: frame.func || "?",
-                        in_app: true,
-                        lineno: null === frame.line ? void 0 : frame.line
-                    };
-                })).reverse();
-            }
-            function eventFromException(options, exception, hint) {
-                var syntheticException = hint && hint.syntheticException || void 0;
-                var event = eventFromUnknownInput(exception, syntheticException, {
-                    attachStacktrace: options.attachStacktrace
-                });
-                addExceptionMechanism(event);
-                event.level = Severity.Error;
-                if (hint && hint.event_id) event.event_id = hint.event_id;
-                return SyncPromise.resolve(event);
-            }
-            function eventFromMessage(options, message, level, hint) {
-                if (void 0 === level) level = Severity.Info;
-                var syntheticException = hint && hint.syntheticException || void 0;
-                var event = eventFromString(message, syntheticException, {
-                    attachStacktrace: options.attachStacktrace
-                });
-                event.level = level;
-                if (hint && hint.event_id) event.event_id = hint.event_id;
-                return SyncPromise.resolve(event);
-            }
-            function eventFromUnknownInput(exception, syntheticException, options) {
-                if (void 0 === options) options = {};
-                var event;
-                if (isErrorEvent(exception) && exception.error) {
-                    var errorEvent = exception;
-                    exception = errorEvent.error;
-                    event = eventFromStacktrace(computeStackTrace(exception));
-                    return event;
-                }
-                if (isDOMError(exception) || isDOMException(exception)) {
-                    var domException = exception;
-                    if ("stack" in exception) event = eventFromStacktrace(computeStackTrace(exception)); else {
-                        var name_1 = domException.name || (isDOMError(domException) ? "DOMError" : "DOMException");
-                        var message = domException.message ? name_1 + ": " + domException.message : name_1;
-                        event = eventFromString(message, syntheticException, options);
-                        addExceptionTypeValue(event, message);
-                    }
-                    if ("code" in domException) event.tags = __assign(__assign({}, event.tags), {
-                        "DOMException.code": "" + domException.code
-                    });
-                    return event;
-                }
-                if (isError(exception)) {
-                    event = eventFromStacktrace(computeStackTrace(exception));
-                    return event;
-                }
-                if (isPlainObject(exception) || isEvent(exception)) {
-                    var objectException = exception;
-                    event = eventFromPlainObject(objectException, syntheticException, options.rejection);
-                    addExceptionMechanism(event, {
-                        synthetic: true
-                    });
-                    return event;
-                }
-                event = eventFromString(exception, syntheticException, options);
-                addExceptionTypeValue(event, "" + exception, void 0);
-                addExceptionMechanism(event, {
-                    synthetic: true
-                });
-                return event;
-            }
-            function eventFromString(input, syntheticException, options) {
-                if (void 0 === options) options = {};
-                var event = {
-                    message: input
-                };
-                if (options.attachStacktrace && syntheticException) {
-                    var stacktrace = computeStackTrace(syntheticException);
-                    var frames_1 = prepareFramesForEvent(stacktrace.stack);
-                    event.stacktrace = {
-                        frames: frames_1
-                    };
-                }
-                return event;
-            }
-            function getSdkMetadataForEnvelopeHeader(api) {
-                if (!api.metadata || !api.metadata.sdk) return;
-                var _a = api.metadata.sdk, name = _a.name, version = _a.version;
-                return {
-                    name,
-                    version
-                };
-            }
-            function enhanceEventWithSdkInfo(event, sdkInfo) {
-                if (!sdkInfo) return event;
-                event.sdk = event.sdk || {};
-                event.sdk.name = event.sdk.name || sdkInfo.name;
-                event.sdk.version = event.sdk.version || sdkInfo.version;
-                event.sdk.integrations = tslib_es6_spread(event.sdk.integrations || [], sdkInfo.integrations || []);
-                event.sdk.packages = tslib_es6_spread(event.sdk.packages || [], sdkInfo.packages || []);
-                return event;
-            }
-            function sessionToSentryRequest(session, api) {
-                var sdkInfo = getSdkMetadataForEnvelopeHeader(api);
-                var envelopeHeaders = JSON.stringify(__assign(__assign({
-                    sent_at: (new Date).toISOString()
-                }, sdkInfo && {
-                    sdk: sdkInfo
-                }), api.forceEnvelope() && {
-                    dsn: api.getDsn().toString()
-                }));
-                var type = "aggregates" in session ? "sessions" : "session";
-                var itemHeaders = JSON.stringify({
-                    type
-                });
-                return {
-                    body: envelopeHeaders + "\n" + itemHeaders + "\n" + JSON.stringify(session),
-                    type,
-                    url: api.getEnvelopeEndpointWithUrlEncodedAuth()
-                };
-            }
-            function eventToSentryRequest(event, api) {
-                var sdkInfo = getSdkMetadataForEnvelopeHeader(api);
-                var eventType = event.type || "event";
-                var useEnvelope = "transaction" === eventType || api.forceEnvelope();
-                var _a = event.debug_meta || {}, transactionSampling = _a.transactionSampling, metadata = __rest(_a, [ "transactionSampling" ]);
-                var _b = transactionSampling || {}, samplingMethod = _b.method, sampleRate = _b.rate;
-                if (0 === Object.keys(metadata).length) delete event.debug_meta; else event.debug_meta = metadata;
-                var req = {
-                    body: JSON.stringify(sdkInfo ? enhanceEventWithSdkInfo(event, api.metadata.sdk) : event),
-                    type: eventType,
-                    url: useEnvelope ? api.getEnvelopeEndpointWithUrlEncodedAuth() : api.getStoreEndpointWithUrlEncodedAuth()
-                };
-                if (useEnvelope) {
-                    var envelopeHeaders = JSON.stringify(__assign(__assign({
-                        event_id: event.event_id,
-                        sent_at: (new Date).toISOString()
-                    }, sdkInfo && {
-                        sdk: sdkInfo
-                    }), api.forceEnvelope() && {
-                        dsn: api.getDsn().toString()
-                    }));
-                    var itemHeaders = JSON.stringify({
-                        type: eventType,
-                        sample_rates: [ {
-                            id: samplingMethod,
-                            rate: sampleRate
-                        } ]
-                    });
-                    var envelope = envelopeHeaders + "\n" + itemHeaders + "\n" + req.body;
-                    req.body = envelope;
-                }
-                return req;
-            }
-            var SENTRY_API_VERSION = "7";
-            var API = function() {
-                function API(dsn, metadata, tunnel) {
-                    if (void 0 === metadata) metadata = {};
-                    this.dsn = dsn;
-                    this._dsnObject = new Dsn(dsn);
-                    this.metadata = metadata;
-                    this._tunnel = tunnel;
-                }
-                API.prototype.getDsn = function() {
-                    return this._dsnObject;
-                };
-                API.prototype.forceEnvelope = function() {
-                    return !!this._tunnel;
-                };
-                API.prototype.getBaseApiEndpoint = function() {
-                    var dsn = this.getDsn();
-                    var protocol = dsn.protocol ? dsn.protocol + ":" : "";
-                    var port = dsn.port ? ":" + dsn.port : "";
-                    return protocol + "//" + dsn.host + port + (dsn.path ? "/" + dsn.path : "") + "/api/";
-                };
-                API.prototype.getStoreEndpoint = function() {
-                    return this._getIngestEndpoint("store");
-                };
-                API.prototype.getStoreEndpointWithUrlEncodedAuth = function() {
-                    return this.getStoreEndpoint() + "?" + this._encodedAuth();
-                };
-                API.prototype.getEnvelopeEndpointWithUrlEncodedAuth = function() {
-                    if (this.forceEnvelope()) return this._tunnel;
-                    return this._getEnvelopeEndpoint() + "?" + this._encodedAuth();
-                };
-                API.prototype.getStoreEndpointPath = function() {
-                    var dsn = this.getDsn();
-                    return (dsn.path ? "/" + dsn.path : "") + "/api/" + dsn.projectId + "/store/";
-                };
-                API.prototype.getRequestHeaders = function(clientName, clientVersion) {
-                    var dsn = this.getDsn();
-                    var header = [ "Sentry sentry_version=" + SENTRY_API_VERSION ];
-                    header.push("sentry_client=" + clientName + "/" + clientVersion);
-                    header.push("sentry_key=" + dsn.publicKey);
-                    if (dsn.pass) header.push("sentry_secret=" + dsn.pass);
-                    return {
-                        "Content-Type": "application/json",
-                        "X-Sentry-Auth": header.join(", ")
-                    };
-                };
-                API.prototype.getReportDialogEndpoint = function(dialogOptions) {
-                    if (void 0 === dialogOptions) dialogOptions = {};
-                    var dsn = this.getDsn();
-                    var endpoint = this.getBaseApiEndpoint() + "embed/error-page/";
-                    var encodedOptions = [];
-                    encodedOptions.push("dsn=" + dsn.toString());
-                    for (var key in dialogOptions) {
-                        if ("dsn" === key) continue;
-                        if ("user" === key) {
-                            if (!dialogOptions.user) continue;
-                            if (dialogOptions.user.name) encodedOptions.push("name=" + encodeURIComponent(dialogOptions.user.name));
-                            if (dialogOptions.user.email) encodedOptions.push("email=" + encodeURIComponent(dialogOptions.user.email));
-                        } else encodedOptions.push(encodeURIComponent(key) + "=" + encodeURIComponent(dialogOptions[key]));
-                    }
-                    if (encodedOptions.length) return endpoint + "?" + encodedOptions.join("&");
-                    return endpoint;
-                };
-                API.prototype._getEnvelopeEndpoint = function() {
-                    return this._getIngestEndpoint("envelope");
-                };
-                API.prototype._getIngestEndpoint = function(target) {
-                    if (this._tunnel) return this._tunnel;
-                    var base = this.getBaseApiEndpoint();
-                    var dsn = this.getDsn();
-                    return "" + base + dsn.projectId + "/" + target + "/";
-                };
-                API.prototype._encodedAuth = function() {
-                    var dsn = this.getDsn();
-                    var auth = {
-                        sentry_key: dsn.publicKey,
-                        sentry_version: SENTRY_API_VERSION
-                    };
-                    return urlEncode(auth);
-                };
-                return API;
-            }();
-            var PromiseBuffer = function() {
-                function PromiseBuffer(_limit) {
-                    this._limit = _limit;
-                    this._buffer = [];
-                }
-                PromiseBuffer.prototype.isReady = function() {
-                    return void 0 === this._limit || this.length() < this._limit;
-                };
-                PromiseBuffer.prototype.add = function(taskProducer) {
-                    var _this = this;
-                    if (!this.isReady()) return SyncPromise.reject(new SentryError("Not adding Promise due to buffer limit reached."));
-                    var task = taskProducer();
-                    if (-1 === this._buffer.indexOf(task)) this._buffer.push(task);
-                    void task.then((function() {
-                        return _this.remove(task);
-                    })).then(null, (function() {
-                        return _this.remove(task).then(null, (function() {}));
-                    }));
-                    return task;
-                };
-                PromiseBuffer.prototype.remove = function(task) {
-                    var removedTask = this._buffer.splice(this._buffer.indexOf(task), 1)[0];
-                    return removedTask;
-                };
-                PromiseBuffer.prototype.length = function() {
-                    return this._buffer.length;
-                };
-                PromiseBuffer.prototype.drain = function(timeout) {
-                    var _this = this;
-                    return new SyncPromise((function(resolve) {
-                        var capturedSetTimeout = setTimeout((function() {
-                            if (timeout && timeout > 0) resolve(false);
-                        }), timeout);
-                        void SyncPromise.all(_this._buffer).then((function() {
-                            clearTimeout(capturedSetTimeout);
-                            resolve(true);
-                        })).then(null, (function() {
-                            resolve(true);
-                        }));
-                    }));
-                };
-                return PromiseBuffer;
-            }();
-            function forget(promise) {
-                void promise.then(null, (function(e) {
-                    console.error(e);
-                }));
-            }
-            var utils_global = (0, esm_global.getGlobalObject)();
-            var cachedFetchImpl;
-            function getNativeFetchImplementation() {
-                var _a, _b;
-                if (cachedFetchImpl) return cachedFetchImpl;
-                if (isNativeFetch(utils_global.fetch)) return cachedFetchImpl = utils_global.fetch.bind(utils_global);
-                var document = utils_global.document;
-                var fetchImpl = utils_global.fetch;
-                if ("function" === typeof (null === (_a = document) || void 0 === _a ? void 0 : _a.createElement)) try {
-                    var sandbox = document.createElement("iframe");
-                    sandbox.hidden = true;
-                    document.head.appendChild(sandbox);
-                    if (null === (_b = sandbox.contentWindow) || void 0 === _b ? void 0 : _b.fetch) fetchImpl = sandbox.contentWindow.fetch;
-                    document.head.removeChild(sandbox);
-                } catch (e) {
-                    logger_logger.warn("Could not create sandbox iframe for pure fetch check, bailing to window.fetch: ", e);
-                }
-                return cachedFetchImpl = fetchImpl.bind(utils_global);
-            }
-            function sendReport(url, body) {
-                var isRealNavigator = "[object Navigator]" === Object.prototype.toString.call(utils_global && utils_global.navigator);
-                var hasSendBeacon = isRealNavigator && "function" === typeof utils_global.navigator.sendBeacon;
-                if (hasSendBeacon) {
-                    var sendBeacon = utils_global.navigator.sendBeacon.bind(utils_global.navigator);
-                    return sendBeacon(url, body);
-                }
-                if (supportsFetch()) {
-                    var fetch_1 = getNativeFetchImplementation();
-                    return forget(fetch_1(url, {
-                        body,
-                        method: "POST",
-                        credentials: "omit",
-                        keepalive: true
-                    }));
-                }
-            }
-            var CATEGORY_MAPPING = {
-                event: "error",
-                transaction: "transaction",
-                session: "session",
-                attachment: "attachment"
-            };
-            var base_global = (0, esm_global.getGlobalObject)();
-            var BaseTransport = function() {
-                function BaseTransport(options) {
-                    var _this = this;
-                    this.options = options;
-                    this._buffer = new PromiseBuffer(30);
-                    this._rateLimits = {};
-                    this._outcomes = {};
-                    this._api = new API(options.dsn, options._metadata, options.tunnel);
-                    this.url = this._api.getStoreEndpointWithUrlEncodedAuth();
-                    if (this.options.sendClientReports && base_global.document) base_global.document.addEventListener("visibilitychange", (function() {
-                        if ("hidden" === base_global.document.visibilityState) _this._flushOutcomes();
-                    }));
-                }
-                BaseTransport.prototype.sendEvent = function(_) {
-                    throw new SentryError("Transport Class has to implement `sendEvent` method");
-                };
-                BaseTransport.prototype.close = function(timeout) {
-                    return this._buffer.drain(timeout);
-                };
-                BaseTransport.prototype.recordLostEvent = function(reason, category) {
-                    var _a;
-                    if (!this.options.sendClientReports) return;
-                    var key = CATEGORY_MAPPING[category] + ":" + reason;
-                    logger_logger.log("Adding outcome: " + key);
-                    this._outcomes[key] = (_a = this._outcomes[key], null !== _a && void 0 !== _a ? _a : 0) + 1;
-                };
-                BaseTransport.prototype._flushOutcomes = function() {
-                    if (!this.options.sendClientReports) return;
-                    var outcomes = this._outcomes;
-                    this._outcomes = {};
-                    if (!Object.keys(outcomes).length) {
-                        logger_logger.log("No outcomes to flush");
-                        return;
-                    }
-                    logger_logger.log("Flushing outcomes:\n" + JSON.stringify(outcomes, null, 2));
-                    var url = this._api.getEnvelopeEndpointWithUrlEncodedAuth();
-                    var envelopeHeader = JSON.stringify(__assign({}, this.options.tunnel && {
-                        dsn: this._api.getDsn().toString()
-                    }));
-                    var itemHeaders = JSON.stringify({
-                        type: "client_report"
-                    });
-                    var item = JSON.stringify({
-                        timestamp: (0, time.dateTimestampInSeconds)(),
-                        discarded_events: Object.keys(outcomes).map((function(key) {
-                            var _a = __read(key.split(":"), 2), category = _a[0], reason = _a[1];
-                            return {
-                                reason,
-                                category,
-                                quantity: outcomes[key]
-                            };
-                        }))
-                    });
-                    var envelope = envelopeHeader + "\n" + itemHeaders + "\n" + item;
-                    try {
-                        sendReport(url, envelope);
-                    } catch (e) {
-                        logger_logger.error(e);
-                    }
-                };
-                BaseTransport.prototype._handleResponse = function(_a) {
-                    var requestType = _a.requestType, response = _a.response, headers = _a.headers, resolve = _a.resolve, reject = _a.reject;
-                    var status = Status.fromHttpCode(response.status);
-                    var limited = this._handleRateLimit(headers);
-                    if (limited) logger_logger.warn("Too many " + requestType + " requests, backing off until: " + this._disabledUntil(requestType));
-                    if (status === Status.Success) {
-                        resolve({
-                            status
-                        });
-                        return;
-                    }
-                    reject(response);
-                };
-                BaseTransport.prototype._disabledUntil = function(requestType) {
-                    var category = CATEGORY_MAPPING[requestType];
-                    return this._rateLimits[category] || this._rateLimits.all;
-                };
-                BaseTransport.prototype._isRateLimited = function(requestType) {
-                    return this._disabledUntil(requestType) > new Date(Date.now());
-                };
-                BaseTransport.prototype._handleRateLimit = function(headers) {
-                    var e_1, _a, e_2, _b;
-                    var now = Date.now();
-                    var rlHeader = headers["x-sentry-rate-limits"];
-                    var raHeader = headers["retry-after"];
-                    if (rlHeader) {
-                        try {
-                            for (var _c = __values(rlHeader.trim().split(",")), _d = _c.next(); !_d.done; _d = _c.next()) {
-                                var limit = _d.value;
-                                var parameters = limit.split(":", 2);
-                                var headerDelay = parseInt(parameters[0], 10);
-                                var delay = 1e3 * (!isNaN(headerDelay) ? headerDelay : 60);
-                                try {
-                                    for (var _e = (e_2 = void 0, __values(parameters[1].split(";"))), _f = _e.next(); !_f.done; _f = _e.next()) {
-                                        var category = _f.value;
-                                        this._rateLimits[category || "all"] = new Date(now + delay);
-                                    }
-                                } catch (e_2_1) {
-                                    e_2 = {
-                                        error: e_2_1
-                                    };
-                                } finally {
-                                    try {
-                                        if (_f && !_f.done && (_b = _e.return)) _b.call(_e);
-                                    } finally {
-                                        if (e_2) throw e_2.error;
-                                    }
-                                }
-                            }
-                        } catch (e_1_1) {
-                            e_1 = {
-                                error: e_1_1
-                            };
-                        } finally {
-                            try {
-                                if (_d && !_d.done && (_a = _c.return)) _a.call(_c);
-                            } finally {
-                                if (e_1) throw e_1.error;
-                            }
-                        }
-                        return true;
-                    } else if (raHeader) {
-                        this._rateLimits.all = new Date(now + parseRetryAfterHeader(now, raHeader));
-                        return true;
-                    }
-                    return false;
-                };
-                return BaseTransport;
-            }();
-            var FetchTransport = function(_super) {
-                __extends(FetchTransport, _super);
-                function FetchTransport(options, fetchImpl) {
-                    if (void 0 === fetchImpl) fetchImpl = getNativeFetchImplementation();
-                    var _this = _super.call(this, options) || this;
-                    _this._fetch = fetchImpl;
-                    return _this;
-                }
-                FetchTransport.prototype.sendEvent = function(event) {
-                    return this._sendRequest(eventToSentryRequest(event, this._api), event);
-                };
-                FetchTransport.prototype.sendSession = function(session) {
-                    return this._sendRequest(sessionToSentryRequest(session, this._api), session);
-                };
-                FetchTransport.prototype._sendRequest = function(sentryRequest, originalPayload) {
-                    var _this = this;
-                    if (this._isRateLimited(sentryRequest.type)) {
-                        this.recordLostEvent(Outcome.RateLimitBackoff, sentryRequest.type);
-                        return Promise.reject({
-                            event: originalPayload,
-                            type: sentryRequest.type,
-                            reason: "Transport for " + sentryRequest.type + " requests locked till " + this._disabledUntil(sentryRequest.type) + " due to too many requests.",
-                            status: 429
-                        });
-                    }
-                    var options = {
-                        body: sentryRequest.body,
-                        method: "POST",
-                        referrerPolicy: supportsReferrerPolicy() ? "origin" : ""
-                    };
-                    if (void 0 !== this.options.fetchParameters) Object.assign(options, this.options.fetchParameters);
-                    if (void 0 !== this.options.headers) options.headers = this.options.headers;
-                    return this._buffer.add((function() {
-                        return new SyncPromise((function(resolve, reject) {
-                            void _this._fetch(sentryRequest.url, options).then((function(response) {
-                                var headers = {
-                                    "x-sentry-rate-limits": response.headers.get("X-Sentry-Rate-Limits"),
-                                    "retry-after": response.headers.get("Retry-After")
-                                };
-                                _this._handleResponse({
-                                    requestType: sentryRequest.type,
-                                    response,
-                                    headers,
-                                    resolve,
-                                    reject
-                                });
-                            })).catch(reject);
-                        }));
-                    })).then(void 0, (function(reason) {
-                        if (reason instanceof SentryError) _this.recordLostEvent(Outcome.QueueOverflow, sentryRequest.type); else _this.recordLostEvent(Outcome.NetworkError, sentryRequest.type);
-                        throw reason;
-                    }));
-                };
-                return FetchTransport;
-            }(BaseTransport);
-            var XHRTransport = function(_super) {
-                __extends(XHRTransport, _super);
-                function XHRTransport() {
-                    return null !== _super && _super.apply(this, arguments) || this;
-                }
-                XHRTransport.prototype.sendEvent = function(event) {
-                    return this._sendRequest(eventToSentryRequest(event, this._api), event);
-                };
-                XHRTransport.prototype.sendSession = function(session) {
-                    return this._sendRequest(sessionToSentryRequest(session, this._api), session);
-                };
-                XHRTransport.prototype._sendRequest = function(sentryRequest, originalPayload) {
-                    var _this = this;
-                    if (this._isRateLimited(sentryRequest.type)) {
-                        this.recordLostEvent(Outcome.RateLimitBackoff, sentryRequest.type);
-                        return Promise.reject({
-                            event: originalPayload,
-                            type: sentryRequest.type,
-                            reason: "Transport for " + sentryRequest.type + " requests locked till " + this._disabledUntil(sentryRequest.type) + " due to too many requests.",
-                            status: 429
-                        });
-                    }
-                    return this._buffer.add((function() {
-                        return new SyncPromise((function(resolve, reject) {
-                            var request = new XMLHttpRequest;
-                            request.onreadystatechange = function() {
-                                if (4 === request.readyState) {
-                                    var headers = {
-                                        "x-sentry-rate-limits": request.getResponseHeader("X-Sentry-Rate-Limits"),
-                                        "retry-after": request.getResponseHeader("Retry-After")
-                                    };
-                                    _this._handleResponse({
-                                        requestType: sentryRequest.type,
-                                        response: request,
-                                        headers,
-                                        resolve,
-                                        reject
-                                    });
-                                }
-                            };
-                            request.open("POST", sentryRequest.url);
-                            for (var header in _this.options.headers) if (Object.prototype.hasOwnProperty.call(_this.options.headers, header)) request.setRequestHeader(header, _this.options.headers[header]);
-                            request.send(sentryRequest.body);
-                        }));
-                    })).then(void 0, (function(reason) {
-                        if (reason instanceof SentryError) _this.recordLostEvent(Outcome.QueueOverflow, sentryRequest.type); else _this.recordLostEvent(Outcome.NetworkError, sentryRequest.type);
-                        throw reason;
-                    }));
-                };
-                return XHRTransport;
-            }(BaseTransport);
-            var BrowserBackend = function(_super) {
-                __extends(BrowserBackend, _super);
-                function BrowserBackend() {
-                    return null !== _super && _super.apply(this, arguments) || this;
-                }
-                BrowserBackend.prototype.eventFromException = function(exception, hint) {
-                    return eventFromException(this._options, exception, hint);
-                };
-                BrowserBackend.prototype.eventFromMessage = function(message, level, hint) {
-                    if (void 0 === level) level = Severity.Info;
-                    return eventFromMessage(this._options, message, level, hint);
-                };
-                BrowserBackend.prototype._setupTransport = function() {
-                    if (!this._options.dsn) return _super.prototype._setupTransport.call(this);
-                    var transportOptions = __assign(__assign({}, this._options.transportOptions), {
-                        dsn: this._options.dsn,
-                        tunnel: this._options.tunnel,
-                        sendClientReports: this._options.sendClientReports,
-                        _metadata: this._options._metadata
-                    });
-                    if (this._options.transport) return new this._options.transport(transportOptions);
-                    if (supportsFetch()) return new FetchTransport(transportOptions);
-                    return new XHRTransport(transportOptions);
-                };
-                return BrowserBackend;
-            }(BaseBackend);
-            var helpers_global = (0, esm_global.getGlobalObject)();
-            var ignoreOnError = 0;
-            function shouldIgnoreOnError() {
-                return ignoreOnError > 0;
-            }
-            function ignoreNextOnError() {
-                ignoreOnError += 1;
-                setTimeout((function() {
-                    ignoreOnError -= 1;
-                }));
-            }
-            function wrap(fn, options, before) {
-                if (void 0 === options) options = {};
-                if ("function" !== typeof fn) return fn;
-                try {
-                    if (fn.__sentry__) return fn;
-                    if (fn.__sentry_wrapped__) return fn.__sentry_wrapped__;
-                } catch (e) {
-                    return fn;
-                }
-                var sentryWrapped = function() {
-                    var args = Array.prototype.slice.call(arguments);
-                    try {
-                        if (before && "function" === typeof before) before.apply(this, arguments);
-                        var wrappedArguments = args.map((function(arg) {
-                            return wrap(arg, options);
-                        }));
-                        if (fn.handleEvent) return fn.handleEvent.apply(this, wrappedArguments);
-                        return fn.apply(this, wrappedArguments);
-                    } catch (ex) {
-                        ignoreNextOnError();
-                        withScope((function(scope) {
-                            scope.addEventProcessor((function(event) {
-                                var processedEvent = __assign({}, event);
-                                if (options.mechanism) {
-                                    addExceptionTypeValue(processedEvent, void 0, void 0);
-                                    addExceptionMechanism(processedEvent, options.mechanism);
-                                }
-                                processedEvent.extra = __assign(__assign({}, processedEvent.extra), {
-                                    arguments: args
-                                });
-                                return processedEvent;
-                            }));
-                            captureException(ex);
-                        }));
-                        throw ex;
-                    }
-                };
-                try {
-                    for (var property in fn) if (Object.prototype.hasOwnProperty.call(fn, property)) sentryWrapped[property] = fn[property];
-                } catch (_oO) {}
-                fn.prototype = fn.prototype || {};
-                sentryWrapped.prototype = fn.prototype;
-                Object.defineProperty(fn, "__sentry_wrapped__", {
-                    enumerable: false,
-                    value: sentryWrapped
-                });
-                Object.defineProperties(sentryWrapped, {
-                    __sentry__: {
-                        enumerable: false,
-                        value: true
-                    },
-                    __sentry_original__: {
-                        enumerable: false,
-                        value: fn
-                    }
-                });
-                try {
-                    var descriptor = Object.getOwnPropertyDescriptor(sentryWrapped, "name");
-                    if (descriptor.configurable) Object.defineProperty(sentryWrapped, "name", {
-                        get: function() {
-                            return fn.name;
-                        }
-                    });
-                } catch (_oO) {}
-                return sentryWrapped;
-            }
-            function injectReportDialog(options) {
-                if (void 0 === options) options = {};
-                if (!helpers_global.document) return;
-                if (!options.eventId) {
-                    logger_logger.error("Missing eventId option in showReportDialog call");
-                    return;
-                }
-                if (!options.dsn) {
-                    logger_logger.error("Missing dsn option in showReportDialog call");
-                    return;
-                }
-                var script = helpers_global.document.createElement("script");
-                script.async = true;
-                script.src = new API(options.dsn).getReportDialogEndpoint(options);
-                if (options.onLoad) script.onload = options.onLoad;
-                var injectionPoint = helpers_global.document.head || helpers_global.document.body;
-                if (injectionPoint) injectionPoint.appendChild(script);
-            }
-            var instrument_global = (0, esm_global.getGlobalObject)();
-            var handlers = {};
-            var instrumented = {};
-            function instrument(type) {
-                if (instrumented[type]) return;
-                instrumented[type] = true;
-                switch (type) {
-                  case "console":
-                    instrumentConsole();
-                    break;
-
-                  case "dom":
-                    instrumentDOM();
-                    break;
-
-                  case "xhr":
-                    instrumentXHR();
-                    break;
-
-                  case "fetch":
-                    instrumentFetch();
-                    break;
-
-                  case "history":
-                    instrumentHistory();
-                    break;
-
-                  case "error":
-                    instrumentError();
-                    break;
-
-                  case "unhandledrejection":
-                    instrumentUnhandledRejection();
-                    break;
-
-                  default:
-                    logger_logger.warn("unknown instrumentation type:", type);
-                }
-            }
-            function addInstrumentationHandler(handler) {
-                if (!handler || "string" !== typeof handler.type || "function" !== typeof handler.callback) return;
-                handlers[handler.type] = handlers[handler.type] || [];
-                handlers[handler.type].push(handler.callback);
-                instrument(handler.type);
-            }
-            function triggerHandlers(type, data) {
-                var e_1, _a;
-                if (!type || !handlers[type]) return;
-                try {
-                    for (var _b = __values(handlers[type] || []), _c = _b.next(); !_c.done; _c = _b.next()) {
-                        var handler = _c.value;
-                        try {
-                            handler(data);
-                        } catch (e) {
-                            logger_logger.error("Error while triggering instrumentation handler.\nType: " + type + "\nName: " + getFunctionName(handler) + "\nError: " + e);
-                        }
-                    }
-                } catch (e_1_1) {
-                    e_1 = {
-                        error: e_1_1
-                    };
-                } finally {
-                    try {
-                        if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
-                    } finally {
-                        if (e_1) throw e_1.error;
-                    }
-                }
-            }
-            function instrumentConsole() {
-                if (!("console" in instrument_global)) return;
-                [ "debug", "info", "warn", "error", "log", "assert" ].forEach((function(level) {
-                    if (!(level in instrument_global.console)) return;
-                    fill(instrument_global.console, level, (function(originalConsoleLevel) {
-                        return function() {
-                            var args = [];
-                            for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                            triggerHandlers("console", {
-                                args,
-                                level
-                            });
-                            if (originalConsoleLevel) Function.prototype.apply.call(originalConsoleLevel, instrument_global.console, args);
-                        };
-                    }));
-                }));
-            }
-            function instrumentFetch() {
-                if (!supportsNativeFetch()) return;
-                fill(instrument_global, "fetch", (function(originalFetch) {
-                    return function() {
-                        var args = [];
-                        for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                        var handlerData = {
-                            args,
-                            fetchData: {
-                                method: getFetchMethod(args),
-                                url: getFetchUrl(args)
-                            },
-                            startTimestamp: Date.now()
-                        };
-                        triggerHandlers("fetch", __assign({}, handlerData));
-                        return originalFetch.apply(instrument_global, args).then((function(response) {
-                            triggerHandlers("fetch", __assign(__assign({}, handlerData), {
-                                endTimestamp: Date.now(),
-                                response
-                            }));
-                            return response;
-                        }), (function(error) {
-                            triggerHandlers("fetch", __assign(__assign({}, handlerData), {
-                                endTimestamp: Date.now(),
-                                error
-                            }));
-                            throw error;
-                        }));
-                    };
-                }));
-            }
-            function getFetchMethod(fetchArgs) {
-                if (void 0 === fetchArgs) fetchArgs = [];
-                if ("Request" in instrument_global && isInstanceOf(fetchArgs[0], Request) && fetchArgs[0].method) return String(fetchArgs[0].method).toUpperCase();
-                if (fetchArgs[1] && fetchArgs[1].method) return String(fetchArgs[1].method).toUpperCase();
-                return "GET";
-            }
-            function getFetchUrl(fetchArgs) {
-                if (void 0 === fetchArgs) fetchArgs = [];
-                if ("string" === typeof fetchArgs[0]) return fetchArgs[0];
-                if ("Request" in instrument_global && isInstanceOf(fetchArgs[0], Request)) return fetchArgs[0].url;
-                return String(fetchArgs[0]);
-            }
-            function instrumentXHR() {
-                if (!("XMLHttpRequest" in instrument_global)) return;
-                var requestKeys = [];
-                var requestValues = [];
-                var xhrproto = XMLHttpRequest.prototype;
-                fill(xhrproto, "open", (function(originalOpen) {
-                    return function() {
-                        var args = [];
-                        for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                        var xhr = this;
-                        var url = args[1];
-                        xhr.__sentry_xhr__ = {
-                            method: isString(args[0]) ? args[0].toUpperCase() : args[0],
-                            url: args[1]
-                        };
-                        if (isString(url) && "POST" === xhr.__sentry_xhr__.method && url.match(/sentry_key/)) xhr.__sentry_own_request__ = true;
-                        var onreadystatechangeHandler = function() {
-                            if (4 === xhr.readyState) {
-                                try {
-                                    if (xhr.__sentry_xhr__) xhr.__sentry_xhr__.status_code = xhr.status;
-                                } catch (e) {}
-                                try {
-                                    var requestPos = requestKeys.indexOf(xhr);
-                                    if (-1 !== requestPos) {
-                                        requestKeys.splice(requestPos);
-                                        var args_1 = requestValues.splice(requestPos)[0];
-                                        if (xhr.__sentry_xhr__ && void 0 !== args_1[0]) xhr.__sentry_xhr__.body = args_1[0];
-                                    }
-                                } catch (e) {}
-                                triggerHandlers("xhr", {
-                                    args,
-                                    endTimestamp: Date.now(),
-                                    startTimestamp: Date.now(),
-                                    xhr
-                                });
-                            }
-                        };
-                        if ("onreadystatechange" in xhr && "function" === typeof xhr.onreadystatechange) fill(xhr, "onreadystatechange", (function(original) {
-                            return function() {
-                                var readyStateArgs = [];
-                                for (var _i = 0; _i < arguments.length; _i++) readyStateArgs[_i] = arguments[_i];
-                                onreadystatechangeHandler();
-                                return original.apply(xhr, readyStateArgs);
-                            };
-                        })); else xhr.addEventListener("readystatechange", onreadystatechangeHandler);
-                        return originalOpen.apply(xhr, args);
-                    };
-                }));
-                fill(xhrproto, "send", (function(originalSend) {
-                    return function() {
-                        var args = [];
-                        for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                        requestKeys.push(this);
-                        requestValues.push(args);
-                        triggerHandlers("xhr", {
-                            args,
-                            startTimestamp: Date.now(),
-                            xhr: this
-                        });
-                        return originalSend.apply(this, args);
-                    };
-                }));
-            }
-            var lastHref;
-            function instrumentHistory() {
-                if (!supportsHistory()) return;
-                var oldOnPopState = instrument_global.onpopstate;
-                instrument_global.onpopstate = function() {
-                    var args = [];
-                    for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                    var to = instrument_global.location.href;
-                    var from = lastHref;
-                    lastHref = to;
-                    triggerHandlers("history", {
-                        from,
-                        to
-                    });
-                    if (oldOnPopState) try {
-                        return oldOnPopState.apply(this, args);
-                    } catch (_oO) {}
-                };
-                function historyReplacementFunction(originalHistoryFunction) {
-                    return function() {
-                        var args = [];
-                        for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                        var url = args.length > 2 ? args[2] : void 0;
-                        if (url) {
-                            var from = lastHref;
-                            var to = String(url);
-                            lastHref = to;
-                            triggerHandlers("history", {
-                                from,
-                                to
-                            });
-                        }
-                        return originalHistoryFunction.apply(this, args);
-                    };
-                }
-                fill(instrument_global.history, "pushState", historyReplacementFunction);
-                fill(instrument_global.history, "replaceState", historyReplacementFunction);
-            }
-            var debounceDuration = 1e3;
-            var debounceTimerID;
-            var lastCapturedEvent;
-            function shouldShortcircuitPreviousDebounce(previous, current) {
-                if (!previous) return true;
-                if (previous.type !== current.type) return true;
-                try {
-                    if (previous.target !== current.target) return true;
-                } catch (e) {}
-                return false;
-            }
-            function shouldSkipDOMEvent(event) {
-                if ("keypress" !== event.type) return false;
-                try {
-                    var target = event.target;
-                    if (!target || !target.tagName) return true;
-                    if ("INPUT" === target.tagName || "TEXTAREA" === target.tagName || target.isContentEditable) return false;
-                } catch (e) {}
-                return true;
-            }
-            function makeDOMEventHandler(handler, globalListener) {
-                if (void 0 === globalListener) globalListener = false;
-                return function(event) {
-                    if (!event || lastCapturedEvent === event) return;
-                    if (shouldSkipDOMEvent(event)) return;
-                    var name = "keypress" === event.type ? "input" : event.type;
-                    if (void 0 === debounceTimerID) {
-                        handler({
-                            event,
-                            name,
-                            global: globalListener
-                        });
-                        lastCapturedEvent = event;
-                    } else if (shouldShortcircuitPreviousDebounce(lastCapturedEvent, event)) {
-                        handler({
-                            event,
-                            name,
-                            global: globalListener
-                        });
-                        lastCapturedEvent = event;
-                    }
-                    clearTimeout(debounceTimerID);
-                    debounceTimerID = instrument_global.setTimeout((function() {
-                        debounceTimerID = void 0;
-                    }), debounceDuration);
-                };
-            }
-            function instrumentDOM() {
-                if (!("document" in instrument_global)) return;
-                var triggerDOMHandler = triggerHandlers.bind(null, "dom");
-                var globalDOMEventHandler = makeDOMEventHandler(triggerDOMHandler, true);
-                instrument_global.document.addEventListener("click", globalDOMEventHandler, false);
-                instrument_global.document.addEventListener("keypress", globalDOMEventHandler, false);
-                [ "EventTarget", "Node" ].forEach((function(target) {
-                    var proto = instrument_global[target] && instrument_global[target].prototype;
-                    if (!proto || !proto.hasOwnProperty || !proto.hasOwnProperty("addEventListener")) return;
-                    fill(proto, "addEventListener", (function(originalAddEventListener) {
-                        return function(type, listener, options) {
-                            if ("click" === type || "keypress" == type) try {
-                                var el = this;
-                                var handlers_1 = el.__sentry_instrumentation_handlers__ = el.__sentry_instrumentation_handlers__ || {};
-                                var handlerForType = handlers_1[type] = handlers_1[type] || {
-                                    refCount: 0
-                                };
-                                if (!handlerForType.handler) {
-                                    var handler = makeDOMEventHandler(triggerDOMHandler);
-                                    handlerForType.handler = handler;
-                                    originalAddEventListener.call(this, type, handler, options);
-                                }
-                                handlerForType.refCount += 1;
-                            } catch (e) {}
-                            return originalAddEventListener.call(this, type, listener, options);
-                        };
-                    }));
-                    fill(proto, "removeEventListener", (function(originalRemoveEventListener) {
-                        return function(type, listener, options) {
-                            if ("click" === type || "keypress" == type) try {
-                                var el = this;
-                                var handlers_2 = el.__sentry_instrumentation_handlers__ || {};
-                                var handlerForType = handlers_2[type];
-                                if (handlerForType) {
-                                    handlerForType.refCount -= 1;
-                                    if (handlerForType.refCount <= 0) {
-                                        originalRemoveEventListener.call(this, type, handlerForType.handler, options);
-                                        handlerForType.handler = void 0;
-                                        delete handlers_2[type];
-                                    }
-                                    if (0 === Object.keys(handlers_2).length) delete el.__sentry_instrumentation_handlers__;
-                                }
-                            } catch (e) {}
-                            return originalRemoveEventListener.call(this, type, listener, options);
-                        };
-                    }));
-                }));
-            }
-            var _oldOnErrorHandler = null;
-            function instrumentError() {
-                _oldOnErrorHandler = instrument_global.onerror;
-                instrument_global.onerror = function(msg, url, line, column, error) {
-                    triggerHandlers("error", {
-                        column,
-                        error,
-                        line,
-                        msg,
-                        url
-                    });
-                    if (_oldOnErrorHandler) return _oldOnErrorHandler.apply(this, arguments);
-                    return false;
-                };
-            }
-            var _oldOnUnhandledRejectionHandler = null;
-            function instrumentUnhandledRejection() {
-                _oldOnUnhandledRejectionHandler = instrument_global.onunhandledrejection;
-                instrument_global.onunhandledrejection = function(e) {
-                    triggerHandlers("unhandledrejection", e);
-                    if (_oldOnUnhandledRejectionHandler) return _oldOnUnhandledRejectionHandler.apply(this, arguments);
-                    return true;
-                };
-            }
-            var Breadcrumbs = function() {
-                function Breadcrumbs(options) {
-                    this.name = Breadcrumbs.id;
-                    this._options = __assign({
-                        console: true,
-                        dom: true,
-                        fetch: true,
-                        history: true,
-                        sentry: true,
-                        xhr: true
-                    }, options);
-                }
-                Breadcrumbs.prototype.addSentryBreadcrumb = function(event) {
-                    if (!this._options.sentry) return;
-                    getCurrentHub().addBreadcrumb({
-                        category: "sentry." + ("transaction" === event.type ? "transaction" : "event"),
-                        event_id: event.event_id,
-                        level: event.level,
-                        message: getEventDescription(event)
-                    }, {
-                        event
-                    });
-                };
-                Breadcrumbs.prototype.setupOnce = function() {
-                    var _this = this;
-                    if (this._options.console) addInstrumentationHandler({
-                        callback: function() {
-                            var args = [];
-                            for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                            _this._consoleBreadcrumb.apply(_this, tslib_es6_spread(args));
-                        },
-                        type: "console"
-                    });
-                    if (this._options.dom) addInstrumentationHandler({
-                        callback: function() {
-                            var args = [];
-                            for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                            _this._domBreadcrumb.apply(_this, tslib_es6_spread(args));
-                        },
-                        type: "dom"
-                    });
-                    if (this._options.xhr) addInstrumentationHandler({
-                        callback: function() {
-                            var args = [];
-                            for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                            _this._xhrBreadcrumb.apply(_this, tslib_es6_spread(args));
-                        },
-                        type: "xhr"
-                    });
-                    if (this._options.fetch) addInstrumentationHandler({
-                        callback: function() {
-                            var args = [];
-                            for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                            _this._fetchBreadcrumb.apply(_this, tslib_es6_spread(args));
-                        },
-                        type: "fetch"
-                    });
-                    if (this._options.history) addInstrumentationHandler({
-                        callback: function() {
-                            var args = [];
-                            for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                            _this._historyBreadcrumb.apply(_this, tslib_es6_spread(args));
-                        },
-                        type: "history"
-                    });
-                };
-                Breadcrumbs.prototype._consoleBreadcrumb = function(handlerData) {
-                    var breadcrumb = {
-                        category: "console",
-                        data: {
-                            arguments: handlerData.args,
-                            logger: "console"
-                        },
-                        level: Severity.fromString(handlerData.level),
-                        message: safeJoin(handlerData.args, " ")
-                    };
-                    if ("assert" === handlerData.level) if (false === handlerData.args[0]) {
-                        breadcrumb.message = "Assertion failed: " + (safeJoin(handlerData.args.slice(1), " ") || "console.assert");
-                        breadcrumb.data.arguments = handlerData.args.slice(1);
-                    } else return;
-                    getCurrentHub().addBreadcrumb(breadcrumb, {
-                        input: handlerData.args,
-                        level: handlerData.level
-                    });
-                };
-                Breadcrumbs.prototype._domBreadcrumb = function(handlerData) {
-                    var target;
-                    var keyAttrs = "object" === typeof this._options.dom ? this._options.dom.serializeAttribute : void 0;
-                    if ("string" === typeof keyAttrs) keyAttrs = [ keyAttrs ];
-                    try {
-                        target = handlerData.event.target ? htmlTreeAsString(handlerData.event.target, keyAttrs) : htmlTreeAsString(handlerData.event, keyAttrs);
-                    } catch (e) {
-                        target = "<unknown>";
-                    }
-                    if (0 === target.length) return;
-                    getCurrentHub().addBreadcrumb({
-                        category: "ui." + handlerData.name,
-                        message: target
-                    }, {
-                        event: handlerData.event,
-                        name: handlerData.name,
-                        global: handlerData.global
-                    });
-                };
-                Breadcrumbs.prototype._xhrBreadcrumb = function(handlerData) {
-                    if (handlerData.endTimestamp) {
-                        if (handlerData.xhr.__sentry_own_request__) return;
-                        var _a = handlerData.xhr.__sentry_xhr__ || {}, method = _a.method, url = _a.url, status_code = _a.status_code, body = _a.body;
-                        getCurrentHub().addBreadcrumb({
-                            category: "xhr",
-                            data: {
-                                method,
-                                url,
-                                status_code
-                            },
-                            type: "http"
-                        }, {
-                            xhr: handlerData.xhr,
-                            input: body
-                        });
-                        return;
-                    }
-                };
-                Breadcrumbs.prototype._fetchBreadcrumb = function(handlerData) {
-                    if (!handlerData.endTimestamp) return;
-                    if (handlerData.fetchData.url.match(/sentry_key/) && "POST" === handlerData.fetchData.method) return;
-                    if (handlerData.error) getCurrentHub().addBreadcrumb({
-                        category: "fetch",
-                        data: handlerData.fetchData,
-                        level: Severity.Error,
-                        type: "http"
-                    }, {
-                        data: handlerData.error,
-                        input: handlerData.args
-                    }); else getCurrentHub().addBreadcrumb({
-                        category: "fetch",
-                        data: __assign(__assign({}, handlerData.fetchData), {
-                            status_code: handlerData.response.status
-                        }),
-                        type: "http"
-                    }, {
-                        input: handlerData.args,
-                        response: handlerData.response
-                    });
-                };
-                Breadcrumbs.prototype._historyBreadcrumb = function(handlerData) {
-                    var global = (0, esm_global.getGlobalObject)();
-                    var from = handlerData.from;
-                    var to = handlerData.to;
-                    var parsedLoc = parseUrl(global.location.href);
-                    var parsedFrom = parseUrl(from);
-                    var parsedTo = parseUrl(to);
-                    if (!parsedFrom.path) parsedFrom = parsedLoc;
-                    if (parsedLoc.protocol === parsedTo.protocol && parsedLoc.host === parsedTo.host) to = parsedTo.relative;
-                    if (parsedLoc.protocol === parsedFrom.protocol && parsedLoc.host === parsedFrom.host) from = parsedFrom.relative;
-                    getCurrentHub().addBreadcrumb({
-                        category: "navigation",
-                        data: {
-                            from,
-                            to
-                        }
-                    });
-                };
-                Breadcrumbs.id = "Breadcrumbs";
-                return Breadcrumbs;
-            }();
-            var BrowserClient = function(_super) {
-                __extends(BrowserClient, _super);
-                function BrowserClient(options) {
-                    if (void 0 === options) options = {};
-                    var _this = this;
-                    options._metadata = options._metadata || {};
-                    options._metadata.sdk = options._metadata.sdk || {
-                        name: "sentry.javascript.browser",
-                        packages: [ {
-                            name: "npm:@sentry/browser",
-                            version: SDK_VERSION
-                        } ],
-                        version: SDK_VERSION
-                    };
-                    _this = _super.call(this, BrowserBackend, options) || this;
-                    return _this;
-                }
-                BrowserClient.prototype.showReportDialog = function(options) {
-                    if (void 0 === options) options = {};
-                    var document = (0, esm_global.getGlobalObject)().document;
-                    if (!document) return;
-                    if (!this._isEnabled()) {
-                        logger_logger.error("Trying to call showReportDialog with Sentry Client disabled");
-                        return;
-                    }
-                    injectReportDialog(__assign(__assign({}, options), {
-                        dsn: options.dsn || this.getDsn()
-                    }));
-                };
-                BrowserClient.prototype._prepareEvent = function(event, scope, hint) {
-                    event.platform = event.platform || "javascript";
-                    return _super.prototype._prepareEvent.call(this, event, scope, hint);
-                };
-                BrowserClient.prototype._sendEvent = function(event) {
-                    var integration = this.getIntegration(Breadcrumbs);
-                    if (integration) integration.addSentryBreadcrumb(event);
-                    _super.prototype._sendEvent.call(this, event);
-                };
-                return BrowserClient;
-            }(BaseClient);
-            function initAndBind(clientClass, options) {
-                var _a;
-                if (true === options.debug) logger_logger.enable();
-                var hub = getCurrentHub();
-                null === (_a = hub.getScope()) || void 0 === _a ? void 0 : _a.update(options.initialScope);
-                var client = new clientClass(options);
-                hub.bindClient(client);
-            }
-            var DEFAULT_IGNORE_ERRORS = [ /^Script error\.?$/, /^Javascript error: Script error\.? on line 0$/ ];
-            var InboundFilters = function() {
-                function InboundFilters(_options) {
-                    if (void 0 === _options) _options = {};
-                    this._options = _options;
-                    this.name = InboundFilters.id;
-                }
-                InboundFilters.prototype.setupOnce = function() {
-                    addGlobalEventProcessor((function(event) {
-                        var hub = getCurrentHub();
-                        if (!hub) return event;
-                        var self = hub.getIntegration(InboundFilters);
-                        if (self) {
-                            var client = hub.getClient();
-                            var clientOptions = client ? client.getOptions() : {};
-                            var options = "function" === typeof self._mergeOptions ? self._mergeOptions(clientOptions) : {};
-                            if ("function" !== typeof self._shouldDropEvent) return event;
-                            return self._shouldDropEvent(event, options) ? null : event;
-                        }
-                        return event;
-                    }));
-                };
-                InboundFilters.prototype._shouldDropEvent = function(event, options) {
-                    if (this._isSentryError(event, options)) {
-                        logger_logger.warn("Event dropped due to being internal Sentry Error.\nEvent: " + getEventDescription(event));
-                        return true;
-                    }
-                    if (this._isIgnoredError(event, options)) {
-                        logger_logger.warn("Event dropped due to being matched by `ignoreErrors` option.\nEvent: " + getEventDescription(event));
-                        return true;
-                    }
-                    if (this._isDeniedUrl(event, options)) {
-                        logger_logger.warn("Event dropped due to being matched by `denyUrls` option.\nEvent: " + getEventDescription(event) + ".\nUrl: " + this._getEventFilterUrl(event));
-                        return true;
-                    }
-                    if (!this._isAllowedUrl(event, options)) {
-                        logger_logger.warn("Event dropped due to not being matched by `allowUrls` option.\nEvent: " + getEventDescription(event) + ".\nUrl: " + this._getEventFilterUrl(event));
-                        return true;
-                    }
-                    return false;
-                };
-                InboundFilters.prototype._isSentryError = function(event, options) {
-                    if (!options.ignoreInternal) return false;
-                    try {
-                        return event && event.exception && event.exception.values && event.exception.values[0] && "SentryError" === event.exception.values[0].type || false;
-                    } catch (_oO) {
-                        return false;
-                    }
-                };
-                InboundFilters.prototype._isIgnoredError = function(event, options) {
-                    if (!options.ignoreErrors || !options.ignoreErrors.length) return false;
-                    return this._getPossibleEventMessages(event).some((function(message) {
-                        return options.ignoreErrors.some((function(pattern) {
-                            return isMatchingPattern(message, pattern);
-                        }));
-                    }));
-                };
-                InboundFilters.prototype._isDeniedUrl = function(event, options) {
-                    if (!options.denyUrls || !options.denyUrls.length) return false;
-                    var url = this._getEventFilterUrl(event);
-                    return !url ? false : options.denyUrls.some((function(pattern) {
-                        return isMatchingPattern(url, pattern);
-                    }));
-                };
-                InboundFilters.prototype._isAllowedUrl = function(event, options) {
-                    if (!options.allowUrls || !options.allowUrls.length) return true;
-                    var url = this._getEventFilterUrl(event);
-                    return !url ? true : options.allowUrls.some((function(pattern) {
-                        return isMatchingPattern(url, pattern);
-                    }));
-                };
-                InboundFilters.prototype._mergeOptions = function(clientOptions) {
-                    if (void 0 === clientOptions) clientOptions = {};
-                    return {
-                        allowUrls: tslib_es6_spread(this._options.whitelistUrls || [], this._options.allowUrls || [], clientOptions.whitelistUrls || [], clientOptions.allowUrls || []),
-                        denyUrls: tslib_es6_spread(this._options.blacklistUrls || [], this._options.denyUrls || [], clientOptions.blacklistUrls || [], clientOptions.denyUrls || []),
-                        ignoreErrors: tslib_es6_spread(this._options.ignoreErrors || [], clientOptions.ignoreErrors || [], DEFAULT_IGNORE_ERRORS),
-                        ignoreInternal: "undefined" !== typeof this._options.ignoreInternal ? this._options.ignoreInternal : true
-                    };
-                };
-                InboundFilters.prototype._getPossibleEventMessages = function(event) {
-                    if (event.message) return [ event.message ];
-                    if (event.exception) try {
-                        var _a = event.exception.values && event.exception.values[0] || {}, _b = _a.type, type = void 0 === _b ? "" : _b, _c = _a.value, value = void 0 === _c ? "" : _c;
-                        return [ "" + value, type + ": " + value ];
-                    } catch (oO) {
-                        logger_logger.error("Cannot extract message for event " + getEventDescription(event));
-                        return [];
-                    }
-                    return [];
-                };
-                InboundFilters.prototype._getLastValidUrl = function(frames) {
-                    if (void 0 === frames) frames = [];
-                    var _a, _b;
-                    for (var i = frames.length - 1; i >= 0; i--) {
-                        var frame = frames[i];
-                        if ("<anonymous>" !== (null === (_a = frame) || void 0 === _a ? void 0 : _a.filename) && "[native code]" !== (null === (_b = frame) || void 0 === _b ? void 0 : _b.filename)) return frame.filename || null;
-                    }
-                    return null;
-                };
-                InboundFilters.prototype._getEventFilterUrl = function(event) {
-                    try {
-                        if (event.stacktrace) {
-                            var frames_1 = event.stacktrace.frames;
-                            return this._getLastValidUrl(frames_1);
-                        }
-                        if (event.exception) {
-                            var frames_2 = event.exception.values && event.exception.values[0].stacktrace && event.exception.values[0].stacktrace.frames;
-                            return this._getLastValidUrl(frames_2);
-                        }
-                        return null;
-                    } catch (oO) {
-                        logger_logger.error("Cannot extract url for event " + getEventDescription(event));
-                        return null;
-                    }
-                };
-                InboundFilters.id = "InboundFilters";
-                return InboundFilters;
-            }();
-            var originalFunctionToString;
-            var FunctionToString = function() {
-                function FunctionToString() {
-                    this.name = FunctionToString.id;
-                }
-                FunctionToString.prototype.setupOnce = function() {
-                    originalFunctionToString = Function.prototype.toString;
-                    Function.prototype.toString = function() {
-                        var args = [];
-                        for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                        var context = this.__sentry_original__ || this;
-                        return originalFunctionToString.apply(context, args);
-                    };
-                };
-                FunctionToString.id = "FunctionToString";
-                return FunctionToString;
-            }();
-            var DEFAULT_EVENT_TARGET = [ "EventTarget", "Window", "Node", "ApplicationCache", "AudioTrackList", "ChannelMergerNode", "CryptoOperation", "EventSource", "FileReader", "HTMLUnknownElement", "IDBDatabase", "IDBRequest", "IDBTransaction", "KeyOperation", "MediaController", "MessagePort", "ModalWindow", "Notification", "SVGElementInstance", "Screen", "TextTrack", "TextTrackCue", "TextTrackList", "WebSocket", "WebSocketWorker", "Worker", "XMLHttpRequest", "XMLHttpRequestEventTarget", "XMLHttpRequestUpload" ];
-            var TryCatch = function() {
-                function TryCatch(options) {
-                    this.name = TryCatch.id;
-                    this._options = __assign({
-                        XMLHttpRequest: true,
-                        eventTarget: true,
-                        requestAnimationFrame: true,
-                        setInterval: true,
-                        setTimeout: true
-                    }, options);
-                }
-                TryCatch.prototype.setupOnce = function() {
-                    var global = (0, esm_global.getGlobalObject)();
-                    if (this._options.setTimeout) fill(global, "setTimeout", this._wrapTimeFunction.bind(this));
-                    if (this._options.setInterval) fill(global, "setInterval", this._wrapTimeFunction.bind(this));
-                    if (this._options.requestAnimationFrame) fill(global, "requestAnimationFrame", this._wrapRAF.bind(this));
-                    if (this._options.XMLHttpRequest && "XMLHttpRequest" in global) fill(XMLHttpRequest.prototype, "send", this._wrapXHR.bind(this));
-                    if (this._options.eventTarget) {
-                        var eventTarget = Array.isArray(this._options.eventTarget) ? this._options.eventTarget : DEFAULT_EVENT_TARGET;
-                        eventTarget.forEach(this._wrapEventTarget.bind(this));
-                    }
-                };
-                TryCatch.prototype._wrapTimeFunction = function(original) {
-                    return function() {
-                        var args = [];
-                        for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                        var originalCallback = args[0];
-                        args[0] = wrap(originalCallback, {
-                            mechanism: {
-                                data: {
-                                    function: getFunctionName(original)
-                                },
-                                handled: true,
-                                type: "instrument"
-                            }
-                        });
-                        return original.apply(this, args);
-                    };
-                };
-                TryCatch.prototype._wrapRAF = function(original) {
-                    return function(callback) {
-                        return original.call(this, wrap(callback, {
-                            mechanism: {
-                                data: {
-                                    function: "requestAnimationFrame",
-                                    handler: getFunctionName(original)
-                                },
-                                handled: true,
-                                type: "instrument"
-                            }
-                        }));
-                    };
-                };
-                TryCatch.prototype._wrapEventTarget = function(target) {
-                    var global = (0, esm_global.getGlobalObject)();
-                    var proto = global[target] && global[target].prototype;
-                    if (!proto || !proto.hasOwnProperty || !proto.hasOwnProperty("addEventListener")) return;
-                    fill(proto, "addEventListener", (function(original) {
-                        return function(eventName, fn, options) {
-                            try {
-                                if ("function" === typeof fn.handleEvent) fn.handleEvent = wrap(fn.handleEvent.bind(fn), {
-                                    mechanism: {
-                                        data: {
-                                            function: "handleEvent",
-                                            handler: getFunctionName(fn),
-                                            target
-                                        },
-                                        handled: true,
-                                        type: "instrument"
-                                    }
-                                });
-                            } catch (err) {}
-                            return original.call(this, eventName, wrap(fn, {
-                                mechanism: {
-                                    data: {
-                                        function: "addEventListener",
-                                        handler: getFunctionName(fn),
-                                        target
-                                    },
-                                    handled: true,
-                                    type: "instrument"
-                                }
-                            }), options);
-                        };
-                    }));
-                    fill(proto, "removeEventListener", (function(originalRemoveEventListener) {
-                        return function(eventName, fn, options) {
-                            var _a;
-                            var wrappedEventHandler = fn;
-                            try {
-                                var originalEventHandler = null === (_a = wrappedEventHandler) || void 0 === _a ? void 0 : _a.__sentry_wrapped__;
-                                if (originalEventHandler) originalRemoveEventListener.call(this, eventName, originalEventHandler, options);
-                            } catch (e) {}
-                            return originalRemoveEventListener.call(this, eventName, wrappedEventHandler, options);
-                        };
-                    }));
-                };
-                TryCatch.prototype._wrapXHR = function(originalSend) {
-                    return function() {
-                        var args = [];
-                        for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
-                        var xhr = this;
-                        var xmlHttpRequestProps = [ "onload", "onerror", "onprogress", "onreadystatechange" ];
-                        xmlHttpRequestProps.forEach((function(prop) {
-                            if (prop in xhr && "function" === typeof xhr[prop]) fill(xhr, prop, (function(original) {
-                                var wrapOptions = {
-                                    mechanism: {
-                                        data: {
-                                            function: prop,
-                                            handler: getFunctionName(original)
-                                        },
-                                        handled: true,
-                                        type: "instrument"
-                                    }
-                                };
-                                if (original.__sentry_original__) wrapOptions.mechanism.data.handler = getFunctionName(original.__sentry_original__);
-                                return wrap(original, wrapOptions);
-                            }));
-                        }));
-                        return originalSend.apply(this, args);
-                    };
-                };
-                TryCatch.id = "TryCatch";
-                return TryCatch;
-            }();
-            var GlobalHandlers = function() {
-                function GlobalHandlers(options) {
-                    this.name = GlobalHandlers.id;
-                    this._onErrorHandlerInstalled = false;
-                    this._onUnhandledRejectionHandlerInstalled = false;
-                    this._options = __assign({
-                        onerror: true,
-                        onunhandledrejection: true
-                    }, options);
-                }
-                GlobalHandlers.prototype.setupOnce = function() {
-                    Error.stackTraceLimit = 50;
-                    if (this._options.onerror) {
-                        logger_logger.log("Global Handler attached: onerror");
-                        this._installGlobalOnErrorHandler();
-                    }
-                    if (this._options.onunhandledrejection) {
-                        logger_logger.log("Global Handler attached: onunhandledrejection");
-                        this._installGlobalOnUnhandledRejectionHandler();
-                    }
-                };
-                GlobalHandlers.prototype._installGlobalOnErrorHandler = function() {
-                    var _this = this;
-                    if (this._onErrorHandlerInstalled) return;
-                    addInstrumentationHandler({
-                        callback: function(data) {
-                            var error = data.error;
-                            var currentHub = getCurrentHub();
-                            var hasIntegration = currentHub.getIntegration(GlobalHandlers);
-                            var isFailedOwnDelivery = error && true === error.__sentry_own_request__;
-                            if (!hasIntegration || shouldIgnoreOnError() || isFailedOwnDelivery) return;
-                            var client = currentHub.getClient();
-                            var event = void 0 === error && isString(data.msg) ? _this._eventFromIncompleteOnError(data.msg, data.url, data.line, data.column) : _this._enhanceEventWithInitialFrame(eventFromUnknownInput(error || data.msg, void 0, {
-                                attachStacktrace: client && client.getOptions().attachStacktrace,
-                                rejection: false
-                            }), data.url, data.line, data.column);
-                            addExceptionMechanism(event, {
-                                handled: false,
-                                type: "onerror"
-                            });
-                            currentHub.captureEvent(event, {
-                                originalException: error
-                            });
-                        },
-                        type: "error"
-                    });
-                    this._onErrorHandlerInstalled = true;
-                };
-                GlobalHandlers.prototype._installGlobalOnUnhandledRejectionHandler = function() {
-                    var _this = this;
-                    if (this._onUnhandledRejectionHandlerInstalled) return;
-                    addInstrumentationHandler({
-                        callback: function(e) {
-                            var error = e;
-                            try {
-                                if ("reason" in e) error = e.reason; else if ("detail" in e && "reason" in e.detail) error = e.detail.reason;
-                            } catch (_oO) {}
-                            var currentHub = getCurrentHub();
-                            var hasIntegration = currentHub.getIntegration(GlobalHandlers);
-                            var isFailedOwnDelivery = error && true === error.__sentry_own_request__;
-                            if (!hasIntegration || shouldIgnoreOnError() || isFailedOwnDelivery) return true;
-                            var client = currentHub.getClient();
-                            var event = is_isPrimitive(error) ? _this._eventFromRejectionWithPrimitive(error) : eventFromUnknownInput(error, void 0, {
-                                attachStacktrace: client && client.getOptions().attachStacktrace,
-                                rejection: true
-                            });
-                            event.level = Severity.Error;
-                            addExceptionMechanism(event, {
-                                handled: false,
-                                type: "onunhandledrejection"
-                            });
-                            currentHub.captureEvent(event, {
-                                originalException: error
-                            });
-                            return;
-                        },
-                        type: "unhandledrejection"
-                    });
-                    this._onUnhandledRejectionHandlerInstalled = true;
-                };
-                GlobalHandlers.prototype._eventFromIncompleteOnError = function(msg, url, line, column) {
-                    var ERROR_TYPES_RE = /^(?:[Uu]ncaught (?:exception: )?)?(?:((?:Eval|Internal|Range|Reference|Syntax|Type|URI|)Error): )?(.*)$/i;
-                    var message = isErrorEvent(msg) ? msg.message : msg;
-                    var name;
-                    var groups = message.match(ERROR_TYPES_RE);
-                    if (groups) {
-                        name = groups[1];
-                        message = groups[2];
-                    }
-                    var event = {
-                        exception: {
-                            values: [ {
-                                type: name || "Error",
-                                value: message
-                            } ]
-                        }
-                    };
-                    return this._enhanceEventWithInitialFrame(event, url, line, column);
-                };
-                GlobalHandlers.prototype._eventFromRejectionWithPrimitive = function(reason) {
-                    return {
-                        exception: {
-                            values: [ {
-                                type: "UnhandledRejection",
-                                value: "Non-Error promise rejection captured with value: " + String(reason)
-                            } ]
-                        }
-                    };
-                };
-                GlobalHandlers.prototype._enhanceEventWithInitialFrame = function(event, url, line, column) {
-                    event.exception = event.exception || {};
-                    event.exception.values = event.exception.values || [];
-                    event.exception.values[0] = event.exception.values[0] || {};
-                    event.exception.values[0].stacktrace = event.exception.values[0].stacktrace || {};
-                    event.exception.values[0].stacktrace.frames = event.exception.values[0].stacktrace.frames || [];
-                    var colno = isNaN(parseInt(column, 10)) ? void 0 : column;
-                    var lineno = isNaN(parseInt(line, 10)) ? void 0 : line;
-                    var filename = isString(url) && url.length > 0 ? url : getLocationHref();
-                    if (0 === event.exception.values[0].stacktrace.frames.length) event.exception.values[0].stacktrace.frames.push({
-                        colno,
-                        filename,
-                        function: "?",
-                        in_app: true,
-                        lineno
-                    });
-                    return event;
-                };
-                GlobalHandlers.id = "GlobalHandlers";
-                return GlobalHandlers;
-            }();
-            var DEFAULT_KEY = "cause";
-            var DEFAULT_LIMIT = 5;
-            var LinkedErrors = function() {
-                function LinkedErrors(options) {
-                    if (void 0 === options) options = {};
-                    this.name = LinkedErrors.id;
-                    this._key = options.key || DEFAULT_KEY;
-                    this._limit = options.limit || DEFAULT_LIMIT;
-                }
-                LinkedErrors.prototype.setupOnce = function() {
-                    addGlobalEventProcessor((function(event, hint) {
-                        var self = getCurrentHub().getIntegration(LinkedErrors);
-                        if (self) {
-                            var handler = self._handler && self._handler.bind(self);
-                            return "function" === typeof handler ? handler(event, hint) : event;
-                        }
-                        return event;
-                    }));
-                };
-                LinkedErrors.prototype._handler = function(event, hint) {
-                    if (!event.exception || !event.exception.values || !hint || !isInstanceOf(hint.originalException, Error)) return event;
-                    var linkedErrors = this._walkErrorTree(hint.originalException, this._key);
-                    event.exception.values = tslib_es6_spread(linkedErrors, event.exception.values);
-                    return event;
-                };
-                LinkedErrors.prototype._walkErrorTree = function(error, key, stack) {
-                    if (void 0 === stack) stack = [];
-                    if (!isInstanceOf(error[key], Error) || stack.length + 1 >= this._limit) return stack;
-                    var stacktrace = computeStackTrace(error[key]);
-                    var exception = exceptionFromStacktrace(stacktrace);
-                    return this._walkErrorTree(error[key], key, tslib_es6_spread([ exception ], stack));
-                };
-                LinkedErrors.id = "LinkedErrors";
-                return LinkedErrors;
-            }();
-            var Dedupe = function() {
-                function Dedupe() {
-                    this.name = Dedupe.id;
-                }
-                Dedupe.prototype.setupOnce = function(addGlobalEventProcessor, getCurrentHub) {
-                    addGlobalEventProcessor((function(currentEvent) {
-                        var self = getCurrentHub().getIntegration(Dedupe);
-                        if (self) {
-                            try {
-                                if (self._shouldDropEvent(currentEvent, self._previousEvent)) {
-                                    logger_logger.warn("Event dropped due to being a duplicate of previously captured event.");
-                                    return null;
-                                }
-                            } catch (_oO) {
-                                return self._previousEvent = currentEvent;
-                            }
-                            return self._previousEvent = currentEvent;
-                        }
-                        return currentEvent;
-                    }));
-                };
-                Dedupe.prototype._shouldDropEvent = function(currentEvent, previousEvent) {
-                    if (!previousEvent) return false;
-                    if (this._isSameMessageEvent(currentEvent, previousEvent)) return true;
-                    if (this._isSameExceptionEvent(currentEvent, previousEvent)) return true;
-                    return false;
-                };
-                Dedupe.prototype._isSameMessageEvent = function(currentEvent, previousEvent) {
-                    var currentMessage = currentEvent.message;
-                    var previousMessage = previousEvent.message;
-                    if (!currentMessage && !previousMessage) return false;
-                    if (currentMessage && !previousMessage || !currentMessage && previousMessage) return false;
-                    if (currentMessage !== previousMessage) return false;
-                    if (!this._isSameFingerprint(currentEvent, previousEvent)) return false;
-                    if (!this._isSameStacktrace(currentEvent, previousEvent)) return false;
-                    return true;
-                };
-                Dedupe.prototype._getFramesFromEvent = function(event) {
-                    var exception = event.exception;
-                    if (exception) try {
-                        return exception.values[0].stacktrace.frames;
-                    } catch (_oO) {
-                        return;
-                    } else if (event.stacktrace) return event.stacktrace.frames;
-                    return;
-                };
-                Dedupe.prototype._isSameStacktrace = function(currentEvent, previousEvent) {
-                    var currentFrames = this._getFramesFromEvent(currentEvent);
-                    var previousFrames = this._getFramesFromEvent(previousEvent);
-                    if (!currentFrames && !previousFrames) return true;
-                    if (currentFrames && !previousFrames || !currentFrames && previousFrames) return false;
-                    currentFrames = currentFrames;
-                    previousFrames = previousFrames;
-                    if (previousFrames.length !== currentFrames.length) return false;
-                    for (var i = 0; i < previousFrames.length; i++) {
-                        var frameA = previousFrames[i];
-                        var frameB = currentFrames[i];
-                        if (frameA.filename !== frameB.filename || frameA.lineno !== frameB.lineno || frameA.colno !== frameB.colno || frameA.function !== frameB.function) return false;
-                    }
-                    return true;
-                };
-                Dedupe.prototype._getExceptionFromEvent = function(event) {
-                    return event.exception && event.exception.values && event.exception.values[0];
-                };
-                Dedupe.prototype._isSameExceptionEvent = function(currentEvent, previousEvent) {
-                    var previousException = this._getExceptionFromEvent(previousEvent);
-                    var currentException = this._getExceptionFromEvent(currentEvent);
-                    if (!previousException || !currentException) return false;
-                    if (previousException.type !== currentException.type || previousException.value !== currentException.value) return false;
-                    if (!this._isSameFingerprint(currentEvent, previousEvent)) return false;
-                    if (!this._isSameStacktrace(currentEvent, previousEvent)) return false;
-                    return true;
-                };
-                Dedupe.prototype._isSameFingerprint = function(currentEvent, previousEvent) {
-                    var currentFingerprint = currentEvent.fingerprint;
-                    var previousFingerprint = previousEvent.fingerprint;
-                    if (!currentFingerprint && !previousFingerprint) return true;
-                    if (currentFingerprint && !previousFingerprint || !currentFingerprint && previousFingerprint) return false;
-                    currentFingerprint = currentFingerprint;
-                    previousFingerprint = previousFingerprint;
-                    try {
-                        return !!(currentFingerprint.join("") === previousFingerprint.join(""));
-                    } catch (_oO) {
-                        return false;
-                    }
-                };
-                Dedupe.id = "Dedupe";
-                return Dedupe;
-            }();
-            var useragent_global = (0, esm_global.getGlobalObject)();
-            var UserAgent = function() {
-                function UserAgent() {
-                    this.name = UserAgent.id;
-                }
-                UserAgent.prototype.setupOnce = function() {
-                    addGlobalEventProcessor((function(event) {
-                        var _a, _b, _c;
-                        if (getCurrentHub().getIntegration(UserAgent)) {
-                            if (!useragent_global.navigator && !useragent_global.location && !useragent_global.document) return event;
-                            var url = (null === (_a = event.request) || void 0 === _a ? void 0 : _a.url) || (null === (_b = useragent_global.location) || void 0 === _b ? void 0 : _b.href);
-                            var referrer = (useragent_global.document || {}).referrer;
-                            var userAgent = (useragent_global.navigator || {}).userAgent;
-                            var headers = __assign(__assign(__assign({}, null === (_c = event.request) || void 0 === _c ? void 0 : _c.headers), referrer && {
-                                Referer: referrer
-                            }), userAgent && {
-                                "User-Agent": userAgent
-                            });
-                            var request = __assign(__assign({}, url && {
-                                url
-                            }), {
-                                headers
-                            });
-                            return __assign(__assign({}, event), {
-                                request
-                            });
-                        }
-                        return event;
-                    }));
-                };
-                UserAgent.id = "UserAgent";
-                return UserAgent;
-            }();
-            var defaultIntegrations = [ new InboundFilters, new FunctionToString, new TryCatch, new Breadcrumbs, new GlobalHandlers, new LinkedErrors, new Dedupe, new UserAgent ];
-            function init(options) {
-                if (void 0 === options) options = {};
-                if (void 0 === options.defaultIntegrations) options.defaultIntegrations = defaultIntegrations;
-                if (void 0 === options.release) {
-                    var window_1 = (0, esm_global.getGlobalObject)();
-                    if (window_1.SENTRY_RELEASE && window_1.SENTRY_RELEASE.id) options.release = window_1.SENTRY_RELEASE.id;
-                }
-                if (void 0 === options.autoSessionTracking) options.autoSessionTracking = true;
-                if (void 0 === options.sendClientReports) options.sendClientReports = true;
-                initAndBind(BrowserClient, options);
-                if (options.autoSessionTracking) startSessionTracking();
-            }
-            function showReportDialog(options) {
-                if (void 0 === options) options = {};
-                var hub = getCurrentHub();
-                var scope = hub.getScope();
-                if (scope) options.user = __assign(__assign({}, scope.getUser()), options.user);
-                if (!options.eventId) options.eventId = hub.lastEventId();
-                var client = hub.getClient();
-                if (client) client.showReportDialog(options);
-            }
-            function lastEventId() {
-                return getCurrentHub().lastEventId();
-            }
-            function forceLoad() {}
-            function onLoad(callback) {
-                callback();
-            }
-            function flush(timeout) {
-                var client = getCurrentHub().getClient();
-                if (client) return client.flush(timeout);
-                logger_logger.warn("Cannot flush events. No client defined.");
-                return SyncPromise.resolve(false);
-            }
-            function sdk_close(timeout) {
-                var client = getCurrentHub().getClient();
-                if (client) return client.close(timeout);
-                logger_logger.warn("Cannot flush events and disable SDK. No client defined.");
-                return SyncPromise.resolve(false);
-            }
-            function sdk_wrap(fn) {
-                return wrap(fn)();
-            }
-            function startSessionTracking() {
-                var window = (0, esm_global.getGlobalObject)();
-                var document = window.document;
-                if ("undefined" === typeof document) {
-                    logger_logger.warn("Session tracking in non-browser environment with @sentry/browser is not supported.");
-                    return;
-                }
-                var hub = getCurrentHub();
-                if ("function" !== typeof hub.startSession || "function" !== typeof hub.captureSession) return;
-                hub.startSession({
-                    ignoreDuration: true
-                });
-                hub.captureSession();
-                addInstrumentationHandler({
-                    callback: function(_a) {
-                        var from = _a.from, to = _a.to;
-                        if (void 0 === from || from === to) return;
-                        hub.startSession({
-                            ignoreDuration: true
-                        });
-                        hub.captureSession();
-                    },
-                    type: "history"
-                });
-            }
-            var SDK_NAME = "sentry.javascript.browser";
-            var windowIntegrations = {};
-            var _window = (0, esm_global.getGlobalObject)();
-            if (_window.Sentry && _window.Sentry.Integrations) windowIntegrations = _window.Sentry.Integrations;
-            var INTEGRATIONS = __assign(__assign(__assign({}, windowIntegrations), integrations_namespaceObject), esm_integrations_namespaceObject);
-        },
-        "../shared/node_modules/@sentry/utils/esm/global.js": (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-            "use strict";
-            __webpack_require__.d(__webpack_exports__, {
-                getGlobalObject: () => getGlobalObject
-            });
-            var _node__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("../shared/node_modules/@sentry/utils/esm/node.js");
-            var fallbackGlobalObject = {};
-            function getGlobalObject() {
-                return (0, _node__WEBPACK_IMPORTED_MODULE_0__.isNodeEnv)() ? __webpack_require__.g : "undefined" !== typeof window ? window : "undefined" !== typeof self ? self : fallbackGlobalObject;
-            }
-        },
-        "../shared/node_modules/@sentry/utils/esm/node.js": (module, __webpack_exports__, __webpack_require__) => {
-            "use strict";
-            __webpack_require__.d(__webpack_exports__, {
-                isNodeEnv: () => isNodeEnv,
-                dynamicRequire: () => dynamicRequire
-            });
-            module = __webpack_require__.hmd(module);
-            function isNodeEnv() {
-                return "[object process]" === Object.prototype.toString.call("undefined" !== typeof process ? process : 0);
-            }
-            function dynamicRequire(mod, request) {
-                return mod.require(request);
-            }
-        },
-        "../shared/node_modules/@sentry/utils/esm/time.js": (module, __webpack_exports__, __webpack_require__) => {
-            "use strict";
-            __webpack_require__.d(__webpack_exports__, {
-                dateTimestampInSeconds: () => dateTimestampInSeconds,
-                timestampInSeconds: () => timestampInSeconds
-            });
-            var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("../shared/node_modules/@sentry/utils/esm/global.js");
-            var _node__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("../shared/node_modules/@sentry/utils/esm/node.js");
-            module = __webpack_require__.hmd(module);
-            var dateTimestampSource = {
-                nowSeconds: function() {
-                    return Date.now() / 1e3;
-                }
-            };
-            function getBrowserPerformance() {
-                var performance = (0, _global__WEBPACK_IMPORTED_MODULE_0__.getGlobalObject)().performance;
-                if (!performance || !performance.now) return;
-                var timeOrigin = Date.now() - performance.now();
-                return {
-                    now: function() {
-                        return performance.now();
-                    },
-                    timeOrigin
-                };
-            }
-            function getNodePerformance() {
-                try {
-                    var perfHooks = (0, _node__WEBPACK_IMPORTED_MODULE_1__.dynamicRequire)(module, "perf_hooks");
-                    return perfHooks.performance;
-                } catch (_) {
-                    return;
-                }
-            }
-            var platformPerformance = (0, _node__WEBPACK_IMPORTED_MODULE_1__.isNodeEnv)() ? getNodePerformance() : getBrowserPerformance();
-            var timestampSource = void 0 === platformPerformance ? dateTimestampSource : {
-                nowSeconds: function() {
-                    return (platformPerformance.timeOrigin + platformPerformance.now()) / 1e3;
-                }
-            };
-            var dateTimestampInSeconds = dateTimestampSource.nowSeconds.bind(dateTimestampSource);
-            var timestampInSeconds = timestampSource.nowSeconds.bind(timestampSource);
-            (function() {
-                var performance = (0, _global__WEBPACK_IMPORTED_MODULE_0__.getGlobalObject)().performance;
-                if (!performance || !performance.now) {
-                    "none";
-                    return;
-                }
-                var threshold = 3600 * 1e3;
-                var performanceNow = performance.now();
-                var dateNow = Date.now();
-                var timeOriginDelta = performance.timeOrigin ? Math.abs(performance.timeOrigin + performanceNow - dateNow) : threshold;
-                var timeOriginIsReliable = timeOriginDelta < threshold;
-                var navigationStart = performance.timing && performance.timing.navigationStart;
-                var hasNavigationStart = "number" === typeof navigationStart;
-                var navigationStartDelta = hasNavigationStart ? Math.abs(navigationStart + performanceNow - dateNow) : threshold;
-                var navigationStartIsReliable = navigationStartDelta < threshold;
-                if (timeOriginIsReliable || navigationStartIsReliable) if (timeOriginDelta <= navigationStartDelta) {
-                    "timeOrigin";
-                    return performance.timeOrigin;
-                } else {
-                    "navigationStart";
-                    return navigationStart;
-                }
-                "dateNow";
-            })();
         },
         "../shared/node_modules/array.prototype.map/implementation.js": (module, __unused_webpack_exports, __webpack_require__) => {
             "use strict";
@@ -20942,6 +16592,81 @@
             }
             module.exports = identity;
         },
+        "../shared/node_modules/lodash/debounce.js": (module, __unused_webpack_exports, __webpack_require__) => {
+            var isObject = __webpack_require__("../shared/node_modules/lodash/isObject.js"), now = __webpack_require__("../shared/node_modules/lodash/now.js"), toNumber = __webpack_require__("../shared/node_modules/lodash/toNumber.js");
+            var FUNC_ERROR_TEXT = "Expected a function";
+            var nativeMax = Math.max, nativeMin = Math.min;
+            function debounce(func, wait, options) {
+                var lastArgs, lastThis, maxWait, result, timerId, lastCallTime, lastInvokeTime = 0, leading = false, maxing = false, trailing = true;
+                if ("function" != typeof func) throw new TypeError(FUNC_ERROR_TEXT);
+                wait = toNumber(wait) || 0;
+                if (isObject(options)) {
+                    leading = !!options.leading;
+                    maxing = "maxWait" in options;
+                    maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
+                    trailing = "trailing" in options ? !!options.trailing : trailing;
+                }
+                function invokeFunc(time) {
+                    var args = lastArgs, thisArg = lastThis;
+                    lastArgs = lastThis = void 0;
+                    lastInvokeTime = time;
+                    result = func.apply(thisArg, args);
+                    return result;
+                }
+                function leadingEdge(time) {
+                    lastInvokeTime = time;
+                    timerId = setTimeout(timerExpired, wait);
+                    return leading ? invokeFunc(time) : result;
+                }
+                function remainingWait(time) {
+                    var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime, timeWaiting = wait - timeSinceLastCall;
+                    return maxing ? nativeMin(timeWaiting, maxWait - timeSinceLastInvoke) : timeWaiting;
+                }
+                function shouldInvoke(time) {
+                    var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime;
+                    return void 0 === lastCallTime || timeSinceLastCall >= wait || timeSinceLastCall < 0 || maxing && timeSinceLastInvoke >= maxWait;
+                }
+                function timerExpired() {
+                    var time = now();
+                    if (shouldInvoke(time)) return trailingEdge(time);
+                    timerId = setTimeout(timerExpired, remainingWait(time));
+                }
+                function trailingEdge(time) {
+                    timerId = void 0;
+                    if (trailing && lastArgs) return invokeFunc(time);
+                    lastArgs = lastThis = void 0;
+                    return result;
+                }
+                function cancel() {
+                    if (void 0 !== timerId) clearTimeout(timerId);
+                    lastInvokeTime = 0;
+                    lastArgs = lastCallTime = lastThis = timerId = void 0;
+                }
+                function flush() {
+                    return void 0 === timerId ? result : trailingEdge(now());
+                }
+                function debounced() {
+                    var time = now(), isInvoking = shouldInvoke(time);
+                    lastArgs = arguments;
+                    lastThis = this;
+                    lastCallTime = time;
+                    if (isInvoking) {
+                        if (void 0 === timerId) return leadingEdge(lastCallTime);
+                        if (maxing) {
+                            clearTimeout(timerId);
+                            timerId = setTimeout(timerExpired, wait);
+                            return invokeFunc(lastCallTime);
+                        }
+                    }
+                    if (void 0 === timerId) timerId = setTimeout(timerExpired, wait);
+                    return result;
+                }
+                debounced.cancel = cancel;
+                debounced.flush = flush;
+                return debounced;
+            }
+            module.exports = debounce;
+        },
         "../shared/node_modules/lodash/eq.js": module => {
             function eq(value, other) {
                 return value === other || value !== value && other !== other;
@@ -21042,6 +16767,13 @@
             var overArg = __webpack_require__("../shared/node_modules/lodash/_overArg.js");
             var nativeKeys = overArg(Object.keys, Object);
             module.exports = nativeKeys;
+        },
+        "../shared/node_modules/lodash/now.js": (module, __unused_webpack_exports, __webpack_require__) => {
+            var root = __webpack_require__("../shared/node_modules/lodash/_root.js");
+            var now = function() {
+                return root.Date.now();
+            };
+            module.exports = now;
         },
         "../shared/node_modules/lodash/property.js": module => {
             function baseProperty(key) {
@@ -25058,19 +20790,6 @@
         }();
     })();
     (() => {
-        __webpack_require__.hmd = module => {
-            module = Object.create(module);
-            if (!module.children) module.children = [];
-            Object.defineProperty(module, "exports", {
-                enumerable: true,
-                set: () => {
-                    throw new Error("ES Modules may not assign module.exports or exports.*, Use ESM export syntax, instead: " + module.id);
-                }
-            });
-            return module;
-        };
-    })();
-    (() => {
         __webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop);
     })();
     (() => {
@@ -25984,309 +21703,23 @@
             } ]); else res = [];
             return res;
         };
-        const eventName = {
-            view: "101",
-            additem: "102",
-            updateitem: "103",
-            removeitem: "104",
-            checkout: "105",
-            recommenditem: "106",
-            proceed_to_checkout: "107",
-            place_order: "108",
-            click_component: "109",
-            product_view: "110",
-            product_share: "111",
-            buy_now: "112",
-            select_product: "113",
-            deselect_product: "114",
-            menu_view: "115",
-            menu_click: "116",
-            catalog_view: "117",
-            catalog_click: "118",
-            sku_click: "119",
-            component_view: "120",
-            display_click: "121",
-            sort_click: "122",
-            select_bundling: "123",
-            add_wishlist: "124",
-            cancel_wishlist: "125",
-            proceed_to_delivery_payment: "126",
-            proceed_to_pay: "127",
-            proceed_to_delivery: "128",
-            quick_payment: "129",
-            click_product: "130",
-            search_suggest: "131",
-            paypal: "132",
-            input: "133",
-            modify: "134",
-            select_shipping: "135",
-            select_payment: "136",
-            inventory_shortage: "137",
-            login_success: "138",
-            view_cart: "139",
-            leave: "999"
-        };
-        const eventCategory = {
-            order: "101",
-            cart: "102",
-            email: "103",
-            expresscheckoutpage: "104"
-        };
-        const productType = {
-            product: "101",
-            addon: "102",
-            subscription: "103"
-        };
-        const hd_const_status = {
-            soldout: "101",
-            selling: "102"
-        };
-        const purchaseSource = {
-            common_store: "101",
-            one_page_store: "102"
-        };
-        const page = {
-            homepage: "101",
-            pdp: "102",
-            cart: "103",
-            order_check_out: "104",
-            transaction: "105",
-            product_search: "106",
-            product_list: "107",
-            user_page: "108",
-            email: "109",
-            expresscheckout: "110",
-            "404page": "111",
-            call_to_action: "112",
-            consumer_home: "113",
-            onepage_checkout: "114",
-            address_confirm: "115",
-            delivery_payment_confirm: "116",
-            delivery_confirm: "117",
-            payment_confirm: "118",
-            addon: "119",
-            other: "120",
-            landing_page: "121"
-        };
-        const generalComponent = {
-            catalog: "101",
-            logo: "102",
-            search: "103",
-            sign_in_bottom: "104",
-            message: "105",
-            cart: "106",
-            store_language: "107",
-            currency: "108",
-            search_product: "109",
-            H1: "110",
-            paragraph: "111",
-            single_image: "112",
-            slider: "113",
-            poster: "114",
-            gallery: "115",
-            media_lr: "116",
-            media_ud: "117",
-            end_payment: "118",
-            end_email: "119",
-            end_fb: "120",
-            end_ins: "121",
-            end_twitter: "122",
-            end_snapchat: "123",
-            end_pinterest: "124",
-            end_line: "125",
-            theme: "126",
-            free_layout: "127",
-            search_pop: "128",
-            search_bar: "129"
-        };
-        const customComponent = {
-            sign_up_tab: "101",
-            sign_in_tab: "102",
-            line_signin: "103",
-            fb_signin: "104",
-            sign_in_105: "105",
-            sign_up: "106",
-            title_component: "107",
-            content_component: "108",
-            productmoduel_component: "109",
-            productlist_component: "110",
-            QRcode_component: "111",
-            ins_component: "112",
-            googlemap_component: "113",
-            facebook_component: "114",
-            video_component: "115",
-            pic_component: "116",
-            product_menu: "117",
-            pre_order: "118",
-            gotoamazon: "119",
-            wishlist: "120",
-            product_descri: "121",
-            deliver_payment: "122",
-            score: "123",
-            reviews: "123",
-            share: "124",
-            recommendation: "125",
-            checkout: "126",
-            removement: "127",
-            sign_in_128: "128",
-            proceed_to_checkout: "129",
-            select_all: "130",
-            deselect_all: "131",
-            select: "132",
-            deselect: "133",
-            product_edit: "134",
-            subscribe_line: "135",
-            back_to_cart: "136",
-            place_order: "137",
-            buy_now: "138",
-            view_more: "139",
-            play_video: "140",
-            more_bundling: "141",
-            rec_turn_page: "142",
-            arrival_notice: "143",
-            more_reviews: "144",
-            consumer_info: "145",
-            message: "146",
-            order: "147",
-            return_order: "148",
-            wishlist_149: "149",
-            wishlist_turn_page: "150",
-            use_coupon: "151",
-            sign_in: "152",
-            subscription: "153",
-            back: "154",
-            continue: "155"
-        };
-        const displayIterm = {
-            24: "101",
-            48: "102",
-            72: "103"
-        };
-        const sortBy = {
-            newestToOldest: "101",
-            oldestToNewest: "102",
-            priceHighToLow: "103",
-            priceLowToHigh: "104",
-            default: "999"
-        };
-        const proListType = {
-            category: "101",
-            all_product: "102",
-            chosen_product: "103"
-        };
-        const shareDest = {
-            line: "101",
-            fb: "102",
-            message: "103",
-            link: "104",
-            whatsapp: "105",
-            twitter: "106"
-        };
-        const signinSource = {
-            sign_in_bottom: "101",
-            order_edit: "102"
-        };
-        const searchType = {
-            user_search: "101",
-            suggest_ai: "102",
-            suggest_search: "103"
-        };
-        const inputBox = {
-            email: "101",
-            first_name: "102",
-            last_name: "103",
-            country: "104",
-            province: "105",
-            city: "106",
-            district: "107",
-            address1: "108",
-            address2: "108",
-            postcode: "109",
-            phone: "110",
-            same_address: "111",
-            another_address: "112",
-            remark: "113"
-        };
-        const objectType = {
-            info: "101",
-            address: "102",
-            shipping: "103"
-        };
-        const isFirst = {
-            yes: "1",
-            no: "0"
-        };
-        const loginResult = {
-            success: "1",
-            fail: "0"
-        };
-        const paramsMapping = {
-            event_name: eventName,
-            event_category: eventCategory,
-            product_type: productType,
-            status: hd_const_status,
-            purchase_source: purchaseSource,
-            page,
-            general_component: generalComponent,
-            custom_component: customComponent,
-            display_iterm: displayIterm,
-            sort_by: sortBy,
-            pro_list_type: proListType,
-            share_dest: shareDest,
-            signin_source: signinSource,
-            search_type: searchType,
-            input_box: inputBox,
-            object: objectType,
-            isFirst,
-            loginResult
-        };
-        const paramsMappingToArrayKeys = [ "general_component", "custom_component", "status", "product_type" ];
-        class TradeHdReport {
-            constructor() {
-                this.paramsMapping = paramsMapping;
-                this.paramsMappingToArrayKeys = paramsMappingToArrayKeys;
-            }
-            setReportContent(params) {
-                const reportContent = {
-                    ...params
-                };
-                const that = this;
-                if (reportContent.products && Array.isArray(reportContent.products)) {
-                    const keys = [ "product_type", "product_id", "variantion_id", "product_name", "product_price", "position", "status", "quantity", "update_quantity", "price" ];
-                    reportContent.products.forEach((spu => {
-                        keys.forEach((key => {
-                            if (spu[key]) {
-                                if (!reportContent[key]) reportContent[key] = [];
-                                reportContent[key].push(spu[key]);
-                            }
-                        }));
-                    }));
-                    delete reportContent.products;
-                }
-                Object.entries(reportContent).forEach((([key, value]) => {
-                    let trueValue = value;
-                    if (key in that.paramsMapping) if (Array.isArray(value)) {
-                        if (that.paramsMappingToArrayKeys.indexOf(key) > -1) trueValue = (value || []).map((v => that.paramsMapping[key][v])).join(",");
-                    } else trueValue = that.paramsMapping[key][value] || value;
-                    if (Array.isArray(trueValue)) trueValue = trueValue.join(",");
-                    reportContent[key] = trueValue;
-                }));
-                const data = {
-                    ...null !== reportContent && void 0 !== reportContent ? reportContent : {}
-                };
-                return data;
-            }
-            event(reportContent, id) {
-                var _window$HdSdk, _window$HdSdk$shopTra;
-                const data = this.setReportContent(reportContent);
-                null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : null === (_window$HdSdk$shopTra = _window$HdSdk.shopTracker) || void 0 === _window$HdSdk$shopTra ? void 0 : _window$HdSdk$shopTra.report(id, data);
-            }
-        }
-        const hidooRp = new TradeHdReport;
         var uuid = __webpack_require__("../shared/node_modules/uuid/index.js");
-        function getEventID() {
+        function tool_getEventID() {
             return `${Date.now()}_${(0, uuid.v4)().replace(/-/g, "")}`;
         }
+        const const_pageMap = {
+            Cart: 60006254,
+            MiniCart: 60006262
+        };
+        const cartPage = {
+            Cart: "Cart",
+            MiniCart: "MiniCart",
+            FilterModal: "FilterModal"
+        };
+        const hiidoEventStatus = {
+            SUCCESS: 1,
+            ERROR: 0
+        };
         Symbol("REPORT_ADD_CART");
         Symbol("PAYPAL_CLICK");
         const encode = str => {
@@ -26296,14 +21729,11 @@
             return null === (_window2 = window) || void 0 === _window2 ? void 0 : _window2.btoa(ec);
         };
         const isFn = object => "function" === typeof object;
+        const templateAlias = window.Shopline.uri.alias;
         class TradeReport {
             constructor() {
                 this.eventBus = event_bus.SL_EventBus;
                 this.storeCurrency = js_cookie.get("currency_code");
-                this.pageMap = {
-                    Cart: 60006254,
-                    MiniCart: 60006262
-                };
                 this.hdPage = {
                     Cart: "cart",
                     MiniCart: "cart"
@@ -26326,30 +21756,12 @@
                 };
                 null === (_this$eventBus = this.eventBus) || void 0 === _this$eventBus ? void 0 : _this$eventBus.emit("global:thirdPartReport", params);
             }
-            reportPaypal(data, key) {
-                const cid = this.pageMap[key];
-                if (cid) {
-                    const products = null === data || void 0 === data ? void 0 : data.map((item => ({
-                        product_id: item.productSeq,
-                        variantion_id: item.productSku,
-                        quantity: item.productNum,
-                        price: currency.formatNumber(Number(null === item || void 0 === item ? void 0 : item.productPrice) || 0).toString(),
-                        product_name: item.productName
-                    })));
-                    const page = this.hdPage[key];
-                    hidooRp.event({
-                        event_name: "quick_payment",
-                        page,
-                        products
-                    }, cid);
-                }
-            }
         }
         const setAddtoCart = (payAmount, currency, eventID) => {
             const params = {
                 payAmount,
                 currency,
-                eventId: eventID || `addToCart${getEventID()}`,
+                eventId: eventID || `addToCart${tool_getEventID()}`,
                 eventTime: Date.now(),
                 eventName: "AddToCart"
             };
@@ -26380,26 +21792,19 @@
             js_cookie.set(`${seq}_fb_data`, {
                 tp: eventID ? 2 : 1,
                 et: Date.now(),
-                ed: eventID || getEventID()
+                ed: eventID || tool_getEventID()
             });
         };
         const reportCheckout = data => {
             const {isCart, report, products} = data;
             if (isCart) {
-                const cid = "/cart" === window.location.pathname ? 60006254 : 60006262;
-                hdRpCheckout(products, cid);
-                hidooRp.event({
-                    event_name: "proceed_to_checkout"
-                }, cid);
-                hidooRp.event({
-                    event_name: "click_component",
-                    custom_component: [ "proceed_to_checkout" ]
-                }, cid);
+                const event_id = const_pageMap[templateAlias] ? const_pageMap[templateAlias] : const_pageMap.MiniCart;
+                hdRpCheckout(products, event_id);
             }
             if (isFn(report)) report();
             sessionStorage.setItem(encode("checkout_track"), "[]");
         };
-        const tradeReport = new TradeReport;
+        new TradeReport;
         function isJsonParse(str) {
             try {
                 JSON.parse(str);
@@ -26438,12 +21843,14 @@
             return url;
         };
         const save = async (products, extra = {}) => {
+            const {stage, query = {}, associateCart = false} = extra;
             try {
+                var _response$data;
                 const settleConfig = state_selector.SL_State.get("tradeSettleConfig");
                 const isLogin = state_selector.SL_State.get("request.cookie.osudb_uid");
-                const {query = {}, onBeforeJump, report, needReport, abandonedOrderSeq, abandonedOrderMark} = extra;
+                const {onBeforeJump, report, needReport, abandonedOrderSeq, abandonedOrderMark} = extra;
                 const needLogin = "ONLY_LOGIN" === (null === settleConfig || void 0 === settleConfig ? void 0 : settleConfig.loginType);
-                const {associateCart = false, discountCode, ...rest} = extra;
+                const {discountCode, ...rest} = extra;
                 let _discountCode = discountCode;
                 if (!associateCart) {
                     var _tradeExtraInfo$disco;
@@ -26470,6 +21877,15 @@
                     },
                     abandonedOrderMark,
                     associateCart
+                });
+                event_bus.SL_EventBus.emit("trade:goToCheckout:report", {
+                    data: {
+                        event_status: null !== response && void 0 !== response && null !== (_response$data = response.data) && void 0 !== _response$data && _response$data.seq ? hiidoEventStatus.SUCCESS : hiidoEventStatus.ERROR,
+                        stage,
+                        isCart: associateCart,
+                        products,
+                        spb: null === query || void 0 === query ? void 0 : query.spb
+                    }
                 });
                 setIniiateCheckout(response.data.seq, needReport);
                 const urlPrefix = `${window.location.protocol}//${window.location.host}`;
@@ -26528,6 +21944,15 @@
                     abandonedInfo: response.data
                 });
             } catch (error) {
+                event_bus.SL_EventBus.emit("trade:goToCheckout:report", {
+                    data: {
+                        event_status: 0,
+                        stage,
+                        isCart: associateCart,
+                        products,
+                        spb: null === query || void 0 === query ? void 0 : query.spb
+                    }
+                });
                 return Promise.reject(error);
             }
         };
@@ -26598,8 +22023,6 @@
         var dist_default = __webpack_require__.n(dist);
         var logger_dist = __webpack_require__("../shared/node_modules/@funnyecho/logger/dist/index.js");
         var logger_dist_default = __webpack_require__.n(logger_dist);
-        var logger_sentry_dist = __webpack_require__("../shared/node_modules/@funnyecho/logger-sentry/dist/index.js");
-        var logger_sentry_dist_default = __webpack_require__.n(logger_sentry_dist);
         var transports = __webpack_require__("../shared/node_modules/@funnyecho/logger/dist/transports/index.js");
         var transports_default = __webpack_require__.n(transports);
         const envConst = {
@@ -26711,7 +22134,13 @@
             get logger() {
                 return loggerGetter();
             },
-            pipeOwner(owner, base = loggerGetter()) {
+            pipeOwner(data) {
+                if ("object" !== typeof data) {
+                    console.warn("[logger.pipeOwner]的入参需为object");
+                    return;
+                }
+                const {owner, base = loggerGetter(), onTag} = data;
+                if (false) ;
                 return logger_dist_default().withLogger(base, logger_dist_default().pipeOwner(owner));
             }
         };
@@ -26855,9 +22284,12 @@
             if (document.head) document.head.appendChild(scriptTag);
         }));
         const load_script = loadScript;
-        const paypal_logger = logger_dist_default().withLogger(utils_logger.logger, logger_dist_default().withOwner("PayPal"), logger_dist_default().pipeTransport(logger_sentry_dist_default().withSentryOnTag((key => {
-            if ("abandonedSeq" === key) return true; else return false;
-        }))));
+        const paypal_logger = utils_logger.pipeOwner({
+            owner: "PayPal",
+            onTag: key => {
+                if ("abandonedSeq" === key) return true; else return false;
+            }
+        });
         function getPaypalSDK() {
             return dist_default();
         }
@@ -26890,6 +22322,7 @@
                     disableFunding: config.disableFunding,
                     domId: config.domId,
                     pageType: config.pageType,
+                    stage: config.stage,
                     needReport: config.needReport,
                     styleOption: {
                         commonStyle: {
@@ -26929,6 +22362,7 @@
                 this.payNowMode = this.payNowMode.bind(this);
                 this.continueMode = this.continueMode.bind(this);
                 this.onCancel = paypal_isFn(config.onCancel) ? config.onCancel : noop;
+                this.afterRender = paypal_isFn(config.afterRender) ? config.afterRender : noop;
                 this.preparePayParams = null;
             }
             getDomHeight(height = 45) {
@@ -26951,14 +22385,6 @@
             }
             get isVerticalLayout() {
                 return "vertical" === this.config.styleOption.commonStyle.paypalSPBStyle.layout;
-            }
-            paypalEmit(products) {
-                const page = this.config.pageType;
-                try {
-                    tradeReport.reportPaypal(products, page);
-                } catch (error) {
-                    this.onPayPalError(error);
-                }
             }
             transProducts(products) {
                 return products.map((item => ({
@@ -27025,13 +22451,32 @@
                         manualCapture
                     }
                 };
-                const {data = {}} = await preparePay(params);
-                const {chDealId, returnUrl: continueRedirectUrl} = data;
-                PayPalReturnUrl = continueRedirectUrl;
-                paypal_logger.debug(`${this.loggerPrefix}[唤起弹窗成功][createOrder][拿chDealId][${chDealId ? "成功" : "失败"}]`, {
-                    ...data
-                });
-                return chDealId;
+                try {
+                    var _this$config$stage;
+                    const {data = {}} = await preparePay(params);
+                    const {chDealId, returnUrl: continueRedirectUrl} = data;
+                    event_bus.SL_EventBus.emit("trade:spb:report", {
+                        data: {
+                            event_status: chDealId ? 1 : 0,
+                            stage: null !== (_this$config$stage = this.config.stage) && void 0 !== _this$config$stage ? _this$config$stage : this.config.pageType,
+                            product: this.products
+                        }
+                    });
+                    PayPalReturnUrl = continueRedirectUrl;
+                    paypal_logger.debug(`${this.loggerPrefix}[唤起弹窗成功][createOrder][拿chDealId][${chDealId ? "成功" : "失败"}]`, {
+                        ...data
+                    });
+                    return chDealId;
+                } catch (e) {
+                    var _this$config$stage2;
+                    event_bus.SL_EventBus.emit("trade:spb:report", {
+                        data: {
+                            event_status: 0,
+                            stage: null !== (_this$config$stage2 = this.config.stage) && void 0 !== _this$config$stage2 ? _this$config$stage2 : this.config.pageType,
+                            product: this.products
+                        }
+                    });
+                }
             }
             async payNowMode() {
                 try {
@@ -27088,10 +22533,10 @@
                     return actions.reject();
                 }
                 if (!this.isContinueMode) return;
-                this.paypalEmit(products);
                 this.products = products;
                 const {url: returnUrl, needLogin, abandonedInfo} = await checkout.save(products, {
                     ...extra,
+                    stage: this.config.stage,
                     query: {
                         ...extra.query,
                         spb: true
@@ -27202,7 +22647,7 @@
             createDisabledStyle(node) {
                 const styleTag = document.createElement("style");
                 this.disabledStyleTag = styleTag;
-                styleTag.innerHTML = `\n      #${this.config.domId || "shopline-paypal"}::after {\n        content: '';\n        display: block;\n        width: 100% !important;\n        z-index: 100;\n        height: ${this.style.height}px;\n        border-radius: 4px;\n        cursor: not-allowed;\n        position: absolute;\n        top: 0;\n        left: 0 !important;\n        background: transparent !important;\n      }\n\n      #${this.config.domId} {\n        opacity: ${this.disabled ? .3 : 1};\n      }\n    `;
+                styleTag.innerHTML = `\n      #${this.config.domId || "shopline-paypal"}::before {\n        width: 0 !important;\n      }\n      #${this.config.domId || "shopline-paypal"}::after {\n        content: '';\n        display: block;\n        z-index: 100;\n        width: 100% !important;\n        height: ${this.style.height}px;\n        border-radius: 4px;\n        cursor: not-allowed;\n        position: absolute;\n        top: 0;\n        left: 0 !important;\n        background: transparent !important;\n      }\n\n      #${this.config.domId} {\n        opacity: ${this.disabled ? .3 : 1};\n      }\n    `;
                 if (!node) return;
                 node.parentElement.prepend(styleTag);
             }
@@ -27306,6 +22751,9 @@
                 const PayPalInstance = new (getPaypalSDK())(this.clientKey, paypalSdkInitParams);
                 PayPalInstance && this.removeSkeleton(node);
                 this.rendered = true;
+                this.afterRender({
+                    dynamicInfo: dynamicRemembered.info
+                });
                 paypal_logger.debug(`${this.loggerPrefix}[初始化SDK]`, {
                     ...paypalSdkInitParams
                 });
@@ -27509,7 +22957,7 @@
                     if (null !== item && void 0 !== item && item.spuId) spu_ids.push(null === item || void 0 === item ? void 0 : item.spuId);
                     reportHd(pageType, actionType, item);
                 }));
-                const eid = getEventID();
+                const eid = tool_getEventID();
                 const tpParams = {
                     skuId: spu_ids,
                     category: content_category,
@@ -32311,6 +27759,93 @@
             mobile_locale_currency_drawer_instance.off();
             mobile_locale_currency_drawer_instance = new mobile_locale_currency_drawer_DrawerMenu;
         }));
+        var lodash_debounce = __webpack_require__("../shared/node_modules/lodash/debounce.js");
+        var lodash_debounce_default = __webpack_require__.n(lodash_debounce);
+        const EVENT_STICKY_ELEMENT_HEIGHT = "stage:header:stickyElementHeight";
+        function getStickyElementHeight(headerSectionSelector = "#shopline-section-header") {
+            let top = 0;
+            $(headerSectionSelector).prevAll().each(((_, el) => {
+                const $el = $(el);
+                if ("sticky" === $el.css("position")) top += $el.height();
+            }));
+            return top;
+        }
+        function emitStickyElementHeight() {
+            const stickyElementHeight = getStickyElementHeight();
+            window.SL_EventBus.emit(EVENT_STICKY_ELEMENT_HEIGHT, {
+                stickyElementHeight
+            });
+        }
+        class StickyElementManager {
+            constructor() {
+                this.namespace = "stage:stickyElementManager";
+                this.bindLoaded();
+            }
+            bindLoaded() {
+                if ("loading" !== document.readyState) this.initAfterLoaded(); else document.addEventListener("DOMContentLoaded", (() => {
+                    this.initAfterLoaded();
+                }));
+            }
+            initAfterLoaded() {
+                this.initStickyJob();
+            }
+            initStickyJob() {
+                emitStickyElementHeight();
+                setTimeout((() => {
+                    requestAnimationFrame(emitStickyElementHeight);
+                }), 2500);
+                this.onEvent();
+            }
+            onEvent() {
+                $(window).on(`scroll.${this.namespace}`, lodash_debounce_default()(emitStickyElementHeight, 1e3, {
+                    leading: true
+                }));
+            }
+            offEvent() {
+                $(window).off(`scroll.${this.namespace}`);
+            }
+        }
+        Symbol("REPORT_ADD_CART");
+        Symbol("PAYPAL_CLICK");
+        state_selector.SL_State.get("templateAlias");
+        class tradeReport_TradeReport {
+            constructor() {
+                this.eventBus = event_bus.SL_EventBus;
+                this.storeCurrency = js_cookie.get("currency_code");
+                this.hdPage = {
+                    Cart: "cart",
+                    MiniCart: "cart"
+                };
+            }
+            touch(data) {
+                var _this$eventBus;
+                const {pageType, actionType, value} = data;
+                const val = {
+                    ...value,
+                    currency: this.storeCurrency
+                };
+                const gaParam = dataReport_ga.click(pageType, actionType, val);
+                const adsParams = clickAdsData(pageType, actionType, val);
+                const fbParams = clickFbData(actionType, val);
+                const params = {
+                    GAAds: adsParams,
+                    GA: gaParam,
+                    FBPixel: fbParams
+                };
+                null === (_this$eventBus = this.eventBus) || void 0 === _this$eventBus ? void 0 : _this$eventBus.emit("global:thirdPartReport", params);
+            }
+        }
+        const tradeReport_setAddtoCart = (payAmount, currency, eventID) => {
+            const params = {
+                payAmount,
+                currency,
+                eventId: eventID || `addToCart${tool_getEventID()}`,
+                eventTime: Date.now(),
+                eventName: "AddToCart"
+            };
+            return params;
+        };
+        new tradeReport_TradeReport;
         var cart_sidebar_render_window;
         const cart_sidebar_render_logger = api_logger(`${SIDEBAR_RENDER} - EMIT`);
         const cart_sidebar_render_external = null === (cart_sidebar_render_window = window) || void 0 === cart_sidebar_render_window ? void 0 : cart_sidebar_render_window.Shopline.event;
@@ -32325,6 +27860,358 @@
         };
         sidebarRender.apiName = SIDEBAR_RENDER;
         const cart_sidebar_render = sidebarRender;
+        const eventName = {
+            view: "101",
+            additem: "102",
+            updateitem: "103",
+            removeitem: "104",
+            checkout: "105",
+            recommenditem: "106",
+            proceed_to_checkout: "107",
+            place_order: "108",
+            click_component: "109",
+            product_view: "110",
+            product_share: "111",
+            buy_now: "112",
+            select_product: "113",
+            deselect_product: "114",
+            menu_view: "115",
+            menu_click: "116",
+            catalog_view: "117",
+            catalog_click: "118",
+            sku_click: "119",
+            component_view: "120",
+            display_click: "121",
+            sort_click: "122",
+            select_bundling: "123",
+            add_wishlist: "124",
+            cancel_wishlist: "125",
+            proceed_to_delivery_payment: "126",
+            proceed_to_pay: "127",
+            proceed_to_delivery: "128",
+            quick_payment: "129",
+            click_product: "130",
+            search_suggest: "131",
+            paypal: "132",
+            input: "133",
+            modify: "134",
+            select_shipping: "135",
+            select_payment: "136",
+            inventory_shortage: "137",
+            login_success: "138",
+            view_cart: "139",
+            leave: "999"
+        };
+        const eventCategory = {
+            order: "101",
+            cart: "102",
+            email: "103",
+            expresscheckoutpage: "104"
+        };
+        const productType = {
+            product: "101",
+            addon: "102",
+            subscription: "103"
+        };
+        const hd_const_status = {
+            soldout: "101",
+            selling: "102"
+        };
+        const purchaseSource = {
+            common_store: "101",
+            one_page_store: "102"
+        };
+        const page = {
+            homepage: "101",
+            pdp: "102",
+            cart: "103",
+            order_check_out: "104",
+            transaction: "105",
+            product_search: "106",
+            product_list: "107",
+            user_page: "108",
+            email: "109",
+            expresscheckout: "110",
+            "404page": "111",
+            call_to_action: "112",
+            consumer_home: "113",
+            onepage_checkout: "114",
+            address_confirm: "115",
+            delivery_payment_confirm: "116",
+            delivery_confirm: "117",
+            payment_confirm: "118",
+            addon: "119",
+            other: "120",
+            landing_page: "121"
+        };
+        const generalComponent = {
+            catalog: "101",
+            logo: "102",
+            search: "103",
+            sign_in_bottom: "104",
+            message: "105",
+            cart: "106",
+            store_language: "107",
+            currency: "108",
+            search_product: "109",
+            H1: "110",
+            paragraph: "111",
+            single_image: "112",
+            slider: "113",
+            poster: "114",
+            gallery: "115",
+            media_lr: "116",
+            media_ud: "117",
+            end_payment: "118",
+            end_email: "119",
+            end_fb: "120",
+            end_ins: "121",
+            end_twitter: "122",
+            end_snapchat: "123",
+            end_pinterest: "124",
+            end_line: "125",
+            theme: "126",
+            free_layout: "127",
+            search_pop: "128",
+            search_bar: "129"
+        };
+        const customComponent = {
+            sign_up_tab: "101",
+            sign_in_tab: "102",
+            line_signin: "103",
+            fb_signin: "104",
+            sign_in_105: "105",
+            sign_up: "106",
+            title_component: "107",
+            content_component: "108",
+            productmoduel_component: "109",
+            productlist_component: "110",
+            QRcode_component: "111",
+            ins_component: "112",
+            googlemap_component: "113",
+            facebook_component: "114",
+            video_component: "115",
+            pic_component: "116",
+            product_menu: "117",
+            pre_order: "118",
+            gotoamazon: "119",
+            wishlist: "120",
+            product_descri: "121",
+            deliver_payment: "122",
+            score: "123",
+            reviews: "123",
+            share: "124",
+            recommendation: "125",
+            checkout: "126",
+            removement: "127",
+            sign_in_128: "128",
+            proceed_to_checkout: "129",
+            select_all: "130",
+            deselect_all: "131",
+            select: "132",
+            deselect: "133",
+            product_edit: "134",
+            subscribe_line: "135",
+            back_to_cart: "136",
+            place_order: "137",
+            buy_now: "138",
+            view_more: "139",
+            play_video: "140",
+            more_bundling: "141",
+            rec_turn_page: "142",
+            arrival_notice: "143",
+            more_reviews: "144",
+            consumer_info: "145",
+            message: "146",
+            order: "147",
+            return_order: "148",
+            wishlist_149: "149",
+            wishlist_turn_page: "150",
+            use_coupon: "151",
+            sign_in: "152",
+            subscription: "153",
+            back: "154",
+            continue: "155"
+        };
+        const displayIterm = {
+            24: "101",
+            48: "102",
+            72: "103"
+        };
+        const sortBy = {
+            newestToOldest: "101",
+            oldestToNewest: "102",
+            priceHighToLow: "103",
+            priceLowToHigh: "104",
+            default: "999"
+        };
+        const proListType = {
+            category: "101",
+            all_product: "102",
+            chosen_product: "103"
+        };
+        const shareDest = {
+            line: "101",
+            fb: "102",
+            message: "103",
+            link: "104",
+            whatsapp: "105",
+            twitter: "106"
+        };
+        const signinSource = {
+            sign_in_bottom: "101",
+            order_edit: "102"
+        };
+        const searchType = {
+            user_search: "101",
+            suggest_ai: "102",
+            suggest_search: "103"
+        };
+        const inputBox = {
+            email: "101",
+            first_name: "102",
+            last_name: "103",
+            country: "104",
+            province: "105",
+            city: "106",
+            district: "107",
+            address1: "108",
+            address2: "108",
+            postcode: "109",
+            phone: "110",
+            same_address: "111",
+            another_address: "112",
+            remark: "113"
+        };
+        const objectType = {
+            info: "101",
+            address: "102",
+            shipping: "103"
+        };
+        const isFirst = {
+            yes: "1",
+            no: "0"
+        };
+        const loginResult = {
+            success: "1",
+            fail: "0"
+        };
+        const paramsMapping = {
+            event_name: eventName,
+            event_category: eventCategory,
+            product_type: productType,
+            status: hd_const_status,
+            purchase_source: purchaseSource,
+            page,
+            general_component: generalComponent,
+            custom_component: customComponent,
+            display_iterm: displayIterm,
+            sort_by: sortBy,
+            pro_list_type: proListType,
+            share_dest: shareDest,
+            signin_source: signinSource,
+            search_type: searchType,
+            input_box: inputBox,
+            object: objectType,
+            isFirst,
+            loginResult
+        };
+        const paramsMappingToArrayKeys = [ "general_component", "custom_component", "status", "product_type" ];
+        class TradeHdReport {
+            constructor() {
+                this.paramsMapping = paramsMapping;
+                this.paramsMappingToArrayKeys = paramsMappingToArrayKeys;
+            }
+            setReportContent(params) {
+                const reportContent = {
+                    ...params
+                };
+                const that = this;
+                if (reportContent.products && Array.isArray(reportContent.products)) {
+                    const keys = [ "product_type", "product_id", "variantion_id", "product_name", "product_price", "position", "status", "quantity", "update_quantity", "price" ];
+                    reportContent.products.forEach((spu => {
+                        keys.forEach((key => {
+                            if (spu[key]) {
+                                if (!reportContent[key]) reportContent[key] = [];
+                                reportContent[key].push(spu[key]);
+                            }
+                        }));
+                    }));
+                    delete reportContent.products;
+                }
+                Object.entries(reportContent).forEach((([key, value]) => {
+                    let trueValue = value;
+                    if (key in that.paramsMapping) if (Array.isArray(value)) {
+                        if (that.paramsMappingToArrayKeys.indexOf(key) > -1) trueValue = (value || []).map((v => that.paramsMapping[key][v])).join(",");
+                    } else trueValue = that.paramsMapping[key][value] || value;
+                    if (Array.isArray(trueValue)) trueValue = trueValue.join(",");
+                    reportContent[key] = trueValue;
+                }));
+                const data = {
+                    ...null !== reportContent && void 0 !== reportContent ? reportContent : {}
+                };
+                return data;
+            }
+            event(reportContent, id) {
+                var _window$HdSdk, _window$HdSdk$shopTra;
+                const data = this.setReportContent(reportContent);
+                null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : null === (_window$HdSdk$shopTra = _window$HdSdk.shopTracker) || void 0 === _window$HdSdk$shopTra ? void 0 : _window$HdSdk$shopTra.report(id, data);
+            }
+        }
+        const hidooRp = new TradeHdReport;
+        const reportPaypal = (data, cid, ext = {}) => {
+            const products = null === data || void 0 === data ? void 0 : data.map((item => ({
+                product_id: item.productSeq,
+                variantion_id: item.productSku,
+                quantity: item.productNum,
+                price: currency.formatNumber(Number(null === item || void 0 === item ? void 0 : item.productPrice) || 0).toString(),
+                product_name: item.productName
+            })));
+            const page = "cart";
+            hidooRp.event({
+                event_name: "quick_payment",
+                page,
+                products,
+                ...ext
+            }, cid);
+        };
+        const proceedToCheckout = ({cid, event_status}) => {
+            hidooRp.event({
+                event_name: "click_component",
+                custom_component: [ "proceed_to_checkout" ]
+            }, cid);
+            hidooRp.event({
+                event_name: "proceed_to_checkout",
+                event_status
+            }, cid);
+        };
+        const reportBuyNow = () => {
+            event_bus.SL_EventBus.on("trade:goToCheckout:report", (({data}) => {
+                const {event_status, isCart, stage} = data;
+                if (isCart) {
+                    const cid = const_pageMap[stage];
+                    if (cid) proceedToCheckout({
+                        cid,
+                        event_status
+                    });
+                }
+            }));
+        };
+        const quickPayment = () => {
+            event_bus.SL_EventBus.on("trade:spb:report", (({data}) => {
+                const {event_status, product, stage} = data;
+                if (cartPage[stage]) {
+                    const cid = const_pageMap[stage];
+                    reportPaypal(product, cid, {
+                        event_status
+                    });
+                }
+            }));
+        };
+        const listenCartReport = () => {
+            reportBuyNow();
+            quickPayment();
+        };
         var isPlainObject = __webpack_require__("./node_modules/lodash/isPlainObject.js");
         var isPlainObject_default = __webpack_require__.n(isPlainObject);
         const isBrowser = "undefined" !== typeof window && "undefined" !== typeof navigator;
@@ -33579,6 +29466,7 @@
         if (window.location.pathname.includes("/cart")) dynamicImportMiniCart(); else if ("newpage" !== cartOpenType) setTimeout(dynamicImportMiniCart, 6e3);
         const globalEvent_interior = window.SL_EventBus;
         const globalEvent_noop = () => {};
+        listenCartReport();
         globalEvent_interior.on(OPEN_MINI_CART, (async ({data = {}, onSuccess = globalEvent_noop} = {}) => {
             const cartId = "cart-select";
             const {needToFetch = true} = data;
@@ -33618,7 +29506,7 @@
         window.SL_EventBus.on(ADD_TO_CART, (async ({spuId, skuId, num, price, success, error, complete, eventID}) => {
             try {
                 var _window;
-                const dataReportReq = setAddtoCart(price, null === (_window = window) || void 0 === _window ? void 0 : _window.SL_State.get("storeInfo.currency"), eventID);
+                const dataReportReq = tradeReport_setAddtoCart(price, null === (_window = window) || void 0 === _window ? void 0 : _window.SL_State.get("storeInfo.currency"), eventID);
                 const res = await service_cart.takeCartService().addSku(spuId, skuId, num, dataReportReq);
                 if (!vo_responseCode.isOk(res)) {
                     let errMsg = res.msg;
@@ -33720,6 +29608,7 @@
                 this.$setNamespace(this.config.namespace);
                 this.jq.header = $(this.selectors.header);
                 this.jq.wrapper = $(this.selectors.wrapper);
+                this.stickyElementManager = new StickyElementManager;
                 this.initMenuDrawer();
                 this.initMobileToolkit();
                 if ($(this.selectors.announcementSlider).length) this.bindAnnouncement();
@@ -33933,10 +29822,11 @@
                 if ($wrapper.hasClass(this.classes.activateSwiperClass)) return;
                 $wrapper.parents(".container").eq(0).addClass(this.classes.activateSwiperContainer);
                 $wrapper.addClass(this.classes.activateSwiperClass);
+                const count = $wrapper.data("block-count");
                 this.initSwiperHeight();
                 this.swiperInstance = new core_class(this.selectors.announcementSlider, {
                     init: true,
-                    loop: true,
+                    loop: count > 1,
                     direction: "vertical",
                     autoplay: {
                         delay: 5e3,
@@ -33957,11 +29847,20 @@
                 $(this.selectors.announcementSlider).parent().html(this.cacheAnnouncementSliderHTML);
             }
             fetchCartInfo() {
-                return service_cart.takeCartService().getCartDetail();
+                return request({
+                    url: "carts/cart/count",
+                    method: "GET"
+                }).then((res => {
+                    if (res.success) return Promise.resolve(res.data);
+                }));
             }
             bindCartCount() {
-                window.SL_State.on("cartInfo", this.activeCart.bind(this));
-                this.fetchCartInfo();
+                window.SL_State.on("cartInfo", (() => {
+                    this.activeCart();
+                }));
+                this.fetchCartInfo().then((num => {
+                    this.activeCart(num);
+                }));
             }
             toggleHeaderBtn($btn, active) {
                 const isToggle = "toggle" === $btn.data("type");
@@ -33977,10 +29876,10 @@
                     $btnWrapper.removeClass(wrapperCls);
                 }
             }
-            activeCart() {
+            activeCart(num = 0) {
                 const cartBtn = $(this.selectors.cartBtn);
                 if (!cartBtn.length) return;
-                const cartNum = window.SL_State.get("cartInfo.count");
+                const cartNum = window.SL_State.get("cartInfo.count") || num;
                 if (cartNum) {
                     cartBtn.removeClass(this.classes.activeCartClass).addClass(this.classes.activeCartClass);
                     $(this.selectors.cartPoint).html(cartNum);
@@ -33991,6 +29890,7 @@
             }
             off() {
                 this.$offAll();
+                this.stickyElementManager.offEvent();
                 this.offEventBus();
             }
         }
@@ -34018,7 +29918,8 @@
             const hardLandKey = {
                 "zh-hans-cn": "zh-CN",
                 "zh-hant-tw": "zh-TW",
-                "zh-hant-hk": "zh-TW"
+                "zh-hant-hk": "zh-TW",
+                nb: "no"
             };
             return null !== (_hardLandKey$alias = hardLandKey[alias]) && void 0 !== _hardLandKey$alias ? _hardLandKey$alias : alias;
         };
@@ -34128,6 +30029,10 @@
                         lang: alias,
                         currencyCode: window.SL_State.get("currencyCode")
                     });
+                    window.Shopline.event.emit("Currency::Format", {
+                        lang: alias,
+                        currencyCode: window.SL_State.get("currencyCode")
+                    });
                 }));
             }
             initCurrencyDropdown() {
@@ -34143,6 +30048,10 @@
                     src_js_cookie_default().set("currency_code_userSetting", code);
                     window.SL_State.set("currencyCode", code);
                     window.SL_EventBus.emit("global:currency:format", {
+                        lang: window.SL_State.get("request.locale"),
+                        currencyCode: code
+                    });
+                    window.Shopline.event.emit("Currency::Format", {
                         lang: window.SL_State.get("request.locale"),
                         currencyCode: code
                     });
@@ -34785,219 +30694,6 @@
             }));
         };
         openCommentDetailModal();
-        var data_report_add_to_cart_window;
-        const data_report_add_to_cart_logger = api_logger(`${data_report_enum_ADD_TO_CART} - EMIT`);
-        const data_report_add_to_cart_external = null === (data_report_add_to_cart_window = window) || void 0 === data_report_add_to_cart_window ? void 0 : data_report_add_to_cart_window.Shopline.event;
-        const data_report_add_to_cart_addToCart = data => {
-            data_report_add_to_cart_logger.info(data);
-            return data_report_add_to_cart_external.emit(data_report_enum_ADD_TO_CART, {
-                data,
-                interior: data_report_enum_ADD_TO_CART,
-                onSuccess: result => {
-                    data_report_add_to_cart_logger.info("success", result);
-                },
-                onError: error => {
-                    data_report_add_to_cart_logger.error(error);
-                }
-            });
-        };
-        data_report_add_to_cart_addToCart.apiName = data_report_enum_ADD_TO_CART;
-        const data_report_add_to_cart = data_report_add_to_cart_addToCart;
-        $(document).ready((function() {
-            $(".common__original-select select").on("change", (function(e) {
-                var _$$find;
-                const label = null === (_$$find = $(this).find(`[data-value="${e.target.value}"]`)) || void 0 === _$$find ? void 0 : _$$find.html();
-                $(this).parent().find(".common__original-select-currentLabel").html(label);
-            }));
-        }));
-        const getSkusTotalPrice = (skus, priceType = "price", removeLowest = false) => {
-            if (skus) {
-                const total = skus.reduce(((origin, current) => origin + (Number(current[priceType]) || 0)), 0);
-                let lowest = 0;
-                if (true === removeLowest) lowest = Math.min.apply(null, skus.map((sku => sku[priceType])));
-                return total - lowest;
-            }
-            return 0;
-        };
-        const snippets_getSkusTotalPrice = getSkusTotalPrice;
-        const FREE_BUNDLE_TYPE = 9;
-        const ALL_BUNDLED_TYPE = 1;
-        const THROTTLE_INTERVAL = 500;
-        const EVENT_ID = "60006253";
-        function hdReport(options) {
-            var _window$HdSdk;
-            null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : _window$HdSdk.shopTracker.report(EVENT_ID, options);
-        }
-        function skuAvailable(value) {
-            if (value instanceof Array) return !!(null !== value && void 0 !== value && value.find((sku => null !== (null === sku || void 0 === sku ? void 0 : sku.promotionPrice) && (null === sku || void 0 === sku ? void 0 : sku.available))));
-            return null !== (null === value || void 0 === value ? void 0 : value.promotionPrice) && (null === value || void 0 === value ? void 0 : value.available);
-        }
-        $(document).ready((() => {
-            const productBundled = state_selector.SL_State.get("productBundled");
-            if (!(null !== productBundled && void 0 !== productBundled && productBundled.primaryProduct) || !(null !== productBundled && void 0 !== productBundled && productBundled.secondaryProductList) || !(null !== productBundled && void 0 !== productBundled && productBundled.display)) return;
-            const {primaryProduct} = productBundled;
-            primaryProduct.productSkuList = primaryProduct.productSkuList.filter((sku => skuAvailable(sku)));
-            const secondaryProductList = productBundled.secondaryProductList.map((product => {
-                product.productSkuList = product.productSkuList.filter((sku => skuAvailable(sku)));
-                return product;
-            })).filter((product => !!product.productSkuList.length));
-            const secondaryNotAvailable = ALL_BUNDLED_TYPE === productBundled.benefitType ? productBundled.secondaryProductList.length !== secondaryProductList.length : !secondaryProductList.length;
-            if (!primaryProduct.productSkuList.length || secondaryNotAvailable) return;
-            const checkedProductIndexList = secondaryProductList.map((() => true));
-            const selectedSecondaryIndexList = secondaryProductList.map((() => 0));
-            let selectedPrimaryIndex = 0;
-            const containerNode = $("#sales-productBundled");
-            const handleNode = $("#sales-productBundled-handle");
-            const closeNode = $("#sales-productBundled-close");
-            const totalNode = $(".sales__productBundled-info-total");
-            const promotionTipsNode = $(".sales__productBundled-info-tips, .sales__productBundled-mobileTips");
-            const imageNodes = $(".sales-productBundled-image");
-            const buyNode = $("#sales-productBundled-buyNow");
-            let lock = false;
-            handleNode.on("click", (() => {
-                containerNode.removeClass("slide-out").addClass("slide-in");
-                if ("mobile" === helper.getPlatform() && !lock) {
-                    (0, scroll_lock.disablePageScroll)();
-                    lock = true;
-                }
-            }));
-            closeNode.on("click", (() => {
-                containerNode.removeClass("slide-in").addClass("slide-out");
-                if (lock) {
-                    (0, scroll_lock.enablePageScroll)();
-                    lock = false;
-                }
-                setTimeout((() => {
-                    containerNode.removeClass("slide-out");
-                }), 500);
-            }));
-            function reportAddToCartEvent() {
-                try {
-                    var _window, _window$SL_State;
-                    const sku = primaryProduct.productSkuList[selectedPrimaryIndex];
-                    const data = {
-                        content_spu_id: primaryProduct.spuSeq,
-                        content_sku_id: sku.skuSeq,
-                        content_category: "",
-                        content_name: primaryProduct.title,
-                        currency: null === (_window = window) || void 0 === _window ? void 0 : null === (_window$SL_State = _window.SL_State) || void 0 === _window$SL_State ? void 0 : _window$SL_State.get("storeInfo.currency"),
-                        price: currency.formatCurrency(sku.promotionPrice || 0),
-                        value: currency.formatCurrency(sku.promotionPrice || 0),
-                        quantity: 1
-                    };
-                    data_report_add_to_cart(data);
-                } catch (e) {
-                    console.error(e);
-                }
-            }
-            function getEffectSkuList() {
-                const skuList = secondaryProductList.map(((product, index) => {
-                    if (checkedProductIndexList[index]) {
-                        const sku = product.productSkuList[selectedSecondaryIndexList[index]];
-                        sku.title = product.title;
-                        return sku;
-                    }
-                    return false;
-                })).filter((product => !!product));
-                const sku = primaryProduct.productSkuList[selectedPrimaryIndex];
-                sku.title = primaryProduct.title;
-                skuList.unshift(sku);
-                return skuList;
-            }
-            function renderPrice() {
-                const effectSkuList = getEffectSkuList();
-                const totalPrice = snippets_getSkusTotalPrice(effectSkuList, "price");
-                const totalPromotionPrice = snippets_getSkusTotalPrice(effectSkuList, "promotionPrice", productBundled.benefitType === FREE_BUNDLE_TYPE);
-                const totalSpan = totalNode.find("span");
-                totalSpan.data("amount", totalPromotionPrice);
-                totalSpan.text(convertFormat(totalPromotionPrice));
-                const promotionTipsSpan = promotionTipsNode.find("span");
-                const saved = totalPrice - totalPromotionPrice;
-                promotionTipsSpan.data("amount", saved);
-                promotionTipsSpan.text(convertFormat(saved));
-                if (totalPrice > totalPromotionPrice && effectSkuList.length > 1) promotionTipsNode.removeClass("hide"); else promotionTipsNode.addClass("hide");
-                if (effectSkuList.length <= 1) buyNode.addClass("disabled"); else buyNode.removeClass("disabled");
-            }
-            const addCart = utils_throttle(THROTTLE_INTERVAL, ((skus = getEffectSkuList()) => {
-                const products = skus.map((({spuSeq, skuSeq}) => ({
-                    productNum: 1,
-                    productSeq: spuSeq,
-                    productSku: skuSeq
-                })));
-                checkout.jump(products, {
-                    bundledActivitySeq: productBundled.activitySeq
-                });
-            }));
-            const checkoutNodes = $('.sales__productBundledItem-checkout input[type="checkbox"]');
-            checkoutNodes.removeAttr("disabled");
-            checkoutNodes.on("change", (function(e) {
-                checkedProductIndexList[$(this).data("index")] = e.target.checked;
-                renderPrice();
-            }));
-            const selectNodes = $(".sales__productBundledItem-select");
-            selectNodes.on("change", (function(e) {
-                const index = $(this).data("index");
-                const skuIndex = e.target.value;
-                let spu;
-                if (index >= 0) {
-                    selectedSecondaryIndexList[index] = skuIndex;
-                    spu = secondaryProductList[index];
-                } else {
-                    selectedPrimaryIndex = skuIndex;
-                    spu = productBundled.primaryProduct;
-                }
-                const sku = spu.productSkuList[skuIndex];
-                const currentPriceNode = $(this).parents(".sales__productBundledItem-content").find(".sales__productBundledItem-price span");
-                currentPriceNode.data("amount", sku.promotionPrice);
-                currentPriceNode.text(convertFormat(sku.promotionPrice));
-                const imageNode = imageNodes.filter(`[data-seq="${spu.spuSeq}"]`);
-                imageNode.find(`.productBundledImage`).hide();
-                imageNode.find(`.productBundledImage[data-index="${skuIndex}"]`).show();
-                renderPrice();
-                hdReport({
-                    event_name: "select_bundling",
-                    sku_id: sku.skuSeq
-                });
-            }));
-            buyNode.on("click", (() => {
-                if (!buyNode.hasClass("disabled")) {
-                    const skuList = getEffectSkuList();
-                    addCart(skuList);
-                    hdReport({
-                        page: "pdp",
-                        event_name: "buy_now",
-                        event_category: "cart",
-                        product_id: skuList.map((item => item.spuSeq)),
-                        variantion_id: skuList.map((item => item.skuSeq)),
-                        quantity: skuList.map((() => 1)),
-                        price: skuList.map((item => currency.formatNumber(item.promotionPrice))),
-                        product_name: skuList.map((item => item.title))
-                    });
-                    window.SL_EventBus.emit("global:thirdPartReport", {
-                        GAAds: [ [ "event", "conversion", null ] ],
-                        GA: [ [ "event", "begin_checkout", null ] ],
-                        GAE: [ [ "event", "begin_checkout", null ] ]
-                    });
-                    reportAddToCartEvent();
-                }
-            }));
-            helper.listenPlatform((platform => {
-                if ("mobile" === platform && !lock && containerNode.hasClass("slide-in")) {
-                    (0, scroll_lock.disablePageScroll)();
-                    lock = true;
-                } else if (lock) {
-                    (0, scroll_lock.enablePageScroll)();
-                    lock = false;
-                    containerNode.removeClass("slide-in").removeClass("slide-out");
-                }
-            }));
-            window.SL_EventBus.on("global:currency:format", (() => {
-                const amountNode = containerNode.find("[data-amount]");
-                amountNode.each((function() {
-                    $(this).text(convertFormat($(this).data("amount")));
-                }));
-            }));
-        }));
         const BTN_TYPE = {
             LINK: "link",
             PRE: "pre",
@@ -35642,25 +31338,26 @@
                 this.onChange = onChange;
             }
             getMax() {
+                if (!this.activeSku) return 999;
                 if (this.isTrackStock()) {
-                    var _this$activeSku, _this$activeSku2;
-                    return (null === (_this$activeSku = this.activeSku) || void 0 === _this$activeSku ? void 0 : _this$activeSku.stock) > 0 ? null === (_this$activeSku2 = this.activeSku) || void 0 === _this$activeSku2 ? void 0 : _this$activeSku2.stock : 1;
+                    var _this$activeSku;
+                    return (null === (_this$activeSku = this.activeSku) || void 0 === _this$activeSku ? void 0 : _this$activeSku.stock) > 0 ? Math.min(999, this.activeSku.stock) : 1;
                 }
                 return 999;
             }
             isTrackStock() {
-                var _this$spu, _this$spu2;
-                return !(null !== (_this$spu = this.spu) && void 0 !== _this$spu && _this$spu.infiniteStock) && !(null !== (_this$spu2 = this.spu) && void 0 !== _this$spu2 && _this$spu2.allowOversold);
+                var _this$activeSku2, _this$activeSku3;
+                return !(null !== (_this$activeSku2 = this.activeSku) && void 0 !== _this$activeSku2 && _this$activeSku2.infiniteStock) && !(null !== (_this$activeSku3 = this.activeSku) && void 0 !== _this$activeSku3 && _this$activeSku3.allowOversold);
             }
             init() {
-                var _this$spu3, _this$activeSku3;
+                var _this$spu, _this$activeSku4;
                 this.skuStepper = new sku_stepper({
                     domReady: true,
                     root: $(`#product-detail-sku-stepper_${this.id}`),
                     max: this.getMax(),
                     value: initValue,
                     min: 1,
-                    disabled: (null === (_this$spu3 = this.spu) || void 0 === _this$spu3 ? void 0 : _this$spu3.soldOut) || this.isTrackStock() && this.activeSku && (null === (_this$activeSku3 = this.activeSku) || void 0 === _this$activeSku3 ? void 0 : _this$activeSku3.stock) < 1,
+                    disabled: (null === (_this$spu = this.spu) || void 0 === _this$spu ? void 0 : _this$spu.soldOut) || this.isTrackStock() && this.activeSku && (null === (_this$activeSku4 = this.activeSku) || void 0 === _this$activeSku4 ? void 0 : _this$activeSku4.stock) < 1,
                     onChange: num => this.onChange(num)
                 });
                 new flashSale({
@@ -35668,8 +31365,8 @@
                 }).init();
             }
             render() {
-                var _this$activeSku4, _this$activeSku5;
-                const showTips = this.isTrackStock() && this.activeSku && (null === (_this$activeSku4 = this.activeSku) || void 0 === _this$activeSku4 ? void 0 : _this$activeSku4.stock) < 10 && (null === (_this$activeSku5 = this.activeSku) || void 0 === _this$activeSku5 ? void 0 : _this$activeSku5.stock) > 0;
+                var _this$activeSku5, _this$activeSku6;
+                const showTips = this.isTrackStock() && this.activeSku && (null === (_this$activeSku5 = this.activeSku) || void 0 === _this$activeSku5 ? void 0 : _this$activeSku5.stock) < 10 && (null === (_this$activeSku6 = this.activeSku) || void 0 === _this$activeSku6 ? void 0 : _this$activeSku6.stock) > 0;
                 if (showTips) {
                     const content = t(`common.stock-limit`, {
                         stock: this.activeSku.stock
@@ -35681,7 +31378,7 @@
                 if (show) $(this.root).children(".stepper-tip").html(content).removeClass("hide"); else $(this.root).children(".stepper-tip").addClass("hide");
             }
             setActiveSku(sku) {
-                var _this$activeSku6;
+                var _this$activeSku7;
                 let current = this.skuStepper.data.value < 0 ? 1 : this.skuStepper.data.value;
                 if (!sku) {
                     this.activeSku = null;
@@ -35704,12 +31401,68 @@
                 const stepperData = {
                     value: current,
                     max: this.getMax(),
-                    disabled: this.spu.soldOut || this.isTrackStock() && this.activeSku && (null === (_this$activeSku6 = this.activeSku) || void 0 === _this$activeSku6 ? void 0 : _this$activeSku6.stock) < 1
+                    disabled: this.spu.soldOut || this.isTrackStock() && this.activeSku && (null === (_this$activeSku7 = this.activeSku) || void 0 === _this$activeSku7 ? void 0 : _this$activeSku7.stock) < 1
                 };
                 this.skuStepper.setStepperData(stepperData);
                 this.render();
             }
         }
+        function checkedEvent_defineProperty(obj, key, value) {
+            if (key in obj) Object.defineProperty(obj, key, {
+                value,
+                enumerable: true,
+                configurable: true,
+                writable: true
+            }); else obj[key] = value;
+            return obj;
+        }
+        class EventAddCheckoutEnd {
+            constructor(name) {
+                checkedEvent_defineProperty(this, "index", 0);
+                checkedEvent_defineProperty(this, "name", "event_add_checkout_by_le");
+                if (name) this.name = name;
+            }
+            static getUuid() {
+                return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (function(c) {
+                    const r = 16 * Math.random() | 0;
+                    const v = "x" === c ? r : 3 & r | 8;
+                    return v.toString(16);
+                }));
+            }
+            getCheckoutKey() {
+                this.index += 1;
+                return `${this.name}_${EventAddCheckoutEnd.getUuid()}_${this.index}`;
+            }
+            getUuidAndMonitorCheckoutEnd(eventName, callback) {
+                var _window;
+                const key = this.getCheckoutKey();
+                null === (_window = window) || void 0 === _window ? void 0 : _window.SL_EventBus.on(eventName, (data => {
+                    var _data$data;
+                    const {event_status, stage} = null !== (_data$data = data.data) && void 0 !== _data$data ? _data$data : {};
+                    if (stage === key) callback(event_status);
+                }));
+                return key;
+            }
+        }
+        const checkoutEnd = new EventAddCheckoutEnd;
+        var data_report_add_to_cart_window;
+        const data_report_add_to_cart_logger = api_logger(`${data_report_enum_ADD_TO_CART} - EMIT`);
+        const data_report_add_to_cart_external = null === (data_report_add_to_cart_window = window) || void 0 === data_report_add_to_cart_window ? void 0 : data_report_add_to_cart_window.Shopline.event;
+        const data_report_add_to_cart_addToCart = data => {
+            data_report_add_to_cart_logger.info(data);
+            return data_report_add_to_cart_external.emit(data_report_enum_ADD_TO_CART, {
+                data,
+                interior: data_report_enum_ADD_TO_CART,
+                onSuccess: result => {
+                    data_report_add_to_cart_logger.info("success", result);
+                },
+                onError: error => {
+                    data_report_add_to_cart_logger.error(error);
+                }
+            });
+        };
+        data_report_add_to_cart_addToCart.apiName = data_report_enum_ADD_TO_CART;
+        const data_report_add_to_cart = data_report_add_to_cart_addToCart;
         const {formatCurrency: product_button_report_formatCurrency} = currency;
         function reportAddToCartEvent(data) {
             try {
@@ -35718,7 +31471,7 @@
                 console.error(e);
             }
         }
-        function addToCartThirdReport({spuId, name, price, skuId, num, eventID = getEventID(), variant}) {
+        function addToCartThirdReport({spuId, name, price, skuId, num, eventID = tool_getEventID(), variant}) {
             var _window, _window$SL_State;
             window.SL_EventBus.emit("global:thirdPartReport", {
                 GA: [ [ "event", "add_to_cart", {
@@ -35769,7 +31522,7 @@
             });
             return eventID;
         }
-        function product_button_report_addToCartHdReport({spuId, skuId, num, price, name, page}) {
+        function product_button_report_addToCartHdReport({spuId, skuId, num, price, name, page, event_status}) {
             var _window$HdSdk;
             null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : _window$HdSdk.shopTracker.report("60006263", {
                 page,
@@ -35780,10 +31533,11 @@
                 variantion_id: skuId,
                 quantity: num,
                 price: product_button_report_formatCurrency(price),
-                product_name: name
+                product_name: name,
+                event_status
             });
         }
-        function buyNowHdReport({spuId, skuId, num, price, name, page}) {
+        function buyNowHdReport({spuId, skuId, num, price, name, page, event_status}) {
             var _window$HdSdk2;
             null === (_window$HdSdk2 = window.HdSdk) || void 0 === _window$HdSdk2 ? void 0 : _window$HdSdk2.shopTracker.report("60006263", {
                 page,
@@ -35793,7 +31547,8 @@
                 quantity: num,
                 price: product_button_report_formatCurrency(price),
                 product_name: name,
-                event_category: "cart"
+                event_category: "cart",
+                event_status
             });
         }
         function paypalHdReport(data) {
@@ -35844,7 +31599,21 @@
                 var _this$buttonConfig, _this$buttonConfig$or;
                 if (0 === $(`#${this.payPayId}`).length) return;
                 this.buttonConfig = window.SL_State.get("productSettleButtonConfig");
+                const stage = checkoutEnd.getUuidAndMonitorCheckoutEnd("trade:spb:report", (status => {
+                    const {name, price, spuSeq: spuId, skuSeq: skuId, num} = this.activeSku;
+                    paypalHdReport({
+                        event_name: "quick_payment",
+                        product_id: spuId,
+                        variantion_id: skuId,
+                        quantity: num,
+                        price: product_button_formatCurrency(price),
+                        product_name: name,
+                        page: this.page,
+                        event_status: status
+                    });
+                }));
                 this.PayPalButton = new components_paypal({
+                    stage,
                     needReport: () => {
                         var _this$activeSku, _this$sku;
                         const {name, price, spuSeq: spuId, skuSeq: skuId, num} = this.activeSku;
@@ -35857,21 +31626,7 @@
                             variant: getVariant(null === (_this$activeSku = this.activeSku) || void 0 === _this$activeSku ? void 0 : _this$activeSku.skuAttributeIds, null === (_this$sku = this.sku) || void 0 === _this$sku ? void 0 : _this$sku.skuAttributeMap)
                         });
                     },
-                    beforeCreateOrder: () => {
-                        const {name, price, spuSeq: spuId, skuSeq: skuId, num} = this.activeSku;
-                        const reportData = {
-                            event_name: "quick_payment",
-                            product_id: spuId,
-                            variantion_id: skuId,
-                            quantity: num,
-                            price: product_button_formatCurrency(price),
-                            product_name: name
-                        };
-                        paypalHdReport({
-                            ...reportData,
-                            page: this.page
-                        });
-                    },
+                    beforeCreateOrder: () => {},
                     domId: this.payPayId,
                     height: $(`#${this.payPayId}`).height(),
                     dynamic: null === (_this$buttonConfig = this.buttonConfig) || void 0 === _this$buttonConfig ? void 0 : null === (_this$buttonConfig$or = _this$buttonConfig.originConfig) || void 0 === _this$buttonConfig$or ? void 0 : _this$buttonConfig$or.system,
@@ -35880,6 +31635,9 @@
                         if (!this.buttonConfig.buyNow) this.extraBuyNow();
                         $(`#${this.payPayId}`).remove();
                         $(this.buyButton).filter(".product-more-payment-button").remove();
+                    },
+                    afterRender: () => {
+                        if (!this.activeSku) this.setPaypalDisabled();
                     },
                     onInit: () => {
                         $(this.buyButton).filter(".product-more-payment-button").html(t("productDetail.morePaymentOptions"));
@@ -35891,11 +31649,10 @@
                 }));
             }
             extraBuyNow() {
-                var _this$activeSku$soldO, _this$activeSku2;
                 const buyNow = `<button class="buy-now btn btn-primary btn-lg ${this.buyButton.substr(1)} __sl-custom-track-product-detail-buy-now paypalAddBuyNow">\n        <span>${t("common.buy-now")}</span>\n      </button>`;
                 $(`#${this.payPayId}`).before(buyNow);
                 this.bindBuyNow();
-                this.setTradeButtonHide(null !== (_this$activeSku$soldO = null === (_this$activeSku2 = this.activeSku) || void 0 === _this$activeSku2 ? void 0 : _this$activeSku2.soldOut) && void 0 !== _this$activeSku$soldO ? _this$activeSku$soldO : true);
+                this.setTradeButtonHide(this.activeSku ? !this.activeSku.available : this.spu.soldOut);
             }
             setLoading(button, loading) {
                 let dom = this.addButton;
@@ -35925,7 +31682,15 @@
                     }
                     this.setLoading("add", true);
                     const {spuSeq: spuId, skuSeq: skuId, num, name, price} = this.activeSku;
-                    const eventID = getEventID();
+                    const eventID = tool_getEventID();
+                    const hdReportData = {
+                        page: this.page,
+                        spuId,
+                        skuId,
+                        num,
+                        price,
+                        name
+                    };
                     window.SL_EventBus.emit(ADD_TO_CART, {
                         spuId,
                         skuId,
@@ -35933,9 +31698,19 @@
                         price,
                         name,
                         eventID: `addToCart${eventID}`,
-                        error: this.onAddError,
+                        error: (...e) => {
+                            product_button_report_addToCartHdReport({
+                                ...hdReportData,
+                                event_status: 0
+                            });
+                            this.onAddError(...e);
+                        },
                         success: () => {
-                            var _this$activeSku3, _this$sku2, _this$onAddSuccess;
+                            var _this$activeSku2, _this$sku2, _this$onAddSuccess;
+                            product_button_report_addToCartHdReport({
+                                ...hdReportData,
+                                event_status: 1
+                            });
                             addToCartThirdReport({
                                 spuId,
                                 name,
@@ -35943,7 +31718,7 @@
                                 skuId,
                                 num,
                                 eventID,
-                                variant: getVariant(null === (_this$activeSku3 = this.activeSku) || void 0 === _this$activeSku3 ? void 0 : _this$activeSku3.skuAttributeIds, null === (_this$sku2 = this.sku) || void 0 === _this$sku2 ? void 0 : _this$sku2.skuAttributeMap)
+                                variant: getVariant(null === (_this$activeSku2 = this.activeSku) || void 0 === _this$activeSku2 ? void 0 : _this$activeSku2.skuAttributeIds, null === (_this$sku2 = this.sku) || void 0 === _this$sku2 ? void 0 : _this$sku2.skuAttributeMap)
                             });
                             null === (_this$onAddSuccess = this.onAddSuccess) || void 0 === _this$onAddSuccess ? void 0 : _this$onAddSuccess.call(this);
                         },
@@ -35951,19 +31726,25 @@
                             this.setLoading("add", false);
                         }
                     });
-                    product_button_report_addToCartHdReport({
+                })));
+                $this.bindBuyNow();
+            }
+            bindBuyNow() {
+                const stage = checkoutEnd.getUuidAndMonitorCheckoutEnd("trade:goToCheckout:report", (status => {
+                    const {name, price, spuSeq: spuId, skuSeq: skuId, num} = this.activeSku;
+                    const hdReportData = {
                         page: this.page,
-                        button: this.addButton,
                         spuId,
                         skuId,
                         num,
                         price,
                         name
+                    };
+                    buyNowHdReport({
+                        ...hdReportData,
+                        event_status: status
                     });
-                })));
-                $this.bindBuyNow();
-            }
-            bindBuyNow() {
+                }));
                 const $this = this;
                 $(this.buyButton).on("click", utils_debounce(300, (() => {
                     if ($this.isPreview()) {
@@ -35982,31 +31763,23 @@
                         productPrice: this.activeSku.price,
                         productName: this.activeSku.name
                     } ];
+                    const {name, price, spuSeq: spuId, skuSeq: skuId, num} = this.activeSku;
                     checkout.jump(product, {
+                        stage,
                         needReport: () => {
-                            var _this$activeSku4, _this$sku3;
-                            const {name, price, spuSeq: spuId, skuSeq: skuId, num} = this.activeSku;
+                            var _this$activeSku3, _this$sku3;
                             return addToCartThirdReport({
                                 spuId,
                                 name,
                                 skuId,
                                 num,
                                 price,
-                                variant: getVariant(null === (_this$activeSku4 = this.activeSku) || void 0 === _this$activeSku4 ? void 0 : _this$activeSku4.skuAttributeIds, null === (_this$sku3 = this.sku) || void 0 === _this$sku3 ? void 0 : _this$sku3.skuAttributeMap)
+                                variant: getVariant(null === (_this$activeSku3 = this.activeSku) || void 0 === _this$activeSku3 ? void 0 : _this$activeSku3.skuAttributeIds, null === (_this$sku3 = this.sku) || void 0 === _this$sku3 ? void 0 : _this$sku3.skuAttributeMap)
                             });
                         }
                     }).catch((() => {
                         this.setLoading("buy", false);
                     }));
-                    const {name, price, spuSeq: spuId, skuSeq: skuId, num} = this.activeSku;
-                    buyNowHdReport({
-                        page: this.page,
-                        spuId,
-                        skuId,
-                        num,
-                        price,
-                        name
-                    });
                 })));
             }
             setActiveSku(sku) {
@@ -36133,11 +31906,15 @@
                         isSavePrice: true
                     });
                     isHidden = false;
-                    $el.html(`Save ${getPriceContent()}`);
+                    $el.html(t("productList.container.listItem.saveByJs", {
+                        priceDom: getPriceContent()
+                    }));
                 } else isHidden = true;
             } else {
                 isHidden = false;
-                $el.html(`${ratioCalc}% OFF`);
+                $el.html(t("productList.container.listItem.saveRatio", {
+                    price: ratioCalc
+                }));
             } else isHidden = true;
             $el.toggleClass("hide", isHidden);
         }
@@ -37109,7 +32886,7 @@
                         self.setCurrentSlidePB(currentSlideBox, skuImageUrl);
                         self.bindMobileSkuImageScaleDom();
                     } else {
-                        currentSkuImageBox.find(".product_m_skuImage").attr({
+                        currentSkuImageBox.find(".product_m_skuImage").removeAttr("srcset data-srcset").attr({
                             src: skuImageUrl,
                             "data-photoswipe-src": imgUrl(skuImageUrl, {
                                 width: 1800
@@ -38428,7 +34205,7 @@
                     shadowContent.children(".mce-content-body").css("word-break", "break-word");
                     shadowContent.prepend($("<style></style>").attr({
                         type: "text/css"
-                    }).append(`body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;line-height:1.4;margin:1rem}table{border-collapse:collapse}table:not([cellpadding]) td,table:not([cellpadding]) th{padding:.4rem}table:not([border="0"]):not([style*=border-width]) td,table:not([border="0"]):not([style*=border-width]) th{border-width:1px}table:not([border="0"]):not([style*=border-style]) td,table:not([border="0"]):not([style*=border-style]) th{border-style:solid}table:not([border="0"]):not([style*=border-color]) td,table:not([border="0"]):not([style*=border-color]) th{border-color:#ccc}iframe{max-width:100%}img{height:auto;max-width:100%}figure{display:table;margin:1rem auto}figure figcaption{color:#999;display:block;margin-top:.25rem;text-align:center}hr{border-color:#ccc;border-style:solid;border-width:1px 0 0 0}code{background-color:#e8e8e8;border-radius:3px;padding:.1rem .2rem}.mce-content-body:not([dir=rtl]) blockquote{border-left:2px solid #ccc;margin-left:1.5rem;padding-left:1rem}.mce-content-body[dir=rtl] blockquote{border-right:2px solid #ccc;margin-right:1.5rem;padding-right:1rem}@media screen and (max-width: 750px){table{width: 100%!important}}`));
+                    }).append(`body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;line-height:1.4;margin:1rem}table{border-collapse:collapse}table:not([cellpadding]) td,table:not([cellpadding]) th{padding:.4rem}table:not([border="0"]):not([style*=border-width]) td,table:not([border="0"]):not([style*=border-width]) th{border-width:1px}table:not([border="0"]):not([style*=border-style]) td,table:not([border="0"]):not([style*=border-style]) th{border-style:solid}table:not([border="0"]):not([style*=border-color]) td,table:not([border="0"]):not([style*=border-color]) th{border-color:#ccc}iframe{max-width:100%}img{height:auto;max-width:100%}figure{display:table;margin:1rem auto}figure figcaption{color:#999;display:block;margin-top:.25rem;text-align:center}hr{border-color:#ccc;border-style:solid;border-width:1px 0 0 0}code{background-color:#e8e8e8;border-radius:3px;padding:.1rem .2rem}.mce-content-body:not([dir=rtl]) blockquote{border-left:2px solid #ccc;margin-left:1.5rem;padding-left:1rem}.mce-content-body[dir=rtl] blockquote{border-right:2px solid #ccc;margin-right:1.5rem;padding-right:1rem}@media screen and (max-width: 750px){table{width: 100%}}`));
                     const shadowRoot = el.attachShadow({
                         mode: "open"
                     });
@@ -38618,7 +34395,7 @@
             transContentByShadowDom($item, content) {
                 const $content = $item.find(".base-collapse-item__content");
                 const isAside = $content.hasClass("aside");
-                $content.html(`\n      <div style="overflow: hidden;" data-node="shadow-content">\n        <div class="mce-content-body ${isAside ? "aside" : "bottom"}">\n        <style>\n        .mce-content-body table{\n          text-align: center;\n        }\n        .mce-content-body.aside table{\n          min-width: 100% !important;\n        }\n        .mce-content-body img {\n          opacity: 0;\n        }\n        .mce-content-body img[srcset],\n        .mce-content-body img[src] {\n          opacity: 1;\n        }\n        @media (max-width: 749.98px){\n          .mce-content-body table{\n            min-width: 100% !important;\n          }\n        }\n        .mce-content-body .table-wraper-fix{\n          padding-bottom: 1px;\n          padding-right: 1px;\n        }\n        @media (min-width: 749.98px){\n          .mce-content-body.bottom .table-wraper-fix > table > tbody > tr:first-child td,\n          .mce-content-body.bottom .table-wraper-fix > table > tbody > tr:first-child th{\n            min-width: 95px !important;\n          }\n        }\n        .table-wraper-fix > table > tbody > tr td,\n        .table-wraper-fix > table > tbody > tr th{\n          white-space: nowrap;\n        }\n        .table-wraper-fix > table > tbody > tr td,\n        .table-wraper-fix > table > tbody > tr th {\n          padding: 10px 12px !important;\n        }\n      </style>\n          ${content}\n        </div>\n      </div>\n      <div data-node="shadow-dom"></div>\n    `);
+                $content.html(`\n      <div style="overflow: hidden;" data-node="shadow-content">\n        <div class="mce-content-body ${isAside ? "aside" : "bottom"}">\n        <style>\n        .mce-content-body.aside table{\n          min-width: 100% !important;\n        }\n        .mce-content-body img {\n          opacity: 0;\n        }\n        .mce-content-body img[srcset],\n        .mce-content-body img[src] {\n          opacity: 1;\n        }\n        @media (max-width: 749.98px){\n          .mce-content-body table{\n            min-width: 100% !important;\n          }\n        }\n        .mce-content-body .table-wraper-fix{\n          padding-bottom: 1px;\n          padding-right: 1px;\n        }\n        \n        @media (min-width: 749.98px){\n          .mce-content-body .table-wraper-fix > table > tbody > tr td,\n          .mce-content-body .table-wraper-fix > table > tbody > tr th{\n            min-width:  80px !important;\n            box-sizing: border-box !important;\n          }\n          .mce-content-body.bottom .table-wraper-fix > table > tbody > tr td,\n          .mce-content-body.bottom .table-wraper-fix > table > tbody > tr th{\n            min-width: 120px !important;\n          }\n        }\n        .table-wraper-fix > table > tbody > tr td,\n        .table-wraper-fix > table > tbody > tr th {\n          padding: 8px;\n        }\n      </style>\n          ${content}\n        </div>\n      </div>\n      <div data-node="shadow-dom"></div>\n    `);
                 window.lozadObserver.observe();
                 js_createShadowDom();
             }
@@ -38877,7 +34654,7 @@
                 const addToCart = this;
                 $("#page-product-detail .addToCartList_content").on("click", ".addToCart", (ev => {
                     const {spuSeq: spuId, skuSeq: skuId, name, price} = addToCart.activeSku;
-                    const eventID = getEventID();
+                    const eventID = tool_getEventID();
                     window.Shopline.event.emit("Cart::AddToCart", {
                         data: {
                             spuId,
@@ -39853,7 +35630,15 @@
             }
             toggleAddLoading(true);
             const {spuSeq: spuId, skuSeq: skuId, num, name, price} = activeSku;
-            const eventID = getEventID();
+            const eventID = tool_getEventID();
+            const hdReportData = {
+                page: hdReportPage,
+                spuId,
+                skuId,
+                name,
+                price,
+                num
+            };
             window.SL_EventBus.emit(ADD_TO_CART, {
                 spuId,
                 skuId,
@@ -39861,8 +35646,17 @@
                 price,
                 name,
                 eventID: `addToCart${eventID}`,
-                error: () => {},
+                error: () => {
+                    product_button_report_addToCartHdReport({
+                        ...hdReportData,
+                        event_status: 0
+                    });
+                },
                 success: () => {
+                    product_button_report_addToCartHdReport({
+                        ...hdReportData,
+                        event_status: 1
+                    });
                     addToCartThirdReport({
                         spuId,
                         name,
@@ -39875,14 +35669,6 @@
                 complete: () => {
                     toggleAddLoading(false);
                 }
-            });
-            product_button_report_addToCartHdReport({
-                page: hdReportPage,
-                spuId,
-                skuId,
-                name,
-                price,
-                num
             });
         }
         function listenCurrencyCodeChange(id, statePath, quantityStepper) {
@@ -39977,21 +35763,21 @@
         var report = __webpack_require__("../shared/browser/utils/report/index.js");
         const {formatCurrency: report_formatCurrency} = currency;
         const currentSpu = window.SL_State.get("product.spu");
-        const report_EVENT_ID = "60006253";
+        const EVENT_ID = "60006253";
         const report_parent = "#page-product-detail";
-        function report_hdReport(options) {
+        function hdReport(options) {
             var _window$HdSdk;
-            null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : _window$HdSdk.shopTracker.report(report_EVENT_ID, options);
+            null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : _window$HdSdk.shopTracker.report(EVENT_ID, options);
         }
         function clickCompReport(custom_component) {
-            report_hdReport({
+            hdReport({
                 event_name: "click_component",
                 page: "pdp",
                 custom_component
             });
         }
         function exposeCompReport(custom_component) {
-            report_hdReport({
+            hdReport({
                 event_name: "component_view",
                 page: "pdp",
                 custom_component
@@ -40054,7 +35840,7 @@
                     rank: Number(productIndex) + 1,
                     status: productStatus
                 };
-                report_hdReport({
+                hdReport({
                     event_name: "recommenditem",
                     ...statData
                 });
@@ -40069,7 +35855,7 @@
                     Whatsapp: "whatsapp"
                 };
                 clickCompReport("share");
-                report_hdReport({
+                hdReport({
                     event_name: "product_share",
                     share_dest: platformMap[thisPlatform]
                 });
@@ -40094,7 +35880,7 @@
                     isExposedProductVideo = true;
                 }
             }));
-            window.SL_EventBus.emit("global:hdReport:exit", [ report_EVENT_ID, null ]);
+            window.SL_EventBus.emit("global:hdReport:exit", [ EVENT_ID, null ]);
             collectExposeObserver();
             window.SL_EventBus.on("global:hdReport:expose", (target => {
                 if ($(target).hasClass(exposeConfig.amazon.cls)) exposeCompReport(exposeConfig.amazon.statName);
@@ -40110,7 +35896,7 @@
         }));
         window.SL_EventBus.on("product:sku:change", (([sku]) => {
             if ((null === sku || void 0 === sku ? void 0 : sku.spuSeq) === (null === currentSpu || void 0 === currentSpu ? void 0 : currentSpu.spuSeq)) if (sku) {
-                report_hdReport({
+                hdReport({
                     event_name: "sku_click",
                     sku_id: sku.spuSeq
                 });
@@ -40123,7 +35909,7 @@
                         currency: window.SL_State.get("storeInfo.currency"),
                         value: report_formatCurrency(sku.price || 0)
                     }, {
-                        eventID: `viewContent${getEventID()}`
+                        eventID: `viewContent${tool_getEventID()}`
                     } ] ]
                 });
             }

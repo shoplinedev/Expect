@@ -1,0 +1,32 @@
+<form class="row" style="--sl-gutter-y: 20px" id="contact-form">
+    {{#formItem "name" "class='col-24 col-md-12'"}}
+      {{snippet 
+        'product/commons/base-input'
+        inputRestAttr='autocomplete="name" maxlength="255"'
+        name="name" placeholder=(t 'common.username') 
+      }}
+    {{/formItem}}
+    {{#formItem "email" "class='col-24 col-md-12'"}}
+      {{snippet 
+        'product/commons/base-input'
+        inputRestAttr='autocomplete="email" maxlength="255"'
+        name="email" placeholder=(t 'common.email2') 
+      }}
+    {{/formItem}}
+    {{#formItem "phone" "class='col-24'"}}
+      {{snippet 
+        'product/commons/base-input'
+        inputRestAttr='autocomplete="tel" maxlength="255"'
+        name="phone" placeholder=(t 'common.tel-phone') 
+      }}
+    {{/formItem}}
+    {{#formItem "comment" "class='col-24'"}}
+      {{snippet 
+        'product/commons/base-input'
+        wrapperClass='contact-form__textarea'
+        inputRestAttr='autocomplete="off" maxlength="5000"'
+        name="comment" type="textarea" placeholder=(t 'productDetail.inquiry.message') 
+      }}
+    {{/formItem}}
+    <button class="btn btn-primary" id="contact-form__submit">{{t 'user.send'}}</button>
+</form>

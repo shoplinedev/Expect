@@ -20,10 +20,10 @@
   {{#if (length currentTags) '>' 8}}
     {{#if (boolean (boolean (length tags) '>' 0) '&&' (product_collections_tag_in_active tags currentTags))}}
       {{assign 'moreClass' ''}}
-      {{assign 'moreText' 'Less'}}
+      {{assign 'moreText' (t 'productList.filterMenu.less')}}
     {{else}}
       {{assign 'moreClass' 'filterHasMore'}}
-      {{assign 'moreText' 'More'}}
+      {{assign 'moreText' (t 'productList.filterMenu.more')}}
     {{/if}}
   {{/if}}
 {{/if}}

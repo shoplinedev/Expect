@@ -113,6 +113,12 @@
   <meta name="twitter:card" content="{{twitterCard}}" />
 {{/if}}
 
+{{!-- meta hide product --}}
+{{#and  (boolean templateAlias '===' 'ProductsDetail')  (isFalsey product.spu.visible)}}
+  <meta name='robots' content='noindex' />
+{{/and}}
+
+
 
 {{/partial}}
 

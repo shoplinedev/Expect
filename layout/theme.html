@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+
   {{#slot 'seo-meta'}}
     {{ snippet 'seo-meta' }}
   {{/slot}}
@@ -23,6 +25,12 @@
 
   <link rel="dns-prefetch" href="https://cdn.myshopline.com">
   <link rel="preconnect" href="https://cdn.myshopline.com">
+  <link rel="dns-prefetch" href="https://img.myshopline.com">
+  <link rel="preconnect" href="https://img.myshopline.com">
+  <link rel="dns-prefetch" href="https://img-va.myshopline.com">
+  <link rel="preconnect" href="https://img-va.myshopline.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
 
   {{#slot 'head'}}{{/slot}}
 
@@ -50,11 +58,7 @@
 	{{ preload_state 'templateAlias' }}
 
   {{#slot 'pre_script'}}
-    {{#is_modern_browser}}
-      <script src="{{ assets_url 'shared/pre-script.min.modern.js' }}" ></script>
-    {{else}}
-      <script src="{{ assets_url 'shared/pre-script.min.js' }}" ></script>
-    {{/is_modern_browser}}
+    <script src="{{ assets_url 'shared/pre-script.min.js' }}" ></script>
   {{/slot}}
 
   {{!-- 重新进行 lazy dom 观察 --}}

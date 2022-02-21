@@ -2,6 +2,7 @@
 {{#if global.request.is_login}}
   {{assign 'url' '/user/center'}}
 {{/if}}
+{{ preload_state 'navigations' }}
 
 {{#with this as |global|}}
 <div class="header-menu__container">

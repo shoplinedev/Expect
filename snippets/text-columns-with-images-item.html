@@ -11,9 +11,8 @@
             style="padding-bottom:{{dividedBy 100 this.settings.image.scale}}%">
             <img 
               class="lozad" 
-              alt="{{this.settings.image.alt}}"
-              data-src="{{this.settings.image.url}}" 
-              data-srcset="{{img_url this.settings.image.url width=this.settings.image_width }} 1x, {{img_url this.settings.image.url width=this.settings.image_width scale=2 }} 2x">
+              {{{get 'responsiveAttr' (image_responsive this.settings.image.url pcSize=(append this.settings.image_width 'px') mSize='100vw')}}} 
+              alt="{{this.settings.image.alt}}"/>
           </a>
         {{else}}
           {{ snippet 'icons/icon_image' }}

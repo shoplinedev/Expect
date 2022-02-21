@@ -1,36 +1,761 @@
 {
-  "sales": {
-    "promotion": {
-      "tags": {
-        "benefit1": {
-          "threshold0": "Купите {{threshold}}, можно сэкономить {{save}}",
-          "threshold1": "Купите {{threshold}} штук , можно сэкономить {{save}}"
-        },
-        "benefit2": {
-          "threshold0": "Купите {{threshold}}, можно сэкономить {{save}}",
-          "threshold1": "Купите {{threshold}} штук , можно сэкономить {{save}}"
-        },
-        "benefit11": {
-          "threshold1": {
-            "normal": "Купите {{threshold}} штук, у одного из них можно облегчить {{save}}",
-            "free": "Купите {{threshold}} штук, один из них бесплатен"
+  "address": {
+    "dropdown": {
+      "default-placeholder": "Пожалуйста, выберите",
+      "no-item-tips": "Пока нет данных",
+      "no-search-result": "Нет подходящего содержания"
+    },
+    "mobile-errorMessage": "Пожалуйста, введите действительный номер телефона",
+    "mobile-errorMessage-country-code": "Пожалуйста, не вводите код города"
+  },
+  "blog": {
+    "container": {
+      "backTo": "Возвращаться {{{collectionTitle}}}"
+    }
+  },
+  "blogList": {
+    "container": {
+      "empty": {
+        "desc": "В этом блоге нет статей",
+        "title": "Блог"
+      },
+      "readBtnText": "Узнайте больше"
+    }
+  },
+  "cart": {
+    "active-stock-limit": "Осталось всего {{stock}}штук по льготной цене на этот товар.",
+    "active-stock-limit-1": "Вы можете купить максимально {{stock}} товаров со скидкой одновременно.",
+    "active-stock-limit-2": "Льготная цена этого продукта только поддерживает покупку {{stock}} штук.",
+    "activity-price-limit": "Льготная цена этого продукта только поддерживает покупку {{num}} штук.",
+    "activity-product-limit": "Вы можете купить максимально {{stock}} товаров со скидкой одновременно.",
+    "activity-title-limit": "Следующие товары превышают лимит покупки, вы продолжаете оформлять заказ?",
+    "checkout-error": "По крайней мере один товар в корзине покупки нельзя купить. Пожалуйста, отрегулируйте товары в корзине для оформления заказа.",
+    "get": "Получить скидку",
+    "go-shopping": "Перейти к покупке",
+    "login-description": "Уже член? После логина можно управлять заказами более удобно!",
+    "login-membership": "Бесплатный член",
+    "most-100-sku": "Максимально добавить 100 товаров",
+    "most-buy-999": "Максимально можно добавить в корзину покупки 999 ш. товаров.",
+    "not-participation-offers": "Не участвуя в оферте",
+    "render-add-items": "Ваша корзина на данный момент пуста.",
+    "render-empty-status": "В вашей корзине покупки нет товаров",
+    "shopping-fees": "Расходы для покупки",
+    "shopping-money": "Следующим шагом будет расчет налогов и фрахтов.",
+    "shopping-money-step": "Следующим шагом будет расчет налогов и фрахтов.",
+    "stock-limit": "Осталось {{stock}} шт.",
+    "view-link": "Нажмите, чтобы посмотреть",
+    "view-pic": "Пользовательский предварительный просмотр",
+    "view-shopping-cart": "Просмотрите корзину покупки"
+  },
+  "checkout": {
+    "delivery-method": {
+      "store-pickup": "Поднимать"
+    },
+    "info-preview": {
+      "store-pickup__info": "Самовывоз из магазина • {{locationName}} • Бесплатно",
+      "store-pickup__label": "Метод"
+    },
+    "store-pickup": {
+      "label": "Выбрать место",
+      "list--empty": "Ваш заказ недоступен для самовывоза. Введите адрес доставки.",
+      "pickup-appointment--between": "Готов примерно через {{start}}–{{end}}",
+      "pickup-appointment--more-than": "Готов более чем через {{start}}",
+      "pickup-appointment--within": "Готово в течение {{end}}",
+      "pickup-appointment__value--day": "{{value}} день",
+      "pickup-appointment__value--day-plural": "{{value}} дней",
+      "pickup-appointment__value--hour": "{{value}} час",
+      "pickup-appointment__value--hour-plural": "{{value}} часов"
+    }
+  },
+  "collection": {
+    "all": {
+      "h1Title": "Коллекции",
+      "title": "Все классификации"
+    }
+  },
+  "comment": {
+    "about-product": "Пожалуйста, введите хотя бы 1 текст",
+    "add-img": "Добавить картины",
+    "all-reviews": "Просмотреть все замечания",
+    "bad": "Плохо",
+    "best": "Очень хорошо",
+    "comment-count": "{{total}} пунктов",
+    "customer-comment": "Комментарии клиентов",
+    "enter-comment": "Пожалуйста, заполните комментарии",
+    "experience-about": "Пожалуйста, введите свои оценочное впечатление о продукте",
+    "general": "Нормально",
+    "good": "Хорошо",
+    "image-only-2m": "Размер картин масксимально составляет {{size}} мегабайт.",
+    "leave-a-review": "Опубликовать отзывы",
+    "mobile-submit": "Представление",
+    "more-images": "Максимально можно добавить {{total}} картин",
+    "network-err-msg": "Проблема с системой, попробуйте отправить еще раз ~",
+    "nickname": "Ник",
+    "no-bought-msg": "Извините, вы не купили этот продукт, поэтому не можете опубликовать отзыв",
+    "no-comment-first-tip": "приходите и оставьте первый отзыв",
+    "no-comment-title-tip": "Пока нет отзывов",
+    "no-login-msg": "Пользователи, которые купили этот продукт, могут опубликовать отзыв, пожалуйста, сначала войдите в систему",
+    "on-img-upload-tip": "Картины загружаются, пожалуйста, предоставьте позже",
+    "only-image": "Поддерживает загрузку картин только в формате .jpg .jpeg .png .bmp",
+    "rate-score": "{{score}} звезд",
+    "ratings": "Балл",
+    "read-more-comments": "Просмотрите больше комментариев",
+    "shipping-information": "Информация о доставке",
+    "sign-in": "Перейти к логину",
+    "text": "Комментарий",
+    "thanks-msg": "Спасибо за ваш отзыв",
+    "total": "{{total}} комментариев",
+    "worse": "Немножко плохо",
+    "write-review": "Опубликовать отзывы"
+  },
+  "common": {
+    "address": "Адрес",
+    "amount": "Количество",
+    "anonymous": "Анонимно",
+    "anonymous-evaluation": "Анонимная оценка",
+    "apply": "Приложение",
+    "applyDate": "Дата подачи заявления",
+    "audit": "Рассмотрение",
+    "back-to-cart": "Вернуться в корзину для покупки",
+    "back-to-user-center": "Вернуться в центр пользователей",
+    "backout": "Отзыв",
+    "bank-Account": "Номер банковского счета",
+    "bank-Account2": "Банковский счёт",
+    "bank-card-number": "Номер банковской карты",
+    "bank-name": "Название банка",
+    "buy-now": "Немедленная покупка",
+    "cancel": "Отмена",
+    "cardholder-name": "Имя и фамилия владельца карты",
+    "category": "Классификация",
+    "checkout": "Свести счет",
+    "close": "Закрытие",
+    "confirm": "Определение",
+    "contact-information": "Способ связи",
+    "contactUs": "Свяжитесь с нами",
+    "continue": "Продолжение",
+    "day": "День",
+    "days": "День",
+    "default-address": "Адрес по умолчанию",
+    "descountPrice": "Льготная сумма",
+    "discount": "Скидка",
+    "discountDesc": "Описание о льготе",
+    "discountOff": "Скидка",
+    "email": "Электронная почта",
+    "email2": "Почта",
+    "enter-email": "пожалуйста, введите электронную почту",
+    "enter-mobile-phone": "Пожалуйста, введите номер мобильного телефона",
+    "enter-username": "Пожалуйста, введите имя пользователя",
+    "error-stack": "Стек ошибок",
+    "evaluation": "Оценка",
+    "finish": "Выполнение",
+    "free-shipping": "Бесплатная доставка",
+    "freightDesc": "Описание о фрахте",
+    "hasSelected": "Выбрано",
+    "home": "Первая страница",
+    "login": "Логин",
+    "logistics": "Логистика",
+    "logistics-and-payment": "Логистика и оплата",
+    "member-login": "Логин членов",
+    "meno": "Примечание",
+    "mobile": "Мобильный телефон",
+    "mobile-phone": "Номер мобильного телефона",
+    "modify": "Изменение",
+    "ok": "Определение",
+    "operation": "Операция",
+    "order": "Заказ",
+    "order-evaluation": "Оценка заказа",
+    "outOfStock": "Превышение наличности",
+    "package": "Посылка",
+    "page": "Страница",
+    "payment": "Оплата",
+    "payment-2": "Платёж",
+    "piece": "Ш.",
+    "pieces": "Ш.",
+    "productError": "Пока нет данных о текущим продукте. Повторите попытку позже.",
+    "recommend": "Рекомендация",
+    "remain": "Остаток",
+    "remove": "Удаление",
+    "returnInfo": "Информация о возврате товара",
+    "returnMoney": "Сумма возврата товара",
+    "returnProgress": "Темп возврата товара",
+    "rollback": "Отмена",
+    "selectProduct": "Выбор продуктов",
+    "settleMent": "Немедленная покупка",
+    "sign-out": "Выход",
+    "soldOut": "Распродано",
+    "stock-limit": "Осталось {{stock}} наличность",
+    "subTotal": "Частичный итог",
+    "submit-evaluation": "Представлять оценку",
+    "tax": "Налоговая стоимость",
+    "taxDesc": "Описание о налоговой стоимости",
+    "tel-phone": "Номер телефона",
+    "tips": "Напоминание",
+    "title": "Заголовок",
+    "total": "Итог",
+    "upload": "Загрузка",
+    "upload-image": "Загрузка картин",
+    "use-address": "Адрес для использования",
+    "use-new-address": "Использовать новый адрес",
+    "username": "Имя и фамилия"
+  },
+  "contactForm": {
+    "sendSuccess": ""
+  },
+  "footer": {
+    "copyright": "Все права защитят",
+    "followus": "Обратите внимание на нас",
+    "subscribeBarPlaceholder": "Здесь заполните свою электронную почту",
+    "subscribeError": "Подписка не удалась",
+    "subscribeRegExpError": "Неправильный формат адреса электронной почты",
+    "subscribeSuccess": "Успешная подписка"
+  },
+  "header": {
+    "cart": "Корзина для покупки",
+    "center": "Центр членства",
+    "login": "Логин",
+    "logout": "Выход",
+    "navItemAll": "Все",
+    "noCurrencyFallback": "Связанная валюта не найдена",
+    "search": "Поиск",
+    "searchInputPlaceholder": "Введите здесь и нажмите поиск",
+    "searchItems": "Поиск продуктов"
+  },
+  "labelInput": {
+    "contact-error": "Пожалуйста, введите почту/номер мобильного телефона в правильном формате",
+    "email-error": "Пожалуйста, введите почту в правильном формате",
+    "phone-error": "Пожалуйста, введите номер мобильного телефона в правильном формате",
+    "phone-error-tips": "Пожалуйста, введите номер мобильного телефона в правильном формате"
+  },
+  "modal": {
+    "exceedCartContent": "Вы можете перейти в корзину для покупки, или удалить частичные продукты, а затем добавить этот продукт в корзину.",
+    "exceedCartTitle": "Извините! Количество товаров, добавленных в корзину покупки, превышает лимит.",
+    "goCart": "Перейти в корзину покупки",
+    "iKnow": "Я знаю"
+  },
+  "oneShop": {
+    "TCTD0108": "Способ логистики не существует, пожалуйста, выберите еще раз",
+    "TCTD0112": "Срок действия выбранного вами товара истек, пожалуйста, выберите еще раз",
+    "TCTD0118": "Способ оплаты не существует, пожалуйста, выберите еще раз",
+    "TCTD0121": "Маркетинговая деятельность не существует, пожалуйста, выберите еще раз",
+    "bracket": "({{content}})",
+    "buyNow": "Немедленная покупка",
+    "buyPop": "{{minutes}} минут назад {{name}} купил этот товар",
+    "comboFailure": "Срок действия пакета услуг истек",
+    "comboSelectFailure": "Срок действия выбранного вами пакета услуг истек, пожалуйста, выберите еще раз",
+    "comment": "Оставление записки(Необязательное поле)",
+    "country": "Страна",
+    "currentProductSoldOut": "Недостаточная наличность текущих товаров",
+    "cutByAmount": "Полно{{amount}} минус{{n}}",
+    "cutByNum": "Полно{{num}} штук минус {{n}}",
+    "defaultErrorCodeMsg": "Аномальная сеть, пожалуйста, позже обновите страницу и попробуйте еще раз",
+    "discountByAmount": "Скидка{{n}}на покупку{{amount}}",
+    "discountByNum": "Купите {{num}} штук и получите {{n}} скидку",
+    "freeShipping": "Бесплатная доставка",
+    "noComment": "Пока нет комментариев",
+    "noProductDesc": "Пока нет описаний товара",
+    "optional": "Необязательное поле",
+    "orderAgain": "Пожалуйста, повторно разместите заказ",
+    "overLength": "Длина ввода превышает лимит, пожалуйста, заполните правильно",
+    "priceStart": "От {{n}}",
+    "productCommentTitle": "Оценка о товаре（{{n}}）",
+    "productDetail": "Подробности о товаре",
+    "productFailure": "Срок действия выбранного вами товара истек, пожалуйста, выберите еще раз",
+    "productNoSelect": "Пожалуйста, выберите характеристики товара",
+    "selectedProductSoldOut": "Недостаточная наличность выбранных товаров",
+    "soleOutSelectAgain": "Наличность текущих товаров недостаточна, пожалуйста, выберите еще раз",
+    "submit": "Предъявление"
+  },
+  "order": {
+    "after-order-status": {
+      "cancelled": "Отменено",
+      "completed": "Выполнено",
+      "confirmed": "Подтверждено",
+      "customer-canceled": "Отмена клиента",
+      "customer-rejected": "Отказ клиента",
+      "delivery-progress": "Подтверждено",
+      "merchant-cancellation": "Отмена продавца",
+      "processing": "Во время обработки"
+    },
+    "after-sale-type": {
+      "refund": "Возврат денег",
+      "return-and-refund": "Возврат товара и денег"
+    },
+    "breadcrumb": {
+      "order": "Заказ",
+      "order-detail": "Подробности о заказе",
+      "title": "Заказ"
+    },
+    "customer-info": "Информация о клиенте",
+    "delivery-statusType": {
+      "arrived": "Товары прибыли",
+      "cancel-delivery": "Отменить отправку товаров",
+      "cancelled": "Отменено",
+      "delivery-partial": "Отправка частичных товаров",
+      "delivery-return": "Товары возвращены",
+      "picked-up": "Посылка получена",
+      "problem": "Посылка с проблемой, потерянные посылки и т. д., требуют ручного вмешательства",
+      "shipped": "Товары отправлены",
+      "shipping": "Во время отправки товаров",
+      "stocking": "Во время приготовки товаров"
+    },
+    "detail": {
+      "cancel-btn": "Заказ отменен",
+      "communication": {
+        "title": "Заказ во время общения"
+      },
+      "coms": {
+        "operationLog": {
+          "PayDealLog": {
+            "amount": "Сумма",
+            "createTime": "Время инициирования платежа",
+            "dealId": "Серийный номер платежа",
+            "payName": "Канал платежа",
+            "status": "Состояние",
+            "title": "Платеж на сумму {amount} был обработан через {payName}",
+            "updateTime": "Время возврата в результат"
           }
         }
       },
-      "reminder": {
-        "benefit1": {
-          "threshold0": {
-            "step1": "Купите {{threshold}} или больше , можно сэкономить {{willSave}}",
-            "step2": "Сэкономили {{saved}} ! {{br}}Купите еще {{threshold}} и сэкономьте {{willSave}}",
-            "step3": "Поздравляю! Вы сэкономили {{saved}}!"
+      "order-info": {
+        "canceled": "Отменено",
+        "confirmed": "Подтверждено",
+        "finished": "Выполнено",
+        "processing": "Во время обработки"
+      },
+      "order-status": {
+        "button": {
+          "refresh": "Обновление"
+        },
+        "cancel": {
+          "desc": "Ваш заказ был отменен {{cancelTime}}. Свяжитесь с нами, если у вас возникли вопросы.。",
+          "title": "Ваш заказ отменен"
+        },
+        "pay": {
+          "go-pay": "<common>Оплата </common><amount>{{orderAmount}}</amount>",
+          "title": "При ожидании платежа"
+        },
+        "pedding": {
+          "desc": "Ваш запрос на оплату предоставлен. Подождите, пока {{- payChannelDesc}} вернет в результат платежа.",
+          "title": "Во время оплаты..."
+        },
+        "pickedUp": {
+          "desc": "Ваш заказ был получен по адресу {{address1}} {{weekDate}}.",
+          "title": "Ваш заказ принят"
+        },
+        "readyForPickup": {
+          "desc": "Пожалуйста, принесите подтверждение заказа, когда будете забирать свой заказ.",
+          "title": "Ваш заказ готов к выдаче"
+        },
+        "redirect": {
+          "desc": "Если не выполняется автоматическая переадресация, обновите эту страницу.",
+          "title": "При переадресации, подождите, пожалуйста."
+        },
+        "success": {
+          "desc": "Информация о заказе отправлена ​​на {{buyerContact}}, пожалуйста, обратите внимание на проверку",
+          "title": "Ваш заказ подтвержден"
+        }
+      },
+      "packages": {
+        "amount": {
+          "channel-surcharge": "Комиссия за оплату",
+          "deduct-voucher": "Сумма купона",
+          "discount": "Скидка по льготному коду",
+          "discount-amount-name": "Индивидуальная скидка продавца",
+          "express": "Фрахт",
+          "express-surcharge": "Налог на фрахт",
+          "preferential": "Льгота",
+          "subtotal": "Частичный итог продуктов",
+          "tax": "Налог на товар",
+          "tip": "Чаевые",
+          "total": "Итог"
+        },
+        "contact-us": "Нужна помощь? Пожалуйста свяжитесь с нами:{{email}}",
+        "contact-us-title": "Свяжитесь с нами",
+        "logistics": {
+          "blank-trace": "Пожалуйста, нажмите ссылку ниже для отслеживания вашей посылки:",
+          "detail": "Подробности",
+          "no-data": "В настоящее время нет информации о логистике",
+          "no-data2": "Пока нет информации о доставке, пожалуйста, проверьте позже.",
+          "tab-title": "Посылка {{index}}"
+        },
+        "order-note-title": "Примечание заказа",
+        "order-num": "({{num}}) пакетов",
+        "payment-deal": {
+          "amount": "Сумма",
+          "create-time": "Создано",
+          "deal-id": "Серийный номер платежа",
+          "name": "Канал платежа",
+          "status": "Состояние",
+          "title": "Подробности платежа",
+          "update-time": "Обновлено"
+        },
+        "payment-info": {
+          "address": "Адрес для получения счета",
+          "detail": "Подробности",
+          "method": "Способ платежа",
+          "status": "Состояние платежа"
+        },
+        "payment-title": "Оплата",
+        "send-to-Line": "Отправить в Line",
+        "send-to-Messenger": "Отправить в Messenger",
+        "shippings": {
+          "fee": "Фрахт",
+          "method": "Способ доставки",
+          "status": "Состояние доставки"
+        },
+        "status": {
+          "pedding": {
+            "desc": "Actualmente estamos preparando estos artículos para el envío.",
+            "title": "Preparando el envío"
           },
-          "threshold1": {
-            "step1": "Купите больше {{threshold}} штук, можно сэкономить {{willSave}}",
-            "step2": "Сэкономили {{saved}}! {{br}}Купите еще более {{threshold}} штук и сэкономьте {{willSave}}",
-            "step3": "Поздравляю! Вы сэкономили {{saved}}!"
+          "success": {
+            "desc": "Мы приняли ваш заказ и готовим его. Возвращайтесь на эту страницу, чтобы отслеживать состояние доставки."
           }
         },
-        "benefit2": {
+        "sub-title": "Отслеживание пакета",
+        "subscriptions-title": "Подписка",
+        "title": "Информация",
+        "unshipped-order-num": "Во время обработки({{num}} пунктов)"
+      }
+    },
+    "help-tips": "Нужна помощь? Свяжитесь с нами: {{email}}",
+    "oms-status": {
+      "arrived": "Прибытие в магазин",
+      "cancelled": "Отправка товаров отменена",
+      "executing": "Во время выполнения",
+      "picked": "Товары получены",
+      "prepare-pick": "Готов получить товар",
+      "problem": "Посылка с проблемой",
+      "returned": "Товары возвращены",
+      "returning": "Во время возврата товара",
+      "shipped": "Товары отправлены"
+    },
+    "order-at": "Время заказа:",
+    "order-date": "Время размещения заказов",
+    "order-list": {
+      "empty-tip": "Пока нет записи о заказе, отправляйтесь за покупками",
+      "empty-title": "Изображение",
+      "item-total": "Всего {{transPackages}} товаров",
+      "item-total-plural": "Всего {{transPackages}} товаров",
+      "load-more": "Потяните наверх, чтобы загрузить больше",
+      "no-more": "Нет больше информаций",
+      "package-item": "Package {{num}}（{{item}} items）",
+      "package-more": "и выше {{num}}",
+      "pay-now": "Перейти к оплате",
+      "sub-order": "Дочерний заказ",
+      "track": "Отслеживание"
+    },
+    "order-status": {
+      "cancelled": "Отменено",
+      "completed": "Выполнено",
+      "confirmed": "Подтверждено",
+      "customer-canceled": "Клиент отменил",
+      "merchant-cancellation": "Продавец отменил",
+      "processing": "Во время обработки"
+    },
+    "pay-status": {
+      "abolished": "Недействительны",
+      "already-paid": "Оплачено",
+      "failed": "Оплата не удалась",
+      "partial-payment": "Возврат частичных денег",
+      "partial-refund": "Возврат частичных денег",
+      "paying": "Во время оплаты",
+      "refund-failed": "Возврат денег не удался",
+      "refunded": "Деньги возвращены",
+      "refunding": "Во время возврата денег",
+      "timed-out": "Время платежа истекло",
+      "unpaid": "Неоплачено"
+    },
+    "refund-methods": {
+      "merchant": "Получение товара от продавца",
+      "self": "Сам посылать обратно"
+    },
+    "refund-type": {
+      "origin": "Вернуться по оригинальному маршруту",
+      "other": "Прочие"
+    },
+    "seq-no": "Номер {{id}}"
+  },
+  "payments-name": {
+    "COD": "Оплата при доставке товара",
+    "Paypal": "Paypal",
+    "third-part": "Кредитная карта"
+  },
+  "paypal": {
+    "error-expired": "Срок действия товара истек",
+    "error-login-limit": "Пожалуйста, перед размещением заказа сначала регистрируйте аккаунт",
+    "error-network-error": "Аномальная сеть",
+    "error-product-limit": "Превышать лимит товара",
+    "error-shop-not-exit": "Магазин не существует",
+    "error-sold-out": "Недостаточная наличность товара"
+  },
+  "productDetail": {
+    "activityToast": {
+      "price-limit": "Льготная цена этого продукта только поддерживает покупку {{num}} штук.",
+      "product-limit": "Вы можете купить максимально {{stock}} товаров со скидкой одновременно.",
+      "title-limit": "Следующие товары превышают лимит покупки"
+    },
+    "addCart": "Добавление",
+    "bulkDiscount": {
+      "title": "Купите больше сэкономите больше!"
+    },
+    "commentsTitle": "комментариев",
+    "default-placeholder": "Пожалуйста, выберите {{attrName}}",
+    "goOtherChannels": "Другие каналы покупки",
+    "goOutsideOfAmazon": "Покупка за пределами Amazon",
+    "goToAmazon": "Покупка на Amazon",
+    "goToAmazonByLink": "Покупка на Amazon",
+    "goToRakuten": "Lotte",
+    "goToRakutenByLink": "Покупка на Lotte",
+    "goToYahoo": "Yahoo",
+    "goToYahooByLink": "Покупка на Yahoo",
+    "inquiry": {
+      "cancel": "Отмена",
+      "email": "Электронная почта",
+      "emailEmptyErr": "Пожалуйста, введите электронную почту",
+      "emailFormatErr": "Пожалуйста, заполните правильную электронную почту",
+      "inquiryTips1": "Оставьте сообщение по вашему запросу, и мы будем как можно быстрее связаться с вами.",
+      "inquiryTips2": "Вы также можете оставить больше информации, чтобы мы могли предоставить вам более подходящие вам услуги",
+      "inquiryTitle": "Консультативные товары",
+      "message": "Оставление записки",
+      "messageEmptyErr": "Пожалуйста, заполните сообщение",
+      "messageLengthErr": "Длина сообщения не превышает 1500 слов.",
+      "mobile": "Номер телефона",
+      "name": "Имя и фамилия",
+      "optional": "Можно выбрать",
+      "region": "Страна / регион",
+      "submit": "Представление",
+      "submitFailed": "Не удалось предоставить, попробуйте еще раз",
+      "submitSuccess": "Успешное представление"
+    },
+    "morePaymentOptions": "Другие варианты оплаты",
+    "network": {
+      "message2": "Пока не получили информации о продуктах, повторите попытку позже."
+    },
+    "no-logistics-and-payment-information": "Пока нет информации о логистике и методе платежа",
+    "no-product-introduction": "Пока нет рекомендации о продуктах",
+    "previewLinkToast": "Ссылка на предварительный просмотр не поддерживает эту операцию",
+    "recentlyViewedProducts": "Недавно просмотренные продукты",
+    "recommendTitle": "Вам также может понравиться",
+    "tabPanel": {
+      "comments": {
+        "empty": "Пока нет комментариев о продуктах",
+        "error": "Не удалось получить комментарии о продуктах, повторите попытку позже."
+      },
+      "desc": "Пока нет описательной информации",
+      "descFs": "Не удалось получить данные, повторите попытку позже.",
+      "pay": {
+        "text1": "Метод платежа",
+        "text2": "Пока нет метода платежа",
+        "text3": "Пока нет информации об оплате логистики"
+      },
+      "ship": {
+        "sh": {
+          "text1": "Способ"
+        },
+        "text2": "Пока нет метода логистики"
+      }
+    },
+    "tabs": {
+      "comments": "Комментарии",
+      "description": "Описание",
+      "shippingPayment": "Логистика и оплата"
+    },
+    "thumbSwiper": {
+      "image": {
+        "alt": "Карточка товара"
+      },
+      "share": {
+        "text": "Поделиться"
+      }
+    },
+    "toAmazon": "Amazon"
+  },
+  "productList": {
+    "all": {
+      "h1Title": "Товар"
+    },
+    "container": {
+      "empty": {
+        "desc": "Пока нет продуктов в этой классификации",
+        "description": "При необходимости обратитесь к продавцу для консультации.",
+        "title": "Извините! Пока нет продуктов"
+      },
+      "from": "От {{price}}",
+      "listItem": {
+        "addToCart": "Добавить в корзину покупки",
+        "off": "- {{value}}%",
+        "sale": "распродажа",
+        "save": "Скидка {{{priceDom}}}",
+        "saveByJs": "Скидка {{priceDom}}",
+        "saveRatio": "Скидка {{price}}%",
+        "sold": {
+          "out": "Продукты распроданы"
+        },
+        "soldOut": "Распродано",
+        "toDetail": "Просмотрите подробности"
+      },
+      "moreProductNum": "{{num}} Продукты",
+      "network": {
+        "message": "Пока нет данных о текущим продукте. Повторите попытку позже."
+      },
+      "oneProductNum": "{{num}} Продукт",
+      "productsNum": "{{num}} продуктов",
+      "show": "Показать",
+      "sort": {
+        "newest": "Новейшие продукты на полках",
+        "option1": "Время на полках(от нового к старому)",
+        "option2": "Время на полках (от старого к новому)",
+        "option3": "Цена (от высокой к низкой)",
+        "option4": "Цена (от низкой к высокой)",
+        "priceHighToLow": "Цена от высокой к низкой",
+        "priceLowToHigh": "Цена от низкой к высокой",
+        "recommend": "Рекомендация",
+        "sales": "С широким сбытом",
+        "text1": "Все продукты",
+        "text2": "Способ упорядочения"
+      },
+      "tradePopup": {
+        "addToCart": "Добавить в корзину покупки",
+        "error1": "Для этого продукта осталось всего {{stock}} штук. Пожалуйста, измените количество покупки.",
+        "error2": "Только можно купить этот продукт в количестве {{saleMax}} штук, Пожалуйста, измените количество покупки!",
+        "error3": "Пожалуйста, выберите количество покупки!",
+        "error4": "Пожалуйста, выберите все атрибуты этого товара Информация о грузополучателе",
+        "error5": "Текущие продукты распроданы",
+        "error6": "Текущие продукты сняты с полок"
+      },
+      "viewAs": "Просмотреть метод"
+    },
+    "filterMenu": {
+      "filter": "Отбор",
+      "less": "Меньше этикеток",
+      "more": "Больше этикеток",
+      "price": "Цена"
+    },
+    "gategoryMenu": {
+      "catalog": "Каталог продуктов",
+      "menuitem": "Все продукты"
+    },
+    "noProduct": "В категории нет товаров"
+  },
+  "productSearch": {
+    "container": {
+      "sort": {
+        "option1": "Время на полках (от нового к старому)",
+        "option2": "Время на полках (от старого к новому)",
+        "option3": "Цена (от высокой к низкой)",
+        "option4": "Цена (от низкой к высокой)"
+      }
+    },
+    "empty": {
+      "title1": "Мы рекомендуем проверить орфографические ошибки,",
+      "title2": "Затем повторите поиск с краткими ключевыми словами"
+    },
+    "search": {
+      "backHome": "Вернуться на главную страницу",
+      "noRelatedResultFound": "Не найдено связанных записей",
+      "results": "{{count}} записей",
+      "resultsFoundFor": "Найдено {{count}} записей \"{{keyword}}\"",
+      "searchNoResults": "{{keyword}}, который вы искали, нет никакой записи"
+    },
+    "serachTitle": {
+      "text1": "Связанные результаты не найдены"
+    },
+    "sortName": "Способ упорядочения:",
+    "title": "Поиск"
+  },
+  "promotion": {
+    "activity-benefit": "Льгота деятельности",
+    "activity-introduction": "Описание деятельности",
+    "activity-scope": "Сфера деятельности",
+    "all-product": "Все товары",
+    "all-user": "Все пользователи",
+    "all-vip": "Все члены",
+    "bundle": {
+      "desc": "Добавьте эти товары, чтобы получить скидку в размере <italic>{{value}}</italic> долларов США",
+      "title": "Товары в комплекте"
+    },
+    "buy-again": "Купить еще <0>{{value}}</0>",
+    "buy-again-piece": "Купить еще {{value}} штук",
+    "coupon": "Купон",
+    "discount-benefit": "Скидка {{discount}}",
+    "discounted": "Со скидкой <0>{{value}}</0>",
+    "flash-sale": "Стимулирование продажи в органиченное время",
+    "flash-sale-limit": "Лимит покупки {{value}} на каждого человека",
+    "free-shipping": "Бесплатная доставка",
+    "full-amount": "Каждые<0>{{value}}</0>",
+    "full-discount": "Полно скидка",
+    "full-discount-benefit": "Полно скидка",
+    "full-piece": "Каждые{{value}} штук",
+    "full-reduction": "Полно минус",
+    "full-reduction-benefit": "Полно минус",
+    "get-discount-1": "Получить скидку {{value}}",
+    "get-discount-2": "Получите скидку {{value}}%",
+    "item-num": "{{value}} штук",
+    "label-vip": "Член {{label}}",
+    "level-vip": "Член уровня {{level}}",
+    "member-price": "Цена для членов",
+    "more-combo": "Больше пакетов услуг",
+    "only-one-sku": "Текущий товар имеет только одну характеристику",
+    "other-customer": "Клиент (Пользователь, который не разместил заказ)",
+    "percent-piece-step1": "<children>Купите больше </children><more>{{price}}</more><children> штук , можно сэкономить </children><more>{{percent}}</more>",
+    "percent-piece-step2": "<children>Сэкономили </children><normal>{{percent}}</normal><children>! </children><white /><children> Купите еще более </children><more>{{price}}</more><children> штук и сэкономьте </children><more>{{morePercent}}</more>",
+    "percent-piece-step3": "<children>Поздравляю! Вы сэкономили </children><normal>{{percent}}</normal> <children>!</children>",
+    "percent-price-step1": "<children>Купите </children><more>{{price}}</more><children> или больше , можно сэкономить </children><more>{{percent}}</more>",
+    "percent-price-step2": "<children>Сэкономили </children><normal>{{percent}}</normal><children>!</children><white /> <children>Купите еще </children><more>{{price}}</more><children> и сэкономьте </children><more>{{morePercent}}</more>",
+    "percent-price-step3": "<children>Поздравляю! Вы экономили </children><normal>{{percent}}</normal><children> !</children>",
+    "permanent": "Постоянно действительны",
+    "piece-unit": "Штук",
+    "price-piece-step1": "<children>Купите больше </children><more>{{morePrice}}</more><children> штук, можно сэкономить </children><more>{{totalPrice}}</more>",
+    "price-piece-step2": "<children>Сэкономили </children><normal>{{price}}</normal><children>! </children><white /><children> Купите еще более </children><more>{{morePrice}}</more><children> штук и сэкономьте </children><more>{{totalPrice}}</more>",
+    "price-piece-step3": "<children>Поздравляю! Вы сэкономили </children><normal>{{price}}</normal><children> !</children>",
+    "price-price-step1": "<children>Купите </children><more>{{morePrice}}</more><children> или больше , можно сэкономить </children><more>{{totalPrice}}</more>",
+    "price-price-step2": "<children>Сэкономили </children><normal>{{price}}</normal><children> !</children><white /><children> Купите еще </children><more>{{morePrice}}</more><children> и сэкономьте </children><more>{{totalPrice}}</more>",
+    "price-price-step3": "<children>Поздравляю! Вы сэкономили </children><normal>{{price}}</normal><children> !</children>",
+    "price-unit": "Юаней",
+    "reduce": "Скидка <0>{{value}}</0>",
+    "reduce-again": "Дополнительная скидка<0>{{value}}</0>",
+    "reduce1": "Скидка {{value}}",
+    "select-combo": "Выбрать пакет услуг",
+    "select-product": "Делать покупку товаров по выбору",
+    "select-sku": "Выбрать характеристики товара",
+    "selected-count-activity-product": "Выбрано {{selectCount}} предметов, которые участвуют в деятельности",
+    "still-lacking": "Еще нужно <0>{{value}}</0>",
+    "terms-and-conditions": "Условия и положения",
+    "whole-full-amount-discount": "Купите <italic>{{condition}}</italic> , можно сэкономить <italic>{{content}}</italic>%",
+    "whole-full-amount-reduce": "Купите <italic>{{condition}}</italic> , можно сэкономить <italic>{{content}}</italic>",
+    "whole-full-piece-discount": "Купите <italic>{{condition}}</italic> штук , можно сэкономить <italic>{{content}}</italic>%",
+    "whole-full-piece-reduce": "Купите <italic>{{condition}}</italic> штук , можно сэкономить <italic>{{content}}</italic>"
+  },
+  "sales": {
+    "bundle": {
+      "saveTip": "Совместная покупка может сэкономить {{amount}}",
+      "title": "Часто вместе покупают"
+    },
+    "customer-purchase-limit": "Лимит покупки {{count}} на каждого человека",
+    "customer-purchase-limit-each-item": "Ограничение на покупку {{count}} штук на одного человека и каждый стиль.",
+    "discount-coupon": {
+      "applied": "Применяемо",
+      "apply": "Приложение",
+      "applyFail": "Не удалось применяться",
+      "applySuccess": "Код скидки успешно применяется",
+      "coupon-content": {
+        "discount1": "Скидка {discount}",
+        "discount2": "Бесплатная доставка",
+        "shippingRateBelow": "Фрахт меньше {value}",
+        "threshold": "Купить {threshold}",
+        "until": "Срок действия до: {{endTime}}"
+      },
+      "coupon-label": "Льготный код:",
+      "couponNoFound": "Промокода не существует",
+      "popupLabel": "Купон магазина:"
+    },
+    "flash-sale-text": "Флэш-распродажа",
+    "flash-sale-tips": "Лимит покупки: {{count}} ш.",
+    "hot-sale": "В горячей продаже",
+    "promotion": {
+      "reminder": {
+        "benefit1": {
           "threshold0": {
             "step1": "Купите {{threshold}} или больше , можно сэкономить {{willSave}}",
             "step2": "Сэкономили {{saved}} ! {{br}}Купите еще {{threshold}} и сэкономьте {{willSave}}",
@@ -45,18 +770,30 @@
         "benefit11": {
           "threshold1": {
             "step1": {
-              "normal": "Купите еще {{threshold}} штук, у одного из них можно облегчить {{willSave}}",
-              "nextFree": "Купите еще {{threshold}} штук, один из них бесплатен"
+              "nextFree": "Купите еще {{threshold}} штук, один из них бесплатен",
+              "normal": "Купите еще {{threshold}} штук, у одного из них можно облегчить {{willSave}}"
             },
             "step2": {
-              "normal": "Поздравляю! Уже облегчил {{saved}}, {{br}} купите еще {{threshold}} штук, у одного из них можно облегчить {{willSave}}",
               "free": "Поздравляю! Один из них бесплатен",
-              "nextFree": "Поздравляю! Уже облегчил {{saved}}, {{br}} купите еще {{threshold}} штук, одна из них бесплатна"
+              "nextFree": "Поздравляю! Уже облегчил {{saved}}, {{br}} купите еще {{threshold}} штук, одна из них бесплатна",
+              "normal": "Поздравляю! Уже облегчил {{saved}}, {{br}} купите еще {{threshold}} штук, у одного из них можно облегчить {{willSave}}"
             },
             "step3": {
-              "normal": "Поздравляю! Один из них был облегчён {{saved}}",
-              "free": "Поздравляю! Один из них бесплатен"
+              "free": "Поздравляю! Один из них бесплатен",
+              "normal": "Поздравляю! Один из них был облегчён {{saved}}"
             }
+          }
+        },
+        "benefit2": {
+          "threshold0": {
+            "step1": "Купите {{threshold}} или больше , можно сэкономить {{willSave}}",
+            "step2": "Сэкономили {{saved}} ! {{br}}Купите еще {{threshold}} и сэкономьте {{willSave}}",
+            "step3": "Поздравляю! Вы сэкономили {{saved}}!"
+          },
+          "threshold1": {
+            "step1": "Купите больше {{threshold}} штук, можно сэкономить {{willSave}}",
+            "step2": "Сэкономили {{saved}}! {{br}}Купите еще более {{threshold}} штук и сэкономьте {{willSave}}",
+            "step3": "Поздравляю! Вы сэкономили {{saved}}!"
           }
         },
         "benefit9": {
@@ -67,1218 +804,416 @@
           }
         }
       },
-      "tags-label": "Скидка:"
-    },
-    "bundle": {
-      "title": "Часто вместе покупают",
-      "saveTip": "Совместная покупка может сэкономить {{amount}}"
+      "tags-label": "Скидка:",
+      "tags": {
+        "benefit1": {
+          "threshold0": "Купите {{threshold}}, можно сэкономить {{save}}",
+          "threshold1": "Купите {{threshold}} штук , можно сэкономить {{save}}"
+        },
+        "benefit11": {
+          "threshold1": {
+            "free": "Купите {{threshold}} штук, один из них бесплатен",
+            "normal": "Купите {{threshold}} штук, у одного из них можно облегчить {{save}}"
+          }
+        },
+        "benefit2": {
+          "threshold0": "Купите {{threshold}}, можно сэкономить {{save}}",
+          "threshold1": "Купите {{threshold}} штук , можно сэкономить {{save}}"
+        }
+      }
     },
     "selected-count-activity-product": "Выбрано {{selectCount}} предметов, которые участвуют в деятельности",
-    "customer-purchase-limit": "Лимит покупки {{count}} на каждого человека",
-    "customer-purchase-limit-each-item": "Ограничение на покупку {{count}} штук на одного человека и каждый стиль.",
-    "flash-sale-tips": "Лимит покупки: {{count}} ш.",
-    "flash-sale-text": "Флэш-распродажа",
-    "hot-sale": "В горячей продаже",
-    "sold": "Продано {{count}}",
-    "discount-coupon": {
-      "coupon-label": "Льготный код:",
-      "coupon-content": {
-        "threshold": "Купить {threshold}",
-        "discount1": "Скидка {discount}",
-        "discount2": "Бесплатная доставка",
-        "shippingRateBelow": "Фрахт меньше {value}",
-        "until": "Срок действия до: {{endTime}}"
-      },
-      "couponNoFound": "Промокода не существует",
-      "applySuccess": "Код скидки успешно применяется",
-      "applyFail": "Не удалось применяться",
-      "popupLabel": "Купон магазина:",
-      "apply": "Приложение",
-      "applied": "Применяемо"
-    }
+    "sold": "Продано {{count}}"
   },
-  "header": {
-    "searchItems": "Поиск продуктов",
-    "searchInputPlaceholder": "Введите здесь и нажмите поиск",
-    "navItemAll": "Все",
-    "search": "Поиск",
-    "cart": "Корзина для покупки",
-    "center": "Центр членства",
+  "subscription": {
+    "not-subscript-via-line-facebook": "Пока невозможно подписаться на уведомление о заказе через LINE или Facebook",
+    "subscript-via-line-facebook": "Подпишитесь на уведомление о заказе через LINE или Facebook"
+  },
+  "tips": {
+    "address-no-logistics": "По текущему адресу нет доступных логистических методов.",
+    "and": "и",
+    "bind-change-email": "Привязать /перевязать почту",
+    "bind-change-mobile-phone-number": "Привязать /перевязать номер мобильного телефона",
+    "bind-success": "Успешная привязка",
+    "cancel-apply-sent": "Заявление на отмену отправлено",
+    "cancel-order-fail": "Не удалось отменить заказ, попробуйте еще раз",
+    "cancel-reason-feedback": "Пожалуйста, сообщите нам причину отмены, и мы постараемся сделать лучше! После успешной отмены возврат денег будет выполнен. Жду вашего визита еще раз!",
+    "cancel-success-notice": "После успешной отмены вы будете получить уведомление по электронной почте, спасибо!",
+    "change-binding-after-verification": "После проверки можно привязать / перевязать {{value}}",
+    "change-heart": "Передумать",
+    "change-item": "Хотеть изменить предмет покупки",
+    "country-address-fail": "Продавцы в стране этого адреса больше не поддерживают доставку, пожалуйста, выберите вручную",
+    "enter-address-first": "Пожалуйста, сначала введите адрес",
+    "enter-bank-card-number": "Пожалуйста, введите номер банковской карты!",
+    "enter-bank-name": "Пожалуйста, введите название банка!",
+    "enter-email": "Пожалуйста, введите свою почту",
+    "enter-name": "Пожалуйста, введите свое имя и фамилия!",
+    "enter-tel-number": "Пожалуйста, введите номер телефона",
+    "error-obtaining-support-logistics-country": "Ошибка во время получения страны поддержки логистики",
+    "expand-order-summary": "Разверните свод заказа",
+    "fail-contact": "Если попытка не удалась, пожалуйста, свяжитесь с нами в «Связи по заказу между продавцем и покупателем» ниже.",
+    "fill-cancel-reason": "Пожалуйста, заполните причину отмены заказа",
+    "forget-password": "Забыть пароль",
+    "get-checkout-config-fail": "Ошибка во время получения конфигурации расчета",
+    "get-checkout-detail-fail": "Получение подробностей расчета аномально",
+    "i-agree-with-the-shop": "Я согласен с магазином",
+    "image-size-less-than": "Размер изображения не должен превышать {{max}} МБ.",
+    "img-name-too-long": "Введено слишком длинное название изображения ~",
+    "img-size-too-large": "Извините! Файл изображения превышает лимит!",
+    "incorrect-delivery-or-payment-information": "Неправильно заполнить информации о доставке или платеже",
     "login": "Логин",
-    "logout": "Выход",
-    "noCurrencyFallback": "Связанная валюта не найдена"
+    "logistics-no-pre-selection": "Текущая логистика не поддерживает предварительный выбор",
+    "logistics-pre-selection": "Текущая логистика поддерживает предварительный выбор",
+    "max-upload-image": "Максимально загрузите {{max}} листов",
+    "max-upload-img": "Извините! Максимально можно загрузить {{maxNum}} изображений!",
+    "more-than-0-int": "Пожалуйста, введите целое число больше 0",
+    "need-phone-number-to-deliver": "Логистике требуется ваш номер мобильного телефона для доставки заказа",
+    "no-logistics-available": "Нет доступных методов логистики",
+    "no-order-information-please-confirm": "Не удается получить информацию о заказе, пожалуйста, подтвердите правильность номера заказа.",
+    "no-order-number-please-confirm": "Не удается получить номер заказа, пожалуйста, подтвердите правильность номера заказа.",
+    "or-use-the-following-method-to-log-in": "Или используйте следующий способ для логина",
+    "order-creation-exception": "Заказ создан аномально",
+    "other-reason": "Другие причины",
+    "password-can-be-changed-after-verification": "После проверки можно изменить пароль",
+    "pay-params-error": "Не удалось получить параметры платежа, пожалуйста, повторно заплатите",
+    "paypal-country-fail": "Страна счета, к которой принадлежит PayPal, не входит в страну, в которой поддерживает доставку, пожалуйста, выберите вручную,",
+    "please-complete-the-payment-method-content": "Пожалуйста, заполните полные сведения о способе оплаты",
+    "please-read-and-agree-to-the-user-agreement-first": "Пожалуйста, сначала прочитайте и согласитесь с пользовательским соглашением",
+    "price-more-expensive": "Цена дороже, чем на других местах",
+    "product-abnormal-back-to-cart": "Состояние продукта аномально, вернитесь в корзину покупки для повторного редактирования.",
+    "put-up-order-summary": "Соберите свод заказа",
+    "register": "Регистрация",
+    "repeat-buy": "Повторная покупка",
+    "reset-password": "Вы заменяете пароль для своего счета {{account}}",
+    "sale-too-slow": "Медленно выдавать товар",
+    "select-cancel-reason": "Пожалуйста, выберите причину отмены",
+    "select-return-product-first": "Пожалуйста, сначала выберите продукт, который вы хотите вернуть",
+    "set-new-password": "Установите новый пароль",
+    "sku-change-tips": "В связи с изменением состояния продукта, пожалуйста, повторно подтвердите логистику / способ оплаты.",
+    "sure-cancel-order": "Вы уверены, что хотите отменить заказ?",
+    "update-password": "Изменить пароль",
+    "update-success": "Успешное изменение",
+    "upload-image-fail": "Не удалось загрузить изображения {{name}}",
+    "user-agreement": "Пользовательское соглашение",
+    "verification-code-has-been-sent-to-your-account": "Код подтверждения отправлен на ваш счет",
+    "verify-account-to-reset-password": "Пожалуйста, проверьте свой счёт, чтобы заменить пароль"
   },
-  "common": {
-    "title": "Заголовок",
-    "category": "Классификация",
-    "outOfStock": "Превышение наличности",
-    "subTotal": "Частичный итог",
-    "descountPrice": "Льготная сумма",
-    "total": "Итог",
-    "soldOut": "Распродано",
-    "settleMent": "Немедленная покупка",
-    "selectProduct": "Выбор продуктов",
-    "hasSelected": "Выбрано",
-    "pieces": "Ш.",
-    "discount": "Скидка",
-    "piece": "Ш.",
-    "remove": "Удаление",
-    "cancel": "Отмена",
-    "tips": "Напоминание",
-    "checkout": "Свести счет",
-    "finish": "Выполнение",
-    "username": "Имя и фамилия",
-    "mobile-phone": "Номер мобильного телефона",
-    "tel-phone": "Номер телефона",
-    "meno": "Примечание",
-    "package": "Посылка",
-    "login": "Логин",
-    "email": "Электронная почта",
-    "email2": "Почта",
-    "order": "Заказ",
-    "remain": "Остаток",
-    "operation": "Операция",
-    "bank-name": "Название банка",
-    "bank-card-number": "Номер банковской карты",
-    "bank-Account": "Номер банковского счета",
-    "bank-Account2": "Банковский счёт",
-    "close": "Закрытие",
-    "audit": "Рассмотрение",
-    "tax": "Налоговая стоимость",
-    "mobile": "Мобильный телефон",
-    "address": "Адрес",
-    "logistics": "Логистика",
-    "backout": "Отзыв",
-    "confirm": "Определение",
-    "upload": "Загрузка",
-    "error-stack": "Стек ошибок",
-    "amount": "Количество",
-    "stock-limit": "Осталось {{stock}} наличность",
-    "back-to-user-center": "Вернуться в центр пользователей",
-    "member-login": "Логин членов",
-    "contact-information": "Способ связи",
-    "back-to-cart": "Вернуться в корзину для покупки",
-    "recommend": "Рекомендация",
-    "free-shipping": "Бесплатная доставка",
-    "apply": "Приложение",
-    "anonymous": "Анонимно",
-    "logistics-and-payment": "Логистика и оплата",
-    "payment": "Оплата",
-    "payment-2": "Платёж",
-    "modify": "Изменение",
-    "cardholder-name": "Имя и фамилия владельца карты",
-    "use-address": "Адрес для использования",
-    "default-address": "Адрес по умолчанию",
-    "use-new-address": "Использовать новый адрес",
-    "sign-out": "Выход",
-    "enter-username": "Пожалуйста, введите имя пользователя",
-    "enter-email": "пожалуйста, введите электронную почту",
-    "enter-mobile-phone": "Пожалуйста, введите номер мобильного телефона",
-    "order-evaluation": "Оценка заказа",
-    "submit-evaluation": "Представлять оценку",
-    "anonymous-evaluation": "Анонимная оценка",
-    "discountOff": "Скидка",
-    "discountDesc": "Описание о льготе",
-    "freightDesc": "Описание о фрахте",
-    "taxDesc": "Описание о налоговой стоимости",
-    "returnMoney": "Сумма возврата товара",
-    "returnProgress": "Темп возврата товара",
-    "returnInfo": "Информация о возврате товара",
-    "rollback": "Отмена",
-    "applyDate": "Дата подачи заявления",
-    "evaluation": "Оценка",
-    "upload-image": "Загрузка картин",
-    "page": "Страница",
-    "day": "День",
-    "days": "День",
-    "buy-now": "Немедленная покупка",
-    "ok": "Определение",
-    "continue": "Продолжение",
-    "contactUs": "Свяжитесь с нами",
-    "productError": "Пока нет данных о текущим продукте. Повторите попытку позже.",
-    "home": "Первая страница"
-  },
-  "modal": {
-    "iKnow": "Я знаю",
-    "goCart": "Перейти в корзину покупки",
-    "exceedCartTitle": "Извините! Количество товаров, добавленных в корзину покупки, превышает лимит.",
-    "exceedCartContent": "Вы можете перейти в корзину для покупки, или удалить частичные продукты, а затем добавить этот продукт в корзину."
-  },
-  "footer": {
-    "followus": "Обратите внимание на нас",
-    "subscribeBarPlaceholder": "Здесь заполните свою электронную почту",
-    "subscribeSuccess": "Успешная подписка",
-    "subscribeError": "Подписка не удалась",
-    "subscribeRegExpError": "Неправильный формат адреса электронной почты",
-    "copyright": "Все права защитят"
-  },
-  "productList": {
-    "gategoryMenu": {
-      "catalog": "Каталог продуктов",
-      "menuitem": "Все продукты"
-    },
-    "filterMenu": {
-      "filter": "Отбор",
-      "price": "Цена"
-    },
-    "container": {
-      "from": "От {{price}}",
-      "empty": {
-        "desc": "Пока нет продуктов в этой классификации",
-        "title": "Извините! Пока нет продуктов",
-        "description": "При необходимости обратитесь к продавцу для консультации."
-      },
-      "sort": {
-        "text1": "Все продукты",
-        "text2": "Способ упорядочения",
-        "recommend": "Рекомендация",
-        "sales": "С широким сбытом",
-        "newest": "Новейшие продукты на полках",
-        "priceLowToHigh": "Цена от низкой к высокой",
-        "priceHighToLow": "Цена от высокой к низкой",
-        "option1": "Время на полках(от нового к старому)",
-        "option2": "Время на полках (от старого к новому)",
-        "option3": "Цена (от высокой к низкой)",
-        "option4": "Цена (от низкой к высокой)"
-      },
-      "network": {
-        "message": "Пока нет данных о текущим продукте. Повторите попытку позже."
-      },
-      "tradePopup": {
-        "error1": "Для этого продукта осталось всего {{stock}} штук. Пожалуйста, измените количество покупки.",
-        "error2": "Только можно купить этот продукт в количестве {{saleMax}} штук, Пожалуйста, измените количество покупки!",
-        "error3": "Пожалуйста, выберите количество покупки!",
-        "error4": "Пожалуйста, выберите все атрибуты этого товара Информация о грузополучателе",
-        "error5": "Текущие продукты распроданы",
-        "error6": "Текущие продукты сняты с полок",
-        "addToCart": "Добавить в корзину покупки"
-      },
-      "listItem": {
-        "sold": {
-          "out": "Продукты распроданы"
-        },
-        "off": "- {{value}}%",
-        "addToCart": "Добавить в корзину покупки",
-        "toDetail": "Просмотрите подробности"
-      },
-      "show": "Показать",
-      "viewAs": "Просмотреть метод",
-      "productsNum": "{{num}} продуктов"
-    }
-  },
-  "productSearch": {
-    "serachTitle": {
-      "text1": "Связанные результаты не найдены"
-    },
-    "search": {
-      "backHome": "Вернуться на главную страницу",
-      "resultsFoundFor": "Найдено {{count}} записей \"{{keyword}}\"",
-      "results": "{{count}} записей",
-      "noRelatedResultFound": "Не найдено связанных записей",
-      "searchNoResults": "{{keyword}}, который вы искали, нет никакой записи"
-    },
-    "empty": {
-      "title1": "Мы рекомендуем проверить орфографические ошибки,",
-      "title2": "Затем повторите поиск с краткими ключевыми словами"
-    },
-    "sortName": "Способ упорядочения:",
-    "container": {
-      "sort": {
-        "option1": "Время на полках (от нового к старому)",
-        "option2": "Время на полках (от старого к новому)",
-        "option3": "Цена (от высокой к низкой)",
-        "option4": "Цена (от низкой к высокой)"
-      }
-    }
-  },
-  "collection": {
-    "all": {
-      "title": "Все классификации",
-      "h1Title": "Коллекции"
-    }
-  },
-  "productDetail": {
-    "goToAmazon": "Покупка на Amazon",
-    "goOutsideOfAmazon": "Покупка за пределами Amazon",
-    "goOtherChannels": "Другие каналы покупки",
-    "toAmazon": "Amazon",
-    "goToRakuten": "Lotte",
-    "goToYahoo": "Yahoo",
-    "goToAmazonByLink": "Покупка на Amazon",
-    "goToRakutenByLink": "Покупка на Lotte",
-    "goToYahooByLink": "Покупка на Yahoo",
-    "recentlyViewedProducts": "Недавно просмотренные продукты",
-    "activityToast": {
-      "product-limit": "Вы можете купить максимально {{stock}} товаров со скидкой одновременно.",
-      "price-limit": "Льготная цена этого продукта только поддерживает покупку {{num}} штук.",
-      "title-limit": "Следующие товары превышают лимит покупки"
-    },
-    "tabs": {
-      "description": "Описание",
-      "shippingPayment": "Логистика и оплата",
-      "comments": "Комментарии"
-    },
-    "recommendTitle": "Вам также может понравиться",
-    "commentsTitle": "комментариев",
-    "network": {
-      "message2": "Пока не получили информации о продуктах, повторите попытку позже."
-    },
-    "thumbSwiper": {
-      "image": {
-        "alt": "Карточка товара"
-      },
-      "share": {
-        "text": "Поделиться"
-      }
-    },
-    "tabPanel": {
-      "desc": "Пока нет описательной информации",
-      "descFs": "Не удалось получить данные, повторите попытку позже.",
-      "ship": {
-        "sh": {
-          "text1": "Способ"
-        },
-        "text2": "Пока нет метода логистики"
-      },
-      "pay": {
-        "text1": "Метод платежа",
-        "text2": "Пока нет метода платежа",
-        "text3": "Пока нет информации об оплате логистики"
-      },
-      "comments": {
-        "empty": "Пока нет комментариев о продуктах",
-        "error": "Не удалось получить комментарии о продуктах, повторите попытку позже."
-      }
-    },
-    "no-product-introduction": "Пока нет рекомендации о продуктах",
-    "no-logistics-and-payment-information": "Пока нет информации о логистике и методе платежа",
-    "addCart": "Добавление",
-    "default-placeholder": "Пожалуйста, выберите {{attrName}}",
-    "inquiry": {
-      "inquiryTitle": "Консультативные товары",
-      "inquiryTips1": "Оставьте сообщение по вашему запросу, и мы будем как можно быстрее связаться с вами.",
-      "email": "Электронная почта",
-      "message": "Оставление записки",
-      "inquiryTips2": "Вы также можете оставить больше информации, чтобы мы могли предоставить вам более подходящие вам услуги",
-      "optional": "Можно выбрать",
-      "name": "Имя и фамилия",
-      "mobile": "Номер телефона",
-      "region": "Страна / регион",
-      "cancel": "Отмена",
-      "submit": "Представление",
-      "emailEmptyErr": "Пожалуйста, введите электронную почту",
-      "messageEmptyErr": "Пожалуйста, заполните сообщение",
-      "emailFormatErr": "Пожалуйста, заполните правильную электронную почту",
-      "messageLengthErr": "Длина сообщения не превышает 1500 слов.",
-      "submitSuccess": "Успешное представление",
-      "submitFailed": "Не удалось предоставить, попробуйте еще раз"
-    },
-    "previewLinkToast": "Ссылка на предварительный просмотр не поддерживает эту операцию",
-    "morePaymentOptions": "Другие варианты оплаты",
-    "bulkDiscount": {
-      "title": "Купите больше сэкономите больше!"
+  "title": {
+    "policy": {
+      "privacy": "политики конфиденциальности",
+      "refund": "Политика возврата",
+      "service": "с условиями услуг сайта",
+      "shipping": "Политика доставки"
     }
   },
   "trade": {
-    "contact": "Способ связи",
-    "can-not-submit-order": "Невозможно предоставить заказ",
-    "sorry-rechoose-longtips": "Извините, не можно купить тот продукт, который ты выбрал, потому что его срок действия истек, пожалуйста, выберите еще раз",
-    "product-amount": "Общая сумма продукта",
-    "will-discount": "Ожидаемая скидка",
-    "some-discount-limit-to-pay-and-delivery": "Можно воспользоваться скидкой для частичных методов логистики / методов оплаты",
-    "total": "Итог",
-    "go-on-shopping": "Продолжить покупку",
-    "man-piece-share": "Можно воспользоваться скидкой{{count}} штук",
-    "man-money-share": "Можно воспользоваться скидкой{{money}}",
-    "man-piece-reduce": "Можно снизить {{count}} штук",
-    "man-money-reduce": "Можно снизить {{money}}",
-    "invalid-product": "Бездействующий товар",
-    "delete-invalid-product": "Удалить бездействующие товары",
-    "remove-product": "Удалить товары",
-    "sure-remove-this-product": "Вы уверены, что хотите удалить этот продукт?",
-    "order-created-but-data-fail": "Заказ создан успешно, но данные возвращаются ненормально ...",
+    "activity-price-limit": "Льготная цена этого продукта только поддерживает покупку X штук.",
+    "activity-product-limit": "Вы можете купить максимально {{stock}} товаров со скидкой одновременно.",
+    "activity-title-limit": "Следующие товары превышают лимит покупки, вы продолжаете оформлять заказ?",
+    "add-to-cart-fail": "Извините! Не удалось добавить в корзину покупки, попробуйте еще раз!",
+    "after-sale-order": "Послепродажный заказ",
     "agree-user-terms-first": "Пожалуйста, сначала примите условия пользователей",
-    "recieve-address-unavailable-rechoose": "Для адреса получения товара нет способа доставки, пожалуйста, вернитесь и выберите еще раз",
-    "please-fill-meno": "Пожалуйста, заполните примечания",
-    "please-choose-delivery-way": "Пожалуйста, сначала выберите способ доставки",
-    "please-choose-pay-way": "Пожалуйста, сначала выберите способ оплаты",
-    "bad-userinfo-or-in-blocklist": "Информация о пользователе ненормальна или пользователь находится в черном списке",
-    "bad-userinfo": "Информация о пользователе ненормальна",
-    "fail-get-product-back-cart": "Не можно получить информацию о продукте для расчёта. Пожалуйста, вернитесь в корзину покупки для повторного предоставления.",
-    "fill-info": "Заполните информации",
+    "and": "и",
+    "apply-refund": "Заявление на возврат товара",
+    "apply-time": "Время заявления",
+    "at-least-comment-one-before-submit": "Пожалуйста, перед предоставлением выберите хотя бы одно для оценки",
+    "audit-refuse": "Рассмотрение не прошло",
     "back-prev-step": "Вернитесь для заполнения информаций",
     "back-prev-step2": "Вернитесь для выбора логистики",
-    "next-step": "Следующий шаг",
-    "next-step-shipment": "Перейти к выбору логистики",
-    "next-step-payment": "Перейти к оплате",
-    "submit-order": "Выполнить заказ",
-    "i-agree-website": "Я согласен",
-    "service-terms": "с условиями услуг сайта",
-    "and": "и",
-    "private-policy": "политики конфиденциальности",
-    "fast-checkout": "Свести счет быстро",
-    "or-fill-info": "Или заполнить информации",
-    "not-support-paypal": "Текущий продавец не поддерживает PayPal",
-    "service-fee": "Комиссия",
-    "pay-way": "Способ платежа",
-    "pay-way-logo-and-more": "Более",
-    "jump-to-pay-longtips": "После нажатия «выполнить заказ» вы будете перейти на {{- payChannel}} для безопасной оплаты.",
-    "reciever-info": "Информация о получении товара",
-    "reciever-to": "Информация о получении товара",
-    "use-customer-info": "Использовать информацию о клиентах",
-    "please-input-field": "Пожалуйста, введите {{field}}",
-    "reciever-name": "Фамилия получателя",
-    "reciever-fullname": "Имя получателя",
-    "field-can-not-longer-than": "{{field}} не может превышать {{length}} символа.",
+    "backout-apply": "Отменить заявление",
+    "backout-refund-apply": "Отозвать заявление о возврате товара",
+    "bad-userinfo": "Информация о пользователе ненормальна",
+    "bad-userinfo-or-in-blocklist": "Информация о пользователе ненормальна или пользователь находится в черном списке",
+    "billing-address-abnormal": "Адрес получения счета ненормален",
+    "billing-address": {
+      "desc": "Пожалуйста, введите адрес, соответствующий вашему способу оплаты",
+      "input-email": "В соответствии с выбранным вами способом оплаты вам также нужно предоставить адрес электронной почты для отправки информации о счете.",
+      "option-another": "Использовать другой адрес",
+      "option-same": "То же, что и адрес отправления",
+      "title": "Адрес получения счета"
+    },
+    "buy-number-greater-then-stock": "Количество должно быть больше 1 и меньше наличности!",
+    "can-get": "Можно получить",
     "can-not-empty": "Не может быть пустым",
-    "must-fill": "Необходимо заполнить",
-    "must-choose": "Необходимо выбрать",
-    "must-select": "Необходимо выбрать",
-    "must-agree-policy": "Вы должны согласиться с политикой возврата товара, чтобы продолжить!",
-    "optional-fill": "Заполнить по желанию",
-    "other-info": "Прочие информации",
-    "need-choose-delivery-way": "Все температурные слои должны выбрать способ доставки",
-    "your-delivery-need-choose-store": "Для выбранного способа доставки нужно выбрать информацию о магазине",
-    "supermarket-self-pick": "Сам взять товар в магазине или супермаркете",
+    "can-not-submit-order": "Невозможно предоставить заказ",
+    "can-refund-number": "Возвращаемое количество",
+    "cancel-order": "Отменить заказ",
+    "choose-refund-product": "Выберите товар для возврата",
+    "choose-refund-reason": "Пожалуйста, выберите причину возврата товара",
+    "choose-store": "Изменить магазин",
+    "come-way-return": "Вернуться по тому же маршруту",
+    "comment-order": "Оценить заказ",
+    "comment-product": "Оценить товар",
+    "complete-payment": "Завершить оплату",
+    "confirm-email-send-to-you": "Письмо с подтверждением отправлено на вашу электронную почту",
+    "confirm-refund": "Подтвердите возврат товара",
+    "contact": "Способ связи",
+    "coupon": "Льгота",
+    "coupon-code": "Льготный код",
+    "coupon-code-offer": "Льготный код",
+    "coupon-mutra-discount": "Этот льготный код нельзя использовать вместе с другими стимулированиями сбыта или льготами.",
+    "create-order-time": "Время размещения заказа",
+    "customerInfo": {
+      "pickupLocation": {
+        "title": "Выбрать место"
+      }
+    },
+    "damage": "Во время транспортировки и доставки товар поврежден",
+    "delete-invalid-product": "Удалить бездействующие товары",
+    "delivery-address-abnormal": "Адрес получения товара ненормален",
+    "delivery-fee": "Фрахт",
+    "delivery-tax": "Налог фрахта",
     "delivery-to-home": "Доставить товары на дом",
-    "other-delivery": "Другие способы доставки",
     "delivery-way": "Способ доставки",
-    "please-choose-area": "Пожалуйста, выберите регион",
-    "please-choose-store": "Пожалуйста, выберите магазин",
-    "please-input-legal-passport-id-card": "Пожалуйста, введите действительное удостоверение личности / паспорт",
+    "enter-a-tip-on-more-than": "Введите чаевые не более {{amount}}",
+    "express-bill-pic": "Картина отслеживания логистики",
+    "express-bills-sn": "Номер отслеживания логистики",
+    "express-company": "Логистическая компания",
+    "fail-get-product-back-cart": "Не можно получить информацию о продукте для расчёта. Пожалуйста, вернитесь в корзину покупки для повторного предоставления.",
+    "fast-checkout": "Свести счет быстро",
+    "field-can-not-longer-than": "{{field}} не может превышать {{length}} символа.",
+    "fill-info": "Заполните информации",
+    "fill-logistics": "Заполните логистическую информацию",
+    "fill-refund-info": "Заполните информацию о возврате товара",
+    "find-store": "Выбрать магазин",
+    "footer-all-rights-reserved": "Copyright © {{year}} {{name}}. All rights reserved.",
+    "free": "Бесплатно",
+    "free-shipping": "Бесплатная доставка",
+    "get-the-order": "Добавить товар для оформления заказа",
+    "give-stars": "Оценка",
+    "go-login": "Перейти к логину",
+    "go-on-shopping": "Продолжить покупку",
+    "go-pay": "Перейти к оплате",
+    "has-number-products": "Еще {{number}} товаров",
+    "has-removed": "Удалено",
+    "i-agree-website": "Я согласен",
+    "i-want-recieve-discount-info": "Я хочу получать последние информации и скидки",
+    "invalid-product": "Бездействующий товар",
+    "is-paying": "Во время оплаты",
+    "item": "Продукция",
+    "jump-to-pay-longtips": "После нажатия «выполнить заказ» вы будете перейти на {{- payChannel}} для безопасной оплаты.",
+    "leave-your-words": "Оставьте свои ощущения использования для ссылки для других покупателей ~",
+    "logistics-package": "Посылка логистики",
+    "man-money-reduce": "Можно снизить {{money}}",
+    "man-money-share": "Можно воспользоваться скидкой{{money}}",
+    "man-piece-reduce": "Можно снизить {{count}} штук",
+    "man-piece-share": "Можно воспользоваться скидкой{{count}} штук",
+    "max-refund": "Максимальная сумма возврата",
+    "must-agree-policy": "Вы должны согласиться с политикой возврата товара, чтобы продолжить!",
+    "must-choose": "Необходимо выбрать",
+    "must-fill": "Необходимо заполнить",
+    "must-select": "Необходимо выбрать",
+    "need-choose-delivery-way": "Все температурные слои должны выбрать способ доставки",
+    "need-pay": "Нужно заплатить",
+    "next-step": "Следующий шаг",
+    "next-step-calc": "Расчет следующего шага",
+    "next-step-payment": "Перейти к оплате",
+    "next-step-shipment": "Перейти к выбору логистики",
+    "next-time-use-shopping-money": "В следующую покупку ожидается, что можно вычести",
+    "no-pay-way": "Пока нет доступных способов оплаты",
+    "not-as-expected": "Товар не такой, как ожидалось",
+    "not-support-paypal": "Текущий продавец не поддерживает PayPal",
+    "now-can-not-comment": "В настоящее время не можно комментировать!",
+    "number-refund-product": "<italic>{{number}} </italic> возвращенных товаров",
+    "off-shelf": "Снять с полок",
+    "only-refund": "Только возврат денег",
+    "optional-fill": "Заполнить по желанию",
+    "optional-support-jpg": "Можно выбрать, поддерживать JPG/PNG",
+    "or-fill-info": "Или заполнить информации",
+    "order-created-but-data-fail": "Заказ создан успешно, но данные возвращаются ненормально ...",
+    "order-detail": "Подпобности заказа",
+    "order-detail-query-fail": "Запрос сведений о заказе ненормален",
+    "order-info": "Информации о заказе",
+    "order-meno": "Примечания к заказу",
+    "order-status": "Состояние заказа",
+    "other-delivery": "Другие способы доставки",
+    "other-info": "Прочие информации",
+    "other-reason": "Другие причины",
+    "others": "Прочие",
+    "over-limit-number": "Лимит на покупку продукта превышает",
     "passport-id-card-placeholder": "Удостоверение личности / паспорт(заполнить по желанию)",
     "passport-id-card-tip": "Пожалуйста, введите реальный номер удостоверения личности или паспорта получателя, чтобы обеспечить беспрепятственное таможенное декларирование и доставку.",
-    "product-offline": "Товары сняты с полок",
-    "stock-not-enough": "Недостаточное наличие",
-    "over-limit-number": "Лимит на покупку продукта превышает",
-    "product-removed": "Товар был удален",
-    "product-package": "Упаковка товара",
-    "product-fee": "Расход товара",
-    "product-tax": "Налог товара",
-    "delivery-tax": "Налог фрахта",
-    "next-step-calc": "Расчет следующего шага",
-    "delivery-fee": "Фрахт",
+    "pay-failed-err-code": {
+      "3d-overtime": "Аутентификация пользователя 3Ds не завершена, попробуйте еще раз.",
+      "buyer-account-abnormal": "Из-за проблемы с аккаунтом ваш платеж не может быть обработан . Пожалуйста, попробуйте еще раз или используйте другой способ оплаты.",
+      "card-expired": "Из-за истечения срока действия ваш платеж не может выполняться. Пожалуйста, замените банковскую карту или переключите на другой способ оплаты и попробуйте еще раз.",
+      "change-card": "Ваш платеж пока не может выполняться. Пожалуйста, замените банковскую карту или переключите на другой способ оплаты и попробуйте еще раз.",
+      "default": "По какой-то причине ваш платеж не может быть обработан. Пожалуйста, попробуйте еще раз или используйте другой способ оплаты.",
+      "insufficient-balance": "Из-за недостаточного остатка ваш платеж не может выполняться. Пожалуйста, замените банковскую карту или переключите на другой способ оплаты и попробуйте еще раз.",
+      "invalid-card-number": "Из-за недействительного номера карты ваш платеж не может выполняться. Пожалуйста, замените банковскую карту или переключите на другой способ оплаты и попробуйте еще раз.",
+      "overpayment": "Поскольку сумма заказа превышает лимит, ваш платеж не может выполняться. Пожалуйста, замените банковскую карту или переключите на другой способ оплаты и попробуйте еще раз.",
+      "pin-over-times": "Поскольку количество ввода пароля превысило лимит, ваш платеж не может выполняться. Пожалуйста, переключите на другой способ оплаты и попробуйте еще раз.",
+      "user-cancel": "Платеж отменен. Если вы хотите продолжать, попробуйте еще раз.",
+      "wrong-password": "Из-за неправильного пароля ваш платеж не может быть обработан . Пожалуйста, попробуйте еще раз или используйте другой способ оплаты."
+    },
     "pay-fee": "Комиссия за оплату",
+    "pay-way": "Способ платежа",
+    "pay-way-logo-and-more": "Более",
+    "payment-security-description": "Все торговые сделки безопасны и зашифрованы",
+    "pic-upload-fail": "Не удалось загрузить изображение {{name}}",
+    "pick-address": "Адрес получения пакета",
+    "please-choose-area": "Пожалуйста, выберите регион",
+    "please-choose-delivery-way": "Пожалуйста, сначала выберите способ доставки",
+    "please-choose-pay-way": "Пожалуйста, сначала выберите способ оплаты",
+    "please-choose-refund-account": "Пожалуйста, выберите счёт для возвратных денег!",
+    "please-choose-refund-express": "Пожалуйста, выберите логистику возврата товара",
+    "please-choose-refund-type": "Пожалуйста, выберите тип возврата товара",
+    "please-choose-store": "Пожалуйста, выберите магазин",
+    "please-fill-80charact-refund-reason": "Пожалуйста, заполните причину возврата товара менее 80 слов.",
+    "please-fill-express-bills-sn": "Пожалуйста, введите номер отслеживания логистики",
+    "please-fill-express-company": "Пожалуйста, заполните логистическую компанию",
+    "please-fill-meno": "Пожалуйста, заполните примечания",
+    "please-fill-refund-reason": "Пожалуйста, заполните причину возврата товара",
+    "please-input-field": "Пожалуйста, введите {{field}}",
+    "please-input-legal-passport-id-card": "Пожалуйста, введите действительное удостоверение личности / паспорт",
+    "please-pay-within": "Срок платежа",
+    "pod-link": "Нажмите, чтобы посмотреть",
+    "pod-pic": "Пользовательский предварительный просмотр",
     "point-discount": "Скидка по интегралам",
     "point-discount-desc": "Вы можете использовать {{deductMemberPointNum}} интегралов для вычета {{deductMemberPointAmount}}",
     "point-discount-remark": "Потратили {{value}} интегралов",
-    "summary": "Итог",
-    "use-member-account-can": "Быстро свести счет как член? можно немедленно",
-    "i-want-recieve-discount-info": "Я хочу получать последние информации и скидки",
-    "order-detail-query-fail": "Запрос сведений о заказе ненормален",
-    "your-order-created": "Ваш заказ создан",
-    "your-order-not-pay": "Ваш заказ еще не выполняет оплату",
-    "go-pay": "Перейти к оплате",
-    "now-can-not-comment": "В настоящее время не можно комментировать!",
-    "order-detail": "Подпобности заказа",
-    "order-info": "Информации о заказе",
-    "order-status": "Состояние заказа",
-    "create-order-time": "Время размещения заказа",
-    "comment-product": "Оценить товар",
-    "give-stars": "Оценка",
-    "at-least-comment-one-before-submit": "Пожалуйста, перед предоставлением выберите хотя бы одно для оценки",
-    "leave-your-words": "Оставьте свои ощущения использования для ссылки для других покупателей ~",
-    "is-paying": "Во время оплаты",
-    "you-are-paying-wait-result": "Ваш запрос платежа предоставлен, и сейчас ожидает {{- payChannel}} вернуть в результат платежа",
-    "need-pay": "Нужно заплатить",
-    "after-sale-order": "Послепродажный заказ",
-    "see-refund-progress": "Проверить темп возврата товара",
-    "has-number-products": "Еще {{number}} товаров",
-    "order-meno": "Примечания к заказу",
-    "comment-order": "Оценить заказ",
-    "apply-refund": "Заявление на возврат товара",
-    "cancel-order": "Отменить заказ",
+    "policy": {
+      "privacy-policy": "Политика конфиденциальности",
+      "refund-policy": "Политика возврата"
+    },
+    "private-policy": "политики конфиденциальности",
+    "product-amount": "Общая сумма продукта",
+    "product-fee": "Расход товара",
+    "product-offline": "Товары сняты с полок",
+    "product-package": "Упаковка товара",
     "product-preview": "Предварительный просмотр товара",
-    "see-detail": "Просмотрите подробности",
-    "start-refund": "Начать возврат товара",
-    "buy-number-greater-then-stock": "Количество должно быть больше 1 и меньше наличности!",
-    "can-refund-number": "Возвращаемое количество",
-    "choose-refund-reason": "Пожалуйста, выберите причину возврата товара",
-    "please-fill-80charact-refund-reason": "Пожалуйста, заполните причину возврата товара менее 80 слов.",
-    "please-fill-refund-reason": "Пожалуйста, заполните причину возврата товара",
-    "choose-refund-product": "Выберите товар для возврата",
-    "refund-reason-less-60": "Причина возврата не может быть больше 60 слов!",
-    "refund-number": "Количество возврата товара",
-    "sub-total": "Частичный итог",
+    "product-remain-please-re-choose": "Осталось только {{stock}} штук, пожалуйста, купите повторно",
+    "product-removed": "Товар был удален",
+    "product-sold-out": "Товары распроданы",
+    "product-tax": "Налог товара",
+    "quantity": "Кол-во",
+    "recieve-address-unavailable-rechoose": "Для адреса получения товара нет способа доставки, пожалуйста, вернитесь и выберите еще раз",
+    "reciever-fullname": "Имя получателя",
+    "reciever-info": "Информация о получении товара",
+    "reciever-name": "Фамилия получателя",
+    "reciever-to": "Информация о получении товара",
+    "refund-account": "Счёт для возвратных денег",
     "refund-amount": "Сумма возвратных денег",
     "refund-amount-bigger-zero": "Сумма возвратных денег должна быть больше 0",
     "refund-amount-can-over": "Сумма возвратных денег не может быть больше максимальной суммы возврата.",
-    "max-refund": "Максимальная сумма возврата",
-    "confirm-refund": "Подтвердите возврат товара",
-    "refund-policy": "Политика возврата товара",
-    "fill-refund-info": "Заполните информацию о возврате товара",
-    "refund-way": "Способ возврата товара",
-    "refund-type": "Тип возврата товара",
-    "please-choose-refund-type": "Пожалуйста, выберите тип возврата товара",
-    "refund-express": "Логистика возврата товара",
-    "please-choose-refund-express": "Пожалуйста, выберите логистику возврата товара",
-    "refund-person": "Человек, который возвращает товар",
-    "pick-address": "Адрес получения пакета",
-    "refund-account": "Счёт для возвратных денег",
-    "please-choose-refund-account": "Пожалуйста, выберите счёт для возвратных денег!",
-    "your-refund-order-created": "Ваш заказ на возврат товара создан",
-    "confirm-email-send-to-you": "Письмо с подтверждением отправлено на вашу электронную почту",
-    "refunding": "Во время возрата денег",
-    "user-cancel-apply": "Пользователь отменяет заявление",
-    "audit-refuse": "Рассмотрение не прошло",
-    "refund-order-stataus": "Состояние о заказе на возврат товара",
-    "refund-order-number": "Номер о заказе на возврат товара",
-    "apply-time": "Время заявления",
-    "number-refund-product": "<italic>{{number}} </italic> возвращенных товаров",
-    "refund-reason": "Причина возрата товара",
-    "refund-way-intro": "Введение в метод возврата",
-    "fill-logistics": "Заполните логистическую информацию",
-    "backout-apply": "Отменить заявление",
-    "backout-refund-apply": "Отозвать заявление о возврате товара",
-    "your-apply-auditing-sure-backout": "Ваше заявление на возврат товара находится на рассмотрении, вы уверены, что хотите его отозвать?",
-    "see-origin-order": "Просмотреть оригинальный заказ",
-    "refund-logistics-info": "Логистическая информация о возврате товара",
-    "express-company": "Логистическая компания",
-    "please-fill-express-company": "Пожалуйста, заполните логистическую компанию",
-    "please-fill-express-bills-sn": "Пожалуйста, введите номер отслеживания логистики",
-    "express-bills-sn": "Номер отслеживания логистики",
-    "express-bill-pic": "Картина отслеживания логистики",
-    "optional-support-jpg": "Можно выбрать, поддерживать JPG/PNG",
-    "pic-upload-fail": "Не удалось загрузить изображение {{name}}",
-    "shopping-gold-trade-off": "Деньги для покупки могуть купить товары",
-    "coupon-code-offer": "Льготный код",
-    "product-sold-out": "Товары распроданы",
-    "sorry-limit-re-choose": "Извините, каждый заказ ограничен {{promotionRemainStock}}, пожалуйста, измените количество покупки",
-    "sorry-product-not-available-re-reorder": "Извините! Частичные из приобретенных вами товары были сняты с полок, пожалуйста, после просмотра и подтверждения еще раз предоставляйте заказ.",
-    "product-remain-please-re-choose": "Осталось только {{stock}} штук, пожалуйста, купите повторно",
-    "coupon-code": "Льготный код",
-    "shop-list": "Перечень для покупки({{count}}штук)",
-    "add-to-cart-fail": "Извините! Не удалось добавить в корзину покупки, попробуйте еще раз!",
-    "go-login": "Перейти к логину",
-    "complete-payment": "Завершить оплату",
-    "shopping-money-deduction": "Вычет денег для покупки",
-    "use-shopping-deduction": "Можно использовать {{num}} денег для покупки, можно вычести",
-    "can-get": "Можно получить",
-    "shopping-money": "Деньги для покуки",
-    "next-time-use-shopping-money": "В следующую покупку ожидается, что можно вычести",
-    "delivery-address-abnormal": "Адрес получения товара ненормален",
-    "billing-address-abnormal": "Адрес получения счета ненормален",
-    "billing-address": {
-      "title": "Адрес получения счета",
-      "desc": "Пожалуйста, введите адрес, соответствующий вашему способу оплаты",
-      "option-same": "То же, что и адрес отправления",
-      "option-another": "Использовать другой адрес",
-      "input-email": "В соответствии с выбранным вами способом оплаты вам также нужно предоставить адрес электронной почты для отправки информации о счете."
-    },
-    "ship-to": "Отправлено на",
-    "self-mention": "Сам взять товар",
-    "logistics-package": "Посылка логистики",
-    "shopping-list": "Корзина покупателя",
-    "item": "Продукция",
-    "quantity": "Кол-во",
-    "total-num": "Общая Сумма",
-    "no-pay-way": "Пока нет доступных способов оплаты",
     "refund-detail": "Спецификация возврата товара",
-    "only-refund": "Только возврат денег",
+    "refund-express": "Логистика возврата товара",
+    "refund-logistics-info": "Логистическая информация о возврате товара",
+    "refund-number": "Количество возврата товара",
+    "refund-order-number": "Номер о заказе на возврат товара",
+    "refund-order-stataus": "Состояние о заказе на возврат товара",
+    "refund-person": "Человек, который возвращает товар",
+    "refund-policy": "Политика возврата товара",
+    "refund-reason": "Причина возрата товара",
+    "refund-reason-less-60": "Причина возврата не может быть больше 60 слов!",
+    "refund-type": "Тип возврата товара",
+    "refund-way": "Способ возврата товара",
+    "refund-way-intro": "Введение в метод возврата",
+    "refunding": "Во время возрата денег",
+    "remove-product": "Удалить товары",
     "return-and-refund": "Возврат товара и денег",
-    "come-way-return": "Вернуться по тому же маршруту",
-    "others": "Прочие",
-    "not-as-expected": "Товар не такой, как ожидалось",
-    "damage": "Во время транспортировки и доставки товар поврежден",
-    "sku-not-match": "Размер и спецификация продукта не соответствует",
-    "wrong-product": "Неправильно послать товар",
-    "other-reason": "Другие причины",
-    "get-the-order": "Добавить товар для оформления заказа",
-    "free": "Бесплатно",
-    "sku-changed-title": "товаров меняется{{num}}, продолжать ли свести счёт?",
-    "sku-limit-title": "Следующие товары превышают лимит покупки, пожалуйста, измените количество",
-    "sorry-all-sku-unusable": "Извините, срок действия всех товаров истек, и заказ не может быть предоставлен",
-    "off-shelf": "Снять с полок",
-    "sold-out": "Распродано",
-    "has-removed": "Удалено",
-    "footer-all-rights-reserved": "Copyright © {{year}} {{name}}. All rights reserved.",
-    "return-to-selection-goods": "Количество продуктов для возврата превышает лимит!",
     "return-apply-fail-SKU": "Количество продуктов превышает лимит!",
     "return-apply-fail-max-amount": "Сумма возврата денег не может превышать максимальной допустимой суммы",
     "return-apply-fail-min-amount": "Во время только возврата денег сумма возврата денег должна быть больше 0 юаней.",
+    "return-to-selection-goods": "Количество продуктов для возврата превышает лимит!",
+    "see-detail": "Просмотрите подробности",
+    "see-origin-order": "Просмотреть оригинальный заказ",
+    "see-refund-progress": "Проверить темп возврата товара",
+    "self-mention": "Сам взять товар",
+    "service-fee": "Комиссия",
+    "service-terms": "с условиями услуг сайта",
+    "ship-to": "Отправлено на",
+    "shop-list": "Перечень для покупки({{count}}штук)",
+    "shopping-gold-trade-off": "Деньги для покупки могуть купить товары",
+    "shopping-list": "Корзина покупателя",
+    "shopping-money": "Деньги для покуки",
+    "shopping-money-deduction": "Вычет денег для покупки",
+    "sku-changed-title": "товаров меняется{{num}}, продолжать ли свести счёт?",
+    "sku-limit-title": "Следующие товары превышают лимит покупки, пожалуйста, измените количество",
+    "sku-not-match": "Размер и спецификация продукта не соответствует",
     "slpayment": {
+      "cardHolderNameErrorTips": "Пожалуйста, проверьте еще раз.",
+      "cardHolderNamePlaceHolder": "Имя и фамилия владельца карты",
       "cardNumber": {
-        "placeholder": "Номер кредитной карты",
         "errorTips": "Пожалуйста, проверьте еще раз.",
+        "placeholder": "Номер кредитной карты",
         "tips": "Все транзакции безопасны и зашифрованы"
+      },
+      "cardholdername": "Имя и фамилия владельца карты",
+      "cvv": {
+        "errorTips": "Пожалуйста, проверьте еще раз.",
+        "placeholder": "CVV",
+        "tips": "Обычно находится за картой"
       },
       "expiryDate": {
         "errorTips": "Пожалуйста, проверьте еще раз."
       },
-      "cvv": {
-        "placeholder": "CVV",
-        "errorTips": "Пожалуйста, проверьте еще раз.",
-        "tips": "Обычно находится за картой"
-      },
       "footer": "Вы используете SHOPLINE Payments для расчета. Завершая оплату, это означает, что вы соглашаетесь",
-      "service": "с условиями услуг SHOPLINE Payments.",
-      "cardholdername": "Имя и фамилия владельца карты",
-      "cardHolderNamePlaceHolder": "Имя и фамилия владельца карты",
-      "cardHolderNameErrorTips": "Пожалуйста, проверьте еще раз."
+      "service": "с условиями услуг SHOPLINE Payments."
     },
-    "find-store": "Выбрать магазин",
-    "choose-store": "Изменить магазин",
-    "please-pay-within": "Срок платежа",
-    "enter-a-tip-on-more-than": "Введите чаевые не более {{amount}}",
-    "payment-security-description": "Все торговые сделки безопасны и зашифрованы",
-    "pay-failed-err-code": {
-      "default": "По какой-то причине ваш платеж не может быть обработан. Пожалуйста, попробуйте еще раз или используйте другой способ оплаты.",
-      "buyer-account-abnormal": "Из-за проблемы с аккаунтом ваш платеж не может быть обработан . Пожалуйста, попробуйте еще раз или используйте другой способ оплаты.",
-      "wrong-password": "Из-за неправильного пароля ваш платеж не может быть обработан . Пожалуйста, попробуйте еще раз или используйте другой способ оплаты.",
-      "overpayment": "Поскольку сумма заказа превышает лимит, ваш платеж не может выполняться. Пожалуйста, замените банковскую карту или переключите на другой способ оплаты и попробуйте еще раз.",
-      "insufficient-balance": "Из-за недостаточного остатка ваш платеж не может выполняться. Пожалуйста, замените банковскую карту или переключите на другой способ оплаты и попробуйте еще раз.",
-      "invalid-card-number": "Из-за недействительного номера карты ваш платеж не может выполняться. Пожалуйста, замените банковскую карту или переключите на другой способ оплаты и попробуйте еще раз.",
-      "card-expired": "Из-за истечения срока действия ваш платеж не может выполняться. Пожалуйста, замените банковскую карту или переключите на другой способ оплаты и попробуйте еще раз.",
-      "change-card": "Ваш платеж пока не может выполняться. Пожалуйста, замените банковскую карту или переключите на другой способ оплаты и попробуйте еще раз.",
-      "user-cancel": "Платеж отменен. Если вы хотите продолжать, попробуйте еще раз.",
-      "3d-overtime": "Аутентификация пользователя 3Ds не завершена, попробуйте еще раз.",
-      "pin-over-times": "Поскольку количество ввода пароля превысило лимит, ваш платеж не может выполняться. Пожалуйста, переключите на другой способ оплаты и попробуйте еще раз."
-    },
-    "coupon": "Льгота",
-    "coupon-mutra-discount": "Этот льготный код нельзя использовать вместе с другими стимулированиями сбыта или льготами.",
-    "activity-price-limit": "Льготная цена этого продукта только поддерживает покупку X штук.",
-    "policy": {
-      "refund-policy": "Политика возврата",
-      "privacy-policy": "Политика конфиденциальности"
-    },
+    "sold-out": "Распродано",
+    "some-discount-limit-to-pay-and-delivery": "Можно воспользоваться скидкой для частичных методов логистики / методов оплаты",
+    "sorry-all-sku-unusable": "Извините, срок действия всех товаров истек, и заказ не может быть предоставлен",
+    "sorry-limit-re-choose": "Извините, каждый заказ ограничен {{promotionRemainStock}}, пожалуйста, измените количество покупки",
+    "sorry-product-not-available-re-reorder": "Извините! Частичные из приобретенных вами товары были сняты с полок, пожалуйста, после просмотра и подтверждения еще раз предоставляйте заказ.",
+    "sorry-rechoose-longtips": "Извините, не можно купить тот продукт, который ты выбрал, потому что его срок действия истек, пожалуйста, выберите еще раз",
+    "start-refund": "Начать возврат товара",
+    "stock-not-enough": "Недостаточное наличие",
+    "sub-total": "Частичный итог",
+    "submit-order": "Выполнить заказ",
+    "summary": "Итог",
+    "supermarket-self-pick": "Сам взять товар в магазине или супермаркете",
+    "sure-remove-this-product": "Вы уверены, что хотите удалить этот продукт?",
     "tip": {
       "add-tip": "Увеличить чаевые"
     },
-    "free-shipping": "Бесплатная доставка",
-    "pod-link": "Нажмите, чтобы посмотреть",
-    "pod-pic": "Пользовательский предварительный просмотр",
-    "activity-product-limit": "Вы можете купить максимально {{stock}} товаров со скидкой одновременно.",
-    "activity-title-limit": "Следующие товары превышают лимит покупки, вы продолжаете оформлять заказ?"
-  },
-  "payments-name": {
-    "Paypal": "Paypal",
-    "COD": "Оплата при доставке товара",
-    "third-part": "Кредитная карта"
-  },
-  "paypal": {
-    "error-expired": "Срок действия товара истек",
-    "error-sold-out": "Недостаточная наличность товара",
-    "error-product-limit": "Превышать лимит товара",
-    "error-network-error": "Аномальная сеть",
-    "error-shop-not-exit": "Магазин не существует",
-    "error-login-limit": "Пожалуйста, перед размещением заказа сначала регистрируйте аккаунт"
-  },
-  "tips": {
-    "more-than-0-int": "Пожалуйста, введите целое число больше 0",
-    "bind-change-mobile-phone-number": "Привязать /перевязать номер мобильного телефона",
-    "bind-change-email": "Привязать /перевязать почту",
-    "verification-code-has-been-sent-to-your-account": "Код подтверждения отправлен на ваш счет",
-    "change-binding-after-verification": "После проверки можно привязать / перевязать {{value}}",
-    "set-new-password": "Установите новый пароль",
-    "forget-password": "Забыть пароль",
-    "update-password": "Изменить пароль",
-    "reset-password": "Вы заменяете пароль для своего счета {{account}}",
-    "verify-account-to-reset-password": "Пожалуйста, проверьте свой счёт, чтобы заменить пароль",
-    "password-can-be-changed-after-verification": "После проверки можно изменить пароль",
-    "login": "Логин",
-    "register": "Регистрация",
-    "or-use-the-following-method-to-log-in": "Или используйте следующий способ для логина",
-    "i-agree-with-the-shop": "Я согласен с магазином",
-    "and": "и",
-    "user-agreement": "Пользовательское соглашение",
-    "please-read-and-agree-to-the-user-agreement-first": "Пожалуйста, сначала прочитайте и согласитесь с пользовательским соглашением",
-    "no-order-information-please-confirm": "Не удается получить информацию о заказе, пожалуйста, подтвердите правильность номера заказа.",
-    "no-order-number-please-confirm": "Не удается получить номер заказа, пожалуйста, подтвердите правильность номера заказа.",
-    "error-obtaining-support-logistics-country": "Ошибка во время получения страны поддержки логистики",
-    "please-complete-the-payment-method-content": "Пожалуйста, заполните полные сведения о способе оплаты",
-    "order-creation-exception": "Заказ создан аномально",
-    "bind-success": "Успешная привязка",
-    "update-success": "Успешное изменение",
-    "pay-params-error": "Не удалось получить параметры платежа, пожалуйста, повторно заплатите",
-    "change-heart": "Передумать",
-    "price-more-expensive": "Цена дороже, чем на других местах",
-    "repeat-buy": "Повторная покупка",
-    "sale-too-slow": "Медленно выдавать товар",
-    "change-item": "Хотеть изменить предмет покупки",
-    "incorrect-delivery-or-payment-information": "Неправильно заполнить информации о доставке или платеже",
-    "other-reason": "Другие причины",
-    "select-cancel-reason": "Пожалуйста, выберите причину отмены",
-    "fill-cancel-reason": "Пожалуйста, заполните причину отмены заказа",
-    "sure-cancel-order": "Вы уверены, что хотите отменить заказ?",
-    "cancel-reason-feedback": "Пожалуйста, сообщите нам причину отмены, и мы постараемся сделать лучше! После успешной отмены возврат денег будет выполнен. Жду вашего визита еще раз!",
-    "cancel-apply-sent": "Заявление на отмену отправлено",
-    "cancel-order-fail": "Не удалось отменить заказ, попробуйте еще раз",
-    "cancel-success-notice": "После успешной отмены вы будете получить уведомление по электронной почте, спасибо!",
-    "fail-contact": "Если попытка не удалась, пожалуйста, свяжитесь с нами в «Связи по заказу между продавцем и покупателем» ниже.",
-    "max-upload-img": "Извините! Максимально можно загрузить {{maxNum}} изображений!",
-    "img-name-too-long": "Введено слишком длинное название изображения ~",
-    "img-size-too-large": "Извините! Файл изображения превышает лимит!",
-    "get-checkout-detail-fail": "Получение подробностей расчета аномально",
-    "product-abnormal-back-to-cart": "Состояние продукта аномально, вернитесь в корзину покупки для повторного редактирования.",
-    "get-checkout-config-fail": "Ошибка во время получения конфигурации расчета",
-    "country-address-fail": "Продавцы в стране этого адреса больше не поддерживают доставку, пожалуйста, выберите вручную",
-    "paypal-country-fail": "Страна счета, к которой принадлежит PayPal, не входит в страну, в которой поддерживает доставку, пожалуйста, выберите вручную,",
-    "need-phone-number-to-deliver": "Логистике требуется ваш номер мобильного телефона для доставки заказа",
-    "enter-tel-number": "Пожалуйста, введите номер телефона",
-    "enter-email": "Пожалуйста, введите свою почту",
-    "no-logistics-available": "Нет доступных методов логистики",
-    "logistics-no-pre-selection": "Текущая логистика не поддерживает предварительный выбор",
-    "logistics-pre-selection": "Текущая логистика поддерживает предварительный выбор",
-    "address-no-logistics": "По текущему адресу нет доступных логистических методов.",
-    "enter-address-first": "Пожалуйста, сначала введите адрес",
-    "expand-order-summary": "Разверните свод заказа",
-    "put-up-order-summary": "Соберите свод заказа",
-    "select-return-product-first": "Пожалуйста, сначала выберите продукт, который вы хотите вернуть",
-    "enter-bank-name": "Пожалуйста, введите название банка!",
-    "enter-bank-card-number": "Пожалуйста, введите номер банковской карты!",
-    "enter-name": "Пожалуйста, введите свое имя и фамилия!",
-    "max-upload-image": "Максимально загрузите {{max}} листов",
-    "upload-image-fail": "Не удалось загрузить изображения {{name}}",
-    "image-size-less-than": "Размер изображения не должен превышать {{max}} МБ.",
-    "sku-change-tips": "В связи с изменением состояния продукта, пожалуйста, повторно подтвердите логистику / способ оплаты."
-  },
-  "validate": {
-    "coupon-code-cannot-exceed-25-length": "Льготный код не может превышать 25",
-    "discount-code-error": "Пожалуйста, введите действительный льготный код",
-    "discount-code-user-invalid": "Товары в вашей корзине для покупки не подходят для льготных кодов {{discountCode}}",
-    "enter-correct-email": "Пожалуйста, введите почту в правильном формате",
-    "enter-correct-phone-number": "Пожалуйста, введите номер мобильного телефона в правильном формате",
-    "phone-number-less-than-100": "Номер мобильного телефона не может превышать 100 символов.",
-    "shipping_plan_unavailable": "Льготный код {{discountCode}} не подходит для текущего метода логистики",
-    "mutual-excluded-by-time-limited": "Скидка в течение заданного промежутка времени и действия по кодам купонов исключительны.",
-    "discount-code-can-not-accumulate": "Товары имеют одну льготную деятельность, не могут быть наложены другими скидками"
-  },
-  "subscription": {
-    "subscript-via-line-facebook": "Подпишитесь на уведомление о заказе через LINE или Facebook",
-    "not-subscript-via-line-facebook": "Пока невозможно подписаться на уведомление о заказе через LINE или Facebook"
-  },
-  "comment": {
-    "enter-comment": "Пожалуйста, заполните комментарии",
-    "customer-comment": "Комментарии клиентов",
-    "comment-count": "{{total}} пунктов",
-    "read-more-comments": "Просмотрите больше комментариев",
-    "rate-score": "{{score}} звезд",
-    "text": "Комментарий",
-    "total": "{{total}} комментариев",
-    "bad": "Плохо",
-    "worse": "Немножко плохо",
-    "general": "Нормально",
-    "good": "Хорошо",
-    "best": "Очень хорошо",
-    "shipping-information": "Информация о доставке",
-    "all-reviews": "Просмотреть все замечания",
-    "leave-a-review": "Опубликовать отзывы",
-    "no-login-msg": "Пользователи, которые купили этот продукт, могут опубликовать отзыв, пожалуйста, сначала войдите в систему",
-    "sign-in": "Перейти к логину",
-    "no-bought-msg": "Извините, вы не купили этот продукт, поэтому не можете опубликовать отзыв",
-    "ratings": "Балл",
-    "experience-about": "Пожалуйста, введите свои оценочное впечатление о продукте",
-    "add-img": "Добавить картины",
-    "more-images": "Максимально можно добавить {{total}} картин",
-    "write-review": "Опубликовать отзывы",
-    "thanks-msg": "Спасибо за ваш отзыв",
-    "network-err-msg": "Проблема с системой, попробуйте отправить еще раз ~",
-    "only-image": "Поддерживает загрузку картин только в формате .jpg .jpeg .png .bmp",
-    "image-only-2m": "Размер картин масксимально составляет {{size}} мегабайт.",
-    "about-product": "Пожалуйста, введите хотя бы 1 текст",
-    "no-comment-title-tip": "Пока нет отзывов",
-    "no-comment-first-tip": "приходите и оставьте первый отзыв",
-    "on-img-upload-tip": "Картины загружаются, пожалуйста, предоставьте позже",
-    "mobile-submit": "Представление",
-    "nickname": "Ник"
-  },
-  "order": {
-    "refund-methods": {
-      "self": "Сам посылать обратно",
-      "merchant": "Получение товара от продавца"
-    },
-    "refund-type": {
-      "origin": "Вернуться по оригинальному маршруту",
-      "other": "Прочие"
-    },
-    "after-sale-type": {
-      "refund": "Возврат денег",
-      "return-and-refund": "Возврат товара и денег"
-    },
-    "after-order-status": {
-      "processing": "Во время обработки",
-      "confirmed": "Подтверждено",
-      "delivery-progress": "Подтверждено",
-      "cancelled": "Отменено",
-      "customer-canceled": "Отмена клиента",
-      "customer-rejected": "Отказ клиента",
-      "merchant-cancellation": "Отмена продавца",
-      "completed": "Выполнено"
-    },
-    "order-status": {
-      "processing": "Во время обработки",
-      "confirmed": "Подтверждено",
-      "cancelled": "Отменено",
-      "customer-canceled": "Клиент отменил",
-      "merchant-cancellation": "Продавец отменил",
-      "completed": "Выполнено"
-    },
-    "pay-status": {
-      "unpaid": "Неоплачено",
-      "paying": "Во время оплаты",
-      "partial-payment": "Возврат частичных денег",
-      "already-paid": "Оплачено",
-      "failed": "Оплата не удалась",
-      "timed-out": "Время платежа истекло",
-      "refunding": "Во время возврата денег",
-      "refunded": "Деньги возвращены",
-      "refund-failed": "Возврат денег не удался",
-      "partial-refund": "Возврат частичных денег",
-      "abolished": "Недействительны"
-    },
-    "delivery-statusType": {
-      "stocking": "Во время приготовки товаров",
-      "delivery-partial": "Отправка частичных товаров",
-      "cancelled": "Отменено",
-      "cancel-delivery": "Отменить отправку товаров",
-      "shipping": "Во время отправки товаров",
-      "shipped": "Товары отправлены",
-      "arrived": "Товары прибыли",
-      "picked-up": "Посылка получена",
-      "problem": "Посылка с проблемой, потерянные посылки и т. д., требуют ручного вмешательства",
-      "delivery-return": "Товары возвращены"
-    },
-    "oms-status": {
-      "executing": "Во время выполнения",
-      "prepare-pick": "Готов получить товар",
-      "shipped": "Товары отправлены",
-      "cancelled": "Отправка товаров отменена",
-      "arrived": "Прибытие в магазин",
-      "picked": "Товары получены",
-      "returning": "Во время возврата товара",
-      "returned": "Товары возвращены",
-      "problem": "Посылка с проблемой"
-    },
-    "order-list": {
-      "empty-title": "Изображение",
-      "empty-tip": "Пока нет записи о заказе, отправляйтесь за покупками",
-      "no-more": "Нет больше информаций",
-      "load-more": "Потяните наверх, чтобы загрузить больше",
-      "pay-now": "Перейти к оплате",
-      "track": "Отслеживание",
-      "item-total": "Всего {{transPackages}} товаров",
-      "item-total-plural": "Всего {{transPackages}} товаров",
-      "package-item": "Package {{num}}（{{item}} items）",
-      "package-more": "и выше {{num}}",
-      "sub-order": "Дочерний заказ"
-    },
-    "breadcrumb": {
-      "title": "Заказ",
-      "order": "Заказ",
-      "order-detail": "Подробности о заказе"
-    },
-    "detail": {
-      "packages": {
-        "title": "Информация",
-        "sub-title": "Отслеживание пакета",
-        "payment-info": {
-          "method": "Способ платежа",
-          "status": "Состояние платежа",
-          "address": "Адрес для получения счета",
-          "detail": "Подробности"
-        },
-        "payment-title": "Оплата",
-        "subscriptions-title": "Подписка",
-        "order-note-title": "Примечание заказа",
-        "shippings": {
-          "method": "Способ доставки",
-          "fee": "Фрахт",
-          "status": "Состояние доставки"
-        },
-        "amount": {
-          "subtotal": "Частичный итог продуктов",
-          "tax": "Налог на товар",
-          "express": "Фрахт",
-          "express-surcharge": "Налог на фрахт",
-          "channel-surcharge": "Комиссия за оплату",
-          "discount-amount-name": "Индивидуальная скидка продавца",
-          "tip": "Чаевые",
-          "preferential": "Льгота",
-          "discount": "Скидка по льготному коду",
-          "deduct-voucher": "Сумма купона",
-          "total": "Итог"
-        },
-        "order-num": "({{num}}) пакетов",
-        "logistics": {
-          "no-data": "В настоящее время нет информации о логистике",
-          "detail": "Подробности",
-          "tab-title": "Посылка {{index}}",
-          "blank-trace": "Пожалуйста, нажмите ссылку ниже для отслеживания вашей посылки:",
-          "no-data2": "Пока нет информации о доставке, пожалуйста, проверьте позже."
-        },
-        "send-to-Messenger": "Отправить в Messenger",
-        "send-to-Line": "Отправить в Line",
-        "unshipped-order-num": "Во время обработки({{num}} пунктов)",
-        "payment-deal": {
-          "name": "Канал платежа",
-          "amount": "Сумма",
-          "deal-id": "Серийный номер платежа",
-          "create-time": "Создано",
-          "update-time": "Обновлено",
-          "status": "Состояние",
-          "title": "Подробности платежа"
-        },
-        "status": {
-          "pedding": {
-            "title": "Preparando el envío",
-            "desc": "Actualmente estamos preparando estos artículos para el envío."
-          },
-          "success": {
-            "desc": "Мы приняли ваш заказ и готовим его. Возвращайтесь на эту страницу, чтобы отслеживать состояние доставки."
-          }
-        },
-        "contact-us-title": "Свяжитесь с нами",
-        "contact-us": "Нужна помощь? Пожалуйста свяжитесь с нами:{{email}}"
-      },
-      "order-status": {
-        "cancel": {
-          "title": "Ваш заказ отменен",
-          "desc": "Ваш заказ был отменен {{cancelTime}}. Свяжитесь с нами, если у вас возникли вопросы.。"
-        },
-        "success": {
-          "title": "Ваш заказ подтвержден",
-          "desc": "Информация о заказе отправлена ​​на {{buyerContact}}, пожалуйста, обратите внимание на проверку"
-        },
-        "pedding": {
-          "title": "Во время оплаты...",
-          "desc": "Ваш запрос на оплату предоставлен. Подождите, пока {{- payChannelDesc}} вернет в результат платежа."
-        },
-        "redirect": {
-          "title": "Во время перенаправления на результат платежа...",
-          "desc": "Если нет автоматического перенаправления, пожалуйста, обновите эту страницу"
-        },
-        "pay": {
-          "title": "При ожидании платежа",
-          "go-pay": "<common>Оплата </common><amount>{{orderAmount}}</amount>"
-        },
-        "button": {
-          "refresh": "Обновление"
-        }
-      },
-      "order-info": {
-        "processing": "Во время обработки",
-        "confirmed": "Подтверждено",
-        "finished": "Выполнено",
-        "canceled": "Отменено"
-      },
-      "cancel-btn": "Заказ отменен",
-      "communication": {
-        "title": "Заказ во время общения"
-      },
-      "coms": {
-        "operationLog": {
-          "PayDealLog": {
-            "title": "Платеж на сумму {amount} был обработан через {payName}",
-            "payName": "Канал платежа",
-            "amount": "Сумма",
-            "dealId": "Серийный номер платежа",
-            "createTime": "Время инициирования платежа",
-            "updateTime": "Время возврата в результат",
-            "status": "Состояние"
-          }
-        }
-      }
-    },
-    "seq-no": "Номер {{id}}",
-    "order-at": "Время заказа:",
-    "customer-info": "Информация о клиенте",
-    "help-tips": "Нужна помощь? Свяжитесь с нами: {{email}}",
-    "order-date": "Время размещения заказов"
-  },
-  "promotion": {
-    "full-reduction": "Полно минус",
-    "full-reduction-benefit": "Полно минус",
-    "full-discount": "Полно скидка",
-    "full-discount-benefit": "Полно скидка",
-    "free-shipping": "Бесплатная доставка",
-    "flash-sale": "Стимулирование продажи в органиченное время",
-    "member-price": "Цена для членов",
-    "all-product": "Все товары",
-    "permanent": "Постоянно действительны",
-    "all-user": "Все пользователи",
-    "all-vip": "Все члены",
-    "level-vip": "Член уровня {{level}}",
-    "label-vip": "Член {{label}}",
-    "other-customer": "Клиент (Пользователь, который не разместил заказ)",
-    "activity-scope": "Сфера деятельности",
-    "activity-benefit": "Льгота деятельности",
-    "activity-introduction": "Описание деятельности",
-    "terms-and-conditions": "Условия и положения",
-    "selected-count-activity-product": "Выбрано {{selectCount}} предметов, которые участвуют в деятельности",
-    "price-unit": "Юаней",
-    "piece-unit": "Штук",
-    "discount-benefit": "Скидка {{discount}}",
-    "full-amount": "Каждые<0>{{value}}</0>",
-    "full-piece": "Каждые{{value}} штук",
-    "reduce": "Скидка <0>{{value}}</0>",
-    "reduce1": "Скидка {{value}}",
-    "reduce-again": "Дополнительная скидка<0>{{value}}</0>",
-    "get-discount-1": "Получить скидку {{value}}",
-    "get-discount-2": "Получите скидку {{value}}%",
-    "flash-sale-limit": "Лимит покупки {{value}} на каждого человека",
-    "buy-again": "Купить еще <0>{{value}}</0>",
-    "buy-again-piece": "Купить еще {{value}} штук",
-    "still-lacking": "Еще нужно <0>{{value}}</0>",
-    "discounted": "Со скидкой <0>{{value}}</0>",
-    "coupon": "Купон",
-    "select-sku": "Выбрать характеристики товара",
-    "select-combo": "Выбрать пакет услуг",
-    "more-combo": "Больше пакетов услуг",
-    "item-num": "{{value}} штук",
-    "only-one-sku": "Текущий товар имеет только одну характеристику",
-    "select-product": "Делать покупку товаров по выбору",
-    "bundle": {
-      "title": "Товары в комплекте",
-      "desc": "Добавьте эти товары, чтобы получить скидку в размере <italic>{{value}}</italic> долларов США"
-    },
-    "whole-full-piece-discount": "Купите <italic>{{condition}}</italic> штук , можно сэкономить <italic>{{content}}</italic>%",
-    "whole-full-amount-discount": "Купите <italic>{{condition}}</italic> , можно сэкономить <italic>{{content}}</italic>%",
-    "whole-full-piece-reduce": "Купите <italic>{{condition}}</italic> штук , можно сэкономить <italic>{{content}}</italic>",
-    "whole-full-amount-reduce": "Купите <italic>{{condition}}</italic> , можно сэкономить <italic>{{content}}</italic>",
-    "price-price-step1": "<children>Купите </children><more>{{morePrice}}</more><children> или больше , можно сэкономить </children><more>{{totalPrice}}</more>",
-    "price-price-step2": "<children>Сэкономили </children><normal>{{price}}</normal><children> !</children><white /><children> Купите еще </children><more>{{morePrice}}</more><children> и сэкономьте </children><more>{{totalPrice}}</more>",
-    "price-price-step3": "<children>Поздравляю! Вы сэкономили </children><normal>{{price}}</normal><children> !</children>",
-    "price-piece-step1": "<children>Купите больше </children><more>{{morePrice}}</more><children> штук, можно сэкономить </children><more>{{totalPrice}}</more>",
-    "price-piece-step2": "<children>Сэкономили </children><normal>{{price}}</normal><children>! </children><white /><children> Купите еще более </children><more>{{morePrice}}</more><children> штук и сэкономьте </children><more>{{totalPrice}}</more>",
-    "price-piece-step3": "<children>Поздравляю! Вы сэкономили </children><normal>{{price}}</normal><children> !</children>",
-    "percent-price-step1": "<children>Купите </children><more>{{price}}</more><children> или больше , можно сэкономить </children><more>{{percent}}</more>",
-    "percent-price-step2": "<children>Сэкономили </children><normal>{{percent}}</normal><children>!</children><white /> <children>Купите еще </children><more>{{price}}</more><children> и сэкономьте </children><more>{{morePercent}}</more>",
-    "percent-price-step3": "<children>Поздравляю! Вы экономили </children><normal>{{percent}}</normal><children> !</children>",
-    "percent-piece-step1": "<children>Купите больше </children><more>{{price}}</more><children> штук , можно сэкономить </children><more>{{percent}}</more>",
-    "percent-piece-step2": "<children>Сэкономили </children><normal>{{percent}}</normal><children>! </children><white /><children> Купите еще более </children><more>{{price}}</more><children> штук и сэкономьте </children><more>{{morePercent}}</more>",
-    "percent-piece-step3": "<children>Поздравляю! Вы сэкономили </children><normal>{{percent}}</normal> <children>!</children>"
-  },
-  "labelInput": {
-    "email-error": "Пожалуйста, введите почту в правильном формате",
-    "phone-error": "Пожалуйста, введите номер мобильного телефона в правильном формате",
-    "contact-error": "Пожалуйста, введите почту/номер мобильного телефона в правильном формате",
-    "phone-error-tips": "Пожалуйста, введите номер мобильного телефона в правильном формате"
-  },
-  "userCenter": {
-    "personal-info": "Личные информации",
-    "orders": "Заказ",
-    "refunds": "Возврат денег",
-    "sign-out": "Выход из логина",
-    "edit": "Редакция",
-    "cancel": "Отмена",
-    "save": "Сохранение",
-    "buy-record-entry": "Купленные товары",
-    "account": {
-      "account-subscription-email": "Отправить на электронную почту",
-      "account-subscription-phone": "Отправить на мобильный телефон",
-      "account-subscription-messenger": "Отправить в Messenger",
-      "account-subscription-line": "Отправить в приложение Line",
-      "reset-password-error": "Пожалуйста, сначала привяжите электронную почту или мобильный телефон",
-      "account-info": "Информация об аккаунте",
-      "member-level": "Уровень членства",
-      "memberLevelCom": {
-        "defaultLevel": "Обычный член",
-        "expire": "Срок действия {{time}}",
-        "upgradeText1": "Вам только нужно купить <italic>{{money}}</italic> за один раз, вы можете перейти на {{nextLevelName}}",
-        "upgradeText0": "Вы можете перейти на {{nextLevelName}}, потратив <italic>{{money}}</italic>",
-        "upgradeSuccessText": "Поздравляем вас, успешно повышен до",
-        "modalTitle": "Описание прав уровня",
-        "tableTitleGrade": "Уровень членства",
-        "tableTitleInterest": "Право членства",
-        "discountInterest": "Перейти к покупке"
-      },
-      "general-member": "Обычный член",
-      "username": "Имя пользователя",
-      "username-message": "Пожалуйста, введите ваше имя пользователя!",
-      "username-placeholder": "Пожалуйста, введите ваше имя пользователя!",
-      "email": "Электронная почта",
-      "bind": "Привязка",
-      "modify-email": "Измените электронную почту",
-      "phone": "Мобильный телефон",
-      "modify-phone": "Мобильный телефон",
-      "password": "Пароль",
-      "change-password": "Измените пароль",
-      "subscription-notification": "Уведомление на подписку",
-      "unsubscribed": "Подписка отменена",
-      "account-binding": "Аккаунт привязан"
-    },
-    "address": {
-      "delete-address": "Удалить адрес",
-      "address": "Адрес",
-      "no-data": "Пока нет адреса доставки",
-      "add": "Добавить новый адрес",
-      "full-tip": "5 адресов сохранены, и больше не могут быть добавлены",
-      "default": "По умолчанию",
-      "ok": "Определение"
-    },
-    "subscription": {
-      "title": "Подписка",
-      "line": "LINE",
-      "phone": "Мобильный телефон",
-      "email": "Электронная почта",
-      "messenger": "Messenger",
-      "not-sub": "Не подпишитесь",
-      "subed": "Успешная подписка",
-      "unsub": {
-        "title": "Подписка отменена",
-        "content": "После отмены подписки вы больше не будете получать последнюю информацию о стимулировании продажи.",
-        "ok-text": "Отменить подписку"
-      },
-      "modal": {
-        "eamil-title": "Получайте информацию о стимулировании продажи подписки по электронной почте",
-        "ok-text": "Подписка",
-        "cancel-text": "Отменить подписку",
-        "phone-title": "Получайте информацию о стимулировании продажи подписки по мобильному телефону",
-        "save": "Сохранение"
-      }
-    },
-    "personal": {
-      "gender-male": "Муж.",
-      "gender-female": "Жен.",
-      "gender-secret": "Секретно",
-      "personal-information": "Личные информации",
-      "birthday-date": "Дата рождения",
-      "date": "Дата",
-      "select-date": "Пожалуйста, выберите дату",
-      "select-date-ok": "Определение",
-      "select-date-placeholder": "Выбор",
-      "select-date-cancel": "Отмена",
-      "gender": "Пол.",
-      "unknown": "Неизвестно"
-    },
-    "editAddress": {
-      "country-message": "Пожалуйста, выберите вашу страну / регион!！",
-      "province-message": "Пожалуйста, выберите вашу провинцию!",
-      "city-message": "Пожалуйста, выберите свой город!",
-      "district-message": "Пожалуйста, выберите свой регион!",
-      "postcode-message": "Менее 32 символов!",
-      "address1-message": "Менее 512 символов!",
-      "address2-message": "Менее 512 символов!",
-      "edit": "Редактируйте адрес доставки",
-      "contact-message": "Пожалуйста, введите ваше имя и фамилия контактного лица!",
-      "lastName-message": "Пожалуйста, введите свою фамилию!",
-      "phone-message": "Пожалуйста, введите ваш номер мобильного телефона!",
-      "default": "Установите как адрес по умолчанию",
-      "name-placeholder": "Название",
-      "firstName-placeholder": "Имя и фамилия(можно выбрать)",
-      "lastName-placeholder": "Фамилия",
-      "phone-label": "Мобильный телефон"
-    },
-    "message": {
-      "message": "Сообщение",
-      "send": "Отправление",
-      "inputPlaceholder": "У вас есть что для оставления сообщения?"
-    },
-    "point": {
-      "title": "Деньги для покуки",
-      "empty-mainText": "Вы еще не получили деньги за покупки",
-      "empty-btn-link": "Как получить и использовать деньги для покупки?",
-      "mainview-dedection": "В настоящее время максимальный кредитный лимит составляет <italic>{{money}}</italic>",
-      "mainview-link": "Правила",
-      "mainview-save": "Используя деньги за покупки {{historyTotalUsedScore}}, вы сэкономили <italic> {{historyTotalUsedDeduction}} </italic>",
-      "modal-title": "Описание цены покупки",
-      "ok-btn": "Определение",
-      "unuseHistoryScore": "Вы не использовали деньги на покупки, чтобы экономить расходы.",
-      "date": "{{year}} год {{month}} месяц {{date}} день, {{day}}",
-      "day0": "Воскресенье",
-      "day1": "Понедельник",
-      "day2": "Вторник",
-      "day3": "Среда",
-      "day4": "Четверг",
-      "day5": "Пятница",
-      "day6": "Суббота",
-      "month1": "1",
-      "month2": "2",
-      "month3": "3",
-      "month4": "4",
-      "month5": "5",
-      "month6": "6",
-      "month7": "7",
-      "month8": "8",
-      "month9": "9",
-      "month10": "10",
-      "month11": "11",
-      "month12": "12",
-      "actionTypeDesc": {
-        "addPoint": "Добавить деньги для покупки",
-        "deductPoint": "Вычести деньги для покупки",
-        "expirePoint": "Деньги для покупки пропустили срок",
-        "freezePoint": "Заморозить деньги для покупки",
-        "releaseFreezePoint": "Размораживание денег для покупки",
-        "deductFreezePoint": "Деньги для покупки заморозили и списали со счета",
-        "reverseAddPoint": "Сторнировать деньги для покупки",
-        "reverseDeductPoint": "Удалить аккаунт деньгами для покупки"
-      }
-    },
-    "pointList": {
-      "empty": "В настоящее время нет записи по баллам",
-      "breadcrumb1": "Информация",
-      "breadcrumb2": "Цена для покупки",
-      "total": "Оценка（{{total}}）",
-      "loading": "Во время загрузки...",
-      "loaded": "Загружено",
-      "empty2": "Нет больще записей",
-      "order": "Просмотрите заказ:"
-    }
-  },
-  "cart": {
-    "render-empty-status": "В вашей корзине покупки нет товаров",
-    "render-add-items": "Ваша корзина на данный момент пуста.",
-    "go-shopping": "Перейти к покупке",
-    "login-description": "Уже член? После логина можно управлять заказами более удобно!",
-    "login-membership": "Бесплатный член",
-    "checkout-error": "По крайней мере один товар в корзине покупки нельзя купить. Пожалуйста, отрегулируйте товары в корзине для оформления заказа.",
-    "get": "Получить скидку",
-    "shopping-money": "Следующим шагом будет расчет налогов и фрахтов.",
-    "shopping-fees": "Расходы для покупки",
-    "shopping-money-step": "Следующим шагом будет расчет налогов и фрахтов.",
-    "view-shopping-cart": "Просмотрите корзину покупки",
-    "most-100-sku": "Максимально добавить 100 товаров",
-    "most-buy-999": "Максимально можно добавить в корзину покупки 999 ш. товаров.",
-    "stock-limit": "Осталось {{stock}} шт.",
-    "activity-title-limit": "Следующие товары превышают лимит покупки, вы продолжаете оформлять заказ?",
-    "activity-price-limit": "Льготная цена этого продукта только поддерживает покупку {{num}} штук.",
-    "active-stock-limit-2": "Льготная цена этого продукта только поддерживает покупку {{stock}} штук.",
-    "active-stock-limit-1": "Вы можете купить максимально {{stock}} товаров со скидкой одновременно.",
-    "activity-product-limit": "Вы можете купить максимально {{stock}} товаров со скидкой одновременно.",
-    "view-link": "Нажмите, чтобы посмотреть",
-    "view-pic": "Пользовательский предварительный просмотр",
-    "not-participation-offers": "Не участвуя в оферте",
-    "active-stock-limit": "Осталось всего {{stock}}штук по льготной цене на этот товар."
-  },
-  "widget": {
-    "order": {
-      "pending-order": "Заказы, которые ожидают обработку"
-    }
+    "total": "Итог",
+    "total-num": "Общая Сумма",
+    "use-customer-info": "Использовать информацию о клиентах",
+    "use-member-account-can": "Быстро свести счет как член? можно немедленно",
+    "use-shopping-deduction": "Можно использовать {{num}} денег для покупки, можно вычести",
+    "user-cancel-apply": "Пользователь отменяет заявление",
+    "will-discount": "Ожидаемая скидка",
+    "wrong-product": "Неправильно послать товар",
+    "you-are-paying-wait-result": "Ваш запрос платежа предоставлен, и сейчас ожидает {{- payChannel}} вернуть в результат платежа",
+    "your-apply-auditing-sure-backout": "Ваше заявление на возврат товара находится на рассмотрении, вы уверены, что хотите его отозвать?",
+    "your-delivery-need-choose-store": "Для выбранного способа доставки нужно выбрать информацию о магазине",
+    "your-order-created": "Ваш заказ создан",
+    "your-order-not-pay": "Ваш заказ еще не выполняет оплату",
+    "your-refund-order-created": "Ваш заказ на возврат товара создан"
   },
   "user": {
-    "email": "Почта",
-    "phone": "Номер мобильного телефона",
-    "username": "Почта/номер мобильного телефона",
-    "password": "Пароль",
-    "repeatPassword": "Повторите пароль",
-    "primevalPassword": "Оригинальный пароль",
+    "account": "УЧЕТНАЯ ЗАПИСЬ",
     "code": "Код для подтверждения",
-    "signUp": "Регистрация",
-    "signIn": "Логин",
-    "confirm": "Определение",
-    "emailError": "Пожалуйста, введите почту в правильном формате, не более 50 символов.",
-    "phoneError": "Пожалуйста, введите номер мобильного телефона в правильном формате",
     "codeError": "Пожалуйста, введите код для подтверждения",
-    "passwordError": "Пожалуйста, установите пароль 8-20 битов, нужно включать прописные и строчные буквы и цифры.",
-    "repeatPasswordError": "Два введенных пароля несовместимы",
-    "repeatPasswordEmptyError": "Пожалуйста, введите пароль еще раз",
-    "primevalPasswordError": "Пожалуйста, введите исходный пароль",
-    "send": "Отправка",
-    "resend": "Повторная отправка",
-    "sendError": "Пожалуйста, сначала отправьте проверочный код",
-    "noData": "Пока нет данных",
-    "passwordEmptyError": "Пожалуйста, введите пароль",
-    "passwordMemberError": "Пожалуйста, установите пароль 6-18 битов",
+    "confirm": "Определение",
+    "email": "Почта",
     "emailEmptyError": "Пожалуйста, введите почту",
+    "emailError": "Пожалуйста, введите почту в правильном формате, не более 50 символов.",
+    "noData": "Пока нет данных",
+    "password": "Пароль",
+    "passwordEmptyError": "Пожалуйста, введите пароль",
+    "passwordError": "Пожалуйста, установите пароль 8-20 битов, нужно включать прописные и строчные буквы и цифры.",
+    "passwordMemberError": "Пожалуйста, установите пароль 6-18 битов",
+    "phone": "Номер мобильного телефона",
     "phoneEmptyError": "Пожалуйста, введите номер мобильного телефона",
-    "usernameEmptyError": "Пожалуйста, введите почту или номер мобильного телефона",
+    "phoneError": "Пожалуйста, введите номер мобильного телефона в правильном формате",
     "primevalNewPasswordError": "Пароль не может одинаков с исходным паролем.",
+    "primevalPassword": "Оригинальный пароль",
+    "primevalPasswordError": "Пожалуйста, введите исходный пароль",
+    "repeatPassword": "Повторите пароль",
+    "repeatPasswordEmptyError": "Пожалуйста, введите пароль еще раз",
+    "repeatPasswordError": "Два введенных пароля несовместимы",
+    "resend": "Повторная отправка",
+    "send": "Отправка",
+    "sendError": "Пожалуйста, сначала отправьте проверочный код",
+    "signIn": "Логин",
+    "signUp": "Регистрация",
     "udbResponse": {
       "err-1": "Параметры отсутствуют",
+      "err-13": "Тайм-аут stoken",
       "err-4": "Параметры недействительны",
       "err-5": "Незаконная операция",
-      "err-13": "Тайм-аут stoken",
       "err-999": "Удаленный вызов не удался",
       "err1001": "Неправильный пароль",
       "err1002": "Пользователь не существует",
@@ -1310,70 +1245,185 @@
       "err3014": "Не удалось расписать шаблон сообщения / электронного письма.",
       "udbResponse": "Ваш аккаунт был запрещен из-за аномалии, обратитесь к продавцу, чтобы снять запрет."
     },
-    "account": "УЧЕТНАЯ ЗАПИСЬ"
+    "username": "Почта/номер мобильного телефона",
+    "usernameEmptyError": "Пожалуйста, введите почту или номер мобильного телефона"
   },
-  "address": {
-    "dropdown": {
-      "default-placeholder": "Пожалуйста, выберите",
-      "no-item-tips": "Пока нет данных",
-      "no-search-result": "Нет подходящего содержания"
-    },
-    "mobile-errorMessage": "Пожалуйста, введите действительный номер телефона",
-    "mobile-errorMessage-country-code": "Пожалуйста, не вводите код города"
-  },
-  "oneShop": {
-    "noComment": "Пока нет комментариев",
-    "productCommentTitle": "Оценка о товаре（{{n}}）",
-    "priceStart": "От {{n}}",
-    "discountByAmount": "Скидка{{n}}на покупку{{amount}}",
-    "discountByNum": "Купите {{num}} штук и получите {{n}} скидку",
-    "cutByAmount": "Полно{{amount}} минус{{n}}",
-    "cutByNum": "Полно{{num}} штук минус {{n}}",
-    "buyNow": "Немедленная покупка",
-    "productDetail": "Подробности о товаре",
-    "selectedProductSoldOut": "Недостаточная наличность выбранных товаров",
-    "currentProductSoldOut": "Недостаточная наличность текущих товаров",
-    "productNoSelect": "Пожалуйста, выберите характеристики товара",
-    "orderAgain": "Пожалуйста, повторно разместите заказ",
-    "soleOutSelectAgain": "Наличность текущих товаров недостаточна, пожалуйста, выберите еще раз",
-    "productFailure": "Срок действия выбранного вами товара истек, пожалуйста, выберите еще раз",
-    "comboSelectFailure": "Срок действия выбранного вами пакета услуг истек, пожалуйста, выберите еще раз",
-    "comboFailure": "Срок действия пакета услуг истек",
-    "freeShipping": "Бесплатная доставка",
-    "buyPop": "{{minutes}} минут назад {{name}} купил этот товар",
-    "noProductDesc": "Пока нет описаний товара",
-    "TCTD0108": "Способ логистики не существует, пожалуйста, выберите еще раз",
-    "TCTD0118": "Способ оплаты не существует, пожалуйста, выберите еще раз",
-    "TCTD0121": "Маркетинговая деятельность не существует, пожалуйста, выберите еще раз",
-    "TCTD0112": "Срок действия выбранного вами товара истек, пожалуйста, выберите еще раз",
-    "defaultErrorCodeMsg": "Аномальная сеть, пожалуйста, позже обновите страницу и попробуйте еще раз",
-    "comment": "Оставление записки(Необязательное поле)",
-    "country": "Страна",
-    "submit": "Предъявление",
-    "overLength": "Длина ввода превышает лимит, пожалуйста, заполните правильно",
-    "optional": "Необязательное поле",
-    "bracket": "({{content}})"
-  },
-  "blogList": {
-    "container": {
-      "empty": {
-        "title": "Блог",
-        "desc": "В этом блоге нет статей"
+  "userCenter": {
+    "account": {
+      "account-binding": "Аккаунт привязан",
+      "account-info": "Информация об аккаунте",
+      "account-subscription-email": "Отправить на электронную почту",
+      "account-subscription-line": "Отправить в приложение Line",
+      "account-subscription-messenger": "Отправить в Messenger",
+      "account-subscription-phone": "Отправить на мобильный телефон",
+      "bind": "Привязка",
+      "change-password": "Измените пароль",
+      "email": "Электронная почта",
+      "general-member": "Обычный член",
+      "member-level": "Уровень членства",
+      "memberLevelCom": {
+        "defaultLevel": "Обычный член",
+        "discountInterest": "Перейти к покупке",
+        "expire": "Срок действия {{time}}",
+        "modalTitle": "Описание прав уровня",
+        "tableTitleGrade": "Уровень членства",
+        "tableTitleInterest": "Право членства",
+        "upgradeSuccessText": "Поздравляем вас, успешно повышен до",
+        "upgradeText0": "Вы можете перейти на {{nextLevelName}}, потратив <italic>{{money}}</italic>",
+        "upgradeText1": "Вам только нужно купить <italic>{{money}}</italic> за один раз, вы можете перейти на {{nextLevelName}}"
       },
-      "readBtnText": "Узнайте больше"
+      "modify-email": "Измените электронную почту",
+      "modify-phone": "Мобильный телефон",
+      "password": "Пароль",
+      "phone": "Мобильный телефон",
+      "reset-password-error": "Пожалуйста, сначала привяжите электронную почту или мобильный телефон",
+      "subscription-notification": "Уведомление на подписку",
+      "unsubscribed": "Подписка отменена",
+      "username": "Имя пользователя",
+      "username-message": "Пожалуйста, введите ваше имя пользователя!",
+      "username-placeholder": "Пожалуйста, введите ваше имя пользователя!"
+    },
+    "address": {
+      "add": "Добавить новый адрес",
+      "address": "Адрес",
+      "default": "По умолчанию",
+      "delete-address": "Удалить адрес",
+      "full-tip": "5 адресов сохранены, и больше не могут быть добавлены",
+      "no-data": "Пока нет адреса доставки",
+      "ok": "Определение"
+    },
+    "buy-record-entry": "Купленные товары",
+    "cancel": "Отмена",
+    "edit": "Редакция",
+    "editAddress": {
+      "address1-message": "Менее 512 символов!",
+      "address2-message": "Менее 512 символов!",
+      "city-message": "Пожалуйста, выберите свой город!",
+      "contact-message": "Пожалуйста, введите ваше имя и фамилия контактного лица!",
+      "country-message": "Пожалуйста, выберите вашу страну / регион!！",
+      "default": "Установите как адрес по умолчанию",
+      "district-message": "Пожалуйста, выберите свой регион!",
+      "edit": "Редактируйте адрес доставки",
+      "firstName-placeholder": "Имя и фамилия(можно выбрать)",
+      "lastName-message": "Пожалуйста, введите свою фамилию!",
+      "lastName-placeholder": "Фамилия",
+      "name-placeholder": "Название",
+      "phone-label": "Мобильный телефон",
+      "phone-message": "Пожалуйста, введите ваш номер мобильного телефона!",
+      "postcode-message": "Менее 32 символов!",
+      "province-message": "Пожалуйста, выберите вашу провинцию!"
+    },
+    "message": {
+      "inputPlaceholder": "У вас есть что для оставления сообщения?",
+      "message": "Сообщение",
+      "send": "Отправление"
+    },
+    "orders": "Заказ",
+    "personal-info": "Личные информации",
+    "personal": {
+      "birthday-date": "Дата рождения",
+      "date": "Дата",
+      "gender": "Пол.",
+      "gender-female": "Жен.",
+      "gender-male": "Муж.",
+      "gender-secret": "Секретно",
+      "personal-information": "Личные информации",
+      "select-date": "Пожалуйста, выберите дату",
+      "select-date-cancel": "Отмена",
+      "select-date-ok": "Определение",
+      "select-date-placeholder": "Выбор",
+      "unknown": "Неизвестно"
+    },
+    "point": {
+      "actionTypeDesc": {
+        "addPoint": "Добавить деньги для покупки",
+        "deductFreezePoint": "Деньги для покупки заморозили и списали со счета",
+        "deductPoint": "Вычести деньги для покупки",
+        "expirePoint": "Деньги для покупки пропустили срок",
+        "freezePoint": "Заморозить деньги для покупки",
+        "releaseFreezePoint": "Размораживание денег для покупки",
+        "reverseAddPoint": "Сторнировать деньги для покупки",
+        "reverseDeductPoint": "Удалить аккаунт деньгами для покупки"
+      },
+      "date": "{{year}} год {{month}} месяц {{date}} день, {{day}}",
+      "day0": "Воскресенье",
+      "day1": "Понедельник",
+      "day2": "Вторник",
+      "day3": "Среда",
+      "day4": "Четверг",
+      "day5": "Пятница",
+      "day6": "Суббота",
+      "empty-btn-link": "Как получить и использовать деньги для покупки?",
+      "empty-mainText": "Вы еще не получили деньги за покупки",
+      "mainview-dedection": "В настоящее время максимальный кредитный лимит составляет <italic>{{money}}</italic>",
+      "mainview-link": "Правила",
+      "mainview-save": "Используя деньги за покупки {{historyTotalUsedScore}}, вы сэкономили <italic> {{historyTotalUsedDeduction}} </italic>",
+      "modal-title": "Описание цены покупки",
+      "month1": "1",
+      "month10": "10",
+      "month11": "11",
+      "month12": "12",
+      "month2": "2",
+      "month3": "3",
+      "month4": "4",
+      "month5": "5",
+      "month6": "6",
+      "month7": "7",
+      "month8": "8",
+      "month9": "9",
+      "ok-btn": "Определение",
+      "title": "Деньги для покуки",
+      "unuseHistoryScore": "Вы не использовали деньги на покупки, чтобы экономить расходы."
+    },
+    "pointList": {
+      "breadcrumb1": "Информация",
+      "breadcrumb2": "Цена для покупки",
+      "empty": "В настоящее время нет записи по баллам",
+      "empty2": "Нет больще записей",
+      "loaded": "Загружено",
+      "loading": "Во время загрузки...",
+      "order": "Просмотрите заказ:",
+      "total": "Оценка（{{total}}）"
+    },
+    "refunds": "Возврат денег",
+    "save": "Сохранение",
+    "sign-out": "Выход из логина",
+    "subscription": {
+      "email": "Электронная почта",
+      "line": "LINE",
+      "messenger": "Messenger",
+      "modal": {
+        "cancel-text": "Отменить подписку",
+        "eamil-title": "Получайте информацию о стимулировании продажи подписки по электронной почте",
+        "ok-text": "Подписка",
+        "phone-title": "Получайте информацию о стимулировании продажи подписки по мобильному телефону",
+        "save": "Сохранение"
+      },
+      "not-sub": "Не подпишитесь",
+      "phone": "Мобильный телефон",
+      "subed": "Успешная подписка",
+      "title": "Подписка",
+      "unsub": {
+        "content": "После отмены подписки вы больше не будете получать последнюю информацию о стимулировании продажи.",
+        "ok-text": "Отменить подписку",
+        "title": "Подписка отменена"
+      }
     }
   },
-  "blog": {
-    "container": {
-      "backTo": "Возвращаться {{{collectionTitle}}}"
-    }
+  "validate": {
+    "coupon-code-cannot-exceed-25-length": "Льготный код не может превышать 25",
+    "discount-code-can-not-accumulate": "Товары имеют одну льготную деятельность, не могут быть наложены другими скидками",
+    "discount-code-error": "Пожалуйста, введите действительный льготный код",
+    "discount-code-user-invalid": "Товары в вашей корзине для покупки не подходят для льготных кодов {{discountCode}}",
+    "enter-correct-email": "Пожалуйста, введите почту в правильном формате",
+    "enter-correct-phone-number": "Пожалуйста, введите номер мобильного телефона в правильном формате",
+    "mutual-excluded-by-time-limited": "Скидка в течение заданного промежутка времени и действия по кодам купонов исключительны.",
+    "phone-number-less-than-100": "Номер мобильного телефона не может превышать 100 символов.",
+    "shipping_plan_unavailable": "Льготный код {{discountCode}} не подходит для текущего метода логистики"
   },
-  "title": {
-    "policy": {
-      "privacy": "политики конфиденциальности",
-      "refund": "Политика возврата",
-      "service": "с условиями услуг сайта",
-      "shipping": "Политика доставки"
+  "widget": {
+    "order": {
+      "pending-order": "Заказы, которые ожидают обработку"
     }
   }
 }

@@ -1,6 +1,7 @@
 {
   "current": {
     "theme": {
+      "page_width":1500,
       "color_page_background": "#ffffff",
       "color_text": "#000000",
       "color_sale": "#1c1d1d",
@@ -63,6 +64,7 @@
       "product_sku_style": "flatten",
       "product_count_​selector": false,
       "product_image_scale": false,
+      "sku_selected_default": true,
       "product_description_show": true,
       "product_sales_point_1_icon": "globe",
       "product_sales_point_1": "Free worldwide shipping",
@@ -79,7 +81,6 @@
       "product_custom_tab3": "",
       "product_custom_tab3_fold": true,
       "cart_open_type": "select",
-      "checkout_image": {},
       "social_facebook_link": "",
       "social_twitter_link": "",
       "social_pinterest_link": "",
@@ -92,7 +93,24 @@
       "share_to_pinterest": true,
       "share_to_line": true,
       "share_to_whatsapp": true,
-      "favicon_image": ""
+      "favicon_image": "",
+      "co_banner_pc_img":{},
+      "co_banner_phone_img":{},
+      "co_banner_pc_height":"low",
+      "co_banner_phone_height":"low",
+      "co_banner_img_show":"center",
+      "co_full_screen":true,
+      "co_checkout_image":{},
+      "co_logo_size":"medium",
+      "co_logo_position":"left",
+      "co_bg_image":{},
+      "co_background_color":"#FFFFFF",
+      "co_form_bg_color":"white",
+      "co_order_bg_image":{},
+      "co_order_background_color":"#F8FAFB",
+      "co_color_btn_bg":"#276EAF",
+      "co_color_err_color":"#F04949",
+      "co_color_msg_color":"#276EAF"
     },
     "sections": {
       "header": {
@@ -722,6 +740,7 @@
         "product_sku_style": "flatten",
         "product_count_​selector": false,
         "product_image_scale": false,
+        "sku_selected_default": true,
         "product_description_show": true,
         "product_sales_point_1_icon": "globe",
         "product_sales_point_1": "Free worldwide shipping",
@@ -738,7 +757,6 @@
         "product_custom_tab3": "",
         "product_custom_tab3_fold": true,
         "cart_open_type": "select",
-        "checkout_image": {},
         "social_facebook_link": "",
         "social_twitter_link": "",
         "social_pinterest_link": "",

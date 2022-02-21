@@ -23,9 +23,8 @@
           {{#if (isTruthy image_url) }}
             <img
               class="lozad"
-              data-src="{{image_url}}"
-              data-srcset="{{ img_url image_url }} 1x, {{ img_url image_url scale=2}} 2x"
-              alt="{{ this.settings.image.alt }}">
+              {{{get 'responsiveAttr' (image_responsive image_url pcSize='1/6' mSize="50vw")}}} 
+              alt="{{ this.settings.image.alt }}"/>
           {{else}}
             <div class="icon-list__empty-wraper">
             {{ snippet 'icons/icon_image' }}
@@ -45,7 +44,12 @@
 {
   "name": {
     "zh-hans-cn": "商标列表",
-    "en": "Icon list"
+    "en": "Logo list",
+    "id": "Daftar merek",
+    "th": "รายการเครื่องหมายการค้า",
+    "vi": "Danh sách nhãn hiệu",
+    "ms": "Senarai cap niaga",
+    "zh-hant-tw": "商標列表"
   },
   "type": "icon-list",
   "class": "index-section--gap",
@@ -55,7 +59,12 @@
       "type": "item",
       "name": {
         "zh-hans-cn": "商标",
-        "en": "Logo"
+        "en": "Logo",
+        "id": "Merek",
+        "th": "เครื่องหมายการค้า",
+        "vi": "Nhãn hiệu",
+        "ms": "Cap niaga",
+        "zh-hant-tw": "商標"
       },
       "icon": "image",
       "settings": [
@@ -64,15 +73,25 @@
           "type": "image_picker",
           "label": {
             "zh-hans-cn": "商标",
-            "en": "Logo"
+            "en": "Logo",
+            "id": "Merek",
+            "th": "เครื่องหมายการค้า",
+            "vi": "Nhãn hiệu",
+            "ms": "Cap niaga",
+            "zh-hant-tw": "商標"
           }
         },
         {
           "id": "jump_link",
           "type": "url",
           "label": {
+            "zh-hans-cn": "跳转链接",
             "en": "Jump link",
-            "zh-hans-cn": "跳转链接"
+            "id": "lompat link",
+            "th": "ลิงก์กระโดดข้าม",
+            "vi": "Link chuyển đổi",
+            "ms": "Pautan lompat",
+            "zh-hant-tw": "跳轉鏈接"
           }
         }
       ]
@@ -84,7 +103,12 @@
       "id": "title",
       "label": {
         "zh-hans-cn": "标题",
-        "en": "Title"
+        "en": "Title",
+        "id": "Judul",
+        "th": "หัวข้อ",
+        "vi": "Tiêu đề",
+        "ms": "Tajuk",
+        "zh-hant-tw": "標題"
       },
       "default": "Popular brands"
     },
@@ -93,7 +117,12 @@
       "id": "show_divider",
       "label": {
         "zh-hans-cn": "展示分割线",
-        "en": "Dismay the split line"
+        "en": "Dismay the split line",
+        "id": "Tampilkan garis pemisah",
+        "th": "แสดงเส้นแบ่ง",
+        "vi": "Thể hiện tuyến phân cách",
+        "ms": "Tunjuk garis pemisah",
+        "zh-hant-tw": "展示分割線"
       },
       "default": false
     }
@@ -102,11 +131,21 @@
     {
       "name": {
         "zh-hans-cn": "商标列表",
-        "en": "Logo list"
+        "en": "Logo list",
+        "id": "Daftar merek",
+        "th": "รายการเครื่องหมายการค้า",
+        "vi": "Danh sách nhãn hiệu",
+        "ms": "Senarai cap niaga",
+        "zh-hant-tw": "商標列表"
       },
       "category": {
         "zh-hans-cn": "内容展示",
-        "en": "Content display"
+        "en": "Content display",
+        "id": "Tampilan Isi",
+        "th": "การแสดงเนื้อหา",
+        "vi": "Hiển thị nội dung",
+        "ms": "Paparan kandungan",
+        "zh-hant-tw": "內容展示"
       },
       "settings": {
         "title": "Popular brands",

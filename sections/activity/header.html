@@ -52,10 +52,8 @@
               d="M8.9375 4.87488H9.3125C9.72671 4.87488 10.0625 5.21066 10.0625 5.62488V8.43745H12.875C13.2892 8.43745 13.625 8.77324 13.625 9.18745V9.56245H8.9375V4.87488Z"
               fill="currentColor" />
           </svg>
-        </i>{{dayjs method='format' init=activity.startTime format='YYYY-MM-DD HH:mm'}}
-        {{#if activity.endTime}}
-          - {{dayjs method='format' init=activity.endTime format='YYYY-MM-DD HH:mm'}}
-        {{/if}}
+        </i>
+        <span class="activity__limit-time-text">{{dayjs method='format' init=activity.startTime format='YYYY-MM-DD HH:mm'}}{{#if activity.endTime}} - {{dayjs method='format' init=activity.endTime format='YYYY-MM-DD HH:mm'}}{{/if}}</span>
       </div>
     </div>
   {{/if}}

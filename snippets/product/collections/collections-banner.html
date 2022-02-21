@@ -14,7 +14,7 @@
     <div class="product-list-banner-box-bg" id="productListBanner-container">
       <div class="{{#if settings.parallax_scroll }}product-list-banner-box-bg-img{{else}}product-list-banner-box-bg-img--default{{/if}}" id="productListBanner-parallax" data-parallax-scroll="{{settings.parallax_scroll}}">
         {{#if sortation.sortationImg}}
-          <img srcSet="{{sortation.sortationImg}}" alt="">
+          <img {{{get 'responsiveAttr' (image_responsive sortation.sortationImg useLazyLoad=false ) }}} alt="">
         {{/if}}
       </div>    
     </div>

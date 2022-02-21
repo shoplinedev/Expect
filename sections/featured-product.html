@@ -6,7 +6,7 @@
 {{/if}}
   <div id="{{prefix}}--{{section.id}}" class='{{#if (isFalsey notEmpty)}}container g-4 g-md-6 {{/if}}{{prefix}}--wrapped' data-section-id="{{section.id}}" data-state-path="product_{{section.settings.product_id}}" data-product-id="{{section.settings.product_id}}">
     {{#if (isTruthy notEmpty) }}
-      {{snippet 'product/detail/product-preview' id=section.id statePrefix=(append 'product_' section.settings.product_id)  product=product description=product.desc section=section }}
+      {{snippet 'product/detail/product-preview' id=section.id statePrefix=(append 'product_' section.settings.product_id)  product=product description=product.desc section=section pcSize="3/5" mSize="100vw" }}
     {{else}}
       {{!-- 未配置商品展示默认图 --}}
       <div class="{{prefix}}--empty">
@@ -31,7 +31,12 @@
 {
   "name": {
     "zh-hans-cn": "单个商品",
-    "en": "Featured product"
+    "en": "Featured product",
+    "id": "Produk tunggal",
+    "th": "สินค้าชิ้นเดียว",
+    "vi": "Một mặt hàng",
+    "ms": "Produk tunggal",
+    "zh-hant-tw": "單個商品"
   },
   "class": "index-section--gap",
   "settings": [
@@ -40,7 +45,12 @@
       "id": "product_id",
       "label": {
         "zh-hans-cn": "商品",
-        "en": "Product"
+        "en": "Product",
+        "id": "Produk",
+        "th": "สินค้า",
+        "vi": "Sản phẩm",
+        "ms": "Produk",
+        "zh-hant-tw": "商品"
       }
     },
     {
@@ -48,7 +58,12 @@
       "id": "show_product_desc",
       "label": {
         "zh-hans-cn": "展示商品描述",
-        "en": "Display product description"
+        "en": "Display product description",
+        "id": "Tampilkan deskripsi produk",
+        "th": "แสดงรายละเอียดสินค้า",
+        "vi": "Thể hiện mô tả sản phẩm",
+        "ms": "Tunjuk penerangan produk",
+        "zh-hant-tw": "展示商品描述"
       },
       "default": true
     },
@@ -57,7 +72,12 @@
       "id": "show_divider",
       "label": {
         "zh-hans-cn": "展示分割线",
-        "en": "Dismay the split line"
+        "en": "Dismay the split line",
+        "id": "Tampilkan garis pemisah",
+        "th": "แสดงเส้นแบ่ง",
+        "vi": "Thể hiện tuyến phân cách",
+        "ms": "Tunjuk garis pemisah",
+        "zh-hant-tw": "展示分割線"
       },
       "default": false
     },
@@ -65,7 +85,12 @@
       "type": "group_header",
       "label": {
         "zh-hans-cn": "商品图片/视频",
-        "en": "Product image/video"
+        "en": "Product image/video",
+        "id": "Gambar/video produk",
+        "th": "ภาพ/วิดีโอสินค้า",
+        "vi": "Ảnh sản phẩm/video",
+        "ms": "Gambar/video produk",
+        "zh-hant-tw": "商品圖片/視頻"
       }
     },
     {
@@ -73,21 +98,36 @@
       "id": "thumbnail_position",
       "label": {
         "zh-hans-cn": "略缩图位置",
-        "en": "Thumbnail position"
+        "en": "Thumbnail position",
+        "id": "Posisi thumbnail kecil",
+        "th": "ตำแหน่งรูปย่อ",
+        "vi": "Vị trí ảnh thu nhỏ",
+        "ms": "Lokasi imej kecil",
+        "zh-hant-tw": "略縮圖位置"
       },
       "options": [
         {
           "value": "aside",
           "label": {
             "zh-hans-cn": "商品图旁边",
-            "en": "Beside the product image"
+            "en": "Beside the product image",
+            "id": "di sebelah gambar produk",
+            "th": "ข้างภาพสินค้า",
+            "vi": "Bên ạnh ảnh sản phẩm",
+            "ms": "Di sebelah gambar produk",
+            "zh-hant-tw": "商品圖旁邊"
           }
         },
         {
           "value": "bottom",
           "label": {
             "zh-hans-cn": "商品图下方",
-            "en": "Below the product image"
+            "en": "Below the product image",
+            "id": "bawah gambar produk",
+            "th": "ใต้ภาพสินค้า",
+            "vi": "Bên dưới ảnh sản phẩm",
+            "ms": "Di bawah gambar produk",
+            "zh-hant-tw": "商品圖下方"
           }
         }
       ],
@@ -98,7 +138,12 @@
       "id": "show_thumbnail_arrow",
       "label": {
         "zh-hans-cn": "展示略缩图箭头",
-        "en": "Display the thumbnail arrow"
+        "en": "Display the thumbnail arrow",
+        "id": "Tampilkan panah thumbnail kecil",
+        "th": "แสดงลูกศรของรูปขนาดย่อ",
+        "vi": "Hiển thị mũi tên ảnh thu nhỏ",
+        "ms": "Tunjuk anak panah gambar kecil",
+        "zh-hant-tw": "展示略縮圖箭頭"
       },
       "default": false
     },
@@ -107,21 +152,36 @@
       "id": "image_width_in_mobile",
       "label": {
         "zh-hans-cn": "移动端图片宽度",
-        "en": "Image width on mobile device"
+        "en": "Image width on mobile device",
+        "id": "Lebar gambar di port seluler",
+        "th": "ความกว้างของรูปภาพบนมือถือ",
+        "vi": "Chiều rộng ảnh di động",
+        "ms": "Lebar gambar versi mudah alih",
+        "zh-hant-tw": "移動端圖片寬度"
       },
       "options": [
         {
           "value": "75%",
           "label": {
             "zh-hans-cn": "75% 宽",
-            "en": "75% wide"
+            "en": "75% wide",
+            "id": "Lebar 75%",
+            "th": "กว้าง 75%",
+            "vi": "Rộng 75%",
+            "ms": "75% lebar",
+            "zh-hant-tw": "75% 寬"
           }
         },
         {
           "value": "full",
           "label": {
             "zh-hans-cn": "全屏",
-            "en": "Full screen"
+            "en": "Full screen",
+            "id": "Layar penuh",
+            "th": "เต็มจอ",
+            "vi": "Toàn màn",
+            "ms": "Skrin penuh",
+            "zh-hant-tw": "全屏"
           }
         }
       ],
@@ -132,7 +192,12 @@
       "id": "video_loop",
       "label": {
         "zh-hans-cn": "启用视频循环",
-        "en": "Enable video loop"
+        "en": "Enable video loop",
+        "id": "Aktifkan loop video",
+        "th": "เปิดใช้งานวิดีโอวนซ้ำ",
+        "vi": "Dùng video tuần hoàn",
+        "ms": "Dayakan gelung video",
+        "zh-hant-tw": "啟用視頻循環"
       },
       "default": false
     },
@@ -141,7 +206,12 @@
       "id": "video_mute",
       "label": {
         "zh-hans-cn": "开启视频静音",
-        "en": "Mute the video"
+        "en": "Mute the video",
+        "id": "Nyalakan bisukan video",
+        "th": "เปิดปิดเสียงวิดีโอ",
+        "vi": "Tắt tiếng video",
+        "ms": "Hidupkan mute video",
+        "zh-hant-tw": "開啟視頻靜音"
       },
       "default": true
     }
@@ -150,11 +220,21 @@
     {
       "name": {
         "zh-hans-cn": "单个商品",
-        "en": "Featured product"
+        "en": "Featured product",
+        "id": "Produk tunggal",
+        "th": "สินค้าชิ้นเดียว",
+        "vi": "Một mặt hàng",
+        "ms": "Produk tunggal",
+        "zh-hant-tw": "單個商品"
       },
       "category": {
         "zh-hans-cn": "商品",
-        "en": "Product"
+        "en": "Product",
+        "id": "Produk",
+        "th": "สินค้า",
+        "vi": "Sản phẩm",
+        "ms": "Produk",
+        "zh-hant-tw": "商品"
       }
     }
   ]

@@ -14,8 +14,8 @@
 
   {{#style}}
     {{ assign 'background_position' (join (split section.settings.background_position '-') ' ') }}
-    .video--{{ section.id }} .video__cover {
-      background-position: {{ background_position }};
+    .video--{{ section.id }} .video__cover .video-bg-img {
+      object-position: {{ background_position }};
     }
   {{/style}}
   <div
@@ -27,9 +27,9 @@
     <script type="text/json" id="Video-data-{{ section.id }}">{{{ stringify section.settings }}}</script>
     {{#unless section.settings.autoplay}}
       {{#if (boolean section.settings.cover.url)}}
-        <div class="video__cover lozad" data-background-image="{{ img_url section.settings.cover.url width=2000 }}">
-
-          <div class="video-overlay" style="{{ overlay_background }}">
+        <div class="video__cover lozad">
+          <img class="video-bg-img lozad" {{{get 'responsiveAttr' (image_responsive section.settings.cover.url pcSize='1' mSize='100vw')}}}  alt="">
+          <div class="video-overlay">
             {{#if section.settings.url}}
               <div class="video-overlay__button" data-controls="Video-{{ section.id }}">
                 {{snippet 'icons/icon_video_play'}}
@@ -90,185 +90,311 @@
 
 {{#schema}}
 {
-	"name": {
-		"zh-hans-cn": "视频",
-		"en": "Video"
-	},
+  "name": {
+    "zh-hans-cn": "视频",
+    "en": "Video",
+    "id": "Video",
+    "th": "วิดีโอ",
+    "vi": "video",
+    "ms": "Video",
+    "zh-hant-tw": "視頻"
+  },
   "icon": "video",
   "class": "index-section--video index-section--gap",
-	"settings": [{
-			"type": "text",
-			"id": "title",
-			"label": {
-				"zh-hans-cn": "标题",
-				"en": "Title"
-			},
-			"default": "Video"
-		},
-		{
-			"type": "text",
-			"id": "url",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "zh-hans-cn": "标题",
+        "en": "Title",
+        "id": "Judul",
+        "th": "หัวข้อ",
+        "vi": "Tiêu đề",
+        "ms": "Tajuk",
+        "zh-hant-tw": "標題"
+      },
+      "default": "Video"
+    },
+    {
+      "type": "text",
+      "id": "url",
       "format": "video",
       "placeholder": "https://www.youtube.com/watch?v=V7BEzkRBp_g",
-			"info": {
-				"zh-hans-cn": "输入YouTube或Vimeo嵌入链接",
-				"en": "Enter the embedded link of YouTube or Vimeo"
-			},
-			"label": {
-				"zh-hans-cn": "视频链接",
-				"en": "Video link"
-			}
-		},
-		{
-			"type": "richtext",
-			"id": "caption",
-			"label": {
-				"zh-hans-cn": "描述",
-				"en": "Description"
-			}
-		},
-		{
-			"type": "switch",
-			"id": "autoplay",
-			"label": {
-				"zh-hans-cn": "自动播放视频",
-				"en": "Video autoplay"
-			},
-			"default": false
-		},
-    {
-			"type": "switch",
-			"id": "quiet",
-			"label": {
-				"zh-hans-cn": "自动播放是否静音",
-				"en": "Mute autoplay sound?"
-			},
-			"default": true
-		},
-		{
-			"type": "select",
-			"id": "ratio",
-			"label": {
-				"zh-hans-cn": "视频长宽比",
-				"en": "Video length-width ratio"
-			},
-			"default": "16:9",
-			"options": [{
-					"label": "16:9",
-					"value": "16:9"
-				},
-				{
-					"label": "21:9",
-					"value": "21:9"
-				}
-			]
-		},
-		{
-			"type": "image_picker",
-			"id": "cover",
-			"label": {
-				"zh-hans-cn": "封面图",
-				"en": "Cover image"
-			}
-		},
-		{
-			"type": "select",
-			"id": "background_position",
-			"label": {
-				"zh-hans-cn": "封面图展示区域",
-				"en": "Display area of cover image"
-			},
-			"default": "center",
-			"options": [{
-					"value": "left-top",
-					"label": {
-						"zh-hans-cn": "左上方",
-						"en": "Upper left"
-					}
-				},
-				{
-					"value": "top",
-					"label": {
-						"zh-hans-cn": "正上方",
-						"en": "Right above"
-					}
-				},
-				{
-					"value": "right-top",
-					"label": {
-						"zh-hans-cn": "右上方",
-						"en": "Upper right"
-					}
-				},
-				{
-					"value": "left",
-					"label": {
-						"zh-hans-cn": "左侧",
-						"en": "Left side"
-					}
-				},
-				{
-					"value": "center",
-					"label": {
-						"zh-hans-cn": "正中",
-						"en": "Center"
-					}
-				},
-				{
-					"value": "right",
-					"label": {
-						"zh-hans-cn": "右侧",
-						"en": "Right side"
-					}
-				},
-				{
-					"value": "left-bottom",
-					"label": {
-						"zh-hans-cn": "左下方",
-						"en": "Bottom left"
-					}
-				},
-				{
-					"value": "bottom",
-					"label": {
-						"zh-hans-cn": "正下方",
-						"en": "Below"
-					}
-				},
-				{
-					"value": "right-bottom",
-					"label": {
-						"zh-hans-cn": "右下方",
-						"en": "Bottom right"
-					}
-				}
-			]
-		}
-	],
-	"presets": [{
-		"name": {
-			"zh-hans-cn": "视频",
-			"en": "Video"
-		},
-    "icon": "video",
-    "category":{
-      "zh-hans-cn":"内容展示",
-      "en": "Content display"
-    },
-    "settings": {
-      "title": "Video",
-      "autoplay": false,
-      "ratio": "16:9",
-      "background_position": "center",
-      "overlay": false,
-      "overlay_color": "#000000",
-      "overlay_transparent": 50,
-      "cover": {
-        "url": ""
+      "info": {
+        "zh-hans-cn": "输入YouTube或Vimeo嵌入链接",
+        "en": "Enter the embedded link of YouTube or Vimeo",
+        "id": "Masukkan Youtube atau Vimeo terbenam link",
+        "th": "ป้อนลิงก์ YouTube หรือ Vimeo แบบฝัง",
+        "vi": "Nhập YouTube hoặc Vimeo để liên kết",
+        "ms": "Masukkan pautan Youtube atau Vimeo",
+        "zh-hant-tw": "輸入YouTube或Vimeo嵌入鏈接"
       },
-      "caption": "A short description of the video."
+      "label": {
+        "zh-hans-cn": "视频链接",
+        "en": "Video link",
+        "id": "Link video",
+        "th": "ลิงก์วิดีโอ",
+        "vi": "Liên kết video",
+        "ms": "Pautan video",
+        "zh-hant-tw": "視頻鏈接"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "caption",
+      "label": {
+        "zh-hans-cn": "描述",
+        "en": "Description",
+        "id": "Deskripsi",
+        "th": "อธิบาย",
+        "vi": "Mô tả",
+        "ms": "Penerangan",
+        "zh-hant-tw": "描述"
+      }
+    },
+    {
+      "type": "switch",
+      "id": "autoplay",
+      "label": {
+        "zh-hans-cn": "自动播放视频",
+        "en": "Video autoplay",
+        "id": "Putar otomatis video",
+        "th": "เล่นวิดีโออัตโนมัติ",
+        "vi": "Tự động phát video",
+        "ms": "Main video secara automatik",
+        "zh-hant-tw": "自動播放視頻"
+      },
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "quiet",
+      "label": {
+        "zh-hans-cn": "自动播放是否静音",
+        "en": "Mute autoplay sound?",
+        "id": "Apakah putar otomatis dibisukan",
+        "th": "การเล่นอัตโนมัติจะถูกปิดเสียงหรือไม่",
+        "vi": "Tự động phát có bị không có tiếng không?",
+        "ms": "Sama ada auto mute semasa main video secara automatik",
+        "zh-hant-tw": "自動播放是否靜音"
+      },
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": {
+        "zh-hans-cn": "视频长宽比",
+        "en": "Video length-width ratio",
+        "id": "Rasio panjang dan lebar video",
+        "th": "อัตราส่วนภาพวิดีโอ",
+        "vi": "Tỉ lệ dài rộng của video",
+        "ms": "Nisbah aspek video",
+        "zh-hant-tw": "視頻長寬比"
+      },
+      "default": "16:9",
+      "options": [
+        {
+          "label": {
+            "zh-hans-cn": "16:9",
+            "en": "16:9",
+            "id": "16:9",
+            "th": "16:9",
+            "vi": "16:9",
+            "ms": "16:9",
+            "zh-hant-tw": "16:9"
+          },
+          "value": "16:9"
+        },
+        {
+          "label": {
+            "zh-hans-cn": "21:9",
+            "en": "21:9",
+            "id": "21:9",
+            "th": "21:9",
+            "vi": "21:9",
+            "ms": "21:9",
+            "zh-hant-tw": "21:9"
+          },
+          "value": "21:9"
+        }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "cover",
+      "label": {
+        "zh-hans-cn": "封面图",
+        "en": "Cover image",
+        "id": "Sampul",
+        "th": "ภาพหน้าปก",
+        "vi": "Hình trang bìa",
+        "ms": "Gambar muka depan",
+        "zh-hant-tw": "封面圖"
+      }
+    },
+    {
+      "type": "select",
+      "id": "background_position",
+      "label": {
+        "zh-hans-cn": "封面图展示区域",
+        "en": "Display area of cover image",
+        "id": "Area tampilan sampul",
+        "th": "พื้นที่แสดงภาพปก",
+        "vi": "Khu vực hiển thị hình trang bìa",
+        "ms": "Kawasan paparan gambar muka depan",
+        "zh-hant-tw": "封面圖展示區域"
+      },
+      "default": "center",
+      "options": [
+        {
+          "value": "left-top",
+          "label": {
+            "zh-hans-cn": "左上方",
+            "en": "Upper left",
+            "id": "Kiri atas",
+            "th": "บนซ้าย",
+            "vi": "Phía trên bên trái",
+            "ms": "Atas kiri",
+            "zh-hant-tw": "左上方"
+          }
+        },
+        {
+          "value": "top",
+          "label": {
+            "zh-hans-cn": "正上方",
+            "en": "Right above",
+            "id": "Tepat di atas",
+            "th": "ด้านบนโดยตรง",
+            "vi": "Phía trên chính giữa",
+            "ms": "Atas tengah",
+            "zh-hant-tw": "正上方"
+          }
+        },
+        {
+          "value": "right-top",
+          "label": {
+            "zh-hans-cn": "右上方",
+            "en": "Upper right",
+            "id": "Kanan atas",
+            "th": "บนขวา",
+            "vi": "Phía trên bên phải",
+            "ms": "Atas kanan",
+            "zh-hant-tw": "右上方"
+          }
+        },
+        {
+          "value": "left",
+          "label": {
+            "zh-hans-cn": "左侧",
+            "en": "Left side",
+            "id": "Bagian kiri",
+            "th": "ด้านซ้าย",
+            "vi": "Mặt phải",
+            "ms": "Sebelah kiri",
+            "zh-hant-tw": "左側"
+          }
+        },
+        {
+          "value": "center",
+          "label": {
+            "zh-hans-cn": "正中",
+            "en": "Center",
+            "id": "Tengah",
+            "th": "กลาง",
+            "vi": "Chính giữa",
+            "ms": "Tengah",
+            "zh-hant-tw": "正中"
+          }
+        },
+        {
+          "value": "right",
+          "label": {
+            "zh-hans-cn": "右侧",
+            "en": "Right side",
+            "id": "Bagian kanan",
+            "th": "ด้านขวา",
+            "vi": "Bên phải",
+            "ms": "Sisi kanan",
+            "zh-hant-tw": "右側"
+          }
+        },
+        {
+          "value": "left-bottom",
+          "label": {
+            "zh-hans-cn": "左下方",
+            "en": "Bottom left",
+            "id": "Kiri awah",
+            "th": "ล่างซ้าย",
+            "vi": "Phía dưới bên trái",
+            "ms": "Bawah kiri",
+            "zh-hant-tw": "左下方"
+          }
+        },
+        {
+          "value": "bottom",
+          "label": {
+            "zh-hans-cn": "正下方",
+            "en": "Below",
+            "id": "Tepat di bawah",
+            "th": "ด้านล่างโดยตรง",
+            "vi": "Phía dưới chính giữa",
+            "ms": "Bawah tengah",
+            "zh-hant-tw": "正下方"
+          }
+        },
+        {
+          "value": "right-bottom",
+          "label": {
+            "zh-hans-cn": "右下方",
+            "en": "Bottom right",
+            "id": "Kanan Bawah",
+            "th": "ล่างขวา",
+            "vi": "Phía dưới bên phải",
+            "ms": "Bawah kanan",
+            "zh-hant-tw": "右下方"
+          }
+        }
+      ]
     }
-	}]
+  ],
+  "presets": [
+    {
+      "name": {
+        "zh-hans-cn": "视频",
+        "en": "Video",
+        "id": "Video",
+        "th": "วิดีโอ",
+        "vi": "video",
+        "ms": "Video",
+        "zh-hant-tw": "視頻"
+      },
+      "icon": "video",
+      "category": {
+        "zh-hans-cn": "内容展示",
+        "en": "Content display",
+        "id": "Tampilan Isi",
+        "th": "การแสดงเนื้อหา",
+        "vi": "Hiển thị nội dung",
+        "ms": "Paparan kandungan",
+        "zh-hant-tw": "內容展示"
+      },
+      "settings": {
+        "title": "Video",
+        "autoplay": false,
+        "ratio": "16:9",
+        "background_position": "center",
+        "overlay": false,
+        "overlay_color": "#000000",
+        "overlay_transparent": 50,
+        "cover": {
+          "url": ""
+        },
+        "caption": "A short description of the video."
+      }
+    }
+  ]
 }
 {{/schema}}
 

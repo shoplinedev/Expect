@@ -63,20 +63,16 @@
           {{#if hasMobileImage}}
             <img 
               class="lozad large-image-with-text-box__image--mobile"
+              {{{get 'responsiveAttr' (image_responsive section.settings.image_mobile.url pcSize=null mSize='100vw')}}}
               alt="{{section.settings.image_mobile.alt}}"
-              data-src="{{section.settings.image_mobile.url}}"
-              data-srcset="{{img_url section.settings.image_mobile.url width=1920 }} 1x, {{img_url section.settings.image_mobile.url width=1920 scale=2 }} 2x"
-              style="object-position:{{imagePosition}}" 
-              alt="large-image-with-text-box">
+              style="object-position:{{imagePosition}}" />
           {{/if}}
           {{#if hasPcImage}}
             <img 
               class="lozad large-image-with-text-box__image--pc {{#if (isFalsey hasMobileImage)}}d-block{{/if}}"
               alt="{{section.settings.image.alt}}"
-              data-src="{{section.settings.image.url}}"
-              data-srcset="{{img_url section.settings.image.url width=1920 }} 1x, {{img_url section.settings.image.url width=1920 scale=2 }} 2x"
-              style="object-position:{{imagePosition}}" 
-              alt="large-image-with-text-box">
+              {{{get 'responsiveAttr' (image_responsive section.settings.image.url pcSize='100vw' mSize=null)}}}
+              style="object-position:{{imagePosition}}" />
           {{/if}}
         {{else}}
           <div class="large-image-with-text-box__icon">
@@ -120,7 +116,12 @@
 {
   "name": {
     "zh-hans-cn": "单图",
-    "en": "Large image with text box"
+    "en": "Large image with text box",
+    "id": "Gambar tunggal",
+    "th": "ภาพเดียว",
+    "vi": "Chỉ một hình ảnh",
+    "ms": "Imej tunggal",
+    "zh-hant-tw": "單圖"
   },
   "settings": [
     {
@@ -128,7 +129,12 @@
       "type": "image_picker",
       "label": {
         "zh-hans-cn": "电脑端图片",
-        "en": "Image"
+        "en": "Image on PC",
+        "id": "Gambar terminal komputer",
+        "th": "รูปภาพบนคอมพิวเตอร์",
+        "vi": "hình ảnh trên máy tính",
+        "ms": "Gambar computer",
+        "zh-hant-tw": "電腦端圖片"
       },
       "default": ""
     },
@@ -137,7 +143,12 @@
       "id": "image_mobile",
       "label": {
         "zh-hans-cn": "移动端图片",
-        "en": "Image on mobile device"
+        "en": "Image on mobile device",
+        "id": "Gambar port seluler",
+        "th": "รูปภาพมือถือ",
+        "vi": "Hình ảnh trên điện thoại",
+        "ms": "Gambar mudah alih",
+        "zh-hant-tw": "移動端圖片"
       },
       "default": ""
     },
@@ -146,70 +157,120 @@
       "id": "image_select",
       "label": {
         "zh-hans-cn": "图片展示区域",
-        "en": "Image focal point"
+        "en": "Image display area",
+        "id": "Area tampilan gambar",
+        "th": "พื้นที่แสดงรูปภาพ",
+        "vi": "Khu vực hiển thị ảnh",
+        "ms": "Kawasan paparan gambar",
+        "zh-hant-tw": "圖片展示區域"
       },
       "options": [
         {
           "value": "left_top",
           "label": {
             "zh-hans-cn": "左上方",
-            "en": "Upper left"
+            "en": "Upper left",
+            "id": "Kiri atas",
+            "th": "บนซ้าย",
+            "vi": "Phía trên bên trái",
+            "ms": "Atas kiri",
+            "zh-hant-tw": "左上方"
           }
         },
         {
           "value": "center_top",
           "label": {
             "zh-hans-cn": "正上方",
-            "en": "Right above"
+            "en": "Right above",
+            "id": "Tepat di atas",
+            "th": "ด้านบนโดยตรง",
+            "vi": "Phía trên chính giữa",
+            "ms": "Atas tengah",
+            "zh-hant-tw": "正上方"
           }
         },
         {
           "value": "right_top",
           "label": {
             "zh-hans-cn": "右上方",
-            "en": "Upper right"
+            "en": "Upper right",
+            "id": "Kanan atas",
+            "th": "บนขวา",
+            "vi": "Phía trên bên phải",
+            "ms": "Atas kanan",
+            "zh-hant-tw": "右上方"
           }
         },
         {
           "value": "left_center",
           "label": {
             "zh-hans-cn": "左侧",
-            "en": "Left side"
+            "en": "Left side",
+            "id": "Bagian kiri",
+            "th": "ด้านซ้าย",
+            "vi": "Mặt phải",
+            "ms": "Sebelah kiri",
+            "zh-hant-tw": "左側"
           }
         },
         {
           "value": "center_center",
           "label": {
             "zh-hans-cn": "正中",
-            "en": "Center"
+            "en": "Center",
+            "id": "Tengah",
+            "th": "กลาง",
+            "vi": "Chính giữa",
+            "ms": "Tengah",
+            "zh-hant-tw": "正中"
           }
         },
         {
           "value": "right_center",
           "label": {
             "zh-hans-cn": "右侧",
-            "en": "Right side"
+            "en": "Right side",
+            "id": "Bagian kanan",
+            "th": "ด้านขวา",
+            "vi": "Bên phải",
+            "ms": "Sisi kanan",
+            "zh-hant-tw": "右側"
           }
         },
         {
           "value": "left_bottom",
           "label": {
             "zh-hans-cn": "左下方",
-            "en": "Bottom left"
+            "en": "Bottom left",
+            "id": "Kiri awah",
+            "th": "ล่างซ้าย",
+            "vi": "Phía dưới bên trái",
+            "ms": "Bawah kiri",
+            "zh-hant-tw": "左下方"
           }
         },
         {
           "value": "center_bottom",
           "label": {
             "zh-hans-cn": "正下方",
-            "en": "Below"
+            "en": "Below",
+            "id": "Tepat di bawah",
+            "th": "ด้านล่างโดยตรง",
+            "vi": "Phía dưới chính giữa",
+            "ms": "Bawah tengah",
+            "zh-hant-tw": "正下方"
           }
         },
         {
           "value": "right_bottom",
           "label": {
             "zh-hans-cn": "右下方",
-            "en": "Bottom right"
+            "en": "Bottom right",
+            "id": "Kanan Bawah",
+            "th": "ล่างขวา",
+            "vi": "Phía dưới bên phải",
+            "ms": "Bawah kanan",
+            "zh-hant-tw": "右下方"
           }
         }
       ],
@@ -220,31 +281,73 @@
       "id": "image_height",
       "label": {
         "zh-hans-cn": "电脑端高度",
-        "en": "Height on PC"
+        "en": "Height on PC",
+        "id": "Tinggi port PC",
+        "th": "ความสูงบนคอมพิวเตอร์",
+        "vi": "Cao độ trên máy tính",
+        "ms": "Ketinggian versi komputer",
+        "zh-hant-tw": "電腦端高度"
       },
       "default": "natural",
       "options": [
         {
           "label": {
             "zh-hans-cn": "适应图片",
-            "en": "Natural"
+            "en": "Auto",
+            "id": "Sesuaikan gambar",
+            "th": "ปรับให้เข้ากับภาพ",
+            "vi": "thích hợp với hình ảnh",
+            "ms": "Sesuaikan dengan gambar",
+            "zh-hant-tw": "適應圖片"
           },
           "value": "natural"
         },
         {
-          "label": "450px",
+          "label": {
+            "zh-hans-cn": "450px",
+            "en": "450px",
+            "id": "450px",
+            "th": "450px",
+            "vi": "450px",
+            "ms": "450px",
+            "zh-hant-tw": "450px"
+          },
           "value": 450
         },
         {
-          "label": "550px",
+          "label": {
+            "zh-hans-cn": "550px",
+            "en": "550px",
+            "id": "550px",
+            "th": "550px",
+            "vi": "550px",
+            "ms": "550px",
+            "zh-hant-tw": "550px"
+          },
           "value": 550
         },
         {
-          "label": "650px",
+          "label": {
+            "zh-hans-cn": "650px",
+            "en": "650px",
+            "id": "650px",
+            "th": "650px",
+            "vi": "650px",
+            "ms": "650px",
+            "zh-hant-tw": "650px"
+          },
           "value": 650
         },
         {
-          "label": "750px",
+          "label": {
+            "zh-hans-cn": "750px",
+            "en": "750px",
+            "id": "750px",
+            "th": "750px",
+            "vi": "750px",
+            "ms": "750px",
+            "zh-hant-tw": "750px"
+          },
           "value": 750
         }
       ]
@@ -254,19 +357,37 @@
       "id": "mobile_height",
       "label": {
         "zh-hans-cn": "移动端高度",
-        "en": "Height on mobile device"
+        "en": "Height on mobile device",
+        "id": "Tinggi port seluler",
+        "th": "ความสูงบนมือถือ",
+        "vi": "Cao độ trên điện thoại",
+        "ms": "Ketinggian versi mudah alih",
+        "zh-hant-tw": "移動端高度"
       },
       "default": "auto",
       "options": [
         {
           "label": {
             "zh-hans-cn": "适应图片",
-            "en": "Auto"
+            "en": "Auto",
+            "id": "Sesuaikan gambar",
+            "th": "ปรับให้เข้ากับภาพ",
+            "vi": "thích hợp với hình ảnh",
+            "ms": "Sesuaikan dengan gambar",
+            "zh-hant-tw": "適應圖片"
           },
           "value": "auto"
         },
         {
-          "label": "510px",
+          "label": {
+            "zh-hans-cn": "510px",
+            "en": "510px",
+            "id": "510px",
+            "th": "510px",
+            "vi": "510px",
+            "ms": "510px",
+            "zh-hant-tw": "510px"
+          },
           "value": "510px"
         }
       ]
@@ -276,7 +397,12 @@
       "type": "text",
       "label": {
         "zh-hans-cn": "副标题",
-        "en": "Subtitle"
+        "en": "Subtitle",
+        "id": "Subtitle",
+        "th": "หัวข้อรอง",
+        "vi": "Dề phụ",
+        "ms": "Sari kata",
+        "zh-hant-tw": "副標題"
       },
       "default": "Impressive"
     },
@@ -285,7 +411,12 @@
       "type": "text",
       "label": {
         "zh-hans-cn": "标题",
-        "en": "Title"
+        "en": "Title",
+        "id": "Judul",
+        "th": "หัวข้อ",
+        "vi": "Tiêu đề",
+        "ms": "Tajuk",
+        "zh-hant-tw": "標題"
       },
       "default": "Large image with text box"
     },
@@ -294,7 +425,12 @@
       "type": "richtext",
       "label": {
         "zh-hans-cn": "文本",
-        "en": "Texts"
+        "en": "Texts",
+        "id": "Teks",
+        "th": "ข้อความ",
+        "vi": "Văn bản",
+        "ms": "Teks",
+        "zh-hant-tw": "文本"
       },
       "default": "Pair large text with a full-width image to draw attention to an important detail of your brand or product line."
     },
@@ -303,11 +439,21 @@
       "type": "text",
       "label": {
         "zh-hans-cn": "按钮文案",
-        "en": "Button text"
+        "en": "Button text",
+        "id": "Tulisan tombol",
+        "th": "ข้อความปุ่ม",
+        "vi": "Nội dung nút",
+        "ms": "Salinan butang",
+        "zh-hant-tw": "按鈕文案"
       },
       "info": {
-        "en": "Jumping the page by clicking the image if button texts are not configured",
-        "zh-hans-cn": "若没有配置按钮文案，则通过点击图片跳转"
+        "zh-hans-cn": "若没有配置按钮文案，则通过点击图片跳转",
+        "en": "If the text button is not configured, click on the image to redirect",
+        "id": "Jika teks tombol tidak dikonfigurasi, klik pada gambar untuk melompat",
+        "th": "หากไม่ได้กำหนดข้อความปุ่ม ให้คลิกที่รูปภาพเพื่อข้าม",
+        "vi": "Nếu không có dòng chữ nút ấn cài đặt, thì nhấn vào hình ảnh để chuyển nhanh",
+        "ms": "Jika salianan butang tidak dikonfigurasikan, klik pada gambar untuk melompat",
+        "zh-hant-tw": "若沒有配置按鈕文案，則通過點擊圖片跳轉"
       },
       "default": "Optional button"
     },
@@ -316,7 +462,12 @@
       "type": "url",
       "label": {
         "zh-hans-cn": "跳转链接",
-        "en": "Jump link"
+        "en": "Jump link",
+        "id": "lompat link",
+        "th": "ลิงก์กระโดดข้าม",
+        "vi": "Link chuyển đổi",
+        "ms": "Pautan lompat",
+        "zh-hant-tw": "跳轉鏈接"
       }
     },
     {
@@ -324,21 +475,36 @@
       "type": "select",
       "label": {
         "zh-hans-cn": "文本位置",
-        "en": "Text position"
+        "en": "Text position",
+        "id": "Posisi teks",
+        "th": "ตำแหน่งข้อความ",
+        "vi": "Vị trí văn bản",
+        "ms": "Kedudukan teks",
+        "zh-hant-tw": "文本位置"
       },
       "options": [
         {
           "value": "left",
           "label": {
+            "zh-hans-cn": "文本靠左",
             "en": "Text on the left",
-            "zh-hans-cn": "文本靠左"
+            "id": "Teks dekati kiri",
+            "th": "ข้อความชิดซ้าย",
+            "vi": "Chữ sát lề trái",
+            "ms": "Teks sebelah kiri",
+            "zh-hant-tw": "文本靠左"
           }
         },
         {
           "value": "right",
           "label": {
+            "zh-hans-cn": "文本靠右",
             "en": "Text on the right",
-            "zh-hans-cn": "文本靠右"
+            "id": "Teks dekati kanan",
+            "th": "ข้อความชิดขวา",
+            "vi": "Chữ sát lề phải",
+            "ms": "Teks sebelah kanan",
+            "zh-hant-tw": "文本靠右"
           }
         }
       ],
@@ -349,11 +515,21 @@
       "type": "switch",
       "label": {
         "zh-hans-cn": "启用滚动视差效果",
-        "en": "When enabling the parallax effect, part of the image will be cropped to ensure the correct display."
+        "en": "Enable the parallax scroll",
+        "id": "Aktifkan efek paralaks bergulir",
+        "th": "เปิดใช้งานเอฟเฟกต์พารัลแลกซ์เลื่อน",
+        "vi": "Sử dụng hiệu ứng cuộn song song",
+        "ms": "Dayakan kesan paralaks menatal",
+        "zh-hant-tw": "啟用滾動視差效果"
       },
       "info": {
         "zh-hans-cn": "开启视差效果会裁减部分图片以达到效果",
-        "en": "Enable the parallax scroll"
+        "en": "When enabling the parallax effect, part of the image will be cropped to ensure the correct display.",
+        "id": "Aktifkan efek paralaks akan memotong beberapa gambar untuk mencapai efeknya",
+        "th": "การเปิดเอฟเฟกต์พารัลแลกซ์จะครอบตัดรูปภาพบางส่วนเพื่อให้ได้เอฟเฟกต์",
+        "vi": "Để sử dụng hiệu ứng cuộn song song, sẽ cắt bớt một phần hình ảnh để đạt được hiệu quả",
+        "ms": "Hidupkan kesan paralaks akan memangkas beberapa gambar untuk mencapai kesan",
+        "zh-hant-tw": "開啟視差效果會裁減部分圖片以達到效果"
       },
       "default": true
     }
@@ -362,11 +538,21 @@
     {
       "name": {
         "zh-hans-cn": "单图",
-        "en": "Large image with text box"
+        "en": "Large image with text box",
+        "id": "Gambar tunggal",
+        "th": "ภาพเดียว",
+        "vi": "Chỉ một hình ảnh",
+        "ms": "Imej tunggal",
+        "zh-hant-tw": "單圖"
       },
       "category": {
         "zh-hans-cn": "内容展示",
-        "en": "Content display"
+        "en": "Content display",
+        "id": "Tampilan Isi",
+        "th": "การแสดงเนื้อหา",
+        "vi": "Hiển thị nội dung",
+        "ms": "Paparan kandungan",
+        "zh-hant-tw": "內容展示"
       },
       "settings": {
         "image": {},

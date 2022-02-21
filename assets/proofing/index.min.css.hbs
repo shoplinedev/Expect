@@ -20,7 +20,7 @@ input{
 }
 @media (min-width:960px){
   .container,.container-lg,.container-md{
-    max-width:1500px;
+    max-width:{{ append (default theme.settings.page_width 1500) 'px' }};
   }
 }
 .row{

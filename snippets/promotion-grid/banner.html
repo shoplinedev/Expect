@@ -7,7 +7,10 @@
     <div class="{{prefix}} color-scheme-{{ settings.color_scheme }}">
         {{ snippet 'texture' color_scheme=settings.color_scheme width="200" }}
         {{#if settings.image_url.url}}
-            <img class="lozad {{prefix}}-image" data-src="{{settings.image_url.url}}" data-srcset="{{ settings.image_url.url }} 1x, {{ settings.image_url.url }} 2x" alt="{{settings.image_url.alt}}" />
+            <img 
+              class="lozad {{prefix}}-image" 
+              {{{get 'responsiveAttr' (image_responsive settings.image_url.url pcSize='1/4' mSize='50vw')}}}
+              alt="{{settings.image_url.alt}}" />
         {{/if}}
         <div class="{{prefix}}-right">
             {{#if settings.title}}
