@@ -199,7 +199,7 @@
     "username": "Naam"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Bedankt dat u contact met ons opneemt, we zullen zo snel mogelijk u antwoorden"
   },
   "footer": {
     "copyright": "Alle rechten voorbehouden",
@@ -208,6 +208,15 @@
     "subscribeError": "Abonneren mislukt",
     "subscribeRegExpError": "Onjuist formaat van e-mail adres",
     "subscribeSuccess": "Abonneren succes"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Accepteren",
+      "decline": "Afwijzen",
+      "link": "Privacybeleid",
+      "tips": "Om u een betere ervaring te bieden, gebruiken wij cookies om uw aanmeldingsstatus te registreren, statistieken te verzamelen en u interessante inhoud aan te bieden. Klik op 'Accepteren' om het gebruik van cookies toe te staan. Of zie onze ’Privacybeleid‘.",
+      "title": "Wij hechten waarde aan uw privacy"
+    }
   },
   "header": {
     "cart": "Winkelwagen",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} korting",
         "discount2": "Gratis bezorgen",
+        "level": "Beschikbaar voor {{level}}",
         "shippingRateBelow": "Verzendkosten onder {value}",
+        "specified": "Beschikbaar voor bepaalde klanten",
         "threshold": "Koop {threshold}",
         "until": "Geldig tot: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "Beperkte tijd promotie",
     "flash-sale-tips": "Aankooplimiet: {{count}} stuk",
+    "gift": {
+      "gotAll": "Gefeliciteerd! Je hebt {{saved}} cadeautjes gekregen!",
+      "noReceived": "Gefeliciteerd! U kunt {{willSave}} cadeautjes kiezen",
+      "notMetAmount": "Koop {{threshold}} meer en geniet tot {{willSave}} gratis cadeautjes",
+      "notMetQuantity": "Koop {{threshold}} meer artikelen en geniet tot {{willSave}} gratis cadeautjes",
+      "select": "Kiezen",
+      "spendMoreMoneyGetMore": "Gefeliciteerd! Je hebt {{saved}} cadeautjes gekregen! Koop {{threshold}} meer en krijg tot {{willSave}} gratis cadeautjes",
+      "spendMoreQuantityGetMore": "Gefeliciteerd! Je hebt {{saved}} cadeautjes gekregen! Koop {{threshold}} meer artikelen en krijg tot {{willSave}} gratis cadeautjes"
+    },
     "hot-sale": "Hete verkoop",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Geen kanalen van derden geconfigureerd",
       "err1009": "Verificatie door derden mislukt",
       "err1010": "SMS/email sjabloon rendering mislukt",
+      "err1017": "Account is in gevaar",
       "err2001": "Geregistreerd telefoonnummer",
       "err2002": "Geregistreerd e-mailadres",
       "err2003": "De verificatiecode meerdere keren versturen",
@@ -1232,6 +1253,7 @@
       "err2005": "Fout verificatiecode",
       "err2006": "Verificatiecode is al meerdere keren gebruikt, gebruik een andere verificatiecode",
       "err2007": "SMS/email sjabloon rendering mislukt",
+      "err2016": "Account is in gevaar",
       "err3001": "Cookie verificatie mislukt",
       "err3002": "Gebruikers die niet aan een telefoon/e-mail gebonden zijn, probeert de wachtwoord te wijzigen",
       "err3003": "De verificatiecode meerdere keren versturen",

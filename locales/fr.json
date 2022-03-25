@@ -199,7 +199,7 @@
     "username": "Nom"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Merci de nous contacter, nous vous répondrons dès que possible."
   },
   "footer": {
     "copyright": "Tous les droits sont réservés",
@@ -208,6 +208,15 @@
     "subscribeError": "Échec de l'abonnement",
     "subscribeRegExpError": "Format d'adresse e-mail non valide",
     "subscribeSuccess": "Abonné"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Accepter",
+      "decline": "Refuser",
+      "link": "Politique de confidentialité",
+      "tips": "Afin de vous donner une meilleure expérience, nous utilisons des cookies pour enregistrer votre statut de connexion, collecter des statistiques et vous fournir des intérêts.Cliquez sur \"Accepter\" pour permettre aux cookies d'utiliser.Ou vérifier notre \"politique de confidentialité\".",
+      "title": "Nous tenons compte de  votre vie privée"
+    }
   },
   "header": {
     "cart": "Panier",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} de réduction",
         "discount2": "Transport gratuit",
+        "level": "Pour {{level}}",
         "shippingRateBelow": "Les frais d’expédition sont inférieurs à {value}",
+        "specified": "Pour les clients spécifiés",
         "threshold": "Achetrer {threshold}",
         "until": "Valable jusqu’à :{{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "Promotions d’une durée limitée",
     "flash-sale-tips": "Limite d’achat: {{count}} pièce",
+    "gift": {
+      "gotAll": "Félicitations! Vous avez obtenu {{saved}} cadeaux!",
+      "noReceived": "Félicitations! Vous pouvez choisir {{willSave}} cadeaux",
+      "notMetAmount": "Achetez à nouveau {{threshold}} et profitez jusqu’à {{willSave}} cadeaux",
+      "notMetQuantity": "Achetez à nouveau des articles {{threshold}} et profitez jusqu’à {{willSave}} cadeaux",
+      "select": "Choisir",
+      "spendMoreMoneyGetMore": "Félicitations! Vous avez obtenu {{saved}} cadeaux! Achetez à nouveau {{threshold}} et profitez jusqu’à {{willSave}} cadeaux",
+      "spendMoreQuantityGetMore": "Félicitations! Vous avez obtenu {{saved}} cadeaux! Achetez à nouveau des articles {{threshold}} et profitez jusqu’à {{willSave}} cadeaux"
+    },
     "hot-sale": "A la vente",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "L'ID tiers ou le canal n'a pas été configuré",
       "err1009": "Échec de la validation par un tiers",
       "err1010": "Échec de l'envoi du code",
+      "err1017": "Le compte est risqué",
       "err2001": "Le téléphone portable a été enregistré",
       "err2002": "L'e-mail a été enregistré",
       "err2003": "Espacez vos tentatives",
@@ -1232,6 +1253,7 @@
       "err2005": "Erreur de code",
       "err2006": "Nombre de tentatives de vérifications trop élevé, veuillez obtenir un autre code",
       "err2007": "Échec de l'envoi du code",
+      "err2016": "Le compte est risqué",
       "err3001": "Cookie non valide",
       "err3002": "Opération illégale",
       "err3003": "Espacez vos tentatives",

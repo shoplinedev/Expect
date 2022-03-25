@@ -199,7 +199,7 @@
     "username": "Efternamn"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Tack för att du kontaktar oss, vi återkommer till dig så snart som möjligt."
   },
   "footer": {
     "copyright": "Alla Rättigheter Förbehållna",
@@ -208,6 +208,15 @@
     "subscribeError": "Prenumerera misslyckades",
     "subscribeRegExpError": "E-postadressformatfel",
     "subscribeSuccess": "Prenumerera framgång"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Acceptera",
+      "decline": "Vägra",
+      "link": "Integritetpolicy",
+      "tips": "För att förbättra din upplevelse använder vi cookies för att memorera anslutningsinformation, samla in statistik och erbjuda innehåll som passar dina intressen. Klicka på \"Acceptera\" för att acceptera cookies eller se vår \"Integritetpolicy\".",
+      "title": "Din integritet är viktig för oss"
+    }
   },
   "header": {
     "cart": "Din Korg",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} reduktion",
         "discount2": "Gratis leverans",
+        "level": "För {{level}}",
         "shippingRateBelow": "Frakten är mindre än {value}",
+        "specified": "För vissa kunder",
         "threshold": "Köp {threshold}",
         "until": "Gäller till: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "FLASH-FÖRSÄLJNING",
     "flash-sale-tips": "Köpgräns: {{count}} kvantitet",
+    "gift": {
+      "gotAll": "Grattis! Du har {{saved}} en FRI- PRESENT!",
+      "noReceived": "Grattis! Du kan njuta av upp till {{willSave}} FRI- PRESENT",
+      "notMetAmount": "Köp {{threshold}} mer, njut av upp till {{willSave}} FRI-PRESENT",
+      "notMetQuantity": "Köp {{threshold}} mer artiklar, njut av upp till {{willSave}} FRI-PRESENT",
+      "select": "Välja",
+      "spendMoreMoneyGetMore": "Grattis! Jag har redan {{saved}} fri present gåva ! Spendera {{threshold}} mer, njut av upp till {{willSave}} FRI-PRESENT",
+      "spendMoreQuantityGetMore": "Grattis! Jag har redan {{saved}} fri present gåva! Köp {{threshold}} mer, njut av upp till {{willSave}} FRI-PRESENT"
+    },
     "hot-sale": "Stor försäljning!",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Den tredje ID eller kanalen har inte konfigurerats",
       "err1009": "Validering av tredje part misslyckades",
       "err1010": "Det gick inte att returnera textmeddelande / e-postmeddelanden",
+      "err1017": "Konto i fara",
       "err2001": "Mobiltelefonen sparades",
       "err2002": "E-postmeddelandet har sparats",
       "err2003": "Försök inte så ofta",
@@ -1232,6 +1253,7 @@
       "err2005": "Kodfel",
       "err2006": "För många verifieringstider, få en annan kod",
       "err2007": "Det gick inte att returnera textmeddelande / e-postmeddelanden",
+      "err2016": "Konto i fara",
       "err3001": "Ogiltig cookie",
       "err3002": "Användare som inte är relaterade till mobiltelefoner / postlådor försöker ändra sitt lösenord",
       "err3003": "Försök inte så ofta",

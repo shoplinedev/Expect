@@ -98,7 +98,7 @@ imgRealWidth 图片真实占位宽度
     {{/if}}
   </div>
 
-  <a data-id="{{spuSeq}}" data-sku-id="{{reportSkuId}}" data-index="{{ index }}" data-status="{{ soldOut }}" data-name="{{ title }}" data-price="{{ productMinPrice }}" class="product-item {{className}}" href="{{#if (isFalsey uniqueKey) }}javascript:;{{else}}/products/{{ uniqueKey }}{{/if}}" class="col" data-plugin-product-item-a>
+  <a data-id="{{spuSeq}}" data-item-no="{{reportSkuItemNo}}" data-sku-id="{{reportSkuId}}" data-index="{{ index }}" data-status="{{ soldOut }}" data-name="{{ title }}" data-price="{{ productMinPrice }}" class="product-item {{className}}" href="{{#if (isFalsey uniqueKey) }}javascript:;{{else}}/products/{{ uniqueKey }}{{/if}}" class="col" data-plugin-product-item-a>
     <div class="product-item-image-wrapper {{#if isImageRounded}}rounded{{/if}}">
       <div class="product-item__image-content">
         {{!-- 如果没有下一张图片，不展示hover效果 --}}
@@ -110,7 +110,9 @@ imgRealWidth 图片真实占位宽度
               src=product_item_next_image_src 
               placeholderHeight=placeholderHeight 
               pcSize=pcSize 
-              mSize=mSize 
+              padSize=padSize
+              mSize=mSize
+              sizes=sizes
               containerMaxWidth=containerMaxWidth
             }}
           </div>
@@ -122,6 +124,8 @@ imgRealWidth 图片真实占位宽度
             src=product_item_image_src 
             placeholderHeight=placeholderHeight 
             pcSize=pcSize 
+            padSize=padSize
+            sizes=sizes
             mSize=mSize 
             containerMaxWidth=containerMaxWidth
           }}

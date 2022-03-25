@@ -199,7 +199,7 @@
     "username": "Nome"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Grazie per averci contattato, ti risponderemo al più presto possibile."
   },
   "footer": {
     "copyright": "Tutti i diritti riservati",
@@ -208,6 +208,15 @@
     "subscribeError": "Sottoscrizione fallita",
     "subscribeRegExpError": "Il formato dell'indirizzo email è sbagliato",
     "subscribeSuccess": "Sottoscrizione con successo"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Accetta",
+      "decline": "Rifiuta",
+      "link": "Politica sulla privacy",
+      "tips": "Per migliorare la tua esperienza d'uso, utilizziamo i cookie per registrare il tuo stato di accesso, raccogliere dati statistici e fornirti contenuti interessanti. Clicca su \"Accetta\" per consentire l'uso dei cookie. Oppure consulta la nostra \"Politica sulla privacy\".",
+      "title": "Ci prendiamo cura della tua privacy"
+    }
   },
   "header": {
     "cart": "Carrello",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} di sconto",
         "discount2": "Spedizione gratuita",
+        "level": "Per {{level}}",
         "shippingRateBelow": "Costo di spedizione inferiore a {value}",
+        "specified": "Per specifici clienti",
         "threshold": "Acquista {threshold}",
         "until": "Valido fino al: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "Offerta di lampo",
     "flash-sale-tips": "Limite di acquisto: {{count}}",
+    "gift": {
+      "gotAll": "Congratulazioni! Hai già ottenuto {{saved}} omaggi!",
+      "noReceived": "Congratulazioni! Puoi scegliere {{willSave}} omaggi",
+      "notMetAmount": "Acquista {{threshold}} in più e avrai fino a {{willSave}} omaggi",
+      "notMetQuantity": "Acquista {{threshold}} altri articoli e avrai fino a {{willSave}} omaggi",
+      "select": "Seleziona",
+      "spendMoreMoneyGetMore": "Congratulazioni! Hai già ottenuto {{saved}} omaggi! Acquista {{threshold}} in più e avrai fino a {{willSave}} omaggi",
+      "spendMoreQuantityGetMore": "Congratulazioni! Hai già ottenuto {{saved}} omaggi! Acquista {{threshold}} altri articoli e avrai fino a {{willSave}} omaggi"
+    },
     "hot-sale": "In vendita",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Nessun canale di terze parti configurato",
       "err1009": "Verifica di terze parti non riuscita",
       "err1010": "SMS/modello di e-mail non viene generato con successo",
+      "err1017": "Il conto è a rischio",
       "err2001": "Il numero di cellulare è stato registrato",
       "err2002": "L'e-mail è stata registrata",
       "err2003": "I codici di verifica sono inviati più volte",
@@ -1232,6 +1253,7 @@
       "err2005": "Errore di codice di verifica",
       "err2006": "Il codice di verifica è stato utilizzato più volte, utilizza un altro codice di verifica",
       "err2007": "SMS/modello di e-mail non viene generato con successo",
+      "err2016": "Il conto è a rischio",
       "err3001": "Verifica dei cookie non riuscita",
       "err3002": "Gli utenti che non hanno associato i loro cellulari/e-mail provano a modificare le loro password",
       "err3003": "I codici di verifica sono inviati più volte",

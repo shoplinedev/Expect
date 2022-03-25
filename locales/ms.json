@@ -199,7 +199,7 @@
     "username": "Nama"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Terima kasih kerana menghubungi kami, kami akan menghubungi anda secepat mungkin."
   },
   "footer": {
     "copyright": "Hak Cipta Terpelihara",
@@ -208,6 +208,15 @@
     "subscribeError": "Langganan gagal",
     "subscribeRegExpError": "Ralat format alamat e-mel",
     "subscribeSuccess": "Langganan berjaya"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Terima",
+      "decline": "Tolak",
+      "link": "Dasar Privasi",
+      "tips": "Untuk memberi anda pengalaman yang lebih baik, kami menggunakan kuki untuk merakam status log masuk anda, mengumpul statistik, dan memberi kandungan yang menarik untuk anda. Klik \"Terima\" untuk membenarkan penggunaan kuki. Atau semak \"Dasar Privasi\" kami.",
+      "title": "Kami menghargai privasi anda"
+    }
   },
   "header": {
     "cart": "Kart Anda",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} diskaun",
         "discount2": "Penghantaran percuma",
+        "level": "Untuk {{level}}",
         "shippingRateBelow": "Barangan kurang daripada {value}",
+        "specified": "Untuk pelanggan tertentu",
         "threshold": "Beli {threshold}",
         "until": "Sah sehingga: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "JUALAN KILAT",
     "flash-sale-tips": "Had pembelian: {{count}} kuantiti",
+    "gift": {
+      "gotAll": "Tahniah! Anda telah menerima {{saved}} HADIAH PERCUMA!",
+      "noReceived": "Tahniah! Anda boleh menikmati sehingga {{willSave}} HADIAH PERCUMA",
+      "notMetAmount": "Beli {{threshold}} lagi, nikmati sehingga {{willSave}} HADIAH PERCUMA",
+      "notMetQuantity": "Beli {{threshold}} item lagi, nikmati sehingga {{willSave}} HADIAH PERCUMA",
+      "select": "Pilih",
+      "spendMoreMoneyGetMore": "Tahniah! Sudah terima {{saved}} Hadiah percuma! Belanja {{threshold}} lagi, nikmati sehingga {{willSave}} HADIAH PERCUMA",
+      "spendMoreQuantityGetMore": "Tahniah! Sudah terima {{saved}} Hadiah percuma! Beli {{threshold}} lagi, nikmati sehingga {{willSave}} HADIAH PERCUMA"
+    },
     "hot-sale": "Jualan hangat!",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "ThirdId atau saluran tidak dikonfigurasikan",
       "err1009": "Pengesahan pihak ketiga gagal",
       "err1010": "Pemaparan mesej teks/templat mel gagal",
+      "err1017": "Akaun berisiko",
       "err2001": "Telefon bimbit telah didaftarkan",
       "err2002": "E-mel telah didaftarkan",
       "err2003": "Jangan cuba terlalu kerap",
@@ -1232,6 +1253,7 @@
       "err2005": "Ralat kod",
       "err2006": "Terlalu banyak kali penentusahan, sila dapatkan kod yang lain",
       "err2007": "Pemaparan mesej teks/templat mel gagal",
+      "err2016": "Akaun berisiko",
       "err3001": "Kuki tidak sah",
       "err3002": "Pengguna yang tidak terikat kepada telefon bimbit/peti mel cuba mengubah kata laluan mereka",
       "err3003": "Jangan cuba terlalu kerap",

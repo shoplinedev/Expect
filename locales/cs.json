@@ -199,7 +199,7 @@
     "username": "Název"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Děkujeme, že jste nás kontaktovali, ozveme se vám co nejdříve."
   },
   "footer": {
     "copyright": "Všechna Práva Vyhrazena",
@@ -208,6 +208,15 @@
     "subscribeError": "Přihlásit se nezdaří",
     "subscribeRegExpError": "Chybný formát e-mailové adresy",
     "subscribeSuccess": "Přihlásit úspěch"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Přijmout",
+      "decline": "Odmítnout",
+      "link": "Zásady ochrany osobních údajů",
+      "tips": "Abychom vylepšili vaše prostředí, používáme cookies k zapamatování informací o připojení, shromažďování statistik a nabízení obsahu, který vyhovuje vašim zájmům. Kliknutím na „Přijmout“ přijměte cookies nebo si přečtěte naše „zásady ochrany osobních údajů“.",
+      "title": "Vaše soukromí je pro nás důležité"
+    }
   },
   "header": {
     "cart": "Váš Košík",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "Sleva {discount}",
         "discount2": "Doprava zdarma",
+        "level": "Pro {{level}}",
         "shippingRateBelow": "Dopravné je méně než {value}",
+        "specified": "Pro specifické zákazníky",
         "threshold": "Koupit {threshold}",
         "until": "Platí do: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "BLESKOVÝ VÝPRODEJ",
     "flash-sale-tips": "Limit nákupu: {{count}} množství",
+    "gift": {
+      "gotAll": "Gratuluji! Máte {{saved}} DÁREK-ZDARMA!",
+      "noReceived": "Gratuluji! Můžete si užít až {{willSave}} DÁREK-ZDARMA",
+      "notMetAmount": "Koupit {{threshold}} více, užijte si až {{willSave}} DÁREK-ZDARMA",
+      "notMetQuantity": "Koupit {{threshold}} více položek, užijte si až {{willSave}} DÁREK-ZDARMA",
+      "select": "Vybrat",
+      "spendMoreMoneyGetMore": "Gratuluji! Mám {{saved}} Dárek zdarma již! Utratit {{threshold}} více, užijte si až {{willSave}} DÁREK-ZDARMA",
+      "spendMoreQuantityGetMore": "Gratuluji! Mám {{saved}} Dárek zdarma již! Koupit {{threshold}} více, užijte si až {{willSave}} DÁREK-ZDARMA"
+    },
     "hot-sale": "Žhavá sleva!",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Třetí ID nebo kanál nebyl nakonfigurován",
       "err1009": "Ověření třetí stranou se nezdařilo",
       "err1010": "Vykreslení šablony textových zpráv/ e-mailů se nezdařilo",
+      "err1017": "Účet v ohrožení",
       "err2001": "Mobil byl zaregistrován",
       "err2002": "E-mail byl zaregistrován",
       "err2003": "Nezkoušejte to tak často",
@@ -1232,6 +1253,7 @@
       "err2005": "Chyba kódu",
       "err2006": "Příliš mnohonásobné ověření, získejte prosím jiný kód",
       "err2007": "Vykreslení šablony textových zpráv/ e-mailů se nezdařilo",
+      "err2016": "Účet v ohrožení",
       "err3001": "Soubor cookie je neplatný",
       "err3002": "Uživatelé, kteří nejsou vázáni na mobilní telefony / poštovní schránky, se snaží změnit svá hesla",
       "err3003": "Nezkoušejte to tak často",

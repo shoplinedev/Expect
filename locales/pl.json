@@ -199,7 +199,7 @@
     "username": "Nazwisko i imię"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Dziękujemy za kontakt, będziemy odpowiadać jak najszybciej. "
   },
   "footer": {
     "copyright": "Wszelkie prawa zastrzeżone",
@@ -208,6 +208,15 @@
     "subscribeError": "Subskrypcja nie powiodła się",
     "subscribeRegExpError": "Nieprawidłowa forma adresu e-maila",
     "subscribeSuccess": "Pomyślnie zasubskrybowano"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Akceptuję",
+      "decline": "Odmówię",
+      "link": "Polityka prywatności",
+      "tips": "W celu oferowania lepszej usługi, zapisujemy twój stan rejestracyjny za pomocą cookie, zbieramy dane statystyczne, i potem oferujemy państwo interesujące treści. Kliknij „akceptuję”, żeby pozwolić wykorzystaniu z cookie. Lub sprawdź naszą „politykę prywatności”.",
+      "title": "Szanujemy twoją prywatność."
+    }
   },
   "header": {
     "cart": "Koszyk",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} zniżki",
         "discount2": "Darmowa dostawa",
+        "level": "Dla {{level}} dostępny",
         "shippingRateBelow": "Koszt za dostawę jest niższy niż {value}",
+        "specified": "Dla przeznaczonych klientów",
         "threshold": "Kupić {threshold}",
         "until": "Czas ważności sięga po: {{endTime}}."
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "Promocja tymczasowa",
     "flash-sale-tips": "limit zakupów: {{count}} sztuk",
+    "gift": {
+      "gotAll": "Gratulacje! Już dostałeś {{saved}} sztuk prezentów!",
+      "noReceived": "Gratulacje! Możesz wybrać {{willSave}} sztuk prezentów",
+      "notMetAmount": "Kup jeszcze {{threshold}}, maksymalnie dostaniesz {{willSave}} sztuk prezentów",
+      "notMetQuantity": "Kup jeszcze {{threshold}} sztuk towarów, maksymalnie dostaniesz {{willSave}} sztuk prezentów",
+      "select": "Wybierz",
+      "spendMoreMoneyGetMore": "Gratulacje! Już dostałeś {{saved}} sztuk prezentów! Kup jeszcze {{threshold}}, maksymalnie dostaniesz {{willSave}} sztuk prezentów",
+      "spendMoreQuantityGetMore": "Gratulacje! Już dostałeś {{saved}} sztuk prezentów! Kup jeszcze {{threshold}} sztuk towarów, maksymalnie dostaniesz {{willSave}} sztuk prezentów"
+    },
     "hot-sale": "W sprzedaniu",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Nie skonfigurowano kanału trzeciej firmy",
       "err1009": "Weryfikacja przez firmę trzecią nie powiodła się",
       "err1010": "Nie udało się wyrenderować szablonu SMS/e-mail",
+      "err1017": "Konto jest niebezpieczne",
       "err2001": "Ten numer telefonu już jest rejestrowany",
       "err2002": "Ten e-mail już jest rejestrowany",
       "err2003": "Wielekrotnie wysłać kod weryfikacyjny",
@@ -1232,6 +1253,7 @@
       "err2005": "Fałszywy kod weryfikacyjny",
       "err2006": "Kod weryfikacyjny już został użyty wielekrotnie, proszę wykorzystać inny kod weryfikacyjny",
       "err2007": "Nie udało się wyrenderować szablonu SMS/e-mail",
+      "err2016": "Konto jest niebezpieczne",
       "err3001": "Nie powiodła się weryfikacja Cookie",
       "err3002": "Użytkownik, który nie powiązał swego numeru telefonu/e-maila, próbuje zmienić hasło",
       "err3003": "Wielekrotnie wysłać kod weryfikacyjny",

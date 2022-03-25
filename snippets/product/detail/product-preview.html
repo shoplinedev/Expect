@@ -1,3 +1,18 @@
+<script>
+  if (!window.SL_ReportArgsMap) {
+    window.SL_ReportArgsMap = {}
+  }
+
+  if (!window.SL_ReportArgsMap.GAR) {
+    window.SL_ReportArgsMap.GAR = {
+      sku_id: {}
+    }
+  }
+
+  window.SL_ReportArgsMap.GAR.sku_id = Object.assign(window.SL_ReportArgsMap.GAR.sku_id, {{{JSONstringify (default variants.gmc_sku_feed_id '{}')}}} );
+
+</script>
+
 {{!-- preload_state的数据需要statePrefix前缀已实现可多个section展示，statePrefix由外部传入 --}}
 {{ assign statePrefix product }}
 {{ assign 'productSale' product.productSale }}

@@ -199,7 +199,7 @@
     "username": "성명"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "연락 주셔서 감사합니다.빠른 시일 내에 회답 드리겠습니다."
   },
   "footer": {
     "copyright": "판권 소유",
@@ -208,6 +208,15 @@
     "subscribeError": "구독 실패",
     "subscribeRegExpError": "이메일 주소 격식이 틀렸습니다",
     "subscribeSuccess": "구독 성공"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "받아들이다.",
+      "decline": "거절합니다.",
+      "link": "프라이버시 정책",
+      "tips": "더 좋은 경험을 드릴 수 있도록로그인 상태를 기록하기 위해 쿠키를 사용합니다. 통계 데이터를 수집하고 관심있는 내용을 제공합니다.쿠키의 사용을 허락하기 위해 '접수'를 누르십시오.아니면 우리의 '프라이버시 정책'을 살펴보세요.",
+      "title": "우리는 당신의 프라이버시를 중시합니다."
+    }
   },
   "header": {
     "cart": "바구니",
@@ -662,7 +671,7 @@
       "text1": "상관 결과를 찾지 못했습니다"
     },
     "sortName": "배열 방식:",
-    "title": "검색하다."
+    "title": "검색."
   },
   "promotion": {
     "activity-benefit": "활동 혜택",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} 감소",
         "discount2": "무료 배송",
+        "level": "{{level}} 사용 가능합니다",
         "shippingRateBelow": "운임이 {value}보다 낮습니다.",
+        "specified": "고객이 사용할 수 있도록 지정합니다",
         "threshold": "{threshold}을 삽니다.",
         "until": "유효기간 {{endTime}} 까지입니다."
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "시간제한 판촉",
     "flash-sale-tips": "구매 제한:{{count}}건",
+    "gift": {
+      "gotAll": "축하합니다! {{saved}}개의 사은품을 받으셨습니다!",
+      "noReceived": "축하합니다! {{willSave}} 사은품을 선택하실 수 있습니다",
+      "notMetAmount": "재구매 {{threshold}}, 최대 {{willSave}} 사은품 받을 수 있습니다",
+      "notMetQuantity": "{{threshold}} 상품을 재구매하시면 최대 {{willSave}} 사은품을 받으실 수 있습니다",
+      "select": "선택",
+      "spendMoreMoneyGetMore": "축하합니다! {{saved}} 개의 사은품을 받았습니다!재구매 {{threshold}}, 최대 {{willSave}} 사은품 받을 수 있습니다",
+      "spendMoreQuantityGetMore": "축하합니다! {{saved}} 개의 사은품을 받았습니다!{{threshold}} 상품을 재구매하시면 최대 {{willSave}} 사은품을 받으실 수 있습니다"
+    },
     "hot-sale": "절찬 판매중",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "제3자 경초를 배치하지 않음",
       "err1009": "제3자 검증 실패",
       "err1010": "메시지/이메일 템플릿 렌더링 실패",
+      "err1017": "계좌번호는 위험이 존재합니다",
       "err2001": "핸드폰 번호 이미 등록됨",
       "err2002": "이메일 이미 등록됨",
       "err2003": "여러번 검증번호 발송",
@@ -1232,6 +1253,7 @@
       "err2005": "검증번호 오류",
       "err2006": "검증번호를 이미 여러번 사용하여 다른 검증번호를 사용하세요",
       "err2007": "메시지/메일 템플릿 렌더링 실패",
+      "err2016": "계좌번호는 위험이 존재합니다",
       "err3001": "Cookie 검증 통과되지 않음",
       "err3002": "핸드폰/이메일을 귀속하지 않은 사용자가 비밀번호 수정을 시도합니다",
       "err3003": "여러번 검증번호 발송",

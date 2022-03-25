@@ -199,7 +199,7 @@
     "username": "Vardas ir pavardė"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Dėkoju, kad kreipiamės į mus ir atsakysime jums kuo skubiau."
   },
   "footer": {
     "copyright": "Visos teisės saugomos.",
@@ -208,6 +208,15 @@
     "subscribeError": "Nepavyko prenumeruoti",
     "subscribeRegExpError": "El. pašto adreso formato klaida",
     "subscribeSuccess": "Prenumeruoti sėkmę"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Priimti",
+      "decline": "Atsisakyti",
+      "link": "Privatumo politika",
+      "tips": "Kad pagerintumėm jūsų patirtį,mes naudojame slapukus, kad prisimintumėm jūsų prisijungimo duomenis,rinkti statistiką ir pateikti turinį pritaikytą jūsų pomėgiams. Paspasukite “Priimti” kad priimtumėte slapukus arba peržiūrėkite mūsų “Privatumo Politika”.",
+      "title": "Mes rūpinamės jūsų privatumu"
+    }
   },
   "header": {
     "cart": "Jūsų vežimėlis",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} nuolaida",
         "discount2": "Nemokamas pristatymas",
+        "level": "Skirta {{level}}",
         "shippingRateBelow": "Krovinys yra mažesnis negu {value}",
+        "specified": "Dėl tam tikrų klientų",
         "threshold": "Pirkite {threshold}",
         "until": "Galioja iki {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "MOMENTINIS PARDAVIMAS",
     "flash-sale-tips": "Įsigijimo apribojimas: {{count}} kiekis",
+    "gift": {
+      "gotAll": "Sveikiname! Turiu {{saved}} NEMOKAMĄ DOVANĄ!",
+      "noReceived": "Sveikiname! Galite mėgautis iki {{willSave}} NEMOKAMA DOVANA",
+      "notMetAmount": "Įsigykite {{threshold}} daugiau, mėgaukitės {{willSave}} NEMOKAMA DOVANA",
+      "notMetQuantity": "Įsigykite {{threshold}} daugiau prekių, mėgaukitės {{willSave}} NEMOKAMA DOVANA",
+      "select": "Pasirinkti",
+      "spendMoreMoneyGetMore": "Sveikiname! Jau gavau {{saved}} nemokamą dovaną! Išleiskite {{threshold}} daugiau, mėgaukitės iki {{willSave}} NEMOKAMA DOVANA",
+      "spendMoreQuantityGetMore": "Sveikiname! Jau gavau {{saved}} nemokamą dovaną! Įsigykite {{threshold}} daugiau, mėgaukitės iki {{willSave}} NEMOKAMA DOVANA"
+    },
     "hot-sale": "Išpardavimas!",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Gija ar kanalas nebuvo konfigūruoti",
       "err1009": "Nepavyko trečiosios šalies patvirtinimas",
       "err1010": "Nepavyko pateikti SMS / pašto šablono",
+      "err1017": "Sąskaitoms gresia pavojus",
       "err2001": "Mobilusis buvo registruotas",
       "err2002": "El. paštas buvo registruotas",
       "err2003": "Nebandykite taip dažnai",
@@ -1232,6 +1253,7 @@
       "err2005": "Kodo klaida",
       "err2006": "Per daug tikrinimo kartų, prašome gauti kitą kodą",
       "err2007": "Nepavyko pateikti SMS / pašto šablono",
+      "err2016": "Sąskaitoms gresia pavojus",
       "err3001": "Slapukas negaliojantis",
       "err3002": "Vartotojai, kurie nėra susieti mobiliaisiais telefonais / pašto dėžutėmis, bando pakeisti savo slaptažodžius",
       "err3003": "Nebandykite taip dažnai",

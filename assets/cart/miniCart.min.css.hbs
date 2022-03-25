@@ -1,5 +1,78 @@
-.custom-sale-color{
+.cart-sku-list-promotion-module,.cart-sku-list-promotion-module-can-jump{
+  background:{{ rgba  theme.settings.color_discount  0.05 }};
+  padding:12px 16px;
+  word-break:break-word;
+}
+.cart-sku-list-promotion-module-arrow,.cart-sku-list-promotion-module-can-jump-arrow{
+  margin-left:12px;
+}
+.cart-sku-list-promotion-module-arrow svg path,.cart-sku-list-promotion-module-can-jump-arrow svg path{
+  stroke:{{ theme.settings.color_text }};
+}
+.cart-sku-list-promotion-module-can-jump-wrapper,.cart-sku-list-promotion-module-wrapper{
+  color:{{ theme.settings.color_text }};
+}
+.cart-sku-list-promotion-module-can-jump-wrapper{
+  -webkit-box-pack:justify;
+  -webkit-justify-content:space-between;
+          justify-content:space-between;
+  text-decoration:none;
+}
+.cart-sku-list-promotion-module,.cart-sku-list-promotion-module-can-jump-wrapper{
+  -webkit-box-align:center;
+  -webkit-align-items:center;
+          align-items:center;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:flex;
+}
+.cart-sku-list-promotion .sales__promotionReminder-saved{
   color:{{ theme.settings.color_discount }};
+}
+@media (min-width:768px){
+  .cart-sku-list-promotion-module,.cart-sku-list-promotion-module-can-jump{
+    min-height:46px;
+  }
+  .cart-sku-list-promotion-module-can-jump-wrapper{
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+            align-items:center;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:flex;
+  }
+}
+@media (max-width:767.98px){
+  .cart-sku-list-promotion-module,.cart-sku-list-promotion-module-can-jump{
+    min-height:43px;
+  }
+  .cart-sku-list-promotion-module-can-jump-wrapper{
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+            align-items:center;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:flex;
+  }
+}
+.salesPluginGift__promotion{
+  cursor:pointer;
+}
+.salesPluginGift__promotion,.salesPluginGift__selectIcon{
+  -webkit-box-pack:justify;
+  -webkit-justify-content:space-between;
+          justify-content:space-between;
+}
+.salesPluginGift__selectIcon{
+  -webkit-box-align:center;
+  -webkit-align-items:center;
+          align-items:center;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:flex;
+}
+.salesPluginGift__selectIcon>svg{
+  margin-left:5px;
 }
 .mp-toast{
   box-sizing:content-box;

@@ -199,7 +199,7 @@
     "username": "Navn"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Takk for at du kontakter oss, vi vil komme tilbake til deg så snart som mulig."
   },
   "footer": {
     "copyright": "Alle Rettigheter Forbeholdt",
@@ -208,6 +208,15 @@
     "subscribeError": "Abonnering mislyktes",
     "subscribeRegExpError": "E-postadressen har formatfeil",
     "subscribeSuccess": "Abonner vellykket"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Godta",
+      "decline": "Avslå",
+      "link": "Personvernpolicy",
+      "tips": "For å forbedre opplevelsen din bruker vi informasjonskapsler for å huske tilkoblingsinformasjon, samle inn statistikk og tilby innhold som passer dine interesser. Klikk på \"Godta\" for å godta informasjonskapsler eller lese vår \"Personvernpolicy\".",
+      "title": "Personvern ditt er viktig for oss"
+    }
   },
   "header": {
     "cart": "Handlekurven Din",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} av",
         "discount2": "Gratis frakt",
+        "level": "For {{level}}",
         "shippingRateBelow": "Frakt er mindre enn {value}",
+        "specified": "For enkelte kunder",
         "threshold": "Kjøp {threshold}",
         "until": "Den er gyldig til: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "FLASH-SALG",
     "flash-sale-tips": "Kjøpsgrense: {{count}}-antall",
+    "gift": {
+      "gotAll": "Gratulerer! Du har jeg {{saved}} GRATIS GAVE!",
+      "noReceived": "Gratulerer! Du kan glede deg over {{willSave}} GRATIS GAVE",
+      "notMetAmount": "Kjøp {{threshold}} Flere, glede deg over {{willSave}} GRATIS GAVE",
+      "notMetQuantity": "Kjøp {{threshold}} Flere artikler, glede deg over {{willSave}} GRATIS GAVE",
+      "select": "Velg",
+      "spendMoreMoneyGetMore": "Gratulerer! Har jeg {{saved}} Gratis gave allerede! Tilbringe {{threshold}} flere ,glede deg over {{willSave}} GRATIS GAVE",
+      "spendMoreQuantityGetMore": "Gratulerer! Har jeg {{saved}} Gratis gave allerede! Kjøp {{threshold}} Flere, glede deg over {{willSave}} GRATIS GAVE"
+    },
     "hot-sale": "Hot salg!",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "ThirdId eller kanalen er ikke konfigurert",
       "err1009": "Tredjepartsvalidering mislyktes",
       "err1010": "Gjengivelse av tekstmelding/postmal mislyktes",
+      "err1017": "Konto i fare",
       "err2001": "Mobilen er registrert",
       "err2002": "E-posten er registrert",
       "err2003": "Ikke prøv så ofte",
@@ -1232,6 +1253,7 @@
       "err2005": "Kodefeil",
       "err2006": "For mange ganger med bekreftelse, vennligst få en annen kode",
       "err2007": "Gjengivelse av tekstmelding/postmal mislyktes",
+      "err2016": "Konto i fare",
       "err3001": "Ugyldig informasjonskapsel",
       "err3002": "Brukere som ikke er bundet til mobiltelefoner/postbokser prøver å endre passord",
       "err3003": "Ikke prøv så ofte",

@@ -199,7 +199,7 @@
     "username": "Navn"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Tak fordi du kontaktede os, og vi vil svare dig så hurtigt som muligt."
   },
   "footer": {
     "copyright": "Alle rettigheder forbeholdes.",
@@ -208,6 +208,15 @@
     "subscribeError": "Abonnementet mislykkedes",
     "subscribeRegExpError": "Fejl i mail adresse format",
     "subscribeSuccess": "Abonner på succes"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Modtage",
+      "decline": "Forfald",
+      "link": "Politik om beskyttelse af personlige oplysninger",
+      "tips": "For at forbedre din oplevelse bruger vi cookies til at huske loginoplysninger, indsamle statistikker og levere indhold, der er skræddersyet til dine interesser. Klik på Accepter for at acceptere cookies eller se vores privatlivspolitik.",
+      "title": "Vi bekymrer os om dit privatliv"
+    }
   },
   "header": {
     "cart": "Din indkøbsvogn",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} af",
         "discount2": "Fri fragt",
+        "level": "For {{level}}",
         "shippingRateBelow": "Fragt er mindre end {value}",
+        "specified": "For fastsat kunder",
         "threshold": "Køb {threshold}",
         "until": "Gyldig indtil: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "FLASH-SALG",
     "flash-sale-tips": "Købsgrænse: Antal {{count}}",
+    "gift": {
+      "gotAll": "Tillykke! du har det {{saved}} GRATIS GAVE!",
+      "noReceived": "Tillykke! Du kan nyde op til {{willSave}} GRATIS GAVE",
+      "notMetAmount": "Køb {{threshold}} ekstra, nyd op til {{willSave}} GRATIS GAVE",
+      "notMetQuantity": "Køb {{threshold}} ekstra varer, nyd op til {{willSave}} GRATIS GAVE",
+      "select": "Vælg",
+      "spendMoreMoneyGetMore": "Tillykke! Har det {{saved}} gratis gave allerede! Tilbringe {{threshold}} ekstra , nyd op til {{willSave}} GRATIS GAVE",
+      "spendMoreQuantityGetMore": "Tillykke! Har det {{saved}} gratis gave allerede! Køb {{threshold}} ekstra, nyd op til {{willSave}} GRATIS GAVE"
+    },
     "hot-sale": "Varmt salg!",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Det tredje id eller den anden kanal er ikke konfigureret",
       "err1009": "Tredjepartsvalidering mislykkedes",
       "err1010": "Gengivelse af tekstmeddelelse/mailskabelon mislykkedes",
+      "err1017": "Kontoen er i fare",
       "err2001": "Mobilen er blevet registreret",
       "err2002": "E-mailen er registreret",
       "err2003": "Forsøg ikke så ofte",
@@ -1232,6 +1253,7 @@
       "err2005": "Kodefejl",
       "err2006": "For mange gange bekræftelse skal du hente en anden kode",
       "err2007": "Gengivelse af tekstmeddelelse/mailskabelon mislykkedes",
+      "err2016": "Kontoen er i fare",
       "err3001": "Cookie er ugyldig",
       "err3002": "Brugere, der ikke er bundet til mobiltelefoner/postkasser, forsøger at ændre deres adgangskoder",
       "err3003": "Forsøg ikke så ofte",

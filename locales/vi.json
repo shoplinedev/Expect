@@ -199,7 +199,7 @@
     "username": "Tên"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Cảm ơn bạn đã liên hệ chúng tôi, chúng tôi sẽ liên hệ lại với bạn sớm nhất có thể."
   },
   "footer": {
     "copyright": "Đã Được Đăng Ký Bản Quyền",
@@ -208,6 +208,15 @@
     "subscribeError": "Đăng ký theo dõi không thành công",
     "subscribeRegExpError": "Lỗi định dạng địa chỉ Email",
     "subscribeSuccess": "Đăng ký theo dõi thành công"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Chấp nhận",
+      "decline": "Từ chối",
+      "link": "Chính sách Bảo mật",
+      "tips": "Nhằm nâng cao trải nghiệm của bạn, chúng tôi sử dụng cookie để ghi nhớ thông tin đăng nhập, thu thập số liệu thống kê và cung cấp nội dung phù hợp với sở thích của bạn. Nhấn vào “Chấp nhận” để chấp nhận cookie hoặc xem “Chính sách Bảo mật” của chúng tôi.",
+      "title": "Chúng tôi bảo vệ quyền riêng tư của bạn"
+    }
   },
   "header": {
     "cart": "Giỏ Hàng Của Bạn",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} giảm",
         "discount2": "Miễn phí giao hàng",
+        "level": "Cho {{level}}",
         "shippingRateBelow": "Cước vận chuyển dưới {value}",
+        "specified": "Cho các khách hàng cụ thể",
         "threshold": "Mua {threshold}",
         "until": "Hợp lệ cho đến: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "Giảm giá thần tốc",
     "flash-sale-tips": "Giới hạn mua: Số lượng {{count}}",
+    "gift": {
+      "gotAll": "Chúc mừng! Bạn đã nhận được {{saved}} QUÀ TẶNG MIỄN PHÍ!",
+      "noReceived": "Chúc mừng! Bạn có thể tận hưởng tới {{willSave}} QUÀ TẶNG MIỄN PHÍ",
+      "notMetAmount": "Mua thêm {{threshold}}, nhận tới {{willSave}} QUÀ TẶNG MIỄN PHÍ",
+      "notMetQuantity": "Mua thêm {{threshold}} mặt hàng, nhận tới {{willSave}} QUÀ TẶNG MIỄN PHÍ",
+      "select": "Chọn",
+      "spendMoreMoneyGetMore": "Chúc mừng! Đã nhận được {{saved}} Quà tặng Miễn phí! Chi tiêu thêm {{threshold}}, tận hưởng tối đa {{willSave}} QUÀ TẶNG MIỄN PHÍ",
+      "spendMoreQuantityGetMore": "Chúc mừng! Đã nhận được {{saved}} Quà tặng Miễn phí! Mua thêm {{threshold}}, nhận tới {{willSave}} QUÀ TẶNG MIỄN PHÍ"
+    },
     "hot-sale": "Hàng Hot!",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Id bên thứ ba hoặc kênh chưa được cấu hình",
       "err1009": "Xác thực bên thứ ba không thành công",
       "err1010": "Tìm nạp mẫu thư/tin nhắn không thành công",
+      "err1017": "Tài khoản bị rủi ro",
       "err2001": "Số điện thoại di động đã được đăng ký",
       "err2002": "Email đã được đăng ký",
       "err2003": "Đừng cố gắng nhập liên tục",
@@ -1232,6 +1253,7 @@
       "err2005": "Mã sai",
       "err2006": "Nhập xác nhận quá nhiều lần, vui lòng lấy mã xác nhận mới",
       "err2007": "Tìm nạp mẫu thư/tin nhắn không thành công",
+      "err2016": "Tài khoản bị rủi ro",
       "err3001": "Cookie không hợp lệ",
       "err3002": "Người dùng không liên kết với hộp thư/số điện thoại di động cố gắng thay đổi mật khẩu của họ",
       "err3003": "Đừng cố gắng nhập liên tục",

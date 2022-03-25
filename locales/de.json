@@ -199,7 +199,7 @@
     "username": "Name"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Vielen Dank für Ihre Kontaktaufnahme. Wir werden uns so schnell wie möglich bei Ihnen melden."
   },
   "footer": {
     "copyright": "Alle Rechte vorbehalten",
@@ -208,6 +208,15 @@
     "subscribeError": "Abonnieren fehlgeschlagen",
     "subscribeRegExpError": "Ungültiges Format der E-Mail-Adresse",
     "subscribeSuccess": "Abonniert"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Akzeptieren",
+      "decline": "Ablehnen",
+      "link": "Datenschutzbestimmungen",
+      "tips": "Um Ihr Benutzererlebnis zu verbessern, verwenden wir Cookies, um Ihren Anmeldestatus zu erfassen, Statistiken zu sammeln und Ihnen interessante Inhalte bereitzustellen. Klicken Sie auf \"Akzeptieren\", um die Verwendung von Cookies zuzulassen. Oder sehen Sie sich unsere \"Datenschutzrichtlinie\" an. ",
+      "title": "Wir schätzen Ihre Privatsphäre"
+    }
   },
   "header": {
     "cart": "Wagen",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} Rabatt",
         "discount2": "Frei von Frachtkosten",
+        "level": "Verfügbar für {{level}}",
         "shippingRateBelow": "Versandkosten weniger als {value}",
+        "specified": "Verfügbar für bestimmte Kunden",
         "threshold": "{threshold} Kaufen",
         "until": "Die Gültigkeit ist bis: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "Blitzangebot",
     "flash-sale-tips": "Kauflimit: {{count}} Stück",
+    "gift": {
+      "gotAll": "Herzlichen Glückwunsch! Sie haben bereits {{saved}} Stücke Gratisgeschenke erhalten!",
+      "noReceived": "Herzlichen Glückwunsch! Sie können {{willSave}} Stücke von Gratisgeschenken wählen",
+      "notMetAmount": "Kaufen Sie {{threshold}} mehr und erhalten Sie bis zu {{willSave}} Stücke Gratisgeschenke",
+      "notMetQuantity": "Beim Kauf von weiteren {{threshold}} Stücke Artikeln erhalten Sie bis zu {{willSave}} Stücke Gratisgeschenke",
+      "select": "Auswählen",
+      "spendMoreMoneyGetMore": "Herzlichen Glückwunsch! Sie haben bereits {{saved}} Stücke Gratisgeschenke bekommen! Kaufen Sie {{threshold}} mehr und erhalten Sie bis zu {{willSave}} Stücke Gratisgeschenke",
+      "spendMoreQuantityGetMore": "Herzlichen Glückwunsch! Sie haben bereits {{saved}} Stücke Gratisgeschenke bekommen! Kaufen Sie weitere {{threshold}} Stücke Artikel und erhalten Sie bis zu {{willSave}} Stücke Gratisgeschenke"
+    },
     "hot-sale": "Im heißen Verkauf",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Die thirdId oder der Kanal wurde nicht konfiguriert",
       "err1009": "Validierung durch Drittanbieter nicht erfolgreich",
       "err1010": "Code konnte nicht gesendet werden",
+      "err1017": "Das Konto ist gefährdet",
       "err2001": "Die Mobiltelefonnummer wurde registriert",
       "err2002": "Die E-Mail-Adresse wurde registriert",
       "err2003": "Versuchen Sie es nicht so oft",
@@ -1232,6 +1253,7 @@
       "err2005": "Codefehler",
       "err2006": "Zu viele Verifizierungszeiten, bitte beziehen Sie einen anderen Code",
       "err2007": "Code konnte nicht gesendet werden",
+      "err2016": "Das Konto ist gefährdet",
       "err3001": "Cookie ungültig",
       "err3002": "Unzulässiger Vorgang",
       "err3003": "Versuchen Sie es nicht so oft",

@@ -8654,6 +8654,21 @@
                 }
             }));
         },
+        "./src/assets/shared/components/breadcrumb/index.js": () => {
+            const PLPReg = /^\/collections\/[^/]+$/;
+            const PDPReg = /^(\/collections\/[^/]+)?\/products\/[^/]/;
+            if (PLPReg.test(window.location.pathname)) {
+                const name = window.SL_State.get("sortation.sortation.title");
+                if (name) sessionStorage.setItem("breadcrumb", JSON.stringify({
+                    name,
+                    link: window.location.pathname + window.location.search
+                }));
+            } else if (PDPReg.test(window.location.pathname) && "/products/search" !== window.location.pathname) {
+                var _window$sessionStorag;
+                const breadcrumb = JSON.parse(null !== (_window$sessionStorag = window.sessionStorage.getItem("breadcrumb")) && void 0 !== _window$sessionStorag ? _window$sessionStorag : '""');
+                if (breadcrumb) $(".product-crumbs").append(`\n      <a class="body4" href="${breadcrumb.link}">${breadcrumb.name}</a>\n    `);
+            } else sessionStorage.removeItem("breadcrumb");
+        },
         "./src/assets/shared/utils/url.js": (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
             "use strict";
             __webpack_require__.d(__webpack_exports__, {
@@ -8738,6 +8753,26 @@
                 if ($target.length > 0) $target.toggleClass(ACTIVE_CLASS); else if ($more.hasClass(ACTIVE_CLASS)) $more.removeClass(ACTIVE_CLASS);
             }));
         },
+        "../shared/browser/report/customArgs/index.js": () => {
+            function getValue(keysMap, name) {
+                var _keysMap$name;
+                return null !== (_keysMap$name = null === keysMap || void 0 === keysMap ? void 0 : keysMap[name]) && void 0 !== _keysMap$name ? _keysMap$name : name;
+            }
+            function getValuesByKey(channelArgs, key) {
+                return name => getValue(null === channelArgs || void 0 === channelArgs ? void 0 : channelArgs[key], name);
+            }
+            function getByChannel(channel) {
+                return key => {
+                    var _window$SL_ReportArgs;
+                    return getValuesByKey(null === (_window$SL_ReportArgs = window.SL_ReportArgsMap) || void 0 === _window$SL_ReportArgs ? void 0 : _window$SL_ReportArgs[channel], key);
+                };
+            }
+            if (!window.SL_GetReportArg) window.SL_GetReportArg = function(...args) {
+                if (1 === args.length) return getByChannel(args[0]);
+                if (2 === args.length) return getByChannel(args[0])(args[1]);
+                if (3 === args.length) return getByChannel(args[0])(args[1])(args[2]);
+            };
+        },
         "../shared/browser/utils/createLogger.js": (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
             "use strict";
             __webpack_require__.d(__webpack_exports__, {
@@ -8805,24 +8840,29 @@
             var timezone_default = __webpack_require__.n(timezone);
             var get_env = __webpack_require__("../shared/browser/utils/get-env.js");
             var state_selector = __webpack_require__("../shared/browser/utils/state-selector.js");
+            var _window$SL_Report, _window$SL_Report2;
             dayjs_min_default().extend(utc_default());
             dayjs_min_default().extend(timezone_default());
             class HdReport {
                 constructor() {
                     var _window$__PRELOAD_STA, _window$HdSdk, _window$HdSdk$shopTra, _SL_State$get, _window$HdSdk2, _window$HdSdk2$shopTr, _window$HdSdk3;
+                    this.deviceInfo = null;
                     const {APP_ENV} = (0, get_env["default"])();
-                    const env = "develop" !== APP_ENV ? "product" : "";
+                    let env = "develop" !== APP_ENV ? "product" : "";
+                    if ("preview" === APP_ENV) env = APP_ENV;
                     const debugMode = "staging" === APP_ENV || "develop" === APP_ENV;
                     const Shopline = window.Shopline || {};
                     const pid = null === (_window$__PRELOAD_STA = window.__PRELOAD_STATE__) || void 0 === _window$__PRELOAD_STA ? void 0 : _window$__PRELOAD_STA.serverEventId;
                     const timeOffset = Shopline.systemTimestamp ? +new Date - Shopline.systemTimestamp : 0;
+                    const that = this;
                     null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : null === (_window$HdSdk$shopTra = _window$HdSdk.shopTracker) || void 0 === _window$HdSdk$shopTra ? void 0 : _window$HdSdk$shopTra.setOptions({
                         env,
                         timezoneOffset: null !== (_SL_State$get = state_selector.SL_State.get("storeInfo.timezoneOffset")) && void 0 !== _SL_State$get ? _SL_State$get : 0,
                         disableIframeId: true,
                         timeOffset,
                         beforeSend: async data => {
-                            var _Shopline$updateMode;
+                            var _that$deviceInfo, _that$deviceInfo2, _Shopline$updateMode;
+                            if (!that.deviceInfo && window.__DF__) that.deviceInfo = await window.__DF__.getDeviceInfo();
                             const warpData = {
                                 theme_id: state_selector.SL_State.get("themeConfig.themeId"),
                                 store_region: state_selector.SL_State.get("storeInfo.marketStorageRegion"),
@@ -8831,6 +8871,8 @@
                                 theme_name: Shopline.themeName,
                                 theme_version: Shopline.themeVersion,
                                 is_admin: js_cookie_default().get("r_b_ined") || "0",
+                                device_token: null === (_that$deviceInfo = that.deviceInfo) || void 0 === _that$deviceInfo ? void 0 : _that$deviceInfo.token,
+                                ua_info: null === (_that$deviceInfo2 = that.deviceInfo) || void 0 === _that$deviceInfo2 ? void 0 : _that$deviceInfo2.deviceInfo,
                                 pid,
                                 update_mode: (null === (_Shopline$updateMode = Shopline.updateMode) || void 0 === _Shopline$updateMode ? void 0 : _Shopline$updateMode.toString()) || "",
                                 time_offset: timeOffset,
@@ -8846,10 +8888,9 @@
                         const payloads = [].concat(payload);
                         const defaultEventId = -999;
                         const obj = payloads.reduce(((o, {source}) => {
-                            var _ref;
                             const result = o;
-                            const {act, eventid, moreinfo: {event_id}} = source;
-                            const item = null !== (_ref = null !== eventid && void 0 !== eventid ? eventid : event_id) && void 0 !== _ref ? _ref : defaultEventId;
+                            const {act, eventid, event_id} = source;
+                            const item = eventid || event_id || defaultEventId;
                             result[act] = result[act] ? [ ...result[act], item ] : [ item ];
                             return result;
                         }), {});
@@ -8858,7 +8899,11 @@
                     }));
                 }
             }
-            new HdReport;
+            const hidooRp = (null === (_window$SL_Report = window.SL_Report) || void 0 === _window$SL_Report ? void 0 : _window$SL_Report.hdReportInstance) || new HdReport;
+            if (!(null !== (_window$SL_Report2 = window.SL_Report) && void 0 !== _window$SL_Report2 && _window$SL_Report2.hdReportInstance)) {
+                window.SL_Report = window.SL_Report || {};
+                window.SL_Report.hdReportInstance = hidooRp;
+            }
             function _defineProperty(obj, key, value) {
                 if (key in obj) Object.defineProperty(obj, key, {
                     value,
@@ -9036,7 +9081,7 @@
                 onDomReady(report);
             }
             const report_headless = reportHeadless;
-            const autoReport = () => {
+            function autoReport() {
                 var _window$HdSdk;
                 const shopTracker = null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : _window$HdSdk.shopTracker;
                 if (!shopTracker) return;
@@ -9045,135 +9090,161 @@
                         event_name: "142"
                     });
                 }));
-            };
-            autoReport();
-            window.SL_EventBus.on("global:thirdPartReport", (data => {
-                try {
-                    var _data$FBPixel;
-                    Object.keys(data).forEach((dataKey => {
-                        var _window$__PRELOAD_STA;
-                        let eventKey = dataKey;
-                        if ("GAR" === dataKey) eventKey = "GARemarketing";
-                        if (null !== (_window$__PRELOAD_STA = window.__PRELOAD_STATE__.eventTrace) && void 0 !== _window$__PRELOAD_STA && _window$__PRELOAD_STA.enabled[eventKey]) {
-                            const configs = window.__PRELOAD_STATE__.eventTrace.enabled[eventKey];
-                            let payloads = data[dataKey];
-                            switch (dataKey) {
-                              case "GA":
-                              case "GAAds":
-                              case "GARemarketing":
-                              case "GAR":
-                                configs.forEach((config => {
-                                    if ("GA" === dataKey && config.enableEnhancedEcom && data.GAE) payloads = data[dataKey].concat(data.GAE);
-                                    payloads.forEach((([track, event, data = {}, scope, ...rest]) => {
-                                        data = data || {};
-                                        const {useLegacyCode, traceType} = config;
-                                        if (0 === parseInt(traceType, 10)) return;
-                                        if (void 0 === useLegacyCode && "GAR" === dataKey) return;
-                                        if (0 === parseInt(useLegacyCode, 10) && "GARemarketing" === dataKey) return;
-                                        if (1 === parseInt(useLegacyCode, 10) && "GAR" === dataKey) return;
-                                        if ((config.scope || scope) && scope !== config.scope) return;
-                                        const isDataObj = "[object Object]" === Object.prototype.toString.call(data);
-                                        if (-1 !== [ "GA", "GARemarketing", "GAR" ].indexOf(dataKey) && isDataObj) data.send_to = `${config.id}`;
-                                        if ("GAAds" === dataKey && isDataObj) data.send_to = `${config.id}/${config.tag}`;
-                                        window.gtag(track, event, data, ...rest);
-                                    }));
-                                }));
-                                break;
-
-                              case "FBPixel":
-                                payloads.forEach((payload => {
-                                    const [action, eventName, customData = {}, extData = {}, ...rest] = payload;
-                                    window.fbq(action, eventName, customData, extData, ...rest);
-                                }));
-                            }
-                        }
-                    }));
-                    if (null !== (_data$FBPixel = data.FBPixel) && void 0 !== _data$FBPixel && _data$FBPixel[0]) _hiido.report(data.FBPixel[0][1], data.FBPixel[0][2], data.FBPixel[0][3], data.FBPixel[0][4]);
-                } catch (err) {
-                    console.error("global:thirdPartReport err:", err);
-                }
-            }));
-            let beforeunloadCallback;
-            let getDestPathCallback;
-            let sendLock = false;
-            window.SL_EventBus.on("global:hdReport:exit", (data => {
-                if (beforeunloadCallback) {
-                    sendLock = false;
-                    window.removeEventListener("beforeunload", beforeunloadCallback);
-                    document.removeEventListener("click", getDestPathCallback);
-                }
-                function report(data, page_dest) {
-                    if (sendLock) return;
-                    sendLock = true;
-                    if (Array.isArray(data)) {
-                        var _window$HdSdk;
-                        const [eventId, params] = data;
-                        null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : _window$HdSdk.shopTracker.report(eventId, {
-                            page_dest,
-                            event_name: "999",
-                            ...params
-                        });
-                    }
-                    if ("[object Object]" === Object.prototype.toString.call(data)) {
-                        var _window$HdSdk2, _window$HdSdk2$shopTr, _window$HdSdk2$shopTr2;
-                        null === (_window$HdSdk2 = window.HdSdk) || void 0 === _window$HdSdk2 ? void 0 : null === (_window$HdSdk2$shopTr = (_window$HdSdk2$shopTr2 = _window$HdSdk2.shopTracker).collect) || void 0 === _window$HdSdk2$shopTr ? void 0 : _window$HdSdk2$shopTr.call(_window$HdSdk2$shopTr2, {
-                            action_type: "999",
-                            page_dest_url: page_dest,
-                            ...data
-                        });
-                    }
-                }
-                beforeunloadCallback = () => {
-                    report(data, "");
-                };
-                getDestPathCallback = event => {
-                    const path = composedPath(event);
-                    for (let i = path.length; i--; ) {
-                        const element = path[i];
-                        if (element && 1 === element.nodeType && "a" === element.nodeName.toLowerCase()) if (/^https?:\/\//.test(element.href)) {
-                            report(data, element.href);
-                            break;
-                        }
-                    }
-                };
-                window.addEventListener("beforeunload", beforeunloadCallback);
-                document.addEventListener("click", getDestPathCallback);
-            }));
-            window.SL_EventBus.on("global:hdReport:pageview", ((...data) => {
-                const [eventIdOrData, ...rest] = data;
-                if ("string" == typeof eventIdOrData) {
-                    var _window$HdSdk3;
-                    null === (_window$HdSdk3 = window.HdSdk) || void 0 === _window$HdSdk3 ? void 0 : _window$HdSdk3.shopTracker.report(eventIdOrData, ...rest);
-                }
-                if ("[object Object]" === Object.prototype.toString.call(eventIdOrData)) {
-                    var _window$HdSdk4, _window$HdSdk4$shopTr, _window$HdSdk4$shopTr2;
-                    null === (_window$HdSdk4 = window.HdSdk) || void 0 === _window$HdSdk4 ? void 0 : null === (_window$HdSdk4$shopTr = (_window$HdSdk4$shopTr2 = _window$HdSdk4.shopTracker).collect) || void 0 === _window$HdSdk4$shopTr ? void 0 : _window$HdSdk4$shopTr.call(_window$HdSdk4$shopTr2, eventIdOrData);
-                }
-            }));
-            let HdObserverSet = new WeakSet;
+            }
+            var report_window$SL_Report;
             const CLICK_CLASSNAME = "__sl-track_click";
             const EXPOSE_CLASSNAME = "__sl-track_expose";
             const COLLECT_CLICK_CLASSNAME = "__sl-collect_click";
             const COLLECT_EXPOSE_CLASSNAME = "__sl-collect_expose";
-            const HdObserver = new IntersectionObserver((entries => {
+            if (!(null !== (report_window$SL_Report = window.SL_Report) && void 0 !== report_window$SL_Report && report_window$SL_Report.loaded)) {
+                window.SL_Report = window.SL_Report || {};
+                initReportEvent();
+            }
+            if (!window.SL_Report.HdObserverSet) window.SL_Report.HdObserverSet = new WeakSet;
+            if (!window.SL_Report.HdObserver) window.SL_Report.HdObserver = new IntersectionObserver((entries => {
                 entries.forEach((entrie => {
                     if (entrie.isIntersecting) {
                         var _entrie$target, _entrie$target2, _entrie$target$classL, _entrie$target$classL2;
                         const repeat = (null === (_entrie$target = entrie.target) || void 0 === _entrie$target ? void 0 : _entrie$target.dataset["track_repeat"]) || (null === (_entrie$target2 = entrie.target) || void 0 === _entrie$target2 ? void 0 : _entrie$target2.dataset["collect_repeat"]);
-                        if ((null !== (_entrie$target$classL = entrie.target.classList) && void 0 !== _entrie$target$classL && _entrie$target$classL.contains(EXPOSE_CLASSNAME) || null !== (_entrie$target$classL2 = entrie.target.classList) && void 0 !== _entrie$target$classL2 && _entrie$target$classL2.contains(COLLECT_EXPOSE_CLASSNAME)) && ("true" === repeat || "true" !== repeat && !HdObserverSet.has(entrie.target))) {
+                        if ((null !== (_entrie$target$classL = entrie.target.classList) && void 0 !== _entrie$target$classL && _entrie$target$classL.contains(EXPOSE_CLASSNAME) || null !== (_entrie$target$classL2 = entrie.target.classList) && void 0 !== _entrie$target$classL2 && _entrie$target$classL2.contains(COLLECT_EXPOSE_CLASSNAME)) && ("true" === repeat || "true" !== repeat && !window.SL_Report.HdObserverSet.has(entrie.target))) {
                             let collectObj = {};
                             sendCollect(entrie.target, collectObj, (() => {
-                                if ("true" !== repeat) HdObserverSet.add(entrie.target);
+                                if ("true" !== repeat) window.SL_Report.HdObserverSet.add(entrie.target);
                             }));
-                        } else if (!HdObserverSet.has(entrie.target)) {
+                        } else if (!window.SL_Report.HdObserverSet.has(entrie.target)) {
                             window.SL_EventBus.emit("global:hdReport:expose", entrie.target);
-                            HdObserverSet.add(entrie.target);
+                            window.SL_Report.HdObserverSet.add(entrie.target);
                         }
                     }
                 }));
             }), {
                 threshold: 0
             });
+            function initReportEvent() {
+                window.SL_Report.loaded = true;
+                window.SL_EventBus.on("global:thirdPartReport", (data => {
+                    try {
+                        var _data$FBPixel;
+                        Object.keys(data).forEach((dataKey => {
+                            var _window$__PRELOAD_STA;
+                            let eventKey = dataKey;
+                            if ("GAR" === dataKey) eventKey = "GARemarketing";
+                            if (null !== (_window$__PRELOAD_STA = window.__PRELOAD_STATE__.eventTrace) && void 0 !== _window$__PRELOAD_STA && _window$__PRELOAD_STA.enabled[eventKey]) {
+                                const configs = window.__PRELOAD_STATE__.eventTrace.enabled[eventKey];
+                                let payloads = data[dataKey];
+                                switch (dataKey) {
+                                  case "GA":
+                                  case "GAAds":
+                                  case "GARemarketing":
+                                  case "GAR":
+                                    configs.forEach((config => {
+                                        if ("GA" === dataKey && config.enableEnhancedEcom && data.GAE) payloads = data[dataKey].concat(data.GAE);
+                                        payloads.forEach((([track, event, data = {}, scope, ...rest]) => {
+                                            data = data || {};
+                                            const {useLegacyCode, traceType} = config;
+                                            if (0 === parseInt(traceType, 10)) return;
+                                            if (void 0 === useLegacyCode && "GAR" === dataKey) return;
+                                            if (0 === parseInt(useLegacyCode, 10) && "GARemarketing" === dataKey) return;
+                                            if (1 === parseInt(useLegacyCode, 10) && "GAR" === dataKey) return;
+                                            if ((config.scope || scope) && scope !== config.scope) return;
+                                            const isDataObj = "[object Object]" === Object.prototype.toString.call(data);
+                                            if (-1 !== [ "GA", "GARemarketing", "GAR" ].indexOf(dataKey) && isDataObj) data.send_to = `${config.id}`;
+                                            if ("GAAds" === dataKey && isDataObj) data.send_to = `${config.id}/${config.tag}`;
+                                            window.gtag(track, event, data, ...rest);
+                                        }));
+                                    }));
+                                    break;
+
+                                  case "FBPixel":
+                                    payloads.forEach((payload => {
+                                        const [action, eventName, customData = {}, extData = {}, ...rest] = payload;
+                                        window.fbq(action, eventName, customData, extData, ...rest);
+                                    }));
+                                }
+                            }
+                        }));
+                        if (null !== (_data$FBPixel = data.FBPixel) && void 0 !== _data$FBPixel && _data$FBPixel[0]) _hiido.report(data.FBPixel[0][1], data.FBPixel[0][2], data.FBPixel[0][3], data.FBPixel[0][4]);
+                    } catch (err) {
+                        console.error("global:thirdPartReport err:", err);
+                    }
+                }));
+                let beforeunloadCallback;
+                let getDestPathCallback;
+                let sendLock = false;
+                window.SL_EventBus.on("global:hdReport:exit", (data => {
+                    if (beforeunloadCallback) {
+                        sendLock = false;
+                        window.removeEventListener("beforeunload", beforeunloadCallback);
+                        document.removeEventListener("click", getDestPathCallback);
+                    }
+                    function report(data, page_dest) {
+                        if (sendLock) return;
+                        sendLock = true;
+                        if (Array.isArray(data)) {
+                            var _window$HdSdk;
+                            const [eventId, params] = data;
+                            null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : _window$HdSdk.shopTracker.report(eventId, {
+                                page_dest,
+                                event_name: "999",
+                                ...params
+                            });
+                        }
+                        if ("[object Object]" === Object.prototype.toString.call(data)) {
+                            var _window$HdSdk2, _window$HdSdk2$shopTr, _window$HdSdk2$shopTr2;
+                            null === (_window$HdSdk2 = window.HdSdk) || void 0 === _window$HdSdk2 ? void 0 : null === (_window$HdSdk2$shopTr = (_window$HdSdk2$shopTr2 = _window$HdSdk2.shopTracker).collect) || void 0 === _window$HdSdk2$shopTr ? void 0 : _window$HdSdk2$shopTr.call(_window$HdSdk2$shopTr2, {
+                                action_type: "999",
+                                page_dest_url: page_dest,
+                                ...data
+                            });
+                        }
+                    }
+                    beforeunloadCallback = () => {
+                        report(data, "");
+                    };
+                    getDestPathCallback = event => {
+                        const path = composedPath(event);
+                        for (let i = path.length; i--; ) {
+                            const element = path[i];
+                            if (element && 1 === element.nodeType && "a" === element.nodeName.toLowerCase()) if (/^https?:\/\//.test(element.href)) {
+                                report(data, element.href);
+                                break;
+                            }
+                        }
+                    };
+                    window.addEventListener("beforeunload", beforeunloadCallback);
+                    document.addEventListener("click", getDestPathCallback);
+                }));
+                window.SL_EventBus.on("global:hdReport:pageview", ((...data) => {
+                    const [eventIdOrData, ...rest] = data;
+                    if ("string" == typeof eventIdOrData) {
+                        var _window$HdSdk3;
+                        null === (_window$HdSdk3 = window.HdSdk) || void 0 === _window$HdSdk3 ? void 0 : _window$HdSdk3.shopTracker.report(eventIdOrData, ...rest);
+                    }
+                    if ("[object Object]" === Object.prototype.toString.call(eventIdOrData)) {
+                        var _window$HdSdk4, _window$HdSdk4$shopTr, _window$HdSdk4$shopTr2;
+                        null === (_window$HdSdk4 = window.HdSdk) || void 0 === _window$HdSdk4 ? void 0 : null === (_window$HdSdk4$shopTr = (_window$HdSdk4$shopTr2 = _window$HdSdk4.shopTracker).collect) || void 0 === _window$HdSdk4$shopTr ? void 0 : _window$HdSdk4$shopTr.call(_window$HdSdk4$shopTr2, eventIdOrData);
+                    }
+                }));
+                const isTradePage = location.pathname.includes("/trade/");
+                if (!location.pathname.startsWith("/user/")) {
+                    var _window$__PRELOAD_STA2;
+                    window.SL_EventBus.emit("global:thirdPartReport", {
+                        FBPixel: [ [ "track", "PageView", {}, {
+                            eventID: null === (_window$__PRELOAD_STA2 = window.__PRELOAD_STATE__) || void 0 === _window$__PRELOAD_STA2 ? void 0 : _window$__PRELOAD_STA2.serverEventId
+                        } ] ],
+                        GAAds: isTradePage ? [] : [ [ "event", "conversion", null ] ],
+                        GA: [ [ "event", "page_view", {
+                            page_title: document.title,
+                            page_location: window.location.href,
+                            page_path: window.location.pathname + window.location.search
+                        } ] ]
+                    });
+                }
+                autoReport();
+                report_headless();
+                startObserver();
+                clickCollect();
+            }
             function sendCollect(el, collectObj, callback) {
                 while (el) {
                     const {dataset} = el;
@@ -9212,49 +9283,40 @@
             }
             function collectObserver(options) {
                 [].forEach.call(document.querySelectorAll(options.selector), (el => {
-                    HdObserver.observe(el);
+                    var _window$SL_Report2, _window$SL_Report2$Hd;
+                    null === (_window$SL_Report2 = window.SL_Report) || void 0 === _window$SL_Report2 ? void 0 : null === (_window$SL_Report2$Hd = _window$SL_Report2.HdObserver) || void 0 === _window$SL_Report2$Hd ? void 0 : _window$SL_Report2$Hd.observe(el);
                 }));
             }
-            const startObserver = options => {
+            function startObserver(options) {
+                var _window$SL_Report3, _window$SL_Report3$Hd;
                 options = Object.assign({
                     selector: `.${EXPOSE_CLASSNAME}, .${COLLECT_EXPOSE_CLASSNAME}`
                 }, options);
-                if (options.reset) HdObserverSet = new WeakSet;
-                HdObserver && HdObserver.disconnect();
+                if (options.reset) window.SL_Report.HdObserverSet = new WeakSet;
+                null === (_window$SL_Report3 = window.SL_Report) || void 0 === _window$SL_Report3 ? void 0 : null === (_window$SL_Report3$Hd = _window$SL_Report3.HdObserver) || void 0 === _window$SL_Report3$Hd ? void 0 : _window$SL_Report3$Hd.disconnect();
                 if ("complete" === document.readyState) collectObserver(options); else document.addEventListener("DOMContentLoaded", (() => {
                     collectObserver(options);
                 }));
-            };
-            const clickCollect = () => {
-                document.addEventListener("click", (ev => {
-                    var _ev$target$classList, _ev$target$classList2;
-                    if (null !== (_ev$target$classList = ev.target.classList) && void 0 !== _ev$target$classList && _ev$target$classList.contains(CLICK_CLASSNAME) || null !== (_ev$target$classList2 = ev.target.classList) && void 0 !== _ev$target$classList2 && _ev$target$classList2.contains(COLLECT_CLICK_CLASSNAME)) {
-                        let collectObj = {};
-                        sendCollect(ev.target, collectObj);
-                        window.SL_EventBus.emit("global:hdReport:click", ev.target);
-                    }
-                }), {
-                    capture: true
-                });
-            };
-            startObserver();
-            clickCollect();
-            const isTradePage = location.pathname.includes("/trade/");
-            if (!location.pathname.startsWith("/user/")) {
-                var _window$__PRELOAD_STA2;
-                window.SL_EventBus.emit("global:thirdPartReport", {
-                    FBPixel: [ [ "track", "PageView", {}, {
-                        eventID: null === (_window$__PRELOAD_STA2 = window.__PRELOAD_STATE__) || void 0 === _window$__PRELOAD_STA2 ? void 0 : _window$__PRELOAD_STA2.serverEventId
-                    } ] ],
-                    GAAds: isTradePage ? [] : [ [ "event", "conversion", null ] ],
-                    GA: [ [ "event", "page_view", {
-                        page_title: document.title,
-                        page_location: window.location.href,
-                        page_path: window.location.pathname + window.location.search
-                    } ] ]
-                });
             }
-            report_headless();
+            function clickCollect() {
+                var _window$SL_Report4;
+                if (!(null !== (_window$SL_Report4 = window.SL_Report) && void 0 !== _window$SL_Report4 && _window$SL_Report4.__clickCollectCallback)) {
+                    window.SL_Report = window.SL_Report || {};
+                    window.SL_Report.__clickCollectCallback = ev => {
+                        var _ev$target$classList, _ev$target$classList2;
+                        if (null !== (_ev$target$classList = ev.target.classList) && void 0 !== _ev$target$classList && _ev$target$classList.contains(CLICK_CLASSNAME) || null !== (_ev$target$classList2 = ev.target.classList) && void 0 !== _ev$target$classList2 && _ev$target$classList2.contains(COLLECT_CLICK_CLASSNAME)) {
+                            let collectObj = {};
+                            sendCollect(ev.target, collectObj);
+                            window.SL_EventBus.emit("global:hdReport:click", ev.target);
+                        }
+                    };
+                }
+                const options = {
+                    capture: true
+                };
+                document.removeEventListener("click", window.SL_Report.__clickCollectCallback, options);
+                document.addEventListener("click", window.SL_Report.__clickCollectCallback, options);
+            }
         },
         "../shared/browser/utils/state-selector.js": (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
             "use strict";
@@ -12995,18 +13057,23 @@
                     u: function(t) {
                         return void 0 === t;
                     }
-                }, D = "en", v = {};
-                v[D] = M;
+                }, v = "en", D = {};
+                D[v] = M;
                 var p = function(t) {
                     return t instanceof _;
-                }, S = function(t, e, n) {
-                    var r;
-                    if (!t) return D;
-                    if ("string" == typeof t) v[t] && (r = t), e && (v[t] = e, r = t); else {
-                        var i = t.name;
-                        v[i] = t, r = i;
+                }, S = function t(e, n, r) {
+                    var i;
+                    if (!e) return v;
+                    if ("string" == typeof e) {
+                        var s = e.toLowerCase();
+                        D[s] && (i = s), n && (D[s] = n, i = s);
+                        var u = e.split("-");
+                        if (!i && u.length > 1) return t(u[0]);
+                    } else {
+                        var a = e.name;
+                        D[a] = e, i = a;
                     }
-                    return !n && r && (D = r), r || !n && D;
+                    return !r && i && (v = i), i || !r && v;
                 }, w = function(t, e) {
                     if (p(t)) return t.clone();
                     var n = "object" == typeof e ? e : {};
@@ -13076,8 +13143,8 @@
                             return r ? $(1, M) : $(0, M + 1);
 
                           case o:
-                            var D = this.$locale().weekStart || 0, v = (y < D ? y + 7 : y) - D;
-                            return $(r ? m - v : m + (6 - v), M);
+                            var v = this.$locale().weekStart || 0, D = (y < v ? y + 7 : y) - v;
+                            return $(r ? m - D : m + (6 - D), M);
 
                           case a:
                           case d:
@@ -13167,13 +13234,13 @@
                     }, m.utcOffset = function() {
                         return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
                     }, m.diff = function(r, d, $) {
-                        var l, y = O.p(d), M = w(r), m = (M.utcOffset() - this.utcOffset()) * e, g = this - M, D = O.m(this, M);
-                        return D = (l = {}, l[c] = D / 12, l[f] = D, l[h] = D / 3, l[o] = (g - m) / 6048e5, 
-                        l[a] = (g - m) / 864e5, l[u] = g / n, l[s] = g / e, l[i] = g / t, l)[y] || g, $ ? D : O.a(D);
+                        var l, y = O.p(d), M = w(r), m = (M.utcOffset() - this.utcOffset()) * e, g = this - M, v = O.m(this, M);
+                        return v = (l = {}, l[c] = v / 12, l[f] = v, l[h] = v / 3, l[o] = (g - m) / 6048e5, 
+                        l[a] = (g - m) / 864e5, l[u] = g / n, l[s] = g / e, l[i] = g / t, l)[y] || g, $ ? v : O.a(v);
                     }, m.daysInMonth = function() {
                         return this.endOf(f).$D;
                     }, m.$locale = function() {
-                        return v[this.$L];
+                        return D[this.$L];
                     }, m.locale = function(t, e) {
                         if (!t) return this.$L;
                         var n = this.clone(), r = S(t, e, !0);
@@ -13198,7 +13265,7 @@
                     return t.$i || (t(e, _, w), t.$i = !0), w;
                 }, w.locale = S, w.isDayjs = p, w.unix = function(t) {
                     return w(1e3 * t);
-                }, w.en = v[D], w.Ls = v, w.p = {}, w;
+                }, w.en = D[v], w.Ls = D, w.p = {}, w;
             }));
         },
         "../shared/node_modules/dayjs/plugin/timezone.js": function(module) {
@@ -13217,8 +13284,7 @@
                 return function(n, i, o) {
                     var r, a = function(t, n, i) {
                         void 0 === i && (i = {});
-                        var o = new Date(t);
-                        return function(t, n) {
+                        var o = new Date(t), r = function(t, n) {
                             void 0 === n && (n = {});
                             var i = n.timeZoneName || "short", o = t + "|" + i, r = e[o];
                             return r || (r = new Intl.DateTimeFormat("en-US", {
@@ -13232,7 +13298,8 @@
                                 second: "2-digit",
                                 timeZoneName: i
                             }), e[o] = r), r;
-                        }(n, i).formatToParts(o);
+                        }(n, i);
+                        return r.formatToParts(o);
                     }, u = function(e, n) {
                         for (var i = a(e, n), r = [], u = 0; u < i.length; u += 1) {
                             var f = i[u], s = f.type, m = f.value, c = t[s];
@@ -13327,13 +13394,13 @@
                     u.utcOffset = function(s, f) {
                         var n = this.$utils().u;
                         if (n(s)) return this.$u ? 0 : n(this.$offset) ? a.call(this) : this.$offset;
-                        if ("string" == typeof s && null === (s = function(t) {
+                        if ("string" == typeof s && (s = function(t) {
                             void 0 === t && (t = "");
                             var s = t.match(i);
                             if (!s) return null;
                             var f = ("" + s[0]).match(e) || [ "-", 0, 0 ], n = f[0], u = 60 * +f[1] + +f[2];
                             return 0 === u ? 0 : "+" === n ? u : -u;
-                        }(s))) return this;
+                        }(s), null === s)) return this;
                         var u = Math.abs(s) <= 16 ? 60 * s : s, o = this;
                         if (f) return o.$offset = u, o.$u = 0 === s, o;
                         if (0 !== s) {
@@ -13621,7 +13688,7 @@
                     for (i = 0; i < len; i++) {
                         if (!split[i]) continue;
                         namespaces = split[i].replace(/\*/g, ".*?");
-                        if ("-" === namespaces[0]) createDebug.skips.push(new RegExp("^" + namespaces.substr(1) + "$")); else createDebug.names.push(new RegExp("^" + namespaces + "$"));
+                        if ("-" === namespaces[0]) createDebug.skips.push(new RegExp("^" + namespaces.slice(1) + "$")); else createDebug.names.push(new RegExp("^" + namespaces + "$"));
                     }
                 }
                 function disable() {
@@ -15978,6 +16045,13 @@
                         return [ ...result, [ encode(key, options), "[]=", encode(value, options) ].join("") ];
                     };
 
+                  case "colon-list-separator":
+                    return key => (result, value) => {
+                        if (void 0 === value || options.skipNull && null === value || options.skipEmptyString && "" === value) return result;
+                        if (null === value) return [ ...result, [ encode(key, options), ":list=" ].join("") ];
+                        return [ ...result, [ encode(key, options), ":list=", encode(value, options) ].join("") ];
+                    };
+
                   case "comma":
                   case "separator":
                   case "bracket-separator":
@@ -16018,6 +16092,21 @@
                     return (key, value, accumulator) => {
                         result = /(\[\])$/.exec(key);
                         key = key.replace(/\[\]$/, "");
+                        if (!result) {
+                            accumulator[key] = value;
+                            return;
+                        }
+                        if (void 0 === accumulator[key]) {
+                            accumulator[key] = [ value ];
+                            return;
+                        }
+                        accumulator[key] = [].concat(accumulator[key], value);
+                    };
+
+                  case "colon-list-separator":
+                    return (key, value, accumulator) => {
+                        result = /(:list)$/.exec(key);
+                        key = key.replace(/:list$/, "");
                         if (!result) {
                             accumulator[key] = value;
                             return;
@@ -17335,46 +17424,29 @@
                 res = this.sendEventLog(event, value);
                 return res;
             }
-            load(page, params) {
-                let res = [];
-                res.push(this.sendEventLog("page_view", {
-                    page_title: document.title,
-                    page_location: window.location.href,
-                    page_path: window.location.pathname,
-                    ...params
-                }));
-                if (page === PageType.OrderConfirm) {
-                    var _params$items;
-                    res = [ this.sendEventLog("purchase", {
-                        value: params.amount,
-                        currency: params.currency,
-                        shipping: params.shippingAmount,
-                        tax: params.taxAmount,
-                        transaction_id: params.orderId,
-                        items: null === (_params$items = params.items) || void 0 === _params$items ? void 0 : _params$items.map((value => {
-                            const {skuId, price, name, variant, quantity} = value;
-                            return {
-                                id: skuId,
-                                name,
-                                price,
-                                variant,
-                                quantity
-                            };
-                        }))
-                    }) ];
-                }
-                return res;
-            }
             click(page, type, params) {
                 let value;
                 let event;
                 const res = [];
                 switch (type) {
+                  case ClickType.SelectContent:
+                    event = "select_content";
+                    value = {
+                        content_type: "product",
+                        items: [ {
+                            id: params.skuId,
+                            name: params.name,
+                            price: params.price,
+                            variant: params.variant
+                        } ]
+                    };
+                    break;
+
                   case ClickType.AddToCart:
                     event = "add_to_cart";
                     value = {
                         items: [ {
-                            id: params.skuId,
+                            id: skuId,
                             name: params.name,
                             price: params.price
                         } ]
@@ -17384,52 +17456,17 @@
                   case ClickType.RemoveFromCart:
                     event = "remove_from_cart";
                     value = {
-                        items: [ {
-                            id: params.skuId,
-                            name: params.name,
-                            price: params.price,
-                            quantity: params.quantity,
-                            variant: params.variant || ""
-                        } ]
+                        items: []
                     };
-                    if (Array.isArray(params.extraItems)) params.extraItems.forEach((item => {
+                    if (Array.isArray(params.productItems)) params.productItems.forEach((({skuId, name, price, quantity, variant}) => {
                         value.items.push({
-                            id: item.skuId,
-                            name: item.name,
-                            price: item.price,
-                            quantity: item.quantity,
-                            variant: item.variant || ""
+                            id: skuId,
+                            name,
+                            price,
+                            quantity,
+                            variant: variant || ""
                         });
                     }));
-                    break;
-
-                  case ClickType.PlaceOrder:
-                    event = "place_order";
-                    break;
-
-                  case ClickType.CheckoutProgress:
-                    event = "checkout_progress";
-                    break;
-
-                  case ClickType.BeginCheckout:
-                    event = "begin_checkout";
-                    value = {
-                        value: params.amount
-                    };
-                    if (this.config.enableEnhancedEcom) {
-                        var _params$currency, _params$items2;
-                        value.currency = null !== (_params$currency = params.currency) && void 0 !== _params$currency ? _params$currency : js_cookie_default().get("currency_code");
-                        value.items = null === (_params$items2 = params.items) || void 0 === _params$items2 ? void 0 : _params$items2.map((val => {
-                            const {skuId, price, name, variant, quantity} = val;
-                            return {
-                                id: skuId,
-                                name,
-                                price,
-                                variant,
-                                quantity
-                            };
-                        }));
-                    }
                     break;
 
                   default:
@@ -17547,10 +17584,10 @@
             return res;
         };
         var uuid = __webpack_require__("../shared/node_modules/uuid/index.js");
-        function tool_getEventID() {
+        function getEventID() {
             return `${Date.now()}_${(0, uuid.v4)().replace(/-/g, "")}`;
         }
-        const const_pageMap = {
+        const pageMap = {
             Cart: 60006254,
             MiniCart: 60006262
         };
@@ -17604,7 +17641,7 @@
             const params = {
                 payAmount,
                 currency,
-                eventId: eventID || `addToCart${tool_getEventID()}`,
+                eventId: eventID || `addToCart${getEventID()}`,
                 eventTime: Date.now(),
                 eventName: "AddToCart"
             };
@@ -17635,13 +17672,13 @@
             js_cookie.set(`${seq}_fb_data`, {
                 tp: eventID ? 2 : 1,
                 et: Date.now(),
-                ed: eventID || tool_getEventID()
+                ed: eventID || getEventID()
             });
         };
         const reportCheckout = data => {
             const {isCart, report, products} = data;
             if (isCart) {
-                const event_id = const_pageMap[templateAlias] ? const_pageMap[templateAlias] : const_pageMap.MiniCart;
+                const event_id = pageMap[templateAlias] ? pageMap[templateAlias] : pageMap.MiniCart;
                 hdRpCheckout(products, event_id);
             }
             if (isFn(report)) report();
@@ -18033,7 +18070,7 @@
         };
         const getPaypalNacosConfig = () => {
             var _window$__ENV__;
-            return (null === (_window$__ENV__ = window.__ENV__) || void 0 === _window$__ENV__ ? void 0 : _window$__ENV__.PAYPAL_CONFIG) || {};
+            return null === (_window$__ENV__ = window.__ENV__) || void 0 === _window$__ENV__ ? void 0 : _window$__ENV__.PAYPAL_CONFIG_V2;
         };
         const getPayPalServerConfig = () => {
             const {enterAccountConfig = {}, ...rest} = state_selector.SL_State.get("tradeCollectionConfig") || {};
@@ -18046,25 +18083,54 @@
             };
         };
         const getConfigCommit = config => !!config.commit;
-        const getQueryParams = (config, {isContinueMode}) => {
+        const paypalConfigKey = [ "paypalMerchantId", "clientId" ];
+        const canTrustedPaypalConfig = paypalConfig => {
+            const servicesConfig = paypalConfigKey.map((key => paypalConfig[key]));
+            if (servicesConfig.some(Boolean) && !servicesConfig.every(Boolean)) return true;
+            return false;
+        };
+        const getQueryParams = (config, {isContinueMode, paypalConfig}) => {
             const {intent} = getPayPalServerConfig();
             const commit = getConfigCommit(config);
-            const {disableFunding} = getPaypalNacosConfig();
+            const nacosConfig = getPaypalNacosConfig();
             let queryParams = `intent=${intent}&commit=${commit}`;
             if (config.queryParams) queryParams += `&${config.queryParams}`;
-            if (isContinueMode && disableFunding) queryParams += `&disable-funding=${disableFunding}`;
+            if (canTrustedPaypalConfig(paypalConfig) && paypalConfig.paypalMerchantId) queryParams += `&merchant-id=${paypalConfig.paypalMerchantId}`;
+            if (Array.isArray(nacosConfig)) {
+                const setQueryParams = item => {
+                    const {key, value, isCoverAll, whitelist, blacklist} = item;
+                    const {storeId} = window.Shopline;
+                    if (isCoverAll) {
+                        if (Array.isArray(blacklist) && !blacklist.includes(storeId)) queryParams += `&${key}=${value}`;
+                    } else if (Array.isArray(whitelist) && whitelist.includes(storeId)) queryParams += `&${key}=${value}`;
+                };
+                nacosConfig.forEach((item => {
+                    if ("all" === item.scope) setQueryParams(item); else {
+                        if (isContinueMode && "continue" === item.scope) setQueryParams(item);
+                        if (!isContinueMode && "payNow" === item.scope) setQueryParams(item);
+                    }
+                }));
+            } else {
+                var _window$__ENV__2;
+                const {disableFunding} = (null === (_window$__ENV__2 = window.__ENV__) || void 0 === _window$__ENV__2 ? void 0 : _window$__ENV__2.PAYPAL_CONFIG) || {};
+                if (isContinueMode) if (disableFunding) queryParams += `&disable-funding=${disableFunding}`;
+            }
             return queryParams;
         };
-        const ClientKey = {
+        const SLClientKey = {
             DEV: "AZ-NwCL9u55EJ7x0kR61XcKTCZtMuel8VBMG1dx4T_iJzABABfvw13UeXJAYHOscUNHHsIjLNLoh-pYv",
             PROD: "AYVtr8kMzEyRCw725vQM_-hheFyo1FuWeaup4KPSvU1gg44L-NG5e2PNcwGnMo2MLCzGRg4eVHJhuqBP"
         };
-        const genPublicKey = () => ({
-            key: !utils_isProd ? ClientKey.DEV : ClientKey.PROD,
-            expand: {
-                currency: js_cookie_default().get("currency_code") || "USD"
-            }
-        });
+        const slPublicKey = utils_isProd ? SLClientKey.PROD : SLClientKey.DEV;
+        const getPaypalKey = paypalConfig => {
+            const merchantKey = canTrustedPaypalConfig(paypalConfig) ? paypalConfig.clientId : null;
+            return {
+                key: merchantKey || slPublicKey,
+                expand: {
+                    currency: js_cookie_default().get("currency_code") || "USD"
+                }
+            };
+        };
         const Env = {
             Dev: "dev",
             Prod: "prod"
@@ -18111,6 +18177,7 @@
                 ...rest
             });
         };
+        const getPaypalConfig = () => request.get("/trade/pay/payment/paypal/config/data");
         var isObject = __webpack_require__("../shared/node_modules/lodash/isObject.js");
         var isObject_default = __webpack_require__.n(isObject);
         const loadScript = (src, options) => new Promise((resolve => {
@@ -18130,9 +18197,17 @@
         const paypal_logger = utils_logger.pipeOwner({
             owner: "PayPal",
             onTag: key => {
-                if ("abandonedSeq" === key) return true; else return false;
+                switch (key) {
+                  case "abandonedSeq":
+                  case "code":
+                    return true;
+
+                  default:
+                    return false;
+                }
             }
         });
+        const splitter = ({k, v}) => v ? `[${k}: ${v}]` : "";
         function getPaypalSDK() {
             return dist_default();
         }
@@ -18150,9 +18225,7 @@
         class PayPalSmartPayButton {
             constructor(config) {
                 var _document$body, _document$body$datase, _config$timeout;
-                const clientKey = genPublicKey();
                 const btnShape = "rounded" === (null === (_document$body = document.body) || void 0 === _document$body ? void 0 : null === (_document$body$datase = _document$body.dataset) || void 0 === _document$body$datase ? void 0 : _document$body$datase.button_style) ? "pill" : "rect";
-                this.clientKey = clientKey;
                 this.loggerPrefix = `[PayPal][当前dom为:${config.domId}]`;
                 this.payMode = config.payMode || "continue";
                 this.config = {
@@ -18177,9 +18250,6 @@
                             }
                         }
                     },
-                    paypalQueryParams: getQueryParams(config, {
-                        isContinueMode: this.isContinueMode
-                    }),
                     paypalScriptParams: config.scriptParams || {}
                 };
                 const {switch: timeoutSwitch, delay} = null !== (_config$timeout = config.timeout) && void 0 !== _config$timeout ? _config$timeout : {};
@@ -18205,6 +18275,7 @@
                 this.payNowMode = this.payNowMode.bind(this);
                 this.continueMode = this.continueMode.bind(this);
                 this.onCancel = paypal_isFn(config.onCancel) ? config.onCancel : noop;
+                this.configBeforeRender = paypal_isFn(config.beforeRender) ? config.beforeRender : noop;
                 this.afterRender = paypal_isFn(config.afterRender) ? config.afterRender : noop;
                 this.preparePayParams = null;
             }
@@ -18239,7 +18310,6 @@
             }
             onPayPalError(error, type) {
                 if ("caught" !== (null === error || void 0 === error ? void 0 : error.message)) {
-                    const splitter = ({k, v}) => v ? `[${k}: ${v}]` : "";
                     paypal_logger.error(`${this.loggerPrefix}[onError]${splitter({
                         k: "code",
                         v: null === error || void 0 === error ? void 0 : error.code
@@ -18306,12 +18376,21 @@
                         }
                     });
                     PayPalReturnUrl = continueRedirectUrl;
-                    paypal_logger.debug(`${this.loggerPrefix}[唤起弹窗成功][createOrder][拿chDealId][${chDealId ? "成功" : "失败"}]`, {
+                    paypal_logger.debug(`${this.loggerPrefix}[唤起弹窗成功][createOrder][拿chDealId][${chDealId ? "成功" : "失败"}]`, chDealId ? {
                         ...data
-                    });
+                    } : null);
                     return chDealId;
-                } catch (e) {
+                } catch (error) {
                     var _this$config$stage2;
+                    paypal_logger.debug(`${this.loggerPrefix}[唤起弹窗成功][createOrder][拿chDealId][失败]${splitter({
+                        k: "code",
+                        v: null === error || void 0 === error ? void 0 : error.code
+                    })}${splitter({
+                        k: "message",
+                        v: (null === error || void 0 === error ? void 0 : error.msg) || (null === error || void 0 === error ? void 0 : error.message)
+                    })}`, {
+                        ...error
+                    });
                     event_bus.SL_EventBus.emit("trade:spb:report", {
                         data: {
                             event_status: 0,
@@ -18325,10 +18404,10 @@
                 try {
                     const {chDealId, returnUrl: payNowReturnUrl} = await this.createOrder(this.createOrderParams);
                     PayPalReturnUrl = payNowReturnUrl;
-                    paypal_logger.debug(`${this.loggerPrefix}[唤起弹窗成功][createOrder][拿chDealId][${chDealId ? "成功" : "失败"}]`, {
+                    paypal_logger.debug(`${this.loggerPrefix}[唤起弹窗成功][createOrder][拿chDealId][${chDealId ? "成功" : "失败"}]`, chDealId ? {
                         chDealId,
                         returnUrl: payNowReturnUrl
-                    });
+                    } : null);
                     return chDealId;
                 } catch (error) {
                     const text = conversion(error);
@@ -18526,6 +18605,33 @@
                     dynamicRemembered.cbFnList = [];
                 }
             }
+            async beforeRender() {
+                try {
+                    this.configBeforeRender();
+                } catch (error) {
+                    this.onPayPalError({
+                        message: "[beforeRender调用失败]",
+                        error
+                    });
+                }
+                let paypalConfig = {};
+                try {
+                    const {data} = await getPaypalConfig();
+                    paypalConfig = data || {};
+                } catch (error) {
+                    this.onPayPalError({
+                        message: "[获取paypal配置失败]",
+                        error
+                    });
+                }
+                return {
+                    clientKey: getPaypalKey(paypalConfig),
+                    paypalQueryParams: getQueryParams(this.config, {
+                        isContinueMode: this.isContinueMode,
+                        paypalConfig
+                    })
+                };
+            }
             async render() {
                 var _this$config$timeout;
                 if (this.dynamic) if (2 !== dynamicRemembered.loadingStatus) {
@@ -18580,8 +18686,10 @@
                     }), this.config.timeout.delay);
                 }
                 this.createStyle(node);
+                const {clientKey, paypalQueryParams} = await this.beforeRender();
                 const paypalSdkInitParams = {
                     ...this.config,
+                    paypalQueryParams,
                     createOrder: this.onCreateOrder.bind(this),
                     createToken: this.onContinue.bind(this),
                     paypalProps: {
@@ -18591,7 +18699,7 @@
                         onCancel: this.onUserCancel.bind(this)
                     }
                 };
-                const PayPalInstance = new (getPaypalSDK())(this.clientKey, paypalSdkInitParams);
+                const PayPalInstance = new (getPaypalSDK())(clientKey, paypalSdkInitParams);
                 PayPalInstance && this.removeSkeleton(node);
                 this.rendered = true;
                 this.afterRender({
@@ -18624,6 +18732,8 @@
         const render_paypal = renderPayPal;
         const OPEN_MINI_CART = Symbol("OPEN_MINI_CART");
         const ADD_TO_CART = Symbol("ADD_TO_CART");
+        const CONTROL_CART_BASIS = Symbol("CONTROL_CART_BASIS");
+        const INTERIOR_TRADE_UPDATE_DETAIL = Symbol("TRADE_UPDATE_DETAIL");
         var navigate_cart_window, _window2;
         const navigate_cart_EVENT_NAME = "Cart::NavigateCart";
         const navigate_cart_logger = api_logger(navigate_cart_EVENT_NAME);
@@ -18631,7 +18741,9 @@
         const navigate_cart_external = null === (_window2 = window) || void 0 === _window2 ? void 0 : _window2.Shopline.event;
         const navigateCartHandler = argument => {
             const noop = () => {};
-            const {data, onSuccess = noop, onError = noop} = argument;
+            const data = (null === argument || void 0 === argument ? void 0 : argument.data) || {};
+            const onSuccess = (null === argument || void 0 === argument ? void 0 : argument.onSuccess) || noop;
+            const onError = (null === argument || void 0 === argument ? void 0 : argument.onError) || noop;
             try {
                 navigate_cart_interior.emit(OPEN_MINI_CART, {
                     data,
@@ -18648,6 +18760,8 @@
         const navigate_cart = navigateCart;
         const SIDEBAR_RENDER = "Cart::SidebarRender";
         const enum_ADD_TO_CART = "Cart::AddToCart";
+        const enum_CONTROL_CART_BASIS = "Cart::ControlCartBasis";
+        const UPDATE_CHECKOUT_DETAIL = "Checkout::UpdateCheckoutDetail";
         var add_to_cart_window, add_to_cart_window2;
         const add_to_cart_logger = api_logger(enum_ADD_TO_CART);
         const add_to_cart_interior = null === (add_to_cart_window = window) || void 0 === add_to_cart_window ? void 0 : add_to_cart_window.SL_EventBus;
@@ -18667,8 +18781,85 @@
         }));
         add_to_cart_addToCart.apiName = enum_ADD_TO_CART;
         const add_to_cart = add_to_cart_addToCart;
+        var update_checkout_detail_window, update_checkout_detail_window2;
+        const update_checkout_detail_logger = api_logger(UPDATE_CHECKOUT_DETAIL);
+        const update_checkout_detail_interior = null === (update_checkout_detail_window = window) || void 0 === update_checkout_detail_window ? void 0 : update_checkout_detail_window.SL_EventBus;
+        const update_checkout_detail_external = null === (update_checkout_detail_window2 = window) || void 0 === update_checkout_detail_window2 ? void 0 : update_checkout_detail_window2.Shopline.event;
+        const updateCheckoutDetailDebounceHandle = () => {
+            let requesting = false;
+            let emitDataList = [];
+            let tempEmitDataList = [];
+            function reset() {
+                requesting = false;
+                emitDataList = [ ...tempEmitDataList ];
+                tempEmitDataList = [];
+                if (emitDataList.length) emitFunc();
+            }
+            function successFunc(res) {
+                emitDataList.map((cb => {
+                    var _cb$onSuccess;
+                    return null === cb || void 0 === cb ? void 0 : null === (_cb$onSuccess = cb.onSuccess) || void 0 === _cb$onSuccess ? void 0 : _cb$onSuccess.call(cb, res);
+                }));
+                reset();
+            }
+            function errorFunc(e) {
+                emitDataList.map((cb => {
+                    var _cb$onError;
+                    return null === cb || void 0 === cb ? void 0 : null === (_cb$onError = cb.onError) || void 0 === _cb$onError ? void 0 : _cb$onError.call(cb, e);
+                }));
+                reset();
+            }
+            function emitFunc() {
+                try {
+                    update_checkout_detail_interior.emit(INTERIOR_TRADE_UPDATE_DETAIL, {
+                        onSuccess: successFunc,
+                        onError: errorFunc
+                    });
+                } catch (e) {
+                    errorFunc(e);
+                }
+            }
+            return function({data, onSuccess, onError} = {}) {
+                update_checkout_detail_logger.info("[emit]", JSON.stringify(data));
+                if (requesting) tempEmitDataList.push({
+                    onSuccess,
+                    onError
+                }); else {
+                    requesting = true;
+                    emitDataList.push({
+                        onSuccess,
+                        onError
+                    });
+                    emitFunc();
+                }
+            };
+        };
+        const updateCheckoutDetail = () => null === update_checkout_detail_external || void 0 === update_checkout_detail_external ? void 0 : update_checkout_detail_external.on(UPDATE_CHECKOUT_DETAIL, updateCheckoutDetailDebounceHandle());
+        updateCheckoutDetail.apiName = UPDATE_CHECKOUT_DETAIL;
+        const update_checkout_detail = updateCheckoutDetail;
+        var control_cart_basis_window, control_cart_basis_window2;
+        const control_cart_basis_logger = api_logger(enum_CONTROL_CART_BASIS);
+        const control_cart_basis_interior = null === (control_cart_basis_window = window) || void 0 === control_cart_basis_window ? void 0 : control_cart_basis_window.SL_EventBus;
+        const control_cart_basis_external = null === (control_cart_basis_window2 = window) || void 0 === control_cart_basis_window2 ? void 0 : control_cart_basis_window2.Shopline.event;
+        const controlCartBasis = () => null === control_cart_basis_external || void 0 === control_cart_basis_external ? void 0 : control_cart_basis_external.on(enum_CONTROL_CART_BASIS, (async argument => {
+            const options = (null === argument || void 0 === argument ? void 0 : argument.data) || null;
+            const onSuccess = (null === argument || void 0 === argument ? void 0 : argument.onSuccess) || (() => {});
+            const onError = (null === argument || void 0 === argument ? void 0 : argument.onError) || (() => {});
+            try {
+                control_cart_basis_logger.info(`[emit]`, CONTROL_CART_BASIS);
+                control_cart_basis_interior.emit(CONTROL_CART_BASIS, {
+                    options,
+                    success: onSuccess,
+                    error: onError
+                });
+            } catch (error) {
+                null === onError || void 0 === onError ? void 0 : onError(error);
+            }
+        }));
+        controlCartBasis.apiName = enum_CONTROL_CART_BASIS;
+        const control_cart_basis = controlCartBasis;
         const developer_api_logger = api_logger("register");
-        const events = [ navigate_checkout, get_cart_id, render_paypal, navigate_cart, add_to_cart ];
+        const events = [ navigate_checkout, get_cart_id, render_paypal, navigate_cart, add_to_cart, control_cart_basis, update_checkout_detail ];
         const developer_api = (...activateApiNames) => {
             const executedEvents = [];
             activateApiNames.forEach((activateApiName => {
@@ -18800,7 +18991,7 @@
                     if (null !== item && void 0 !== item && item.spuId) spu_ids.push(null === item || void 0 === item ? void 0 : item.spuId);
                     reportHd(pageType, actionType, item);
                 }));
-                const eid = tool_getEventID();
+                const eid = getEventID();
                 const tpParams = {
                     skuId: spu_ids,
                     category: content_category,
@@ -22891,6 +23082,8 @@
         var node_modules_axios = __webpack_require__("./node_modules/axios/index.js");
         var node_modules_axios_default = __webpack_require__.n(node_modules_axios);
         var node_modules_query_string = __webpack_require__("./node_modules/query-string/index.js");
+        var _window$__PRELOAD_STA, _window$__PRELOAD_STA2;
+        const isPad = (null === (_window$__PRELOAD_STA = window.__PRELOAD_STATE__) || void 0 === _window$__PRELOAD_STA ? void 0 : null === (_window$__PRELOAD_STA2 = _window$__PRELOAD_STA.request) || void 0 === _window$__PRELOAD_STA2 ? void 0 : _window$__PRELOAD_STA2.is_mobile) || void 0 !== document.ontouchmove;
         const desktop_site_nav_http = node_modules_axios_default().create({
             baseURL: "/leproxy",
             timeout: 3e4,
@@ -22903,7 +23096,7 @@
         $("body").on("mouseenter", ".site-nav__sortation-link", (e => {
             e.preventDefault();
             e.stopPropagation();
-            if (!timer) timer = setTimeout((() => {
+            if (!timer) if (!isPad) timer = setTimeout((() => {
                 getItemHtml(e);
                 timer = null;
             }), 300);
@@ -22932,10 +23125,40 @@
                     if (200 === res.status) {
                         const html = `<div class="nav__sortation--item active" data-navnode-id="${sortationId}">${res.data}</div>`;
                         $(`li[data-site-nav-menu-id="${liId}"] .nav__product--container`).append(html);
+                        if (isPad) $(`li[data-site-nav-menu-id="${liId}"] .nav__product--container`).find(".product-item__wrapper").addClass("pad");
                         $(`li[data-site-nav-menu-id="${liId}"] .nav__sortation--item[data-navnode-id="${sortationId}"`).siblings().removeClass("active");
                     }
                 }
             }
+        }
+        const firstNavItem = ".site-nav--has-dropdown";
+        const firstNavItemLink = ".site-nav__link--has-dropdown";
+        if (isPad) {
+            $(document).on("click", firstNavItemLink, (function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const $parent = $(this).parent();
+                if ($parent.hasClass("actived")) {
+                    $parent.removeClass("actived");
+                    setTimeout((() => {
+                        window.location.href = e.target.href;
+                    }), 300);
+                } else {
+                    $parent.addClass("actived");
+                    $(firstNavItem).not($parent).removeClass("actived");
+                }
+            }));
+            $(document).on("click", "body", (function(e) {
+                const that = $(e.target).parents(firstNavItem);
+                if (!that.hasClass("site-nav--has-dropdown")) $(firstNavItem).removeClass("actived");
+            }));
+        } else {
+            $("body").on("mouseenter", firstNavItem, (function() {
+                $(this).addClass("actived");
+            }));
+            $("body").on("mouseleave", firstNavItem, (function() {
+                $(this).removeClass("actived");
+            }));
         }
         $("body").on("mouseenter", ".site-nav__item-link", (e => {
             e.preventDefault();
@@ -22983,6 +23206,7 @@
                 if (200 === res.status) {
                     const html = `<div class="nav__sortation--item active" data-navnode-id="${dataItem[0].sortationId}">${res.data}</div>`;
                     $(`li[data-site-nav-menu-id="${nodeId}"] .nav__product--container`).append(html);
+                    if (isPad) $(`li[data-site-nav-menu-id="${nodeId}"] .nav__product--container`).find(".product-item__wrapper").addClass("pad");
                     $(`li[data-site-nav-menu-id="${nodeId}"] .nav__sortation--item[data-navnode-id="${dataItem[0].sortationId}"`).siblings().removeClass("active");
                 }
             }
@@ -23131,7 +23355,7 @@
                     var _sortationItem$produc;
                     const sortationItem = dataList.find((i => String(i.sortationId) === String(nodeItem.pageLink)));
                     const imgUrl = (null === sortationItem || void 0 === sortationItem ? void 0 : sortationItem.sortationCoverImg) || (null === sortationItem || void 0 === sortationItem ? void 0 : null === (_sortationItem$produc = sortationItem.productList[0]) || void 0 === _sortationItem$produc ? void 0 : _sortationItem$produc.image);
-                    if (imgUrl) $(`.mobile-nav__image[data-nav-id="${nodeItem.id}"`).addClass("mobile-nav__image-block").css({
+                    if (imgUrl) $(`.mobile-nav__image[data-nav-id="${nodeItem.id}"]`).addClass("mobile-nav__image-block").css({
                         "background-image": `url(${imgUrl})`
                     });
                 }));
@@ -23488,6 +23712,8 @@
                 }));
             }
             off() {
+                this.drawers.currencyDrawer.$offAll();
+                this.drawers.localeDrawer.$offAll();
                 this.$offAll();
             }
         }
@@ -23542,47 +23768,6 @@
                 $(window).off(`scroll.${this.namespace}`);
             }
         }
-        Symbol("REPORT_ADD_CART");
-        Symbol("PAYPAL_CLICK");
-        state_selector.SL_State.get("templateAlias");
-        class tradeReport_TradeReport {
-            constructor() {
-                this.eventBus = event_bus.SL_EventBus;
-                this.storeCurrency = js_cookie.get("currency_code");
-                this.hdPage = {
-                    Cart: "cart",
-                    MiniCart: "cart"
-                };
-            }
-            touch(data) {
-                var _this$eventBus;
-                const {pageType, actionType, value} = data;
-                const val = {
-                    ...value,
-                    currency: this.storeCurrency
-                };
-                const gaParam = dataReport_ga.click(pageType, actionType, val);
-                const adsParams = clickAdsData(pageType, actionType, val);
-                const fbParams = clickFbData(actionType, val);
-                const params = {
-                    GAAds: adsParams,
-                    GA: gaParam,
-                    FBPixel: fbParams
-                };
-                null === (_this$eventBus = this.eventBus) || void 0 === _this$eventBus ? void 0 : _this$eventBus.emit("global:thirdPartReport", params);
-            }
-        }
-        const tradeReport_setAddtoCart = (payAmount, currency, eventID) => {
-            const params = {
-                payAmount,
-                currency,
-                eventId: eventID || `addToCart${tool_getEventID()}`,
-                eventTime: Date.now(),
-                eventName: "AddToCart"
-            };
-            return params;
-        };
-        new tradeReport_TradeReport;
         var cart_sidebar_render_window;
         const cart_sidebar_render_logger = api_logger(`${SIDEBAR_RENDER} - EMIT`);
         const cart_sidebar_render_external = null === (cart_sidebar_render_window = window) || void 0 === cart_sidebar_render_window ? void 0 : cart_sidebar_render_window.Shopline.event;
@@ -23926,7 +24111,7 @@
             event_bus.SL_EventBus.on("trade:goToCheckout:report", (({data}) => {
                 const {event_status, isCart, stage} = data;
                 if (isCart) {
-                    const cid = const_pageMap[stage];
+                    const cid = pageMap[stage];
                     if (cid) proceedToCheckout({
                         cid,
                         event_status
@@ -23938,7 +24123,7 @@
             event_bus.SL_EventBus.on("trade:spb:report", (({data}) => {
                 const {event_status, product, stage} = data;
                 if (cartPage[stage]) {
-                    const cid = const_pageMap[stage];
+                    const cid = pageMap[stage];
                     reportPaypal(product, cid, {
                         event_status
                     });
@@ -24264,6 +24449,7 @@
             endpointCart: "/carts/cart",
             endpointCartItemRemove: "carts/cart/items",
             endpointCartVerify: "/carts/cart/check",
+            endpointCartItemNumReduce: "/carts/cart/items_num_reduce",
             endpointVoucher: "/carts/cart/shopping_money",
             endpointCoupon: "/carts/cart/promotion_code",
             memberPoint: "/carts/cart/member-point",
@@ -24281,9 +24467,7 @@
             });
         }
         async function deleteCartItemList(svc, skuList) {
-            return svc.request.delete(internal_constant.endpointCartItemRemove, {
-                data: skuList
-            });
+            return svc.request.post(internal_constant.endpointCartItemNumReduce, skuList || []);
         }
         async function putCartItem(svc, skuInfo) {
             return svc.request.put(internal_constant.endpointCart, skuInfo);
@@ -24748,7 +24932,9 @@
             LIMITED_ACTIVE_SKU_OVER: "LIMITED_ACTIVE_SKU_OVER",
             LIMITED_ACTIVE_OVER: "LIMITED_ACTIVE_OVER",
             LIMITED_ACTIVE_STOCK_OVER: "LIMITED_ACTIVE_STOCK_OVER",
-            MAIN_PRODUCT_ERROR: "MAIN_PRODUCT_ERROR"
+            MAIN_PRODUCT_ERROR: "MAIN_PRODUCT_ERROR",
+            PURCHASE_LESS_MOQ: "PURCHASE_LESS_MOQ",
+            GIFT_INVALID: "GIFT_INVALID"
         };
         function cartChangeItem_getSkuId(model) {
             if (!model) return "";
@@ -24772,6 +24958,7 @@
                 return verifyType.UNDER_STOCK;
 
               case ErrorTypeEnum.SHELF_OFF:
+              case ErrorTypeEnum.GIFT_INVALID:
                 return verifyType.OFF_SHELVED;
 
               case ErrorTypeEnum.DELETE:
@@ -24911,6 +25098,18 @@
                 }
                 return res;
             }
+            async updateCartState() {
+                const res = await cart.getCart(this._svc);
+                if (response.isResolved(res)) {
+                    const {data} = res;
+                    this._cartDetail = data;
+                    state_selector.SL_State.set(CartInfoKey, data);
+                }
+                return res;
+            }
+            async rerenderCartDom() {
+                await utils_event_bus.emit(CartEventBusEnum.UPDATE, this._cartDetail);
+            }
             async addSku(spuId, skuId, quantity, dataReportReq) {
                 if (!spuId || !skuId || quantity < 0) return response.rejectWithCode(responseCode.FA_INVALID_PARAMS);
                 const res = await cart.addCartItem(this._svc, spuId, skuId, quantity, dataReportReq);
@@ -24929,13 +25128,6 @@
                 const res = await cart.putCartItem(this._svc, skuInfo);
                 if (response.isResolved(res)) await this.getCartDetail();
                 return res;
-            }
-            async removeSku(skuInfo) {
-                if (skuInfo) {
-                    const res = await cart.deleteCartItemList(this._svc, [ skuInfo ]);
-                    if (!response.isResolved(res)) return res;
-                }
-                return this.getCartDetail();
             }
             async removeSkuList(skuInfoList) {
                 if (Array.isArray(skuInfoList) && skuInfoList.length) {
@@ -25056,8 +25248,10 @@
         }
         async function initMiniCartChunk() {
             return new Promise(((resolve, reject) => {
+                var _$container$querySele, _$container$querySele2, _$container$querySele3;
                 const script = document.createElement("script");
-                const jsUrl = window.__CHUNK_ASSETS__MINI_CART__JS__;
+                const $container = document.getElementById(ID__MINI_CART_CONTAINER);
+                const jsUrl = (null === (_$container$querySele = $container.querySelector("#miniCartScriptUrl")) || void 0 === _$container$querySele ? void 0 : null === (_$container$querySele2 = _$container$querySele.attributes) || void 0 === _$container$querySele2 ? void 0 : null === (_$container$querySele3 = _$container$querySele2.src) || void 0 === _$container$querySele3 ? void 0 : _$container$querySele3.nodeValue) || "";
                 if (!jsUrl) {
                     reject(new Error(`failed to get mini-cart js chunk url`));
                     return;
@@ -25243,7 +25437,7 @@
         window.SL_EventBus.on(ADD_TO_CART, (async ({spuId, skuId, num, price, success, error, complete, eventID}) => {
             try {
                 var _window;
-                const dataReportReq = tradeReport_setAddtoCart(price, null === (_window = window) || void 0 === _window ? void 0 : _window.SL_State.get("storeInfo.currency"), eventID);
+                const dataReportReq = setAddtoCart(price, null === (_window = window) || void 0 === _window ? void 0 : _window.SL_State.get("storeInfo.currency"), eventID);
                 const res = await service_cart.takeCartService().addSku(spuId, skuId, num, dataReportReq);
                 if (!vo_responseCode.isOk(res)) {
                     let errMsg = res.msg;
@@ -25268,6 +25462,73 @@
                 console.warn("add to cart fail:", e);
             } finally {
                 if ("function" === typeof complete) complete();
+            }
+        }));
+        window.SL_EventBus.on(CONTROL_CART_BASIS, (async ({options, success, error}) => {
+            const paramsEnum = {
+                switchSideBar: "switchSideBar",
+                updateState: "updateState",
+                rerenderDom: "rerenderDom",
+                cartDetail: "cartDetail"
+            };
+            const sideBarStatusEnum = {
+                open: "open",
+                close: "close"
+            };
+            const paramsFilter = () => {
+                do {
+                    const eventName = "Cart::ControlCartBasis Event: ";
+                    if (!options || !Object.keys(options).length) {
+                        console.warn(eventName, "params missing");
+                        break;
+                    }
+                    if (!!Object.hasOwnProperty.call(options, paramsEnum.switchSideBar) && !Object.values(sideBarStatusEnum).includes(options.switchSideBar)) {
+                        console.warn(eventName, `【switchSideBar: ${options.switchSideBar}】 is invalid`);
+                        break;
+                    }
+                    if (!!Object.hasOwnProperty.call(options, paramsEnum.updateState) && "boolean" !== typeof options.updateState) {
+                        console.warn(eventName, `【updateState: ${options.updateState}】 is invalid`);
+                        break;
+                    }
+                    if (!!Object.hasOwnProperty.call(options, paramsEnum.rerenderDom) && "boolean" !== typeof options.rerenderDom) {
+                        console.warn(eventName, `【rerenderDom: ${options.rerenderDom}】 is invalid`);
+                        break;
+                    }
+                    if (!!Object.hasOwnProperty.call(options, paramsEnum.cartDetail) && "boolean" !== typeof options.cartDetail) {
+                        console.warn(eventName, `【cartDetail: ${options.cartDetail}】 is invalid`);
+                        break;
+                    }
+                    if (Object.keys(options).some((item => !Object.hasOwnProperty.call(paramsEnum, item)))) {
+                        console.warn(eventName, "params has invalid key");
+                        break;
+                    }
+                    return true;
+                } while (false);
+                return false;
+            };
+            try {
+                if (paramsFilter()) {
+                    const {switchSideBar, updateState, rerenderDom, cartDetail} = options;
+                    const cartId = "cart-drawer";
+                    let cartInfo;
+                    if (switchSideBar) globalEvent_interior.emit(const_DRAWER_EVENT_NAME, {
+                        id: cartId,
+                        status: switchSideBar
+                    });
+                    if (updateState) await service_cart.takeCartService().updateCartState();
+                    if (rerenderDom) await service_cart.takeCartService().rerenderCartDom();
+                    if (cartDetail) {
+                        const CartInfoKey = "cartInfo";
+                        cartInfo = state_selector.SL_State.get(CartInfoKey) || null;
+                        null === success || void 0 === success ? void 0 : success(cartInfo);
+                        return;
+                    }
+                    null === success || void 0 === success ? void 0 : success();
+                    return;
+                }
+            } catch (e) {
+                null === error || void 0 === error ? void 0 : error();
+                console.warn(`${CONTROL_CART_BASIS} FAIL:`, e);
             }
         }));
         function header_defineProperty(obj, key, value) {
@@ -25411,7 +25672,7 @@
                         this.jq.wrapper.removeClass(this.classes.overlayedClass);
                         this.jq.wrapper.removeClass(this.classes.wrapperSticky);
                     } else this.config.wrapperOverlayed = this.jq.wrapper.data("overlay");
-                    this.stickyHeaderCheck();
+                    this.stickyHeader();
                 }
                 window.SL_EventBus.on("force-header-intoView", (() => {
                     if (window.scrollY < 250 && window.scrollY > 0) $(this.selectors.header)[0].scrollIntoView();
@@ -25432,13 +25693,6 @@
                         this.stickyHeaderHeight();
                     }
                 }));
-            }
-            stickyHeaderCheck() {
-                this.config.stickyHeader = true;
-                if (this.config.stickyHeader) {
-                    this.config.forceStopSticky = false;
-                    this.stickyHeader();
-                } else this.config.forceStopSticky = true;
             }
             stickyHeader() {
                 this.config.lastScroll = 0;
@@ -25466,7 +25720,6 @@
             }
             stickyHeaderScroll() {
                 if (!this.config.stickyEnabled) return;
-                if (this.config.forceStopSticky) return;
                 requestAnimationFrame(this.scrollWorker.bind(this));
                 this.config.lastScroll = window.scrollY;
             }
@@ -25515,14 +25768,7 @@
             }
             stickyHeaderHeight() {
                 if (!this.config.stickyEnabled) return;
-                const isMobile = window.innerWidth <= this.config.swiperBreakpoint;
-                const headerContentHeight = $(".header__layout").css("height") || 0;
-                const headerSearchHeight = $(".header__search-mobile").css("height") || 0;
-                const headerNavHeight = $(".header__nav-container").css("height") || 0;
-                const pcHeight = parseFloat(headerContentHeight) + parseFloat(headerNavHeight);
-                const mobileHeight = parseFloat(headerContentHeight) + parseFloat(headerSearchHeight);
-                const h = isMobile ? mobileHeight : pcHeight;
-                this.jq.stickyHeaderWrapper[0].style.height = this.config.wrapperOverlayed ? "auto" : `${h}px`;
+                this.jq.stickyHeaderWrapper[0].style.height = `auto`;
             }
             getStickHeaderOffsetTop() {
                 let top = 0;
@@ -25943,7 +26189,8 @@
         $(document).on("shopline:section:load", (() => {
             footer_instance.reset();
         }));
-        developer_api("Cart::GetCartId", "Cart::NavigateCart", "Checkout::NavigateCheckout", "Cart::AddToCart");
+        __webpack_require__("./src/assets/shared/components/breadcrumb/index.js");
+        developer_api("Cart::GetCartId", "Cart::NavigateCart", "Checkout::NavigateCheckout", "Cart::AddToCart", "Cart::ControlCartBasis");
         null === utils_dataReport || void 0 === utils_dataReport ? void 0 : utils_dataReport.listen("DataReport::AddToCart");
         function faq_defineProperty(obj, key, value) {
             if (key in obj) Object.defineProperty(obj, key, {
@@ -27129,6 +27376,57 @@
         }
         new Newsletter;
         __webpack_require__("./src/assets/home/script/parallax.js");
+        class DataWatcher {
+            constructor() {
+                Object.defineProperty(this, "$watcher", {
+                    value: {}
+                });
+                Object.defineProperty(this, "$afterWatcher", {
+                    value: {}
+                });
+                Object.defineProperty(this, "$data", {
+                    value: {}
+                });
+                const bindWatcher = type => (keys, callback) => {
+                    const props = {};
+                    keys.forEach((key => {
+                        if (!this.$watcher[key]) this.$watcher[key] = [];
+                        if (!this.$afterWatcher[key]) this.$afterWatcher[key] = [];
+                        if ("watch" === type) this.$watcher[key].push(callback); else if ("watchAfter" === type) this.$afterWatcher[key].push(callback);
+                        if (Object.prototype.hasOwnProperty.call(this.$data, key)) return;
+                        this.$data[key] = this[key];
+                        delete this[key];
+                        props[key] = {
+                            set: value => {
+                                this.$data[key] = value;
+                                this.$watcher[key].forEach((w => {
+                                    try {
+                                        null === w || void 0 === w ? void 0 : w(value, key);
+                                    } catch (e) {
+                                        console.error(e);
+                                    }
+                                }));
+                                this.$afterWatcher[key].forEach((w => {
+                                    try {
+                                        null === w || void 0 === w ? void 0 : w(value, key);
+                                    } catch (e) {
+                                        console.error(e);
+                                    }
+                                }));
+                            },
+                            get: () => this.$data[key]
+                        };
+                    }));
+                    Object.defineProperties(this, props);
+                };
+                Object.defineProperty(this, "watch", {
+                    value: bindWatcher("watch")
+                });
+                Object.defineProperty(this, "watchAfter", {
+                    value: bindWatcher("watchAfter")
+                });
+            }
+        }
         var sku_change_window;
         const sku_change_EVENT_NAME = "Product::SkuChange";
         const sku_change_logger = api_logger(sku_change_EVENT_NAME);
@@ -27483,14 +27781,15 @@
         const sku_stepper = SkuStepper;
         const initValue = 1;
         class SkuQuality {
-            constructor({sku, spu, activeSku, id, onChange}) {
+            constructor({sku, spu, activeSku, id, onChange, dataPool}) {
                 this.activeSku = activeSku;
                 this.sku = sku;
                 this.spu = spu;
                 this.id = id;
                 this.root = `#product-detail-sku-quantity_${id}`;
-                this.init();
+                this.dataPool = dataPool || new DataWatcher;
                 this.onChange = onChange;
+                this.init();
             }
             getMax() {
                 if (!this.activeSku) return 999;
@@ -27513,11 +27812,19 @@
                     value: initValue,
                     min: 1,
                     disabled: (null === (_this$spu = this.spu) || void 0 === _this$spu ? void 0 : _this$spu.soldOut) || this.isTrackStock() && this.activeSku && (null === (_this$activeSku4 = this.activeSku) || void 0 === _this$activeSku4 ? void 0 : _this$activeSku4.stock) < 1,
-                    onChange: num => this.onChange(num)
+                    onChange: num => {
+                        var _this$onChange;
+                        if (num !== this.dataPool.quantity) this.dataPool.quantity = num;
+                        null === (_this$onChange = this.onChange) || void 0 === _this$onChange ? void 0 : _this$onChange.call(this, num);
+                    }
                 });
                 new flashSale({
                     id: `${this.id}`
                 }).init();
+                this.dataPool.quantity = initValue;
+                this.dataPool.watch([ "quantity" ], (() => {
+                    this.setCurrentNum(this.dataPool.quantity);
+                }));
             }
             render() {
                 var _this$activeSku5, _this$activeSku6;
@@ -27531,6 +27838,13 @@
             }
             setErrorTips(show, content) {
                 if (show) $(this.root).children(".stepper-tip").html(content).removeClass("hide"); else $(this.root).children(".stepper-tip").addClass("hide");
+            }
+            setCurrentNum(num) {
+                const data = {
+                    ...this.skuStepper.data,
+                    value: num
+                };
+                this.skuStepper.setStepperData(data);
             }
             setActiveSku(sku) {
                 var _this$activeSku7;
@@ -27572,7 +27886,11 @@
             Checkout: "order_check_out",
             Comfirm: "transaction",
             Center: "user_page",
-            Activity: "addon"
+            Activity: "addon",
+            Page: {
+                custom_page: 124,
+                smart_landing_page: 125
+            }
         };
         function checkedEvent_defineProperty(obj, key, value) {
             if (key in obj) Object.defineProperty(obj, key, {
@@ -27630,6 +27948,7 @@
         };
         data_report_add_to_cart_addToCart.apiName = data_report_enum_ADD_TO_CART;
         const data_report_add_to_cart = data_report_add_to_cart_addToCart;
+        __webpack_require__("../shared/browser/report/customArgs/index.js");
         const {formatCurrency: product_button_report_formatCurrency} = currency;
         function reportAddToCartEvent(data) {
             try {
@@ -27638,12 +27957,12 @@
                 console.error(e);
             }
         }
-        function addToCartThirdReport({spuId, name, price, skuId, num, eventID = tool_getEventID(), variant}) {
+        function addToCartThirdReport({spuId, name, itemNo, price, skuId, num, eventID = getEventID(), variant}) {
             var _window, _window$SL_State;
             window.SL_EventBus.emit("global:thirdPartReport", {
                 GA: [ [ "event", "add_to_cart", {
                     items: [ {
-                        id: skuId,
+                        id: itemNo || skuId,
                         name,
                         price: product_button_report_formatCurrency(price),
                         quantity: num,
@@ -27667,12 +27986,12 @@
                 GAR: [ [ "event", "add_to_cart", {
                     value: product_button_report_formatCurrency(price * (num || 1)),
                     items: [ {
-                        id: skuId,
+                        id: window.SL_GetReportArg("GAR", "sku_id", skuId),
                         google_business_vertical: "retail"
                     } ]
                 } ] ],
                 GARemarketing: [ [ "event", "add_to_cart", {
-                    ecomm_prodid: skuId,
+                    ecomm_prodid: window.SL_GetReportArg("GAR", "sku_id", skuId),
                     ecomm_pagetype: "cart",
                     ecomm_totalvalue: product_button_report_formatCurrency(price * (num || 1))
                 } ] ]
@@ -27744,6 +28063,7 @@
                 this.initEvent();
                 this.toast = new Toast;
                 this.initLoading();
+                this.num = 1;
                 this.page = String(id).startsWith("productRecommendModal") ? "123" : pageMapping[window.SL_State.get("templateAlias")];
             }
             initLoading() {
@@ -27767,12 +28087,12 @@
                 if (0 === $(`#${this.payPayId}`).length) return;
                 this.buttonConfig = window.SL_State.get("productSettleButtonConfig");
                 const stage = checkoutEnd.getUuidAndMonitorCheckoutEnd("trade:spb:report", (status => {
-                    const {name, price, spuSeq: spuId, skuSeq: skuId, num} = this.activeSku;
+                    const {name, price, spuSeq: spuId, skuSeq: skuId} = this.activeSku;
                     paypalHdReport({
                         event_name: "quick_payment",
                         product_id: spuId,
                         variantion_id: skuId,
-                        quantity: num,
+                        quantity: this.num,
                         price: product_button_formatCurrency(price),
                         product_name: name,
                         page: this.page,
@@ -27783,13 +28103,14 @@
                     stage,
                     needReport: () => {
                         var _this$activeSku, _this$sku;
-                        const {name, price, spuSeq: spuId, skuSeq: skuId, num} = this.activeSku;
+                        const {name, price, spuSeq: spuId, skuSeq: skuId, itemNo} = this.activeSku;
                         return addToCartThirdReport({
+                            itemNo,
                             spuId,
                             name,
-                            skuId,
-                            num,
                             price,
+                            num: this.num,
+                            skuId,
                             variant: getVariant(null === (_this$activeSku = this.activeSku) || void 0 === _this$activeSku ? void 0 : _this$activeSku.skuAttributeIds, null === (_this$sku = this.sku) || void 0 === _this$sku ? void 0 : _this$sku.skuAttributeMap)
                         });
                     },
@@ -27816,7 +28137,7 @@
                 }));
             }
             extraBuyNow() {
-                const buyNow = `<button class="buy-now btn btn-primary btn-lg ${this.buyButton.substr(1)} __sl-custom-track-product-detail-buy-now paypalAddBuyNow">\n        <span>${t("common.buy-now")}</span>\n      </button>`;
+                const buyNow = `<button data-ssr-plugin-pdp-button-buy-now class="buy-now btn btn-primary btn-lg ${this.buyButton.substr(1)} __sl-custom-track-product-detail-buy-now paypalAddBuyNow">\n        <span>${t("common.buy-now")}</span>\n      </button>`;
                 $(`#${this.payPayId}`).before(buyNow);
                 this.bindBuyNow();
                 this.setTradeButtonHide(this.activeSku ? !this.activeSku.available : this.spu.soldOut);
@@ -27848,8 +28169,9 @@
                         return;
                     }
                     this.setLoading("add", true);
-                    const {spuSeq: spuId, skuSeq: skuId, num, name, price} = this.activeSku;
-                    const eventID = tool_getEventID();
+                    const {spuSeq: spuId, skuSeq: skuId, name, price, itemNo} = this.activeSku;
+                    const {num} = this;
+                    const eventID = getEventID();
                     const hdReportData = {
                         page: this.page,
                         spuId,
@@ -27879,6 +28201,7 @@
                                 event_status: 1
                             });
                             addToCartThirdReport({
+                                itemNo,
                                 spuId,
                                 name,
                                 price,
@@ -27898,7 +28221,8 @@
             }
             bindBuyNow() {
                 const stage = checkoutEnd.getUuidAndMonitorCheckoutEnd("trade:goToCheckout:report", (status => {
-                    const {name, price, spuSeq: spuId, skuSeq: skuId, num} = this.activeSku;
+                    const {name, price, spuSeq: spuId, skuSeq: skuId} = this.activeSku;
+                    const {num} = this;
                     const hdReportData = {
                         page: this.page,
                         spuId,
@@ -27926,16 +28250,18 @@
                     const product = [ {
                         productSeq: this.activeSku.spuSeq,
                         productSku: this.activeSku.skuSeq,
-                        productNum: this.activeSku.num,
+                        productNum: this.num,
                         productPrice: this.activeSku.price,
                         productName: this.activeSku.name
                     } ];
-                    const {name, price, spuSeq: spuId, skuSeq: skuId, num} = this.activeSku;
+                    const {name, price, spuSeq: spuId, skuSeq: skuId, itemNo} = this.activeSku;
+                    const {num} = this;
                     checkout.jump(product, {
                         stage,
                         needReport: () => {
                             var _this$activeSku3, _this$sku3;
                             return addToCartThirdReport({
+                                itemNo,
                                 spuId,
                                 name,
                                 skuId,
@@ -27952,7 +28278,6 @@
             setActiveSku(sku) {
                 this.activeSku = sku ? {
                     ...sku,
-                    num: 1,
                     name: this.spu.title
                 } : null;
                 this.setPayPalProduct();
@@ -27960,8 +28285,8 @@
                 if (sku) this.setTradeButtonHide(sku.soldOut);
             }
             setActiveSkuNum(num) {
+                this.num = num;
                 if (!this.activeSku) return;
-                this.activeSku.num = num;
                 this.setPayPalProduct();
             }
             setPaypalDisabled() {
@@ -27978,7 +28303,7 @@
                 const product = [ {
                     spuId: this.activeSku.spuSeq,
                     skuId: this.activeSku.skuSeq,
-                    num: this.activeSku.num,
+                    num: this.num,
                     name: this.spu.title,
                     price: this.activeSku.price
                 } ];
@@ -28509,7 +28834,9 @@
         class ProductImages {
             constructor(options) {
                 var _this$swiper;
-                const {selectorId, heightOnChange, swiperConfig} = options || {};
+                const {selectorId, heightOnChange, swiperConfig, mediaList} = options || {};
+                this.mediaList = mediaList || [];
+                this.config = {};
                 this.swiperConfig = swiperConfig || {};
                 this.heightChangedCount = 0;
                 this.heightOnChange = heightOnChange || null;
@@ -28544,6 +28871,15 @@
                 this.videoPcPlayer = this.initPcVideo();
                 this.videoMobilePlayer = this.initMobileVideo();
                 this.videoMobilePlayerStatus = "pause";
+            }
+            setConfig(config) {
+                if (!this.config.app) this.config.app = [];
+                this.config.app.push(config.app);
+            }
+            verifySource(app) {
+                var _this$config$app;
+                if (!(null !== (_this$config$app = this.config.app) && void 0 !== _this$config$app && _this$config$app.length) || this.config.app.includes(app)) return true;
+                return false;
             }
             initPcVideo() {
                 const videoPcSelector = `${this.id} .product_youTubeVideoBox`;
@@ -28867,22 +29203,28 @@
                     this.handleEffectSwiperHeight();
                 }
             }
-            handleThumbsScroll(type, distance) {
+            handleThumbsScroll(type, distance, smooth = true, timeout = 200) {
                 if ("scrollTop" === type) setTimeout((() => {
-                    $(`${this.id} .product_thumbsColumnContainer .productImageThumbs`).scrollTop(distance);
-                }), 200); else if ("scrollLeft" === type) setTimeout((() => {
-                    $(`${this.id} .product_thumbsRowContainer .productImageThumbs`).scrollLeft(distance);
-                }), 200);
+                    const productImageThumbs = $(`${this.id} .product_thumbsColumnContainer .productImageThumbs`);
+                    if (smooth) productImageThumbs.addClass("smooth-animate"); else productImageThumbs.removeClass("smooth-animate");
+                    productImageThumbs.scrollTop(distance);
+                }), timeout); else if ("scrollLeft" === type) setTimeout((() => {
+                    const productImageThumbs = $(`${this.id} .product_thumbsRowContainer .productImageThumbs`);
+                    if (smooth) productImageThumbs.addClass("smooth-animate"); else productImageThumbs.removeClass("smooth-animate");
+                    productImageThumbs.scrollLeft(distance);
+                }), timeout);
             }
             getThumbsPosition(type, index) {
                 const columnThumbsListDom = $(`${this.id} .product_thumbsColumnContainer .thumbsImageItem`);
                 const rowThumbsListDom = $(`${this.id} .product_thumbsRowContainer .thumbsImageItem`);
                 if ("top" === type) {
+                    if (!columnThumbsListDom.length) return 0;
                     const prevThumbsItem = columnThumbsListDom.eq(index > 0 ? index - 1 : 0);
                     const prevThumbsItemHalfHeight = parseInt(prevThumbsItem.innerHeight() / 2, 10);
                     return columnThumbsListDom.eq(index).position().top - prevThumbsItemHalfHeight - 20;
                 }
                 if ("left" === type) {
+                    if (!rowThumbsListDom.length) return 0;
                     const prevThumbsItem = rowThumbsListDom.eq(index > 0 ? index - 1 : 0);
                     const prevThumbsItemHalfWidth = parseInt(prevThumbsItem.innerWidth() / 2, 10);
                     return rowThumbsListDom.eq(index).position().left - prevThumbsItemHalfWidth - 20;
@@ -28955,6 +29297,7 @@
                 const pcProductImagesDom = $(`${this.id}`);
                 if (0 == pcProductImagesDom.find(".product_productImages").length || "none" === pcProductImagesDom.css("display")) return null;
                 const mainSwiper = new core_class(`${this.id} .product_productImages`, {
+                    initialSlide: $(`${this.id}`).data("initial-slide") || 0,
                     effect: "fade",
                     fadeEffect: {
                         crossFade: true
@@ -28976,15 +29319,16 @@
                         },
                         slideChange: () => {
                             handleVideoPlayPause(this.videoPcPlayer, "pause");
-                            const {activeIndex} = this.swiper;
+                            if (this.swiper.destroyed) return;
+                            const {activeIndex, previousIndex} = this.swiper;
                             this.handlePcThumbsActive(activeIndex);
                             this.handlePcSkuImage(false);
                             if (this.thumbsDirection === COLUMN) {
                                 const scrollTopDistance = this.getThumbsPosition("top", activeIndex);
-                                this.handleThumbsScroll("scrollTop", scrollTopDistance);
+                                this.handleThumbsScroll("scrollTop", scrollTopDistance, Math.abs(activeIndex - previousIndex) < 10);
                             } else {
                                 const scrollLeftDistance = this.getThumbsPosition("left", activeIndex);
-                                this.handleThumbsScroll("scrollLeft", scrollLeftDistance);
+                                this.handleThumbsScroll("scrollLeft", scrollLeftDistance, Math.abs(activeIndex - previousIndex) < 10);
                             }
                         }
                     }
@@ -28992,7 +29336,37 @@
                 return mainSwiper;
             }
             handleMActivePagination(activeIndex) {
-                $(`${this.mobileId} .paginationList div`).removeClass("active").eq(activeIndex).addClass("active");
+                const listContainer = $(`${this.mobileId} .paginationList`);
+                const scrollWrapper = listContainer.children(".paginationListWrapper");
+                const activeBullets = scrollWrapper.children("span").removeClass([ "active", "next" ]);
+                const activeBullet = activeBullets.eq(activeIndex).addClass("active");
+                if (activeBullets.length < 6) {
+                    scrollWrapper.css("transform", "");
+                    return;
+                }
+                let prevNext, nextNext;
+                if (0 === activeIndex) {
+                    prevNext = -1;
+                    nextNext = activeIndex + 4;
+                } else if (1 === activeIndex) {
+                    prevNext = 0;
+                    nextNext = activeIndex + 3;
+                } else if (activeIndex === activeBullets.length - 1) {
+                    prevNext = activeIndex - 4;
+                    nextNext = activeIndex + 1;
+                } else if (activeIndex === activeBullets.length - 2) {
+                    prevNext = activeIndex - 3;
+                    nextNext = -1;
+                } else {
+                    prevNext = activeIndex - 2;
+                    nextNext = activeIndex + 2;
+                }
+                if (prevNext > -1) activeBullets.eq(prevNext).addClass("next");
+                if (nextNext > -1) activeBullets.eq(nextNext).addClass("next");
+                let translateX = listContainer.width() / 2 - activeBullet.outerWidth(true) / 2 - activeBullet.position().left;
+                const min = listContainer.width() - scrollWrapper.width();
+                if (translateX > 0) translateX = 0; else if (translateX < min) translateX = min;
+                scrollWrapper.css("transform", `translateX(${translateX}px)`);
             }
             handleMobileSkuImage(isShow, skuImageUrl) {
                 const selector = `${this.mobileId} .product_productImages`;
@@ -29087,6 +29461,7 @@
                 if (0 === mainSwiperDom.length || "none" === mobileProductImagesDom.css("display")) return null;
                 const mainSwiper = new core_class(selector, {
                     loop: videoIsStartOrEndPos ? false : true,
+                    initialSlide: $(`${this.mobileId}`).data("initial-slide") || 0,
                     slidesPerView: "auto",
                     centeredSlides: true,
                     spaceBetween: 5,
@@ -29131,6 +29506,7 @@
                 return mainSwiper;
             }
             updateSlides(list) {
+                var _list$, _list;
                 $(`${this.id} .product_productImages`).children(".swiper-wrapper").empty().append(null !== list && void 0 !== list && list.length ? list.map(((item, index) => {
                     var _imgSize4;
                     const imgRatio = (null === (_imgSize4 = img_size(item.resource)) || void 0 === _imgSize4 ? void 0 : _imgSize4.ratio) || "100%";
@@ -29141,17 +29517,22 @@
                     return `<div class="swiper-slide imageItem" style="height: 0; padding-bottom:${imgRatio}"><img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" data-photoswipe-src="${item.resource}" ${0 !== index ? "data-" : ""}src="${item.resource}" alt="" class="swiper-lazy product_photoSwipe_image"></div>`;
                 })) : `<div class="swiper-slide"><div class="product-detail-empty-image"></div></div>`);
                 const slidesLength = list.length;
-                $(`${this.mobileId} .product_productImages`).children(".swiper-wrapper").empty().append(null !== list && void 0 !== list && list.length ? list.map(((item, index) => {
+                const mobileWrapper = $(`${this.mobileId} .product_productImages`).children(".swiper-wrapper");
+                if (1 === (null === list || void 0 === list ? void 0 : list.length) || "VIDEO" === (null === list || void 0 === list ? void 0 : null === (_list$ = list[0]) || void 0 === _list$ ? void 0 : _list$.type) || "VIDEO" === (null === list || void 0 === list ? void 0 : null === (_list = list[(null === list || void 0 === list ? void 0 : list.length) - 1]) || void 0 === _list ? void 0 : _list.type)) mobileWrapper.addClass("hasVideoFl"); else mobileWrapper.removeClass("hasVideoFl");
+                mobileWrapper.empty().append(null !== list && void 0 !== list && list.length ? list.map(((item, index) => {
+                    var _imgSize5;
                     if ("VIDEO" === item.type) {
                         const {middle: cover, videoId} = utils_getYouTubeCover(item.resource);
                         return `<div class="swiper-slide videoItem" style="height: auto" data-index="${index}" data-length="${slidesLength}">\n<div class="swiper-slide-box" data-image-ratio="56.25%" style="padding-bottom: 56.25%">\n  <div class="product_youTubeVideoContainer">\n    <div class="product_youTubeVideoBox" data-video-id="${videoId}"></div>\n  </div>\n  <img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" class="product_photoSwipe_image swiper-lazy" data-photoswipe-src="${cover}" ${0 !== index ? "data-" : ""}src="${cover}" alt="">\n</div>\n</div>`;
                     }
-                    const {ratio} = img_size(item.resource);
+                    const ratio = (null === (_imgSize5 = img_size(item.resource)) || void 0 === _imgSize5 ? void 0 : _imgSize5.ratio) || "100%";
                     return `<div class="swiper-slide imageItem" style="height: auto">\n<div class="swiper-slide-box" data-image-ratio="${ratio}" data-sku-image-ratio="100%" style="padding-bottom: ${ratio}">\n<img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" data-photoswipe-src="${item.resource}" ${0 !== index ? "data-" : ""}src="${item.resource}" alt="" class="swiper-lazy product_photoSwipe_image">${this.productImageScale ? `<div class="scaleImageIcon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="13" cy="12" r="7.5" /><path d="M18.5 17.5L23 22.5" stroke-linecap="round" /></svg></div>` : ""}</div>\n</div>`;
                 })) : `<div class="swiper-slide"><div class="swiper-slide-box" data-image-ratio="100%" style="padding-bottom: 100%"><div class="product-detail-empty-image product-noImages"></div></div></div>`);
             }
-            updateImageList(list, activeIndex) {
+            updateImageList(list, activeIndex, source) {
                 var _this$swiper3, _this$mobileSwiper2;
+                if (!this.verifySource(null === source || void 0 === source ? void 0 : source.app)) return;
+                this.mediaList = list;
                 handleVideoPlayPause(this.videoPcPlayer, "pause");
                 handleVideoPlayPause(this.videoMobilePlayer, "pause");
                 this.videoMobilePlayerStatus = "pause";
@@ -29160,11 +29541,20 @@
                 null === (_this$mobileSwiper2 = this.mobileSwiper) || void 0 === _this$mobileSwiper2 ? void 0 : _this$mobileSwiper2.destroy();
                 this.updateSlides(list);
                 if (this.swiper) {
+                    $(`${this.id}`).data("initial-slide", activeIndex);
                     this.swiper = this.initPcProductImages();
                     this.updatePhotoSwipeItems(this.id);
                     this.handleEffectSwiperHeight();
+                    if (this.thumbsDirection === COLUMN) {
+                        const scrollTopDistance = this.getThumbsPosition("top", activeIndex);
+                        this.handleThumbsScroll("scrollTop", scrollTopDistance, false, 0);
+                    } else {
+                        const scrollLeftDistance = this.getThumbsPosition("left", activeIndex);
+                        this.handleThumbsScroll("scrollLeft", scrollLeftDistance, false, 0);
+                    }
                 }
                 if (this.mobileSwiper) {
+                    $(`${this.mobileId}`).data("initial-slide", activeIndex);
                     this.mobileSwiper = this.initMobileProductImages();
                     this.updatePhotoSwipeItems(this.mobileId);
                 }
@@ -29174,31 +29564,44 @@
             }
             replaceThubsSwiper(list, activeIndex) {
                 const wrapper = $(`${this.id} .product_thumbs${this.thumbsDirection === COLUMN ? "Column" : "Row"}Container .productImageThumbsWrapper`);
-                const mWrapper = $(`${this.mobileId} .paginationList`);
+                const mBox = $(`${this.mobileId} .paginationBox`);
+                const mWrapper = mBox.find(".paginationListWrapper");
                 wrapper.empty();
                 mWrapper.empty();
                 if (!(null !== list && void 0 !== list && list.length) || list.length <= 1) {
                     $(`${this.id} .product_thumbs${this.thumbsDirection === COLUMN ? "Column" : "Row"}Container`).hide();
-                    mWrapper.hide();
+                    mBox.hide();
                 } else {
                     $(`${this.id} .product_thumbs${this.thumbsDirection === COLUMN ? "Column" : "Row"}Container`).show();
-                    mWrapper.show();
+                    mBox.show();
                     list.forEach(((item, index) => {
-                        if ("VIDEO" === item.type) wrapper.append(`<div class="swiper-slide thumbsImageItem ${activeIndex === index ? "active" : ""}"><img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" src="${utils_getYouTubeCover(item.resource).middle}" alt=""><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">\n          <circle cx="10" cy="10" r="10" fill="black" fill-opacity="0.6"/>\n          <path d="M13.6256 10.2496L8.46641 13.6891C8.26704 13.822 8 13.6791 8 13.4394V6.56056C8 6.32095 8.26704 6.17803 8.46641 6.31094L13.6256 9.75039C13.8037 9.86913 13.8037 10.1309 13.6256 10.2496Z" fill="white"/>\n          </svg>\n          </div>`); else wrapper.append($(`<div class="swiper-slide thumbsImageItem ${activeIndex === index ? "active" : ""}"><img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" src="${imgUrl(item.resource, {
+                        var _imgSize6;
+                        const ratio = (null === (_imgSize6 = img_size(item.resource)) || void 0 === _imgSize6 ? void 0 : _imgSize6.ratio) || "100%";
+                        if ("VIDEO" === item.type) wrapper.append(`<div class="swiper-slide thumbsImageItem ${activeIndex === index ? "active" : ""}"><figure style="padding-bottom: ${ratio}"><img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" src="${utils_getYouTubeCover(item.resource).middle}" alt=""><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">\n          <circle cx="10" cy="10" r="10" fill="black" fill-opacity="0.6"/>\n          <path d="M13.6256 10.2496L8.46641 13.6891C8.26704 13.822 8 13.6791 8 13.4394V6.56056C8 6.32095 8.26704 6.17803 8.46641 6.31094L13.6256 9.75039C13.8037 9.86913 13.8037 10.1309 13.6256 10.2496Z" fill="white"/>\n          </svg></figure>\n          </div>`); else wrapper.append($(`<div class="swiper-slide thumbsImageItem ${activeIndex === index ? "active" : ""}"><figure style="padding-bottom: ${ratio}"><img onerror="this.onerror=null;this.parentElement.className+=' imageItemError';" src="${imgUrl(item.resource, {
                             width: 152
-                        })}" alt=""></div>`));
-                        mWrapper.append(`<div class="${activeIndex === index ? "active" : ""}" />`);
+                        })}" alt=""></figure></div>`));
+                        mWrapper.append(`<span class="${activeIndex === index ? "active" : ""}" />`);
                     }));
                 }
             }
-            skuImageChange(img) {
+            skuImageChange(img, source) {
+                if (!this.verifySource(null === source || void 0 === source ? void 0 : source.app)) return;
                 const {url} = img || {};
                 if (url) {
                     handleVideoPlayPause(this.videoPcPlayer, "pause");
                     handleVideoPlayPause(this.videoMobilePlayer, "pause");
                     this.videoMobilePlayerStatus = "pause";
-                    this.handlePcSkuImage(true, url);
-                    this.handleMobileSkuImage(true, url);
+                    const index = this.mediaList.findIndex((item => item.resource === url));
+                    if (index > -1) {
+                        var _this$swiper4, _this$mobileSwiper3;
+                        null === (_this$swiper4 = this.swiper) || void 0 === _this$swiper4 ? void 0 : _this$swiper4.slideTo(index);
+                        null === (_this$mobileSwiper3 = this.mobileSwiper) || void 0 === _this$mobileSwiper3 ? void 0 : _this$mobileSwiper3.slideToLoop(index, 0);
+                        this.handlePcSkuImage(false);
+                        this.handleMobileSkuImage(false);
+                    } else {
+                        this.handlePcSkuImage(true, url);
+                        this.handleMobileSkuImage(true, url);
+                    }
                 } else {
                     this.handlePcSkuImage(false);
                     this.handleMobileSkuImage(false);
@@ -29423,7 +29826,7 @@
             constructor({sku, spu, initialSkuSeq, dataPool, root, domReady, onInit, onChange, onDestory, mixins}) {
                 this.mixins = mixins;
                 this.root = $(root);
-                if (dataPool) this.dataPool = dataPool; else this.dataPool = {};
+                if (dataPool) this.dataPool = dataPool; else this.dataPool = new DataWatcher;
                 if (!this.dataPool.inited) {
                     this.dataPool.sku = sku || {};
                     this.dataPool.spu = spu || {};
@@ -29475,6 +29878,9 @@
                     this.initSkuComMap();
                     this.initFirstChecked();
                 }
+                this.dataPool.watch([ "currentSpecList" ], (() => {
+                    this.render();
+                }));
                 this.beforeInitDom();
                 if (domReady) this.initDom(); else this.createAndInitDom();
                 this.afterInitDom();
@@ -29548,7 +29954,6 @@
                         throw e;
                     }));
                 }
-                this.render();
             }
             getAttrValue(index) {
                 return getAttrValue(this.dataPool.attrArray, this.dataPool.currentSpecList[index], index);
@@ -29807,8 +30212,7 @@
             }
         }
         const sku_trade_select = SkuTradeSelect;
-        var url = __webpack_require__("./src/assets/shared/utils/url.js");
-        function initSku({id, sku, spu, mixins, onInit, onChange}) {
+        function initSku({id, sku, spu, mixins, onInit, onChange, dataPool}) {
             const dataDom = $(`#product-sku-trade-data_${id}`);
             const skuStyle = dataDom.data("skustyle");
             const selectSku = dataDom.data("selectsku");
@@ -29818,6 +30222,7 @@
                 root: `#product-detail-sku-trade_${id}`,
                 sku,
                 spu,
+                dataPool,
                 mixins,
                 initialSkuSeq: selectSku,
                 onInit: (tradeData, activeSku, root) => {
@@ -29825,10 +30230,7 @@
                     window.SL_EventBus.emit("product:sku:init", [ activeSku, id ]);
                 },
                 onChange: activeSku => {
-                    if ("productDetail" === id) if (activeSku) window.history.replaceState({}, document.title, (0, 
-                    url.changeURLArg)(window.location.href, "sku", activeSku.skuSeq)); else window.history.replaceState({}, document.title, (0, 
-                    url.delParam)("sku"));
-                    window.SL_EventBus.emit("product:sku:change", [ activeSku, id, trade.dataPool ]);
+                    window.SL_EventBus.emit("product:sku:change", [ activeSku, id, dataPool ]);
                     null === onChange || void 0 === onChange ? void 0 : onChange(activeSku);
                 }
             });
@@ -30209,6 +30611,221 @@
         }
         utils_form_defineProperty(Form, "formInstanceList", {});
         const utils_form = Form;
+        function firstAvailableSku(spu, skuList) {
+            if (null !== spu && void 0 !== spu && spu.soldOut) return (null === skuList || void 0 === skuList ? void 0 : skuList[0]) || null;
+            return skuList.find((sku => sku.available)) || (null === skuList || void 0 === skuList ? void 0 : skuList[0]) || null;
+        }
+        const report_page = {
+            Home: 101,
+            ProductsSearch: 102,
+            Products: 103,
+            ProductsDetail: 105,
+            Page: {
+                custom_page: 118,
+                smart_landing_page: 147
+            }
+        };
+        const {formatCurrency: inquiry_modal_report_formatCurrency} = currency;
+        const alias = window.SL_State.get("templateAlias");
+        const eventIdMap = {
+            ProductsDetail: "60006253",
+            Home: "60006252"
+        };
+        const unsafeInputMap = {
+            email: 101,
+            mobile: 110,
+            message: 115,
+            name: 102,
+            region: 104
+        };
+        const inputMap = {
+            email: 102,
+            mobile: 105,
+            message: 103,
+            name: 104,
+            region: 106
+        };
+        const unsafePage = pageMapping[alias];
+        const inquiry_modal_report_page = report_page[alias];
+        const eventId = eventIdMap[alias];
+        function hdReport(options) {
+            var _window$HdSdk;
+            null === (_window$HdSdk = window.HdSdk) || void 0 === _window$HdSdk ? void 0 : _window$HdSdk.shopTracker.collect({
+                page: inquiry_modal_report_page,
+                module: 119,
+                ...options
+            });
+        }
+        function unsafeHdReport(options) {
+            var _window$HdSdk2;
+            null === (_window$HdSdk2 = window.HdSdk) || void 0 === _window$HdSdk2 ? void 0 : _window$HdSdk2.shopTracker.report(eventId, {
+                page: unsafePage,
+                custom_component: "167",
+                ...options
+            });
+        }
+        function concatVal(obj) {
+            return Object.entries(obj || {}).reduce(((prev, cur) => {
+                if (cur[1]) return `${prev}${cur[0]}:${cur[1]}\n`;
+                return prev;
+            }), "");
+        }
+        function leadReport({spu, sku, email, phone, message, name, region}) {
+            var _sortationList$, _sortationList$2;
+            const {title, spuSeq: spuId, sortationList} = spu || {};
+            const {price, skuSeq: skuId} = sku || {};
+            const currency = window.SL_State.get("storeInfo.currency");
+            const value = inquiry_modal_report_formatCurrency(price);
+            window.SL_EventBus.emit("global:thirdPartReport", {
+                FBPixel: [ [ "track", "Lead", {
+                    content_name: title,
+                    content_ids: spuId,
+                    content_type: "product_group",
+                    currency,
+                    value
+                } ] ],
+                GAAds: [ [ "event", "conversion", {
+                    value,
+                    currency
+                }, "SUBMIT-LEAD-FORM" ] ],
+                GARemarketing: [ [ "event", "generate_lead", {
+                    ecomm_prodid: window.SL_GetReportArg("GAR", "sku_id", skuId),
+                    ecomm_pagetype: "product",
+                    ecomm_totalvalue: value,
+                    ecomm_category: null === sortationList || void 0 === sortationList ? void 0 : null === (_sortationList$ = sortationList[0]) || void 0 === _sortationList$ ? void 0 : _sortationList$.sortationId,
+                    ecomm_pcat: null === sortationList || void 0 === sortationList ? void 0 : null === (_sortationList$2 = sortationList[0]) || void 0 === _sortationList$2 ? void 0 : _sortationList$2.sortationName
+                } ] ],
+                GAR: [ [ "event", "generate_lead", {
+                    value,
+                    items: [ {
+                        id: window.SL_GetReportArg("GAR", "sku_id", skuId),
+                        google_business_vertical: "retail"
+                    } ]
+                } ] ],
+                GA: [ [ "event", "generate_lead", {
+                    value,
+                    currency
+                } ] ]
+            });
+            const inputBoxVal = concatVal({
+                Message: message,
+                Name: name,
+                "Country/Region": region
+            });
+            hdReport({
+                component: 101,
+                event_name: "Lead",
+                content_name: title,
+                content_id: spuId,
+                currency,
+                value,
+                input_box_val: inputBoxVal,
+                user_data: {
+                    em: email,
+                    ph: phone
+                }
+            });
+            unsafeHdReport({
+                event_name: "145",
+                product_id: spuId,
+                product_name: title,
+                product_price: value,
+                variantion_id: skuId,
+                phone,
+                email,
+                input_box_val: inputBoxVal
+            });
+        }
+        function cancelReport({spu, sku, email, phone, name, message, region}) {
+            const {title, spuSeq: spuId} = spu || {};
+            const {price, skuSeq: skuId} = sku || {};
+            const value = inquiry_modal_report_formatCurrency(price);
+            const currency = window.SL_State.get("storeInfo.currency");
+            const inputBoxVal = concatVal({
+                Message: message,
+                Name: name,
+                "Country/Region": region
+            });
+            hdReport({
+                component: 107,
+                action_type: 102,
+                content_name: title,
+                content_id: spuId,
+                currency,
+                value,
+                input_box_val: inputBoxVal,
+                user_data: {
+                    em: email,
+                    ph: phone
+                }
+            });
+            unsafeHdReport({
+                event_name: "146",
+                product_id: spuId,
+                product_name: title,
+                product_price: value,
+                variantion_id: skuId,
+                phone,
+                email,
+                input_box_val: inputBoxVal
+            });
+        }
+        function viewReport() {
+            hdReport({
+                component: -999,
+                action_type: 108
+            });
+            unsafeHdReport({
+                event_name: "109"
+            });
+            unsafeHdReport({
+                event_name: "120"
+            });
+        }
+        function inputReport({name, value}) {
+            hdReport({
+                action_type: 103,
+                component: inputMap[name],
+                input_box_val: value
+            });
+            unsafeHdReport({
+                event_name: "133",
+                input_box: unsafeInputMap[name],
+                input_box_val: value
+            });
+        }
+        const debounceInput = {
+            email: lodash_debounce_default()((value => inputReport({
+                value,
+                name: "email"
+            })), 1e3),
+            mobile: lodash_debounce_default()((value => inputReport({
+                value,
+                name: "mobile"
+            })), 1e3),
+            message: lodash_debounce_default()((value => inputReport({
+                value,
+                name: "message"
+            })), 1e3),
+            name: lodash_debounce_default()((value => inputReport({
+                value,
+                name: "name"
+            })), 1e3),
+            region: lodash_debounce_default()((value => inputReport({
+                value,
+                name: "region"
+            })), 1e3)
+        };
+        function listenInputChange({area}) {
+            $(area).find("[sl-form-item-name]").on("input", "input,textarea", (function() {
+                var _debounceInput$name;
+                const input = $(this);
+                const formItem = input.parents("[sl-form-item-name]");
+                const name = formItem.attr("sl-form-item-name");
+                const value = input.val();
+                null === (_debounceInput$name = debounceInput[name]) || void 0 === _debounceInput$name ? void 0 : _debounceInput$name.call(debounceInput, value);
+            }));
+        }
         function gen(name, mods) {
             if (!mods) return "";
             if ("string" === typeof mods) return ` ${name}--${mods}`;
@@ -30379,7 +30996,7 @@
         const emailRE = /^[A-Za-z0-9_./;+]+([A-Za-z0-9_./;+]+)*@([A-Za-z0-9]+\.)+[A-Za-z]{2,6}$/;
         const toast = new Toast;
         class InquiryPriceModal extends EventManager {
-            constructor({id, spu}) {
+            constructor({id, spu, sku}) {
                 super("product:inquiry:price:modal");
                 this.$root = $(`#JS-inquiry-price-modal_${id}`);
                 this.$setPortals(this.$root);
@@ -30388,7 +31005,11 @@
                 this.activeSku = null;
                 this.formInstance = null;
                 this.modalInstance = null;
+                this.firstSku = firstAvailableSku(spu, sku.skuList);
                 this.init(id);
+                listenInputChange({
+                    area: this.$root
+                });
             }
             init(id) {
                 var _this$spu;
@@ -30412,6 +31033,18 @@
             setActiveSku(activeSku) {
                 this.activeSku = activeSku;
             }
+            cancelReport() {
+                cancelReport({
+                    spu: this.spu,
+                    sku: this.activeSku || this.firstSku,
+                    num: 1,
+                    email: this.formInstance.getFieldValue("email"),
+                    phone: this.formInstance.getFieldValue("mobile"),
+                    name: this.formInstance.getFieldValue("name"),
+                    message: this.formInstance.getFieldValue("message"),
+                    region: this.formInstance.getFieldValue("region")
+                });
+            }
             bindEvents() {
                 const eventHandlers = {
                     submitClickHandler: async e => {
@@ -30428,14 +31061,17 @@
                         }
                     },
                     cancelClickHandler: () => {
+                        this.cancelReport();
                         this.hideModal();
                     },
                     buttonClickHandler: () => {
                         this.showModal();
+                        viewReport();
                     }
                 };
                 this.$onPortals("click", ".JS-inquiry-modal-submit", eventHandlers.submitClickHandler);
                 this.$onPortals("click", ".JS-inquiry-modal-cancel", eventHandlers.cancelClickHandler);
+                this.$root.parents(".mp-modal__wrapper").on("click", ".mp-modal__mask.mp-modal__closable,.mp-modal__close", (() => this.cancelReport()));
                 $(this.buttonSelector).on("click", eventHandlers.buttonClickHandler);
             }
             unbindEvents() {
@@ -30469,12 +31105,24 @@
                     duration: 0
                 });
                 loading.open();
-                await this.sendInquiryInfoRun(sendInfo, loading);
+                await this.sendInquiryInfoRun(sendInfo, loading, {
+                    phone: inquiryInfo.mobile,
+                    message: inquiryInfo.message,
+                    name: inquiryInfo.name,
+                    region: inquiryInfo.region
+                });
             }
-            async sendInquiryInfoRun(info, loading) {
+            async sendInquiryInfoRun(info, loading, extraData) {
                 const response = await request.post("/mc/shop/online/send", info);
                 loading.close();
                 if ("SUCCESS" === response.code) {
+                    leadReport({
+                        spu: this.spu,
+                        sku: this.activeSku || this.firstSku,
+                        num: 1,
+                        email: info.email,
+                        ...extraData
+                    });
                     this.hideModal();
                     toast.open(t("productDetail.inquiry.submitSuccess"));
                 } else toast.open(t("productDetail.inquiry.submitFailed"));
@@ -30616,7 +31264,7 @@
                         if ($(this).parent().hasClass("active")) $(this).css("height", "auto");
                     }));
                     if (!$item.data("isInitShadowDom")) {
-                        const html = $item.find(".base-collapse-item__content").html();
+                        const html = $item.find(".base-collapse-item__content").children();
                         self.transContentByShadowDom($item, html);
                         $item.data("isInitShadowDom", true);
                     }
@@ -30730,7 +31378,9 @@
             transContentByShadowDom($item, content) {
                 const $content = $item.find(".base-collapse-item__content");
                 const isAside = $content.hasClass("aside");
-                $content.html(`\n      <div style="overflow: hidden;" data-node="shadow-content">\n        <div class="mce-content-body ${isAside ? "aside" : "bottom"}">\n        <style>\n        .mce-content-body.aside table{\n          min-width: 100% !important;\n        }\n        .mce-content-body img {\n          opacity: 0;\n        }\n        .mce-content-body img[srcset],\n        .mce-content-body img[src] {\n          opacity: 1;\n        }\n        @media (max-width: 749.98px){\n          .mce-content-body table{\n            min-width: 100% !important;\n          }\n        }\n        .mce-content-body .table-wraper-fix{\n          padding-bottom: 1px;\n          padding-right: 1px;\n        }\n        \n        @media (min-width: 749.98px){\n          .mce-content-body .table-wraper-fix > table > tbody > tr td,\n          .mce-content-body .table-wraper-fix > table > tbody > tr th{\n            min-width:  80px !important;\n            box-sizing: border-box !important;\n          }\n          .mce-content-body.bottom .table-wraper-fix > table > tbody > tr td,\n          .mce-content-body.bottom .table-wraper-fix > table > tbody > tr th{\n            min-width: 120px !important;\n          }\n        }\n        .table-wraper-fix > table > tbody > tr td,\n        .table-wraper-fix > table > tbody > tr th {\n          padding: 8px;\n        }\n      </style>\n          ${content}\n        </div>\n      </div>\n      <div data-node="shadow-dom"></div>\n    `);
+                const html = $(`\n      <div>\n        <div style="overflow: hidden;" data-node="shadow-content">\n          <div class="mce-content-body ${isAside ? "aside" : "bottom"}">\n            <style>\n              .mce-content-body.aside table{\n                min-width: 100% !important;\n              }\n              .mce-content-body img {\n                opacity: 0;\n              }\n              .mce-content-body img[srcset],\n              .mce-content-body img[src] {\n                opacity: 1;\n              }\n              @media (max-width: 749.98px){\n                .mce-content-body table{\n                  min-width: 100% !important;\n                }\n              }\n              .mce-content-body .table-wraper-fix{\n                padding-bottom: 1px;\n                padding-right: 1px;\n              }\n              \n              @media (min-width: 749.98px){\n                .mce-content-body .table-wraper-fix > table > tbody > tr td,\n                .mce-content-body .table-wraper-fix > table > tbody > tr th{\n                  min-width:  80px !important;\n                  box-sizing: border-box !important;\n                }\n                .mce-content-body.bottom .table-wraper-fix > table > tbody > tr td,\n                .mce-content-body.bottom .table-wraper-fix > table > tbody > tr th{\n                  min-width: 120px !important;\n                }\n              }\n              .table-wraper-fix > table > tbody > tr td,\n              .table-wraper-fix > table > tbody > tr th {\n                padding: 8px;\n              }\n            </style>\n          </div>\n        </div>\n        <div data-node="shadow-dom"></div>\n      </div>\n    `);
+                html.find(".mce-content-body").append(content);
+                $content.empty().append(html);
                 window.lozadObserver.observe();
                 js_createShadowDom();
             }
@@ -30774,7 +31424,7 @@
             }
         }
         const product_collapse = Collapse;
-        const effectFc = fn => {
+        const effectFc = fn => (...props) => {
             let offEvents = [];
             let useEffect = function(instance, method, eventName, eventFn) {
                 if ("object" !== typeof instance || "string" !== typeof method || "string" !== typeof eventName || "function" !== typeof eventFn) return;
@@ -30791,23 +31441,21 @@
                     offEvents.push(offEvent);
                 }
             };
-            return (...props) => {
-                let unmount = null === fn || void 0 === fn ? void 0 : fn.call({
-                    useEffect
-                }, ...props);
-                return (...args) => {
-                    var _offEvents;
-                    if (null !== (_offEvents = offEvents) && void 0 !== _offEvents && _offEvents.length) offEvents.forEach((offEvent => {
-                        offEvent();
-                    }));
-                    if ("function" === typeof unmount) {
-                        var _unmount;
-                        null === (_unmount = unmount) || void 0 === _unmount ? void 0 : _unmount(...args);
-                    }
-                    offEvents = null;
-                    useEffect = null;
-                    unmount = null;
-                };
+            let unmount = null === fn || void 0 === fn ? void 0 : fn.call({
+                useEffect
+            }, ...props);
+            return (...args) => {
+                var _offEvents;
+                if (null !== (_offEvents = offEvents) && void 0 !== _offEvents && _offEvents.length) offEvents.forEach((offEvent => {
+                    offEvent();
+                }));
+                if ("function" === typeof unmount) {
+                    var _unmount;
+                    null === (_unmount = unmount) || void 0 === _unmount ? void 0 : _unmount(...args);
+                }
+                offEvents = null;
+                useEffect = null;
+                unmount = null;
             };
         };
         function handleTagsShow() {
@@ -30989,7 +31637,7 @@
                 const addToCart = this;
                 $("#page-product-detail .addToCartList_content").on("click", ".addToCart", (ev => {
                     const {spuSeq: spuId, skuSeq: skuId, name, price} = addToCart.activeSku;
-                    const eventID = tool_getEventID();
+                    const eventID = getEventID();
                     window.Shopline.event.emit("Cart::AddToCart", {
                         data: {
                             spuId,
@@ -31019,6 +31667,7 @@
             }
         }
         const snippets_addToCartList = AddToCartList;
+        var url = __webpack_require__("./src/assets/shared/utils/url.js");
         function ProductDetailDataBus() {
             const all = new Map;
             const cacheData = Object.create(null);
@@ -31180,7 +31829,8 @@
                         modalShow();
                     }
                     if (isMobile_isMobile()) {
-                        drawer.show();
+                        const modal = $(modalIdSel);
+                        if (modal.hasClass(modalShowClassName)) drawer.show();
                         modalHide();
                     }
                 }));
@@ -31276,7 +31926,7 @@
             window.SL_EventBus.emit("global:thirdPartReport", {
                 GA: [ [ "event", "view_item", {
                     items: [ {
-                        id: null === newActiveSku || void 0 === newActiveSku ? void 0 : newActiveSku.skuSeq,
+                        id: (null === newActiveSku || void 0 === newActiveSku ? void 0 : newActiveSku.itemNo) || (null === newActiveSku || void 0 === newActiveSku ? void 0 : newActiveSku.skuSeq),
                         name: null === spu || void 0 === spu ? void 0 : spu.title,
                         price: product_preview_formatCurrency(null === newActiveSku || void 0 === newActiveSku ? void 0 : newActiveSku.price),
                         variant: getVariant(null === newActiveSku || void 0 === newActiveSku ? void 0 : newActiveSku.skuAttributeIds, null === sku || void 0 === sku ? void 0 : sku.skuAttributeMap)
@@ -31285,12 +31935,12 @@
                 GAR: [ [ "event", "view_item", {
                     value: product_preview_formatCurrency(null === newActiveSku || void 0 === newActiveSku ? void 0 : newActiveSku.price),
                     items: [ {
-                        id: newActiveSku.skuSeq,
+                        id: window.SL_GetReportArg("GAR", "sku_id", null === newActiveSku || void 0 === newActiveSku ? void 0 : newActiveSku.skuSeq),
                         google_business_vertical: "retail"
                     } ]
                 } ] ],
                 GARemarketing: [ [ "event", "view_item", {
-                    ecomm_prodid: newActiveSku.skuSeq,
+                    ecomm_prodid: window.SL_GetReportArg("GAR", "sku_id", null === newActiveSku || void 0 === newActiveSku ? void 0 : newActiveSku.skuSeq),
                     ecomm_pagetype: "product",
                     ecomm_category: null === spu || void 0 === spu ? void 0 : null === (_spu$sortationList = spu.sortationList) || void 0 === _spu$sortationList ? void 0 : null === (_spu$sortationList$ = _spu$sortationList[0]) || void 0 === _spu$sortationList$ ? void 0 : _spu$sortationList$.sortationId,
                     ecomm_pcat: null === spu || void 0 === spu ? void 0 : null === (_spu$sortationList2 = spu.sortationList) || void 0 === _spu$sortationList2 ? void 0 : null === (_spu$sortationList2$ = _spu$sortationList2[0]) || void 0 === _spu$sortationList2$ ? void 0 : _spu$sortationList2$.sortationName,
@@ -31316,6 +31966,7 @@
             let productImagesInstance;
             try {
                 productImagesInstance = new ProductImages({
+                    mediaList: spu.mediaList,
                     selectorId: id,
                     heightOnChange: () => {
                         layout({
@@ -31332,7 +31983,8 @@
             }
             const inquiryPriceModal = new InquiryPriceModal({
                 id,
-                spu
+                spu,
+                sku
             });
             const addToCartList = new snippets_addToCartList(spu);
             addToCartList.init();
@@ -31352,15 +32004,16 @@
                 id,
                 sku,
                 spu,
-                onChange: num => {
-                    ButtonGroup.setActiveSkuNum(num);
-                    if ("productDetail" === id) {
-                        window.productDetailDataBus.set("num", num);
-                        window.productDetailDataBus.emit("after:countChange", num);
-                    }
-                    window.SL_EventBus.emit("product:count:change", [ num, id ]);
-                }
+                dataPool: new DataWatcher
             });
+            quantityStepper.dataPool.watch([ "quantity" ], (num => {
+                ButtonGroup.setActiveSkuNum(num);
+                if ("productDetail" === id) {
+                    window.productDetailDataBus.set("num", num);
+                    window.productDetailDataBus.emit("after:countChange", num);
+                }
+                window.SL_EventBus.emit("product:count:change", [ num, id ]);
+            }));
             new product_collapse({
                 selector: `.product-detail-collapse_${id}`
             });
@@ -31385,11 +32038,13 @@
                 };
             };
             let activeSkuCache = {};
+            const skuDataPool = new DataWatcher;
             const skuTrade = initSku({
                 id,
                 sku,
                 spu,
                 mixins: window.skuMixins,
+                dataPool: skuDataPool,
                 onInit: (trade, activeSku) => {
                     var _window3, _window3$SL_State, _quantityStepper$skuS3, _quantityStepper$skuS4;
                     thirdPartReport({
@@ -31405,8 +32060,8 @@
                     if ("productDetail" === id) window.productDetailDataBus.set("activeSku", activeSku);
                     if (activeSku) {
                         var _quantityStepper$skuS, _quantityStepper$skuS2;
-                        ButtonGroup.setActiveSku(activeSku);
                         quantityStepper.setActiveSku(activeSku);
+                        ButtonGroup.setActiveSku(activeSku);
                         addToCartList.setActiveSku(activeSku);
                         content_sku_id = null === activeSku || void 0 === activeSku ? void 0 : activeSku.skuSeq;
                         price = product_preview_formatCurrency((null === activeSku || void 0 === activeSku ? void 0 : activeSku.price) || 0);
@@ -31431,20 +32086,33 @@
                         instances: {
                             productImages: productImagesInstance,
                             buttonGroup: ButtonGroup,
+                            skuDataPool,
                             quantityStepper
                         },
                         quantity: (null === quantityStepper || void 0 === quantityStepper ? void 0 : null === (_quantityStepper$skuS3 = quantityStepper.skuStepper) || void 0 === _quantityStepper$skuS3 ? void 0 : null === (_quantityStepper$skuS4 = _quantityStepper$skuS3.data) || void 0 === _quantityStepper$skuS4 ? void 0 : _quantityStepper$skuS4.value) || 1,
                         ...getSkuChangeData(activeSku)
                     });
+                    trade.dataPool.watch([ "activeSku" ], (activeSku => {
+                        var _productImagesInstanc, _activeSku$imageBeanL;
+                        if ("productDetail" === id) {
+                            window.productDetailDataBus.set("activeSku", activeSku);
+                            window.productDetailDataBus.emit("after:skuChange", activeSku);
+                            if (activeSku) window.history.replaceState({}, document.title, (0, url.changeURLArg)(window.location.href, "sku", activeSku.skuSeq)); else window.history.replaceState({}, document.title, (0, 
+                            url.delParam)("sku"));
+                        }
+                        activeSkuCache = activeSku;
+                        inquiryPriceModal.setActiveSku(activeSku);
+                        null === (_productImagesInstanc = productImagesInstance) || void 0 === _productImagesInstanc ? void 0 : _productImagesInstanc.skuImageChange(null === activeSku || void 0 === activeSku ? void 0 : null === (_activeSku$imageBeanL = activeSku.imageBeanList) || void 0 === _activeSku$imageBeanL ? void 0 : _activeSku$imageBeanL[0]);
+                        if (activeSku || quantityStepper.activeSku) {
+                            product_info(id, statePath, activeSku);
+                            quantityStepper.setActiveSku(activeSku);
+                            ButtonGroup.setActiveSku(activeSku);
+                            addToCartList.setActiveSku(activeSku);
+                        }
+                    }));
                 },
                 onChange: activeSku => {
-                    var _productImagesInstanc, _activeSku$imageBeanL, _quantityStepper$skuS7, _quantityStepper$skuS8;
-                    if ("productDetail" === id) {
-                        window.productDetailDataBus.set("activeSku", activeSku);
-                        window.productDetailDataBus.emit("after:skuChange", activeSku);
-                    }
-                    inquiryPriceModal.setActiveSku(activeSku);
-                    activeSkuCache = activeSku;
+                    var _quantityStepper$skuS7, _quantityStepper$skuS8;
                     if (activeSku) {
                         var _quantityStepper$skuS5, _quantityStepper$skuS6;
                         thirdPartReport({
@@ -31457,13 +32125,6 @@
                             quantity: (null === quantityStepper || void 0 === quantityStepper ? void 0 : null === (_quantityStepper$skuS5 = quantityStepper.skuStepper) || void 0 === _quantityStepper$skuS5 ? void 0 : null === (_quantityStepper$skuS6 = _quantityStepper$skuS5.data) || void 0 === _quantityStepper$skuS6 ? void 0 : _quantityStepper$skuS6.value) || 1,
                             ...getSkuChangeData(activeSku)
                         });
-                    }
-                    null === (_productImagesInstanc = productImagesInstance) || void 0 === _productImagesInstanc ? void 0 : _productImagesInstanc.skuImageChange(null === activeSku || void 0 === activeSku ? void 0 : null === (_activeSku$imageBeanL = activeSku.imageBeanList) || void 0 === _activeSku$imageBeanL ? void 0 : _activeSku$imageBeanL[0]);
-                    if (activeSku || quantityStepper.activeSku) {
-                        product_info(id, statePath, activeSku);
-                        ButtonGroup.setActiveSku(activeSku);
-                        quantityStepper.setActiveSku(activeSku);
-                        addToCartList.setActiveSku(activeSku);
                     }
                     emitProductSkuChanged({
                         type: "change",
@@ -32023,8 +32684,8 @@
                 return;
             }
             toggleAddLoading(true);
-            const {spuSeq: spuId, skuSeq: skuId, num, name, price} = activeSku;
-            const eventID = tool_getEventID();
+            const {spuSeq: spuId, skuSeq: skuId, num, name, price, itemNo} = activeSku;
+            const eventID = getEventID();
             const hdReportData = {
                 page: hdReportPage,
                 spuId,
@@ -32057,7 +32718,8 @@
                         price,
                         num,
                         skuId,
-                        eventID
+                        eventID,
+                        itemNo
                     });
                 },
                 complete: () => {
@@ -32099,6 +32761,11 @@
             });
         }
         const {formatCurrency: product_item_formatCurrency} = currency;
+        const product_item_isPad = state_selector.SL_State.get("request.is_mobile") || void 0 !== document.ontouchmove;
+        if (product_item_isPad) {
+            $("#collectionsAjaxInner").addClass("pad");
+            $(".product-item__wrapper").addClass("pad");
+        }
         $("body").delegate(".js-product-item-quick-view", "click", (function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -32135,12 +32802,12 @@
                 }).render();
             }
         }));
-        function product_item_thirdPartReport({id, name, price}) {
+        function product_item_thirdPartReport({id, itemNo, name, price}) {
             window.SL_EventBus.emit("global:thirdPartReport", {
                 GA: [ [ "event", "select_content", {
                     content_type: "product",
                     items: [ {
-                        id,
+                        id: itemNo || id,
                         name,
                         price: product_item_formatCurrency(price)
                     } ]
@@ -32148,9 +32815,11 @@
             });
         }
         $(document.body).on("click", ".product-item", (function() {
+            const item = $(this);
             product_item_thirdPartReport({
-                id: $(this).data("skuId"),
-                name: $(this).data("name"),
+                id: item.data("skuId"),
+                itemNo: item.data("itemNo"),
+                name: item.data("name"),
                 price: $(this).data("price")
             });
         }));

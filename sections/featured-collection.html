@@ -40,9 +40,26 @@ collection_products:
                 {{/if}}
             </h2>
         {{/if}}
-      <div class='product-list-item-parent-controller g-4 row row-cols-2 row-cols-md-{{section.settings.col}} row-cols-lg-{{section.settings.col}} {{#if section.settings.slice_in_mobile}}{{prefix}}--scroll-container{{/if}} {{#if (boolean (boolean theme.settings.product_image_ratio '==' 0 ) '&&' section.settings.slice_in_mobile)}}{{prefix}}--ratio-free{{/if}}'>
+
+      {{assign 'padSize' (append '1/' section.settings.col)}}
+      {{assign 'pcSize' (append '1/' section.settings.col)}}
+      {{assign 'imgsizes' (append '(max-width: 749px) 50vw,(max-width: 959px) calc(100vw * 1/' section.settings.col '),(min-width: 960px) calc(100vw * 1/' section.settings.col '),(min-width: 1500px) calc(100vw * 1/' section.settings.col ')') }}
+      {{assign 'item-class' (append 'row-cols-md-'section.settings.col ' row-cols-lg-'section.settings.col) }}
+      {{#if section.settings.col '===' 5}}
+        {{assign 'padSize' (append '1/' section.settings.col)}}
+        {{assign 'pcSize' '1/4'}}
+        {{assign 'item-class' (append 'row-cols-md-4 row-cols-lg-'section.settings.col) }}
+        {{assign 'imgsizes' (append '(max-width: 749px) 50vw,(max-width: 959px) calc(100vw * 1/4),(min-width: 1500px) calc(100vw * 1/' section.settings.col '),(min-width: 960px) calc(100vw * 1/' section.settings.col ')') }}
+      {{/if}}
+      {{#if section.settings.col '===' 6}}
+        {{assign 'padSize' '1/4'}}
+        {{assign 'pcSize' '1/4'}}
+        {{assign 'item-class' (append 'row-cols-md-4 row-cols-lg-4') }}
+        {{assign 'imgsizes' (append '(max-width: 749px) 50vw,(max-width: 1199px) calc(100vw * 1/4),(min-width: 1200px) calc(100vw * 1/' section.settings.col '),(min-width: 1500px) calc(100vw * 1/' section.settings.col ')') }}
+      {{/if}}
+      <div class='product-list-item-parent-controller g-4 row row-cols-2 {{item-class}} row-cols-xl-{{section.settings.col}} {{#if section.settings.slice_in_mobile}}{{prefix}}--scroll-container{{/if}} {{#if (boolean (boolean theme.settings.product_image_ratio '==' 0 ) '&&' section.settings.slice_in_mobile)}}{{prefix}}--ratio-free{{/if}}'>
         {{#each (sliceListByGrid productList section.settings.row section.settings.col)}}
-          <div class='col{{#if ../forbiddenBtn}} {{../prefix}}--empty-product-item{{/if}}'>{{snippet 'product/commons/product-item' forbiddenBtn=../forbiddenBtn imgRealWidth=../real_product_img_width pcSize=(append '1/' ../section.settings.col) mSize="50vw" }} </div>
+          <div class='col{{#if ../forbiddenBtn}} {{../prefix}}--empty-product-item{{/if}}'>{{snippet 'product/commons/product-item' forbiddenBtn=../forbiddenBtn imgRealWidth=../real_product_img_width sizes=../imgsizes padSize=../padSize pcSize=../pcSize mSize="50vw" }} </div>
         {{/each}}
       </div>
     </div>
@@ -125,7 +142,7 @@ collection_products:
       "id": "slice_in_mobile",
       "label": {
         "zh-hans-cn": "移动端左右滑动查看",
-        "en": "Slide the screen left or right to view",
+        "en": "Enable horizontal scroll to view all",
         "id": "Geser ke kiri dan kanan di port seluler untuk melihat",
         "th": "ปัดไปทางซ้ายและขวาบนมือถือเพื่อดู",
         "vi": "Lướt trái phạm trên mạng di động để xem",
@@ -153,7 +170,7 @@ collection_products:
       "id": "show_divider",
       "label": {
         "zh-hans-cn": "展示分割线",
-        "en": "Dismay the split line",
+        "en": "Display the divider",
         "id": "Tampilkan garis pemisah",
         "th": "แสดงเส้นแบ่ง",
         "vi": "Thể hiện tuyến phân cách",

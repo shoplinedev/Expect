@@ -199,7 +199,7 @@
     "username": "Ime"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Zahvaljujemo se vam, da ste vzpostavili stik z nami, odgovorili vam bomo v najkrajšem možnem času."
   },
   "footer": {
     "copyright": "Vse pravice pridržane.",
@@ -208,6 +208,15 @@
     "subscribeError": "Neuspešna naročnina",
     "subscribeRegExpError": "Napaka v obliki e-poštnega naslova",
     "subscribeSuccess": "Uspešna naročnina"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Sprejmi",
+      "decline": "Zavrni",
+      "link": "Politika zasebnosti",
+      "tips": "Da bi izboljšali vašo izkušnjo, uporabljamo piškotke za pomnenje prijavnih podatkov, zbiranje statističnih podatkov in zagotavljanje vsebine, prilagojene vašim interesom. Če želite sprejeti piškotke, kliknite \"Sprejmi\" ali si oglejte našo \"Politiko zasebnosti\".",
+      "title": "Skrbimo za vašo zasebnost"
+    }
   },
   "header": {
     "cart": "Vaša košarica",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} popust",
         "discount2": "Brezplačna dostava",
+        "level": "Za {{level}}",
         "shippingRateBelow": "Tovor je manjši od {value}",
+        "specified": "Za določene stranke",
         "threshold": "Kupi {threshold}",
         "until": "Velja do: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "HITRA PRODAJA",
     "flash-sale-tips": "Omejitev nakupa: {{count}} količina",
+    "gift": {
+      "gotAll": "Čestitke! Dobili ste {{saved}} BREZPLAČNO DARILO!",
+      "noReceived": "Čestitke! Pridobite lahko do {{willSave}} BREZPLAČNO DARILO",
+      "notMetAmount": "Kupite še {{threshold}} in pridobite do {{willSave}} BREZPLAČNO DARILO",
+      "notMetQuantity": "Kupite še {{threshold}} artiklov in pridobite do {{willSave}} BREZPLAČNO DARILO",
+      "select": "Izberite",
+      "spendMoreMoneyGetMore": "Čestitke! Imate že {{saved}} brezplačno darilo! Porabite še {{threshold}} in pridobite do {{willSave}} BREZPLAČNO DARILO",
+      "spendMoreQuantityGetMore": "Čestitke! Imate že {{saved}} brezplačno darilo! Kupite še {{threshold}} in pridobite do {{willSave}} BREZPLAČNO DARILO"
+    },
     "hot-sale": "Vroča prodaja!",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Tretji ID ali kanal ni bil konfiguriran",
       "err1009": "Potrditev tretje osebe neuspešna",
       "err1010": "Upodabljanje predloge za besedilna sporočila/šablone za e-pošto ni uspelo",
+      "err1017": "Račun v nevarnosti",
       "err2001": "Mobilni telefon je registriran",
       "err2002": "Elektronski naslov je registriran",
       "err2003": "Ne poskušajte tako pogosto",
@@ -1232,6 +1253,7 @@
       "err2005": "Napaka v kodi",
       "err2006": "Število poskusov preverjanja preseženo, pridobite drugo kodo",
       "err2007": "Upodabljanje predloge za besedilna sporočila/šablone za e-pošto ni uspelo",
+      "err2016": "Račun v nevarnosti",
       "err3001": "Neveljavni piškotek",
       "err3002": "Uporabniki, ki niso vezani na mobilne telefone/poštne predale, poskušajo spremeniti svoja gesla",
       "err3003": "Ne poskušajte tako pogosto",

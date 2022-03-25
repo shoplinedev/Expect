@@ -7,12 +7,12 @@
 
 <div class="footer__wrapper">
   <div class="footer__body {{#if section.settings.mobile_auto_fold}}footer__body--fold{{/if}} container g-4 g-md-6">
-    <div class="footer__tool-container footer__tool-container--mobile d-flex d-md-none">
+    <div class="footer__tool-container footer__tool-container--mobile d-flex d-lg-none">
       {{snippet 'locale-currency-mobile'}}
     </div>
 
     {{#or section.settings.show_locale_selector section.settings.show_currency_selector}}
-      <div class="footer__tool-container footer__tool-container--pc d-none d-md-flex">
+      <div class="footer__tool-container footer__tool-container--pc d-none d-lg-flex">
         {{snippet 'locale-currency' position="footer"}}
       </div>
     {{/or}}
@@ -213,7 +213,7 @@
       "id": "show_copyright",
       "label": {
         "zh-hans-cn": "展示版权信息",
-        "en": "Display the copyright information",
+        "en": "Display the copyright notice",
         "id": "Tampilkan Informasi Hak Cipta",
         "th": "แสดงข้อมูลลิขสิทธิ์",
         "vi": "Hiển thị thông tin bản quyền",
@@ -241,7 +241,7 @@
       "id": "copyright_text",
       "label": {
         "zh-hans-cn": "附加版权文案",
-        "en": "Additional copyright texts",
+        "en": "Additional copyright notice",
         "id": "Dokumen hak cipta tambahan",
         "th": "ข้อความลิขสิทธิ์เพิ่มเติม",
         "vi": "Kèm thêm hồ sơ bản quyền",
@@ -307,7 +307,7 @@
       "icon": "navigation",
       "name": {
         "zh-hans-cn": "快速导航",
-        "en": "Fast navigation",
+        "en": "Quick Navigation",
         "id": "Navigasi cepat",
         "th": "การนำทางอย่างรวดเร็ว",
         "vi": "Hướng dẫn nhanh chóng",
@@ -554,7 +554,7 @@
           "id": "content",
           "label": {
             "zh-hans-cn": "正文",
-            "en": "Main text",
+            "en": "Body text",
             "id": "Teks",
             "th": "ข้อความ",
             "vi": "Nội dung chính",

@@ -199,7 +199,7 @@
     "username": "Nama"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Terimakasih Anda hubungi kami, kami akan respon Anda dengan cepat"
   },
   "footer": {
     "copyright": "Kepemilikan hak cipta",
@@ -208,6 +208,15 @@
     "subscribeError": "Gagal pesan",
     "subscribeRegExpError": "Format alamat email salah",
     "subscribeSuccess": "Sukses pesan"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Terima",
+      "decline": "Tolak",
+      "link": "Kebijakan privasi",
+      "tips": "Untuk memberi Anda pengalaman yang lebih baik, kami menggunakan cookie untuk merekam status login Anda, mengumpulkan data statistik, demi konten menarik. Klik \"terima\" untuk mengizinkan pakai cookie. Atau lihat \"kebijakan privasi\" kami.",
+      "title": "Kami menghargai privasi Anda"
+    }
   },
   "header": {
     "cart": "Troli",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} diskon",
         "discount2": "Gratis ongkos kirim",
+        "level": "Dapat digunakan {{level}}",
         "shippingRateBelow": "Biaya ongkos lebih kurang dari{value}",
+        "specified": "Tunjukkan pelanggan bisa digunakannya",
         "threshold": "Beli{threshold}",
         "until": "Berlaku sampai tanggal: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "Penjualan waktu terbatas",
     "flash-sale-tips": "Batas pembelian: {{count}} buah",
+    "gift": {
+      "gotAll": "Selamat! Anda telah mendapat {{saved}} hadiah gratis!",
+      "noReceived": "Selamat! Anda dapat memilih {{willSave}} hadiah gratis",
+      "notMetAmount": "Beli {{threshold}} lagi, maksimal nikmati {{willSave}} hadiah gratis",
+      "notMetQuantity": "Beli {{threshold}} produk lagi, maksimal nikmati {{willSave}} hadiah gratis",
+      "select": "Pilih",
+      "spendMoreMoneyGetMore": "Selamat! Telah dapat {{saved}} hadiah gratis! Beli {{threshold}} lagi, maksimal nikmati {{willSave}} hadiah gratis",
+      "spendMoreQuantityGetMore": "Selamat! Telah dapat {{saved}} hadiah gratis! Beli {{threshold}} produk lagi, maksimal nikmati {{willSave}} hadiah gratis"
+    },
     "hot-sale": "Panas dijual",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Belum dikonfigurasi saluran pihak ketiga",
       "err1009": "Verifikasi pihak ketiga gagal",
       "err1010": "Verifikasi SMS/templat email gagal",
+      "err1017": "Akun berisiko",
       "err2001": "Nomor telepon sudah didaftar",
       "err2002": "Email sudah didaftar",
       "err2003": "Kirim kode verifikasi beberapa kali",
@@ -1232,6 +1253,7 @@
       "err2005": "Kode verifikasi salah",
       "err2006": "Kode verifikasi digunakan banyak kali, silakan menggunakan kode verifikasi yang lain",
       "err2007": "Verifikasi SMS/templat email gagal",
+      "err2016": "Akun berisiko",
       "err3001": "Verifikasi cookie gagal",
       "err3002": "Pengguna yang belum mengikat telepon/email coba mengubah kata sandi",
       "err3003": "Kirim kode verifikasi beberapa kali",

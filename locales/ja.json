@@ -199,7 +199,7 @@
     "username": "名前"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "ご連絡誠にありがとうございます、なるべく早く返事が出せるようにいたします。"
   },
   "footer": {
     "copyright": "全著作権所有",
@@ -208,6 +208,15 @@
     "subscribeError": "購読できませんでした",
     "subscribeRegExpError": "メールアドレスの形式が無効です",
     "subscribeSuccess": "購読しました"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "受け入れる",
+      "decline": "拒否する",
+      "link": "プライバシーポリシー",
+      "tips": "より良い体験を提供するために、Cookieを使用してログインステータスを記録、統計データを収集、興味深いコンテンツを提供します。 「同意する」をクリックして、Cookieの使用を許可します。または、「プライバシーポリシー」をご覧ください。",
+      "title": "私たちはあなたのプライバシーを大切にお守り致します。"
+    }
   },
   "header": {
     "cart": "カート",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} オフ",
         "discount2": "送料無料",
+        "level": "{{level}}利用可能",
         "shippingRateBelow": "送料が{value}未満となる",
+        "specified": "指定のお客様に利用可能",
         "threshold": "{threshold}買う",
         "until": "有効期限は{{endTime}}までです"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "タイムセール",
     "flash-sale-tips": "最大注文個数：{{count}}点",
+    "gift": {
+      "gotAll": "おめでとうございます！{{saved}}件のプレゼントが取得しました",
+      "noReceived": "おめでとうございます！{{willSave}}件の無料プレゼントが選択できます",
+      "notMetAmount": "これ以上{{threshold}}使うと、最大{{willSave}}件プレゼントが取得可能",
+      "notMetQuantity": "これ以上{{threshold}}件買うと、最大{{willSave}}件プレゼントが取得可能",
+      "select": "選択",
+      "spendMoreMoneyGetMore": "おめでとうございます！{{saved}}件のプレゼントが取得しました！これ以上{{threshold}}使うと、最大{{willSave}}件プレゼントが取得可能",
+      "spendMoreQuantityGetMore": "おめでとうございます！{{saved}}件のプレゼントが取得しました！これ以上{{threshold}}件買うと、最大{{willSave}}件プレゼントが取得可能"
+    },
     "hot-sale": "好評発売中",
     "promotion": {
       "reminder": {
@@ -963,7 +983,7 @@
     "delivery-address-abnormal": "受取人住所のエラー",
     "delivery-fee": "配送",
     "delivery-tax": "貨物税",
-    "delivery-to-home": "自宅配送",
+    "delivery-to-home": "配送",
     "delivery-way": "配送方法",
     "enter-a-tip-on-more-than": "{{amount}} 個以下のヒントを入力してください",
     "express-bill-pic": "配送荷物画像",
@@ -1225,6 +1245,7 @@
       "err1008": "サードパーティ ID またはチャンネルは設定されていません",
       "err1009": "サードパーティ認証エラー",
       "err1010": "コード送信エラー",
+      "err1017": "このアカウントが盗まれるリスクがあります",
       "err2001": "携帯電話が登録されました",
       "err2002": "メールアドレスが登録されました",
       "err2003": "試行の頻度が多すぎます",
@@ -1232,6 +1253,7 @@
       "err2005": "コードエラー",
       "err2006": "確認の回数が多すぎます。別のコードを取得してください",
       "err2007": "コード送信エラー",
+      "err2016": "このアカウントが盗まれるリスクがあります",
       "err3001": "Cookie が無効",
       "err3002": "不正な操作",
       "err3003": "試行の頻度が多すぎます",

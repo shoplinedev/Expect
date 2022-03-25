@@ -199,7 +199,7 @@
     "username": "Vārds"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Paldies, ka sazinājāties ar mums, un mēs atbildēsim jums pēc iespējas ātrāk."
   },
   "footer": {
     "copyright": "Visas tiesības ir aizsargātas.",
@@ -208,6 +208,15 @@
     "subscribeError": "Abonēšana neizdevās",
     "subscribeRegExpError": "Kļūda, ievadot e-pasta adreses",
     "subscribeSuccess": "Abonēšanas panākumi"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Pieņemt",
+      "decline": "Noraidīt",
+      "link": "Privātuma politika",
+      "tips": "Lai uzlabotu jūsu pieredzi, mēs izmantojam sīkdatnes, lai atcerētos pieteikšanās informāciju, apkopotu statistiku un piegādātu saturu, kas pielāgots jūsu interesēm. Noklikšķiniet uz Akceptēt, lai akceptētu sīkfailus, vai skatiet mūsu konfidencialitātes politiku.",
+      "title": "Mums rūp jūsu privātums"
+    }
   },
   "header": {
     "cart": "Jūsu grozs",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} pie",
         "discount2": "Bezmaksas piegāde",
+        "level": "Skirtas {{level}}",
         "shippingRateBelow": "Frakts ir mazāks nekā {value}",
+        "specified": "Noteiktiem klientiem",
         "threshold": "Iegādāties {threshold}",
         "until": "Derīgs līdz: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "FLASH PĀRDOŠANA",
     "flash-sale-tips": "Pirkuma ierobežojums: {{count}} daudzums",
+    "gift": {
+      "gotAll": "Apsveicam! Jūs esat saņēmis {{saved}} BEZMAKSAS DĀVANU!",
+      "noReceived": "Apsveicam! Jūs varat baudīt līdz pat {{willSave}} BEZMAKSAS DĀVANA",
+      "notMetAmount": "Iegādājieties {{threshold}} vairāk, izmantojiet līdz pat {{willSave}} BEZMAKSAS DĀVANA",
+      "notMetQuantity": "Iegādājieties {{threshold}} vairāk preču, izmantojiet līdz pat {{willSave}} BEZMAKSAS DĀVANU",
+      "select": "Izvēlieties",
+      "spendMoreMoneyGetMore": "Apsveicam! Jau saņēmāt {{saved}} bezmaksas dāvanu! Nopērciet {{threshold}} vairāk, baudiet līdz pat {{willSave}} BEZMAKSAS DĀVANA",
+      "spendMoreQuantityGetMore": "Apsveicam! Jau saņēmāt {{saved}} bezmaksas dāvanu! Iegādājieties {{threshold}} vairāk, baudiet līdz pat {{willSave}} BEZMAKSAS DĀVANA"
+    },
     "hot-sale": "Lieli pārdošanas apjomi!",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Trešais identifikators vai kanāls nav konfigurēts",
       "err1009": "Trešās puses neveiksmīga apstiprināšana",
       "err1010": "Neizdevās atgriezt SMS / e-pasta modeļus",
+      "err1017": "Konti ir apdraudēti",
       "err2001": "Mobilais tika reģistrēts",
       "err2002": "E-pasts ir saglabāts",
       "err2003": "Nemēģiniet tik bieži",
@@ -1232,6 +1253,7 @@
       "err2005": "Koda kļūda",
       "err2006": "Pārāk daudz verifikācijas laiku, lūdzu, iegūstiet citu kodu",
       "err2007": "Neizdevās atgriezt SMS / e-pasta modeļus",
+      "err2016": "Konti ir apdraudēti",
       "err3001": "Nederīgs sīkfails",
       "err3002": "Lietotāji, kas nav saistīti ar mobilajiem tālruņiem / pastkastēm, mēģina mainīt paroli",
       "err3003": "Nemēģiniet tik bieži",

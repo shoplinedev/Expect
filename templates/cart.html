@@ -16,7 +16,7 @@
   })
 </script>
 {{/partial}}
-{{preload_state "cartInfo"}}
+{{preload_state "cartInfo" "variants"}}
 <div class="trade_cart_empty_wrapper{{#if cartInfo.count '!=' 0}} hide{{/if}}">
   <main class="main_wrapper" role="main">
     {{snippet 'trade/cart-title'}}

@@ -18,7 +18,8 @@
   {{!-- 面包屑/标题 --}}
   {{#if id 'productDetail' }}
     <div class="product-crumbs">
-      <a class="body4" href="/">{{t 'common.home'}}</a> /
+      <a class="body4" href="/">{{t 'common.home'}}</a>
+      <span style="margin: 0 7px; opacity: .3;">/</span>
     </div>
     <h1 class="title title-font title4 text-left">{{ spuInfo.title }}</h1>
   {{else}}
@@ -152,6 +153,9 @@
         {{ snippet 'sales/countdown-widget' spuSeq=spuInfo.spuSeq sortationList=spuInfo.sortationList }}
         </div>
       {{/if}}
+
+      {{!-- 营销赠品 --}}
+      {{ snippet 'sales/gift-plugin-container' }}
     {{/not}}
   {{ snippet 'product/detail/product-sell-info' id=id }}
 </div>

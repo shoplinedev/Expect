@@ -199,7 +199,7 @@
     "username": "Ad"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Bizimle iletişime geçtiğiniz için teşekkür ederiz, mümkün olan en kısa sürede size dönüş yapacağız."
   },
   "footer": {
     "copyright": "Tüm Hakları Saklıdır.",
@@ -208,6 +208,15 @@
     "subscribeError": "Abonelik başarısız",
     "subscribeRegExpError": "E-posta adresi formatı hatalı",
     "subscribeSuccess": "Abonelik başarılı"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Kabul et",
+      "decline": "Reddet",
+      "link": "Gizlilik Politikası",
+      "tips": "Kullanıcı deneyimini daha iyi bir hale getirebilmek amacıyla giriş bilgilerinin hatırlanabilmesi, istatistiklerin toplanabilmesi ve ilgi alanlarınıza uygun olarak belirlenmiş içeriklerin sunulabilmesi için çerezleri kullanıyoruz. Çerezleri kabul etmek için \"Kabul et\" tuşuna tıklayın ya da \"Gizlilik Politikası\" ilkelerimize bakın.",
+      "title": "Gizliliğine önem veriyoruz"
+    }
   },
   "header": {
     "cart": "Sepetiniz",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} indirim",
         "discount2": "Ücretsiz kargo",
+        "level": "Seviye {{level}} için",
         "shippingRateBelow": "Navlun {value} değerinden daha az",
+        "specified": "Belirlenmiş müşteriler için",
         "threshold": "{threshold} satın al",
         "until": "Son geçerlilik tarihi: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "SINIRLI SÜRELİ İNDİRİM",
     "flash-sale-tips": "Satın alma limiti: {{count}} adet",
+    "gift": {
+      "gotAll": "Tebrikler! {{saved}} ÜCRETSİZ-HEDİYE aldınız!",
+      "noReceived": "Tebrikler! {{willSave}} adete kadar ÜCRETSİZ-HEDİYE keyfini çıkarabilirsiniz",
+      "notMetAmount": "{{threshold}} daha satın alın, {{willSave}} adete kadar ÜCRETSİZ-HEDİYE keyfini çıkarın",
+      "notMetQuantity": "{{threshold}} öğe daha satın alın, {{willSave}} adete kadar ÜCRETSİZ-HEDİYE keyfini çıkarın",
+      "select": "Seç",
+      "spendMoreMoneyGetMore": "Tebrikler! Toplamda {{saved}} Ücretsiz Hediye aldınız! {{threshold}} daha harcayın, {{willSave}} adete kadar ÜCRETSİZ-HEDİYE keyfini çıkarın",
+      "spendMoreQuantityGetMore": "Tebrikler! Toplamda {{saved}} Ücretsiz Hediye aldınız! {{threshold}} öğe daha satın alın, {{willSave}} adete kadar ÜCRETSİZ-HEDİYE keyfini çıkarın"
+    },
     "hot-sale": "Canlı satış!",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Üçüncü Kimlik veya kanal yapılandırılmamış",
       "err1009": "Üçüncü taraf doğrulaması başarısız",
       "err1010": "Metin mesajı/posta şablonu görselleştirme başarısız",
+      "err1017": "Hesap risk altında",
       "err2001": "Cep numarası kaydedildi",
       "err2002": "E-posta kaydedildi",
       "err2003": "Bu kadar sık deneme yapmayın",
@@ -1232,6 +1253,7 @@
       "err2005": "Kod hatası",
       "err2006": "Çok fazla doğrulama girişiminde bulunuldu, lütfen başka bir kod alın",
       "err2007": "Metin mesajı/posta şablonu görselleştirme başarısız",
+      "err2016": "Hesap risk altında",
       "err3001": "Çerez geçersiz",
       "err3002": "Parolalarını değiştirmeye çalıştıkları cep telefonları/posta kutuları bağlı olmayan kullanıcılar",
       "err3003": "Bu kadar sık deneme yapmayın",

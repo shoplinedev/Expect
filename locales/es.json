@@ -199,7 +199,7 @@
     "username": "Nombre"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Gracias por comunicarte con nosotros, te responderemos lo antes posible"
   },
   "footer": {
     "copyright": "Todos los derechos reservados",
@@ -208,6 +208,15 @@
     "subscribeError": "La suscripción ha fallado",
     "subscribeRegExpError": "Formato incorrecto del correo electrónico",
     "subscribeSuccess": "Suscripción exitosa"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Aceptar",
+      "decline": "Rechazar",
+      "link": "Política de Privacidad",
+      "tips": "Para brindarle mejor experiencia, utilizamos cookies para recordar su estado de inicio de sesión, recopilar datos estadísticos y ofrecerle los contenidos interesados. Haga clic en “Aceptar” para permitir el uso de cookies. O consulte nuestra “Política de Privacidad”. ",
+      "title": "Valoramos su privacidad"
+    }
   },
   "header": {
     "cart": "Carrito",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} de descuento",
         "discount2": "Envío gratis",
+        "level": "Para {{level}}",
         "shippingRateBelow": "Costo de envío menos de {value}",
+        "specified": "Para clientes especificados",
         "threshold": "Comprar {threshold}",
         "until": "Válido hasta: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "Promoción de límite de tiempo",
     "flash-sale-tips": "Límite de compra: {{count}}",
+    "gift": {
+      "gotAll": "¡Felicidades! ¡Has obtenido {{saved}} regalos!",
+      "noReceived": "¡Felicidades! Puedes elegir {{willSave}} regalos",
+      "notMetAmount": "Compra {{threshold}} más para obtener hasta {{willSave}} regalos",
+      "notMetQuantity": "Compra {{threshold}} artículos adicionales para obtener hasta {{willSave}} regalos",
+      "select": "Seleccionar",
+      "spendMoreMoneyGetMore": "¡Felicidades! ¡Has obtenido {{saved}} regalos! Compra {{threshold}} más para obtener hasta {{willSave}} regalos",
+      "spendMoreQuantityGetMore": "¡Felicidades! ¡Has obtenido {{saved}} regalos! Compra {{threshold}} artículos adicionales para obtener hasta {{willSave}} regalos"
+    },
     "hot-sale": "A la venta",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "No se ha configurado ningún canal de terceros",
       "err1009": "Error de la verificación de terceros",
       "err1010": "Error al enviar el código",
+      "err1017": "La cuenta está en riesgo",
       "err2001": "El número de celular ha sido registrado",
       "err2002": "El correo electrónico ha sido registrado",
       "err2003": "Demasiadas veces de verificación",
@@ -1232,6 +1253,7 @@
       "err2005": "Error del código de verificación",
       "err2006": "Demasiadas veces de verificación, obtén otro código de verificación",
       "err2007": "Error al enviar el código",
+      "err2016": "La cuenta está en riesgo",
       "err3001": "Cookie inválido",
       "err3002": "El usuario que no ha vinculado su teléfono/correo electrónico intenta modificar la contraseña",
       "err3003": "Demasiadas veces de verificación",

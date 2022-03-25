@@ -1,0 +1,612 @@
+{
+  "navigation": {
+    "Header": {
+      "logo": "https://img.myshopline.com/image/shopline/eca4224e49b14040a1a4373ceb9532d9.png",
+      "logoTransparent": "",
+      "navGroupId": "4663509170309057603",
+      "showLangSelect": true,
+      "backgroundColor": "#ffffff",
+      "textColor": "#2b2b2b",
+      "textColorTransparent": "#2B2B2B",
+      "showUserCenter": true,
+      "showSearch": true,
+      "showCart": true,
+      "showTransparent": false,
+      "nodeTree": [
+        {
+          "id": "0",
+          "name": {
+            "en": "Home",
+            "zh-hans-cn": "首页",
+            "default": "Home"
+          },
+          "nodeType": 3,
+          "pageLink": "12248213212242145095742792",
+          "openMode": 1,
+          "childNodes": []
+        },
+        {
+          "id": "4721235392216391716",
+          "name": {
+            "en": "asaa",
+            "default": "asaa"
+          },
+          "nodeType": 1,
+          "pageLink": "{\"pageType\":\"0\",\"id\":\"about\"}",
+          "openMode": null,
+          "childNodes": [
+            {
+              "id": "4721235559703339018",
+              "name": {
+                "en": "ffff",
+                "default": "ffff"
+              },
+              "nodeType": 3,
+              "pageLink": "12248332191098350243912792",
+              "openMode": 0,
+              "childNodes": []
+            },
+            {
+              "id": "4721235840906256443",
+              "name": {
+                "en": "dddd",
+                "default": "dddd"
+              },
+              "nodeType": 1,
+              "pageLink": "{\"pageType\":\"0\",\"id\":\"about\"}",
+              "openMode": 0,
+              "childNodes": []
+            }
+          ]
+        },
+        {
+          "id": "4721235964202016819",
+          "name": {
+            "en": "vvvv",
+            "default": "vvvv"
+          },
+          "nodeType": 1,
+          "pageLink": "{\"pageType\":\"0\",\"id\":\"about\"}",
+          "openMode": null,
+          "childNodes": []
+        }
+      ]
+    },
+    "Footer": {
+      "backgroundColor": "",
+      "textColor": "",
+      "navGroupId": "",
+      "showSubscribeBar": true,
+      "showSocialAccounts": true,
+      "showShopDescription": true,
+      "subscribeBarTitle": "SUBSCRIBE US",
+      "subscribeBarButtonText": "JOIN",
+      "facebook": "https://www.facebook.com/",
+      "instagram": "https://www.instagram.com/",
+      "line": "https://linecorp.com/",
+      "pinterest": "https://www.pinterest.com/",
+      "twitter": "https://twitter.com/",
+      "snapchat": "https://www.snapchat.com/",
+      "shopDescription": "Here is the shop description."
+    },
+    "Footer2": {
+      "backgroundColor": "",
+      "textColor": "#2B2B2B",
+      "componentList": [
+        {
+          "isTextDescription": true,
+          "componentType": "textDescription",
+          "textDescriptionTitle": "About us",
+          "textDescriptionDesc": "Share information about your brand with your customers."
+        },
+        {
+          "componentType": "navigation",
+          "isNavigation": true,
+          "navigationTitle": "",
+          "navGroupId": "foot",
+          "openInNewTab": true
+        },
+        {
+          "logo": {
+            "url": "https://img.myshopline.com/image/shopline/eb30d7db90eb49958bf81de184265566.png",
+            "alt": ""
+          },
+          "componentType": "social",
+          "isSocial": true,
+          "socialTitle": "Our Store",
+          "logoWidth": 100,
+          "showSocialAccounts": true,
+          "facebook": "https://www.facebook.com/",
+          "instagram": "https://www.instagram.com/",
+          "twitter": "https://twitter.com/",
+          "snapchat": "",
+          "pinterest": "",
+          "line": "",
+          "socialAccountsColor": "#000000"
+        }
+      ],
+      "showPayChannel": true,
+      "showPoweredBy": true,
+      "widthMode": "auto",
+      "payChannelList": [
+        {
+          "type": "visa",
+          "show": true
+        },
+        {
+          "type": "visa-electron",
+          "show": true
+        },
+        {
+          "type": "master-card",
+          "show": true
+        },
+        {
+          "type": "master-card2",
+          "show": true
+        },
+        {
+          "type": "union-pay",
+          "show": true
+        },
+        {
+          "type": "jcb",
+          "show": true
+        },
+        {
+          "type": "american-express",
+          "show": true
+        },
+        {
+          "type": "discover",
+          "show": true
+        },
+        {
+          "type": "paypal",
+          "show": true
+        }
+      ]
+    }
+  },
+  "activity": {
+    "activitySeq": "SL201SAS04931402461284442156",
+    "detail": {
+      "activitySeq": "SL201SAS04931402461284442156",
+      "defaultActivityName": "test",
+      "customActivityName": null,
+      "defaultActivityDesc": "",
+      "customActivityDesc": null,
+      "startTime": 1624355760000,
+      "endTime": null,
+      "benefitType": 2,
+      "benefitConditions": [
+        {
+          "benefitEvent": {
+            "type": 0,
+            "minThreshold": 100
+          },
+          "benefit": {
+            "promotionSeq": null,
+            "benefitAmount": null,
+            "discount": 99,
+            "offPercent": 1
+          },
+          "sequenceNumber": 1
+        }
+      ],
+      "targetUserType": 0,
+      "targetUserInfoList": [],
+      "bannerPicUrl": "https://d2n979dmt31clo.cloudfront.net/image/store/3300003187/1607162100007/afb9732d9f6143c6b767f532a0b43edc.jpeg",
+      "bannerPicUrlMobile": "",
+      "defaultDescUrl": "",
+      "customDescUrl": null,
+      "defaultActivityRule": "defaultActivityRule，defaultActivityRule，defaultActivityRule，defaultActivityRule",
+      "customActivityRule": null,
+      "defaultKeywords": "",
+      "status": 1,
+      "state": 1,
+      "userLimitedType": 0,
+      "acquirePerUserLimit": -1,
+      "promotionSubType": 0,
+      "defaultSeo": "{\"title\":\"test1\",\"desc\":\"\",\"handleList\":[\"test1\"],\"url\":\"test1\"}",
+      "customSeo": null
+    },
+    "listData": {
+      "data": {
+        "pageNum": 1,
+        "pageSize": 20,
+        "total": 1,
+        "lastPage": true,
+        "list": [
+          {
+            "storeId": "1607162100007",
+            "merchantId": "3300003187",
+            "spuSeq": "16048226481955653059450327",
+            "shelves": true,
+            "title": "哈哈哈",
+            "image": null,
+            "imageList": [],
+            "stock": -10,
+            "soldOut": false,
+            "productMinPrice": 0,
+            "productMaxPrice": 0,
+            "originPrice": null,
+            "infiniteStock": false,
+            "version": null,
+            "vipPrice": null,
+            "spuCommentSummary": {
+              "total": 0,
+              "score": 0
+            },
+            "saleActivityList": [
+              {
+                "activitySeq": "SL201SAS04931402461284442156",
+                "startTime": 1624355760000,
+                "endTime": null,
+                "promotionType": 1,
+                "promotionSubType": 0,
+                "benefitType": 2,
+                "activityBenefitConditionList": [
+                  {
+                    "benefitCondition": {
+                      "type": 0,
+                      "minThreshold": 100
+                    },
+                    "benefit": {
+                      "benefitAmount": null,
+                      "discount": 99
+                    },
+                    "sequenceNumber": 1
+                  }
+                ],
+                "promotionProductList": null
+              }
+            ],
+            "type": null,
+            "weight": null,
+            "uniqueKey": "哈哈哈"
+          }
+        ]
+      },
+      "fetchStatus": "SUCCESS"
+    }
+  },
+  "cartInfo": {
+    "activeItems": [
+      {
+        "promotion": {
+          "name": "自动优惠满一件",
+          "promotionSeq": "SL201BN4900613293847824424",
+          "activitySeq": "SL201SAS04900613293445171271",
+          "type": 1,
+          "benefitType": 2,
+          "promotionBenefitList": [{ "type": 1, "minThreshold": 1, "benefit": "80", "hit": true, "amount": "34000" }]
+        },
+        "itemList": [
+          {
+            "image": "https://d2n979dmt31clo.cloudfront.net/image/store/4200014062/1614060443677/093435b44bed4424acd7ba599374a8fe.jpeg",
+            "spuId": "16048110489420573706862029",
+            "skuId": "18049634171863480914802029",
+            "name": "有限库存可超卖1",
+            "skuAttr": ["red", "10"],
+            "skuAttributes": [
+              {
+                "attributeName": "Color",
+                "attributeValue": "red"
+              },
+              {
+                "attributeName": "Size",
+                "attributeValue": "8"
+              }
+            ],
+            "shelves": true,
+            "price": "5000",
+            "salePrice": "5000",
+            "num": 1,
+            "total": "5000",
+            "maxLimit": null,
+            "minLimit": null,
+            "stockType": 0,
+            "stock": 5,
+            "time": "1626170868876",
+            "errorList": [],
+            "priceType": null,
+            "promotionAmount": null,
+            "startTime": null,
+            "endTime": null,
+            "promotionRemainStock": null
+          },
+          {
+            "image": "https://d2n979dmt31clo.cloudfront.net/image/store/4200014062/1614060443677/712f4efb5c7f43bf998d0599ce1a61ff.jpeg",
+            "spuId": "16048110472135343605762029",
+            "skuId": "18048110472136853555872029",
+            "name": "无限库存商品1",
+            "skuAttr": [],
+            "skuAttributes": [
+              {
+                "attributeName": "Color",
+                "attributeValue": "red"
+              },
+              {
+                "attributeName": "Size",
+                "attributeValue": "8"
+              }
+            ],
+            "shelves": true,
+            "price": "10000",
+            "salePrice": "10000",
+            "num": 5,
+            "total": "50000",
+            "maxLimit": null,
+            "minLimit": null,
+            "stockType": 0,
+            "stock": 0,
+            "time": "1626148016853",
+            "errorList": ["0105"],
+            "priceType": null,
+            "promotionAmount": null,
+            "startTime": null,
+            "endTime": null,
+            "promotionRemainStock": null
+          },
+          {
+            "image": "https://d2n979dmt31clo.cloudfront.net/image/store/4200014062/1614060443677/b9730ec14c2941b88bb5d2724cd09fee.jpeg",
+            "spuId": "16048110479782734203842029",
+            "skuId": "18048110479784076380372029",
+            "name": "有限库存不超卖",
+            "skuAttr": [],
+            "skuAttributes": [
+              {
+                "attributeName": "Color",
+                "attributeValue": "red"
+              },
+              {
+                "attributeName": "Size",
+                "attributeValue": "8"
+              }
+            ],
+            "shelves": true,
+            "price": "20000",
+            "salePrice": "20000",
+            "num": 5,
+            "total": "100000",
+            "maxLimit": null,
+            "minLimit": null,
+            "stockType": 0,
+            "stock": 3,
+            "time": "1625747633225",
+            "errorList": ["0105"],
+            "priceType": null,
+            "promotionAmount": null,
+            "startTime": null,
+            "endTime": null,
+            "promotionRemainStock": null
+          },
+          {
+            "image": "https://d2n979dmt31clo.cloudfront.net/image/store/4200014062/1614060443677/d6062b03944f4371ac51272fd92e62ac.jpeg",
+            "spuId": "16049066941977164267982029",
+            "skuId": "18049385477319022623052029",
+            "name": "商品属性25555",
+            "skuAttr": [
+              "商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属",
+              "商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属",
+              "PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4"
+            ],
+            "skuAttributes": [
+              {
+                "attributeName": "Color",
+                "attributeValue": "商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属"
+              },
+              {
+                "attributeName": "Size",
+                "attributeValue": "商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属性25555商品属"
+              },
+              {
+                "attributeName": "Code",
+                "attributeValue": "PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4938542113984455723PA4"
+              }
+            ],
+            "shelves": true,
+            "price": "1000",
+            "salePrice": "1000",
+            "num": 15,
+            "total": "15000",
+            "maxLimit": null,
+            "minLimit": null,
+            "stockType": 0,
+            "stock": -6,
+            "time": "1625649085705",
+            "errorList": ["0105"],
+            "priceType": null,
+            "promotionAmount": null,
+            "startTime": null,
+            "endTime": null,
+            "promotionRemainStock": null
+          }
+        ],
+        "totalAmount": "170000",
+        "realTotalAmount": "136000"
+      },
+      {
+        "promotion": null,
+        "itemList": [
+          {
+            "image": null,
+            "spuId": "16048111690551463261122029",
+            "skuId": "18048111690558341919532029",
+            "name": "阿萨德解放大路上的附近的萨雷锋精神分裂的时间分开了大煞风景滴漏式咖啡机苏里科夫都是减肥路上的距离就疯狂滴漏式咖啡机里的卡萨附近的是非得失距离放假了多少",
+            "skuAttr": [],
+            "skuAttributes": [
+              {
+                "attributeName": "Color",
+                "attributeValue": "red"
+              },
+              {
+                "attributeName": "Size",
+                "attributeValue": "8"
+              }
+            ],
+            "shelves": true,
+            "price": "0",
+            "salePrice": "0",
+            "num": 1,
+            "total": "0",
+            "maxLimit": null,
+            "minLimit": null,
+            "stockType": 2,
+            "stock": 98874,
+            "time": "1625643053639",
+            "errorList": [],
+            "priceType": null,
+            "promotionAmount": null,
+            "startTime": null,
+            "endTime": null,
+            "promotionRemainStock": null
+          }
+        ],
+        "totalAmount": "0",
+        "realTotalAmount": null
+      },
+      {
+        "promotion": {
+          "name": "0712M件N折",
+          "promotionSeq": "SL201BN4962005444892224520",
+          "activitySeq": "SL201SAS04962005444674120788",
+          "type": 1,
+          "benefitType": 11,
+          "promotionBenefitList": [
+            {
+              "type": 1,
+              "minThreshold": 3,
+              "benefit": "80",
+              "hit": true,
+              "amount": "10"
+            },
+            {
+              "type": 1,
+              "minThreshold": 5,
+              "benefit": "70",
+              "hit": false,
+              "amount": "2"
+            }
+          ]
+        },
+        "itemList": [
+          {
+            "image": "https://d2n979dmt31clo.cloudfront.net/image/store/4200012349/1621071870435/a0669e5ee5c847bdab8d6373defabbc2.png",
+            "spuId": "16048936612391956767430351",
+            "skuId": "18048936612393634488320351",
+            "name": "测试worldpay支付商品",
+            "skuAttr": ["red"],
+            "skuAttributes": [
+              {
+                "attributeName": "Color",
+                "attributeValue": "red"
+              },
+              {
+                "attributeName": "Size",
+                "attributeValue": "8"
+              }
+            ],
+            "shelves": true,
+            "price": "50",
+            "salePrice": "1000",
+            "num": 1,
+            "total": "50",
+            "maxLimit": null,
+            "minLimit": null,
+            "stockType": 0,
+            "stock": 8884,
+            "time": "1626266354468",
+            "errorList": [],
+            "priceType": 3,
+            "promotionAmount": "10",
+            "startTime": "1626153660000",
+            "endTime": "1628400060000",
+            "promotionRemainStock": -1
+          },
+          {
+            "image": "https://d2n979dmt31clo.cloudfront.net/image/store/4200012349/1621071870435/a0669e5ee5c847bdab8d6373defabbc2.png",
+            "spuId": "16048936612391956767430351",
+            "skuId": "18048936612393634488320351",
+            "name": "测试worldpay支付商品",
+            "skuAttr": ["red"],
+            "skuAttributes": [
+              {
+                "attributeName": "Color",
+                "attributeValue": "red"
+              },
+              {
+                "attributeName": "Size",
+                "attributeValue": "8"
+              }
+            ],
+            "shelves": true,
+            "price": "50",
+            "salePrice": "1000",
+            "num": 2,
+            "total": "100",
+            "maxLimit": null,
+            "minLimit": null,
+            "stockType": 0,
+            "stock": 8884,
+            "time": "1626266354468",
+            "errorList": [],
+            "priceType": 0,
+            "promotionAmount": "0",
+            "startTime": "1626153660000",
+            "endTime": "1628400060000",
+            "promotionRemainStock": -1
+          }
+        ],
+        "totalAmount": "150",
+        "realTotalAmount": "140"
+      }
+    ],
+    "inactiveItems": [
+      {
+        "image": "https://d2n979dmt31clo.cloudfront.net/image/store/4200014062/1614060443677/c5f73991257b4939b3e5a8dea6ea3bdd.jpeg",
+        "spuId": "16048241870678687754772029",
+        "skuId": "18048241870681036564842029",
+        "name": "新商品\t制表符   \t\\0",
+        "skuAttr": [],
+        "skuAttributes": [
+          {
+            "attributeName": "Color",
+            "attributeValue": "red"
+          },
+          {
+            "attributeName": "Size",
+            "attributeValue": "8"
+          }
+        ],
+        "shelves": false,
+        "price": "10",
+        "salePrice": "0",
+        "num": 1,
+        "total": "10",
+        "maxLimit": null,
+        "minLimit": null,
+        "stockType": 2,
+        "stock": -69,
+        "time": "1625745644778",
+        "errorList": [],
+        "priceType": null,
+        "promotionAmount": null,
+        "startTime": null,
+        "endTime": null,
+        "promotionRemainStock": null
+      }
+    ],
+    "count": 28,
+    "inactiveCount": 1,
+    "totalAmount": "170000",
+    "promotionAmount": "34000",
+    "realTotalAmount": "136000",
+    "realAmount": null,
+    "freeShipping": true,
+    "promotionCodeDTO": { "promotionCode": null, "codePromotionAmount": "10086", "valid": null, "errorMsg": null, "discountCodePromotionExclusion": true },
+    "shoppingMoneyDTO": null,
+    "cartFrom": "1"
+  }
+}

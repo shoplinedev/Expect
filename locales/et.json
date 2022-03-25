@@ -199,7 +199,7 @@
     "username": "Nimi"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Täname, et võtsite meiega ühendust ja me vastame teile niipea kui võimalik."
   },
   "footer": {
     "copyright": "Kõik õigused kaitstud.",
@@ -208,6 +208,15 @@
     "subscribeError": "Tellimine ebaõnnestus",
     "subscribeRegExpError": "Vale e-posti aadressi formaat",
     "subscribeSuccess": "Tellimine õnnestus"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Aktsepteerida",
+      "decline": "Langus",
+      "link": "Privaatsuspoliitika",
+      "tips": "Teie kasutuskogemuse parandamiseks kasutame küpsiseid sisselogimisandmete meeldejätmiseks, statistika kogumiseks ja teie huvidele kohandatud sisu edastamiseks. Küpsiste aktsepteerimiseks või meie privaatsuspoliitika vaatamiseks klõpsake nuppu Aktsepteeri.",
+      "title": "Me hoolime teie privaatsusest"
+    }
   },
   "header": {
     "cart": "Sinu ostukorv",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} allahindlus",
         "discount2": "Tasuta saatmine",
+        "level": "Jaoks {{level}}",
         "shippingRateBelow": "Kaubavedu on väiksem kui {value}",
+        "specified": "Kindlaksmääratud klientide jaoks",
         "threshold": "Osta {threshold}",
         "until": "Kehtib kuni: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "VÄLKMÜÜK",
     "flash-sale-tips": "Ostulimiit: Kogus {{count}}",
+    "gift": {
+      "gotAll": "Palju õnne! Saite {{saved}} TASUTA KINGITUST!",
+      "noReceived": "Palju õnne! Saate valida kuni {{willSave}} TASUTA KINGITUST",
+      "notMetAmount": "Ostke {{threshold}} veel, saate kuni {{willSave}} TASUTA KINGITUST",
+      "notMetQuantity": "Ostke veel {{threshold}} toodet, saate kuni {{willSave}} TASUTA KINGITUST",
+      "select": "Vali",
+      "spendMoreMoneyGetMore": "Palju õnne! Saite {{saved}} tasuta kingitust juba! Kulutage {{threshold}} veel, et saada kuni {{willSave}} TASUTA KINGITUST",
+      "spendMoreQuantityGetMore": "Palju õnne! Saite {{saved}} tasuta kingius juba! Ostke {{threshold}} veel, saate kuni {{willSave}} TASUTA KINGITUSEST"
+    },
     "hot-sale": "Kuum allahindlus!",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "ThirdID (kolmas ID) või kanal pole konfigureeritud",
       "err1009": "Kolmanda poole valideerimine ebaõnnestus",
       "err1010": "Tekstisõnumi/e-posti pohja muutmine nurjus",
+      "err1017": "Kontod on ohus",
       "err2001": "Mobiil on registreeritud",
       "err2002": "E-posti aadress on registreeritud",
       "err2003": "Ära proovi nii sageli",
@@ -1232,6 +1253,7 @@
       "err2005": "Koodiviga",
       "err2006": "Liiga palju kinnitusi, hangi muu kood",
       "err2007": "Tekstisõnumi/e-posti pohja muutmine nurjus",
+      "err2016": "Kontod on ohus",
       "err3001": "Kehtetu küpsis",
       "err3002": "Kasutajad, kes pole seotud mobiiltelefoni/e-postiga peavad proovima muuta oma salasõnu",
       "err3003": "Ära proovi nii sageli",

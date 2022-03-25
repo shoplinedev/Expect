@@ -170,7 +170,7 @@
         "type": "color_picker",
         "label": {
           "zh-hans-cn": "购物车提示点",
-          "en": "Shopping cart prompt points",
+          "en": "Shopping cart prompt",
           "id": "Titik pengingat troli",
           "th": "จุดเตือนตะกร้าสินค้า",
           "vi": "Điểm nhắc nhở giỏ hàng",
@@ -280,7 +280,7 @@
         "type": "color_picker",
         "label": {
           "zh-hans-cn": "公告栏背景",
-          "en": "Notice board background",
+          "en": "Bullentin board background",
           "id": "latar papan buletin",
           "th": "พื้นหลังกระดานข่าว",
           "vi": "Nền cột thông báo",
@@ -294,7 +294,7 @@
         "type": "color_picker",
         "label": {
           "zh-hans-cn": "公告栏文字",
-          "en": "Notice board text",
+          "en": "Bullentin board text",
           "id": "Teks papan pengumuman",
           "th": "ข้อความกระดานข่าว",
           "vi": "Chữ bảng công bố",
@@ -828,7 +828,7 @@
         "type": "group_header",
         "label": {
           "zh-hans-cn": "正文",
-          "en": "Main text",
+          "en": "Body text",
           "id": "Teks",
           "th": "ข้อความ",
           "vi": "Nội dung chính",
@@ -1100,7 +1100,7 @@
             "value": "rounded",
             "label": {
               "zh-hans-cn": "全圆角",
-              "en": "Full round",
+              "en": "Full rounded corner",
               "id": "Sudut bulat penuh",
               "th": "รูปร่างกลมเต็ม",
               "vi": "Góc tròn hết",
@@ -1128,7 +1128,7 @@
         "type": "switch",
         "label": {
           "zh-hans-cn": "售价小数位缩小展示",
-          "en": "Zoom out display for decimals of the selling price",
+          "en": "Shrink the display for decimals of the selling price",
           "id": "Tampilan desimal dari harga jual",
           "th": "แสดงการทำให้ทศนิยมของราคาขายให้เล็กลง",
           "vi": "Hiển thị thu nhỏ số thập phân giá bán lẻ",
@@ -1142,7 +1142,7 @@
         "type": "range",
         "label": {
           "zh-hans-cn": "商品图留白",
-          "en": "Image margin",
+          "en": "Product image left blank",
           "id": "Gambar produk dibiarkan kosong",
           "th": "รูปภาพสินค้าเว้นว่างไว้",
           "vi": "Ảnh sản phẩm để trắng",
@@ -1208,7 +1208,7 @@
             "value": "landscape",
             "label": {
               "zh-hans-cn": "横向(4:3)",
-              "en": "Landscape",
+              "en": "Landscape (4:3)",
               "id": "Lanskap (4:3)",
               "th": "แนวนอน (4:3)",
               "vi": "Dạng ngang (4:3)",
@@ -1220,7 +1220,7 @@
             "value": "portrait",
             "label": {
               "zh-hans-cn": "纵向(2:3)",
-              "en": "Portrait",
+              "en": "Portrait (2:3)",
               "id": "Potret (2:3)",
               "th": "แนวตั้ง (2:3)",
               "vi": "Dạng dọc (2:3)",
@@ -1260,7 +1260,7 @@
             "value": "product",
             "label": {
               "zh-hans-cn": "使用分类下首个商品图",
-              "en": "First Product",
+              "en": "Apply the first product image of catagory",
               "id": "Gunakan gambar produk pertama kategori",
               "th": "ใช้ภาพสินค้าภาพแรกภายใต้หมวดหมู่",
               "vi": "Sử dụng ảnh sản phẩm đầu tiên phân loại tiếp theo",
@@ -1373,7 +1373,7 @@
         "type": "switch",
         "label": {
           "zh-hans-cn": "支持快速加购",
-          "en": "Supports fast purchase",
+          "en": "Support fast add-on sale",
           "id": "Mendukung pembelian cepat",
           "th": "รองรับการซื้ออย่างรวดเร็ว",
           "vi": "Ủng hộ nhanh chóng cho vào giỏ hàng",
@@ -1387,7 +1387,7 @@
         "type": "switch",
         "label": {
           "zh-hans-cn": "支持快速查看",
-          "en": "Supports for Quick View",
+          "en": "Quick view supported",
           "id": "Mendukung lihat cepat",
           "th": "รองรับการดูอย่างรวดเร็ว",
           "vi": "Ủng hộ tra xem nhanh",
@@ -1469,7 +1469,7 @@
         "type": "select",
         "label": {
           "zh-hans-cn": "商品图填充方式",
-          "en": "Product image filling style",
+          "en": "Filling mode of product image",
           "id": "Mode pengisian gambar produk",
           "th": "วิธีการเติมภาพสินค้า",
           "vi": "Cách lấp đầy hình ảnh hàng hóa",
@@ -1547,7 +1547,7 @@
             "value": "display_up_to_1_rows",
             "label": {
               "zh-hans-cn": "最多展示1行",
-              "en": "Display at most 1 line",
+              "en": "Display at most 1 row",
               "id": "Tampilkan hingga 1 baris",
               "th": "แสดงไม่เกิน 1 แถว",
               "vi": "Bày ra tối đa 1 hàng",
@@ -1559,7 +1559,7 @@
             "value": "display_up_to_2_rows",
             "label": {
               "zh-hans-cn": "最多展示2行",
-              "en": "Display at most 2 lines",
+              "en": "Display at most 2 rows",
               "id": "Tampilkan hingga 2 baris",
               "th": "แสดงได้ถึง 2 แถว",
               "vi": "Bày ra tối đa 2 hàng",
@@ -1575,7 +1575,7 @@
         "type": "switch",
         "label": {
           "zh-hans-cn": "手机端展示商品标题",
-          "en": "Display of product title on mobile phones",
+          "en": "Product title displayed on mobile devices",
           "id": "Judul produk tampilan port seluler",
           "th": "แสดงหัวข้อสินค้าบนโทรศัพท์มือถือ",
           "vi": "bày ratiêu đề sản phẩm trên điện thoại di động",
@@ -1597,7 +1597,7 @@
         },
         "info": {
           "zh-hans-cn": "影响范围包括商品详情页、首页的单个商品组件",
-          "en": "It will influence the range includes product detail page and the single product component of the homepage",
+          "en": "This setting will influence product detail pages and single product components on the homepage",
           "id": "Cakupan pengaruh mencakup halaman detail produk, halaman beranda komponen produk tunggal",
           "th": "ขอบเขตของอิทธิพลรวมถึงส่วนประกอบสินค้าเดียวในหน้ารายละเอียดสินค้าและหน้าแรก",
           "vi": "Phạm vi ảnh hưởng bao gồm trang chi tiết sản phẩm,t thành phần của sản phẩm đơn trang đầu",
@@ -1650,7 +1650,7 @@
         "type": "switch",
         "label": {
           "zh-hans-cn": "展示数量选择器",
-          "en": "Enable product count selector",
+          "en": "Display product count selector",
           "id": "Pemilih kuantitas tayangan",
           "th": "ตัวเลือกหมายเลขการแสดง",
           "vi": "Hiển thị công cụ lựa chọn số lượng",
@@ -1714,7 +1714,7 @@
         },
         "info": {
           "zh-hans-cn": "影响范围包括商品详情页、首页的单个商品组件",
-          "en": "It will influence the range includes product detail page and the single product component of the homepage",
+          "en": "This setting will influence product detail pages and single product components on the homepage",
           "id": "Cakupan pengaruh mencakup halaman detail produk, halaman beranda komponen produk tunggal",
           "th": "ขอบเขตของอิทธิพลรวมถึงส่วนประกอบสินค้าเดียวในหน้ารายละเอียดสินค้าและหน้าแรก",
           "vi": "Phạm vi ảnh hưởng bao gồm trang chi tiết sản phẩm,t thành phần của sản phẩm đơn trang đầu",
@@ -1739,7 +1739,7 @@
             "value": "checkmark",
             "label": {
               "zh-hans-cn": "复选框",
-              "en": "Checkmark",
+              "en": "Checkbox",
               "id": "Kotak centang",
               "th": "กล่องเลือก",
               "vi": "Khung chọn lại",
@@ -1841,7 +1841,7 @@
             "value": "checkmark",
             "label": {
               "zh-hans-cn": "复选框",
-              "en": "Checkmark",
+              "en": "Checkbox",
               "id": "Kotak centang",
               "th": "กล่องเลือก",
               "vi": "Khung chọn lại",
@@ -1943,7 +1943,7 @@
             "value": "checkmark",
             "label": {
               "zh-hans-cn": "复选框",
-              "en": "Checkmark",
+              "en": "Checkbox",
               "id": "Kotak centang",
               "th": "กล่องเลือก",
               "vi": "Khung chọn lại",
@@ -2045,7 +2045,7 @@
             "value": "checkmark",
             "label": {
               "zh-hans-cn": "复选框",
-              "en": "Checkmark",
+              "en": "Checkbox",
               "id": "Kotak centang",
               "th": "กล่องเลือก",
               "vi": "Khung chọn lại",
@@ -2143,7 +2143,7 @@
         },
         "info": {
           "zh-hans-cn": "影响范围包括商品详情页、首页的单个商品组件",
-          "en": "It will influence the range includes product detail page and the single product component of the homepage",
+          "en": "This setting will influence product detail pages and single product components on the homepage",
           "id": "Cakupan pengaruh mencakup halaman detail produk, halaman beranda komponen produk tunggal",
           "th": "ขอบเขตของอิทธิพลรวมถึงส่วนประกอบสินค้าเดียวในหน้ารายละเอียดสินค้าและหน้าแรก",
           "vi": "Phạm vi ảnh hưởng bao gồm trang chi tiết sản phẩm,t thành phần của sản phẩm đơn trang đầu",
@@ -2253,7 +2253,7 @@
         "type": "select",
         "label": {
           "zh-hans-cn": "打开购物车方式",
-          "en": "Open mode of the shopping cart",
+          "en": "Opening mode of the shopping cart",
           "id": "Cara membuka troli",
           "th": "ช่องทางการเปิดตะกร้าสินค้า",
           "vi": "Mở hình thức giỏ hàng",
@@ -2265,7 +2265,7 @@
             "value": "select",
             "label": {
               "zh-hans-cn": "打开下拉框",
-              "en": "Open the drop-down list",
+              "en": "Show drop-down list",
               "id": "Buka kotak tarik-turun",
               "th": "เปิดกล่องแบบเลื่อนลง",
               "vi": "Mở khung kéo xuống",
@@ -2868,7 +2868,7 @@
         },
         "info": {
           "zh-hans-cn": "用于客户访问你的社交媒体账号",
-          "en": "Used to let customers visit your social media account",
+          "en": "Let customers visit your social media account",
           "id": "Pelanggan menggunakan untuk mengakses akun media sosial Anda",
           "th": "ใช้สำหรับลูกค้าเข้าถึงบัญชีโซเชียลมีเดียของคุณ",
           "vi": "Do người dùng ghé thăm tài khoản xã giao truyền thông của bạn",
@@ -3001,7 +3001,7 @@
         },
         "info": {
           "zh-hans-cn": "在商品详情页、博客页提供分享操作",
-          "en": "Enable sharing on the product detail page and blog page",
+          "en": "Enable sharing on product detail page and blog page",
           "id": "Bagikan operasi berbagi pada halaman detail produk dan halaman blog",
           "th": "จัดให้มีการดำเนินการแบ่งปันในหน้ารายละเอียดสินค้าและหน้าบล็อก",
           "vi": "Cung cấp thao tác chia sẻ ở trang chi tiết sản phẩm và trang blog",
@@ -3084,7 +3084,7 @@
   {
     "name": {
       "zh-hans-cn": "网站图标",
-      "en": "Favicon",
+      "en": "Website icon",
       "id": "Label situs web",
       "th": "ไอคอนเว็บไซต์",
       "vi": "Biểu tượng trang web",

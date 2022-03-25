@@ -199,7 +199,7 @@
     "username": "Name"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Thank you for contacting us, we will get back to you ASAP."
   },
   "footer": {
     "copyright": "All Rights Reserved.",
@@ -208,6 +208,15 @@
     "subscribeError": "Subscribe fail",
     "subscribeRegExpError": "Email invalid",
     "subscribeSuccess": "Subscribe success"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "accept",
+      "decline": "decline",
+      "link": "Privacy Policy",
+      "tips": "To improve your experience, we use cookies to remember log-in details, collect statistics and deliver content tailored to your interests. Click Accept to accept cookies or see our Privacy Policy.",
+      "title": "We care about your privacy"
+    }
   },
   "header": {
     "cart": "Cart",
@@ -294,7 +303,7 @@
       "delivery-return": "Returned",
       "picked-up": "Received",
       "problem": "Issues like problem shipment and lost orders require manual support",
-      "shipped": "Delivered",
+      "shipped": "Shipped",
       "shipping": "Delivering",
       "stocking": "Preparing the products"
     },
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} OFF",
         "discount2": "Free Shipping",
+        "level": "for {{level}}",
         "shippingRateBelow": "for shipping rate below {value}",
+        "specified": "for specified customers",
         "threshold": "Buy {threshold}",
         "until": "until: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "FLASH SALE",
     "flash-sale-tips": "Limit: {{count}} ",
+    "gift": {
+      "gotAll": "Congratulations! You’ve got {{saved}} FREE-GIFT!",
+      "noReceived": "Congratulations! You can enjoy up to {{willSave}} FREE-GIFT",
+      "notMetAmount": "Buy {{threshold}} more, enjoy up to {{willSave}} FREE-GIFT",
+      "notMetQuantity": "Buy {{threshold}} more items, enjoy up to {{willSave}} FREE-GIFT",
+      "select": "Select",
+      "spendMoreMoneyGetMore": "Congratulations! Got {{saved}} Free Gift already! Spend {{threshold}} more, enjoy up to {{willSave}} FREE-GIFT",
+      "spendMoreQuantityGetMore": "Congratulations! Got {{saved}} Free Gift already! Buy {{threshold}} more, enjoy up to {{willSave}} FREE-GIFT"
+    },
     "hot-sale": "Hot sale!",
     "promotion": {
       "reminder": {
@@ -963,7 +983,7 @@
     "delivery-address-abnormal": "Recipient's address error",
     "delivery-fee": "Shipping",
     "delivery-tax": "Freight tax",
-    "delivery-to-home": "Home delivery",
+    "delivery-to-home": "Ship",
     "delivery-way": "Delivery method",
     "enter-a-tip-on-more-than": "Enter a tip no more than {{amount}}",
     "express-bill-pic": "Logistics express image",
@@ -1225,6 +1245,7 @@
       "err1008": "The thirdId or channel has not been configured",
       "err1009": "Third party validation failed",
       "err1010": "Send code failed",
+      "err1017": "Your account is at risk",
       "err2001": "The mobile has been registered",
       "err2002": "The email has been registered",
       "err2003": "Don't try so frequently",
@@ -1232,6 +1253,7 @@
       "err2005": "Code error",
       "err2006": "Too many times of verification, please get another code",
       "err2007": "Send code failed",
+      "err2016": "Your account is at risk",
       "err3001": "Cookie invalid",
       "err3002": "Illegal operation",
       "err3003": "Don't try so frequently",

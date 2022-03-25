@@ -199,7 +199,7 @@
     "username": "姓名"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "謝謝您聯繫我們，我們將盡快回复您。"
   },
   "footer": {
     "copyright": "版權所有",
@@ -208,6 +208,15 @@
     "subscribeError": "訂閱失敗",
     "subscribeRegExpError": "電子郵件地址格式無效",
     "subscribeSuccess": "已訂閱"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "接受",
+      "decline": "拒絕",
+      "link": "隱私政策",
+      "tips": "為了給您提供更好的體驗，我們使用cookie去記錄您的登陸狀態，收集統計數據，為您提供感興趣的內容。點擊“接受”允許cookie的使用。或是查看我們的“隱私政策”。",
+      "title": "我們重視您的隱私"
+    }
   },
   "header": {
     "cart": "購物車",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "折扣 {discount}",
         "discount2": "免運費",
+        "level": "{{level}}可用",
         "shippingRateBelow": "運費低於{value}",
+        "specified": "指定客戶可用",
         "threshold": "買{threshold}",
         "until": "有效期至: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "限時促銷",
     "flash-sale-tips": "購買限制：{{count}} 件",
+    "gift": {
+      "gotAll": "恭喜！您已獲得{{saved}}件贈品！",
+      "noReceived": "恭喜！您可以選擇{{willSave}}件贈品",
+      "notMetAmount": "再購買{{threshold}}，最多可享{{willSave}}件贈品",
+      "notMetQuantity": "再購買{{threshold}}件商品，最多可享{{willSave}}件贈品",
+      "select": "選擇",
+      "spendMoreMoneyGetMore": "恭喜！已獲得{{saved}}件贈品！再購買{{threshold}}，最多可享{{willSave}}件贈品",
+      "spendMoreQuantityGetMore": "恭喜！已獲得{{saved}}件贈品！再購買{{threshold}}件商品，最多可享{{willSave}}件贈品"
+    },
     "hot-sale": "熱賣中",
     "promotion": {
       "reminder": {
@@ -1015,7 +1035,7 @@
     "not-support-paypal": "賣家不支援 PayPal",
     "now-can-not-comment": "目前無法評論！",
     "number-refund-product": "<italic>{{number}} </italic> 項退貨產品",
-    "off-shelf": "已從貨架上移除",
+    "off-shelf": "已下架",
     "only-refund": "僅退款",
     "optional-fill": "選填",
     "optional-support-jpg": "選用。支援 JPG/PNG",
@@ -1225,6 +1245,7 @@
       "err1008": "尚未設定第三方 ID 或管道",
       "err1009": "第三方驗證失敗",
       "err1010": "傳送代碼失敗",
+      "err1017": "賬號有風險",
       "err2001": "該手機已經註冊",
       "err2002": "該電子郵件已經註冊",
       "err2003": "請勿太頻繁嘗試",
@@ -1232,6 +1253,7 @@
       "err2005": "代碼錯誤",
       "err2006": "驗證次數過多，請取得另一組代碼",
       "err2007": "傳送代碼失敗",
+      "err2016": "賬號有風險",
       "err3001": "Cookie 無效",
       "err3002": "不正當操作",
       "err3003": "請勿太頻繁嘗試",

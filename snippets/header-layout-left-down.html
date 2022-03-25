@@ -1,7 +1,7 @@
 <div class="header__layout-container">
 	<div class="header__layout-background">
 		<div class="container g-4 g-md-6 header__layout header__layout--{{section.settings.main_menu_alignment}}">
-			<div class="header__item header__item--left d-md-flex">
+			<div class="header__item header__item--left d-lg-flex">
         <div class="header__nav-toggle j-header-nav-btn">
           <a class="header__toggle-btn header__toggle-on">
           {{ snippet 'icons/icon_menu' }}
@@ -15,8 +15,8 @@
 			</div>
 
 			{{#if section.settings.show_search}}
-				<div class="header__item header__item--searchBar d-md-flex d-none">
-					{{snippet 'header-search-bar' classnames="d-md-flex d-none full" }}
+				<div class="header__item header__item--searchBar d-lg-flex d-none">
+					{{snippet 'header-search-bar' classnames="d-lg-flex d-none full" }}
 				</div>
 			{{/if}}
 
@@ -25,12 +25,12 @@
 					{{snippet 'header-btns' btns='search' classnames='header__btn-search-mobile' }}
 				{{/if}}
 				{{#if section.settings.show_user_center}}
-					{{snippet 'header-btns' btns='user' classnames='d-none d-md-flex' }}
+					{{snippet 'header-btns' btns='user' classnames='d-none d-lg-flex' }}
 				{{/if}}
 				{{#if section.settings.show_cart}}
 					{{snippet 'header-btns' btns='cart' overlay_header=overlay_header}}
 				{{/if}}
-				<div class="j-header-drawer-btn header__nav--drawer d-md-none">
+				<div class="j-header-drawer-btn header__nav--drawer d-lg-none">
 					{{ snippet 'header-btns' btns='menu' }}
 				</div>
 			</div>
@@ -46,7 +46,7 @@
     {{ snippet 'header-mini-cart' }}
   </div>
 
-	<div class="header__nav-container d-none d-md-block">
+	<div class="header__nav-container d-none d-lg-block">
     <div class="container g-4 g-md-6">
       {{snippet 'desktop-site-nav' mega_menu_images=mega_menu_images main_menu=main_menu}}
     </div>

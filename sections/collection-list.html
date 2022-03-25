@@ -57,13 +57,30 @@ collection_products:
     {{/if}}
   </h2>
   {{/if}}
-  <div class="colletionlist__cagetegory  row row-cols-{{mbCol}} row-cols-lg-{{col}} row-cols-md-{{col}} {{marginItemClass}} {{mbClass}}">
+
+  {{assign 'padSize' (append '1/' section.settings.col)}}
+  {{assign 'pcSize' (append '1/' section.settings.col)}}
+  {{assign 'imgsizes' (append '(max-width: 749px) 50vw,(max-width: 959px) calc(100vw * 1/' section.settings.col '),(min-width: 960px) calc(100vw * 1/' section.settings.col '),(min-width: 1500px) calc(100vw * 1/' section.settings.col ')') }}
+  {{assign 'item-class' (append 'row-cols-md-'section.settings.col ' row-cols-lg-'section.settings.col) }}
+  {{#if section.settings.col '===' 5}}
+    {{assign 'padSize' (append '1/' section.settings.col)}}
+    {{assign 'pcSize' '1/4'}}
+    {{assign 'item-class' (append 'row-cols-md-4 row-cols-lg-'section.settings.col) }}
+    {{assign 'imgsizes' (append '(max-width: 749px) 50vw,(max-width: 959px) calc(100vw * 1/4),(min-width: 1500px) calc(100vw * 1/' section.settings.col '),(min-width: 960px) calc(100vw * 1/' section.settings.col ')') }}
+  {{/if}}
+  {{#if section.settings.col '===' 6}}
+    {{assign 'padSize' '1/4'}}
+    {{assign 'pcSize' '1/4'}}
+    {{assign 'item-class' (append 'row-cols-md-4 row-cols-lg-4') }}
+    {{assign 'imgsizes' (append '(max-width: 749px) 50vw,(max-width: 1199px) calc(100vw * 1/4),(min-width: 1200px) calc(100vw * 1/' section.settings.col '),(min-width: 1500px) calc(100vw * 1/' section.settings.col ')') }}
+  {{/if}}
+  <div class="colletionlist__cagetegory  row row-cols-{{mbCol}} {{item-class}} row-cols-xl-{{col}} {{marginItemClass}} {{mbClass}}">
     {{#each blocks}}
       {{assign 'sortationData' (get settings.category_id ../all_collections)}}
       {{#if settings.title}}
         {{assign 'showTitle' settings.title}}
       {{/if}}
-      {{snippet 'product/commons/collection-item' imgRealWidth=../real_product_img_width title=showTitle bgDisplayPosition=settings.image_display_area sortationData=sortationData pcSize=(append '1/' ../col) mSize=(append '1/' ../mbCol)}}
+      {{snippet 'product/commons/collection-item' imgRealWidth=../real_product_img_width title=showTitle bgDisplayPosition=settings.image_display_area sortationData=sortationData sizes=../imgsizes padSize=../padSize pcSize=../pcSize mSize=(append '1/' ../mbCol)}}
     {{/each}}
   </div>
 </div>
@@ -175,7 +192,7 @@ collection_products:
       "type": "switch",
       "label": {
         "zh-hans-cn": "移动端左右滑动",
-        "en": "Mobile swipe left and right",
+        "en": "Enable horizontal scroll on mobile",
         "id": "Geser ke kiri dan kanan di port seluler",
         "th": "ปัดไปทางซ้ายและขวาบนมือถือ",
         "vi": "Lướt trái phải trên ứng dụng điện thoại",
@@ -189,7 +206,7 @@ collection_products:
       "id": "add_margin",
       "label": {
         "zh-hans-cn": "增加分类间间距",
-        "en": "Increase the spacing for collections",
+        "en": "Increase the spacing between categories",
         "id": "Tambahkan jarak antar kategori",
         "th": "เพิ่มระยะห่างระหว่างหมวดหมู่",
         "vi": "Thêm khoảng cahcs gian phân loại",
@@ -203,7 +220,7 @@ collection_products:
       "id": "show_divider",
       "label": {
         "zh-hans-cn": "展示分割线",
-        "en": "Dismay the split line",
+        "en": "Display the divider",
         "id": "Tampilkan garis pemisah",
         "th": "แสดงเส้นแบ่ง",
         "vi": "Thể hiện tuyến phân cách",
@@ -281,7 +298,7 @@ collection_products:
           },
           "info": {
             "zh-hans-cn": "调整商品图展示的区域",
-            "en": "Adjust the display area of the product map",
+            "en": "Adjust the display area of product images",
             "id": "Sesuaikan area tampilan gambar produk",
             "th": "ปรับพื้นที่แสดงรูปภาพสินค้า",
             "vi": "Khu vực điển chỉnh ảnh hiển thị của sản phẩm",
@@ -306,7 +323,7 @@ collection_products:
               "value": "center_top",
               "label": {
                 "zh-hans-cn": "正上方",
-                "en": "Right above",
+                "en": "Above",
                 "id": "Tepat di atas",
                 "th": "ด้านบนโดยตรง",
                 "vi": "Phía trên chính giữa",
@@ -330,7 +347,7 @@ collection_products:
               "value": "center_left",
               "label": {
                 "zh-hans-cn": "左侧",
-                "en": "Left side",
+                "en": "Left",
                 "id": "Bagian kiri",
                 "th": "ด้านซ้าย",
                 "vi": "Mặt phải",
@@ -354,7 +371,7 @@ collection_products:
               "value": "center_right",
               "label": {
                 "zh-hans-cn": "右侧",
-                "en": "Right side",
+                "en": "Right",
                 "id": "Bagian kanan",
                 "th": "ด้านขวา",
                 "vi": "Bên phải",

@@ -199,7 +199,7 @@
     "username": "Nimi"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Kiitos yhteydenotosta, ja vastaamme sinulle mahdollisimman pian."
   },
   "footer": {
     "copyright": "Kaikki oikeudet pidätetään.",
@@ -208,6 +208,15 @@
     "subscribeError": "Tilaaminen epäonnistui",
     "subscribeRegExpError": "Virhe sähköpostiosoitteen muodossa",
     "subscribeSuccess": "Tilaaminen onnistui"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Hyväksyä",
+      "decline": "Lasku",
+      "link": "Tietosuojakäytäntö",
+      "tips": "Käyttökokemuksesi parantamiseksi käytämme evästeitä muistaaksemme kirjautumistiedot, kerätäksemme tilastoja ja toimittaaksemme kiinnostuksen kohteidesi mukaan räätälöityä sisältöä. Hyväksy evästeet klikkaamalla Hyväksy tai tutustu tietosuojakäytäntöömme.",
+      "title": "Välitämme yksityisyydestäsi"
+    }
   },
   "header": {
     "cart": "Ostoskorisi",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} alennusta",
         "discount2": "Ilmainen toimitus",
+        "level": "{{level}} varten",
         "shippingRateBelow": "Rahti on pienempi kuin {value}",
+        "specified": "Kiinteille asiakkaille",
         "threshold": "Osta {threshold}",
         "until": "Voimassa: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "FLASH-MYYNTI",
     "flash-sale-tips": "Ostoraja: {{count}} määrä",
+    "gift": {
+      "gotAll": "Onnea! Sinulla on {{saved}} ILMAINEN Lahja!",
+      "noReceived": "Onnea! Voit hyödynnä jopa {{willSave}} ILMAINEN Lahja",
+      "notMetAmount": "Osta {{threshold}} lisää, nauti jopa {{willSave}} ILMAINEN Lahja",
+      "notMetQuantity": "Osta {{threshold}} lisää kohteita, hyödynnä jopa {{willSave}} ILMAINEN Lahja",
+      "select": "Valitse",
+      "spendMoreMoneyGetMore": "Onnea! Saatu {{saved}} ilmainen lahjaa jo! Käytä {{threshold}} lisää, nauti jopa {{willSave}} ILMAINEN Lahja",
+      "spendMoreQuantityGetMore": "Onnea! Saatu {{saved}} ilmainen lahjaa jo! Osta {{threshold}} lisää, nauti jopa {{willSave}} ILMAINEN Lahja"
+    },
     "hot-sale": "Nyt myynnissä!",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Kolmatta tunnusta tai kanavaa ei ole määritetty",
       "err1009": "Kolmannen osapuolen vahvistus epäonnistui",
       "err1010": "Tekstiviestin/Sähköpostiviestin renderöinti epäonnistui",
+      "err1017": "Tilit ovat vaarassa",
       "err2001": "Matkapuhelinnumero on jo rekisteröity",
       "err2002": "Sähköpostiosoite on jo rekisteröity",
       "err2003": "Älä yritä kovin usein",
@@ -1232,6 +1253,7 @@
       "err2005": "Koodivirhe",
       "err2006": "Liian monta vahvistuspyyntöä lyhyen ajan sisällä, pyydä vahvistuskoodi uudelleen",
       "err2007": "Tekstiviestin/Sähköpostiviestin renderöinti epäonnistui",
+      "err2016": "Tilit ovat vaarassa",
       "err3001": "Eväste ei kelpaa",
       "err3002": "Käyttäjät, jotka on linkitetty matkapuhelinnumeroonsa/sähköpostiinsa, yrittävät vaihtaa salasanaa",
       "err3003": "Älä yritä kovin usein",

@@ -199,7 +199,7 @@
     "username": "Név"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Köszönjük, hogy felvette velünk a kapcsolatot, a lehető leghamarabb fel fogjuk venni Önnel a kapcsolatot. "
   },
   "footer": {
     "copyright": "Minden jog fenntartva.",
@@ -208,6 +208,15 @@
     "subscribeError": "Sikertelen feliratkozás",
     "subscribeRegExpError": "Hibás e-mail cím formátum",
     "subscribeSuccess": "Sikeres feliratkozás"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Elfogadás",
+      "decline": "Elutasítás",
+      "link": "Adatvédelmi szabályzatát",
+      "tips": "A felhasználói élmény javítása érdekében sütiket használunk a bejelentkezési adatok megjegyzéséhez, statisztikák gyűjtéséhez és az Ön érdeklődésére szabott tartalmak biztosításához. A sütik elfogadásához kattintson az „Elfogadás” gombra vagy tekintse meg az „Adatvédelmi szabályzatunkat”.",
+      "title": "Vigyázunk személyes adataira"
+    }
   },
   "header": {
     "cart": "Az Ön kosara",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} kedvezmény",
         "discount2": "Ingyenes szállítás",
+        "level": "{{level}} részére",
         "shippingRateBelow": "A szállítás kevesebb, mint {value}",
+        "specified": "Meghatározott ügyfelek részére",
         "threshold": "{threshold} vásárlás",
         "until": "Érvényesség vége: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "VILLÁMAKCIÓ",
     "flash-sale-tips": "Vásárlási mennyiség: {{count}} mennyiség",
+    "gift": {
+      "gotAll": "Gratulálunk! {{saved}} INGYENES AJÁNDÉKOT kapott!",
+      "noReceived": "Gratulálunk! Akár {{willSave}} INGYENES AJÁNDÉKOT is kaphat",
+      "notMetAmount": "Vegyen {{threshold}}-vel többet és kapjon akár {{willSave}} INGYENES AJÁNDÉKOT",
+      "notMetQuantity": "Vegyen {{threshold}}-vel több tételt és kapjon akár {{willSave}} INGYENES AJÁNDÉKOT",
+      "select": "Választás",
+      "spendMoreMoneyGetMore": "Gratulálunk! Már {{saved}} ingyenes ajándékot kapott! Költsön {{threshold}}-vel többet és kapjon akár {{willSave}} INGYENES AJÁNDÉKOT",
+      "spendMoreQuantityGetMore": "Gratulálunk! Már {{saved}} ingyenes ajándékot kapott! Vegyen {{threshold}}-vel többet és kapjon akár {{willSave}} INGYENES AJÁNDÉKOT"
+    },
     "hot-sale": "Óriási leárazás!",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "A harmadik azonosító vagy csatorna nincs konfigurálva",
       "err1009": "Harmadik fél megerősítése nem sikerült",
       "err1010": "Szöveges üzenet/levél sablon megjelenítés nem sikerült",
+      "err1017": "A fiók veszélyben van",
       "err2001": "A mobil regisztrálva van",
       "err2002": "Az email regisztrálva lett",
       "err2003": "Ne próbálkozzon ilyan gyakran",
@@ -1232,6 +1253,7 @@
       "err2005": "Kód hiba",
       "err2006": "Túl gyakori ellenőrzés, kérjük, kérjen másik kódot",
       "err2007": "Szöveges üzenet/levél sablon megjelenítés nem sikerült",
+      "err2016": "A fiók veszélyben van",
       "err3001": "A cookie érvénytelen",
       "err3002": "Mobiltelefonhoz/postafiókhoz nem kötött felhasználók próbálják meg megváltoztatni a jelszavaikat",
       "err3003": "Ne próbálkozzon ilyan gyakran",

@@ -6,11 +6,11 @@
 			</div>
 
       {{#if section.settings.main_menu_alignment '===' 'left-center'}}
-        <div class="header__item header__item--nav header__text-center d-none d-md-flex">
+        <div class="header__item header__item--nav header__text-center d-none d-lg-flex">
           {{snippet 'desktop-site-nav' main_menu=main_menu}}
         </div>
       {{else}}
-        <div class="header__item header__item--nav d-none d-md-flex">
+        <div class="header__item header__item--nav d-none d-lg-flex">
           {{snippet 'desktop-site-nav' mega_menu_images=mega_menu_images main_menu=main_menu}}
         </div>
       {{/if}}
@@ -20,12 +20,12 @@
 					{{snippet 'header-btns' btns='search' }}
 				{{/if}}
 				{{#if section.settings.show_user_center}}
-					{{snippet 'header-btns' btns='user' classnames='d-none d-md-flex' hideBtnText='true' }}
+					{{snippet 'header-btns' btns='user' classnames='d-none d-lg-flex' hideBtnText='true' }}
 				{{/if}}
 				{{#if section.settings.show_cart}}
 					{{snippet 'header-btns' btns='cart' overlay_header=overlay_header hideBtnText='true' }}
 				{{/if}}
-				<div class="j-header-drawer-btn d-md-none">
+				<div class="j-header-drawer-btn d-lg-none">
 					{{ snippet 'header-btns' btns='menu' }}
 				</div>
 			</div>

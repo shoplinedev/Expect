@@ -13,18 +13,20 @@
 {{/if}}
 
 <div class="trade-cart-sku-item{{#and (compare data.maxPurchaseTotalNum '==' 0) (compare data.maxPurchaseReasonCode '==' "STOCK_OVER")}} sold-out{{/and}}{{#if inactive '==' true}} inactive{{/if}}"
-     id="{{trade_cart_type}}{{append '-card-sku-item-' (numToString data.groupId) '-' data.spuId '-' data.skuId '-' (numToString data.priceType)}}">
-    <a class="trade-cart-sku-item-image"
-       href="{{#if (compare data.productSource '===' 1)}}/products/{{{data.spuId}}}{{else}}javascript:void(0){{/if}}"
-       data-product-source="{{data.productSource}}"
-       data-group-id="{{ numToString data.groupId}}"
-       data-name="{{data.name}}"
-       data-sku-id="{{data.skuId}}"
-       data-spu-id="{{data.spuId}}"
-       data-sku-attrs="{{join data.skuAttr ','}}"
-       data-price="{{data.price}}"
-       data-sale-price="{{data.salePrice}}"
-    >
+     id="{{trade_cart_type}}{{append '-card-sku-item-' (numToString data.groupId) '-' data.spuId '-' data.skuId '-' (numToString data.priceType)}}"
+>
+  <a class="trade-cart-sku-item-image"
+     href="{{#if (compare data.productSource '===' 1)}}/products/{{{data.spuId}}}{{else}}javascript:void(0){{/if}}"
+     data-product-source="{{data.productSource}}"
+     data-group-id="{{ numToString data.groupId}}"
+     data-name="{{data.name}}"
+     data-sku-id="{{data.skuId}}"
+     data-spu-id="{{data.spuId}}"
+     data-sku-attrs="{{join data.skuAttr ','}}"
+     data-price="{{data.price}}"
+     data-sale-price="{{data.salePrice}}"
+     data-item-no="{{data.itemNo}}"
+  >
     {{#unless data.image}}
       <div class="trade-cart-sku-item-image-fallback"></div>
     {{else}}
@@ -130,7 +132,7 @@
         {{/if}}
       </div>
     </div>
-      {{#if (or (compare (boolean data.businessFlag) '===' false ) (and data.businessFlag (boolean data.businessFlag.singleAdjustNum '===' true )) )}}
+      {{#if (or (compare (boolean data.businessFlag) '===' false ) (and data.businessFlag (boolean data.businessFlag.singleDelete '===' true )) )}}
         <div class="trade-cart-sku-item-remove">
           <button class="trade-cart-sku-item-remove-button body3 btn-link">{{t 'common.remove'}}</button>
         </div>

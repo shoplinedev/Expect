@@ -199,7 +199,7 @@
     "username": "Ime"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Hvala Vam što ste nas kontaktirali. Javit ćemo Vam se u  najkraćem mogućem roku."
   },
   "footer": {
     "copyright": "Sva prava pridržana.",
@@ -208,6 +208,15 @@
     "subscribeError": "Pretplata nije uspjela",
     "subscribeRegExpError": "Pogreška formata adrese e-pošte",
     "subscribeSuccess": "Uspješna pretplata"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Prihvatiti",
+      "decline": "Odbiti",
+      "link": "Politika privatnosti",
+      "tips": "U cilju poboljšanja vašeg iskustva, koristimo kolačiće za pamćenje podataka o prijavi, prikupljanje statistike i isporuku sadržaja prilagođenog vašim interesima. Kliknite Prihvatiti za „prihvaćanje“ kolačića ili pogledajte našu „Politiku privatnosti“.",
+      "title": "Mi brinemo o vašoj privatnost"
+    }
   },
   "header": {
     "cart": "Vaša košarica",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} umanjenje",
         "discount2": "Besplatna dostava",
+        "level": "Za {{level}}",
         "shippingRateBelow": "Teret je manji od {value}",
+        "specified": "Za određene klijente",
         "threshold": "Kupite {threshold}",
         "until": "Važeće do: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "FLASH RASPRODAJA",
     "flash-sale-tips": "Ograničenje kupnje: {{count}} količina",
+    "gift": {
+      "gotAll": "Čestitamo! Dobili ste {{saved}} BESPALTAN POKLON!",
+      "noReceived": "Čestitamo! Možete uživati do {{willSave}} BESPLATNOG-POKLONA.",
+      "notMetAmount": "Kupite još {{threshold}}, uživajte do {{willSave}} BESPLATNOG-POKLONA",
+      "notMetQuantity": "Kupite još {{threshold}} artikala, uživajte do {{willSave}} BESPLATNOG-POKLONA",
+      "select": "Izaberite",
+      "spendMoreMoneyGetMore": "Čestitamo! Već ste dobili {{saved}} besplatan poklon! Potrošite još {{threshold}}, uživajte do {{willSave}} BESPLATNOG-POKLONA",
+      "spendMoreQuantityGetMore": "Čestitamo! Već ste dobili {{saved}} besplatan poklon! Kupite još {{threshold}}, uživajte do {{willSave}} BESPLATNOG-POKLONA"
+    },
     "hot-sale": "Rasprodaja!",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Nije konfiguriran treći ID ili kanal",
       "err1009": "Provjera valjanosti treće strane nije uspjela",
       "err1010": "Renderiranje predloška tekstualne poruke/e-pošte nije uspjelo",
+      "err1017": "Račun pod rizikom",
       "err2001": "Mobitel je registriran",
       "err2002": "E-mail je registriran",
       "err2003": "Nemojte pokušavati tako često",
@@ -1232,6 +1253,7 @@
       "err2005": "Pogreška koda",
       "err2006": "Previše puta provjere, molimo uzmite drugi kod",
       "err2007": "Renderiranje predloška tekstualne poruke/e-pošte nije uspjelo",
+      "err2016": "Račun pod rizikom",
       "err3001": "Nevažeči kolačić",
       "err3002": "Korisnici koji nisu vezani za mobilne telefone/ poštanske sandučiće pokušavaju promijeniti svoje lozinke",
       "err3003": "Nemojte pokušavati tako često",

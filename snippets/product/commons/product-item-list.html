@@ -19,7 +19,7 @@ forbiddenBtn:禁止加购按钮
   {{assign 'real_product_img_width' 300}}
 {{/if}}
 
-{{ assign 'listLayoutObj' (JSONparse '{"large_grid": "row-cols-1 row-cols-md-2 product-list-large-grid", "small_grid": "row-cols-2 row-cols-md-4 product-list-small-grid", "list": "row-cols-1 row-cols-md-1 product-list-single-grid"}')  }}
+{{ assign 'listLayoutObj' (JSONparse (append (append '{"large_grid": "row-cols-1 row-cols-md-2 product-list-large-grid", "small_grid": "row-cols-2 row-cols-lg-3 row-cols-xl-' _colNum ) ' product-list-small-grid", "list": "row-cols-1 row-cols-md-1 product-list-single-grid"}' ) )  }}
 
 {{ assign 'productListCls' ( default (get gripType listLayoutObj) (get 'small_grid' listLayoutObj) ) }}
 {{assign 'containerMaxWidth' (default containerMaxWidth theme.settings.page_width)}}
@@ -27,7 +27,7 @@ forbiddenBtn:禁止加购按钮
 {{ assign 'mListLayoutSizeObj' (JSONparse '{"large_grid": "1", "small_grid": "2", "list": "1"}')  }}
 {{ assign 'pcSizeNum' ( default (get gripType pcListLayoutSizeObj) (get 'small_grid' pcListLayoutSizeObj) )}}
 {{ assign 'mSizeNum' ( default (get gripType mListLayoutSizeObj) (get 'small_grid' mListLayoutSizeObj) )}}
-
+{{assign 'padSize' (append '1/3')}}
 
 
 {{#if effectPage '==' 'productList'}}
@@ -37,7 +37,7 @@ forbiddenBtn:禁止加购按钮
 {{/if}}
   {{#each listData as |item|}}
     <div class="col product-item-list" data-a="{{ ../gripType }}">
-      {{snippet 'product/commons/product-item' containerMaxWidth=../containerMaxWidth pcSize=(cond (boolean ../effectPage '==' 'productList') (cond (boolean ../gripType '==' 'list') '200px' (append '1/' ../pcSizeNum)) (append '1/' ../_colNum)) mSize=(cond (boolean ../effectPage '==' 'productList') (append '1/' ../mSizeNum) '1/2')  previewQuery=../previewQuery imgRealWidth=../real_product_img_width spu=item forbiddenBtn=../forbiddenBtn index=@index className=../className }}
+      {{snippet 'product/commons/product-item' containerMaxWidth=../containerMaxWidth pcSize=(cond (boolean ../effectPage '==' 'productList') (cond (boolean ../gripType '==' 'list') '200px' (append '1/' ../pcSizeNum)) (append '1/' ../_colNum)) padSize=(cond (boolean ../effectPage '===' 'productList') ../padSize null) mSize=(cond (boolean ../effectPage '==' 'productList') (append '1/' ../mSizeNum) '1/2')  previewQuery=../previewQuery imgRealWidth=../real_product_img_width spu=item forbiddenBtn=../forbiddenBtn index=@index className=../className }}
     </div>
   {{/each}}
 </div>

@@ -16,6 +16,12 @@
 {{/if}}
 
 <div class="collection-list-main container g-4 g-md-6">
+  <div class="body4 breadcrumb">
+    <a class="breadcrumb-item" href="/">{{t 'common.home'}}</a>
+    <span class="breadcrumb-separator">/</span>
+    <a class="breadcrumb-item--last">{{t 'collection.all.h1Title'}}</a>
+  </div>
+
   {{#if section.settings.show_title}}
     <h1 class="collection-list-header title4">{{t 'collection.all.h1Title'}}</h1>
   {{/if}}
@@ -51,7 +57,7 @@
       "id": "display_type",
       "label": {
         "zh-hans-cn": "选择展示",
-        "en": "Choose to display",
+        "en": "Select to display",
         "id": "Pilih untuk tampilkan",
         "th": "เลือกการแสดงผล",
         "vi": "Lựa chọn hiển thị",

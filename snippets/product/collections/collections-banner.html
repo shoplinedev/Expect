@@ -16,7 +16,7 @@
         {{#if sortation.sortationImg}}
           <img {{{get 'responsiveAttr' (image_responsive sortation.sortationImg useLazyLoad=false ) }}} alt="">
         {{/if}}
-      </div>    
+      </div>
     </div>
   {{else}}
     {{!-- 如果没有banner图片，加入一个特殊的div给header作为标识 --}}
@@ -28,7 +28,11 @@
   {{#if settings.show_category_name}}
     <div class="product-list-banner-box-title {{boxClass}}">
       <div class="container gx-4 gx-md-6">
-        <a href="/" class="product-list-banner-box-title-url custom-body4">{{t 'common.home'}} /</a>
+        <div>
+          <a href="/" class="product-list-banner-box-title-url custom-body4">{{t 'common.home'}}</a>
+          <span style="margin: 0 7px; opacity: .3;">/</span>
+          <a class="product-list-banner-box-title-url custom-body4" style="opacity: .6;">{{sortation.title}}</a>
+        </div>
         <h1 class="product-list-banner-box-title-sortationTitle custom-title2 title2">{{sortation.title}}</h1>
       </div>
     </div>

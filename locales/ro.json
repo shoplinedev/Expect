@@ -199,7 +199,7 @@
     "username": "Nume"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Vă mulțumim că ne-ați contactat și vom reveni către dvs. cât mai curând posibil."
   },
   "footer": {
     "copyright": "Toate drepturile rezervate.",
@@ -208,6 +208,15 @@
     "subscribeError": "Abonare nereușită",
     "subscribeRegExpError": "Eroare formatare adresă de e-mail",
     "subscribeSuccess": "Abonare reușită"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Acceptă",
+      "decline": "Respinge",
+      "link": "Politică de Confidențialitate",
+      "tips": "Pentru îmbunătățirea experienței dvs., utilizăm cookie-uri pentru a reține detaliile de conectare, a colecta statistici și a furniza conținut personalizat conform intereselor dvs. Dați clic pe „Acceptă” pentru a accepta cookie-urile și a consulta „Politica de Confidențialitate”.",
+      "title": "Ne pasă de confidențialitatea dvs."
+    }
   },
   "header": {
     "cart": "Coșul dvs.",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "Reducere {discount}",
         "discount2": "Livrare gratuită",
+        "level": "Pentru {{level}}",
         "shippingRateBelow": "Cheltuielile cu transportul sunt mai mici de {value}",
+        "specified": "Pentru anumiți clienți",
         "threshold": "Cumpărați{threshold}",
         "until": "Valabil până la: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "VÂNZARE RAPIDĂ",
     "flash-sale-tips": "Limită de achiziție: Cantitate {{count}}",
+    "gift": {
+      "gotAll": "Felicitări! Ai primit {{saved}} CADOU GRATUIT!",
+      "noReceived": "Felicitări! Bucurați-vă de până la {{willSave}} CADOURI GRATUITE",
+      "notMetAmount": "Cumpărați încă {{threshold}}, bucurați-vă de până la {{willSave}} CADOU GRATUIT",
+      "notMetQuantity": "Cumpărați încă {{threshold}} articole, bucurați-vă de până la {{willSave}} CADOURI GRATUITE",
+      "select": "Selectați",
+      "spendMoreMoneyGetMore": "Felicitări! Ați primit {{saved}} cadouri gratuite în total! Cheltuiește {{threshold}} mai mult, bucură-te de până la {{willSave}} CADOURI GRATUITE",
+      "spendMoreQuantityGetMore": "Felicitări! Ați primit {{saved}} cadouri gratuite în total! Cumpărați încă {{threshold}} articole, bucurați-vă de până la {{willSave}} CADOURI GRATUITE"
+    },
     "hot-sale": "Trend vânzare!",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "Al treilea identificator sau canalul nu a fost configurat",
       "err1009": "Validarea nereușită a terțului",
       "err1010": "Transmitere nereușită mesaj text/șablon de e-mail",
+      "err1017": "Contul este în risc",
       "err2001": "Mobilul a fost înregistrat",
       "err2002": "E-mailul a fost înregistrat",
       "err2003": "Nu încercați atât de frecvent",
@@ -1232,6 +1253,7 @@
       "err2005": "Eroare cod",
       "err2006": "Prea multe dăți de verificare, obțineți alt cod",
       "err2007": "Transmitere nereușită mesaj text/șablon de e-mail",
+      "err2016": "Contul este în risc",
       "err3001": "Cookie nevalid",
       "err3002": "Utilizatorii care nu sunt asociați cu telefoanele mobile/adresele electronice încearcă să-și schimbe parolele",
       "err3003": "Nu încercați atât de frecvent",

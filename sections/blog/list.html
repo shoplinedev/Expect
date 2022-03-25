@@ -27,6 +27,8 @@
               showAuthor=global.section.settings.is_show_author
               showDate=global.section.settings.is_show_date
               showCover=global.section.settings.is_show_cover
+              coverRatio=global.section.settings.cover_img_ratio
+              showDesc=global.section.settings.is_show_desc
             }}
           </li>
         {{/each}}
@@ -137,6 +139,96 @@
       }
     },
     {
+      "type": "select",
+      "id": "cover_img_ratio",
+      "default": "0.75",
+      "label": {
+        "zh-hans-cn": "图片比例",
+        "en": "Image scale",
+        "id": "Proporsi gambar produk",
+        "th": "อัตราส่วนของรูปภาพ",
+        "vi": "Tỷ lệ hình ảnh",
+        "ms": "Nisbah gambar",
+        "zh-hant-tw": "圖片比例"
+      },
+      "options": [
+        {
+          "label": {
+            "zh-hans-cn": "原始比例",
+            "en": "Original scale",
+            "id": "Proporsi asli",
+            "th": "อัตราส่วนเดิม",
+            "vi": "Tỷ lệ ban đầu",
+            "ms": "Nisbah asal",
+            "zh-hant-tw": "原始比例"
+          },
+          "value": "auto"
+        },
+        {
+          "label": {
+            "zh-hans-cn": "1:1",
+            "en": "1:1",
+            "id": "1:1",
+            "th": "1:1",
+            "vi": "1:1",
+            "ms": "1:1",
+            "zh-hant-tw": "1:1"
+          },
+          "value": "1"
+        },
+        {
+          "label": {
+            "zh-hans-cn": "4:3",
+            "en": "4:3",
+            "id": "4:3",
+            "th": "4:3",
+            "vi": "4:3",
+            "ms": "4:3",
+            "zh-hant-tw": "4:3"
+          },
+          "value": "0.75"
+        },
+        {
+          "label": {
+            "zh-hans-cn": "3:2",
+            "en": "3:2",
+            "id": "3:2",
+            "th": "3:2",
+            "vi": "3:2",
+            "ms": "3:2",
+            "zh-hant-tw": "3:2"
+          },
+          "value": "0.6667"
+        },
+        {
+          "label": {
+            "zh-hans-cn": "16:9",
+            "en": "16:9",
+            "id": "16:9",
+            "th": "16:9",
+            "vi": "16:9",
+            "ms": "16:9",
+            "zh-hant-tw": "16:9"
+          },
+          "value": "0.5625"
+        }
+      ]
+    },
+    {
+      "type": "switch",
+      "id": "is_show_desc",
+      "default": true,
+      "label": {
+        "zh-hans-cn": "显示摘要",
+        "en": "Show summary",
+        "id": "Tampilkan abstrak",
+        "th": "แสดงสรุป",
+        "vi": "Hiển thị tóm tắt",
+        "ms": "Tunjuk ringkasan",
+        "zh-hant-tw": "顯示摘要"
+      }
+    },
+    {
       "type": "switch",
       "id": "is_show_breadcrumb",
       "default": true,
@@ -157,6 +249,8 @@
       "is_show_author": true,
       "is_show_date": true,
       "is_show_cover": true,
+      "cover_img_ratio": "0.75",
+      "is_show_digest": true,
       "is_show_breadcrumb": true
     }
   }

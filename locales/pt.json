@@ -199,7 +199,7 @@
     "username": "Nome"
   },
   "contactForm": {
-    "sendSuccess": ""
+    "sendSuccess": "Obrigado por entrar em contato conosco, responderemos o mais breve possível"
   },
   "footer": {
     "copyright": "Todos os direitos reservados",
@@ -208,6 +208,15 @@
     "subscribeError": "Falha na inscrição",
     "subscribeRegExpError": "Formato do endereço de e-mail errado",
     "subscribeSuccess": "Inscrição com sucesso"
+  },
+  "gdpr": {
+    "modal": {
+      "accept": "Aceitar",
+      "decline": "Rejeitar",
+      "link": "Política de privacidade",
+      "tips": "A fim de oferecer uma melhor experiência, usamos cookies para registrar seu status de login, coletar estatísticas e fornecer-lhe conteúdo interessante. Clique em 'Aceitar' para permitir o uso de cookies ou veja nossa \"Política de Privacidade\".",
+      "title": "Nós nos preocupamos com sua privacidade"
+    }
   },
   "header": {
     "cart": "Carrinho",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "{discount} de desconto",
         "discount2": "Frete grátis",
+        "level": "Para {{level}}",
         "shippingRateBelow": "Custo de frete abaixo de {value}",
+        "specified": "Para clientes especificados",
         "threshold": "Comprar {threshold}",
         "until": "Válido até: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "Promoção por tempo limitado",
     "flash-sale-tips": "Limite de compra: {{count}} unidade",
+    "gift": {
+      "gotAll": "Parabéns! Você ganhou {{saved}} presentes!",
+      "noReceived": "Parabéns! Você pode selecionar {{willSave}} presentes",
+      "notMetAmount": "Compre mais {{threshold}} e aproveite até {{willSave}} presentes",
+      "notMetQuantity": "Compre mais {{threshold}} itens e aproveite até {{willSave}} presentes",
+      "select": "Selecionar",
+      "spendMoreMoneyGetMore": "Parabéns! Você ganhou {{saved}} presentes! Compre mais {{threshold}} e aproveite até {{willSave}} presentes",
+      "spendMoreQuantityGetMore": "Parabéns! Você ganhou {{saved}} presentes! Compre mais {{threshold}} itens e aproveite até {{willSave}} presentes"
+    },
     "hot-sale": "Venda quente",
     "promotion": {
       "reminder": {
@@ -1225,6 +1245,7 @@
       "err1008": "O canal de terceiros não foi configurado",
       "err1009": "Falha na verificação por terceiros",
       "err1010": "Falha na renderização do modelo de SMS/email",
+      "err1017": "A conta está em risco",
       "err2001": "O número do celular foi registrado",
       "err2002": "O email foi registrado",
       "err2003": "Enviar códigos de verificação várias vezes",
@@ -1232,6 +1253,7 @@
       "err2005": "Erro de código de verificação",
       "err2006": "O código de verificação foi usado várias vezes, use outro",
       "err2007": "Falha na renderização do modelo de SMS/email",
+      "err2016": "A conta está em risco",
       "err3001": "Falha na verificação do cookie",
       "err3002": "Usuários que não estão vinculados a um celular/email tentam alterar sua senha",
       "err3003": "Enviar códigos de verificação várias vezes",

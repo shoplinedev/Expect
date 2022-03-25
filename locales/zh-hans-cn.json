@@ -209,6 +209,15 @@
     "subscribeRegExpError": "电子邮件地址格式错误",
     "subscribeSuccess": "订阅成功"
   },
+  "gdpr": {
+    "modal": {
+      "accept": "接受",
+      "decline": "拒绝",
+      "link": "隐私政策",
+      "tips": "为了给您提供更好的体验，我们使用cookie去记录您的登陆状态，收集统计数据，为您提供感兴趣的内容。点击“接受”允许cookie的使用。或是查看我们的“隐私政策”。",
+      "title": "我们重视您的隐私"
+    }
+  },
   "header": {
     "cart": "购物车",
     "center": "账号管理",
@@ -742,7 +751,9 @@
       "coupon-content": {
         "discount1": "优惠{discount}",
         "discount2": "免运费",
+        "level": "{{level}}可用",
         "shippingRateBelow": "运费低于{value}",
+        "specified": "指定客户可用",
         "threshold": "买{threshold}",
         "until": "有效期至: {{endTime}}"
       },
@@ -752,6 +763,15 @@
     },
     "flash-sale-text": "FLASH SALE",
     "flash-sale-tips": "购买限制：{{count}} 件",
+    "gift": {
+      "gotAll": "恭喜！您已获得{{saved}}件赠品！",
+      "noReceived": "恭喜！您可以选择{{willSave}}件赠品",
+      "notMetAmount": "再购买{{threshold}}，最多可享{{willSave}}件赠品",
+      "notMetQuantity": "再购买{{threshold}}件商品，最多可享{{willSave}}件赠品",
+      "select": "选择",
+      "spendMoreMoneyGetMore": "恭喜！已获得{{saved}}件赠品！再购买{{threshold}}，最多可享{{willSave}}件赠品",
+      "spendMoreQuantityGetMore": "恭喜！已获得{{saved}}件赠品！再购买{{threshold}}件商品，最多可享{{willSave}}件赠品"
+    },
     "hot-sale": "Hot sale!",
     "promotion": {
       "reminder": {
@@ -963,7 +983,7 @@
     "delivery-address-abnormal": "收货地址异常",
     "delivery-fee": "运费",
     "delivery-tax": "运费税",
-    "delivery-to-home": "送货上门",
+    "delivery-to-home": "送货",
     "delivery-way": "送货方式",
     "enter-a-tip-on-more-than": "输入不超过 {{amount}} 的小费",
     "express-bill-pic": "物流面单图",
@@ -1225,6 +1245,7 @@
       "err1008": "未配置第三方渠道",
       "err1009": "第三方验证失败",
       "err1010": "短信/邮件模板渲染失败",
+      "err1017": "账号有风险",
       "err2001": "手机号已注册",
       "err2002": "邮箱已注册",
       "err2003": "多次发送验证码",
@@ -1232,6 +1253,7 @@
       "err2005": "验证码错误",
       "err2006": "验证码被多次使用，请使用另一个验证码",
       "err2007": "短信/邮件模板渲染失败",
+      "err2016": "账号有风险",
       "err3001": "Cookie校验不通过",
       "err3002": "未绑定手机/邮箱的用户尝试修改密码",
       "err3003": "多次发送验证码",

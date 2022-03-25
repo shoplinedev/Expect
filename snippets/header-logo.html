@@ -31,7 +31,7 @@
           max-width: {{ header_logo_size_mobile }}px;
         }
 
-        @media only screen and (min-width: 750px) {
+        @media only screen and (min-width: 960px) {
           .header__item--logo {
             -webkit-box-flex: 0 0 auto;
             -ms-flex: 0 0 auto;
@@ -58,7 +58,7 @@
         .header__layout--left-center .header__item--buttons {
           width: {{ header_logo_size_mobile }}px;
         }
-        @media only screen and (min-width: 750px){
+        @media only screen and (min-width: 960px){
           .header__logo a {
             width: {{ header_logo_size }}px;
             display: inline-block;
@@ -74,7 +74,7 @@
         .header__layout--left-down .header__item--left .header__logo {
           max-width: {{ header_logo_size_mobile }}px;
         }
-        @media only screen and (min-width: 750px){
+        @media only screen and (min-width: 960px){
           .header__layout--left-down .header__item--left .header__logo {
             max-width: {{ header_logo_size }}px;
           }
@@ -93,12 +93,12 @@
         {{assign 'header_logo_height' (divide header_logo_size header_logo_scale)}}
         {{assign 'header_logo_height_mobile' (divide header_logo_size_mobile header_logo_scale)}}
 					<span class="visually-hidden notranslate">{{ global.storeInfo.name }}</span>
-				<a class="header__logo--link {{#if (boolean this.settings.logo-inverted '&&' this.settings.logo-inverted.url)}}has-logo--inverted{{/if}}" href="{{global.rootUrl}}">
-					<img class="d-none d-md-block" 
+				<a class="header__logo--link {{#if (boolean this.settings.logo-inverted '&&' this.settings.logo-inverted.url)}}has-logo--inverted{{/if}}" href="{{global.rootUrl}}" itemprop="url">
+					<img class="d-none d-lg-block" 
             style="height: {{header_logo_height}}px;"
             {{{get 'responsiveAttr' (image_responsive this.settings.logo.url breakpoints=header_logo_size pcSize=(append header_logo_size 'px') mSize=null useLazyLoad=false)}}} 
 						alt="{{fallbackText this.settings.logo.alt global.storeInfo.name }}" itemprop="logo">
-					<img class="d-block d-md-none"
+					<img class="d-block d-lg-none"
             style="height: {{header_logo_height_mobile}}px;" 
             {{{get 'responsiveAttr' (image_responsive this.settings.logo.url breakpoints=header_logo_size_mobile pcSize=null mSize=(append header_logo_size_mobile 'px') useLazyLoad=false)}}} 
 						alt="{{this.settings.logo.alt}}">
@@ -108,12 +108,12 @@
               {{assign 'header_logo_inverted_scale' this.settings.logo-inverted.scale}}
               {{assign 'header_logo_inverted_height' (divide header_logo_size header_logo_inverted_scale)}}
               {{assign 'header_logo_inverted_height_mobile' (divide header_logo_size_mobile header_logo_inverted_scale)}}						
-              <a class="header__logo--link logo--inverted" href="{{global.rootUrl}}">
-								<img class="d-none d-md-block" 
+              <a class="header__logo--link logo--inverted" href="{{global.rootUrl}}" itemprop="url">
+								<img class="d-none d-lg-block" 
                   style="height: {{header_logo_inverted_height}}px;"
                   {{{get 'responsiveAttr' (image_responsive this.settings.logo-inverted.url breakpoints=header_logo_size pcSize=(append header_logo_size 'px') mSize=null useLazyLoad=false)}}} 
 									alt="{{fallbackText this.settings.logo.alt global.storeInfo.name }}" itemprop="logo">
-								<img class="d-block d-md-none" 
+								<img class="d-block d-lg-none" 
                   style="height: {{header_logo_inverted_height_mobile}}px;"
                   {{{get 'responsiveAttr' (image_responsive this.settings.logo-inverted.url breakpoints=header_logo_size_mobile pcSize=null mSize=(append header_logo_size_mobile 'px') useLazyLoad=false)}}} 
 									alt="{{this.settings.logo.alt}}">
