@@ -20,7 +20,7 @@
 				{{snippet 'header-logo'}}
 			</div>
 
-			<div class="header__item header__item--buttons">
+			<div data-ssr-plugin-wishlist="header" class="header__item header__item--buttons">
 				{{#if section.settings.show_search}}
 					{{snippet 'header-btns' btns='search' classnames='header__btn-search-mobile' }}
 				{{/if}}

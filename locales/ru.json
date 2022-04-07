@@ -538,6 +538,7 @@
       "submitSuccess": "Успешное представление"
     },
     "morePaymentOptions": "Другие варианты оплаты",
+    "moreSpuImgBtn": "Загрузите больше",
     "network": {
       "message2": "Пока не получили информации о продуктах, повторите попытку позже."
     },
@@ -816,6 +817,28 @@
             "step3": "Поздравляю! Вы сэкономили {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Купите еще {{threshold}} и наслаждайтесь <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Бесплатная доставка</span>!",
+              "upperLimit": "Купите еще {{threshold}} и наслаждайтесь <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Бесплатная доставка</span>! (Максимальная сумма бесплатной доставки {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Поздравляем! Вы уже получили <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Бесплатная доставка</span>!",
+              "upperLimit": "Поздравляем! Вы уже получили <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Бесплатная доставка</span>! (Максимальная сумма бесплатной доставки {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Купите еще {{threshold}} штук и наслаждайтесь <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Бесплатная доставка</span>!",
+              "upperLimit": "Купите еще {{threshold}} штук и наслаждайтесь <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Бесплатная доставка</span>! (Максимальная сумма бесплатной доставки {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Поздравляем! Вы уже получили <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Бесплатная доставка</span>!",
+              "upperLimit": "Поздравляем! Вы уже получили <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Бесплатная доставка</span>! (Максимальная сумма бесплатной доставки {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Купите еще {{threshold}} штук, из них {{willSave}} штук бесплатно",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "После проверки можно привязать / перевязать {{value}}",
     "change-heart": "Передумать",
     "change-item": "Хотеть изменить предмет покупки",
+    "continue-as-a-guest": "Продолжать посетить в качестве гостя",
     "country-address-fail": "Продавцы в стране этого адреса больше не поддерживают доставку, пожалуйста, выберите вручную",
     "enter-address-first": "Пожалуйста, сначала введите адрес",
     "enter-bank-card-number": "Пожалуйста, введите номер банковской карты!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Страна счета, к которой принадлежит PayPal, не входит в страну, в которой поддерживает доставку, пожалуйста, выберите вручную,",
     "please-complete-the-payment-method-content": "Пожалуйста, заполните полные сведения о способе оплаты",
     "please-read-and-agree-to-the-user-agreement-first": "Пожалуйста, сначала прочитайте и согласитесь с пользовательским соглашением",
+    "poroceed-to-checkout": "Произвести расчет",
     "price-more-expensive": "Цена дороже, чем на других местах",
     "product-abnormal-back-to-cart": "Состояние продукта аномально, вернитесь в корзину покупки для повторного редактирования.",
     "put-up-order-summary": "Соберите свод заказа",
@@ -1229,6 +1254,7 @@
     "sendError": "Пожалуйста, сначала отправьте проверочный код",
     "signIn": "Логин",
     "signUp": "Регистрация",
+    "subscription-text": "Создайте электронную почту, чтобы получать новейшие и эксклюзивные льготные информации.",
     "udbResponse": {
       "err-1": "Параметры отсутствуют",
       "err-13": "Тайм-аут stoken",
@@ -1430,6 +1456,9 @@
         "ok-text": "Отменить подписку",
         "title": "Подписка отменена"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Вы больше не будете получать маркетинговые новости от нас. Вы можете снова подписаться в любое время"
     }
   },
   "validate": {

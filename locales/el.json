@@ -538,6 +538,7 @@
       "submitSuccess": "Επιτυχής αποστολή"
     },
     "morePaymentOptions": "περισσότερες επιλογές πληρωμής",
+    "moreSpuImgBtn": "Εμφάνιση περισσότερων",
     "network": {
       "message2": "Αποτυχία ανάκτησης πληροφοριών προϊόντος. Παρακαλούμε προσπαθήστε ξανά αργότερα"
     },
@@ -816,6 +817,28 @@
             "step3": "Συγχαρητήρια! Αποθηκεύσατε το{{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Αγοράστε ξανά {{threshold}}, λάβετε <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Δωρεάν αποστολή</span>!",
+              "upperLimit": "Αγοράστε ξανά {{threshold}}, λάβετε <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Δωρεάν αποστολή</span>! (Μέγιστο ποσό για δωρεάν αποστολή {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Συγχαρητήρια! Λάβατε <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Δωρεάν αποστολή</span>!",
+              "upperLimit": "Συγχαρητήρια! Λάβατε <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Δωρεάν αποστολή</span>! (Μέγιστο ποσό για δωρεάν αποστολή {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Αγοράστε περισσότερα {{threshold}}, λάβετε <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Δωρεάν αποστολή</span>!",
+              "upperLimit": "Αγοράστε περισσότερα {{threshold}}, λάβετε <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Δωρεάν αποστολή</span>! (Μέγιστο ποσό για δωρεάν αποστολή {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Συγχαρητήρια! Λάβατε <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Δωρεάν αποστολή</span>!",
+              "upperLimit": "Συγχαρητήρια! Λάβατε <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Δωρεάν αποστολή</span>! (Μέγιστο ποσό για δωρεάν αποστολή {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Αγοράστε περισσότερα {{threshold}} τεμάχια, εκ των οποίων τα {{willSave}} τεμάχια είναι δωρεάν",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Μπορείτε να συνδεθείτε/αλλάξετε το {{value}} μετά την επαλήθευση",
     "change-heart": "Άλλαξα γνώμη",
     "change-item": "Θέλω να αλλάξω τα προϊόντα που αγόρασα",
+    "continue-as-a-guest": "Συνεχίστε ως επισκέπτης",
     "country-address-fail": "Οι πωλητές που εδρεύουν στη χώρα της καταχωρημένης διεύθυνσης δεν ευθύνονται για τις πληρωμές των τελών παράδοσης. Παρακαλούμε κάντε μια χειροκίνητη επιλογή",
     "enter-address-first": "Παρακαλούμε εισαγάγετε πρώτα τη διεύθυνση",
     "enter-bank-card-number": "Παρακαλούμε εισαγάγετε τον αριθμό της τραπεζικής κάρτας!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Η χώρα στην οποία βρίσκεται αυτός ο λογαριασμός PayPal δεν περιλαμβάνεται στη λίστα των χωρών για πληρωμές τελών παράδοσης. Παρακαλούμε κάντε μια χειροκίνητη επιλογή",
     "please-complete-the-payment-method-content": "Συμπληρώστε τον τρόπο πληρωμής",
     "please-read-and-agree-to-the-user-agreement-first": "Διαβάστε πρώτα και αποδεχτείτε τη συμφωνία χρήστη",
+    "poroceed-to-checkout": "Προχωρήστε στο ταμείο",
     "price-more-expensive": "Η χαμηλότερη τιμή βρέθηκε αλλού",
     "product-abnormal-back-to-cart": "Σφάλμα κατάστασης προϊόντος, επιστρέψτε στο καλάθι και δοκιμάστε ξανά",
     "put-up-order-summary": "Απόκρυψη περίληψης παραγγελίας",
@@ -1229,6 +1254,7 @@
     "sendError": "Στείλτε πρώτα τον κωδικό επαλήθευσης",
     "signIn": "ΣΥΝΔΕΣΗ",
     "signUp": "Εγγραφή",
+    "subscription-text": "Εγγραφώ για μηνύματα ηλεκτρονικού ταχυδρομείου για να λαμβάνω ενημερώσεις, πρόσβαση σε αποκλειστικές προσφορές και πολλά άλλα.",
     "udbResponse": {
       "err-1": "Κενές παράμετροι",
       "err-13": "Έληξε ο stoken",
@@ -1430,6 +1456,9 @@
         "ok-text": "Διαγραμένος",
         "title": "Διαγραμένος"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Δεν θα λαμβάνετε άλλες ενημερώσεις μάρκετινγκ από εμάς. Μπορείτε να εγγραφείτε ξανά ανά πάσα στιγμή"
     }
   },
   "validate": {

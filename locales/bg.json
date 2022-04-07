@@ -538,6 +538,7 @@
       "submitSuccess": "Изпратено успешно"
     },
     "morePaymentOptions": "още опции за плащане",
+    "moreSpuImgBtn": "Покажи още",
     "network": {
       "message2": "Неуспешно извличане на информация за продукта. Моля, опитайте по-късно."
     },
@@ -816,6 +817,28 @@
             "step3": "Поздравления! Спестихте {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "При повторна покупка на {{threshold}}, получавате<span class=\"custom-sale-color\" style=\"font-size:14px;\"> Безплатна доставка</span>!",
+              "upperLimit": "При повторна покупка на {{threshold}}, получавате<span class=\"custom-sale-color\" style=\"font-size:14px;\"> Безплатна доставка</span>! (Максимална сума{{upperLimit}} за безплатна доставка)"
+            },
+            "step3": {
+              "unlimited": "Честито! Получавате <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Безплатна доставка</span>!",
+              "upperLimit": "Честито! Получавате <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Безплатна доставка</span>! (Максимална сума{{upperLimit}} за безплатна доставка)"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Купете още {{threshold}} и получавате <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Безплатна доставка</span>!",
+              "upperLimit": "Купете още {{threshold}} и получавате <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Безплатна доставка</span>! (Максимална сума{{upperLimit}} за безплатна доставка)"
+            },
+            "step3": {
+              "unlimited": "Честито! Получавате <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Безплатна доставка</span>!",
+              "upperLimit": "Честито! Получавате <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Безплатна доставка</span>! (Максимална сума{{upperLimit}} за безплатна доставка)"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Купете още {{threshold}} броя, от които {{willSave}}броя са безплатни",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Можете да свържете/промените {{value}} след потвърждение",
     "change-heart": "Промених решението си",
     "change-item": "Желая да променя закупените артикули",
+    "continue-as-a-guest": "Продължете като гост",
     "country-address-fail": "Продавачи, базирани в страната на въведения адрес, не са отговорни за плащания на такси за доставка. Моля, направете ръчен избор",
     "enter-address-first": "Моля, въведете първо адрес",
     "enter-bank-card-number": "Моля, въведете номера на банковата карта!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Страната, в която се намира този PayPal акаунт, не е включена в списъка със страни за плащания на такси за доставка. Моля, направете ръчен избор",
     "please-complete-the-payment-method-content": "Моля, попълнете начина на плащане",
     "please-read-and-agree-to-the-user-agreement-first": "Моля, прочетете и се съгласете първо със споразумението с потребителя",
+    "poroceed-to-checkout": "Продължете към плащането",
     "price-more-expensive": "Намерена по-ниска цена другаде",
     "product-abnormal-back-to-cart": "Грешка в статуса на продукта, моля, върнете се при количката и опитайте отново",
     "put-up-order-summary": "Скрий преглед на поръчката",
@@ -1229,6 +1254,7 @@
     "sendError": "Моля, изпратете първо кода за потвърждение",
     "signIn": "ВПИСВАНЕ",
     "signUp": "Регистриране",
+    "subscription-text": "Регистрирайте ме за имейли, за да получавам актуализации, достъп до ексклузивни сделки и други.",
     "udbResponse": {
       "err-1": "Празни параметри",
       "err-13": "stoken изчакване",
@@ -1430,6 +1456,9 @@
         "ok-text": "Отписване",
         "title": "Отписване"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Няма да получавате повече маркетингови актуализации от нас. Можете да се абонирате отново по всяко време"
     }
   },
   "validate": {

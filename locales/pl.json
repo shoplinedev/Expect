@@ -538,6 +538,7 @@
       "submitSuccess": "Złożono pomyślnie"
     },
     "morePaymentOptions": "Więcej opcji zapłaty",
+    "moreSpuImgBtn": "Pokaż więcej",
     "network": {
       "message2": "Nie znaleziono informacji tego produktu, proszę spróbować później"
     },
@@ -816,6 +817,28 @@
             "step3": "Gratulacje! Już oszczędziłeś {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Kup jeszcze {{threshold}}，można zasłużyć <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Darmowa dostawa</span>!",
+              "upperLimit": "Kup jeszcze {{threshold}}，można zasłużyć <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Darmowa dostawa</span>! (Limit kwoty zamówienia za dostawę bezpłatną {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Gratulacje! Już dostałeś <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Darmowa dostawa</span>!",
+              "upperLimit": "Gratulacje! Już dostałeś <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Darmowa dostawa</span>! (Limit kwoty zamówienia za dostawę bezpłatną {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Kup jeszcze {{threshold}}sztuk，dostaniesz <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Darmowa dostawa</span>!",
+              "upperLimit": "Kup jeszcze {{threshold}}sztuk，dostaniesz <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Darmowa dostawa</span>! (Limit kwoty zamówienia za dostawę bezpłatną {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Gratulacje! Już dostałeś <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Darmowa dostawa</span>!",
+              "upperLimit": "Gratulacje! Już dostałeś <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Darmowa dostawa</span>! (Limit kwoty zamówienia za dostawę bezpłatną {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Kup jeszcze {{threshold}} sztuk, w tym {{willSave}} dostaniesz za darmo",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Po weryfikacji już można ustalić/zmienić{{value}}",
     "change-heart": "Zmienić pomyśle",
     "change-item": "Chce zmienić zakupiony produkt",
+    "continue-as-a-guest": "Odwiedź stronę jako gość",
     "country-address-fail": "Ten adres znajduje się w kraju, za który sprzedawca nie płaci za dostawę, proszę wybrać ręcznie",
     "enter-address-first": "Proszę wpisać adres najpierw",
     "enter-bank-card-number": "Proszę wpisać numer karty bankowej!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Paypal podlegający kontu w kraju, za który sprzedawca nie płaci za dostawę, proszę wybrać ręcznie",
     "please-complete-the-payment-method-content": "Proszę wpisać całkowitą treść formę dostawy",
     "please-read-and-agree-to-the-user-agreement-first": "Proszę najpierw obejrzeć i zaznaczyć zgodę na umowę użytkownika",
+    "poroceed-to-checkout": "Dokonuje płatności",
     "price-more-expensive": "Cena jest wyższa niż inne regiony",
     "product-abnormal-back-to-cart": "Stan produktu jest nieprawidłowy, wróć do koszyka, aby ponownie edytować",
     "put-up-order-summary": "Pokryj podsumowanie zamówienia",
@@ -1229,6 +1254,7 @@
     "sendError": "Proszę wysłać kod weryfikacyjny najpierw",
     "signIn": "Zalogowanie",
     "signUp": "Rejestracja",
+    "subscription-text": "rejestruj się e-mailem, żeby otrzymać informacje o nowościach i ulgach itd.",
     "udbResponse": {
       "err-1": "Brak parametrów",
       "err-13": "Stokeprzekracza limit czasu",
@@ -1430,6 +1456,9 @@
         "ok-text": "Anulować subskrypcje",
         "title": "Anulować subskrypcje"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Nie otrzymasz więcej informacji marketingowych, możesz zasubskrybować w dowolnym momencie póżniej"
     }
   },
   "validate": {

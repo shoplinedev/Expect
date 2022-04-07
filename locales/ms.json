@@ -538,6 +538,7 @@
       "submitSuccess": "Berjaya diserahkan"
     },
     "morePaymentOptions": "lebih banyak opsyen bayaran",
+    "moreSpuImgBtn": "Muatkan lebih banyak",
     "network": {
       "message2": "Gagal mendapatkan semula maklumat produk. Sila cuba lagi kemudian"
     },
@@ -816,6 +817,28 @@
             "step3": "Tahniah! Anda telah menjimatkan {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Beli {{threshold}} lagi dan nikmati <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Penghantaran percuma</span>!",
+              "upperLimit": "Beli {{threshold}} lagi dan nikmati <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Penghantaran percuma</span>! (Amaun penghantaran percuma maksimum {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Tahniah! Anda Memerlukan <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Penghantaran percuma</span>!",
+              "upperLimit": "Tahniah! Anda Memerlukan <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Penghantaran percuma</span>! (Amaun penghantaran percuma maksimum {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Beli {{threshold}} lagi dan nikmati <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Penghantaran percuma</span>!",
+              "upperLimit": "Beli {{threshold}} lagi dan nikmati <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Penghantaran percuma</span>! (Amaun penghantaran percuma maksimum {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Tahniah! Anda Memerlukan <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Penghantaran percuma</span>!",
+              "upperLimit": "Tahniah! Anda Memerlukan <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Penghantaran percuma</span>! (Amaun penghantaran percuma maksimum {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Beli tambahan {{threshold}} unit, di mana sebanyak {{willSave}} unit adalah percuma",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Anda boleh menyambungkan/mengubah {{value}} selepas penentusahan",
     "change-heart": "Saya ubah fikiran",
     "change-item": "Saya mahu mengubah item yang dibeli",
+    "continue-as-a-guest": "Teruskan sebagai tetamu",
     "country-address-fail": "Penjual yang berpangkalan di negara bagi alamat yang dimasukkan tidak bertanggungjawab terhadap bayaran yuran serahan. Sila buat pilihan manual",
     "enter-address-first": "Sila masukkan alamat dahulu",
     "enter-bank-card-number": "Sila masukkan nombor kad bank!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Negara tempat akaun PayPal ini berada tidak termasuk dalam senarai negara untuk bayaran yuran serahan. Sila buat pilihan manual",
     "please-complete-the-payment-method-content": "Sila lengkapkan kaedah bayaran",
     "please-read-and-agree-to-the-user-agreement-first": "Sila baca dan bersetuju dengan dasar dahulu",
+    "poroceed-to-checkout": "Teruskan ke pembayaran",
     "price-more-expensive": "Harga lebih rendah ditemui di tempat lain",
     "product-abnormal-back-to-cart": "Ralat status produk, sila kembali ke kart dan cuba lagi",
     "put-up-order-summary": "Sembunyikan ringkasan pesanan",
@@ -1229,6 +1254,7 @@
     "sendError": "Sila hantar kod penentusahan dahulu",
     "signIn": "DAFTAR MASUK",
     "signUp": "DAFTAR",
+    "subscription-text": "Daftar saya untuk e-mel untuk menerima kemas kini, akses kepada tawaran eksklusif dan banyak lagi.",
     "udbResponse": {
       "err-1": "Parameter tidak diisi",
       "err-13": "Tamat masa stoken",
@@ -1430,6 +1456,9 @@
         "ok-text": "Berhenti melanggan",
         "title": "Berhenti melanggan"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Anda tidak akan menerima sebarang kemas kini pemasaran lagi daripada kami. Anda boleh melanggan semula pada bila-bila masa"
     }
   },
   "validate": {

@@ -538,6 +538,7 @@
       "submitSuccess": "Lähetetty onnistuneesti"
     },
     "morePaymentOptions": "Lisää maksutapavaihtoehtoja",
+    "moreSpuImgBtn": "Lataa lisää",
     "network": {
       "message2": "Tuotetietojen hakeminen epäonnistui Yritä myöhemmin uudelleen"
     },
@@ -816,6 +817,28 @@
             "step3": "Onnittelut! Olet jo säästänyt {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Osta {{threshold}} uudelleen ja nauti kohteesta <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ilmainen toimitus</span>!",
+              "upperLimit": "Osta {{threshold}} uudelleen ja nauti kohteesta <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ilmainen toimitus</span>! Vapaan rahdin enimmäismäärä {{upperLimit}}"
+            },
+            "step3": {
+              "unlimited": "Onnittelen! Olet hankkinut kohteen <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ilmainen toimitus</span>!",
+              "upperLimit": "Onnittelen! Olet hankkinut kohteen <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ilmainen toimitus</span>! Vapaan rahdin enimmäismäärä {{upperLimit}}"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Osta {{threshold}} lisää kappaleita ja nauti <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ilmainen toimitus</span>!",
+              "upperLimit": "Osta {{threshold}} lisää kappaleita ja nauti <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ilmainen toimitus</span>! Vapaan rahdin enimmäismäärä {{upperLimit}}"
+            },
+            "step3": {
+              "unlimited": "Onnittelen! Olet hankkinut kohteen <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ilmainen toimitus</span>!",
+              "upperLimit": "Onnittelen! Olet hankkinut kohteen <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ilmainen toimitus</span>! Vapaan rahdin enimmäismäärä {{upperLimit}}"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Osta {{threshold}} lisää palasia, joista {{willSave}} palasia on ilmaista",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Voit yhdistää/vaihtaa {{value}} vahvistuksen jälkeen",
     "change-heart": "Olen tullut toisiin aatoksiin",
     "change-item": "Haluan vaihtaa ostettua tuotetta",
+    "continue-as-a-guest": "Jatka vieraana",
     "country-address-fail": "Ilmoitetun osoitteen maassa toimivat myyjät eivät ole vastuussa toimitusmaksujen maksamisesta. Tee valinta manuaalisesti",
     "enter-address-first": "Kirjoita ensin tähän osoite",
     "enter-bank-card-number": "Kirjoita tähän pankkikortin numero!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Maa, jossa tämä Paypal-tili sijaitsee, ei kuulu toimituskulut maksaviin maihin/alueisiin. Tee valinta manuaalisesti",
     "please-complete-the-payment-method-content": "Valitse maksutapa",
     "please-read-and-agree-to-the-user-agreement-first": "Lue ja hyväksy ensin käyttösopimus",
+    "poroceed-to-checkout": "Siirry maksamaan",
     "price-more-expensive": "Alempi hinta löytyy muualta",
     "product-abnormal-back-to-cart": "Tuotteen tilavirhe, palaa ostoskoriin ja yritä uudelleen",
     "put-up-order-summary": "Piilota tilauksen yhteenveto",
@@ -1229,6 +1254,7 @@
     "sendError": "Lähetä ensin vahvistuskoodi",
     "signIn": "KIRJAUDU SISÄÄN",
     "signUp": "KIRJAUDU",
+    "subscription-text": "Tilaa minulle sähköpostit saadaksesi päivityksiä, pääsyn eksklusiivisiin tarjouksiin ja paljon muuta.",
     "udbResponse": {
       "err-1": "Tyhjät parametrit",
       "err-13": "stoken aikakatkaistiin",
@@ -1430,6 +1456,9 @@
         "ok-text": "Lopeta tilaus",
         "title": "Lopeta tilaus"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Et saa meiltä enää markkinointipäivityksiä. Voit tilata uudelleen milloin tahansa"
     }
   },
   "validate": {

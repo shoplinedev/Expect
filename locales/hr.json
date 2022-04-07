@@ -538,6 +538,7 @@
       "submitSuccess": "Uspješno podnijeto"
     },
     "morePaymentOptions": "Još mogućnosti plaćanja",
+    "moreSpuImgBtn": "Prikaži više",
     "network": {
       "message2": "Dohvat informacija o proizvodu nije uspjeo. Molimo pokušajte ponovo kasnije"
     },
@@ -816,6 +817,28 @@
             "step3": "Čestitamo! Uštedjeli ste {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Kupite {{threshold}} ponovo i uživajte <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Besplatna dostava</span>!",
+              "upperLimit": "Kupite {{threshold}} ponovo i uživajte <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Besplatna dostava</span>! (Maksimalna količina za besplatnu isporuku {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Čestitamo! Vi imate <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Besplatna dostava</span>!",
+              "upperLimit": "Čestitamo! Vi imate <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Besplatna dostava</span>! (Maksimalna količina za besplatnu isporuku {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Kupite {{threshold}} više i uživajte <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Besplatna dostava</span>!",
+              "upperLimit": "Kupite {{threshold}} više i uživajte <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Besplatna dostava</span>! (Maksimalna količina za besplatnu isporuku {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Čestitamo! Vi imate <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Besplatna dostava</span>!",
+              "upperLimit": "Čestitamo! Vi imate <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Besplatna dostava</span>! (Maksimalna količina za besplatnu isporuku {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Kupite {{threshold}} više dijela/dijelova, od kojih su {{willSave}} dijela/dijelova besplatna/besplatni",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Možete se povezati/promijeniti {{value}} nakon potvrde",
     "change-heart": "Predomislio sam se",
     "change-item": "Želim promijeniti kupljene artikle",
+    "continue-as-a-guest": "Nastavite kao gost",
     "country-address-fail": "Prodavatelji sa sjedištem u zemlji unesene adrese nisu odgovorni za plaćanje naknade za dostavu. Molimo izvršite ručni odabir",
     "enter-address-first": "Molimo prvo unesite adresu",
     "enter-bank-card-number": "Unesite broj bankovne kartice!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Zemlja u kojoj se nalazi ovaj PayPal račun nije uključena u popis zemalja za plaćanje naknade za dostavu. Molimo izvršite ručni odabir",
     "please-complete-the-payment-method-content": "Molimo dovršite način plaćanja",
     "please-read-and-agree-to-the-user-agreement-first": "Prvo pročitajte i prihvatite korisnički ugovor",
+    "poroceed-to-checkout": "Nastavite na blagajnu",
     "price-more-expensive": "Niža cijena je pronađena drugdje",
     "product-abnormal-back-to-cart": "Pogreška statusa proizvoda, vratite se u košaricu i pokušajte ponovno",
     "put-up-order-summary": "Sakrij sažetak narudžbe",
@@ -1229,6 +1254,7 @@
     "sendError": "Molimo najpre pošaljite kontrolni kod",
     "signIn": "PRIJAVITE SE",
     "signUp": "UPIŠITE SE",
+    "subscription-text": "Prijavite me na e-poštu da primam ažuriranja, pristup ekskluzivnim ponudama i još mnogo toga.",
     "udbResponse": {
       "err-1": "Parametri su prazni",
       "err-13": "stoken vrijeme je pauzirano",
@@ -1430,6 +1456,9 @@
         "ok-text": "Odjavljen",
         "title": "Odjavljen"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Od nas više nećete primati marketinška ažuriranja. Možete se ponovo pretplatiti u bilo kojem trenutku"
     }
   },
   "validate": {

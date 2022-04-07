@@ -75,6 +75,13 @@
             </div>
           {{/each}}
         {{/if}}
+        {{#if data.customProductTips}}
+          {{#unless (isEmpty data.customProductTips)}}
+            {{#each data.customProductTips}}
+              <div class="trade-cart-sku-item-info-customTip notranslate">{{this}}</div>
+            {{/each}}
+          {{/unless}}
+        {{/if}}
       </div>
       {{/if}}
     {{#if (boolean data.priceType '===' 2)}}

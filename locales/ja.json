@@ -538,6 +538,7 @@
       "submitSuccess": "送信完了"
     },
     "morePaymentOptions": "その他の支払いオプション",
+    "moreSpuImgBtn": "もっと",
     "network": {
       "message2": "商品情報を取得できませんでした。しばらくしてからもう一度お試しください"
     },
@@ -816,6 +817,28 @@
             "step3": "おめでとう！{{saved}}節約しました！"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "これ以上 {{threshold}}購入すると<span class=\"custom-sale-color\" style=\"font-size:14px;\"> 送料無料</span>が楽しめます!",
+              "upperLimit": "これ以上 {{threshold}}購入すると<span class=\"custom-sale-color\" style=\"font-size:14px;\"> 送料無料</span>!が楽しめます(最大送料無料額{{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "おめでとうございます！すでに<span class=\"custom-sale-color\" style=\"font-size:14px;\"> 送料無料</span>を取得します!",
+              "upperLimit": "おめでとうございます！すでに<span class=\"custom-sale-color\" style=\"font-size:14px;\"> 送料無料</span>を取得します! (最大送料無料額{{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "これ以上{t件}購入すると <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 送料無料</span>が楽しめます!",
+              "upperLimit": "これ以上{t件}購入すると <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 送料無料</span>が楽しめます! (最大送料無料額{{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "おめでとうございます！すでに<span class=\"custom-sale-color\" style=\"font-size:14px;\"> 送料無料</span>を取得します!",
+              "upperLimit": "おめでとうございます！すでに<span class=\"custom-sale-color\" style=\"font-size:14px;\"> 送料無料</span>を取得します! (最大送料無料額{{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "これ以上{{threshold}}件買うとこの中の{{willSave}}件が無料となります。",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "検証後に {{value}} をリンク/変更できます",
     "change-heart": "気が変わりました",
     "change-item": "購入商品を変更します",
+    "continue-as-a-guest": "ビジターとして続く",
     "country-address-fail": "入力された住所の国に基づく販売者は、納入手数料の支払いについて責任を負いません。手動で選択してください",
     "enter-address-first": "先に住所を入力してください",
     "enter-bank-card-number": "銀行カード番号を入力してください。",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "この PayPal アカウントに基づく国は、配送料の支払い対象国のリストに含まれていません。手動で選択してください",
     "please-complete-the-payment-method-content": "支払い方法を入力してください",
     "please-read-and-agree-to-the-user-agreement-first": "最初に利用者契約書を読み、同意してください",
+    "poroceed-to-checkout": "決済に進む",
     "price-more-expensive": "他の場所では安い値段でした",
     "product-abnormal-back-to-cart": "商品ステータスエラーです。カートに戻ってもう一度やり直してください",
     "put-up-order-summary": "注文の概要を折りたたむ",
@@ -1229,6 +1254,7 @@
     "sendError": "まず確認コードを送信してください",
     "signIn": "サインイン",
     "signUp": "サインアップ",
+    "subscription-text": "メールアドレスに登録して、最新情報や限定オファーなどを入手しましょう",
     "udbResponse": {
       "err-1": "パラメーターが空白",
       "err-13": "セッション有効期限切れ",
@@ -1430,6 +1456,9 @@
         "ok-text": "購読解除",
         "title": "購読解除"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "これから、当社からマーケティングの最新情報を受け取ることはありません。 いつでも再購読ことができます"
     }
   },
   "validate": {

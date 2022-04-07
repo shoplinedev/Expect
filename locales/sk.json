@@ -538,6 +538,7 @@
       "submitSuccess": "Úspešne odoslané"
     },
     "morePaymentOptions": "viac možností platby",
+    "moreSpuImgBtn": "Zobraziť viac",
     "network": {
       "message2": "Nepodarilo sa načítať informácie o produkte. Skúste to neskôr prosím"
     },
@@ -816,6 +817,28 @@
             "step3": "Gratulujem! Ušetrili ste {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Kúpte si {{threshold}} znova a užívajte si <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Doprava zdarma</span>!",
+              "upperLimit": "Kúpte si {{threshold}} znova a užívajte si <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Doprava zdarma</span>! (Maximálna poštovné zdarma {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Gratulujem! máte <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Doprava zdarma</span>!",
+              "upperLimit": "Gratulujem! máte <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Doprava zdarma</span>! (Maximálna poštovné zdarma {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Kúpte si {{threshold}} viac a užívajte si <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Doprava zdarma</span>!",
+              "upperLimit": "Kúpte si {{threshold}} viac a užívajte si <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Doprava zdarma</span>! (Maximálna poštovné zdarma {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Gratulujem! máte <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Doprava zdarma</span>!",
+              "upperLimit": "Gratulujem! máte <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Doprava zdarma</span>! (Maximálna poštovné zdarma {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Kúpiť {{threshold}} viac kusov, z ktorých {{willSave}} kusov sú zadarmo",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Po overení môžete zadať/zmeniť {{value}}",
     "change-heart": "Zmenil som názor",
     "change-item": "Chcem zmeniť zakúpené položky",
+    "continue-as-a-guest": "Pokračujte ako hosť",
     "country-address-fail": "Predajcovia so sídlom v krajine zadanej adresy nezodpovedajú za platby poštovného. Vykonajte manuálny výber",
     "enter-address-first": "Najprv zadajte adresu",
     "enter-bank-card-number": "Zadajte číslo bankovej karty!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Krajina, v ktorej je založený tento PayPal účet, nie je zahrnutá v zozname krajín pre platby poplatkov za doručenie. Vykonajte manuálny výber",
     "please-complete-the-payment-method-content": "Prosím vyplňte spôsob platby",
     "please-read-and-agree-to-the-user-agreement-first": "Najprv si prečítajte a odsúhlaste užívateľskú zmluvu",
+    "poroceed-to-checkout": "Pokračujte k pokladni",
     "price-more-expensive": "Nižšia cena nájdená inde",
     "product-abnormal-back-to-cart": "Chyba stavu produktu, vráťte sa do košíka a skúste to znova",
     "put-up-order-summary": "Skryť súhrn objednávky",
@@ -1229,6 +1254,7 @@
     "sendError": "Najprv pošlite overovací kód",
     "signIn": "PRIHLÁSIŤ SA",
     "signUp": "ZAREGISTROVAŤ SA",
+    "subscription-text": "Prihláste ma na odber e-mailov, aby ste mohli dostávať aktualizácie, prístup k exkluzívnym ponukám a ďalšie.",
     "udbResponse": {
       "err-1": "Parametre sú prázdne",
       "err-13": "stoken časových limitoch",
@@ -1430,6 +1456,9 @@
         "ok-text": "Zrušiť odber",
         "title": "Zrušiť odber"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Nebudete od nás dostávať žiadne ďalšie marketingové novinky. Kedykoľvek sa môžete znova prihlásiť na odber"
     }
   },
   "validate": {

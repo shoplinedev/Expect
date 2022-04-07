@@ -2152,6 +2152,46 @@
         }
       },
       {
+        "id": "product_additional_contents_display",
+        "type": "select",
+        "label": {
+          "zh-hans-cn": "展示方式",
+          "en": "Display method",
+          "id": "cara tampilan",
+          "th": "โหมดการแสดงผล",
+          "vi": "Phương thức hiển thị",
+          "ms": "Cara pertunjukan",
+          "zh-hant-tw": "展示方式"
+        },
+        "options": [
+          {
+            "value": "accordion",
+            "label": {
+              "zh-hans-cn": "手风琴",
+              "en": "Accordion",
+              "id": "Akordeon",
+              "th": "หีบเพลง",
+              "vi": "Đàn phong cầm",
+              "ms": "Akordion",
+              "zh-hant-tw": "手風琴"
+            }
+          },
+          {
+            "value": "tab",
+            "label": {
+              "zh-hans-cn": "标签",
+              "en": "Tab",
+              "id": "Label",
+              "th": "แท็ก",
+              "vi": "Nhãn mác",
+              "ms": "Tag",
+              "zh-hant-tw": "標籤"
+            }
+          }
+        ],
+        "default": "accordion"
+      },
+      {
         "id": "product_custom_tab1",
         "type": "page_picker",
         "label": {
@@ -2769,6 +2809,92 @@
           "zh-hant-tw": "背景顏色"
         },
         "default": "#F8FAFB"
+      },
+      {
+        "type": "group_header",
+        "label": {
+          "zh-hans-cn": "字体",
+          "en": "Typography",
+          "id": "Fonta",
+          "th": "ฟอนต์",
+          "vi": "Kiểu chữ",
+          "ms": "Fon",
+          "zh-hant-tw": "字體"
+        }
+      },
+      {
+        "id": "co_type_title_font",
+        "type": "font_lib_picker",
+        "label": {
+          "zh-hans-cn": "标题",
+          "en": "Title",
+          "id": "Judul",
+          "th": "หัวข้อ",
+          "vi": "Tiêu đề",
+          "ms": "Tajuk",
+          "zh-hant-tw": "標題"
+        },
+        "options": [
+          "Open Sans",
+          "Lato",
+          "Oswald",
+          "Noto Sans Display",
+          "Roboto",
+          "Raleway",
+          "Fjalla One",
+          "Abel",
+          "Source Sans Pro",
+          "EB Garamond",
+          "PT Serif",
+          "Lora",
+          "Arvo",
+          "Playfair Display",
+          "Vidaloka",
+          "Glegoo",
+          "Playball",
+          "Lobster Two"
+        ],
+        "default": {
+          "lib": "system",
+          "value": "Helvetica Neue / Arial"
+        }
+      },
+      {
+        "id": "co_type_body_font",
+        "type": "font_lib_picker",
+        "label": {
+          "zh-hans-cn": "正文",
+          "en": "Body text",
+          "id": "Teks",
+          "th": "ข้อความ",
+          "vi": "Nội dung chính",
+          "ms": "Teks",
+          "zh-hant-tw": "正文"
+        },
+        "options": [
+          "Open Sans",
+          "Lato",
+          "Oswald",
+          "Noto Sans Display",
+          "Roboto",
+          "Raleway",
+          "Fjalla One",
+          "Abel",
+          "Source Sans Pro",
+          "EB Garamond",
+          "PT Serif",
+          "Lora",
+          "Arvo",
+          "Playfair Display",
+          "Vidaloka",
+          "Glegoo",
+          "Playball",
+          "Lobster Two"
+        ],
+        "default": {
+          "lib": "system",
+          "value": "Helvetica Neue / Arial"
+        }
       },
       {
         "type": "group_header",

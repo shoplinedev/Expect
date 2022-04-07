@@ -538,6 +538,7 @@
       "submitSuccess": "Başarıyla gönderildi"
     },
     "morePaymentOptions": "daha fazla ödeme seçeneği",
+    "moreSpuImgBtn": "Daha fazla göster",
     "network": {
       "message2": "Ürün bilgisi alınamadı. Lütfen daha sonra tekrar deneyin"
     },
@@ -816,6 +817,28 @@
             "step3": "Tebrikler! {{saved}} tasarruf ettiniz!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Tekrar {{threshold}} satın alın ve <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ücretsiz kargo</span> keyfi çıkarın!",
+              "upperLimit": "Tekrar {{threshold}} satın alın ve <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ücretsiz kargo</span> keyfi çıkarın! (Maksimum ücretsiz kargo tutarı {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Tebrikler! <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ücretsiz kargo sahibisiniz</span>!",
+              "upperLimit": "Tebrikler! <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ücretsiz kargo sahibisiniz</span>! (Maksimum ücretsiz kargo tutarı {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Daha fazla {{threshold}} satın alın ve <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ücretsiz kargo</span> keyfi çıkarın!",
+              "upperLimit": "Daha fazla {{threshold}} satın alın ve <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ücretsiz kargo</span> keyfi çıkarın! (Maksimum ücretsiz kargo tutarı {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Tebrikler! <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ücretsiz kargo sahibisiniz</span>!",
+              "upperLimit": "Tebrikler! <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ücretsiz kargo sahibisiniz</span>! (Maksimum ücretsiz kargo tutarı {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "{{threshold}} adet daha satın alın, {{willSave}} adeti ücretsiz olsun",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Doğrulamadan sonra {{value}} bağlayabilir/değiştirebilirsiniz",
     "change-heart": "Fikrimi değiştirdim",
     "change-item": "Satın aldığım ürün(ü)(leri) değiştirmek istiyorum",
+    "continue-as-a-guest": "misafir olarak devam et",
     "country-address-fail": "Adresin girildiği ülkede bulunan satıcılar teslimat ücreti ödemelerinden sorumlu değildir. Lütfen manuel bir seçim yapın",
     "enter-address-first": "Lütfen öncelikle adresi girin",
     "enter-bank-card-number": "Lütfen banka kartı numarasını girin!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Bu PayPal hesabının bağlı bulunduğu ülke, teslimat ücreti ödemeleri ülkeler listesine dahil edilmemiştir. Lütfen manuel bir seçim yapın",
     "please-complete-the-payment-method-content": "Lütfen ödeme yöntemini tamamlayın",
     "please-read-and-agree-to-the-user-agreement-first": "Lütfen önce kullanıcı sözleşmesini okuyun ve kabul edin",
+    "poroceed-to-checkout": "Çıkışa doğru devam et",
     "price-more-expensive": "Başka bir yerde daha düşük fiyattan buldum",
     "product-abnormal-back-to-cart": "Ürün durumu hatası, lütfen sepete geri dönün ve tekrar deneyin",
     "put-up-order-summary": "Sipariş özetini gizle",
@@ -1229,6 +1254,7 @@
     "sendError": "Lütfen önce doğrulama kodunu gönderin",
     "signIn": "OTURUM AÇ",
     "signUp": "ÜYE OL",
+    "subscription-text": "Güncellemeleri almak, özel fırsatlara erişmek ve daha fazlası için e-posta almak için beni kaydedin.",
     "udbResponse": {
       "err-1": "Parametreler boş",
       "err-13": "stoken zaman aşımına uğradı",
@@ -1430,6 +1456,9 @@
         "ok-text": "Abonelikten çık",
         "title": "Abonelikten çık"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Bizden daha fazla pazarlama güncellemesi almayacaksınız. İstediğiniz zaman tekrar abone olabilirsiniz"
     }
   },
   "validate": {

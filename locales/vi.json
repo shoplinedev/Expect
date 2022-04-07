@@ -538,6 +538,7 @@
       "submitSuccess": "Gửi tin nhắn thành công"
     },
     "morePaymentOptions": "Thêm phương thức thanh toán",
+    "moreSpuImgBtn": "Tải thêm",
     "network": {
       "message2": "Truy xuất thông tin sản phẩm không thành công. Vui lòng thử lại sau"
     },
@@ -816,6 +817,28 @@
             "step3": "Xin chúc mừng! Bạn đã tiết kiệm được {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Mua tiếp {{threshold}} và tận hưởng <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Miễn phí giao hàng</span>!",
+              "upperLimit": "Mua tiếp {{threshold}} và tận hưởng <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Miễn phí giao hàng</span>! (Số tiền giao hàng miễn phí tối đa {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Xin chúc mừng! Bạn đã nhận được <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Miễn phí giao hàng</span>!",
+              "upperLimit": "Xin chúc mừng! Bạn đã nhận được <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Miễn phí giao hàng</span>! (Số tiền giao hàng miễn phí tối đa {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Mua thêm {{threshold}} và tận hưởng <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Miễn phí giao hàng</span>!",
+              "upperLimit": "Mua thêm {{threshold}} và tận hưởng <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Miễn phí giao hàng</span>! (Số tiền giao hàng miễn phí tối đa {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Xin chúc mừng! Bạn đã nhận được <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Miễn phí giao hàng</span>!",
+              "upperLimit": "Xin chúc mừng! Bạn đã nhận được <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Miễn phí giao hàng</span>! (Số tiền giao hàng miễn phí tối đa {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Mua {{threshold}} mảnh nữa, trong đó {{willSave}} mảnh là miễn phí",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Sau khi xác minh, bạn có thể thực hiện kết nối/thay đổi {{value}}",
     "change-heart": "Tôi đã thay đổi ý định",
     "change-item": "Tôi muốn thay đổi (những) mặt hàng đã mua",
+    "continue-as-a-guest": "Tiếp tục với tư cách khách",
     "country-address-fail": "Người bán có trụ sở tại quốc gia theo địa chỉ đã nhập không chịu trách nhiệm thanh toán phí giao hàng. Vui lòng lựa chọn thủ công",
     "enter-address-first": "Vui lòng điền địa chỉ trước",
     "enter-bank-card-number": "Vui lòng nhập số thẻ ngân hàng!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Quốc gia kèm theo tài khoản Paypal này không nằm trong danh sách những quốc gia thanh toán phí giao hàng. Vui lòng lựa chọn thủ công",
     "please-complete-the-payment-method-content": "Vui lòng hoàn tất phương thức thanh toán",
     "please-read-and-agree-to-the-user-agreement-first": "Vui lòng đọc và đồng ý với thỏa thuận dành cho người dùng trước",
+    "poroceed-to-checkout": "Tiến hành kiểm tra",
     "price-more-expensive": "Tìm thấy giá thấp hơn ở những nơi khác",
     "product-abnormal-back-to-cart": "Tình trạng sản phẩm bị lỗi, vui lòng trở về giỏ hàng và thử lại",
     "put-up-order-summary": "Ẩn đơn hàng",
@@ -1091,7 +1116,7 @@
     "pod-pic": "Tùy chỉnh xem trước",
     "point-discount": "Điểm thưởng chiết khấu",
     "point-discount-desc": "Bạn có thể sử dụng {{deductMemberPointNum}} điểm thưởng để tiết kiệm {{deductMemberPointAmount}}",
-    "point-discount-remark": "Chi phí {{value}} Điểm Thưởng",
+    "point-discount-remark": "Sử dụng {{value}} điểm",
     "policy": {
       "privacy-policy": "Chính sách bảo mật của trang web",
       "refund-policy": "Chính sách hoàn tiền"
@@ -1229,6 +1254,7 @@
     "sendError": "Vui lòng gửi mã xác nhận trước",
     "signIn": "ĐĂNG KÝ",
     "signUp": "ĐĂNG KÝ",
+    "subscription-text": "Đăng ký cho tôi email để nhận thông tin cập nhật, truy cập vào các giao dịch độc quyền và hơn thế nữa.",
     "udbResponse": {
       "err-1": "Tham số trống",
       "err-13": "stoken Mã hết hạn",
@@ -1430,6 +1456,9 @@
         "ok-text": "Hủy đăng ký",
         "title": "Hủy đăng ký"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Bạn sẽ không nhận được bất kỳ thông tin cập nhật tiếp thị nào từ chúng tôi. Bạn có thể đăng ký lại bất cứ lúc nào"
     }
   },
   "validate": {
@@ -1439,7 +1468,7 @@
     "discount-code-user-invalid": "Nhập mã {{discountCode}} chính xác, nhưng giá hoặc số lượng hàng hóa không đáp ứng yêu cầu",
     "enter-correct-email": "Vui lòng nhập đúng định dạng email",
     "enter-correct-phone-number": "Vui lòng nhập đúng định dạng số điện thoại di động",
-    "mutual-excluded-by-time-limited": "Đơn hàng này được áp dụng giá chiết khấu. Bạn không thể nhập thêm chương trình chiết khấu khác.",
+    "mutual-excluded-by-time-limited": "Đơn hàng này đã được áp dụng giảm giá. Bạn không thể thêm chương trình giảm giá khác.",
     "phone-number-less-than-100": "Độ dài của số điện thoại di động không được vượt quá 100 ký tự",
     "shipping_plan_unavailable": "Mã phiếu ưu đãi {{discountCode}} được áp dụng cho phương thức giao hàng này"
   },

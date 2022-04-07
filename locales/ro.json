@@ -538,6 +538,7 @@
       "submitSuccess": "Trimitere reușită"
     },
     "morePaymentOptions": "mai multe opțiuni de plată",
+    "moreSpuImgBtn": "Arată mai mult",
     "network": {
       "message2": "Nu s-a reușit obținerea informațiilor despre produs. Vă rugăm să încercați din nou mai târziu"
     },
@@ -816,6 +817,28 @@
             "step3": "Felicitări! Ați economisit {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Cumpărați {{threshold}} din nou și obțineți <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Livrare gratuită</span>!",
+              "upperLimit": "Cumpărați {{threshold}} din nou și obțineți <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Livrare gratuită</span>! (Cantitate maximă pentru livrare gratuită {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Felicitări! Ați obținut <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Livrare gratuită</span>!",
+              "upperLimit": "Felicitări! Ați obținut <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Livrare gratuită</span>! (Cantitate maximă pentru livrare gratuită {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Cumpărați mai multe {{threshold}}, obțineți <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Livrare gratuită</span>!",
+              "upperLimit": "Cumpărați mai multe {{threshold}}, obțineți <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Livrare gratuită</span>! (Cantitate maximă pentru livrare gratuită {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Felicitări! Ați obținut <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Livrare gratuită</span>!",
+              "upperLimit": "Felicitări! Ați obținut <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Livrare gratuită</span>! (Cantitate maximă pentru livrare gratuită {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Cumpără mai mult de {{threshold}} (de) bucăți, dintre care {{willSave}} (de) bucăți sunt gratis",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Puteți conecta/schimba {{value}} după verificare",
     "change-heart": "M-am răzgândit",
     "change-item": "Doresc să schimb articolul(elele) achiziționat(e)",
+    "continue-as-a-guest": "Continuați ca oaspete",
     "country-address-fail": "Vânzătorii din țara adresei introduse sunt responsabili cu plățile cheltuielilor de livrare. Realizați o selecție manuală",
     "enter-address-first": "Introduceți mai întâi adresa",
     "enter-bank-card-number": "Introduceți numărul cardului bancar!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Țara în care este bazat contul PayPal nu este inclusă în lista de țări pentru plățile cheltuielilor de livrare. Realizați o selecție manuală",
     "please-complete-the-payment-method-content": "Finalizați metoda de plată",
     "please-read-and-agree-to-the-user-agreement-first": "Citiți și acceptați mai întâi acordul pentru utilizator",
+    "poroceed-to-checkout": "Finalizează cumpărăturile",
     "price-more-expensive": "Preț mai scăzut găsit în altă parte",
     "product-abnormal-back-to-cart": "Eroare stare produs, reveniți la coș și încercați din nou",
     "put-up-order-summary": "Ascunde sumarul comenzii",
@@ -1229,6 +1254,7 @@
     "sendError": "Trimiteți mai întâi codul de verificare",
     "signIn": "AUTENTIFICARE",
     "signUp": "ÎNSCRIERE",
+    "subscription-text": "Înscrie-mă pentru e-mailuri pentru a primi actualizări, acces la oferte exclusive și multe altele.",
     "udbResponse": {
       "err-1": "Parametri necompletați",
       "err-13": "stoken expirat",
@@ -1430,6 +1456,9 @@
         "ok-text": "Dezabonare",
         "title": "Dezabonare"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Nu veți mai primi actualizări de marketing de la noi. Vă puteți abona din nou oricând"
     }
   },
   "validate": {

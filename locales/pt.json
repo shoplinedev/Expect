@@ -538,6 +538,7 @@
       "submitSuccess": "Submetido com sucesso"
     },
     "morePaymentOptions": "Mais opções de pagamento",
+    "moreSpuImgBtn": "Mostrar mais",
     "network": {
       "message2": "Sem informações do produto no momento, tente novamente mais tarde"
     },
@@ -816,6 +817,28 @@
             "step3": "Parabéns! Você economizou {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Compre mais {{threshold}} e aproveite <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frete grátis</span>!",
+              "upperLimit": "Compre mais {{threshold}} e aproveite <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frete grátis</span>! (Valor máximo de frete grátis {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Parabéns! Você ganhou <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frete grátis</span>!",
+              "upperLimit": "Parabéns! Você ganhou <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frete grátis</span>! (Valor máximo de frete grátis {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Compre mais {{threshold}} itens e aproveite <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frete grátis</span>!",
+              "upperLimit": "Compre mais {{threshold}} itens e aproveite <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frete grátis</span>! (Valor máximo de frete grátis {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Parabéns! Você ganhou <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frete grátis</span>!",
+              "upperLimit": "Parabéns! Você ganhou <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frete grátis</span>! (Valor máximo de frete grátis {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Compre mais {{threshold}} peças, das quais {{willSave}} peças são grátis",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Pode vincular/alterar {{value}} após completar a verificação",
     "change-heart": "Mudança de opinião",
     "change-item": "Quer alterar o item de compra",
+    "continue-as-a-guest": "Continue a visitar como um visitante",
     "country-address-fail": "Os vendedores no país deste endereço não pagam mais pelo frete, selecione manualmente",
     "enter-address-first": "Insira seu endereço",
     "enter-bank-card-number": "Insira o número do cartão bancário!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "O país da conta paypal não está incluído no país onde a entrega será paga, selecione manualmente.",
     "please-complete-the-payment-method-content": "Preencha os detalhes completos do pagamento",
     "please-read-and-agree-to-the-user-agreement-first": "Ler e concordar com o acordo do usuário primeiro",
+    "poroceed-to-checkout": "Faça a liquidação",
     "price-more-expensive": "Mais caro que outras lojas",
     "product-abnormal-back-to-cart": "Erro de status do produto, volte ao carrinho para reeditar",
     "put-up-order-summary": "Ocultar o resumo do pedido",
@@ -1229,6 +1254,7 @@
     "sendError": "Envie o código de verificação primeiro",
     "signIn": "Entre",
     "signUp": "Inscreva-se",
+    "subscription-text": "Inscreva-se em e-mails para atualizações, ofertas exclusivas e outras informações",
     "udbResponse": {
       "err-1": "Faltando parâmetro",
       "err-13": "stoke expirou",
@@ -1430,6 +1456,9 @@
         "ok-text": "Cancelar a inscrição",
         "title": "Cancelar a inscrição"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Você não receberá mais informações de marketing e poderá se inscrever a qualquer momento"
     }
   },
   "validate": {

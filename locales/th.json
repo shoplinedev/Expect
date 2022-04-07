@@ -538,6 +538,7 @@
       "submitSuccess": "ส่งเรียบร้อยแล้ว"
     },
     "morePaymentOptions": "ตัวเลือกการชำระเงินเพิ่มเติม",
+    "moreSpuImgBtn": "แสดงเพิ่มเติม",
     "network": {
       "message2": "การเรียกข้อมูลสินค้าล้มเหลว โปรดลองอีกครั้งในภายหลัง"
     },
@@ -816,6 +817,28 @@
             "step3": "ขอแสดงความยินดี! คุณประหยัดไป {{saved}}！"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "ซื้ออีก {{threshold}} จะได้รับสิทธิ์ <span class=\"custom-sale-color\" style=\"font-size:14px;\"> ฟรีค่าระวาง</span>!",
+              "upperLimit": "ซื้ออีก {{threshold}} จะได้รับสิทธิ์ <span class=\"custom-sale-color\" style=\"font-size:14px;\"> ฟรีค่าระวาง</span>! (จำนวนเงินการจัดส่งฟรีสูงสุด {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "ยินดีด้วย! คุณได้รับ <span class=\"custom-sale-color\" style=\"font-size:14px;\"> ฟรีค่าระวาง</span>!",
+              "upperLimit": "ยินดีด้วย! คุณได้รับ <span class=\"custom-sale-color\" style=\"font-size:14px;\"> ฟรีค่าระวาง</span>! (จำนวนเงินการจัดส่งฟรีสูงสุด {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "ซื้อเพิ่มอีก {{threshold}} ชิ้น จะได้รับสิทธิ์ <span class=\"custom-sale-color\" style=\"font-size:14px;\"> ฟรีค่าระวาง</span>!",
+              "upperLimit": "ซื้อเพิ่มอีก {{threshold}} ชิ้น จะได้รับสิทธิ์ <span class=\"custom-sale-color\" style=\"font-size:14px;\"> ฟรีค่าระวาง</span>! (จำนวนเงินการจัดส่งฟรีสูงสุด {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "ยินดีด้วย! คุณได้รับ <span class=\"custom-sale-color\" style=\"font-size:14px;\"> ฟรีค่าระวาง</span>!",
+              "upperLimit": "ยินดีด้วย! คุณได้รับ <span class=\"custom-sale-color\" style=\"font-size:14px;\"> ฟรีค่าระวาง</span>! (จำนวนเงินการจัดส่งฟรีสูงสุด {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "ซื้ออีก{{threshold}}ชิ้น รับฟรี{{willSave}}ชิ้น",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "คุณสามารถเชื่อม/เปลี่ยนแปลง {{value}} ได้หลังจากการยืนยันตัวตน",
     "change-heart": "ฉันเปลี่ยนใจแล้ว",
     "change-item": "ฉันต้องการเปลี่ยนรายการที่ซื้อ",
+    "continue-as-a-guest": "เยี่ยมชมในฐานะแขกต่อไป",
     "country-address-fail": "ผู้ขายที่อยู่ในประเทศตามที่อยู่ที่ใส่ไม่รับผิดชอบการชำระค่าธรรมเนียมการจัดส่ง โปรดเลือกด้วยตนเอง",
     "enter-address-first": "โปรดใส่ที่อยู่ก่อน",
     "enter-bank-card-number": "โปรดใส่หมายเลขบัตรธนาคาร",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "ประเทศที่ใช้บัญชี PayPal นี้ไม่รวมอยู่ในรายการประเทศสำหรับการชำระค่าธรรมเนียมการจัดส่ง โปรดเลือกด้วยตนเอง",
     "please-complete-the-payment-method-content": "โปรดดำเนินการตามวิธีการชำระเงินให้เสร็จสมบูรณ์",
     "please-read-and-agree-to-the-user-agreement-first": "โปรดอ่านและข้อตกลงในการใช้งานก่อน",
+    "poroceed-to-checkout": "ดำเนินการชำระเงิน",
     "price-more-expensive": "ราคาที่ต่ำกว่าที่อื่น",
     "product-abnormal-back-to-cart": "สถานะสินค้าผิดพลาด โปรดกลับไปที่ตะกร้าและลองอีกครั้ง",
     "put-up-order-summary": "ย่อสรุปการสั่งซื้อ",
@@ -1091,7 +1116,7 @@
     "pod-pic": "ตัวอย่างแบบกำหนดเอง",
     "point-discount": "ส่วนลดคะแนน",
     "point-discount-desc": "คุณสามารถใช้คะแนน {{deductMemberPointNum}} เพื่อหัก {{deductMemberPointAmount}}",
-    "point-discount-remark": "ใช้ {{value}} แต้ม",
+    "point-discount-remark": "ใช้ {{value}} คะแนน",
     "policy": {
       "privacy-policy": "นโยบายความเป็นส่วนตัว",
       "refund-policy": "นโยบายการคืนเงิน"
@@ -1229,6 +1254,7 @@
     "sendError": "โปรดส่งรหัสยืนยันก่อน",
     "signIn": "ลงชื่อเข้าใช้",
     "signUp": "ลงทะเบียน",
+    "subscription-text": "ลงทะเบียนอีเมลเพื่อรับข้อมูลอัปเดตและข้อเสนอพิเศษอื่น ๆ",
     "udbResponse": {
       "err-1": "พารามิเตอร์ว่างเปล่า",
       "err-13": "เซสชั่นหมดอายุแล้ว",
@@ -1430,6 +1456,9 @@
         "ok-text": "ยกเลิกการสมัครสมาชิก",
         "title": "ยกเลิกการสมัครสมาชิก"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "คุณจะไม่ได้รับข้อมูลอัปเดตทางการตลาดจากเราอีกต่อไป คุณสามารถสมัครใหม่ได้ตลอดเวลา"
     }
   },
   "validate": {
@@ -1439,7 +1468,7 @@
     "discount-code-user-invalid": "สินค้าในรถเข็นของคุณใช้กับรหัสโปรโมชั่น {{discountCode}} ไม่ได้",
     "enter-correct-email": "โปรดใส่ที่อยู่อีเมลที่มีรูปแบบถูกต้อง",
     "enter-correct-phone-number": "โปรดใส่หมายเลขโทรศัพท์มือถือที่มีรูปแบบที่ถูกต้อง",
-    "mutual-excluded-by-time-limited": "กิจกรรมส่วนลดและรหัสคูปองในเวลาจำกัดไม่สามารถใช้ร่วมกันได้",
+    "mutual-excluded-by-time-limited": "มีส่วนลดที่ใช้กับคำสั่งซื้อนี้แล้ว คุณไม่สามารถเพิ่มส่วนลดอื่นได้อีก",
     "phone-number-less-than-100": "หมายเลขโทรศัพท์มือถือต้องมีความยาวไม่เกิน 100 ตัวอักษร",
     "shipping_plan_unavailable": "รหัสคูปอง {{discountCode}} ใช้ไม่ได้กับวิธีการขนส่งในปัจจุบัน"
   },

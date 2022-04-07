@@ -538,6 +538,7 @@
       "submitSuccess": "Sendt inn"
     },
     "morePaymentOptions": "flere betalingsalternativer",
+    "moreSpuImgBtn": "Last mer",
     "network": {
       "message2": "Kan ikke hente produktinformasjon. Prøv på nytt senere"
     },
@@ -816,6 +817,28 @@
             "step3": "Gratulerer! Du har sparet {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Kjøp {{threshold}} igjen og nyt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis frakt</span>!",
+              "upperLimit": "Kjøp {{threshold}} igjen og nyt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis frakt</span>! (Maksimal gratis fraktverdi {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Gratulerer ! Du har kjøpt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis frakt</span>!",
+              "upperLimit": "Gratulerer ! Du har kjøpt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis frakt</span>! (Maksimal gratis fraktverdi {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Kjøp {{threshold}} mer og nyt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis frakt</span>!",
+              "upperLimit": "Kjøp {{threshold}} mer og nyt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis frakt</span>! (Maksimal gratis fraktverdi {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Gratulerer ! Du har kjøpt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis frakt</span>!",
+              "upperLimit": "Gratulerer ! Du har kjøpt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis frakt</span>! (Maksimal gratis fraktverdi {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Kjøp {{threshold}} flere brikker, hvorav {{willSave}} brikker er gratis",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Du kan koble til/endre {{value}} etter bekreftelse",
     "change-heart": "Ombestemte meg",
     "change-item": "Jeg vil endre varen(e) som er kjøpt",
+    "continue-as-a-guest": "Fortsett som gjest",
     "country-address-fail": "Selgere basert i landet til den angitte adressen er ikke ansvarlige for leveringsgebyrbetalinger. Foreta et manuelt valg",
     "enter-address-first": "Skriv inn adressen først",
     "enter-bank-card-number": "Angi bankkortnummer!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Landet der denne PayPal-kontoen er basert, er ikke inkludert i listen over land for leveringsgebyrbetalinger. Foreta et manuelt valg",
     "please-complete-the-payment-method-content": "Fyll ut betalingsmåten",
     "please-read-and-agree-to-the-user-agreement-first": "Les og godta brukeravtalen først",
+    "poroceed-to-checkout": "Fortsett til utsjekking",
     "price-more-expensive": "Lavere pris funnet andre steder",
     "product-abnormal-back-to-cart": "Produktstatusfeil, gå tilbake til handlekurven og prøv på nytt",
     "put-up-order-summary": "Skjul ordresammendrag",
@@ -1229,6 +1254,7 @@
     "sendError": "Send bekreftelseskoden først",
     "signIn": "LOGG INN",
     "signUp": "MELDE SEG PÅ",
+    "subscription-text": "Registrer meg for e-poster for å motta oppdateringer, tilgang til eksklusive tilbud og mer.",
     "udbResponse": {
       "err-1": "Parametere tomme",
       "err-13": "stoken ble tidsavbrutt",
@@ -1430,6 +1456,9 @@
         "ok-text": "Avmeldt",
         "title": "Avmeldt"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Du vil ikke motta flere markedsføringsoppdateringer fra oss. Du kan abonnere på nytt når som helst"
     }
   },
   "validate": {

@@ -538,6 +538,7 @@
       "submitSuccess": "Succesvol ingediend"
     },
     "morePaymentOptions": "Meer betalingsmogelijkheden",
+    "moreSpuImgBtn": "Meer tonen",
     "network": {
       "message2": "Geen informatie van dit artikel is beschikbaar, probeer het later nog eens"
     },
@@ -816,6 +817,28 @@
             "step3": "Gefiliciteerd! U heeft {{saved}} bespaard"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Koop {{threshold}} meer en krijg <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis bezorgen</span>!",
+              "upperLimit": "Koop {{threshold}} meer en krijg <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis bezorgen</span>! (Maximumbedrag {{upperLimit}} voor gratis verzending)"
+            },
+            "step3": {
+              "unlimited": "Gefeliciteerd! U hebt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis bezorgen</span> gekregen!",
+              "upperLimit": "Gefeliciteerd! U hebt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis bezorgen</span> gekregen! (Maximumbedrag {{upperLimit}} voor gratis verzending)"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Koop {{threshold}} stukken meer en krijg <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis bezorgen</span>!",
+              "upperLimit": "Koop {{threshold}} stukken meer en krijg <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis bezorgen</span>! (Maximumbedrag {{upperLimit}} voor gratis verzending)"
+            },
+            "step3": {
+              "unlimited": "Gefeliciteerd! U hebt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis bezorgen</span> gekregen!",
+              "upperLimit": "Gefeliciteerd! U hebt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis bezorgen</span> gekregen! (Maximumbedrag {{upperLimit}} voor gratis verzending)"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Koop {{threshold}} stukken meer, daarvan {{willSave}} gratis zijn",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "U kunt {{value}} verbinden/wijzigen na verificatie",
     "change-heart": "Gedachte veranderen",
     "change-item": "Aritikelen veranderen wil",
+    "continue-as-a-guest": "Belijven bezoeken als een gast",
     "country-address-fail": "De handelaar in het land van dit adres zal niet langer betalen voor de bezorging, kies het manueel a.u.b.",
     "enter-address-first": "Vul eerst het adres in",
     "enter-bank-card-number": "Vul de kaartnummer in",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Het land van de paypal rekening is niet opgenomen in het land waar de bezorging betalen, kies het manueel a.u.b.",
     "please-complete-the-payment-method-content": "Vul de volledige betaalmethode inhoud in",
     "please-read-and-agree-to-the-user-agreement-first": "Lees eerst de Gebruikersovereenkomst en ga ermee akkoord",
+    "poroceed-to-checkout": "Een afrekening maken",
     "price-more-expensive": "Duurder dan andere plaatsen",
     "product-abnormal-back-to-cart": "Productstatus fout, ga terug naar de winkelwagen om opnieuw aan te passen",
     "put-up-order-summary": "Besteloverzicht opbreiden",
@@ -1229,6 +1254,7 @@
     "sendError": "Verzend eerst de verificatiecode",
     "signIn": "Inloggen",
     "signUp": "Registreren",
+    "subscription-text": "Meld u aan met e-mail om updates, exclusieve aanbiedingen en meer te krijgen",
     "udbResponse": {
       "err-1": "Parameters leeg",
       "err-13": "stoken verlopen",
@@ -1430,6 +1456,9 @@
         "ok-text": "Abonnement opzeggen",
         "title": "Abonnement opzeggen"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "U zult geen promoties meer ontvangen en kunt nadien op elk moment abonneren"
     }
   },
   "validate": {

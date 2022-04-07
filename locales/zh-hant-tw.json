@@ -538,6 +538,7 @@
       "submitSuccess": "提交成功"
     },
     "morePaymentOptions": "更多支付選項",
+    "moreSpuImgBtn": "展示更多",
     "network": {
       "message2": "無法擷取產品資訊。請稍後再試"
     },
@@ -816,6 +817,28 @@
             "step3": "恭喜你！您節省了{{saved}}！"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "再買 {{threshold}}，可享 <span class=\"custom-sale-color\" style=\"font-size:14px;\">免運費</span>!",
+              "upperLimit": "再買 {{threshold}}，可享 <span class=\"custom-sale-color\" style=\"font-size:14px;\">免運費</span>! （免運費金額上限{{upperLimit}}）"
+            },
+            "step3": {
+              "unlimited": "恭喜！ 您已獲得 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 免運費</span>!",
+              "upperLimit": "恭喜！ 您已獲得 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 免運費</span>! (免運費金額上限{{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "再買 {{threshold}}件，享 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 免運費</span>!",
+              "upperLimit": "再買 {{threshold}}件，享 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 免運費</span>! (免運費金額上限{{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "恭喜！ 您已獲得 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 免運費</span>!",
+              "upperLimit": "恭喜！ 您已獲得 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 免運費</span>! (免運費金額上限{{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "再買{{threshold}}件，其中{{willSave}}件免費",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "您可以在驗證後連結/變更 {{value}}",
     "change-heart": "我改變心意了",
     "change-item": "我想要變更已購買的品項",
+    "continue-as-a-guest": "繼續以訪客身份訪問",
     "country-address-fail": "位於輸入地址所在國家/地區的賣家不負責支付運費。請手動選取",
     "enter-address-first": "請先輸入地址",
     "enter-bank-card-number": "請輸入銀行卡號！",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "此 PayPal 帳戶所在的國家/地區不包括在支付運費的國家/地區清單中。請手動選取",
     "please-complete-the-payment-method-content": "請完成付款方式",
     "please-read-and-agree-to-the-user-agreement-first": "請先閱讀及同意使用者合約",
+    "poroceed-to-checkout": "進行結算",
     "price-more-expensive": "在其他地方找到更低的價格",
     "product-abnormal-back-to-cart": "產品狀態錯誤，請返回購物車後再試一次",
     "put-up-order-summary": "收合訂單摘要",
@@ -1229,6 +1254,7 @@
     "sendError": "請先傳送驗證碼",
     "signIn": "登入",
     "signUp": "註冊",
+    "subscription-text": "註冊電子郵件以獲取更新和獨家優惠等信息",
     "udbResponse": {
       "err-1": "參數為空",
       "err-13": "工作階段逾時",
@@ -1430,6 +1456,9 @@
         "ok-text": "取消訂閱",
         "title": "取消訂閱"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "您將不再收到任何營銷信息，之後可以隨時訂閱"
     }
   },
   "validate": {

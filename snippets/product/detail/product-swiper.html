@@ -23,7 +23,7 @@
     data-initial-slide="{{initialSlide}}"
     data-thumbs-direction="{{ thumbsDirection }}"
     data-show-thumbnail-arrow="{{ showThumbnailArrow }}"
-    class="d-none {{ cond (boolean thumbsDirection '==' 'aside') 'd-md-flex' 'd-md-block' }} product_pc_productImageContainer {{ cond (boolean selectorId) (append 'execute_productImages_pc_' selectorId) '' }} {{ cond (boolean productImagePos '==' 'right') 'product_layoutRight' 'product_layoutLeft' }} {{ cond (boolean thumbsDirection '==' 'aside') 'product_layoutColumn' 'product_layoutRow' }}"
+    class=" d-none {{ cond (boolean thumbsDirection '==' 'aside') 'd-md-flex' 'd-md-block' }} product_pc_productImageContainer {{ cond (boolean selectorId) (append 'execute_productImages_pc_' selectorId) '' }} {{ cond (boolean productImagePos '==' 'right') 'product_layoutRight' 'product_layoutLeft' }} {{ cond (boolean thumbsDirection '==' 'aside') 'product_layoutColumn' 'product_layoutRow' }}"
   >
     {{#if (and (boolean thumbsDirection '==' 'aside')) }}
       <div class="product_thumbsColumnContainer" style="display: {{#or (isFalsey mediaList.length) (boolean mediaList.length '<=' '1') }}none{{/or}};">
@@ -168,7 +168,7 @@
 <div class="d-md-none">
   <div
     data-initial-slide="{{initialSlide}}"
-    class="d-md-none product_mobile_productImageContainer {{ cond (boolean selectorId) (append 'execute_productImages_mobile_' selectorId) '' }} {{#isFalsey mobileProductImageIsFull }}middleWidth{{/isFalsey}}"
+    class=" d-md-none product_mobile_productImageContainer {{ cond (boolean selectorId) (append 'execute_productImages_mobile_' selectorId) '' }} {{#isFalsey mobileProductImageIsFull }}middleWidth{{/isFalsey}}"
   >
     <div class="swiper-container product_productImages">
       {{#if mediaList.length }}
@@ -277,7 +277,6 @@
         </div>
       {{/if}}
     </div>
-
     <div class="paginationBox" style="{{#or (isFalsey mediaList.length) (boolean mediaList.length '<=' '1') }}display: none;{{/or}}">
       <div class="paginationList" >
         <div class="paginationListWrapper">
@@ -287,5 +286,6 @@
         </div>
       </div>
     </div>
+    
   </div>
 </div>

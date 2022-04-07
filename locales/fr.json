@@ -538,6 +538,7 @@
       "submitSuccess": "Soumis avec succès"
     },
     "morePaymentOptions": "Plus d'options de paiement",
+    "moreSpuImgBtn": "Afficher plus",
     "network": {
       "message2": "Impossible de récupérer les informations sur le produit. Veuillez réessayer plus tard"
     },
@@ -816,6 +817,28 @@
             "step3": "Félicitations! Vous économisez {{saved}}！"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Profiter de <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Transport gratuit</span> en achetant plus de {{threshold}}!",
+              "upperLimit": "Profiter de <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Transport gratuit</span>! en achetant plus de {{threshold}} Montant de la livraison gratuite jusqu’à {{upperLimit}}"
+            },
+            "step3": {
+              "unlimited": "Félicitation! Vou avez obtenu <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Transport gratuit</span>!",
+              "upperLimit": "Félicitation! Vou avez obtenu <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Transport gratuit</span>! (Montant de la livraison gratuite jusqu’à {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Profiter de <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Transport gratuit</span> en achetant plus de {{threshold}} pièces!",
+              "upperLimit": "Profiter de <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Transport gratuit</span> en achetant plus de {{threshold}} pièces! (Montant de la livraison gratuite jusqu’à {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Félicitation! Vou avez obtenu <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Transport gratuit</span>!",
+              "upperLimit": "Félicitation! Vou avez obtenu <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Transport gratuit</span>! (Montant de la livraison gratuite jusqu’à {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Achetez à nouveau des pièces {{threshold}}, où les pièces {{willSave}} sont gratuites",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Vous pouvez associer/modifier {{value}} après vérification",
     "change-heart": "J'ai changé d'avis",
     "change-item": "Je souhaite changer le ou les articles achetés",
+    "continue-as-a-guest": "Continuer à visiter en tant qu'invité",
     "country-address-fail": "Les vendeurs basés dans le pays de l'adresse saisie ne prennent pas en charge le paiement des frais de livraison. Veuillez effectuer une sélection manuelle",
     "enter-address-first": "Veuillez commencer par saisir l'adresse",
     "enter-bank-card-number": "Veuillez saisir le numéro de carte bancaire !",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Le pays dans lequel ce compte PayPal est basé n'est pas inclus dans la liste des pays pour le paiement des frais de livraison. Veuillez effectuer une sélection manuelle",
     "please-complete-the-payment-method-content": "Veuillez renseigner le mode de paiement",
     "please-read-and-agree-to-the-user-agreement-first": "Veuillez commencer par lire et accepter le contrat d'utilisation",
+    "poroceed-to-checkout": "Passer à la caisse",
     "price-more-expensive": "J'ai trouvé moins cher ailleurs",
     "product-abnormal-back-to-cart": "Erreur de statut du produit, veuillez revenir au panier et réessayer",
     "put-up-order-summary": "Réduire le récapitulatif de commande",
@@ -1229,6 +1254,7 @@
     "sendError": "Veuillez d'abord envoyer le code de vérification",
     "signIn": "Se connecter",
     "signUp": "S'inscrire",
+    "subscription-text": "Inscrivez-vous sur l'é-mail pour obtenir des mises à jour et des offres exclusives et plus encore",
     "udbResponse": {
       "err-1": "Paramètres vides",
       "err-13": "Session expirée",
@@ -1430,6 +1456,9 @@
         "ok-text": "Se désabonner",
         "title": "Se désabonner"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Vous ne recevrez plus de mises à jour marketing de notre part. Vous pouvez vous réabonner à tout moment"
     }
   },
   "validate": {

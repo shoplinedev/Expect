@@ -199,16 +199,15 @@
             makeIsLoaded(element);
         }
     };
-    let image_transform_webp_isSupportWebp = false;
     function transformImageUrlToWebp(fileOrUrl, ignoreSetting = false) {
         const file = "string" === typeof fileOrUrl ? new SLFile(fileOrUrl, window.location.href) : fileOrUrl;
-        if (!file.querys.has("t") || ignoreSetting) if (image_transform_webp_isSupportWebp) file.querys.set("t", "webp"); else if (file.suffix) file.querys.set("t", file.suffix);
+        if (!file.querys.has("t") || ignoreSetting) if (window.__isSupportWebp__) file.querys.set("t", "webp"); else if (file.suffix) file.querys.set("t", file.suffix);
         return file.toString();
     }
     const image_transform_webp = {
         init() {
             return isSupportWebp().then((flag => {
-                image_transform_webp_isSupportWebp = flag;
+                window.__isSupportWebp__ = flag;
             }));
         },
         beforeLoad(element) {
@@ -223,6 +222,7 @@
     function getPosterUrl(url) {
         if (!isGif(url) || !isS3FileUrl(url)) return;
         const file = new SLFile(url, window.location.href);
+        if ("1" !== file.querys.get("_f")) return;
         if ("poster" === file.modifiers[0]) return;
         file.modifiers.unshift("poster");
         file.suffix = "png";

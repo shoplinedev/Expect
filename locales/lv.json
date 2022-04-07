@@ -538,6 +538,7 @@
       "submitSuccess": "Veiksmīga iesniegšana"
     },
     "morePaymentOptions": "Vairāk norēķinu iespēju",
+    "moreSpuImgBtn": "Ielādēt vairāk",
     "network": {
       "message2": "Nevar izgūt informāciju par produktu. Lūdzu, mēģiniet vēlreiz vēlāk"
     },
@@ -816,6 +817,28 @@
             "step3": "Apsveicam! Jūs esat saglabāt {{saved}} !"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Pirkt {{threshold}} vēlreiz un baudīt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Bezmaksas piegāde</span>!",
+              "upperLimit": "Pirkt {{threshold}} vēlreiz un baudīt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Bezmaksas piegāde</span>! (Maksimālā bezmaksas kravas summa {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Apsveicu! Jūs esat ieguvis <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Bezmaksas piegāde</span>!",
+              "upperLimit": "Apsveicu! Jūs esat ieguvis <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Bezmaksas piegāde</span>! (Maksimālā bezmaksas kravas summa {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Pērciet {{threshold}} vairāk gabalu un izbaudiet <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Bezmaksas piegāde</span>!",
+              "upperLimit": "Pērciet {{threshold}} vairāk gabalu un izbaudiet <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Bezmaksas piegāde</span>! (Maksimālā bezmaksas kravas summa {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Apsveicu! Jūs esat ieguvis <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Bezmaksas piegāde</span>!",
+              "upperLimit": "Apsveicu! Jūs esat ieguvis <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Bezmaksas piegāde</span>! (Maksimālā bezmaksas kravas summa {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Iegādājieties vēl {{threshold}} gabalu, no kuriem {{willSave}} gabali ir bezmaksas",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Pēc verifikācijas varat izveidot savienojumu / mainīt {{value}}",
     "change-heart": "Mainīja manu prātu",
     "change-item": "Es vēlos modificēt iegādāto (-ās) preci (-es)",
+    "continue-as-a-guest": "Turpiniet kā viesis",
     "country-address-fail": "Pārdevēji, kas atrodas norādītajā adresē, nav atbildīgi par piegādes izmaksu samaksu. Lūdzu, atlasiet manuāli",
     "enter-address-first": "Lūdzu, vispirms ievadiet adresi",
     "enter-bank-card-number": "Lūdzu, ievadiet savas bankas kartes numuru !",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Valsts, kurā atrodas šis PayPal konts, nav iekļauta to valstu sarakstā, kurās jāmaksā piegādes izmaksas. Lūdzu, atlasiet manuāli",
     "please-complete-the-payment-method-content": "Lūdzu, aizpildiet maksājuma veidu",
     "please-read-and-agree-to-the-user-agreement-first": "Lūdzu, vispirms izlasiet un pieņemiet lietošanas nosacījumus",
+    "poroceed-to-checkout": "Dodieties uz izrakstīšanos",
     "price-more-expensive": "Zemāka cena, kas atrodama citur",
     "product-abnormal-back-to-cart": "Produkta statusa kļūda, lūdzu, atgriezieties grozā un mēģiniet vēlreiz",
     "put-up-order-summary": "Paslēpiet rīkojuma kopsavilkumu",
@@ -1229,6 +1254,7 @@
     "sendError": "Lūdzu, vispirms nosūtiet verifikācijas kodu",
     "signIn": "Pierakstieties",
     "signUp": "PIERAKSTĪŠANĀS",
+    "subscription-text": "Reģistrējieties e-pastiem, lai saņemtu atjauninājumus, piekļuvi ekskluzīviem piedāvājumiem un daudz ko citu.",
     "udbResponse": {
       "err-1": "Tukši parametri",
       "err-13": "stoken noildzes",
@@ -1430,6 +1456,9 @@
         "ok-text": "Anulēt abonementu",
         "title": "Anulēt abonementu"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Jūs vairs nesaņemsit no mums nekādus mārketinga atjauninājumus. Jebkurā laikā varat atkārtoti abonēt"
     }
   },
   "validate": {

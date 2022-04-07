@@ -538,6 +538,7 @@
       "submitSuccess": "Pateikta sėkmingai"
     },
     "morePaymentOptions": "daugiau mokėjimo parinkčių",
+    "moreSpuImgBtn": "Rodyti daugiau",
     "network": {
       "message2": "Nepavyko gauti prekės info. Prašome bandyti dar kartą vėliau"
     },
@@ -816,6 +817,28 @@
             "step3": "Sveikiname! Sutaupėte {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Pirkite {{threshold}} iš naujo, gaukite <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Nemokamas pristatymas</span>!",
+              "upperLimit": "Pirkite {{threshold}} iš naujo, gaukite <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Nemokamas pristatymas</span>! (Maximali nemokamo siuntimo suma{{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Sveikiname! Jūs gavote <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Nemokamas pristatymas</span>!",
+              "upperLimit": "Sveikiname! Jūs gavote <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Nemokamas pristatymas</span>! (Maximali nemokamo siuntimo suma{{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Pirkite {{threshold}} daugiau, gaukite <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Nemokamas pristatymas</span>!",
+              "upperLimit": "Pirkite {{threshold}} daugiau, gaukite <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Nemokamas pristatymas</span>! (Maximali nemokamo siuntimo suma{{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Sveikiname! Jūs gavote <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Nemokamas pristatymas</span>!",
+              "upperLimit": "Sveikiname! Jūs gavote <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Nemokamas pristatymas</span>! (Maximali nemokamo siuntimo suma{{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Pirkite dar {{threshold}}, iš kurių {{willSave}} bus nemokamos",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Galite prijungti / keisti {{value}} po patikrinimo",
     "change-heart": "Pakeičiau savo nuomonę",
     "change-item": "Noriu pakeisti įsigytą (-as) prekę (-es)",
+    "continue-as-a-guest": "Tęskite kaip svečias",
     "country-address-fail": "Pardavėjai, esantys įvėsto adreso šalyje, nėra atsakingi už pristatymo įmokų mokėjimą. Prašome atlikti rankinį pasirinkimą",
     "enter-address-first": "Prašome pirma įvesti adresą",
     "enter-bank-card-number": "Prašome įvesti banko kortelės numerį!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Šalis, kurioje yra „Paypal“ paskyra, neįtraukta į pristatymo įmokų mokėjimo šalių sąrašą. Prašome atlikti rankinį pasirinkimą",
     "please-complete-the-payment-method-content": "Prašome užpildyti mokėjimo būdą",
     "please-read-and-agree-to-the-user-agreement-first": "Prašome pirma perskaityti ir sutikti su vartotojo sutartimi",
+    "poroceed-to-checkout": "Pereikite prie apmokėjimo",
     "price-more-expensive": "Sumažinti kainą, rastą kitoje vietoje",
     "product-abnormal-back-to-cart": "Prekės būklės klaida, prašome grįžti į vežimėlį ir bandykite kitą kartą",
     "put-up-order-summary": "Slėpti užsakymo santrauką",
@@ -1229,6 +1254,7 @@
     "sendError": "Prašome pirma išsiųsti patvirtinimo kodą",
     "signIn": "PRISIJUNGTI",
     "signUp": "REGISTRUOTIS",
+    "subscription-text": "Užsiregistruokite, kad gaučiau el. laiškus, kad gaučiau naujienas, prieigą prie išskirtinių pasiūlymų ir dar daugiau.",
     "udbResponse": {
       "err-1": "Parametrai tušti",
       "err-13": "baigėsi stoken terminas",
@@ -1430,6 +1456,9 @@
         "ok-text": "Neprenumeruoti",
         "title": "Neprenumeruoti"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Daugiau iš mūsų rinkodaros naujienų negausite. Galite bet kada vėl užsiprenumeruoti"
     }
   },
   "validate": {

@@ -538,6 +538,7 @@
       "submitSuccess": "Sendt korrekt"
     },
     "morePaymentOptions": "flere betalingsmuligheder",
+    "moreSpuImgBtn": "Læs mere",
     "network": {
       "message2": "Det lykkedes ikke at hente produktoplysninger. Prøv igen senere"
     },
@@ -816,6 +817,28 @@
             "step3": "Tillykke! Du har gemt {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Køb {{threshold}} igen og nyd <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Fri fragt</span>!",
+              "upperLimit": "Køb {{threshold}} igen og nyd <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Fri fragt</span>! (Maksimalt fri fragtbeløb {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Tillykke! Du har fået <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Fri fragt</span>!",
+              "upperLimit": "Tillykke! Du har fået <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Fri fragt</span>! (Maksimalt fri fragtbeløb {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Køb {{threshold}} flere stykker og nyd <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Fri fragt</span>!",
+              "upperLimit": "Køb {{threshold}} flere stykker og nyd <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Fri fragt</span>! (Maksimalt fri fragtbeløb {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Tillykke! Du har fået <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Fri fragt</span>!",
+              "upperLimit": "Tillykke! Du har fået <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Fri fragt</span>! (Maksimalt fri fragtbeløb {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Køb {{threshold}} flere stykker, hvoraf {{willSave}} stykker er gratis",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Du kan oprette forbindelse til/ændre {{value}} efter bekræftelse",
     "change-heart": "Ændret mit sind",
     "change-item": "Jeg vil ændre de købte varer",
+    "continue-as-a-guest": "Fortsæt som gæst",
     "country-address-fail": "Sælgere med hjemsted i det land, hvor den angivne adresse er beliggende, er ikke ansvarlige for betaling af leveringsgebyrer. Foretag en manuel markering",
     "enter-address-first": "Indtast adressen først",
     "enter-bank-card-number": "Indtast venligst bankkort nummer!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Det land, hvor denne PayPal konto er baseret, er ikke medtaget på listen over lande, hvor der skal betales leveringsgebyr. Foretag en manuel markering",
     "please-complete-the-payment-method-content": "Udfyld betalingsmetoden",
     "please-read-and-agree-to-the-user-agreement-first": "Læs og indvilg i brugeraftalen først",
+    "poroceed-to-checkout": "Gå til kassen",
     "price-more-expensive": "Lavere pris fundet andre steder",
     "product-abnormal-back-to-cart": "Produktionsfejl. Gå tilbage til indkøbskurven, og prøv igen",
     "put-up-order-summary": "Skjul ordreoversigt",
@@ -1229,6 +1254,7 @@
     "sendError": "Send først bekræftelses koden",
     "signIn": "LOGGER PÅ",
     "signUp": "TILMELD DIG",
+    "subscription-text": "Tilmeld mig e-mails for at modtage opdateringer, adgang til eksklusive tilbud og meget mere.",
     "udbResponse": {
       "err-1": "Parametrene er tomme",
       "err-13": "stoken timeout",
@@ -1430,6 +1456,9 @@
         "ok-text": "Ophæv abonnementet",
         "title": "Ophæv abonnementet"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Du vil ikke modtage flere marketingopdateringer fra os. Du kan til enhver tid tilmelde dig igen"
     }
   },
   "validate": {

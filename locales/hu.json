@@ -538,6 +538,7 @@
       "submitSuccess": "Sikeresen elküldve"
     },
     "morePaymentOptions": "további fizetési lehetőségek",
+    "moreSpuImgBtn": "Mutass többet",
     "network": {
       "message2": "Nem sikerült lekérni a termékadatokat. Kérjük, később próbálja újra"
     },
@@ -816,6 +817,28 @@
             "step3": "Gratulálunk! {{saved}} összeget takarított meg!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Vásároljon újra {{threshold}}-t, és kapjon <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ingyenes szállítás</span>!",
+              "upperLimit": "Vásároljon újra {{threshold}}-t, és kapjon <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ingyenes szállítás</span>! (Maximális ingyenes szállítási összeg {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Gratulálunk! <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ingyenes szállítás</span> kapott!",
+              "upperLimit": "Gratulálunk! <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ingyenes szállítás</span> kapott! (Maximális ingyenes szállítási összeg {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Vásároljon {{threshold}}-t, kapjon <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ingyenes szállítás</span>!",
+              "upperLimit": "Vásároljon {{threshold}}-t, kapjon <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ingyenes szállítás</span>! (Maximális ingyenes szállítási összeg {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Gratulálunk! <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ingyenes szállítás</span> kapott!",
+              "upperLimit": "Gratulálunk! <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Ingyenes szállítás</span> kapott! (Maximális ingyenes szállítási összeg {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Vegyen további {{threshold}} darabot, amelyből {{willSave}} darab ingyenes",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Az ellenőrzés után csatolhatja/módosíthatja a(z) {{value}}-t",
     "change-heart": "Meggondoltam magam",
     "change-item": "Módosítani szeretném a megvásárolt tétel(eke)t",
+    "continue-as-a-guest": "Továbbra is vendégként",
     "country-address-fail": "A megadott cím szerinti országban székhellyel rendelkező eladók nem vállalnak felelősséget a szállítási díj fizetéséért. Kérjük, válasszon manuálisan",
     "enter-address-first": "Kérjük, először adja meg a címet",
     "enter-bank-card-number": "Kérjük, adja meg bankkártyaszámát!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "A PayPal-fiók székhelye szerinti ország nem szerepel a szállítási díj fizetésére vonatkozó országok listáján. Kérjük, válasszon manuálisan",
     "please-complete-the-payment-method-content": "Kérjük, töltse ki a fizetési módot",
     "please-read-and-agree-to-the-user-agreement-first": "Kérjük, először olvassa el és fogadja el a felhasználói szerződést",
+    "poroceed-to-checkout": "Tovább a kijelentkezéshez",
     "price-more-expensive": "Másol alacsonyabb árat találtam",
     "product-abnormal-back-to-cart": "Termék állapot hiba, kérjük, menjen vissza a kosárhoz és próbálja újra",
     "put-up-order-summary": "A rendelési összefoglalás elrejtése",
@@ -1229,6 +1254,7 @@
     "sendError": "Kérjük, először küldje el az ellenőrző kódot",
     "signIn": "BEJELENTKEZÉS",
     "signUp": "REGISZTRÁCIÓ",
+    "subscription-text": "Iratkozzon fel e-mailekre, hogy értesítéseket kaphassak, exkluzív ajánlatokhoz férhessenek hozzá és még sok minden mást kaphassak.",
     "udbResponse": {
       "err-1": "A paraméterek üresek",
       "err-13": "stoken időtúllépés",
@@ -1430,6 +1456,9 @@
         "ok-text": "Leiratkozás",
         "title": "Leiratkozás"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Nem fog több marketing frissítést kapni tőlünk. Bármikor újra előfizethetsz"
     }
   },
   "validate": {

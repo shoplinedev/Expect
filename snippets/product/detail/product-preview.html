@@ -128,6 +128,8 @@
 
         {{ snippet 'product/detail/product-button' isSoldOut=(or product.spu.soldOut initSku.selectSku.soldOut) id=id }}
         {{!-- 捆绑销售挂载点 --}}
+        <div data-ssr-plugin-b2b></div>
+        
         <div id="bundle-add_to_cart"></div>
 
         {{ assign 'saleActivity' (itemAt product.productSale.saleActivities 0) }}
@@ -141,6 +143,20 @@
         {{ snippet 'product/detail/payment-security' displayPosition='PRODUCT_DETAIL' }}
 
         {{#if product_desc_position '===' 'aside'}}
+          {{#if theme.settings.product_additional_contents_display '===' 'tab'}}
+            {{#snippet 'product/detail/tabs' show_product_desc=show_product_desc}}
+              {{#if show_product_desc}}
+              <div class="product-tabs-item" data-key="tab0">
+                <div data-plugin-ruler="detail-left">
+                  {{ snippet 'product/detail/product-description' description=description position='aside' }}
+                </div>
+              </div>
+              {{/if}}
+              {{#if theme.settings.product_custom_tab1}}<div class="product-tabs-item" data-key="tab1"><div class="product-tabs-shadow"></div></div>{{/if}}
+              {{#if theme.settings.product_custom_tab2}}<div class="product-tabs-item" data-key="tab2"><div class="product-tabs-shadow"></div></div>{{/if}}
+              {{#if theme.settings.product_custom_tab3}}<div class="product-tabs-item" data-key="tab3"><div class="product-tabs-shadow"></div></div>{{/if}}
+            {{/snippet}}
+          {{else}}
           <div class="product-detail-collapse product-detail-collapse_{{ id }}">
             {{#snippet 'product/commons/base-collapse'}}
               {{#if show_product_desc}}
@@ -159,6 +175,7 @@
               {{/if}}
             {{/snippet}}
           </div>
+          {{/if}}
         {{/if}}
 
         {{#if id 'productDetail'}}
@@ -243,7 +260,21 @@
   </div>
 
   {{#if product_desc_position '===' 'bottom'}}
-    <div class="product-preview-row">
+    <div class="product-preview-row product-preview-row-bottom">
+      {{#if theme.settings.product_additional_contents_display '===' 'tab'}}
+        {{#snippet 'product/detail/tabs' show_product_desc=show_product_desc}}
+          {{#if show_product_desc}}
+          <div class="product-tabs-item" data-key="tab0">
+            <div data-plugin-ruler="detail-left">
+              {{ snippet 'product/detail/product-description' description=description position='bottom' }}
+            </div>
+          </div>
+          {{/if}}
+          {{#if theme.settings.product_custom_tab1}}<div class="product-tabs-item" data-key="tab1"><div class="product-tabs-shadow"></div></div>{{/if}}
+          {{#if theme.settings.product_custom_tab2}}<div class="product-tabs-item" data-key="tab2"><div class="product-tabs-shadow"></div></div>{{/if}}
+          {{#if theme.settings.product_custom_tab3}}<div class="product-tabs-item" data-key="tab3"><div class="product-tabs-shadow"></div></div>{{/if}}
+        {{/snippet}}
+      {{else}}
       <div class="product-detail-col product-preview-area_bottom">
         <div class="product-detail-collapse product-detail-collapse_{{ id }}">
           {{#if show_product_desc}}
@@ -263,6 +294,7 @@
             {{/if}}
           {{/snippet}}
         </div>
+      {{/if}}
       </div>
     </div>
   {{/if}}

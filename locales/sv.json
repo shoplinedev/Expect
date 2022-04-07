@@ -538,6 +538,7 @@
       "submitSuccess": "Framgångsrik underkastelse"
     },
     "morePaymentOptions": "Fler betalningsalternativ",
+    "moreSpuImgBtn": "Ladda mer",
     "network": {
       "message2": "Det går inte att hämta produktinformation. Försök igen senare"
     },
@@ -816,6 +817,28 @@
             "step3": "Grattis! Du har sparat {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Kjøp {{threshold}} igjen og nyt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis leverans</span>!",
+              "upperLimit": "Kjøp {{threshold}} igjen og nyt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis leverans</span>! (Maksimal gratis fraktverdi {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Gratulerer ! Du har kjøpt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis leverans</span>!",
+              "upperLimit": "Gratulerer ! Du har kjøpt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis leverans</span>! (Maksimal gratis fraktverdi {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Kjøp {{threshold}} mer og nyt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis leverans</span>!",
+              "upperLimit": "Kjøp {{threshold}} mer og nyt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis leverans</span>! (Maksimal gratis fraktverdi {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Gratulerer ! Du har kjøpt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis leverans</span>!",
+              "upperLimit": "Gratulerer ! Du har kjøpt <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis leverans</span>! (Maksimal gratis fraktverdi {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Köp {{threshold}} fler bitar, varav {{willSave}} bitar är gratis",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Kan aktivera / ändra {{value}} efter verifiering",
     "change-heart": "Jag ändrade mig",
     "change-item": "Jag vill ändra de köpta artiklarna",
+    "continue-as-a-guest": "Fortsätt som gäst",
     "country-address-fail": "Säljare baserade i det angivna adresslandet ansvarar inte för att betala leveranskostnaderna. Gör ett manuellt val",
     "enter-address-first": "Ange adressen först",
     "enter-bank-card-number": "Ange ditt bankkortnummer!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Det land där detta PayPal-konto är baserat ingår inte i listan över länder för betalning av leveranskostnader. Gör ett manuellt val",
     "please-complete-the-payment-method-content": "Vänligen fyll i betalningsmetoden",
     "please-read-and-agree-to-the-user-agreement-first": "Läs och acceptera användningsvillkoren först",
+    "poroceed-to-checkout": "Fortsätt till utcheckningen",
     "price-more-expensive": "Lägsta pris som finns någon annanstans",
     "product-abnormal-back-to-cart": "Produktstatusfel, gå tillbaka till KARTA och försök igen",
     "put-up-order-summary": "Dölj sammanfattningen av beställningen",
@@ -1229,6 +1254,7 @@
     "sendError": "Skicka först verifieringskoden",
     "signIn": "LOGGA IN",
     "signUp": "SKRIVA PÅ",
+    "subscription-text": "Registrera mig för e-post för att få uppdateringar, tillgång till exklusiva erbjudanden och mer.",
     "udbResponse": {
       "err-1": "Tomma parametrar",
       "err-13": "stoken tiden här ute",
@@ -1430,6 +1456,9 @@
         "ok-text": "Avsluta prenumerationen",
         "title": "Avsluta prenumerationen"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Du kommer inte att få fler marknadsföringsuppdateringar från oss. Du kan prenumerera igen när som helst"
     }
   },
   "validate": {

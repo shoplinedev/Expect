@@ -538,6 +538,7 @@
       "submitSuccess": "Uspešno oddano"
     },
     "morePaymentOptions": "več možnosti plačila",
+    "moreSpuImgBtn": "Pokaži več",
     "network": {
       "message2": "Pridobitev informacij o izdelku neuspešna. Poskusite znova pozneje"
     },
@@ -816,6 +817,28 @@
             "step3": "Čestitke! Prihranili ste {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Znova kupite {{threshold}} in pridobite <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Brezplačna dostava</span>!",
+              "upperLimit": "Znova kupite {{threshold}} in pridobite <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Brezplačna dostava</span>! (Najvišji znesek za brezplačno dostavo {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Čestitamo! Pridobili ste <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Brezplačna dostava</span>!",
+              "upperLimit": "Čestitamo! Pridobili ste <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Brezplačna dostava</span>! (Najvišji znesek za brezplačno dostavo {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Kupite še {{threshold}} in pridobite <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Brezplačna dostava</span>!",
+              "upperLimit": "Kupite še {{threshold}} in pridobite <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Brezplačna dostava</span>! (Najvišji znesek za brezplačno dostavo {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Čestitamo! Pridobili ste <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Brezplačna dostava</span>!",
+              "upperLimit": "Čestitamo! Pridobili ste <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Brezplačna dostava</span>! (Najvišji znesek za brezplačno dostavo {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Kupite še {{threshold}} kosov, od tega je {{willSave}} kosov brezplačnih",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Po preverjanju se lahko povežete/spremenite {{value}}",
     "change-heart": "Premislil sem si",
     "change-item": "Želim spremeniti kupljeni izdelek (-e)",
+    "continue-as-a-guest": "Nadaljujte kot gost",
     "country-address-fail": "Prodajalci s sedežem v državi vnesenega naslova niso odgovorni za plačilo stroškov dostave. Opravite ročno izbiro",
     "enter-address-first": "Najprej vnesite naslov",
     "enter-bank-card-number": "Prosim vnesite številko bančne kartice!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Država, v kateri se nahaja ta PayPal račun, ni vključena na seznam držav za plačila stroškov za dostavo. Opravite ročno izbiro",
     "please-complete-the-payment-method-content": "Vnesite način plačila",
     "please-read-and-agree-to-the-user-agreement-first": "Najprej preberite uporabniško pogodbo",
+    "poroceed-to-checkout": "Nadaljujte do blagajne",
     "price-more-expensive": "Nižja cena najdena drugje",
     "product-abnormal-back-to-cart": "Napaka v statusu izdelka, prosimo vrnite se v košarico in poskusite znova",
     "put-up-order-summary": "Skrij povzetek naročila",
@@ -1229,6 +1254,7 @@
     "sendError": "Najprej pošljite kodo za preverjanje",
     "signIn": "PRIJAVA",
     "signUp": "PRIJAVITE SE",
+    "subscription-text": "Prijavite se na e-pošto za prejemanje posodobitev, dostop do ekskluzivnih ponudb in še več.",
     "udbResponse": {
       "err-1": "Prazni parametri",
       "err-13": "stoken je časovno omejen",
@@ -1430,6 +1456,9 @@
         "ok-text": "Odjava od naročnine",
         "title": "Odjava od naročnine"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Od nas ne boste več prejemali tržnih posodobitev. Kadar koli se lahko znova naročite"
     }
   },
   "validate": {

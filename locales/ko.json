@@ -538,6 +538,7 @@
       "submitSuccess": "제출 성공"
     },
     "morePaymentOptions": "더 많은 지불 옵션",
+    "moreSpuImgBtn": "많이 보여드리도록 하겠습니다",
     "network": {
       "message2": "제품 정보가 없으니 다시 시도하세요"
     },
@@ -816,6 +817,28 @@
             "step3": "축하합니다! 당신은 {{saved}} 을 절약했습니다!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "{{threshold}}을 더 사면 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 무료 배송</span>를 누릴 수 있다!",
+              "upperLimit": "{{threshold}}을 더 사면 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 무료 배송</span>를 누릴 수 있다! (운임면제금액한도{{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "축하합니다! 얻으셨습니다 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 무료 배송</span>!",
+              "upperLimit": "축하합니다! 얻으셨습니다 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 무료 배송</span>! (운임면제금액한도{{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "{{threshold}}을 더 사서 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 무료 배송</span>를 즐기다!",
+              "upperLimit": "{{threshold}}을 더 사서 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 무료 배송</span>를 즐기다! (운임면제금액한도{{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "축하합니다! 얻으셨습니다 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 무료 배송</span>!",
+              "upperLimit": "축하합니다! 얻으셨습니다 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 무료 배송</span>! (운임면제금액한도{{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "{{threshold}}건만 더 구매하면 이 중 {{willSave}}건은 무료입니다",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "검증 완성후 귀속/귀속 변경{{value}}",
     "change-heart": "마음 바꾸기",
     "change-item": "구매 항목을 개변하고 싶습니다",
+    "continue-as-a-guest": "계속 방문객의 신분으로 방문하기",
     "country-address-fail": "이 주소 소속 국가 가게는 더이상 지불 출하하지 않고 수동으로 선택하세요",
     "enter-address-first": "우선 주소를 입력하세요",
     "enter-bank-card-number": "은행카드 번호를 입력하세요!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Paypal 소속 아이디 국가는 지불 출하 국가에 속하지 않고 수동으로 선택하세요",
     "please-complete-the-payment-method-content": "완전한 지불방식 내용을 입력하세요",
     "please-read-and-agree-to-the-user-agreement-first": "사용자 협의를 읽고 동의하세요",
+    "poroceed-to-checkout": "결산하기",
     "price-more-expensive": "가격이 다른 곳보다 비쌉니다",
     "product-abnormal-back-to-cart": "상품 상태 이상, 바구니로 돌아가서 다시 시도하세요",
     "put-up-order-summary": "저문 종합을 가져가세요",
@@ -1229,6 +1254,7 @@
     "sendError": "우선 검증번호를 발송하세요",
     "signIn": "로그인",
     "signUp": "등록",
+    "subscription-text": "이메일을 등록하여 업데이트, 독점 혜택 등의 정보를 얻습니다",
     "udbResponse": {
       "err-1": "파라미터가 부족합니다",
       "err-13": "stoken 시간초과",
@@ -1430,6 +1456,9 @@
         "ok-text": "구독 취소",
         "title": "구독 취소"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "당신은 아무런 영업 메시지도 받지 않을 것이고 나중에 아무때나 구독할 수 있습니다"
     }
   },
   "validate": {

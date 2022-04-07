@@ -538,6 +538,7 @@
       "submitSuccess": "सफलतापूर्वक जमा हुआ"
     },
     "morePaymentOptions": "अन्य भुगतान विकल्प",
+    "moreSpuImgBtn": "और दिखाओ",
     "network": {
       "message2": "उत्पाद जानकारी पुनर्प्राप्त करने में विफल। बाद में पुन: प्रयास करें"
     },
@@ -816,6 +817,28 @@
             "step3": "बधाई हो! आपने {{saved}} बचाया है!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "{{threshold}} फिर से खरीदें और <span class=\"custom-sale-color\" style=\"font-size:14px;\"> मुफ़्त शिपिंग</span> का आनंद लें!",
+              "upperLimit": "{{threshold}} फिर से खरीदें और <span class=\"custom-sale-color\" style=\"font-size:14px;\"> मुफ़्त शिपिंग</span> का आनंद लें! (ज्यादा से ज्यादा मुफ़्त शिपिंग राशि {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "बधाई हो! आपके पास <span class=\"custom-sale-color\" style=\"font-size:14px;\"> मुफ़्त शिपिंग</span> है!",
+              "upperLimit": "बधाई हो! आपके पास <span class=\"custom-sale-color\" style=\"font-size:14px;\"> मुफ़्त शिपिंग</span> है! (ज्यादा से ज्यादा मुफ़्त शिपिंग राशि {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "{{threshold}} और खरीदें और <span class=\"custom-sale-color\" style=\"font-size:14px;\"> मुफ़्त शिपिंग</span> का आनंद लें!",
+              "upperLimit": "{{threshold}} और खरीदें और <span class=\"custom-sale-color\" style=\"font-size:14px;\"> मुफ़्त शिपिंग</span> का आनंद लें! (ज्यादा से ज्यादा मुफ़्त शिपिंग राशि {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "बधाई हो! आपके पास <span class=\"custom-sale-color\" style=\"font-size:14px;\"> मुफ़्त शिपिंग</span> है!",
+              "upperLimit": "बधाई हो! आपके पास <span class=\"custom-sale-color\" style=\"font-size:14px;\"> मुफ़्त शिपिंग</span> है! (ज्यादा से ज्यादा मुफ़्त शिपिंग राशि {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "{{threshold}} और टुकड़े खरीदें, जिनमें से {{willSave}} टुकड़े मुफ्त हैं",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "सत्यापन के बाद आप {{value}} जोड़ें/बदल सकते हैं",
     "change-heart": "मैनें अपना मन बदल लिया है",
     "change-item": "मैं खरीदी गई वस्तु (वस्तुओं) को बदलना चाहता/चाहती हूं",
+    "continue-as-a-guest": "अतिथि के रूप में जारी रखें",
     "country-address-fail": "दर्ज किए गए पते के देश में स्थित विक्रेता वितरण शुल्क भुगतान के लिए ज़िम्मेदार नहीं हैं। कृपया मैन्युअल रूप से चयन करें",
     "enter-address-first": "कृपया पहले पता दर्ज करें",
     "enter-bank-card-number": "कृपया बैंक कार्ड नंबर दर्ज करें!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "जिस देश में यह PayPal खाता है, वह डिलीवरी शुल्क भुगतान के लिए देशों की सूची में शामिल नहीं है। कृपया मैन्युअल रूप से चयन करें",
     "please-complete-the-payment-method-content": "कृपया भुगतान का तरीका पूरा करें",
     "please-read-and-agree-to-the-user-agreement-first": "कृपया पहले उपयोगकर्ता समझौते को पढ़ें और सहमत हों",
+    "poroceed-to-checkout": "चेक आउट करने के लिए आगे बढ़ें",
     "price-more-expensive": "कहीं और मिली कम कीमत मिला है",
     "product-abnormal-back-to-cart": "उत्पाद स्थिति त्रुटि, कृपया कार्ट पर वापस जाएं और पुनः प्रयास करें",
     "put-up-order-summary": "ऑर्डर सारांश छुपाएं",
@@ -1229,6 +1254,7 @@
     "sendError": "कृपया पहले सत्यापन कोड भेजें",
     "signIn": "साइन इन करें",
     "signUp": "साइन अप करें",
+    "subscription-text": "अपडेट प्राप्त करने के लिए ईमेल के लिए मुझे साइन अप करें, विशेष सौदों तक पहुंच, और बहुत कुछ।",
     "udbResponse": {
       "err-1": "मापदंड खाली",
       "err-13": "stoken टाइम आउट",
@@ -1430,6 +1456,9 @@
         "ok-text": "सदस्यता रद्द",
         "title": "सदस्यता रद्द"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "आपको हमारी ओर से कोई और मार्केटिंग अपडेट प्राप्त नहीं होगा। आप किसी भी समय फिर से सदस्यता ले सकते हैं"
     }
   },
   "validate": {

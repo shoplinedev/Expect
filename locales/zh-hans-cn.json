@@ -538,6 +538,7 @@
       "submitSuccess": "提交成功"
     },
     "morePaymentOptions": "更多支付选项",
+    "moreSpuImgBtn": "展示更多",
     "network": {
       "message2": "暂未获取到商品信息，请稍后再试"
     },
@@ -816,6 +817,28 @@
             "step3": "恭喜你！ 您节省了{{saved}}！"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "再买{{threshold}}，可享 <span class=\"custom-sale-color\" style=\"font-size:14px;\">免运费</span>!",
+              "upperLimit": "再买 {{threshold}}，可享 <span class=\"custom-sale-color\" style=\"font-size:14px;\">免运费</span>! （免运费金额上限{{upperLimit}}）"
+            },
+            "step3": {
+              "unlimited": "恭喜！ 您已获得 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 免运费</span>!",
+              "upperLimit": "恭喜！ 您已获得 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 免运费</span>! (免运费金额上限{{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "再买{{threshold}}件，享 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 免运费</span>!",
+              "upperLimit": "再买{{threshold}}件，享 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 免运费</span>! (免运费金额上限{{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "恭喜！ 您已获得 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 免运费</span>!",
+              "upperLimit": "恭喜！ 您已获得 <span class=\"custom-sale-color\" style=\"font-size:14px;\"> 免运费</span>! (免运费金额上限{{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "再买{{threshold}}件，其中{{willSave}}件免费",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "完成验证后可绑定/改绑{{value}}",
     "change-heart": "改变心意",
     "change-item": "想变更购买项目",
+    "continue-as-a-guest": "继续以访客身份访问",
     "country-address-fail": "该地址所属国家商家不再支付发货,请手动选择",
     "enter-address-first": "请先输入地址",
     "enter-bank-card-number": "请输入银行卡号！",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "paypal所属的账户国家不在支付发货的国家里,请手动选择",
     "please-complete-the-payment-method-content": "请填写完整付款方式内容",
     "please-read-and-agree-to-the-user-agreement-first": "请先阅读并同意用户协议",
+    "poroceed-to-checkout": "进行结算",
     "price-more-expensive": "价格比其他地方贵",
     "product-abnormal-back-to-cart": "商品状态异常，请返回购物车重新编辑",
     "put-up-order-summary": "收起订单汇总",
@@ -1229,6 +1254,7 @@
     "sendError": "请先发送验证码",
     "signIn": "登录",
     "signUp": "注册",
+    "subscription-text": "注册电子邮件以获取更新和独家优惠等信息",
     "udbResponse": {
       "err-1": "缺少参数",
       "err-13": "stoken超时",
@@ -1430,6 +1456,9 @@
         "ok-text": "取消订阅",
         "title": "取消订阅"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "您将不再收到任何营销信息，之后可以随时订阅"
     }
   },
   "validate": {

@@ -538,6 +538,7 @@
       "submitSuccess": "Esitamine õnnestus"
     },
     "morePaymentOptions": "rohkem maksevõimalusi",
+    "moreSpuImgBtn": "Laadige rohkem",
     "network": {
       "message2": "Tooteteabe väljaotsimine ebaõnnestus. Proovi hiljem uuesti"
     },
@@ -816,6 +817,28 @@
             "step3": "Õnnitlused! Oled säästnud {{saved}}."
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Osta {{threshold}} uuesti ja naudi <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Tasuta saatmine</span>!",
+              "upperLimit": "Osta {{threshold}} uuesti ja naudi <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Tasuta saatmine</span>! (Maksimaalne tasuta veosumma {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "õnnitlused! Sa oled saanud <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Tasuta saatmine</span>!",
+              "upperLimit": "õnnitlused! Sa oled saanud <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Tasuta saatmine</span>! (Maksimaalne tasuta veosumma {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Osta {{threshold}} rohkem tükki ja naudi <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Tasuta saatmine</span>!",
+              "upperLimit": "Osta {{threshold}} rohkem tükki ja naudi <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Tasuta saatmine</span>! (Maksimaalne tasuta veosumma {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "õnnitlused! Sa oled saanud <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Tasuta saatmine</span>!",
+              "upperLimit": "õnnitlused! Sa oled saanud <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Tasuta saatmine</span>! (Maksimaalne tasuta veosumma {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Ostke veel {{threshold}} tükki, ning saate {{willSave}} tükki tasuta",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Saad pärast kinnitamist {{value}} ühendada/muuta",
     "change-heart": "Otsustasin ümber",
     "change-item": "Soovin ostetud toodet (tooteid) vahetada",
+    "continue-as-a-guest": "Jätkake külalisena",
     "country-address-fail": "Sisestatud aadressi riigis asuvad müüjad ei vastuta tarnetasude tasumise eest. Tee valik käsitsi",
     "enter-address-first": "Sisesta kõigepealt aadress",
     "enter-bank-card-number": "Sisesta pangakaardi number.",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Riiki, kus see PayPali konto asub, ei ole lisatud tarnetasude maksmise riikide loendisse. Tee valik käsitsi",
     "please-complete-the-payment-method-content": "Lisa makseviis",
     "please-read-and-agree-to-the-user-agreement-first": "Tutvu kõigepealt kasutuslepinguga ja nõustu sellega",
+    "poroceed-to-checkout": "Liikuge kassasse",
     "price-more-expensive": "Mujal leitud madalam hind",
     "product-abnormal-back-to-cart": "Toote staatuse viga, mine tagasi ostukorvi ja proovi uuesti",
     "put-up-order-summary": "Peida tellimuse kokkuvõte",
@@ -1229,6 +1254,7 @@
     "sendError": "Saada kõigepealt kinnituskood",
     "signIn": "LOGI SISSE",
     "signUp": "REGISTREERU",
+    "subscription-text": "Registreeruge mulle e-kirjade saamiseks, et saada värskendusi, juurdepääsu eksklusiivsetele pakkumistele ja palju muud.",
     "udbResponse": {
       "err-1": "Parameetrid on tühjad",
       "err-13": "stoken luba aegus",
@@ -1430,6 +1456,9 @@
         "ok-text": "Loobu tellimusest",
         "title": "Loobu tellimusest"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Te ei saa meilt enam turundusuuendusi. Saate igal ajal uuesti tellida"
     }
   },
   "validate": {

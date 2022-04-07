@@ -5,6 +5,7 @@
 {{ preload_state 'navigations' }}
 
 {{#with this as |global|}}
+<div data-ssr-plugin-wishlist="menu-drawer" class="header-mobile-menu__wraper">
 <div class="header-menu__container">
   <div class="container g-4 g-md-6">
     <nav class="header-menu__mobile-nav" data-main-menu-link-list="{{section.settings.main_menu_link_list}}">
@@ -38,6 +39,7 @@
   </div>
   {{/if }}
   <div class="header-menu__footer"></div>
+</div>
 </div>
 {{/with}}
 

@@ -538,6 +538,7 @@
       "submitSuccess": "Submitted successfully"
     },
     "morePaymentOptions": "more payment options",
+    "moreSpuImgBtn": "Load more",
     "network": {
       "message2": "Failed to retrieve product info. Please try again later"
     },
@@ -816,6 +817,28 @@
             "step3": "Congratulations! You've saved {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Buy {{threshold}} more, enjoy <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Free Shipping</span>!",
+              "upperLimit": "Buy {{threshold}} more, enjoy <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Free Shipping</span>!（For shipping rate under {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Congratulations! You've got <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Free Shipping</span>!",
+              "upperLimit": "Congratulations! You've got <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Free Shipping</span>!（For shipping rate under {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Buy {{threshold}} more item(s), enjoy <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Free Shipping</span>!",
+              "upperLimit": "Buy {{threshold}} more item(s), enjoy <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Free Shipping</span>!（For shipping rate under {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Congratulations! You've got <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Free Shipping</span>!",
+              "upperLimit": "Congratulations! You've got <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Free Shipping</span>!（For shipping rate under {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Buy {{threshold}} more items, enjoy {{willSave}} items free",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "You can connect/change {{value}} after verification",
     "change-heart": "Changed my mind",
     "change-item": "I want to change the item(s) purchased",
+    "continue-as-a-guest": "Continue as a guest",
     "country-address-fail": "Sellers based in the country of the entered address are not responsible for delivery fee payments. Please make a manual selection",
     "enter-address-first": "Please enter address first",
     "enter-bank-card-number": "Please enter bank card number!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "The country in which this PayPal account is based is not included in the list of countries for delivery fee payments. Please make a manual selection",
     "please-complete-the-payment-method-content": "Please complete the payment method",
     "please-read-and-agree-to-the-user-agreement-first": "Please read and agree to the user agreement first",
+    "poroceed-to-checkout": "Proceed to checkout",
     "price-more-expensive": "Lower price found elsewhere",
     "product-abnormal-back-to-cart": "Product status error, please go back to cart and try again",
     "put-up-order-summary": "Hide order summary",
@@ -1229,6 +1254,7 @@
     "sendError": "Please send verification code first",
     "signIn": "SIGN IN",
     "signUp": "SIGN UP",
+    "subscription-text": "Sign me up for emails to receive updates, access to exclusive deals, and more.",
     "udbResponse": {
       "err-1": "Parameters empty",
       "err-13": "Session expired",
@@ -1430,6 +1456,9 @@
         "ok-text": "Unsubscribe",
         "title": "Unsubscribe"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "You won’t receive any more marketing updates from us. You can subscribe again at anytime"
     }
   },
   "validate": {

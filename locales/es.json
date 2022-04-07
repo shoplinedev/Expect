@@ -538,6 +538,7 @@
       "submitSuccess": "Enviado con éxito"
     },
     "morePaymentOptions": "Más opciones de pago",
+    "moreSpuImgBtn": "Mostrar más",
     "network": {
       "message2": "No se pudieron obtener información del artículo, por favor inténtalo más tarde"
     },
@@ -816,6 +817,28 @@
             "step3": "¡Felicidades! ¡Has ahorrado {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Comprar {{threshold}} más, disfrutará de <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Envío gratis</span>!",
+              "upperLimit": "Comprar {{threshold}} más, disfrutará de <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Envío gratis</span>! (Importe máximo para envío gratuito {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "¡Felicidades! Ha obtenido <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Envío gratis</span>!",
+              "upperLimit": "¡Felicidades! Ha obtenido <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Envío gratis</span>! (Importe máximo para envío gratuito {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Comprar {{threshold}} piezas más, disfrutar de <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Envío gratis</span>!",
+              "upperLimit": "Comprar {{threshold}} piezas más, disfrutar de <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Envío gratis</span>! (Importe máximo para envío gratuito {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "¡Felicidades! Ha obtenido <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Envío gratis</span>!",
+              "upperLimit": "¡Felicidades! Ha obtenido <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Envío gratis</span>! (Importe máximo para envío gratuito {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Compra {{threshold}} piezas más, {{willSave}} piezas serán gratuitas",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Puedes vincular/cambiar {{value}} después de la verificación",
     "change-heart": "Cambiado mi mente",
     "change-item": "Quiero cambiar artículo(s) comprado(s)",
+    "continue-as-a-guest": "Continúa accediendo como visitante",
     "country-address-fail": "Los vendedores ubicados en el país de la dirección introducida no son responsables del pago del costo de envío, por favor selecciona manualmente",
     "enter-address-first": "Por favor, primero introduce la dirección",
     "enter-bank-card-number": "¡Por favor introduce el número de tarjeta bancaria!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "El país en el que se encuentra esta cuenta PayPal no está incluido en la lista de países para el pago del costo de envío, por favor selecciona manualmente",
     "please-complete-the-payment-method-content": "Por favor completa el método de pago completo",
     "please-read-and-agree-to-the-user-agreement-first": "Por favor lee y acepta los Términos del Usuario",
+    "poroceed-to-checkout": "Proceder al pago",
     "price-more-expensive": "Precio más bajo encontrado en otros lugares",
     "product-abnormal-back-to-cart": "Error de estado del artículo, por favor regresa al carrito para editar de nuevo",
     "put-up-order-summary": "Plegar el resumen del pedido",
@@ -1229,6 +1254,7 @@
     "sendError": "Primero envía el código de verificación",
     "signIn": "Iniciar sesión",
     "signUp": "Registrarse",
+    "subscription-text": "Registra el correo electrónico para obtener actualizaciones, promociones exclusivas y otra información",
     "udbResponse": {
       "err-1": "Falta de parámetros",
       "err-13": "Sesión expirada",
@@ -1430,6 +1456,9 @@
         "ok-text": "Darse de baja",
         "title": "Darse de baja"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "No recibirás ninguna actualización de marketing de nosotros. Puedes suscribir de nuevo en todo momento"
     }
   },
   "validate": {

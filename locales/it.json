@@ -538,6 +538,7 @@
       "submitSuccess": "Inviato con successo"
     },
     "morePaymentOptions": "Altre opzioni di pagamento",
+    "moreSpuImgBtn": "Mostra di più",
     "network": {
       "message2": "Attualmente nessuna informazione trovata sul prodotto, riprova più tardi"
     },
@@ -816,6 +817,28 @@
             "step3": "Congratulazioni! Hai risparmiato {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Acquista {{threshold}} di più per godere <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Spedizione gratuita</span>!",
+              "upperLimit": "Acquista {{threshold}} di più per godere <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Spedizione gratuita</span>! (Il massimo importo della spedizione gratuita {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Congratulazioni! Hai già ottenuto <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Spedizione gratuita</span>!",
+              "upperLimit": "Congratulazioni! Hai già ottenuto <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Spedizione gratuita</span>! (Il massimo importo della spedizione gratuita {{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Acquista altri {{threshold}} pezzi per godere <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Spedizione gratuita</span>!",
+              "upperLimit": "Acquista altri {{threshold}} pezzi per godere <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Spedizione gratuita</span>! (Il massimo importo della spedizione gratuita {{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Congratulazioni! Hai già ottenuto <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Spedizione gratuita</span>!",
+              "upperLimit": "Congratulazioni! Hai già ottenuto <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Spedizione gratuita</span>! (Il massimo importo della spedizione gratuita {{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Acquista {{threshold}} pezzi in più, tra cui {{willSave}} pezzi sono gratuiti",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Dopo la verifica, puoi associare/cambiare{{value}}",
     "change-heart": "Hai cambiato l'idea",
     "change-item": "Vuoi cambiare l'articolo di acquisto",
+    "continue-as-a-guest": "Continua a visitare come l'ospite",
     "country-address-fail": "I venditori nel paese di questo indirizzo non pagano più le spedizioni, seleziona manualmente",
     "enter-address-first": "Inserisci prima l'indirizzo",
     "enter-bank-card-number": "Inserisci il numero della carta bancaria!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Il paese dell'account a cui appartiene il tuo paypal non è incluso nella lista dei paesi che pagano le spedizioni, seleziona manualmente",
     "please-complete-the-payment-method-content": "Compila il contenuto completo del metodo di pagamento",
     "please-read-and-agree-to-the-user-agreement-first": "Leggi e accetta prima i termini di utilizzo dell'utente",
+    "poroceed-to-checkout": "Checkout",
     "price-more-expensive": "Il prezzo è più costoso di altri",
     "product-abnormal-back-to-cart": "Errore dello stato del prodotto, torna al carrello per modificarlo di nuovo",
     "put-up-order-summary": "Nascondi il riepilogo dell'ordine",
@@ -1229,6 +1254,7 @@
     "sendError": "Invia prima il codice di verifica",
     "signIn": "Accedi",
     "signUp": "Iscriviti",
+    "subscription-text": "Iscriviti con l’e-mail per ottenere le notizie di aggiornamenti e offerte esclusive ecc.",
     "udbResponse": {
       "err-1": "Parametri mancanti",
       "err-13": "Stoke scaduto",
@@ -1430,6 +1456,9 @@
         "ok-text": "Sottoscrizione annullata",
         "title": "Annulla sottoscrizione"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Non riceverai più alcuna informazione di marketing e potrai sottoscriverti nuovamente in qualsiasi momento"
     }
   },
   "validate": {

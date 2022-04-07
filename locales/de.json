@@ -538,6 +538,7 @@
       "submitSuccess": "Erfolgreich abgeschickt"
     },
     "morePaymentOptions": "Weitere Zahlungsoptionen",
+    "moreSpuImgBtn": "Mehr anzeigen",
     "network": {
       "message2": "Produktinformationen konnten nicht abgerufen werden. Bitte später erneut versuchen."
     },
@@ -816,6 +817,28 @@
             "step3": "{{saved}} gespart! Herzlichen Glückwunsch!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Kaufen Sie {{threshold}} wieder und genießen Sie <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frei von Frachtkosten</span>!",
+              "upperLimit": "Kaufen Sie {{threshold}} wieder und genießen Sie <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frei von Frachtkosten</span>! (Höchstbetrag {{upperLimit}} für kostenlosen Versand)"
+            },
+            "step3": {
+              "unlimited": "Herzlichen Glückwunsch! Sie haben bereits <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frei von Frachtkosten</span> erhalten!",
+              "upperLimit": "Herzlichen Glückwunsch! Sie haben bereits <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frei von Frachtkosten</span> erhalten! (Höchstbetrag {{upperLimit}} für kostenlosen Versand)"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Kaufen Sie {{threshold}} Stk wieder und genießen Sie <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frei von Frachtkosten</span>!",
+              "upperLimit": "Kaufen Sie {{threshold}} Stk wieder und genießen Sie <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frei von Frachtkosten</span>! (Höchstbetrag {{upperLimit}} für kostenlosen Versand)"
+            },
+            "step3": {
+              "unlimited": "Herzlichen Glückwunsch! Sie haben bereits <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frei von Frachtkosten</span> erhalten!",
+              "upperLimit": "Herzlichen Glückwunsch! Sie haben bereits <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Frei von Frachtkosten</span> erhalten! (Höchstbetrag {{upperLimit}} für kostenlosen Versand)"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Kaufen Sie weitere {{threshold}} Stücke, von denen {{willSave}} Stücke kostenlos sind",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Sie können {{value}} nach der Überprüfung verknüpfen/ändern",
     "change-heart": "Ich habe meine Meinung geändert",
     "change-item": "Ich möchte den/die gekauften Artikel ändern",
+    "continue-as-a-guest": "Als Gast fortfahren",
     "country-address-fail": "Verkäufer mit Sitz im Land der eingegebenen Adresse sind nicht für die Zahlung von Liefergebühren verantwortlich. Bitte manuelle Auswahl treffen",
     "enter-address-first": "Bitte zuerst die Adresse eingeben",
     "enter-bank-card-number": "Bitte die Bankkartennummer eingeben.",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Das Land, in dem dieses PayPal-Konto sich befindet, ist nicht in der Länderliste für Zahlungen mit Liefergebühren enthalten. Bitte manuelle Auswahl treffen",
     "please-complete-the-payment-method-content": "Bitte die Zahlungsart abschließen",
     "please-read-and-agree-to-the-user-agreement-first": "Bitte lesen Sie zuerst die Benutzervereinbarung und stimmen Sie dieser zu",
+    "poroceed-to-checkout": "Weiter zur Bestellung",
     "price-more-expensive": "Niedrigerer Preis an anderer Stelle",
     "product-abnormal-back-to-cart": "Produktstatusfehler. Bitte zurück zum Warenkorb gehen und erneut versuchen.",
     "put-up-order-summary": "Bestellübersicht ausblenden",
@@ -1229,6 +1254,7 @@
     "sendError": "Bitte senden Sie zuerst den Verifizierungscode",
     "signIn": "Anmelden",
     "signUp": "Registrieren",
+    "subscription-text": "Bitte melden Sie mich per E-Mail für exklusive Angebote und Aktionen an.",
     "udbResponse": {
       "err-1": "Parameter leer",
       "err-13": "Sitzung abgelaufen",
@@ -1430,6 +1456,9 @@
         "ok-text": "Abonnement kündigen",
         "title": "Abonnement kündigen"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Sie werden keine weiteren Updates erhalten. Sie können sich jederzeit wieder abmelden"
     }
   },
   "validate": {

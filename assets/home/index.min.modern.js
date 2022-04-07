@@ -24453,9 +24453,7 @@
             endpointVoucher: "/carts/cart/shopping_money",
             endpointCoupon: "/carts/cart/promotion_code",
             memberPoint: "/carts/cart/member-point",
-            endpointCouponCode: function(_, code) {
-                return `carts/cart/promotion_code/${code}`;
-            },
+            endpointCouponCode: "/carts/cart/use/promotion-code",
             endpointOrderSaveAbandonOrder: "/trade/center/order/abandoned/save"
         };
         async function getCart(svc, abandonedOrderMark, abandonedOrderSeq) {
@@ -24511,7 +24509,9 @@
             toggleVoucher
         };
         async function applyCoupon(svc, couponCode) {
-            return svc.request.get(internal_constant.endpointCouponCode`${couponCode}`);
+            return svc.request.post(internal_constant.endpointCouponCode, {
+                code: couponCode
+            });
         }
         async function withdrawCoupon(svc, couponCode) {
             return svc.request.delete(internal_constant.endpointCoupon, {
@@ -28736,6 +28736,163 @@
                 }
             }
         };
+        function thumbs_extends() {
+            thumbs_extends = Object.assign || function(target) {
+                for (var i = 1; i < arguments.length; i++) {
+                    var source = arguments[i];
+                    for (var key in source) if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+                }
+                return target;
+            };
+            return thumbs_extends.apply(this, arguments);
+        }
+        var Thumbs = {
+            init: function() {
+                var swiper = this;
+                var thumbsParams = swiper.params.thumbs;
+                if (swiper.thumbs.initialized) return false;
+                swiper.thumbs.initialized = true;
+                var SwiperClass = swiper.constructor;
+                if (thumbsParams.swiper instanceof SwiperClass) {
+                    swiper.thumbs.swiper = thumbsParams.swiper;
+                    extend(swiper.thumbs.swiper.originalParams, {
+                        watchSlidesProgress: true,
+                        slideToClickedSlide: false
+                    });
+                    extend(swiper.thumbs.swiper.params, {
+                        watchSlidesProgress: true,
+                        slideToClickedSlide: false
+                    });
+                } else if (utils_isObject(thumbsParams.swiper)) {
+                    swiper.thumbs.swiper = new SwiperClass(extend({}, thumbsParams.swiper, {
+                        watchSlidesVisibility: true,
+                        watchSlidesProgress: true,
+                        slideToClickedSlide: false
+                    }));
+                    swiper.thumbs.swiperCreated = true;
+                }
+                swiper.thumbs.swiper.$el.addClass(swiper.params.thumbs.thumbsContainerClass);
+                swiper.thumbs.swiper.on("tap", swiper.thumbs.onThumbClick);
+                return true;
+            },
+            onThumbClick: function() {
+                var swiper = this;
+                var thumbsSwiper = swiper.thumbs.swiper;
+                if (!thumbsSwiper) return;
+                var clickedIndex = thumbsSwiper.clickedIndex;
+                var clickedSlide = thumbsSwiper.clickedSlide;
+                if (clickedSlide && dom(clickedSlide).hasClass(swiper.params.thumbs.slideThumbActiveClass)) return;
+                if ("undefined" === typeof clickedIndex || null === clickedIndex) return;
+                var slideToIndex;
+                if (thumbsSwiper.params.loop) slideToIndex = parseInt(dom(thumbsSwiper.clickedSlide).attr("data-swiper-slide-index"), 10); else slideToIndex = clickedIndex;
+                if (swiper.params.loop) {
+                    var currentIndex = swiper.activeIndex;
+                    if (swiper.slides.eq(currentIndex).hasClass(swiper.params.slideDuplicateClass)) {
+                        swiper.loopFix();
+                        swiper._clientLeft = swiper.$wrapperEl[0].clientLeft;
+                        currentIndex = swiper.activeIndex;
+                    }
+                    var prevIndex = swiper.slides.eq(currentIndex).prevAll('[data-swiper-slide-index="' + slideToIndex + '"]').eq(0).index();
+                    var nextIndex = swiper.slides.eq(currentIndex).nextAll('[data-swiper-slide-index="' + slideToIndex + '"]').eq(0).index();
+                    if ("undefined" === typeof prevIndex) slideToIndex = nextIndex; else if ("undefined" === typeof nextIndex) slideToIndex = prevIndex; else if (nextIndex - currentIndex < currentIndex - prevIndex) slideToIndex = nextIndex; else slideToIndex = prevIndex;
+                }
+                swiper.slideTo(slideToIndex);
+            },
+            update: function(initial) {
+                var swiper = this;
+                var thumbsSwiper = swiper.thumbs.swiper;
+                if (!thumbsSwiper) return;
+                var slidesPerView = "auto" === thumbsSwiper.params.slidesPerView ? thumbsSwiper.slidesPerViewDynamic() : thumbsSwiper.params.slidesPerView;
+                var autoScrollOffset = swiper.params.thumbs.autoScrollOffset;
+                var useOffset = autoScrollOffset && !thumbsSwiper.params.loop;
+                if (swiper.realIndex !== thumbsSwiper.realIndex || useOffset) {
+                    var currentThumbsIndex = thumbsSwiper.activeIndex;
+                    var newThumbsIndex;
+                    var direction;
+                    if (thumbsSwiper.params.loop) {
+                        if (thumbsSwiper.slides.eq(currentThumbsIndex).hasClass(thumbsSwiper.params.slideDuplicateClass)) {
+                            thumbsSwiper.loopFix();
+                            thumbsSwiper._clientLeft = thumbsSwiper.$wrapperEl[0].clientLeft;
+                            currentThumbsIndex = thumbsSwiper.activeIndex;
+                        }
+                        var prevThumbsIndex = thumbsSwiper.slides.eq(currentThumbsIndex).prevAll('[data-swiper-slide-index="' + swiper.realIndex + '"]').eq(0).index();
+                        var nextThumbsIndex = thumbsSwiper.slides.eq(currentThumbsIndex).nextAll('[data-swiper-slide-index="' + swiper.realIndex + '"]').eq(0).index();
+                        if ("undefined" === typeof prevThumbsIndex) newThumbsIndex = nextThumbsIndex; else if ("undefined" === typeof nextThumbsIndex) newThumbsIndex = prevThumbsIndex; else if (nextThumbsIndex - currentThumbsIndex === currentThumbsIndex - prevThumbsIndex) newThumbsIndex = thumbsSwiper.params.slidesPerGroup > 1 ? nextThumbsIndex : currentThumbsIndex; else if (nextThumbsIndex - currentThumbsIndex < currentThumbsIndex - prevThumbsIndex) newThumbsIndex = nextThumbsIndex; else newThumbsIndex = prevThumbsIndex;
+                        direction = swiper.activeIndex > swiper.previousIndex ? "next" : "prev";
+                    } else {
+                        newThumbsIndex = swiper.realIndex;
+                        direction = newThumbsIndex > swiper.previousIndex ? "next" : "prev";
+                    }
+                    if (useOffset) newThumbsIndex += "next" === direction ? autoScrollOffset : -1 * autoScrollOffset;
+                    if (thumbsSwiper.visibleSlidesIndexes && thumbsSwiper.visibleSlidesIndexes.indexOf(newThumbsIndex) < 0) {
+                        if (thumbsSwiper.params.centeredSlides) if (newThumbsIndex > currentThumbsIndex) newThumbsIndex = newThumbsIndex - Math.floor(slidesPerView / 2) + 1; else newThumbsIndex = newThumbsIndex + Math.floor(slidesPerView / 2) - 1; else if (newThumbsIndex > currentThumbsIndex && 1 === thumbsSwiper.params.slidesPerGroup) ;
+                        thumbsSwiper.slideTo(newThumbsIndex, initial ? 0 : void 0);
+                    }
+                }
+                var thumbsToActivate = 1;
+                var thumbActiveClass = swiper.params.thumbs.slideThumbActiveClass;
+                if (swiper.params.slidesPerView > 1 && !swiper.params.centeredSlides) thumbsToActivate = swiper.params.slidesPerView;
+                if (!swiper.params.thumbs.multipleActiveThumbs) thumbsToActivate = 1;
+                thumbsToActivate = Math.floor(thumbsToActivate);
+                thumbsSwiper.slides.removeClass(thumbActiveClass);
+                if (thumbsSwiper.params.loop || thumbsSwiper.params.virtual && thumbsSwiper.params.virtual.enabled) for (var i = 0; i < thumbsToActivate; i += 1) thumbsSwiper.$wrapperEl.children('[data-swiper-slide-index="' + (swiper.realIndex + i) + '"]').addClass(thumbActiveClass); else for (var _i = 0; _i < thumbsToActivate; _i += 1) thumbsSwiper.slides.eq(swiper.realIndex + _i).addClass(thumbActiveClass);
+            }
+        };
+        const thumbs = {
+            name: "thumbs",
+            params: {
+                thumbs: {
+                    swiper: null,
+                    multipleActiveThumbs: true,
+                    autoScrollOffset: 0,
+                    slideThumbActiveClass: "swiper-slide-thumb-active",
+                    thumbsContainerClass: "swiper-container-thumbs"
+                }
+            },
+            create: function() {
+                var swiper = this;
+                bindModuleMethods(swiper, {
+                    thumbs: thumbs_extends({
+                        swiper: null,
+                        initialized: false
+                    }, Thumbs)
+                });
+            },
+            on: {
+                beforeInit: function(swiper) {
+                    var thumbs = swiper.params.thumbs;
+                    if (!thumbs || !thumbs.swiper) return;
+                    swiper.thumbs.init();
+                    swiper.thumbs.update(true);
+                },
+                slideChange: function(swiper) {
+                    if (!swiper.thumbs.swiper) return;
+                    swiper.thumbs.update();
+                },
+                update: function(swiper) {
+                    if (!swiper.thumbs.swiper) return;
+                    swiper.thumbs.update();
+                },
+                resize: function(swiper) {
+                    if (!swiper.thumbs.swiper) return;
+                    swiper.thumbs.update();
+                },
+                observerUpdate: function(swiper) {
+                    if (!swiper.thumbs.swiper) return;
+                    swiper.thumbs.update();
+                },
+                setTransition: function(swiper, duration) {
+                    var thumbsSwiper = swiper.thumbs.swiper;
+                    if (!thumbsSwiper) return;
+                    thumbsSwiper.setTransition(duration);
+                },
+                beforeDestroy: function(swiper) {
+                    var thumbsSwiper = swiper.thumbs.swiper;
+                    if (!thumbsSwiper) return;
+                    if (swiper.thumbs.swiperCreated && thumbsSwiper) thumbsSwiper.destroy();
+                }
+            }
+        };
         var photoswipe_min = __webpack_require__("../shared/node_modules/photoswipe/dist/photoswipe.min.js");
         var photoswipe_min_default = __webpack_require__.n(photoswipe_min);
         var photoswipe_ui_default_min = __webpack_require__("../shared/node_modules/photoswipe/dist/photoswipe-ui-default.min.js");
@@ -28801,6 +28958,116 @@
             return getVideoCover(videoResource);
         };
         const utils_getYouTubeCover = getYouTubeCover;
+        const isIE = "undefined" !== typeof document && document.documentMode;
+        const isElementType = (element, type) => element.nodeName.toLowerCase() === type;
+        const isGif = url => /^.+\.gif(\?.*){0,1}$/.test(url);
+        const util_isS3FileUrl = url => /\.cloudfront\./.test(url) || /img\.myshopline\.com/.test(url) || /img-.*\.myshopline\.com/.test(url);
+        const makeIsLoaded = element => element.setAttribute("data-loaded", true);
+        const concatStr = (strs, symbol) => strs.filter(Boolean).join(symbol);
+        const transformSrcset = (srcset, transformer) => srcset.split(",").filter((str => "" !== str)).map((str => concatStr(transformer(...str.trim().split(" ")), " "))).join(",");
+        class SLFile {
+            constructor(url, base) {
+                const uri = new URL(url, base);
+                const paths = uri.pathname.split("/");
+                const filename = paths[paths.length - 1];
+                const [name, suffix] = filename.split(".");
+                const [originName, ...modifiers] = name.split("_");
+                this.uri = uri;
+                this.paths = paths;
+                this.name = originName;
+                this.suffix = suffix;
+                this.querys = this.uri.searchParams;
+                this.modifiers = modifiers;
+            }
+            toString() {
+                this.uri.pathname = concatStr([ ...this.paths.slice(0, -1), concatStr([ [ this.name, ...this.modifiers ].join("_"), this.suffix ], ".") ], "/");
+                return this.uri.toString();
+            }
+        }
+        const EnumAttributes = {
+            Iesrc: "data-iesrc",
+            Alt: "data-alt",
+            Src: "data-src",
+            Srcset: "data-srcset",
+            Poster: "data-poster",
+            ToggleClass: "data-toggle-class",
+            BackgroundImage: "data-background-image",
+            BackgroundImageSet: "data-background-image-set",
+            PlaceholderBackground: "data-placeholder-background"
+        };
+        EnumAttributes.Alt, EnumAttributes.Src, EnumAttributes.Iesrc, EnumAttributes.Srcset, 
+        EnumAttributes.Poster, EnumAttributes.ToggleClass, EnumAttributes.BackgroundImage, 
+        EnumAttributes.BackgroundImageSet;
+        function transformImageUrlToWebp(fileOrUrl, ignoreSetting = false) {
+            const file = "string" === typeof fileOrUrl ? new SLFile(fileOrUrl, window.location.href) : fileOrUrl;
+            if (!file.querys.has("t") || ignoreSetting) if (window.__isSupportWebp__) file.querys.set("t", "webp"); else if (file.suffix) file.querys.set("t", file.suffix);
+            return file.toString();
+        }
+        function getPosterUrl(url) {
+            if (!isGif(url) || !util_isS3FileUrl(url)) return;
+            const file = new SLFile(url, window.location.href);
+            if ("1" !== file.querys.get("_f")) return;
+            if ("poster" === file.modifiers[0]) return;
+            file.modifiers.unshift("poster");
+            file.suffix = "png";
+            return transformImageUrlToWebp(file, true);
+        }
+        function getPosterData({src, srcset}) {
+            const data = {};
+            if (src) data.src = getPosterUrl(src);
+            if (srcset) {
+                let srcsetHasPoster = false;
+                data.srcset = transformSrcset(srcset, ((url, breakpoint) => {
+                    const posterUrl = getPosterUrl(url);
+                    if (posterUrl) {
+                        srcsetHasPoster = true;
+                        return [ posterUrl, breakpoint ];
+                    }
+                    return [ url, breakpoint ];
+                }));
+                if (!srcsetHasPoster) delete data.srcset;
+            }
+            if (data.src || data.srcset) return data;
+        }
+        const image_gif_poster = {
+            attributes: [],
+            load(element) {
+                if (isElementType(element, "img")) {
+                    const src = element.getAttribute(EnumAttributes.Src);
+                    const srcset = element.getAttribute(EnumAttributes.Srcset);
+                    const sizes = element.getAttribute("sizes");
+                    let isSeted = false;
+                    const setImageData = ({src, srcset}, img = new Image) => {
+                        if (sizes) img.sizes = sizes;
+                        if (srcset) img.srcset = srcset;
+                        if (src) img.src = src;
+                        return img;
+                    };
+                    const setImageSrc = () => {
+                        if (isSeted) return;
+                        setImageData({
+                            src,
+                            srcset
+                        }, element);
+                        isSeted = true;
+                    };
+                    const posterData = getPosterData({
+                        src,
+                        srcset
+                    });
+                    if (posterData) {
+                        const bgImg = setImageData({
+                            src,
+                            srcset
+                        });
+                        const posterBgImage = setImageData(posterData);
+                        bgImg.onload = setImageSrc;
+                        posterBgImage.onerror = setImageSrc;
+                        setImageData(posterData, element);
+                    } else setImageSrc();
+                }
+            }
+        };
         function js_defineProperty(obj, key, value) {
             if (key in obj) Object.defineProperty(obj, key, {
                 value,
@@ -28810,7 +29077,7 @@
             }); else obj[key] = value;
             return obj;
         }
-        core_class.use([ effect_fade, lazy ]);
+        core_class.use([ effect_fade, lazy, thumbs, navigation ]);
         const COLUMN = "column";
         const ROW = "row";
         const WRAP_PC_ID = ".product_pc_productImageContainer";
@@ -29330,6 +29597,9 @@
                                 const scrollLeftDistance = this.getThumbsPosition("left", activeIndex);
                                 this.handleThumbsScroll("scrollLeft", scrollLeftDistance, Math.abs(activeIndex - previousIndex) < 10);
                             }
+                        },
+                        lazyImageLoad: (_swiper, _slideEl, imageEl) => {
+                            image_gif_poster.load(imageEl);
                         }
                     }
                 });
@@ -31180,6 +31450,9 @@
                 return /^[/（]preview[/）].*/.test(currentUrl);
             }
         }
+        const shadowDomStyle = $("<style></style>").attr({
+            type: "text/css"
+        }).append(`table{border-collapse:collapse}table:not([cellpadding]) td,table:not([cellpadding]) th{padding:.4rem}table:not([border="0"]):not([style*=border-width]) td,table:not([border="0"]):not([style*=border-width]) th{border-width:1px}table:not([border="0"]):not([style*=border-style]) td,table:not([border="0"]):not([style*=border-style]) th{border-style:solid}table:not([border="0"]):not([style*=border-color]) td,table:not([border="0"]):not([style*=border-color]) th{border-color:#ccc}iframe{max-width:100%}img{height:auto;max-width:100%}figure{display:table;margin:1rem auto}figure figcaption{color:#999;display:block;margin-top:.25rem;text-align:center}hr{border-color:#ccc;border-style:solid;border-width:1px 0 0 0}code{background-color:#e8e8e8;border-radius:3px;padding:.1rem .2rem}.mce-content-body:not([dir=rtl]) blockquote{border-left:2px solid #ccc;margin-left:1.5rem;padding-left:1rem}.mce-content-body[dir=rtl] blockquote{border-right:2px solid #ccc;margin-right:1.5rem;padding-right:1rem}@media screen and (max-width: 750px){table{width: 100%!important}}`);
         const createShadowDom = () => {
             const shadowDom = $("[data-node=shadow-dom]");
             shadowDom.each(((_, el) => {
@@ -31199,6 +31472,141 @@
             }));
         };
         const js_createShadowDom = createShadowDom;
+        const CUSTOM_PAGE_TYPE = 3;
+        const isReJsonSdkData = originData => {
+            try {
+                return JSON.parse(originData);
+            } catch (error) {
+                return false;
+            }
+        };
+        class Tabs {
+            constructor({root}) {
+                this.root = $(root);
+                this.lang = "default";
+                this.init();
+                this.requestCollapseTitle(this.ids);
+                this.bindEvent();
+                if (!this.tabs.hasClass("active")) this.openTab(this.tabs.eq(0));
+            }
+            init() {
+                const tabs = this.root.find(".product-tabs-nav").find(".product-tabs-tab");
+                this.tabs = tabs;
+                this.contents = this.root.children(".product-tabs-content").children(".product-tabs-item");
+                this.ids = [];
+                tabs.each(((_, el) => {
+                    const $el = $(el);
+                    const id = $el.data("id");
+                    if (id) this.ids.push(id);
+                }));
+            }
+            requestCollapseTitle(ids) {
+                const {lang} = this;
+                return request({
+                    url: "merchant/render/page/basic/infos",
+                    method: "GET",
+                    params: {
+                        pageIds: ids.join(",")
+                    }
+                }).then((res => {
+                    if (res && Array.isArray(res.data)) {
+                        const data = res.data.reduce(((fin, item) => {
+                            const name = item.name ? item.name[lang] : "";
+                            return {
+                                ...fin,
+                                [item.id]: name
+                            };
+                        }), {});
+                        this.setCollapseTitle(data);
+                    }
+                }));
+            }
+            setCollapseTitle(data) {
+                this.tabs.each(((_, el) => {
+                    const title = data[$(el).data("id")];
+                    if (title) $(el).text(title);
+                }));
+            }
+            requestCollapseContent(id, content) {
+                if (this.cacheRequest && this.cacheData[id]) return Promise.resolve(this.cacheData[id]);
+                return request({
+                    url: `merchant/render/page/${CUSTOM_PAGE_TYPE}/${id}`,
+                    method: "GET"
+                }).then((res => {
+                    if (null !== res && void 0 !== res && res.data) this.setCollapseContent(null === res || void 0 === res ? void 0 : res.data, content);
+                }));
+            }
+            setCollapseContent(data, content) {
+                var _shadow$get;
+                const html = this.getCustomPageContent(null === data || void 0 === data ? void 0 : data.htmlConfig);
+                const shadow = $(content).children(".product-tabs-shadow");
+                const shadowRoot = null === (_shadow$get = shadow.get(0)) || void 0 === _shadow$get ? void 0 : _shadow$get.attachShadow({
+                    mode: "open"
+                });
+                $(shadowRoot).append(shadowDomStyle.clone());
+                $(shadowRoot).append(html);
+            }
+            getCustomPageContent(pageConfig) {
+                const config = isReJsonSdkData(null !== pageConfig && void 0 !== pageConfig ? pageConfig : "");
+                let html = '<div style="word-break: break-word">';
+                if (config) {
+                    const stage = null === config || void 0 === config ? void 0 : config.page;
+                    const grids = null === stage || void 0 === stage ? void 0 : stage.children;
+                    if (!grids || grids.length < 1) return "";
+                    grids.forEach((item => {
+                        null === item || void 0 === item ? void 0 : item.children.forEach((it => {
+                            var _it$children;
+                            const component = null === it || void 0 === it ? void 0 : null === (_it$children = it.children) || void 0 === _it$children ? void 0 : _it$children[0];
+                            if ("Text" === (null === component || void 0 === component ? void 0 : component.type)) {
+                                var _component$props;
+                                if (null !== component && void 0 !== component && null !== (_component$props = component.props) && void 0 !== _component$props && _component$props.title) html += `<h2>${component.props.title}</h2>`;
+                                html += component.props.content;
+                            } else if ("CustomHtml" === (null === component || void 0 === component ? void 0 : component.type)) html += `<div>${component.props.content}</div>`; else if ("Image" === (null === component || void 0 === component ? void 0 : component.type)) {
+                                var _component$props2, _component$props2$ima;
+                                if (null !== component && void 0 !== component && null !== (_component$props2 = component.props) && void 0 !== _component$props2 && null !== (_component$props2$ima = _component$props2.image) && void 0 !== _component$props2$ima && _component$props2$ima.url) html += `<img data-src="${component.props.image.url}" style="max-width:100%"  data-srcset="${component.props.image.url}" alt="${component.props.image.alt}" class="lozad"  />`;
+                            }
+                        }));
+                    }));
+                } else html += pageConfig;
+                html += "</div>";
+                return html;
+            }
+            openTab(tab) {
+                const key = tab.data("key");
+                const id = tab.data("id");
+                tab.closest(".product-tabs-nav").find(".product-tabs-tab").removeClass("active");
+                tab.addClass("active");
+                const contents = tab.closest(".product-tabs-container").find(".product-tabs-item");
+                contents.hide();
+                let content;
+                contents.each(((_, el) => {
+                    if ($(el).data("key") === key) {
+                        $(el).show();
+                        content = el;
+                        return true;
+                    }
+                }));
+                if (!tab.prop("loaded")) {
+                    tab.prop("loaded", true);
+                    if (id) this.requestCollapseContent(id, content);
+                }
+            }
+            bindEvent() {
+                const that = this;
+                const {tabs} = this;
+                tabs.on("click", (function() {
+                    const tab = $(this);
+                    if (tab.hasClass("active")) return;
+                    tab.get(0).scrollIntoView({
+                        block: "nearest",
+                        behavior: "smooth",
+                        inline: "center"
+                    });
+                    that.openTab(tab);
+                }));
+            }
+        }
+        const tabs = Tabs;
         function whichTransitionEvent() {
             let t;
             const el = document.createElement("fakeElement");
@@ -31226,8 +31634,8 @@
             element.style.height = `0px`;
         }
         const PAGE_ID = "pageid";
-        const CUSTOM_PAGE_TYPE = "customize";
-        const isReJsonSdkData = originData => {
+        const product_collapse_CUSTOM_PAGE_TYPE = "customize";
+        const product_collapse_isReJsonSdkData = originData => {
             try {
                 return JSON.parse(originData);
             } catch (error) {
@@ -31340,7 +31748,7 @@
             requestCollapseContent(id) {
                 if (this.cacheRequest && this.cacheData[id]) return Promise.resolve(this.cacheData[id]);
                 return request({
-                    url: `merchant/render/page/${CUSTOM_PAGE_TYPE}/${id}`,
+                    url: `merchant/render/page/${product_collapse_CUSTOM_PAGE_TYPE}/${id}`,
                     method: "GET"
                 }).then((res => {
                     if (this.cacheRequest) this.cacheData[id] = res;
@@ -31351,7 +31759,7 @@
                 }));
             }
             getCustomPageContent(pageConfig) {
-                const config = isReJsonSdkData(null !== pageConfig && void 0 !== pageConfig ? pageConfig : "");
+                const config = product_collapse_isReJsonSdkData(null !== pageConfig && void 0 !== pageConfig ? pageConfig : "");
                 let html = '<div class="custom-page-render-container">';
                 if (config) {
                     const stage = null === config || void 0 === config ? void 0 : config.page;
@@ -32016,6 +32424,9 @@
             }));
             new product_collapse({
                 selector: `.product-detail-collapse_${id}`
+            });
+            new tabs({
+                root: ".product-tabs-container"
             });
             const getSkuChangeData = skuInfo => {
                 const {spuSeq, discount, skuSeq, price, originPrice, stock, weight, weightUnit, available, shelves, skuAttributeIds, imageList, soldOut, allowOversold, imageBeanList} = skuInfo || {};

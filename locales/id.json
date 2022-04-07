@@ -538,6 +538,7 @@
       "submitSuccess": "Sukses kirim"
     },
     "morePaymentOptions": "Opsi pembayaran lainnya",
+    "moreSpuImgBtn": "Tampilkan lebih banyak",
     "network": {
       "message2": "Tidak ada data produk saat ini, silakan coba lagi nanti"
     },
@@ -816,6 +817,28 @@
             "step3": "Selamat Anda! Anda dapat hemat {{saved}}!"
           }
         },
+        "benefit3": {
+          "threshold0": {
+            "step1": {
+              "unlimited": "Beli {{threshold}} lagi，nikmati <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis ongkos kirim</span>!",
+              "upperLimit": "Beli {{threshold}} lagi，nikmati <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis ongkos kirim</span>! (Jumlah pengiriman gratis hingga batas{{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Selamat! Anda dapat <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis ongkos kirim</span>!",
+              "upperLimit": "Selamat! Anda dapat <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis ongkos kirim</span>! (Jumlah pengiriman gratis hingga batas{{upperLimit}})"
+            }
+          },
+          "threshold1": {
+            "step1": {
+              "unlimited": "Beli {{threshold}} buah lagi, nikmati <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis ongkos kirim</span>!",
+              "upperLimit": "Beli {{threshold}} buah lagi, nikmati <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis ongkos kirim</span>! (Jumlah pengiriman gratis hingga batas{{upperLimit}})"
+            },
+            "step3": {
+              "unlimited": "Selamat! Anda dapat <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis ongkos kirim</span>!",
+              "upperLimit": "Selamat! Anda dapat <span class=\"custom-sale-color\" style=\"font-size:14px;\"> Gratis ongkos kirim</span>! (Jumlah pengiriman gratis hingga batas{{upperLimit}})"
+            }
+          }
+        },
         "benefit9": {
           "threshold1": {
             "step1": "Beli {{threshold}} di antaranya {{willSave}} gratis",
@@ -862,6 +885,7 @@
     "change-binding-after-verification": "Setelah verifikasi bisa mengikat/mengubah mengikat{{value}}",
     "change-heart": "Ubah pikiran",
     "change-item": "Ingin mengubah item pembelian",
+    "continue-as-a-guest": "Terus mengakses sebagai tamu",
     "country-address-fail": "Penjual di negara alamat ini tidak membayar pengiriman lagi, silahkan pilih secara manual",
     "enter-address-first": "Silakan masukkan alamat dulu",
     "enter-bank-card-number": "Silakan masukkan nomor kartu bank!",
@@ -899,6 +923,7 @@
     "paypal-country-fail": "Negara akun tempat paypal tidak di negara pembayaran pengiriman, silahkan pilih secara manual",
     "please-complete-the-payment-method-content": "Silakan isi metode pembayaran yang lengkap",
     "please-read-and-agree-to-the-user-agreement-first": "Silahkan baca dan setuju perjanjian pengguna",
+    "poroceed-to-checkout": "Lanjutkan untuk pembayaran",
     "price-more-expensive": "Harganya lebih mahal dari tempat lain",
     "product-abnormal-back-to-cart": "Status produk abnormal, silakan kembali ke troli untuk edit lagi",
     "put-up-order-summary": "Menyimpan ringkasan pesanan",
@@ -1229,6 +1254,7 @@
     "sendError": "Silakan kirim kode verifikasi",
     "signIn": "Login",
     "signUp": "Daftar",
+    "subscription-text": "Mendaftarkan email untuk dapatkan informasi terbaru dan informasi promo, dll.",
     "udbResponse": {
       "err-1": "Maing kurang parameter",
       "err-13": "stoke telah kedaluwarsa",
@@ -1430,6 +1456,9 @@
         "ok-text": "Batal memesan",
         "title": "Batal pesan"
       }
+    },
+    "unsubscribeFeedback": {
+      "text": "Anda tidak akan menerima informasi pemasaran apapun, kemudian bisa memesan kapan saja"
     }
   },
   "validate": {
